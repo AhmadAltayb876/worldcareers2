@@ -1362,6 +1362,54 @@
 @media (max-width: 1024px) { /* Laptop */ }
 @media (max-width: 1200px) { /* Laptop */ }
 
+.search-container {
+    position: relative;
+}
+
+.search-buttons {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    gap: 5px;
+    z-index: 2;
+}
+
+.search-type {
+    padding: 0.3rem 0.8rem;
+    border: none;
+    border-radius: 15px;
+    background: rgba(10, 132, 255, 0.1);
+    color: var(--primary);
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.search-type.active {
+    background: var(--primary);
+    color: white;
+}
+
+.search-input {
+    padding-left: 130px !important; /* تعديل المساحة لاستيعاب الأزرار */
+}
+
+@media (max-width: 768px) {
+    .search-buttons {
+        left: 5px;
+    }
+    
+    .search-type {
+        padding: 0.2rem 0.6rem;
+        font-size: 0.8rem;
+    }
+    
+    .search-input {
+        padding-left: 110px !important;
+    }
+}
     </style>
 </head>
 <body>
@@ -1372,6 +1420,10 @@
             
             <!-- شريط البحث -->
             <div class="search-container">
+                <div class="search-buttons">
+                    <button class="search-type active">المهنة</button>
+                    <button class="search-type">التخصص</button>
+                </div>
                 <input type="text" class="search-input" dir="rtl" placeholder="ابحث عن مهنة أو مجال..." id="searchInput">
                 <button class="search-btn"><i class="fas fa-search"></i></button>
                 <div class="search-results" id="searchResults"></div>
