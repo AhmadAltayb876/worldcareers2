@@ -188,19 +188,22 @@
             background: #f8f9fa;
         }
         #majorsContainer .profession-card {
-            padding: 1.5rem;
-            margin: 0.5rem;
+            background: white;
+            border-radius: 15px;
+            padding: 1.8rem !important;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.438);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
             position: relative;
             overflow: hidden;
-            cursor: pointer;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            margin: 0; /* إزالة الهوامش الإضافية */
         }
-
+    
         #majorsContainer .profession-card:hover {
             transform: translateY(-8px);
             box-shadow: 0 12px 30px rgba(0, 0, 0, 0.836);
         }
-
+    
         #majorsContainer .profession-card::after {
             content: "";
             position: absolute;
@@ -211,7 +214,7 @@
             background: linear-gradient(90deg, var(--secondary) 0%, var(--primary) 100%);
             transition: height 0.3s ease;
         }
-
+    
         #majorsContainer .profession-card:hover::after {
             height: 6px;
         }
@@ -1216,7 +1219,38 @@
     align-items: center;
     gap: 1rem;
 }
+.related-jobs-container {
+    margin-top: 1rem;
+    border-top: 2px solid rgba(0,0,0,0.05);
+    padding-top: 1rem;
+}
 
+.related-jobs-title {
+    color: var(--primary);
+    font-size: 1rem;
+    margin-bottom: 0.8rem;
+}
+
+.related-jobs-list {
+    list-style: none;
+    padding-right: 0;
+}
+
+.related-jobs-list li {
+    padding: 0.5rem 0;
+    border-bottom: 1px dashed #eee;
+    display: flex;
+    justify-content: space-between;
+}
+
+.related-jobs-list li:last-child {
+    border-bottom: none;
+}
+
+.job-salary {
+    color: var(--secondary);
+    font-weight: bold;
+}
 .quiz-option:hover {
     border-color: var(--primary);
     transform: translateY(-3px);
@@ -1760,52 +1794,69 @@
         ];
 
         // بيانات التخصصات الجامعية
+        // بيانات التخصصات المعدلة
         const majors = [
-            { 
-                name: "Medicine", 
-                field: "Medicine", 
-                description: "Study of human health and disease",
-                relatedJobs: [
-                    { title: "جراح قلب", salary: "$200,000 - $450,000" },
-                    { title: "طبيب أطفال", salary: "$150,000 - $250,000" }
-                ]
-            },
-            { 
-                name: "Computer Science", 
-                field: "Computer Science", 
-                description: "Study of computation and information",
-                relatedJobs: [
-                    { title: "مهندس برمجيات", salary: "$80,000 - $150,000" },
-                    { title: "خبير أمن سيبراني", salary: "$90,000 - $180,000" }
-                ]
-            },
-            { 
-                name: "Mechanical Engineering", 
-                field: "Engineering", 
-                description: "Design and manufacture of mechanical systems",
-                relatedJobs: [
-                    { title: "مهندس ميكانيكي", salary: "$70,000 - $120,000" },
-                    { title: "مهندس تصنيع", salary: "$65,000 - $110,000" }
-                ]
-            },
-            { 
-                name: "Business Administration", 
-                field: "Business", 
-                description: "Study of business management and operations",
-                relatedJobs: [
-                    { title: "مدير مشاريع", salary: "$75,000 - $140,000" },
-                    { title: "محلل أعمال", salary: "$60,000 - $100,000" }
-                ]
-            },
-            { 
-                name: "Fine Arts", 
-                field: "Arts", 
-                description: "Study of visual arts and creative expression",
-                relatedJobs: [
-                    { title: "مصمم جرافيك", salary: "$40,000 - $80,000" },
-                    { title: "فنان تشكيلي", salary: "$35,000 - $70,000" }
-                ]
-            }
+        { 
+            name: "الطب البشري", 
+            field: "العلوم الطبية", 
+            description: "يهدف تخصص الطب البشري إلى إعداد أطباء مؤهلين لتشخيص وعلاج الأمراض والإصابات. يتضمن الدراسة العميقة لجسم الإنسان ووظائفه والأمراض التي تصيبه وطرق علاجها.",
+            duration: "6 سنوات دراسية + سنة امتياز",
+            universities: ["جامعة الملك سعود", "جامعة الملك عبدالعزيز", "جامعة القصيم"],
+            relatedJobs: [
+                { title: "طبيب عام", salary: "$80,000 - $150,000" },
+                { title: "أخصائي جراحة", salary: "$200,000 - $450,000" },
+                { title: "طبيب أطفال", salary: "$150,000 - $300,000" },
+                { title: "طبيب باطنية", salary: "$180,000 - $350,000" }
+            ]
+        },
+        { 
+            name: "هندسة الحاسوب", 
+            field: "الهندسة والتكنولوجيا", 
+            description: "يجمع تخصص هندسة الحاسوب بين مبادئ الهندسة الكهربائية وعلوم الحاسوب. يدرس الطلاب تصميم وتطوير أنظمة الحاسوب المادية والبرمجية.",
+            duration: "4 سنوات دراسية",
+            universities: ["جامعة الملك فهد للبترول", "جامعة الأميرة نورة", "جامعة الطائف"],
+            relatedJobs: [
+                { title: "مهندس برمجيات", salary: "$70,000 - $150,000" },
+                { title: "مهندس شبكات", salary: "$80,000 - $160,000" },
+                { title: "مهندس أمن سيبراني", salary: "$90,000 - $180,000" }
+            ]
+        },
+        { 
+            name: "إدارة الأعمال", 
+            field: "العلوم الإدارية", 
+            description: "يركز تخصص إدارة الأعمال على دراسة العمليات الإدارية في المنظمات. يشمل التخطيط والتنظيم والقيادة والرقابة على الموارد لتحقيق الأهداف التنظيمية.",
+            duration: "4 سنوات دراسية",
+            universities: ["جامعة الملك سعود", "جامعة الإمام محمد بن سعود", "جامعة الدمام"],
+            relatedJobs: [
+                { title: "مدير مشاريع", salary: "$75,000 - $140,000" },
+                { title: "محلل أعمال", salary: "$60,000 - $100,000" },
+                { title: "مدير تسويق", salary: "$85,000 - $160,000" }
+            ]
+        },
+        { 
+            name: "الهندسة المعمارية", 
+            field: "الهندسة والتصميم", 
+            description: "يتعلم طلاب الهندسة المعمارية تصميم المباني والهياكل مع مراعاة الجوانب الجمالية والوظيفية والسلامة. يجمع التخصص بين الفنون والهندسة.",
+            duration: "5 سنوات دراسية",
+            universities: ["جامعة الملك فهد للبترول", "جامعة الملك سعود", "جامعة جدة"],
+            relatedJobs: [
+                { title: "مهندس معماري", salary: "$65,000 - $120,000" },
+                { title: "مصمم داخلي", salary: "$50,000 - $90,000" },
+                { title: "مدير موقع بناء", salary: "$70,000 - $130,000" }
+            ]
+        },
+        { 
+            name: "الذكاء الاصطناعي", 
+            field: "علوم الحاسوب", 
+            description: "يركز تخصص الذكاء الاصطناعي على تطوير أنظمة قادرة على محاكاة الذكاء البشري. يشمل تعلم الآلة، معالجة اللغة الطبيعية، الرؤية الحاسوبية وغيرها.",
+            duration: "4 سنوات دراسية",
+            universities: ["جامعة الملك سعود", "جامعة الأمير مقرن", "جامعة الملك عبدالله"],
+            relatedJobs: [
+                { title: "مهندس تعلم آلي", salary: "$100,000 - $200,000" },
+                { title: "باحث في الذكاء الاصطناعي", salary: "$120,000 - $250,000" },
+                { title: "مطور خوارزميات", salary: "$90,000 - $180,000" }
+            ]
+        }
         ];
 
         // تهيئة الصفحة عند التحميل
@@ -2060,6 +2111,7 @@
         }
 
         // دالة لعرض التخصصات الجامعية
+        // دالة عرض التخصصات المعدلة
         function renderMajors(majorsToRender) {
             const container = document.getElementById('majorsContainer');
             container.innerHTML = '';
@@ -2071,15 +2123,9 @@
                 let jobsHTML = '';
                 if (major.relatedJobs && major.relatedJobs.length > 0) {
                     jobsHTML = `
-                        <div style="margin-top: 1rem; border-top: 1px dashed #eee; padding-top: 0.8rem;">
-                            <h5 style="color: var(--primary); font-size: 0.9rem; margin-bottom: 0.5rem;">Related Jobs:</h5>
-                            <ul style="font-size: 0.85rem; padding-right: 1rem;">
-                                ${major.relatedJobs.map(job => 
-                                    `<li style="margin-bottom: 0.3rem;">
-                                        ${job.title} <span style="color: var(--secondary);">${job.salary}</span>
-                                    </li>`
-                                ).join('')}
-                            </ul>
+                        <div class="salary-info">
+                            <span>الوظائف المرتبطة:</span>
+                            <span class="highlight">${major.relatedJobs.length} وظيفة</span>
                         </div>
                     `;
                 }
@@ -2087,10 +2133,11 @@
                 card.innerHTML = `
                     <div class="category-tag">${major.field}</div>
                     <h3>${major.name}</h3>
-                    <p>${major.description}</p>
+                    <p style="margin: 1rem 0;">${major.description}</p>
                     ${jobsHTML}
                 `;
                 
+                card.addEventListener('click', () => showMajorDetails(major));
                 container.appendChild(card);
             });
         }
@@ -3078,26 +3125,38 @@
                 .sort((a, b) => b.matchPercent - a.matchPercent)
                 .slice(0, 5); // أفضل 5 نتائج فقط
         }
+        // دالة لعرض تفاصيل التخصص في نافذة منبثقة
         function showMajorDetails(major) {
             const modal = document.getElementById('detailsModal');
             const title = document.getElementById('modalTitle');
             const content = document.getElementById('modalContent');
             const category = document.getElementById('modalCategory');
-        
+
             title.textContent = major.name;
             category.textContent = major.field;
+            category.className = 'category-tag'; // تطبيق نفس نمط بطاقات المهن
             
             let jobsHTML = '';
             if (major.relatedJobs && major.relatedJobs.length > 0) {
                 jobsHTML = `
-                    <h3 style="margin: 1.5rem 0; color: var(--primary);">الوظائف المرتبطة:</h3>
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
-                        ${major.relatedJobs.map(job => `
-                            <div style="background: rgba(58,175,169,0.1); padding: 0.8rem; border-radius: 8px;">
-                                <h4 style="color: var(--primary); margin-bottom: 0.3rem;">${job.title}</h4>
-                                <p style="color: var(--secondary); font-weight: bold;">${job.salary}</p>
-                            </div>
-                        `).join('')}
+                    <h3 style="margin: 1.5rem 0; color: var(--primary); border-bottom: 2px solid var(--secondary); padding-bottom: 0.5rem;">الوظائف المرتبطة</h3>
+                    <div style="max-height: 300px; overflow-y: auto;">
+                        <table style="width: 100%; border-collapse: collapse;">
+                            <thead>
+                                <tr style="background: var(--primary); color: white;">
+                                    <th style="padding: 0.8rem; text-align: right;">الوظيفة</th>
+                                    <th style="padding: 0.8rem; text-align: center;">الراتب السنوي</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                ${major.relatedJobs.map(job => `
+                                    <tr style="border-bottom: 1px solid #eee;">
+                                        <td style="padding: 0.8rem; text-align: right;">${job.title}</td>
+                                        <td style="padding: 0.8rem; text-align: center; color: var(--secondary); font-weight: bold;">${job.salary}</td>
+                                    </tr>
+                                `).join('')}
+                            </tbody>
+                        </table>
                     </div>
                 `;
             }
@@ -3105,19 +3164,32 @@
             content.innerHTML = `
                 <div class="stats-grid">
                     <div class="stat-item">
-                        <span>المجال</span>
+                        <span>المجال الرئيسي</span>
                         ${major.field}
                     </div>
                     <div class="stat-item">
-                        <span>عدد الوظائف</span>
+                        <span>عدد الوظائف المرتبطة</span>
                         ${major.relatedJobs ? major.relatedJobs.length : 0}
                     </div>
                 </div>
-                <h3 style="margin: 1.5rem 0; color: var(--primary);">الوصف</h3>
-                <p>${major.description}</p>
+                <h3 style="margin: 1.5rem 0; color: var(--primary);">وصف التخصص</h3>
+                <p style="line-height: 1.8;">${major.description}</p>
                 ${jobsHTML}
+                
+                <h3 style="margin: 1.5rem 0; color: var(--primary); border-bottom: 2px solid var(--secondary); padding-bottom: 0.5rem;">المهارات المكتسبة</h3>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                    <span style="background: rgba(58,175,169,0.1); color: var(--secondary); padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.9rem;">
+                        البحث العلمي
+                    </span>
+                    <span style="background: rgba(58,175,169,0.1); color: var(--secondary); padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.9rem;">
+                        التحليل النقدي
+                    </span>
+                    <span style="background: rgba(58,175,169,0.1); color: var(--secondary); padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.9rem;">
+                        حل المشكلات
+                    </span>
+                </div>
             `;
-        
+
             modal.style.display = 'flex';
         }
         // العودة إلى الصفحة الرئيسية
