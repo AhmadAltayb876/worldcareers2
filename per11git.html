@@ -1380,6 +1380,94 @@
 @media (max-width: 1024px) { /* Laptop */ }
 @media (max-width: 1200px) { /* Laptop */ }
 
+/* أنماط الكبسات المائلة */
+.search-buttons {
+    position: absolute;
+    right: 15px; /* التعديل إلى اليمين */
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    gap: 5px;
+    z-index: 2;
+    direction: ltr; /* لتجنب انعكاس المحتوى */
+}
+
+.skew-button {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 8px 25px;
+    transform: skewX(-15deg);
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    position: relative;
+}
+
+.skew-button span {
+    display: inline-block;
+    transform: skewX(15deg);
+}
+
+/* تعديلات التنسيق لاستيعاب الكبسات */
+.search-input {
+    padding-right: 170px !important; /* زيادة الحشو لليمين */
+}
+
+@media (max-width: 768px) {
+    .search-buttons {
+        right: 10px;
+        gap: 3px;
+    }
+    
+    .skew-button {
+        padding: 6px 18px;
+        font-size: 0.8rem;
+    }
+    
+    .search-input {
+        padding-right: 140px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .search-buttons {
+        display: none; /* إخفاء الكبسات في الشاشات الصغيرة */
+    }
+    
+    .search-input {
+        padding-right: 15px !important;
+    }
+}
+
+
+.search-btn {
+    right: auto; /* إلغاء التموضع السابق */
+    left: 1rem; /* نقل أيقونة البحث إلى اليسار */
+}
+
+.search-container {
+    position: relative;
+    flex: 1;
+    max-width: 100%;
+    margin: 0 1rem;
+}
+
+
+.skew-button {
+    /* ... الإعدادات السابقة ... */
+    opacity: 0.8; /* تخفيف العتامة عند عدم النشاط */
+    transition: all 0.3s;
+}
+
+.skew-button.active {
+    background: var(--secondary) !important; /* اللون الغامق عند التفعيل */
+    opacity: 1;
+    transform: skewX(-15deg) scale(1.05);
+    box-shadow: 0 4px 15px rgba(58,175,169,0.4);
+}
+
+
     </style>
 </head>
 <body>
@@ -1390,6 +1478,10 @@
             
             <!-- شريط البحث -->
             <div class="search-container">
+                <div class="search-buttons">
+                    <button class="skew-button active">المهن</button> <!-- إضافة active هنا -->
+                    <button class="skew-button">التخصصات</button>
+                </div>
                 <input type="text" class="search-input" dir="rtl" placeholder="ابحث عن مهنة أو مجال..." id="searchInput">
                 <button class="search-btn"><i class="fas fa-search"></i></button>
                 <div class="search-results" id="searchResults"></div>
@@ -3228,6 +3320,18 @@
             });
             document.querySelector('.nav-link[href="#jobs"]').classList.add('active');
         }
+        // في نهاية ملف JavaScript أضف هذا الكود
+document.querySelectorAll('.skew-button').forEach(button => {
+    button.addEventListener('click', function() {
+        // إزالة الفعالية من جميع الأزرار
+        document.querySelectorAll('.skew-button').forEach(btn => {
+            btn.classList.remove('active');
+        });
+        // تفعيل الزر المختار فقط
+        this.classList.add('active');
+    });
+});
+
     </script>
 </body>
 </html>
