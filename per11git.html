@@ -1467,7 +1467,81 @@
     box-shadow: 0 4px 15px rgba(58,175,169,0.4);
 }
 
+/* الأنماط الجديدة للكبسات المائلة */
+.search-buttons {
+    position: absolute;
+    right: 10px; /* تقريب الأزرار من الحافة */
+    top: 50%;
+    transform: translateY(-50%) skewX(-10deg); /* إضافة انحناء للحاوية */
+    display: flex;
+    gap: 2px; /* تقليل المسافة بين الأزرار */
+    z-index: 2;
+    direction: ltr;
+}
 
+.skew-button {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 8px 25px;
+    transform: skewX(20deg); /* زيادة الميلان الداخلي */
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    position: relative;
+    margin-left: -8px; /* تقريب الأزرار من بعضها */
+    clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%); /* شكل المنقلة */
+}
+
+.skew-button span {
+    display: inline-block;
+    transform: skewX(-20deg); /* تعويض الميلان للنص */
+}
+
+/* تعديلات التنسيق للشريط */
+.search-input {
+    padding-right: 160px !important; /* تقليل المساحة للكبسات */
+    border-radius: 30px 0 0 30px; /* انحناء الجانب الأيسر */
+}
+
+.search-btn {
+    left: 15px;
+    right: auto;
+    transform: translateY(-50%) skewX(5deg); /* إمالة أيقونة البحث */
+    background: var(--primary);
+    padding: 8px;
+    border-radius: 0 30px 30px 0; /* انحناء الجانب الأيمن */
+}
+
+
+.skew-button:hover {
+    background: var(--secondary);
+    z-index: 3;
+    box-shadow: 3px 3px 10px rgba(0,0,0,0.2);
+    transform: skewX(20deg) scale(1.05);
+}
+
+.search-btn:hover {
+    transform: translateY(-50%) skewX(5deg) scale(1.1);
+}
+
+
+@media (max-width: 768px) {
+    .search-buttons {
+        right: 5px;
+        transform: translateY(-50%) skewX(-8deg);
+    }
+    
+    .skew-button {
+        padding: 6px 20px;
+        font-size: 0.8rem;
+        clip-path: polygon(15% 0, 100% 0, 85% 100%, 0 100%);
+    }
+    
+    .search-input {
+        padding-right: 130px !important;
+    }
+}
     </style>
 </head>
 <body>
@@ -1479,8 +1553,8 @@
             <!-- شريط البحث -->
             <div class="search-container">
                 <div class="search-buttons">
-                    <button class="skew-button active">المهن</button> <!-- إضافة active هنا -->
-                    <button class="skew-button">التخصصات</button>
+                    <button class="skew-button" style="transform: skewX(-20deg);">المهن</button>
+                    <button class="skew-button" style="transform: skewX(-20deg);">التخصصات</button>
                 </div>
                 <input type="text" class="search-input" dir="rtl" placeholder="ابحث عن مهنة أو مجال..." id="searchInput">
                 <button class="search-btn"><i class="fas fa-search"></i></button>
