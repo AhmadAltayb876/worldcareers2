@@ -1728,6 +1728,23 @@
     </div>
 
     <script>
+const resetEventListeners = (selector) => {
+    document.querySelectorAll(selector).forEach(element => {
+        const newElement = element.cloneNode(true);
+        element.parentNode.replaceChild(newElement, element);
+    });
+};
+// لأزرار البحث
+resetEventListeners('.search-type');
+document.querySelectorAll('.search-type').forEach(button => {
+    button.addEventListener('click', handleSearch);
+});
+
+// لشريط البحث
+resetEventListeners('#searchInput');
+document.getElementById('searchInput').addEventListener('input', handleSearch);
+
+
         let currentSearchType = 'jobs'; // القيمة الافتراضية
         // بيانات المهن
         const professions = [
