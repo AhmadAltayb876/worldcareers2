@@ -8,8 +8,7 @@
 <meta name="description" content="اكتشف الأسرار المالية للمهن النادرة! ✨ رواتب تصل لـ 2 مليون دولار سنويًا + نصائح احترافية لاختيار المسار الوظيفي الذهبي">
 <meta name="keywords" content="أعلى الرواتب العالمية, المهن الأكثر طلبًا 2024, مستقبل الوظائف الذكية, نصائح الترقية الوظيفية, مقارنة الرواتب الدولية">
 <meta name="author" content="Career Masters Team">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://careerhub.example/">
@@ -1400,6 +1399,8 @@
 }
 
 
+
+
 @media (max-width: 768px) {
     .search-buttons {
         left: 5px;
@@ -1422,7 +1423,6 @@
     display: flex;
     gap: 0.5rem;
     z-index: 2;
-    flex-direction: row-reverse;
 }
 
 
@@ -1437,9 +1437,7 @@
         font-size: 0.8rem;
     }
     
-    .search-input {
-        padding-right: px !important;
-    }
+   
 }
 .search-type.active {
     background: var(--primary);
@@ -1456,7 +1454,7 @@
             <!-- شريط البحث -->
             <!-- داخل قسم navbar -->
 <div class="search-container">
-    <input type="text" class="search-input"  dir="rtl" style="width: 100%;" placeholder="ابحث عن مهنة أو مجال..."id="searchInput">
+    <input type="text" class="search-input" dir="rtl" placeholder="ابحث عن مهنة أو مجال..." id="searchInput">
     <div class="search-type-buttons">
         <button class="search-type active" data-type="jobs">المهنة</button>
         <button class="search-type" data-type="majors">التخصص</button>
@@ -1728,23 +1726,6 @@
     </div>
 
     <script>
-const resetEventListeners = (selector) => {
-    document.querySelectorAll(selector).forEach(element => {
-        const newElement = element.cloneNode(true);
-        element.parentNode.replaceChild(newElement, element);
-    });
-};
-// لأزرار البحث
-resetEventListeners('.search-type');
-document.querySelectorAll('.search-type').forEach(button => {
-    button.addEventListener('click', handleSearch);
-});
-
-// لشريط البحث
-resetEventListeners('#searchInput');
-document.getElementById('searchInput').addEventListener('input', handleSearch);
-
-
         let currentSearchType = 'jobs'; // القيمة الافتراضية
         // بيانات المهن
         const professions = [
