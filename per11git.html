@@ -2009,6 +2009,23 @@
                 if(targetId === 'jobs') {
                     renderProfessions(professions);
                 }
+
+                document.querySelector('.search-type[data-type="majors"]').addEventListener('click', function() {
+        currentSearchType = 'majors';
+        document.getElementById('professionsContainer').style.display = 'none';
+        document.getElementById('majorsContainer').style.display = 'grid';
+        document.getElementById('searchInput').value = '';
+        clearSearch(); // تأكد من وجود هذه الدالة
+    });
+
+    // حدث زر المهن
+    document.querySelector('.search-type[data-type="jobs"]').addEventListener('click', function() {
+        currentSearchType = 'jobs';
+        document.getElementById('majorsContainer').style.display = 'none';
+        document.getElementById('professionsContainer').style.display = 'grid';
+        document.getElementById('searchInput').value = '';
+        clearSearch(); // تأكد من وجود هذه الدالة
+    });
             });
         });
         // تهيئة وظيفة البحث
@@ -2645,8 +2662,7 @@
             document.getElementById('professionsContainer').style.display = 'none';
             document.getElementById('majorsContainer').style.display = 'grid';
             
-            // إعادة تحميل التخصصات لضمان التحديث
-            renderMajors(majors);
+           
         }
 
         // تعديل دالة renderMajors لعرض البطاقات بنفس نمط المهن
@@ -3338,14 +3354,21 @@ document.querySelectorAll('.search-type').forEach(button => {
 
 // ربط أزرار البحث مع أزرار العرض
 function linkSearchTypeToView(type) {
+      // ↓ اكتب هذين السطرين ↓
+      if (type === 'jobs' && currentSearchType === 'jobs') return;
+    if (type === 'majors' && currentSearchType === 'majors') return;
+    // ↑ هنا ينتهي الإضافة ↑
+
+    currentSearchType = type;
+
     if (type === 'jobs') {
         document.querySelector('.search-type[data-type="jobs"]').classList.add('active');
         document.querySelector('.search-type[data-type="majors"]').classList.remove('active');
-        showProfessionsView(); // تفعيل عرض المهن
+        showProfessionsView();
     } else {
         document.querySelector('.search-type[data-type="majors"]').classList.add('active');
         document.querySelector('.search-type[data-type="jobs"]').classList.remove('active');
-        showMajorsView(); // تفعيل عرض التخصصات
+        showMajorsView();
     }
 }
 
@@ -3363,7 +3386,6 @@ function showMajorsView() {
     document.getElementById('showProfessionsBtn').classList.remove('active');
     document.getElementById('professionsContainer').style.display = 'none';
     document.getElementById('majorsContainer').style.display = 'grid';
-    linkSearchTypeToView('majors'); // تحديث حالة أزرار البحث
 }
 
 // إضافة Event listeners لأزرار البحث
@@ -3381,58 +3403,35 @@ document.querySelectorAll('.search-type').forEach(button => {
     });
 });
 function performSearch(queryLower, type) {
-    // 1. التحقق من وجود نص بحث
-    if (!queryLower) return { professions: [], majors: [] };
-
-    // 2. البحث حسب النوع المحدد
-    if (type === 'jobs') {
-        // 2-أ. البحث في المهن
-        const professionsResults = professions.filter(prof => 
-            prof.title.toLowerCase().includes(queryLower) ||
-            prof.description.toLowerCase().includes(queryLower) ||
-            prof.industry.toLowerCase().includes(queryLower) ||
-            prof.category.toLowerCase().includes(queryLower)
-        );
-        return { professions: professionsResults, majors: [] };
+   // 2. نغيرها لتكون هكذا:
+   if (currentSearchType === 'jobs') {
+        return {
+            professions: professions.filter(prof => 
+                prof.title.toLowerCase().includes(queryLower)
+            ),
+            majors: [] // لا نبحث في التخصصات
+        };
     } else {
-        // 2-ب. البحث في التخصصات
-        const majorsResults = majors.filter(major => 
-            major.name.toLowerCase().includes(queryLower) ||
-            major.description.toLowerCase().includes(queryLower) ||
-            major.field.toLowerCase().includes(queryLower)
-        );
-        return { professions: [], majors: majorsResults };
+        return {
+            professions: [], // لا نبحث في المهن
+            majors: majors.filter(major => 
+                major.name.toLowerCase().includes(queryLower)
+            )
+        };
     }
 }
 function displaySearchResults(results) {
-    const searchResults = document.getElementById('searchResults');
-    const mainSearchResults = document.getElementById('mainSearchResults');
-    const searchQueryText = document.getElementById('searchQueryText');
-    const searchInput = document.getElementById('searchInput');
-    
-    // إخفاء القائمة المنسدلة إذا لم تكن هناك نتائج
-    if (results.professions.length === 0 && results.majors.length === 0) {
-        searchResults.style.display = 'none';
-        mainSearchResults.style.display = 'none';
-        return;
-    }
-
-    // بناء HTML بناءً على نوع البحث
-    let html = '';
     if (currentSearchType === 'jobs') {
-        html = generateProfessionsHTML(results.professions);
-        searchQueryText.textContent = searchInput.value.trim();
-        mainSearchResults.style.display = 'block';
-        document.getElementById('professionsContainer').style.display = 'none';
-    } else {
-        html = generateMajorsHTML(results.majors);
-        searchQueryText.textContent = searchInput.value.trim();
-        mainSearchResults.style.display = 'block';
+        // إذا كان البحث عن المهن
+        renderSearchResults(results.professions);
+        document.getElementById('professionsContainer').style.display = 'grid';
         document.getElementById('majorsContainer').style.display = 'none';
+    } else {
+        // إذا كان البحث عن التخصصات
+        renderMajorsResults(results.majors);
+        document.getElementById('professionsContainer').style.display = 'none';
+        document.getElementById('majorsContainer').style.display = 'grid';
     }
-
-    searchResults.innerHTML = html;
-    searchResults.style.display = 'block';
 }
 function generateProfessionsHTML(professions) {
     return `
@@ -3487,6 +3486,27 @@ const checkboxes = document.querySelectorAll('#jobs input[type="checkbox"]');
 checkboxes.forEach(checkbox => {
     checkbox.checked = false;
 });
+
+// دالة جديدة لعرض التخصصات
+function renderMajorsResults(majors) {
+    const container = document.getElementById('majorsContainer');
+    container.innerHTML = ''; // نمسح المحتوى القديم
+    
+    majors.forEach(major => {
+        const card = `
+            <div class="profession-card">
+                <div class="category-tag">${major.field}</div>
+                <h3>${major.name}</h3>
+                <p>${major.description}</p>
+                <div class="salary-info">
+                    <span>عدد الوظائف:</span>
+                    <span class="highlight">${major.relatedJobs.length}</span>
+                </div>
+            </div>
+        `;
+        container.innerHTML += card;
+    });
+}
     </script>
 </body>
 </html>
