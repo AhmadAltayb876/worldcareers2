@@ -2020,10 +2020,10 @@
             const searchQueryText = document.getElementById('searchQueryText');
             
             searchInput.addEventListener('input', function() {
-                const query = this.value.trim().toLowerCase();
-        const results = performSearch(query, currentSearchType); // التعديل الرئيسي هنا
+                const queryLower = this.value.trim().toLowerCase();
+        const results = performSearch(queryLower, currentSearchType); // التعديل الرئيسي هنا
         displaySearchResults(results);
-                if (query.length === 0) {
+                if (queryLower.length === 0) {
                     searchResults.style.display = 'none';
                     mainSearchResults.style.display = 'none';
                     document.getElementById('professionsContainer').style.display = 'grid';
@@ -2087,7 +2087,7 @@
                     
                     // عرض النتائج الرئيسية تحت الفلترة
                     if (professionResults.length > 0) {
-                        searchQueryText.textContent = query;
+                        searchQueryText.textContent =queryLower;
                         renderSearchResults(professionResults);
                         mainSearchResults.style.display = 'block';
                         document.getElementById('professionsContainer').style.display = 'none';
@@ -3380,26 +3380,26 @@ document.querySelectorAll('.search-type').forEach(button => {
         }
     });
 });
-function performSearch(query, type) {
+function performSearch(queryLower, type) {
     // 1. التحقق من وجود نص بحث
-    if (!query) return { professions: [], majors: [] };
+    if (!queryLower) return { professions: [], majors: [] };
 
     // 2. البحث حسب النوع المحدد
     if (type === 'jobs') {
         // 2-أ. البحث في المهن
         const professionsResults = professions.filter(prof => 
-            prof.title.toLowerCase().includes(query) ||
-            prof.description.toLowerCase().includes(query) ||
-            prof.industry.toLowerCase().includes(query) ||
-            prof.category.toLowerCase().includes(query)
+            prof.title.toLowerCase().includes(queryLower) ||
+            prof.description.toLowerCase().includes(queryLower) ||
+            prof.industry.toLowerCase().includes(queryLower) ||
+            prof.category.toLowerCase().includes(queryLower)
         );
         return { professions: professionsResults, majors: [] };
     } else {
         // 2-ب. البحث في التخصصات
         const majorsResults = majors.filter(major => 
-            major.name.toLowerCase().includes(query) ||
-            major.description.toLowerCase().includes(query) ||
-            major.field.toLowerCase().includes(query)
+            major.name.toLowerCase().includes(queryLower) ||
+            major.description.toLowerCase().includes(queryLower) ||
+            major.field.toLowerCase().includes(queryLower)
         );
         return { professions: [], majors: majorsResults };
     }
