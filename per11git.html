@@ -1443,6 +1443,8 @@
     background: var(--primary);
     color: white;
 }
+
+
     </style>
 </head>
 <body>
@@ -1691,8 +1693,8 @@
             </div>
             
             <!-- قسم التخصصات الجامعية (مخفي افتراضياً) -->
-            <div class="professions-grid" id="majorsContainer" style="display: none;">
-                <!-- سيتم إضافة التخصصات هنا -->
+            <div id="majorsContainer" class="professions-grid" style="display: none;"></div>
+            <!-- سيتم إضافة التخصصات هنا -->
             </div>
         </section>
         <!-- قسم نتائج البحث الرئيسية -->
@@ -1950,9 +1952,15 @@
         // تهيئة الصفحة عند التحميل
         document.addEventListener('DOMContentLoaded', function() {
             document.getElementById('jobs').style.display = 'block';
-            renderProfessions(professions);
-            renderMajors(majors); // تحميل التخصصات ولكنها مخفية في البداية
-            
+           // تهيئة البيانات
+    renderProfessions(professions);
+    renderMajors(majors);
+    
+    // تفعيل البحث
+    document.getElementById('searchInput').addEventListener('input', function() {
+        const results = performSearch(this.value, currentSearchType);
+        displaySearchResults(results);
+    });
             initSearch();
             initCompareSearch();
             setCompareType('jobs');
@@ -2031,96 +2039,34 @@
         // تهيئة وظيفة البحث
         function initSearch() {
             const searchInput = document.getElementById('searchInput');
-            const searchResults = document.getElementById('searchResults');
-            const mainSearchResults = document.getElementById('mainSearchResults');
-            const searchResultsContainer = document.getElementById('searchResultsContainer');
-            const searchQueryText = document.getElementById('searchQueryText');
-            
-            searchInput.addEventListener('input', function() {
-                const queryLower = this.value.trim().toLowerCase();
-        const results = performSearch(queryLower, currentSearchType); // التعديل الرئيسي هنا
-        displaySearchResults(results);
-                if (queryLower.length === 0) {
-                    searchResults.style.display = 'none';
-                    mainSearchResults.style.display = 'none';
-                    document.getElementById('professionsContainer').style.display = 'grid';
-                    return;
-                }
-                
-                // البحث في المهن
-                const professionResults = professions.filter(prof => 
-                    prof.title.toLowerCase().includes(queryLower) || 
-                    prof.description.toLowerCase().includes(queryLower) ||
-                    prof.industry.toLowerCase().includes(queryLower) ||
-                    prof.category.toLowerCase().includes(queryLower)
-                );
-                
-                // البحث في التخصصات الجامعية
-                const majorResults = majors.filter(major => 
-                    major.name.toLowerCase().includes(queryLower) || 
-                    major.description.toLowerCase().includes(queryLower) ||
-                    major.field.toLowerCase().includes(queryLower)
-                );
-                
-                // عرض النتائج في القائمة المنسدلة
-                if (professionResults.length === 0 && majorResults.length === 0) {
-                    searchResults.innerHTML = '<div class="no-results">لا توجد نتائج مطابقة</div>';
-                    searchResults.style.display = 'block';
-                    mainSearchResults.style.display = 'none';
-                    document.getElementById('professionsContainer').style.display = 'grid';
-                } else {
-                    let resultsHTML = '';
-                    
-                    if (professionResults.length > 0) {
-                        resultsHTML += '<div style="padding: 0.5rem; background: #f8f9fa; font-weight: bold; color: var(--primary);">المهن</div>';
-                        
-                        professionResults.forEach(prof => {
-                            resultsHTML += `
-                                <div class="search-result-item" onclick="showProfessionDetails('${prof.title.replace(/'/g, "\\'")}')">
-                                    <h4>${prof.title}</h4>
-                                    <p>${prof.industry} - ${prof.description.substring(0, 60)}...</p>
-                                    <small style="color: var(--secondary);">$${prof.avgSalary}</small>
-                                </div>
-                            `;
-                        });
-                    }
-                    
-                    if (majorResults.length > 0) {
-                        resultsHTML += '<div style="padding: 0.5rem; background: #f8f9fa; font-weight: bold; color: var(--primary);">التخصصات الجامعية</div>';
-                        
-                        majorResults.forEach(major => {
-                            resultsHTML += `
-                                <div class="search-result-item" onclick="navigateToMajor('${major.name.replace(/'/g, "\\'")}')">
-                                    <h4>${major.name}</h4>
-                                    <p>${major.description.substring(0, 60)}...</p>
-                                    <small style="color: var(--secondary);">${major.field}</small>
-                                </div>
-                            `;
-                        });
-                    }
-                    
-                    searchResults.innerHTML = resultsHTML;
-                    searchResults.style.display = 'block';
-                    
-                    // عرض النتائج الرئيسية تحت الفلترة
-                    if (professionResults.length > 0) {
-                        searchQueryText.textContent =queryLower;
-                        renderSearchResults(professionResults);
-                        mainSearchResults.style.display = 'block';
-                        document.getElementById('professionsContainer').style.display = 'none';
-                    } else {
-                        mainSearchResults.style.display = 'none';
-                        document.getElementById('professionsContainer').style.display = 'grid';
-                    }
-                }
-            });
-            
-            // إخفاء نتائج البحث عند النقر خارجها
-            document.addEventListener('click', function(e) {
-                if (!searchInput.contains(e.target)) {
-                    searchResults.style.display = 'none';
-                }
-            });
+    const searchResults = document.getElementById('searchResults');
+    const mainSearchResults = document.getElementById('mainSearchResults');
+    
+    searchInput.addEventListener('input', function() {
+        const queryLower = this.value.trim().toLowerCase();
+        const results = performSearch(queryLower, currentSearchType);
+        
+        // نتائج البحث المنسدلة
+        searchResults.innerHTML = currentSearchType === 'jobs' 
+            ? generateProfessionsHTML(results.professions)
+            : generateMajorsHTML(results.majors);
+        
+        searchResults.style.display = 'block';
+        
+        // نتائج البحث الرئيسية
+        if (currentSearchType === 'jobs') {
+            renderSearchResults(results.professions);
+            document.getElementById('majorsContainer').style.display = 'none';
+            document.getElementById('professionsContainer').style.display = 'grid';
+        } else {
+            renderMajorsResults(results.majors);
+            document.getElementById('professionsContainer').style.display = 'none';
+            document.getElementById('majorsContainer').style.display = 'grid';
+        }
+        
+        // التحكم في ظهور قسم النتائج الرئيسي
+        mainSearchResults.style.display = (results.professions.length + results.majors.length) > 0 ? 'block' : 'none';
+    });
         }
         
         // دالة لعرض نتائج البحث الرئيسية
@@ -2155,24 +2101,18 @@
             const searchInput = document.getElementById('searchInput');
     searchInput.value = '';
     
-    // 2. إخفاء نتائج البحث المنسدلة والرئيسية
     document.getElementById('searchResults').style.display = 'none';
     document.getElementById('mainSearchResults').style.display = 'none';
     
-    // 3. إعادة عرض القسم المناسب حسب نوع البحث الحالي
     if (currentSearchType === 'jobs') {
         document.getElementById('professionsContainer').style.display = 'grid';
         document.getElementById('majorsContainer').style.display = 'none';
+        renderProfessions(professions); // إعادة تعيين القائمة الأصلية
     } else {
         document.getElementById('professionsContainer').style.display = 'none';
         document.getElementById('majorsContainer').style.display = 'grid';
+        renderMajors(majors); // إعادة تعيين القائمة الأصلية
     }
-    
-    // 4. إعادة تعيين الفلاتر إذا وجدت (اختياري)
-    const checkboxes = document.querySelectorAll('#jobs input[type="checkbox"]');
-    checkboxes.forEach(checkbox => {
-        checkbox.checked = false;
-    });
 }
         
         
@@ -3249,69 +3189,35 @@
         // دالة لعرض تفاصيل التخصص في نافذة منبثقة
         function showMajorDetails(major) {
             const modal = document.getElementById('detailsModal');
-            const title = document.getElementById('modalTitle');
-            const content = document.getElementById('modalContent');
-            const category = document.getElementById('modalCategory');
+    const title = document.getElementById('modalTitle');
+    const content = document.getElementById('modalContent');
+    const category = document.getElementById('modalCategory');
 
-            title.textContent = major.name;
-            category.textContent = major.field;
-            category.className = 'category-tag'; // تطبيق نفس نمط بطاقات المهن
-            
-            let jobsHTML = '';
-            if (major.relatedJobs && major.relatedJobs.length > 0) {
-                jobsHTML = `
-                    <h3 style="margin: 1.5rem 0; color: var(--primary); border-bottom: 2px solid var(--secondary); padding-bottom: 0.5rem;">الوظائف المرتبطة</h3>
-                    <div style="max-height: 300px; overflow-y: auto;">
-                        <table style="width: 100%; border-collapse: collapse;">
-                            <thead>
-                                <tr style="background: var(--primary); color: white;">
-                                    <th style="padding: 0.8rem; text-align: right;">الوظيفة</th>
-                                    <th style="padding: 0.8rem; text-align: center;">الراتب السنوي</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                ${major.relatedJobs.map(job => `
-                                    <tr style="border-bottom: 1px solid #eee;">
-                                        <td style="padding: 0.8rem; text-align: right;">${job.title}</td>
-                                        <td style="padding: 0.8rem; text-align: center; color: var(--secondary); font-weight: bold;">${job.salary}</td>
-                                    </tr>
-                                `).join('')}
-                            </tbody>
-                        </table>
-                    </div>
-                `;
-            }
-            
-            content.innerHTML = `
-                <div class="stats-grid">
-                    <div class="stat-item">
-                        <span>المجال الرئيسي</span>
-                        ${major.field}
-                    </div>
-                    <div class="stat-item">
-                        <span>عدد الوظائف المرتبطة</span>
-                        ${major.relatedJobs ? major.relatedJobs.length : 0}
-                    </div>
-                </div>
-                <h3 style="margin: 1.5rem 0; color: var(--primary);">وصف التخصص</h3>
-                <p style="line-height: 1.8;">${major.description}</p>
-                ${jobsHTML}
-                
-                <h3 style="margin: 1.5rem 0; color: var(--primary); border-bottom: 2px solid var(--secondary); padding-bottom: 0.5rem;">المهارات المكتسبة</h3>
-                <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
-                    <span style="background: rgba(58,175,169,0.1); color: var(--secondary); padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.9rem;">
-                        البحث العلمي
-                    </span>
-                    <span style="background: rgba(58,175,169,0.1); color: var(--secondary); padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.9rem;">
-                        التحليل النقدي
-                    </span>
-                    <span style="background: rgba(58,175,169,0.1); color: var(--secondary); padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.9rem;">
-                        حل المشكلات
-                    </span>
-                </div>
-            `;
+    title.textContent = major.name;
+    category.textContent = major.field;
+    
+    const jobsList = major.relatedJobs.map(job => `
+        <li>${job.title} <span class="job-salary">${job.salary}</span></li>
+    `).join('');
+    
+    content.innerHTML = `
+        <div class="stats-grid">
+            <div class="stat-item">
+                <span>المجال</span>
+                ${major.field}
+            </div>
+            <div class="stat-item">
+                <span>عدد الوظائف</span>
+                ${major.relatedJobs.length}
+            </div>
+        </div>
+        <h3 style="margin: 1.5rem 0; color: var(--primary);">وصف التخصص</h3>
+        <p>${major.description}</p>
+        <h3 style="margin: 1.5rem 0; color: var(--primary);">الوظائف المرتبطة</h3>
+        <ul class="related-jobs-list">${jobsList}</ul>
+    `;
 
-            modal.style.display = 'flex';
+    modal.style.display = 'flex';
         }
         // العودة إلى الصفحة الرئيسية
         function goToHome() {
@@ -3332,25 +3238,7 @@
             document.querySelector('.nav-link[href="#jobs"]').classList.add('active');
         }
 
-        // إدارة حالة الأزرار
-document.querySelectorAll('.search-type').forEach(button => {
-    button.addEventListener('click', function(e) {
-        e.preventDefault();
-        e.stopPropagation();
-        
-        // إزالة النشاط من جميع الأزرار
-        document.querySelectorAll('.search-type').forEach(btn => {
-            btn.classList.remove('active');
-        });
-        
-        // تفعيل الزر المحدد فقط
-        this.classList.add('active');
-        
-        // يمكنك إضافة منطق البحث هنا لاحقًا
-        const searchType = this.dataset.type;
-        console.log('نوع البحث المحدد:', searchType);
-    });
-});
+     
 
 // ربط أزرار البحث مع أزرار العرض
 function linkSearchTypeToView(type) {
@@ -3370,6 +3258,11 @@ function linkSearchTypeToView(type) {
         document.querySelector('.search-type[data-type="jobs"]').classList.remove('active');
         showMajorsView();
     }
+    if (document.getElementById('searchInput').value.trim()) {
+            const results = performSearch(document.getElementById('searchInput').value.trim(), currentSearchType);
+            displaySearchResults(results);
+        }
+    
 }
 
 // تعديل الدوال الموجودة
@@ -3388,49 +3281,51 @@ function showMajorsView() {
     document.getElementById('majorsContainer').style.display = 'grid';
 }
 
-// إضافة Event listeners لأزرار البحث
-document.querySelectorAll('.search-type').forEach(button => {
-    button.addEventListener('click', function(e) {
-        e.preventDefault();
-        const type = this.dataset.type;
-        
-        // تفعيل العرض المناسب
-        if (type === 'jobs') {
-            showProfessionsView();
-        } else {
-            showMajorsView();
-        }
-    });
-});
-function performSearch(queryLower, type) {
-   // 2. نغيرها لتكون هكذا:
-   if (currentSearchType === 'jobs') {
+function performSearch(query, type) {
+    if (type === 'jobs') {
         return {
             professions: professions.filter(prof => 
-                prof.title.toLowerCase().includes(queryLower)
+                prof.title.includes(query) || 
+                prof.description.includes(query)
             ),
-            majors: [] // لا نبحث في التخصصات
+            majors: []
         };
     } else {
         return {
-            professions: [], // لا نبحث في المهن
+            professions: [],
             majors: majors.filter(major => 
-                major.name.toLowerCase().includes(queryLower)
+                major.name.includes(query) || 
+                major.description.includes(query)
             )
         };
     }
+
 }
 function displaySearchResults(results) {
+    const mainContainer = currentSearchType === 'jobs' 
+        ? document.getElementById('professionsContainer')
+        : document.getElementById('majorsContainer');
+
+    mainContainer.innerHTML = '';
+
     if (currentSearchType === 'jobs') {
-        // إذا كان البحث عن المهن
-        renderSearchResults(results.professions);
-        document.getElementById('professionsContainer').style.display = 'grid';
-        document.getElementById('majorsContainer').style.display = 'none';
+        results.professions.forEach(prof => {
+            mainContainer.innerHTML += `
+                <div class="profession-card">
+                    <h3>${prof.title}</h3>
+                    <p>${prof.description}</p>
+                </div>
+            `;
+        });
     } else {
-        // إذا كان البحث عن التخصصات
-        renderMajorsResults(results.majors);
-        document.getElementById('professionsContainer').style.display = 'none';
-        document.getElementById('majorsContainer').style.display = 'grid';
+        results.majors.forEach(major => {
+            mainContainer.innerHTML += `
+                <div class="profession-card">
+                    <h3>${major.name}</h3>
+                    <p>${major.description}</p>
+                </div>
+            `;
+        });
     }
 }
 function generateProfessionsHTML(professions) {
@@ -3458,27 +3353,24 @@ function generateMajorsHTML(majors) {
         `).join('')}
     `;
 }
-document.querySelectorAll('.search-type').forEach(button => {
-    button.addEventListener('click', function(e) {
-        e.preventDefault();
-        
-        // إزالة النشاط من جميع الأزرار
-        document.querySelectorAll('.search-type').forEach(btn => {
-            btn.classList.remove('active');
-        });
-        
-        // تفعيل الزر المحدد
-        this.classList.add('active');
-        
-        // تحديث نوع البحث الحالي
+    document.querySelectorAll('.search-type').forEach(button => {
+        button.addEventListener('click', function() {
+        // إعادة تعيين كل شيء
         currentSearchType = this.dataset.type;
         
-        // إعادة البحث إذا كان هناك نص في الحقل
-        const searchInput = document.getElementById('searchInput');
-        if (searchInput.value.trim()) {
-            const results = performSearch(searchInput.value.trim(), currentSearchType);
-            displaySearchResults(results);
-        }
+        // إخفاء جميع الحاويات
+        document.querySelectorAll('.professions-grid').forEach(container => {
+            container.style.display = 'none';
+        });
+        
+        // إظهار الحاوية المناسبة
+        const targetId = currentSearchType === 'jobs' 
+            ? 'professionsContainer' 
+            : 'majorsContainer';
+        document.getElementById(targetId).style.display = 'grid';
+        
+        // مسح نتائج البحث القديمة
+        document.getElementById('searchInput').value = '';
     });
 });
 //فلاتر
@@ -3506,6 +3398,65 @@ function renderMajorsResults(majors) {
         `;
         container.innerHTML += card;
     });
+}
+function renderMajorsResults(majorsToRender) {
+    const container = document.getElementById('majorsContainer');
+    container.innerHTML = '';
+    
+    majorsToRender.forEach(major => {
+        const card = `
+            <div class="profession-card" onclick="showMajorDetails(${JSON.stringify(major).replace(/"/g, '&quot;')})">
+                <div class="category-tag">${major.field}</div>
+                <h3>${major.name}</h3>
+                <p>${major.description}</p>
+                <div class="salary-info">
+                    <span>الوظائف المرتبطة:</span>
+                    <span class="highlight">${major.relatedJobs.length} وظيفة</span>
+                </div>
+            </div>
+        `;
+        container.innerHTML += card;
+    });
+}
+
+function generateProfessionsHTML(professions) {
+    return `
+        <div class="search-category">المهن</div>
+        ${professions.map(prof => `
+            <div class="search-result-item" onclick="showProfessionDetails('${prof.title}')">
+                <h4>${prof.title}</h4>
+                <p>${prof.industry} - ${prof.description.substring(0, 60)}...</p>
+                <small class="salary">$${prof.avgSalary}</small>
+            </div>
+        `).join('')}
+    `;
+}
+
+function generateMajorsHTML(majors) {
+    return `
+        <div class="search-category">التخصصات</div>
+        ${majors.map(major => `
+            <div class="search-result-item" onclick="showMajorDetails(${JSON.stringify(major).replace(/"/g, '&quot;')})">
+                <h4>${major.name}</h4>
+                <p>${major.field} - ${major.description.substring(0, 60)}...</p>
+                <small class="field">${major.field}</small>
+            </div>
+        `).join('')}
+    `;
+}
+function clearFilters() {
+    // إعادة تعيين الفلاتر إذا كانت موجودة
+    const checkboxes = document.querySelectorAll('#jobs input[type="checkbox"]');
+    checkboxes.forEach(checkbox => {
+        checkbox.checked = false;
+    });
+    
+    // إعادة عرض البيانات الأصلية
+    if (currentSearchType === 'jobs') {
+        renderProfessions(professions);
+    } else {
+        renderMajors(majors);
+    }
 }
     </script>
 </body>
