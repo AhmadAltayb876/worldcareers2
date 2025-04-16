@@ -3240,22 +3240,36 @@ function displaySearchResults(results) {
 
     if (currentSearchType === 'jobs') {
         results.professions.forEach(prof => {
-            mainContainer.innerHTML += `
-                <div class="profession-card">
-                    <h3>${prof.title}</h3>
-                    <p>${prof.description}</p>
-                </div>
-            `;
-        });
+        const card = document.createElement('div');
+        card.className = 'profession-card';
+        card.innerHTML = `
+            <div class="category-tag">${prof.category}</div>
+            <h3>${prof.title}</h3>
+            <p class="industry-info">المجال: ${prof.industry}</p>
+            <div class="salary-info">
+                <span class="salary-label">الراتب السنوي:</span>
+                <span class="highlight">$${prof.avgSalary}</span>
+            </div>
+        `;
+        card.addEventListener('click', () => showDetails(prof));
+        mainContainer.appendChild(card);
+    });
     } else {
         results.majors.forEach(major => {
-            mainContainer.innerHTML += `
-                <div class="profession-card">
-                    <h3>${major.name}</h3>
-                    <p>${major.description}</p>
-                </div>
-            `;
-        });
+        const card = document.createElement('div');
+        card.className = 'profession-card';
+        card.innerHTML = `
+            <div class="category-tag">${major.field}</div>
+            <h3>${major.name}</h3>
+            <p class="major-description">${major.description}</p>
+            <div class="related-jobs">
+                <span class="jobs-label">الوظائف المرتبطة:</span>
+                <span class="highlight">${major.relatedJobs.length} وظيفة</span>
+            </div>
+        `;
+        card.addEventListener('click', () => showMajorDetails(major));
+        mainContainer.appendChild(card);
+    });
     }
 }
 function generateProfessionsHTML(professions) {
