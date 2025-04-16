@@ -2018,22 +2018,7 @@
                     renderProfessions(professions);
                 }
 
-                document.querySelector('.search-type[data-type="majors"]').addEventListener('click', function() {
-        currentSearchType = 'majors';
-        document.getElementById('professionsContainer').style.display = 'none';
-        document.getElementById('majorsContainer').style.display = 'grid';
-        document.getElementById('searchInput').value = '';
-        clearSearch(); // تأكد من وجود هذه الدالة
-    });
-
-    // حدث زر المهن
-    document.querySelector('.search-type[data-type="jobs"]').addEventListener('click', function() {
-        currentSearchType = 'jobs';
-        document.getElementById('majorsContainer').style.display = 'none';
-        document.getElementById('professionsContainer').style.display = 'grid';
-        document.getElementById('searchInput').value = '';
-        clearSearch(); // تأكد من وجود هذه الدالة
-    });
+             
             });
         });
         // تهيئة وظيفة البحث
@@ -2054,15 +2039,7 @@
         searchResults.style.display = 'block';
         
         // نتائج البحث الرئيسية
-        if (currentSearchType === 'jobs') {
-            renderSearchResults(results.professions);
-            document.getElementById('majorsContainer').style.display = 'none';
-            document.getElementById('professionsContainer').style.display = 'grid';
-        } else {
-            renderMajorsResults(results.majors);
-            document.getElementById('professionsContainer').style.display = 'none';
-            document.getElementById('majorsContainer').style.display = 'grid';
-        }
+       
         
         // التحكم في ظهور قسم النتائج الرئيسي
         mainSearchResults.style.display = (results.professions.length + results.majors.length) > 0 ? 'block' : 'none';
@@ -2103,16 +2080,7 @@
     
     document.getElementById('searchResults').style.display = 'none';
     document.getElementById('mainSearchResults').style.display = 'none';
-    
-    if (currentSearchType === 'jobs') {
-        document.getElementById('professionsContainer').style.display = 'grid';
-        document.getElementById('majorsContainer').style.display = 'none';
-        renderProfessions(professions); // إعادة تعيين القائمة الأصلية
-    } else {
-        document.getElementById('professionsContainer').style.display = 'none';
-        document.getElementById('majorsContainer').style.display = 'grid';
-        renderMajors(majors); // إعادة تعيين القائمة الأصلية
-    }
+   
 }
         
         
@@ -2580,30 +2548,11 @@
         }
         // دالة لعرض المهن
         // دالة لعرض المهن
-        function showProfessionsView() {
-            document.getElementById('showProfessionsBtn').classList.add('active');
-            document.getElementById('showMajorsBtn').classList.remove('active');
-            document.getElementById('professionsContainer').style.display = 'grid';
-            document.getElementById('majorsContainer').style.display = 'none';
-            
-            // إعادة تطبيق الفلتر إذا كان هناك بحث نشط
-            const searchInput = document.getElementById('searchInput');
-            if (searchInput.value.trim().length > 0) {
-                filterProfessions();
-            } else {
-                renderProfessions(professions);
-            }
-        }
+       
 
         // دالة لعرض التخصصات
-        function showMajorsView() {
-            document.getElementById('showMajorsBtn').classList.add('active');
-            document.getElementById('showProfessionsBtn').classList.remove('active');
-            document.getElementById('professionsContainer').style.display = 'none';
-            document.getElementById('majorsContainer').style.display = 'grid';
-            
-           
-        }
+       
+        
 
         // تعديل دالة renderMajors لعرض البطاقات بنفس نمط المهن
         function renderMajors(majorsToRender) {
@@ -3238,47 +3187,28 @@
             document.querySelector('.nav-link[href="#jobs"]').classList.add('active');
         }
 
-     
-
-// ربط أزرار البحث مع أزرار العرض
-function linkSearchTypeToView(type) {
-      // ↓ اكتب هذين السطرين ↓
-      if (type === 'jobs' && currentSearchType === 'jobs') return;
-    if (type === 'majors' && currentSearchType === 'majors') return;
-    // ↑ هنا ينتهي الإضافة ↑
-
+        function linkSearchTypeToView(type) {
     currentSearchType = type;
-
-    if (type === 'jobs') {
-        document.querySelector('.search-type[data-type="jobs"]').classList.add('active');
-        document.querySelector('.search-type[data-type="majors"]').classList.remove('active');
-        showProfessionsView();
-    } else {
-        document.querySelector('.search-type[data-type="majors"]').classList.add('active');
-        document.querySelector('.search-type[data-type="jobs"]').classList.remove('active');
-        showMajorsView();
-    }
-    if (document.getElementById('searchInput').value.trim()) {
-            const results = performSearch(document.getElementById('searchInput').value.trim(), currentSearchType);
-            displaySearchResults(results);
-        }
     
-}
-
-// تعديل الدوال الموجودة
-function showProfessionsView() {
-    document.getElementById('showProfessionsBtn').classList.add('active');
-    document.getElementById('showMajorsBtn').classList.remove('active');
-    document.getElementById('professionsContainer').style.display = 'grid';
-    document.getElementById('majorsContainer').style.display = 'none';
-    linkSearchTypeToView('jobs'); // تحديث حالة أزرار البحث
-}
-
-function showMajorsView() {
-    document.getElementById('showMajorsBtn').classList.add('active');
-    document.getElementById('showProfessionsBtn').classList.remove('active');
-    document.getElementById('professionsContainer').style.display = 'none';
-    document.getElementById('majorsContainer').style.display = 'grid';
+    // تحديث الأزرار العلوية
+    document.querySelectorAll('.search-type').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.type === type);
+    });
+    
+    // تحديث أزرار القسم الرئيسي
+    document.getElementById('showProfessionsBtn').classList.toggle('active', type === 'jobs');
+    document.getElementById('showMajorsBtn').classList.toggle('active', type === 'majors');
+    
+    // إظهار/إخفاء المحتوى
+    document.getElementById('professionsContainer').style.display = type === 'jobs' ? 'grid' : 'none';
+    document.getElementById('majorsContainer').style.display = type === 'majors' ? 'grid' : 'none';
+    
+    // إعادة البحث إذا كان هناك نص
+    const searchQuery = document.getElementById('searchInput').value.trim();
+    if (searchQuery) {
+        const results = performSearch(searchQuery, type);
+        displaySearchResults(results);
+    }
 }
 
 function performSearch(query, type) {
@@ -3353,24 +3283,11 @@ function generateMajorsHTML(majors) {
         `).join('')}
     `;
 }
-    document.querySelectorAll('.search-type').forEach(button => {
-        button.addEventListener('click', function() {
-        // إعادة تعيين كل شيء
-        currentSearchType = this.dataset.type;
-        
-        // إخفاء جميع الحاويات
-        document.querySelectorAll('.professions-grid').forEach(container => {
-            container.style.display = 'none';
-        });
-        
-        // إظهار الحاوية المناسبة
-        const targetId = currentSearchType === 'jobs' 
-            ? 'professionsContainer' 
-            : 'majorsContainer';
-        document.getElementById(targetId).style.display = 'grid';
-        
-        // مسح نتائج البحث القديمة
-        document.getElementById('searchInput').value = '';
+   // حدث موحد لجميع الأزرار
+document.querySelectorAll('.search-type, #showProfessionsBtn, #showMajorsBtn').forEach(btn => {
+    btn.addEventListener('click', function() {
+        const type = this.dataset.type || (this.id === 'showMajorsBtn' ? 'majors' : 'jobs');
+        linkSearchTypeToView(type);
     });
 });
 //فلاتر
