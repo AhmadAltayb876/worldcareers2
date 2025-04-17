@@ -1957,14 +1957,23 @@
     renderMajors(majors);
     
     // تفعيل البحث
-    document.getElementById('searchInput').addEventListener('input', function() {
-        const results = performSearch(this.value, currentSearchType);
-        displaySearchResults(results);
+    document.getElementById('searchInput').addEventListener('input', function(e) { 
+        const rawValue = e.target.value; // e معرّفة الآن
+    const query = (rawValue || "").trim(); // معالجة القيم الفارغة
+
+    if (query === "") {
+        clearSearch();
+        return;
+    }
+
+    const results = performSearch(query, currentSearchType);
+    displaySearchResults(results);
+       
     });
             initSearch();
             initCompareSearch();
             setCompareType('jobs');
-            
+ 
             // تفعيل الفلتر الافتراضي إذا كان القسم النشط هو Best Jobs
             if (window.location.hash === '#best-jobs') {
                 activeFilter = 'best';
@@ -1979,6 +1988,13 @@
                 if (bestFilterBtn) bestFilterBtn.classList.add('active');
                 applyFilters();
             }
+        
+    
+   
+    
+    // إذا كان هناك نص، استمر في البحث
+    const results = performSearch(query, currentSearchType);
+    displaySearchResults(results);
         });
 
         // التحكم في عرض الأقسام عند النقر على الروابط
@@ -2075,12 +2091,24 @@
         
         // دالة لمسح البحث
         function clearSearch() {
-            const searchInput = document.getElementById('searchInput');
+         // 1. مسح نص البحث
+    const searchInput = document.getElementById('searchInput');
     searchInput.value = '';
     
+    // 2. إخفاء نتائج البحث
     document.getElementById('searchResults').style.display = 'none';
     document.getElementById('mainSearchResults').style.display = 'none';
-   
+    
+    // 3. إعادة العرض الأصلي
+    if (currentSearchType === 'jobs') {
+        // إظهار بطاقات المهن
+        document.getElementById('professionsContainer').style.display = 'grid';
+        renderProfessions(professions);
+    } else {
+        // إظهار بطاقات التخصصات
+        document.getElementById('majorsContainer').style.display = 'grid';
+        renderMajors(majors);
+    }
 }
         
         
