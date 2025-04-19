@@ -3343,9 +3343,22 @@ function performSearch(query, type) {
     document.getElementById('showMajorsBtn').classList.toggle('active', currentSearchType === 'majors');
 }
 function displaySearchResults(results) {
+    
+    const searchInput = document.getElementById('searchInput');
     const searchResults = document.getElementById('searchResults');
+    const mainSearchResults = document.getElementById('mainSearchResults');
+    
+    // تحديث نص البحث في العنوان
+    document.getElementById('searchQueryText').textContent = searchInput.value.trim();
+    
+    // إظهار قسم النتائج الرئيسي
+    mainSearchResults.style.display = 'block';
     const mainMajorsContainer = document.getElementById('majorsContainer'); // القسم الرئيسي للتخصصات
     searchResults.innerHTML = ''; // مسح النتائج القديمة
+  
+
+
+
 
     if (currentSearchType === 'majors') {
         renderMajorsResults(results.majors); // عرض النتائج في majorsContainer
@@ -3393,7 +3406,6 @@ function displaySearchResults(results) {
             searchResults.appendChild(item);
         });
     }
-
     searchResults.style.display = 'block';
 }
 
