@@ -250,7 +250,6 @@
             color: var(--primary);
             margin-bottom: 1rem;
             font-size: 1.2rem;
-            display: flex;
             align-items: center;
             gap: 0.5rem;
         }
@@ -1506,6 +1505,17 @@
     pointer-events: none !important;
     height: 0 !important;
 }
+@media (max-width: 768px) {
+    #mainSearchResults {
+        margin-top: -30px !important; /* تعويض المسافة للشاشات الصغيرة */
+    }
+}
+
+.search-results-title {
+    padding-top: 40px; /* مساحة أعلى العنوان */
+    margin-top: -40px; /* تعويض للتمرير الدقيق */
+    scroll-margin-top: 100px; /* منع التداخل مع الشريط العلوي */
+}
     </style>
 </head>
 <body>
@@ -2021,6 +2031,7 @@
     document.getElementById('searchInput').addEventListener('input', function(e) { 
         const currentSection = document.querySelector('.nav-link.active').getAttribute('href');
     
+
         
     if (currentSection !== '#jobs') {
         // السلوك الطبيعي للأقسام الأخرى
@@ -2170,6 +2181,9 @@
         // دالة لمسح البحث
         function clearSearch() {
          // 1. مسح نص البحث
+         const mainSearchResults = document.getElementById('mainSearchResults');
+    const navbarHeight = document.querySelector('.navbar').offsetHeight;
+    
     const searchInput = document.getElementById('searchInput');
     searchInput.value = '';
     document.getElementById('searchResults').style.display = 'none';
@@ -2177,6 +2191,13 @@
     // 2. إخفاء نتائج البحث
     document.getElementById('searchResults').style.display = 'none';
     document.getElementById('mainSearchResults').style.display = 'none';
+
+ // التمرير للأعلى مع احتساب ارتفاع الشريط العلوي
+ window.scrollTo({
+        top: mainSearchResults.offsetTop - navbarHeight - 30,
+        behavior: 'smooth'
+    });
+
 
     if (currentSearchType === 'majors') {
         renderMajors(majors); // عرض التخصصات الأصلية
@@ -3365,7 +3386,8 @@ function displaySearchResults(results) {
     const mainSearchResults = document.getElementById('mainSearchResults');
     const activeSection = document.querySelector('.nav-link.active').getAttribute('href');
     const searchResults = document.getElementById('searchResults');
-     
+    const navbarHeight = document.querySelector('.navbar').offsetHeight;
+
    
     // تحديث نص البحث في العنوان
     document.getElementById('searchQueryText').textContent = searchInput.value.trim();
@@ -3374,7 +3396,15 @@ function displaySearchResults(results) {
     mainSearchResults.style.display = 'block';
     const mainMajorsContainer = document.getElementById('majorsContainer'); // القسم الرئيسي للتخصصات
     searchResults.innerHTML = ''; // مسح النتائج القديمة
-  
+    if (results.professions.length > 0 || results.majors.length > 0) {
+        const targetPosition = mainSearchResults.getBoundingClientRect().top + window.pageYOffset;
+        window.scrollTo({
+            top: targetPosition - navbarHeight - 20, // 20px مسافة إضافية
+            behavior: 'smooth'
+        });
+    }
+
+
 // أخفاء النافذة فقط في قسم المهن
 if (activeSection === '#jobs') {
         searchResults.style.opacity = '0';
