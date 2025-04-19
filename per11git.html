@@ -1495,8 +1495,17 @@
     color: #666;
     text-align: center;
 }
-
-
+/* داخل media query أو في نهاية ملف الـ CSS */
+#jobs .search-results {
+    display: none !important;
+}
+/* أضف هذا في نهاية قسم الأنماط CSS */
+#jobs .search-results {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    height: 0 !important;
+}
     </style>
 </head>
 <body>
@@ -2010,6 +2019,14 @@
     
     // تفعيل البحث
     document.getElementById('searchInput').addEventListener('input', function(e) { 
+        const currentSection = document.querySelector('.nav-link.active').getAttribute('href');
+    
+        
+    if (currentSection !== '#jobs') {
+        // السلوك الطبيعي للأقسام الأخرى
+        searchResults.style.display = 'block';
+    }
+
         const rawValue = e.target.value; // e معرّفة الآن
     const query = (rawValue || "").trim(); // معالجة القيم الفارغة
 
@@ -3345,9 +3362,11 @@ function performSearch(query, type) {
 function displaySearchResults(results) {
     
     const searchInput = document.getElementById('searchInput');
-    const searchResults = document.getElementById('searchResults');
     const mainSearchResults = document.getElementById('mainSearchResults');
-    
+    const activeSection = document.querySelector('.nav-link.active').getAttribute('href');
+    const searchResults = document.getElementById('searchResults');
+     
+   
     // تحديث نص البحث في العنوان
     document.getElementById('searchQueryText').textContent = searchInput.value.trim();
     
@@ -3356,6 +3375,18 @@ function displaySearchResults(results) {
     const mainMajorsContainer = document.getElementById('majorsContainer'); // القسم الرئيسي للتخصصات
     searchResults.innerHTML = ''; // مسح النتائج القديمة
   
+// أخفاء النافذة فقط في قسم المهن
+if (activeSection === '#jobs') {
+        searchResults.style.opacity = '0';
+        searchResults.style.visibility = 'hidden';
+        searchResults.style.pointerEvents = 'none';
+        searchResults.style.height = '0';
+    } else {
+        searchResults.style.opacity = '1';
+        searchResults.style.visibility = 'visible';
+        searchResults.style.pointerEvents = 'auto';
+        searchResults.style.height = 'auto';
+    }
 
 
 
