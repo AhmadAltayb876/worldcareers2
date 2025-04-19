@@ -1495,6 +1495,8 @@
     color: #666;
     text-align: center;
 }
+
+
     </style>
 </head>
 <body>
@@ -2110,10 +2112,7 @@
         const results = performSearch(queryLower, currentSearchType);
         
         // نتائج البحث المنسدلة
-        searchResults.innerHTML = currentSearchType === 'jobs' 
-            ? generateProfessionsHTML(results.professions)
-            : generateMajorsHTML(results.majors);
-        
+       
         searchResults.style.display = 'block';
         
         // نتائج البحث الرئيسية
@@ -3288,8 +3287,17 @@ function navigateToMajor(majorName) {
 
         function linkSearchTypeToView(type) {
     currentSearchType = type;
+    const searchInput = document.getElementById('searchInput');
     document.getElementById('mainSearchResults').style.display = 'none'; // إخفاء نتائج البحث القديمة
-    // تحديث الأزرار العلوية
+   // تحديث الـ placeholder حسب النوع
+   if(type === 'jobs') {
+        searchInput.placeholder = "ابحث عن مهنة...";
+    } else {
+        searchInput.placeholder = "ابحث عن تخصص...";
+    }
+    
+
+
     // تحديث الأزرار النشطة
     document.querySelectorAll('.search-type').forEach(btn => {
         btn.classList.toggle('active', btn.dataset.type === type);
@@ -3388,31 +3396,7 @@ function displaySearchResults(results) {
 
     searchResults.style.display = 'block';
 }
-function generateProfessionsHTML(professions) {
-    return `
-        <div class="search-category">المهن</div>
-        ${professions.map(prof => `
-            <div class="search-result-item" onclick="showProfessionDetails('${prof.title}')">
-                <h4>${prof.title}</h4>
-                <p>${prof.industry} - ${prof.description.substring(0, 60)}...</p>
-                <small class="salary">$${prof.avgSalary}</small>
-            </div>
-        `).join('')}
-    `;
-}
 
-function generateMajorsHTML(majors) {
-    return `
-        <div class="search-category">التخصصات</div>
-        ${majors.map(major => `
-            <div class="search-result-item" onclick="showMajorDetails(${JSON.stringify(major).replace(/"/g, '&quot;')})">
-                <h4>${major.name}</h4>
-                <p>${major.field} - ${major.description.substring(0, 60)}...</p>
-                <small class="field">${major.field}</small>
-            </div>
-        `).join('')}
-    `;
-}
    // حدث موحد لجميع الأزرار
 document.querySelectorAll('.search-type, #showProfessionsBtn, #showMajorsBtn').forEach(btn => {
     btn.addEventListener('click', function() {
