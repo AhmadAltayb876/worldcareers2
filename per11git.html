@@ -1516,6 +1516,80 @@
     margin-top: -40px; /* تعويض للتمرير الدقيق */
     scroll-margin-top: 100px; /* منع التداخل مع الشريط العلوي */
 }
+/* تحسين أزرار التبديل بين المهن والتخصصات */
+#jobs .filter-item {
+    flex: 1; /* توسيع الأزرار لتملأ المساحة المتاحة */
+    max-width: 45%; /* تحديد أقصى عرض لكل زر */
+    padding: 1rem 1.5rem; /* زيادة الحشو الداخلي */
+    font-size: 1.1rem; /* تكبير حجم الخط */
+    margin: 0 0.5rem; /* إضافة هوامش جانبية */
+}
+
+/* ترتيب الأزرار أفقياً */
+#jobs .filter-group {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+/* تحسين الشكل عند النقر */
+#jobs .filter-item.active {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(10, 132, 255, 0.3);
+}
+
+/* تحسينات للجوال */
+@media (max-width: 768px) {
+    #jobs .filter-item {
+        font-size: 1rem;
+        padding: 0.8rem 1.2rem;
+        max-width: 48%;
+    }
+}
+/* التعديلات الجديدة فقط للأزرار */
+#jobs .filter-item {
+    padding: 0.6rem 1.2rem !important; /* حجم موحد */
+    font-size: 0.9rem !important; /* حجم خط موحد */
+    width: 140px !important; /* عرض موحد */
+    text-align: center !important; /* محاذاة النص */
+    margin: 0 0.3rem !important; /* مسافات متساوية */
+}
+
+/* التأكد من تساوي الحجم في الحالة النشطة */
+#jobs .filter-item.active {
+    transform: none !important; /* إزالة أي تأثيرات حركية */
+    padding: 0.6rem 1.2rem !important; /* نفس الحشو */
+}
+/* التعديلات الجديدة فقط للأزرار */
+#jobs .filter-group {
+    margin-top: 30px ; /* مسافة أكبر من الهيدر */
+    gap: 10px ; /* مسافة بين الأزرار */
+}
+
+#jobs .filter-item {
+    padding: 12px 25px ;
+    font-size: 16px ;
+    width: auto ; /* عرض حسب المحتوى */
+    min-width: 160px ; /* أقل عرض مسموح */
+    border-radius: 8px ;
+    background: var(--light) ;
+    border: 2px solid var(--primary) ;
+    color: var(--primary) ;
+    transition: all 0.2s ease ;
+}
+
+#jobs .filter-item.active {
+    background: var(--primary) ;
+    color: white ;
+    box-shadow: 0 3px 10px rgba(10, 132, 255, 0.2);
+}
+
+#jobs .filter-item:hover:not(.active) {
+    background: rgba(10, 132, 255, 0.1) ;
+    transform: translateY(-1px);
+}
     </style>
 </head>
 <body>
@@ -1707,6 +1781,16 @@
 
     <!-- قسم Jobs and Careers (الواجهة الأساسية) -->
         <section id="jobs">
+                     
+<!-- بالنسخة المعدلة -->
+<div class="filter-group">
+    <button id="showProfessionsBtn" class="filter-item active" onclick="linkSearchTypeToView('jobs')">
+        عرض المهن <i class="fas fa-briefcase"></i>
+    </button>
+    <button id="showMajorsBtn" class="filter-item" onclick="linkSearchTypeToView('majors')">
+        عرض التخصصات <i class="fas fa-graduation-cap"></i>
+    </button>
+</div>
             <div class="filter-container">
                 <div class="filter-box">
                     
@@ -1735,17 +1819,7 @@
                 </div>
             </div>
             <!-- في قسم Jobs and Careers -->
-            <div style="display: flex; gap: 1rem; margin-bottom: 1.5rem ; width: 100% ;justify-content:center">
-            <center>
-                <!-- في قسم jobs -->
-<button id="showProfessionsBtn" class="filter-item active" onclick="linkSearchTypeToView('jobs')">
-    عرض المهن <i class="fas fa-briefcase"></i>
-</button>
-<button id="showMajorsBtn" class="filter-item" onclick="linkSearchTypeToView('majors')">
-    عرض التخصصات <i class="fas fa-graduation-cap"></i>
-</button>
-            </center>
-            </div>
+   
     <!-- قسم نتائج البحث الرئيسية -->
             <div class="search-results-section" id="mainSearchResults">
                 <h3 class="search-results-title">
