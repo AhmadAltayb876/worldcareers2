@@ -1348,7 +1348,6 @@
 @media (max-width: 360px) { /* Laptop */ }
 @media (max-width: 480px){
     .modal-content {
-        padding: 0.7rem;
         width: 95%;
         line-height: 0.7;
 
@@ -1443,6 +1442,12 @@
     color: white;
 }
 @media (max-width: 480px) {
+    .search-results-title {
+        font-size: 0.2rem;
+
+
+
+    }
     .search-results {
         max-height: 60vh;
         font-size: 0.9rem;
@@ -1515,6 +1520,9 @@
     padding-top: 40px; /* مساحة أعلى العنوان */
     margin-top: -40px; /* تعويض للتمرير الدقيق */
     scroll-margin-top: 100px; /* منع التداخل مع الشريط العلوي */
+            font-size: 1rem;
+           
+     
 }
 /* تحسين أزرار التبديل بين المهن والتخصصات */
 #jobs .filter-item {
@@ -1573,7 +1581,7 @@
     font-size: 16px ;
     width: auto ; /* عرض حسب المحتوى */
     min-width: 160px ; /* أقل عرض مسموح */
-    border-radius: 8px ;
+    border-radius: 25px ;
     background: var(--light) ;
     border: 2px solid var(--primary) ;
     color: var(--primary) ;
@@ -1590,6 +1598,8 @@
     background: rgba(10, 132, 255, 0.1) ;
     transform: translateY(-1px);
 }
+
+
     </style>
 </head>
 <body>
@@ -1603,8 +1613,8 @@
 <div class="search-container">
     <input type="text" class="search-input" dir="rtl" placeholder="ابحث عن مهنة..." id="searchInput">
     <div class="search-type-buttons">
-        <button class="search-type active" data-type="jobs">المهنة</button>
         <button class="search-type" data-type="majors">التخصص</button>
+        <button class="search-type active" data-type="jobs">المهنة</button>
     </div>
     <button class="search-btn"><i class="fas fa-search"></i></button>
     <div class="search-results" id="searchResults"></div>
@@ -3631,3 +3641,4 @@ document.addEventListener('click', (e) => {
     </script>
 </body>
 </html>
+sumafsldk
