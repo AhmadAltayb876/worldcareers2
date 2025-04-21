@@ -1598,53 +1598,8 @@
     background: rgba(10, 132, 255, 0.1) ;
     transform: translateY(-1px);
 }
-#jobsFilters {
-    display: none; /* إخفاء افتراضي */
-}
 
-#jobsFilters.active {
-    display: block; /* إظهار عند الحاجة */
-}
-@media (max-width: 768px) {
-  /* التأكد من الترتيب الصحيح */
-  #com\/hunt .compare-quiz-container {
-    display: flex;
-    flex-direction: column;
-  }
 
-  /* نقل قسم المقارنة للأعلى */
-  #com\/hunt .compare-quiz-container > div:first-child {
-    order: 1;
-  }
-
-  /* نقل قسم الأختبار للأسفل */
-  #com\/hunt .quiz-container {
-    order: 2;
-    margin-top: 2rem;
-  }
-
-  /* تحسين الحقول */
-  #com\/hunt .search-container {
-    margin-bottom: 1rem;
-  }
-
-  #com\/hunt .search-input {
-    width: 100%;
-    padding: 0.8rem;
-  }
-
-  /* منع تداخل النتائج */
-  #com\/hunt #compareResults {
-    margin-top: 1rem;
-    padding: 1rem;
-    overflow-x: auto;
-  }
-
-  /* تعديل حجم الخطوط */
-  #com\/hunt h3 {
-    font-size: 1.2rem;
-  }
-}
     </style>
 </head>
 <body>
@@ -1846,8 +1801,9 @@
         عرض التخصصات <i class="fas fa-graduation-cap"></i>
     </button>
 </div>
-<div class="filter-container" id="jobsFilters">
-    <div class="filter-box">
+            <div class="filter-container">
+                <div class="filter-box">
+                    
                     
                     <h3 class="filter-title">Filter by Job Field:</h3>
                     <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
@@ -2151,7 +2107,6 @@
         // تهيئة الصفحة عند التحميل
         document.addEventListener('DOMContentLoaded', function() {
             document.getElementById('jobs').style.display = 'block';
-            document.getElementById('jobsFilters').style.display = 'block'; // إظهار افتراضي عند التحميل
            // تهيئة البيانات
     renderProfessions(professions);
     renderMajors(majors);
@@ -2443,7 +2398,7 @@ function navigateToMajor(majorName) {
             
             const searchInput = document.getElementById('searchInput');
             const isSearchActive = searchInput.value.trim().length > 0;
-             // التأكد من أن الفلترة تعمل فقط في وضع المهن
+            
             if (isSearchActive) {
                 // إذا كان البحث نشطًا، نطبق الفلترة على نتائج البحث
                 const query = searchInput.value.trim().toLowerCase();
@@ -2472,7 +2427,6 @@ function navigateToMajor(majorName) {
                     renderProfessions(filtered);
                 }
             }
-            if (currentSearchType !== 'jobs') return;   
         }
 
         // دالة فلترة التخصصات الجامعية
@@ -3455,18 +3409,9 @@ function navigateToMajor(majorName) {
 
         function linkSearchTypeToView(type) {
     currentSearchType = type;
-    
     const searchInput = document.getElementById('searchInput');
     document.getElementById('mainSearchResults').style.display = 'none'; // إخفاء نتائج البحث القديمة
    // تحديث الـ placeholder حسب النوع
-    // إظهار/إخفاء الفلترة حسب النوع
-    const filtersContainer = document.getElementById('jobsFilters');
-    if (type === 'jobs') {
-        filtersContainer.style.display = 'block';
-    } else {
-        filtersContainer.style.display = 'none';
-        clearFilters(); // تنظيف الفلترات عند التبديل للتخصصات
-    }
    if(type === 'jobs') {
         searchInput.placeholder = "ابحث عن مهنة...";
     } else {
@@ -3668,15 +3613,6 @@ function clearFilters() {
     checkboxes.forEach(checkbox => {
         checkbox.checked = false;
     });
-       // إلغاء تحديد جميع الفلترات
-       document.querySelectorAll('#jobsFilters input[type="checkbox"]').forEach(checkbox => {
-        checkbox.checked = false;
-    });
-    
-    // إعادة عرض المهن الأصلية
-    if (currentSearchType === 'jobs') {
-        renderProfessions(professions);
-    }
     
     // إعادة عرض البيانات الأصلية
     if (currentSearchType === 'jobs') {
