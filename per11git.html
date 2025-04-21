@@ -1598,9 +1598,106 @@
     background: rgba(10, 132, 255, 0.1) ;
     transform: translateY(-1px);
 }
+#jobsFilters {
+    display: none; /* إخفاء افتراضي */
+}
 
+#jobsFilters.active {
+    display: block; /* إظهار عند الحاجة */
+}
+@media (max-width: 768px) {
+  /* التأكد من الترتيب الصحيح */
+  #com\/hunt .compare-quiz-container {
+    display: flex;
+    flex-direction: column;
+  }
 
-    </style>
+  /* نقل قسم المقارنة للأعلى */
+  #com\/hunt .compare-quiz-container > div:first-child {
+    order: 1;
+  }
+
+  /* نقل قسم الأختبار للأسفل */
+  #com\/hunt .quiz-container {
+    order: 2;
+    margin-top: 2rem;
+  }
+
+  /* تحسين الحقول */
+  #com\/hunt .search-container {
+    margin-bottom: 1rem;
+  }
+
+  #com\/hunt .search-input {
+    width: 100%;
+    padding: 0.8rem;
+  }
+
+  /* منع تداخل النتائج */
+  #com\/hunt #compareResults {
+    margin-top: 1rem;
+    padding: 1rem;
+    overflow-x: auto;
+  }
+
+  /* تعديل حجم الخطوط */
+  #com\/hunt h3 {
+    font-size: 1.2rem;
+  }
+}
+    
+@media (max-width: 768px) {
+  #com\/hunt .compare-quiz-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  #com\/hunt .search-container {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  #com\/hunt .search-input {
+    padding: 0.8rem 1rem;
+    font-size: 1rem;
+    width: 100%;
+  }
+
+  #com\/hunt .search-btn {
+    right: 1rem;
+    font-size: 1rem;
+  }
+
+  #com\/hunt .search-type-buttons {
+    left: 10px;
+    top: 50%;
+    gap: 0.3rem;
+  }
+
+  #com\/hunt #compareResults {
+    margin-top: 1rem;
+    padding: 1rem;
+    overflow-x: auto;
+  }
+
+  #com\/hunt table {
+    font-size: 0.85rem;
+    min-width: 600px;
+  }
+
+  #com\/hunt .compare-detail-card {
+    padding: 1rem;
+    font-size: 0.9rem;
+  }
+
+  #com\/hunt h3 {
+    font-size: 1.3rem;
+    text-align: center;
+  }
+}
+
+</style>
 </head>
 <body>
     <!-- الترويسة -->
@@ -1613,8 +1710,8 @@
 <div class="search-container">
     <input type="text" class="search-input" dir="rtl" placeholder="ابحث عن مهنة..." id="searchInput">
     <div class="search-type-buttons">
-        <button class="search-type" data-type="majors">التخصص</button>
         <button class="search-type active" data-type="jobs">المهنة</button>
+        <button class="search-type" data-type="majors">التخصص</button>
     </div>
     <button class="search-btn"><i class="fas fa-search"></i></button>
     <div class="search-results" id="searchResults"></div>
@@ -1801,9 +1898,8 @@
         عرض التخصصات <i class="fas fa-graduation-cap"></i>
     </button>
 </div>
-            <div class="filter-container">
-                <div class="filter-box">
-                    
+<div class="filter-container" id="jobsFilters">
+    <div class="filter-box">
                     
                     <h3 class="filter-title">Filter by Job Field:</h3>
                     <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
@@ -2107,6 +2203,7 @@
         // تهيئة الصفحة عند التحميل
         document.addEventListener('DOMContentLoaded', function() {
             document.getElementById('jobs').style.display = 'block';
+            document.getElementById('jobsFilters').style.display = 'block'; // إظهار افتراضي عند التحميل
            // تهيئة البيانات
     renderProfessions(professions);
     renderMajors(majors);
@@ -2398,7 +2495,7 @@ function navigateToMajor(majorName) {
             
             const searchInput = document.getElementById('searchInput');
             const isSearchActive = searchInput.value.trim().length > 0;
-            
+             // التأكد من أن الفلترة تعمل فقط في وضع المهن
             if (isSearchActive) {
                 // إذا كان البحث نشطًا، نطبق الفلترة على نتائج البحث
                 const query = searchInput.value.trim().toLowerCase();
@@ -2427,6 +2524,7 @@ function navigateToMajor(majorName) {
                     renderProfessions(filtered);
                 }
             }
+            if (currentSearchType !== 'jobs') return;   
         }
 
         // دالة فلترة التخصصات الجامعية
@@ -3409,9 +3507,18 @@ function navigateToMajor(majorName) {
 
         function linkSearchTypeToView(type) {
     currentSearchType = type;
+    
     const searchInput = document.getElementById('searchInput');
     document.getElementById('mainSearchResults').style.display = 'none'; // إخفاء نتائج البحث القديمة
    // تحديث الـ placeholder حسب النوع
+    // إظهار/إخفاء الفلترة حسب النوع
+    const filtersContainer = document.getElementById('jobsFilters');
+    if (type === 'jobs') {
+        filtersContainer.style.display = 'block';
+    } else {
+        filtersContainer.style.display = 'none';
+        clearFilters(); // تنظيف الفلترات عند التبديل للتخصصات
+    }
    if(type === 'jobs') {
         searchInput.placeholder = "ابحث عن مهنة...";
     } else {
@@ -3604,7 +3711,7 @@ function renderMajorsResults(majorsToRender) {
             </div>
         `;
         container.innerHTML += card;
-    });
+    });           
 }
 
 function clearFilters() {
@@ -3613,6 +3720,15 @@ function clearFilters() {
     checkboxes.forEach(checkbox => {
         checkbox.checked = false;
     });
+       // إلغاء تحديد جميع الفلترات
+       document.querySelectorAll('#jobsFilters input[type="checkbox"]').forEach(checkbox => {
+        checkbox.checked = false;
+    });
+    
+    // إعادة عرض المهن الأصلية
+    if (currentSearchType === 'jobs') {
+        renderProfessions(professions);
+    }
     
     // إعادة عرض البيانات الأصلية
     if (currentSearchType === 'jobs') {
