@@ -1605,7 +1605,46 @@
 #jobsFilters.active {
     display: block; /* إظهار عند الحاجة */
 }
+@media (max-width: 768px) {
+  /* التأكد من الترتيب الصحيح */
+  #com\/hunt .compare-quiz-container {
+    display: flex;
+    flex-direction: column;
+  }
 
+  /* نقل قسم المقارنة للأعلى */
+  #com\/hunt .compare-quiz-container > div:first-child {
+    order: 1;
+  }
+
+  /* نقل قسم الأختبار للأسفل */
+  #com\/hunt .quiz-container {
+    order: 2;
+    margin-top: 2rem;
+  }
+
+  /* تحسين الحقول */
+  #com\/hunt .search-container {
+    margin-bottom: 1rem;
+  }
+
+  #com\/hunt .search-input {
+    width: 100%;
+    padding: 0.8rem;
+  }
+
+  /* منع تداخل النتائج */
+  #com\/hunt #compareResults {
+    margin-top: 1rem;
+    padding: 1rem;
+    overflow-x: auto;
+  }
+
+  /* تعديل حجم الخطوط */
+  #com\/hunt h3 {
+    font-size: 1.2rem;
+  }
+}
     </style>
 </head>
 <body>
