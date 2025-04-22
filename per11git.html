@@ -35,7 +35,17 @@
     "query-input": "required name=search_term"
 }
 }
-</script>
+
+        // دالة وسيطة لفصل الفلترة بناءً على النوع الحالي
+        function onFilterChange() {
+            if (currentSearchType === 'jobs') {
+                filterProfessions();
+            } else {
+                filterMajors();
+            }
+        }
+
+    </script>
 <title>World Careers Hub - الدليل المهني العالمي</title>
 <link href="https://careerhub.example/" rel="canonical"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
@@ -352,6 +362,16 @@
             background: rgba(58,175,169,0.1);
             padding: 0.3rem 0.8rem;
             border-radius: 20px;
+        }
+        .highlight {
+            color: var(--secondary);
+            font-weight: 700;
+            font-size: 1.1rem;
+            background: rgba(58,175,169,0.1);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            justify-content: left;
+
         }
 
         .category-tag {
@@ -1598,104 +1618,7 @@
 }
 
 
-    
-@media (max-width: 768px) {
-  #com\/hunt .search-input {
-    padding-right: 3.5rem !important;
-  }
-
-  #com\/hunt .search-btn {
-    right: 1rem;
-    z-index: 10;
-  }
-}
-
-
-@media (max-width: 550px) {
-  #com\/hunt .search-input {
-    padding: 0.7rem 2.5rem 0.7rem 1rem !important;
-    font-size: 0.95rem;
-  }
-
-  #com\/hunt .search-btn {
-    right: 0.8rem;
-    font-size: 1rem;
-  }
-
-  #com\/hunt .search-container {
-    width: 100%;
-    margin: 0.5rem 0;
-  }
-
-  #com\/hunt .compare-quiz-container {
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-
-  #com\/hunt .content-card > div > div {
-    grid-template-columns: 1fr !important;
-  }
-
-  #com\/hunt h3 {
-    font-size: 1.1rem;
-    text-align: center;
-  }
-}
-
-
-@media (min-width: 600px) and (max-width: 620px) {
-  #com\/hunt .search-input {
-    padding: 0.7rem 2.5rem 0.7rem 1rem !important;
-    font-size: 1rem;
-  }
-
-  #com\/hunt .search-btn {
-    right: 1rem;
-    font-size: 1.1rem;
-  }
-}
-
-
-/* تعديل آمن لإظهار placeholder في جميع الشاشات دون التأثير على الأزرار */
-@media screen and (max-width: 1200px) {
-  #com\/hunt .search-input {
-    padding-right: 3.2rem !important; /* مساحة كافية قبل الأيقونة */
-    padding-left: 1rem !important;
-    font-size: 1rem;
-    direction: rtl;
-  }
-
-  #com\/hunt .search-btn {
-    right: 1rem;
-    z-index: 10;
-  }
-}
-
-
-/* Show category tag at top-left of cards */
-.profession-card .category-tag,
-.profession-card .related-count {
-    position: absolute;
-    font-size: 0.85rem;
-    padding: 0.3rem 0.7rem;
-    border-radius: 15px;
-    color: white;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-}
-
-.profession-card .category-tag {
-    top: 1rem;
-    left: 1rem;
-    background: var(--accent);
-}
-
-.profession-card .related-count {
-    bottom: 1rem;
-    left: 1rem;
-    background: var(--secondary);
-}
-
-</style>
+    </style>
 </head>
 <body>
 <!-- الترويسة -->
@@ -1874,26 +1797,26 @@
 </button>
 </div>
 <div class="filter-container">
-<div class="filter-box">
+<div class="filter-box" id="jobFieldsFilter">
 <h3 class="filter-title">Filter by Job Field:</h3>
 <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
-<input onchange="filterProfessions()" type="checkbox" value="AI"/>
+<input onchange="onFilterChange()" type="checkbox" value="AI"/>
 <span>AI</span>
 </label>
 <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
-<input onchange="filterProfessions()" type="checkbox" value="طب"/>
+<input onchange="onFilterChange()" type="checkbox" value="طب"/>
 <span>Medicine</span>
 </label>
 <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
-<input onchange="filterProfessions()" type="checkbox" value="UX/UI"/>
+<input onchange="onFilterChange()" type="checkbox" value="UX/UI"/>
 <span>UX/UI</span>
 </label>
 <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
-<input onchange="filterProfessions()" type="checkbox" value="هندسة"/>
+<input onchange="onFilterChange()" type="checkbox" value="هندسة"/>
 <span>Engineering</span>
 </label>
 <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
-<input onchange="filterProfessions()" type="checkbox" value="أعمال"/>
+<input onchange="onFilterChange()" type="checkbox" value="أعمال"/>
 <span>Business</span>
 </label>
 </div>
@@ -2108,8 +2031,9 @@
             name: "الطب البشري", 
             field: "العلوم الطبية", 
             description: "يهدف تخصص الطب البشري إلى إعداد أطباء مؤهلين لتشخيص وعلاج الأمراض والإصابات. يتضمن الدراسة العميقة لجسم الإنسان ووظائفه والأمراض التي تصيبه وطرق علاجها.",
-            duration: "6 سنوات دراسية + سنة امتياز",
+            duration: "6 سنوات + سنة امتياز",
             universities: ["جامعة الملك سعود", "جامعة الملك عبدالعزيز", "جامعة القصيم"],
+            jobs: "3 وظائف",
             relatedJobs: [
                 { title: "طبيب عام", salary: "$80,000 - $150,000" },
                 { title: "أخصائي جراحة", salary: "$200,000 - $450,000" },
@@ -2123,6 +2047,7 @@
             description: "يجمع تخصص هندسة الحاسوب بين مبادئ الهندسة الكهربائية وعلوم الحاسوب. يدرس الطلاب تصميم وتطوير أنظمة الحاسوب المادية والبرمجية.",
             duration: "4 سنوات دراسية",
             universities: ["جامعة الملك فهد للبترول", "جامعة الأميرة نورة", "جامعة الطائف"],
+            jobs: "3 وظائف",
             relatedJobs: [
                 { title: "مهندس برمجيات", salary: "$70,000 - $150,000" },
                 { title: "مهندس شبكات", salary: "$80,000 - $160,000" },
@@ -2135,6 +2060,7 @@
             description: "يركز تخصص إدارة الأعمال على دراسة العمليات الإدارية في المنظمات. يشمل التخطيط والتنظيم والقيادة والرقابة على الموارد لتحقيق الأهداف التنظيمية.",
             duration: "4 سنوات دراسية",
             universities: ["جامعة الملك سعود", "جامعة الإمام محمد بن سعود", "جامعة الدمام"],
+            jobs: "3 وظائف",
             relatedJobs: [
                 { title: "مدير مشاريع", salary: "$75,000 - $140,000" },
                 { title: "محلل أعمال", salary: "$60,000 - $100,000" },
@@ -2147,6 +2073,7 @@
             description: "يتعلم طلاب الهندسة المعمارية تصميم المباني والهياكل مع مراعاة الجوانب الجمالية والوظيفية والسلامة. يجمع التخصص بين الفنون والهندسة.",
             duration: "5 سنوات دراسية",
             universities: ["جامعة الملك فهد للبترول", "جامعة الملك سعود", "جامعة جدة"],
+            jobs: "3 وظائف",
             relatedJobs: [
                 { title: "مهندس معماري", salary: "$65,000 - $120,000" },
                 { title: "مصمم داخلي", salary: "$50,000 - $90,000" },
@@ -2159,6 +2086,7 @@
             description: "يركز تخصص الذكاء الاصطناعي على تطوير أنظمة قادرة على محاكاة الذكاء البشري. يشمل تعلم الآلة، معالجة اللغة الطبيعية، الرؤية الحاسوبية وغيرها.",
             duration: "4 سنوات دراسية",
             universities: ["جامعة الملك سعود", "جامعة الأمير مقرن", "جامعة الملك عبدالله"],
+            jobs: "3 وظائف",
             relatedJobs: [
                 { title: "مهندس تعلم آلي", salary: "$100,000 - $200,000" },
                 { title: "باحث في الذكاء الاصطناعي", salary: "$120,000 - $250,000" },
@@ -2422,29 +2350,23 @@ function navigateToMajor(majorName) {
 
         // دالة لعرض التخصصات الجامعية
         // دالة عرض التخصصات المعدلة
-        function renderMajors(majorsToRender) {
-            const container = document.getElementById('majorsContainer');
-            container.innerHTML = '';
-            
-            majorsToRender.forEach(major => {
-                const card = document.createElement('div');
-                card.className = 'profession-card';
-                
-                let jobsHTML = '';
-                if (major.relatedJobs && major.relatedJobs.length > 0) {
-                    jobsHTML = `
-                        <div class="salary-info">
-                            <span>الوظائف المرتبطة:</span>
-                            <span class="highlight">${major.relatedJobs.length} وظيفة</span>
-                        </div>
-                    `;
-                }
+        
+function renderMajors(majorsList) {
+    const container = document.getElementById("majorsContainer");
+    container.innerHTML = "";
+
+    majorsList.forEach(major => {
+        const card = document.createElement("div");
+        card.className = "profession-card";
                 
                 card.innerHTML = `
                     <div class="category-tag">${major.field}</div>
                     <h3>${major.name}</h3>
                     <p style="margin: 1rem 0;">${major.description}</p>
-                    ${jobsHTML}
+                    <div class="salary-info">
+                        <span>السنوات الدراسية :</span>
+                        <span class="highlight">${major.duration}</span>
+                    </div>
                 `;
                 
                 card.addEventListener('click', () => showMajorDetails(major));
@@ -2826,49 +2748,8 @@ function navigateToMajor(majorName) {
             // عرض النتائج المصفاة
             renderBestJobs(filteredJobs);
         }
-        // دالة لعرض المهن
-        // دالة لعرض المهن
-       
-
-        // دالة لعرض التخصصات
-       
-        
-
         // تعديل دالة renderMajors لعرض البطاقات بنفس نمط المهن
-        function renderMajors(majorsToRender) {
-            const container = document.getElementById('majorsContainer');
-            container.innerHTML = '';
-            
-            majorsToRender.forEach(major => {
-                const card = document.createElement('div');
-                card.className = 'profession-card';
-                
-                let jobsHTML = '';
-                if (major.relatedJobs && major.relatedJobs.length > 0) {
-                    jobsHTML = `
-                        <div style="margin-top: 1rem; border-top: 1px dashed #eee; padding-top: 0.8rem;">
-                            <h5 style="color: var(--primary); font-size: 0.9rem; margin-bottom: 0.5rem;">Related Jobs:</h5>
-                            <ul style="font-size: 0.85rem; padding-right: 1rem;">
-                                ${major.relatedJobs.map(job => 
-                                    `<li style="margin-bottom: 0.3rem;">
-                                        ${job.title} <span style="color: var(--secondary);">${job.salary}</span>
-                                    </li>`
-                                ).join('')}
-                            </ul>
-                        </div>
-                    `;
-                }
-                
-                card.innerHTML = `
-                    <div class="category-tag">${major.field}</div>
-                    <h3>${major.name}</h3>
-                    <p>${major.description}</p>
-                    ${jobsHTML}
-                `;
-                
-                container.appendChild(card);
-            });
-        }
+        
         // دالة عرض Best Jobs
         function renderBestJobs(jobs) {
             const container = document.getElementById('bestJobsContainer');
@@ -3701,127 +3582,16 @@ document.addEventListener('click', (e) => {
         searchResults.style.display = 'none';
     }
 });
-    </script>
-<script>
-// تحديث دالة الفلترة لربطها مع البحث
-function filterProfessions() {
-    const selectedCategories = Array.from(document.querySelectorAll('.filter-box input[type="checkbox"]:checked')).map(input => input.value);
-    const searchTerm = document.getElementById('searchInput').value.toLowerCase();
-
-    const container = document.getElementById('professionsContainer');
-    container.innerHTML = '';
-
-    let filtered = professions;
-
-    if (selectedCategories.length > 0) {
-        filtered = filtered.filter(p => selectedCategories.includes(p.category));
-    }
-
-    if (searchTerm.trim() !== '') {
-        filtered = filtered.filter(p => p.title.toLowerCase().includes(searchTerm));
-    }
-
-    if (filtered.length === 0) {
-        container.innerHTML = '<p class="no-results">لا توجد نتائج مطابقة.</p>';
-        return;
-    }
-
-    filtered.forEach(p => {
-        const card = document.createElement('div');
-        card.className = 'profession-card';
-        card.innerHTML = `
-            <div class="category-tag">${p.category}</div>
-            <h3>${p.title}</h3>
-            <p>${p.description}</p>
-            <div class="salary-info">
-                <span class="highlight">${p.avgSalary}</span>
-                <span>${p.experience}</span>
-            </div>
-        `;
-        card.onclick = () => showDetails(p);
-        container.appendChild(card);
-    });
-}
-
-// عند الكتابة في مربع البحث، تُفعّل الفلترة تلقائياً
-const searchInput = document.getElementById('searchInput');
-if (searchInput) {
-    searchInput.addEventListener('input', filterProfessions);
-}
-</script>
-
-<script>
-function filterMajors() {
-    const majorsContainer = document.getElementById('majorsContainer');
-    const selectedFields = Array.from(document.querySelectorAll('.filter-box input[type="checkbox"]:checked')).map(input => input.value);
-    const searchTerm = document.getElementById('searchInput').value.toLowerCase();
-
-    majorsContainer.innerHTML = '';
-
-    let filteredMajors = majors;
-
-    if (selectedFields.length > 0) {
-        filteredMajors = filteredMajors.filter(m => selectedFields.includes(m.field));
-    }
-
-    if (searchTerm.trim() !== '') {
-        filteredMajors = filteredMajors.filter(m => m.name.toLowerCase().includes(searchTerm));
-    }
-
-    if (filteredMajors.length === 0) {
-        majorsContainer.innerHTML = '<p class="no-results">لا توجد نتائج مطابقة.</p>';
-        return;
-    }
-
-    filteredMajors.forEach(m => {
-        const card = document.createElement('div');
-        card.className = 'profession-card';
-        card.innerHTML = `
-            <h3>${m.name}</h3>
-            <p>${m.description}</p>
-            <div class="salary-info">
-                <span class="highlight">${m.duration}</span>
-                <span>${m.field}</span>
-            </div>
-        `;
-        majorsContainer.appendChild(card);
-    });
-}
-
-// Adjust trigger for majors view
-function linkSearchTypeToView(type) {
-    currentSearchType = type;
-    document.getElementById('professionsContainer').style.display = type === 'jobs' ? 'grid' : 'none';
-    document.getElementById('majorsContainer').style.display = type === 'majors' ? 'grid' : 'none';
-
-    document.getElementById('showProfessionsBtn').classList.toggle('active', type === 'jobs');
-    document.getElementById('showMajorsBtn').classList.toggle('active', type === 'majors');
-
-    if (type === 'majors') {
-        filterMajors();
-    } else {
-        filterProfessions();
-    }
-}
-
-// Bind filter update
-document.querySelectorAll('.filter-box input[type="checkbox"]').forEach(cb => {
-    cb.addEventListener('change', () => {
-        if (currentSearchType === 'majors') {
-            filterMajors();
-        } else {
-            filterProfessions();
+    
+        // دالة وسيطة لفصل الفلترة بناءً على النوع الحالي
+        function onFilterChange() {
+            if (currentSearchType === 'jobs') {
+                filterProfessions();
+            } else {
+                filterMajors();
+            }
         }
-    });
-});
 
-document.getElementById('searchInput').addEventListener('input', () => {
-    if (currentSearchType === 'majors') {
-        filterMajors();
-    } else {
-        filterProfessions();
-    }
-});
-</script>
+    </script>
 </body>
 </html>
