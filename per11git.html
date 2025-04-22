@@ -37,7 +37,17 @@
     "query-input": "required name=search_term"
 }
 }
-</script>
+
+        // دالة وسيطة لفصل الفلترة بناءً على النوع الحالي
+        function onFilterChange() {
+            if (currentSearchType === 'jobs') {
+                filterProfessions();
+            } else {
+                filterMajors();
+            }
+        }
+
+    </script>
     <title>World Careers Hub - الدليل المهني العالمي</title>
     <link rel="canonical" href="https://careerhub.example/">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1600,80 +1610,7 @@
 }
 
 
-    
-@media (max-width: 768px) {
-  #com\/hunt .search-input {
-    padding-right: 3.5rem !important;
-  }
-
-  #com\/hunt .search-btn {
-    right: 1rem;
-    z-index: 10;
-  }
-}
-
-
-@media (max-width: 550px) {
-  #com\/hunt .search-input {
-    padding: 0.7rem 2.5rem 0.7rem 1rem !important;
-    font-size: 0.95rem;
-  }
-
-  #com\/hunt .search-btn {
-    right: 0.8rem;
-    font-size: 1rem;
-  }
-
-  #com\/hunt .search-container {
-    width: 100%;
-    margin: 0.5rem 0;
-  }
-
-  #com\/hunt .compare-quiz-container {
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-
-  #com\/hunt .content-card > div > div {
-    grid-template-columns: 1fr !important;
-  }
-
-  #com\/hunt h3 {
-    font-size: 1.1rem;
-    text-align: center;
-  }
-}
-
-
-@media (min-width: 600px) and (max-width: 620px) {
-  #com\/hunt .search-input {
-    padding: 0.7rem 2.5rem 0.7rem 1rem !important;
-    font-size: 1rem;
-  }
-
-  #com\/hunt .search-btn {
-    right: 1rem;
-    font-size: 1.1rem;
-  }
-}
-
-
-/* تعديل آمن لإظهار placeholder في جميع الشاشات دون التأثير على الأزرار */
-@media screen and (max-width: 1200px) {
-  #com\/hunt .search-input {
-    padding-right: 3.2rem !important; /* مساحة كافية قبل الأيقونة */
-    padding-left: 1rem !important;
-    font-size: 1rem;
-    direction: rtl;
-  }
-
-  #com\/hunt .search-btn {
-    right: 1rem;
-    z-index: 10;
-  }
-}
-
-</style>
+    </style>
 </head>
 <body>
     <!-- الترويسة -->
@@ -1875,28 +1812,28 @@
     </button>
 </div>
             <div class="filter-container">
-                <div class="filter-box">
+                <div class="filter-box" id="jobFieldsFilter">
                     
                     
                     <h3 class="filter-title">Filter by Job Field:</h3>
                     <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
-                        <input type="checkbox" value="AI" onchange="filterProfessions()">
+                        <input type="checkbox" value="AI" onchange="onFilterChange()">
                         <span>AI</span>
                     </label>
                     <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
-                        <input type="checkbox" value="طب" onchange="filterProfessions()">
+                        <input type="checkbox" value="طب" onchange="onFilterChange()">
                         <span>Medicine</span>
                     </label>
                     <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
-                        <input type="checkbox" value="UX/UI" onchange="filterProfessions()">
+                        <input type="checkbox" value="UX/UI" onchange="onFilterChange()">
                         <span>UX/UI</span>
                     </label>
                     <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
-                        <input type="checkbox" value="هندسة" onchange="filterProfessions()">
+                        <input type="checkbox" value="هندسة" onchange="onFilterChange()">
                         <span>Engineering</span>
                     </label>
                     <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
-                        <input type="checkbox" value="أعمال" onchange="filterProfessions()">
+                        <input type="checkbox" value="أعمال" onchange="onFilterChange()">
                         <span>Business</span>
                     </label>
                 </div>
@@ -3711,6 +3648,16 @@ document.addEventListener('click', (e) => {
         searchResults.style.display = 'none';
     }
 });
+    
+        // دالة وسيطة لفصل الفلترة بناءً على النوع الحالي
+        function onFilterChange() {
+            if (currentSearchType === 'jobs') {
+                filterProfessions();
+            } else {
+                filterMajors();
+            }
+        }
+
     </script>
 </body>
 </html>
