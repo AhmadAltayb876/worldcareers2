@@ -2435,7 +2435,7 @@ function renderMajors(majorsList) {
                 let filteredProfessions = professions.filter(prof => 
                     (prof.title.toLowerCase().includes(query) || 
                     prof.description.toLowerCase().includes(query) ||
-                    prof.industry.toLowerCase().includes(query) ||
+                    prof.jobo.toLowerCase().includes(query) ||
                     prof.category.toLowerCase().includes(query))
                 );
                 
@@ -2935,7 +2935,7 @@ function renderMajors(majorsList) {
             results.forEach(item => {
                 const title = compareType === 'jobs' ? item.title : item.name;
                 const desc = compareType === 'jobs' ? item.description : item.description;
-                const type = compareType === 'jobs' ? item.industry : item.field;
+                const type = compareType === 'jobs' ? item.jobo : item.jobo;
                 
                 html += `
                     <div class="search-result-item" onclick="selectCompareItem(${inputNumber}, '${title.replace(/'/g, "\\'")}')">
@@ -2998,14 +2998,14 @@ function renderMajors(majorsList) {
                 // مقارنة المهن
                 tableHTML = `
                     <tr>
-                        <td>الوصف الوظيفي</td>
-                        <td>${selectedItem1.description}</td>
-                        <td>${selectedItem2.description}</td>
+                        <td>ملخص المهنة</td>
+                        <td>${selectedItem1.summarize}</td>
+                        <td>${selectedItem2.summarize}</td>
                     </tr>
                     <tr>
-                        <td>المجال</td>
-                        <td>${selectedItem1.industry}</td>
-                        <td>${selectedItem2.industry}</td>
+                        <td>فرص العمل</td>
+                        <td>${selectedItem1.jobo}</td>
+                        <td>${selectedItem2.jobo}</td>
                     </tr>
                     <tr>
                         <td>الراتب السنوي</td>
@@ -3030,19 +3030,29 @@ function renderMajors(majorsList) {
                 // مقارنة التخصصات
                 tableHTML = `
                     <tr>
-                        <td>الوصف</td>
-                        <td>${selectedItem1.description}</td>
-                        <td>${selectedItem2.description}</td>
+                        <td>ملخص المهنة</td>
+                        <td>${selectedItem1.summarize}</td>
+                        <td>${selectedItem2.summarize}</td>
                     </tr>
                     <tr>
-                        <td>المجال</td>
-                        <td>${selectedItem1.field}</td>
-                        <td>${selectedItem2.field}</td>
+                        <td>فرص العمل</td>
+                        <td>${selectedItem1.jobo}</td>
+                        <td>${selectedItem2.jobo}</td>
                     </tr>
                     <tr>
                         <td>عدد الوظائف المرتبطة</td>
                         <td>${selectedItem1.relatedJobs ? selectedItem1.relatedJobs.length : 0}</td>
                         <td>${selectedItem2.relatedJobs ? selectedItem2.relatedJobs.length : 0}</td>
+                    </tr>
+                    <tr>
+                        <td>السنوات الدرسية/td>
+                        <td>${selectedItem1.duration}</td>
+                        <td>${selectedItem2.duration}</td>
+                    </tr>
+                   <tr>
+                        <td>عدد الساعات الدراسية</td>
+                        <td>${selectedItem1.mid}</td>
+                        <td>${selectedItem2.mid}</td>
                     </tr>
                 `;
                 
@@ -3058,16 +3068,16 @@ function renderMajors(majorsList) {
                 detailsHTML = `
                     <div class="compare-detail-card">
                         <h4>${selectedItem1.title}</h4>
-                        <p><strong>المجال:</strong> ${selectedItem1.industry}</p>
-                        <p><strong>الوصف:</strong> ${selectedItem1.description}</p>
+                        <p><strong>فرص العمل:</strong> ${selectedItem1.jobo}</p>
+                        <p><strong>ملخص المهنة:</strong> ${selectedItem1.summarize}</p>
                         <p><strong>الراتب:</strong> $${selectedItem1.avgSalary}</p>
                         <p><strong>الخبرة المطلوبة:</strong> ${selectedItem1.experience}</p>
                         <p><strong>مستوى الطلب:</strong> ${selectedItem1.demand}</p>
                     </div>
                     <div class="compare-detail-card">
                         <h4>${selectedItem2.title}</h4>
-                        <p><strong>المجال:</strong> ${selectedItem2.industry}</p>
-                        <p><strong>الوصف:</strong> ${selectedItem2.description}</p>
+                        <p><strong>فرص العمل :</strong> ${selectedItem2.jobo}</p>
+                        <p><strong>الوصف:</strong> ${selectedItem2.summarize}</p>
                         <p><strong>الراتب:</strong> $${selectedItem2.avgSalary}</p>
                         <p><strong>الخبرة المطلوبة:</strong> ${selectedItem2.experience}</p>
                         <p><strong>مستوى الطلب:</strong> ${selectedItem2.demand}</p>
@@ -3077,8 +3087,8 @@ function renderMajors(majorsList) {
                 detailsHTML = `
                     <div class="compare-detail-card">
                         <h4>${selectedItem1.name}</h4>
-                        <p><strong>المجال:</strong> ${selectedItem1.field}</p>
-                        <p><strong>الوصف:</strong> ${selectedItem1.description}</p>
+                        <p><strong>فرص العمل :</strong> ${selectedItem1.jobo}</p>
+                        <p><strong>ملخص التخصص :</strong> ${selectedItem1.description}</p>
                         ${selectedItem1.relatedJobs && selectedItem1.relatedJobs.length > 0 ? `
                             <p><strong>الوظائف المرتبطة:</strong></p>
                             <ul>
@@ -3090,8 +3100,8 @@ function renderMajors(majorsList) {
                     </div>
                     <div class="compare-detail-card">
                         <h4>${selectedItem2.name}</h4>
-                        <p><strong>المجال:</strong> ${selectedItem2.field}</p>
-                        <p><strong>الوصف:</strong> ${selectedItem2.description}</p>
+                        <p><strong>فرص العمل :</strong> ${selectedItem2.field}</p>
+                        <p><strong>ملخص التخصص :</strong> ${selectedItem2.summarize}</p>
                         ${selectedItem2.relatedJobs && selectedItem2.relatedJobs.length > 0 ? `
                             <p><strong>الوظائف المرتبطة:</strong></p>
                             <ul>
@@ -3276,7 +3286,7 @@ function renderMajors(majorsList) {
                 matchElement.innerHTML = `
                     <h4>${prof.title}</h4>
                     <div class="match-percent">${prof.matchPercent}%</div>
-                    <p><strong>المجال:</strong> ${prof.industry}</p>
+                    <p><strong>فرص العمل :</strong> ${prof.jobo}</p>
                     <p><strong>الراتب المتوسط:</strong> $${prof.avgSalary}</p>
                     <p><strong>الطلب:</strong> ${prof.demand}</p>
                 `;
@@ -3306,7 +3316,7 @@ function renderMajors(majorsList) {
                 else if (preferences.salary === 'any') score += 5;
                 
                 // مطابقة المجال
-                if ((preferences.field === 'tech' && (prof.category === 'AI' || prof.industry === 'التكنولوجيا')) ||
+                if ((preferences.field === 'tech' && (prof.category === 'AI')) ||
                     (preferences.field === 'medical' && prof.category === 'طب') ||
                     (preferences.field === 'engineering' && prof.category === 'هندسة') ||
                     (preferences.field === 'business' && prof.category === 'أعمال')) {
@@ -3446,7 +3456,7 @@ function performSearch(query, type) {
             professions: professions.filter(prof =>
                 prof.title.toLowerCase().includes(normalizedQuery) ||
                 prof.description.toLowerCase().includes(normalizedQuery) ||
-                prof.industry.toLowerCase().includes(normalizedQuery)
+                prof.category.toLowerCase().includes(normalizedQuery)
             ),
             majors: []
         };
@@ -3525,7 +3535,7 @@ if (activeSection === '#jobs') {
             item.innerHTML = `
                 <h4>${prof.title}</h4>
                 <p>${prof.description.substring(0, 60)}...</p>
-                <small>المجال: ${prof.industry}</small>
+                <small>فرص العمل: ${prof.jobo}</small>
             `;
             item.addEventListener('click', () => {
                 showDetails(prof);
@@ -3540,7 +3550,7 @@ if (activeSection === '#jobs') {
             item.innerHTML = `
                 <h4>${major.name}</h4>
                 <p>${major.description.substring(0, 60)}...</p>
-                <small>المجال: ${major.field}</small>
+                <small>فرص العمل: ${major.jobo}</small>
             `;
             item.addEventListener('click', () => {
                 showMajorDetails(major);
@@ -3577,8 +3587,8 @@ function renderMajorsResults(majors) {
                 <h3>${major.name}</h3>
                 <p>ملخص التخصص : ${major.summarize}</p>
                 <div class="salary-info">
-                    <span>عدد الوظائف:</span>
-                    <span class="highlight">${major.relatedJobs.length}</span>
+                    <span>السنوات الدراسية :</span>
+                    <span class="highlight">${major.duration}</span>
                 </div>
             </div>
         `;
