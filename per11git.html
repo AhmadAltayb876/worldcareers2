@@ -1800,47 +1800,6 @@
 </div>
 </div>
 </div>
-<!-- قسم الاختبار المهني (الآن على اليمين) -->
-<div class="quiz-container">
-<div class="quiz-header">
-<h3>اختبار المهن المناسبة</h3>
-<p>اكتشف المهنة التي تناسب مهاراتك واهتماماتك من خلال هذا الاختبار البسيط</p>
-</div>
-<div class="quiz-step active" id="quizWelcome">
-<p style="text-align: center; margin-bottom: 2rem;">سيساعدك هذا الاختبار على تحديد المهن التي تتوافق مع تفضيلاتك في:</p>
-<ul style="margin-bottom: 2rem; padding-right: 1.5rem;">
-<li>نطاق الراتب المطلوب</li>
-<li>مجال العمل المفضل</li>
-<li>مستوى الطلب في سوق العمل</li>
-<li>المهارات الشخصية</li>
-</ul>
-<button class="start-quiz-btn" onclick="startQuiz()">ابدأ الاختبار</button>
-</div>
-<div class="quiz-step" id="quizQuestions">
-<div class="quiz-progress">
-<div class="quiz-progress-bar" id="quizProgressBar" style="width: 0%"></div>
-</div>
-<div class="question-text" id="currentQuestion"></div>
-<div class="quiz-options" id="quizOptions"></div>
-</div>
-<div class="quiz-step" id="quizResults">
-<div class="quiz-results">
-<h3 style="color: var(--primary); margin-bottom: 1.5rem;">نتائج الاختبار</h3>
-<p style="margin-bottom: 1.5rem;">بناءً على إجاباتك، إليك أفضل المهن التي تناسبك:</p>
-<div id="careerMatches"></div>
-<div class="quiz-actions">
-<button class="quiz-btn restart-btn" onclick="startQuiz()">
-<i class="fas fa-redo"></i> إعادة الاختبار
-                            </button>
-<button class="quiz-btn home-btn" onclick="goToHome()">
-<i class="fas fa-home"></i> الصفحة الرئيسية
-                            </button>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
 </section>
 <!-- قسم About Us -->
 <section class="content-section" id="about">
@@ -1852,6 +1811,52 @@
 <p style="font-size: 1.1rem;">نقدم معلومات محدثة عن الرواتب، متطلبات المهارات، اتجاهات سوق العمل، وأفضل المسارات الوظيفية.</p>
 </div>
 </section>
+<!-- قسم الاختبار المستقل -->
+<section class="content-section" id="quiz">
+    <h2 style="color: var(--primary); text-align: center; margin-bottom: 2rem;">
+      اختبار المهن المناسبة
+    </h2>
+    <div class="quiz-container">
+        <div class="quiz-header">
+            <h3>اختبار المهن المناسبة</h3>
+            <p>اكتشف المهنة التي تناسب مهاراتك واهتماماتك من خلال هذا الاختبار البسيط</p>
+            </div>
+            <div class="quiz-step active" id="quizWelcome">
+            <p style="text-align: center; margin-bottom: 2rem;">سيساعدك هذا الاختبار على تحديد المهن التي تتوافق مع تفضيلاتك في:</p>
+            <ul style="margin-bottom: 2rem; padding-right: 1.5rem;">
+            <li>نطاق الراتب المطلوب</li>
+            <li>مجال العمل المفضل</li>
+            <li>مستوى الطلب في سوق العمل</li>
+            <li>المهارات الشخصية</li>
+            </ul>
+            <button class="start-quiz-btn" onclick="startQuiz()">ابدأ الاختبار</button>
+            </div>
+            <div class="quiz-step" id="quizQuestions">
+            <div class="quiz-progress">
+            <div class="quiz-progress-bar" id="quizProgressBar" style="width: 0%"></div>
+            </div>
+            <div class="question-text" id="currentQuestion"></div>
+            <div class="quiz-options" id="quizOptions"></div>
+            </div>
+            <div class="quiz-step" id="quizResults">
+            <div class="quiz-results">
+            <h3 style="color: var(--primary); margin-bottom: 1.5rem;">نتائج الاختبار</h3>
+            <p style="margin-bottom: 1.5rem;">بناءً على إجاباتك، إليك أفضل المهن التي تناسبك:</p>
+            <div id="careerMatches"></div>
+            <div class="quiz-actions">
+            <button class="quiz-btn restart-btn" onclick="startQuiz()">
+            <i class="fas fa-redo"></i> إعادة الاختبار
+                                        </button>
+            <button class="quiz-btn home-btn" onclick="goToHome()">
+            <i class="fas fa-home"></i> الصفحة الرئيسية
+                                        </button>
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+    </div>
+  </section>
 <!-- قسم Jobs and Careers (الواجهة الأساسية) -->
 <section id="jobs">
 <!-- بالنسخة المعدلة -->
