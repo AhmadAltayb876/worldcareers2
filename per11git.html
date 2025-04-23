@@ -1673,6 +1673,36 @@
         font-size: 1rem;
     }
   
+    @media (max-width: 568px) {
+  /* stack & center the container */
+  .nav-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 0.5rem 1rem;
+  }
+
+  /* full-width, evenly spaced links */
+  .nav-links {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+  }
+
+  /* each link grows to fill the same space */
+  .nav-link,
+  .nav-link.quiz-btn {
+    flex: 1 1 auto;
+    max-width: none;     /* no cap on width */
+    padding: 0.6rem 0.8rem;
+    text-align: center;
+    margin: 0;
+    white-space: nowrap;
+  }
+}
+
     </style>
 </head>
 <body>
