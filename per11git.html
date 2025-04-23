@@ -3637,5 +3637,41 @@ document.addEventListener('click', (e) => {
         }
 
     </script>
+
+<script>
+// Original onFilterChange()
+function onFilterChange() {
+    const query = document.getElementById('searchInput').value.trim().toLowerCase();
+    const checkboxes = document.querySelectorAll('#jobFieldsFilter input[type="checkbox"]:checked');
+    const selectedCategories = Array.from(checkboxes).map(cb => cb.value);
+    const isFiltering = selectedCategories.length > 0;
+
+    const dataSource = currentSearchType === 'jobs' ? professions : majors;
+    const results = dataSource.filter(item => {
+        const title = (item.title || item.name || '').toLowerCase();
+        const category = item.category || item.field || '';
+        const matchesSearch = !query || title.includes(query);
+        const matchesFilter = !isFiltering || selectedCategories.includes(category);
+        return matchesSearch && matchesFilter;
+    });
+
+    if (currentSearchType === 'jobs') {
+        renderProfessions(results);
+    } else {
+        renderMajors(results);
+    }
+}
+
+// Modify search event to trigger onFilterChange after typing
+const searchInput = document.getElementById('searchInput');
+if (searchInput) {
+    searchInput.addEventListener('input', () => {
+        onFilterChange();
+        document.getElementById('mainSearchResults').style.display = searchInput.value.trim() ? 'block' : 'none';
+        document.getElementById('searchQueryText').innerText = searchInput.value.trim();
+    });
+}
+</script>
+
 </body>
 </html>
