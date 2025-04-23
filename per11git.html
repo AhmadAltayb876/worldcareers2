@@ -22,7 +22,7 @@
 <meta content="شاهد بنفسك: تقرير مفصل عن 89 مهنة مستقبلية مع معدل نمو يصل لـ 300% + شهادات معتمدة مجانًا" property="twitter:description"/>
 <meta content="https://careerhub.example/twitter-card.jpg" property="twitter:image"/>
 <!-- Schema.org for Rich Snippets -->
-<script type="application/ld+json">
+<script type="application/ld+json">             
 {
     "@context": "https://schema.org",
     "@type": "WebSite",
@@ -1616,15 +1616,77 @@
     background: rgba(10, 132, 255, 0.1) ;
     transform: translateY(-1px);
 }
+/* زر الاختبار في الهيدر */
+.nav-link.quiz-btn {
+    color: white;
+    padding: 0.4rem 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    border-radius: 25px;
+    display: flex
+;
+    align-items: center;
+    gap: 0.7rem;
+    margin-left: 0.5rem;
+    box-shadow: 0 3px 12px rgba(10, 132, 255, 0.2);
+    position: relative;
+    z-index: 1000;
+    border: none;
+    text-decoration: none !important;
 
 
-    </style>
+}
+.nav-link.quiz-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+}
+
+
+    
+/* حاوية الشعار وزر الاختبار */
+.logo-quiz-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+/* تحكم في ظهور زر الاختبار في الlogo والnav-links */
+@media (min-width: 567px) {
+  .logo-quiz-btn { display: none !important; }
+  .navbar .nav-links .quiz-btn { display: inline-block !important; }
+}
+@media (max-width: 568px) {
+  .navbar .nav-links .quiz-btn { display: none !important; }
+  .logo-quiz-btn { display: inline-block !important; }
+}
+
+  .logo-quiz-wrapper .logo-quiz-btn {
+    margin-left: 100px !important;
+  }
+   
+  .quiz-label {
+        display: inline !important;
+        font-size: 0.9rem;
+    }
+    
+    .fa-brain {
+        font-size: 1rem;
+    }
+  
+</style>
 </head>
 <body>
 <!-- الترويسة -->
 <nav class="navbar">
 <div class="nav-container">
-<a class="logo" href="#">World<span>Careers</span></a>
+<div class="logo-quiz-wrapper">
+  <a class="logo" href="#">World<span>Careers</span></a>
+  <a class="nav-link quiz-btn logo-quiz-btn" href="#quiz">
+    <i class="fas fa-brain"></i>
+    <span class="quiz-label"style="font: 1.1em sans-serif;">اكتشف مهنتك</span>
+
+</a>
+</div>
 <!-- شريط البحث -->
 <!-- داخل قسم navbar -->
 <div class="search-container">
@@ -1641,7 +1703,15 @@
 <a class="nav-link" href="#about">عنا</a>
 <a class="nav-link" href="#best-jobs">افضل المهن</a>
 <a class="nav-link" href="#com/hunt">قارن </a>
-<a class="nav-link active" href="#jobs">المهن و التخصصات</a>
+
+     
+
+<a class="nav-link active" href="#jobs">المهن و التخصصات</a> 
+<!-- إضافة زر الاختبار هنا -->
+      <a class="nav-link quiz-btn" href="#quiz" >
+        <i class="fas fa-brain"></i>
+        <span class="quiz-label"style="font: 1.1em sans-serif;">اكتشف مهنتك</span>
+    </a>
 </div>
 </div>
 </nav>
@@ -2435,7 +2505,7 @@ function renderMajors(majorsList) {
                 let filteredProfessions = professions.filter(prof => 
                     (prof.title.toLowerCase().includes(query) || 
                     prof.description.toLowerCase().includes(query) ||
-                    prof.jobo.toLowerCase().includes(query) ||
+                    prof.industry.toLowerCase().includes(query) ||
                     prof.category.toLowerCase().includes(query))
                 );
                 
@@ -2935,7 +3005,7 @@ function renderMajors(majorsList) {
             results.forEach(item => {
                 const title = compareType === 'jobs' ? item.title : item.name;
                 const desc = compareType === 'jobs' ? item.description : item.description;
-                const type = compareType === 'jobs' ? item.jobo : item.jobo;
+                const type = compareType === 'jobs' ? item.industry : item.field;
                 
                 html += `
                     <div class="search-result-item" onclick="selectCompareItem(${inputNumber}, '${title.replace(/'/g, "\\'")}')">
@@ -2998,14 +3068,14 @@ function renderMajors(majorsList) {
                 // مقارنة المهن
                 tableHTML = `
                     <tr>
-                        <td>ملخص المهنة</td>
-                        <td>${selectedItem1.summarize}</td>
-                        <td>${selectedItem2.summarize}</td>
+                        <td>الوصف الوظيفي</td>
+                        <td>${selectedItem1.description}</td>
+                        <td>${selectedItem2.description}</td>
                     </tr>
                     <tr>
-                        <td>فرص العمل</td>
-                        <td>${selectedItem1.jobo}</td>
-                        <td>${selectedItem2.jobo}</td>
+                        <td>المجال</td>
+                        <td>${selectedItem1.industry}</td>
+                        <td>${selectedItem2.industry}</td>
                     </tr>
                     <tr>
                         <td>الراتب السنوي</td>
@@ -3030,29 +3100,19 @@ function renderMajors(majorsList) {
                 // مقارنة التخصصات
                 tableHTML = `
                     <tr>
-                        <td>ملخص المهنة</td>
-                        <td>${selectedItem1.summarize}</td>
-                        <td>${selectedItem2.summarize}</td>
+                        <td>الوصف</td>
+                        <td>${selectedItem1.description}</td>
+                        <td>${selectedItem2.description}</td>
                     </tr>
                     <tr>
-                        <td>فرص العمل</td>
-                        <td>${selectedItem1.jobo}</td>
-                        <td>${selectedItem2.jobo}</td>
+                        <td>المجال</td>
+                        <td>${selectedItem1.field}</td>
+                        <td>${selectedItem2.field}</td>
                     </tr>
                     <tr>
                         <td>عدد الوظائف المرتبطة</td>
                         <td>${selectedItem1.relatedJobs ? selectedItem1.relatedJobs.length : 0}</td>
                         <td>${selectedItem2.relatedJobs ? selectedItem2.relatedJobs.length : 0}</td>
-                    </tr>
-                    <tr>
-                        <td>السنوات الدرسية/td>
-                        <td>${selectedItem1.duration}</td>
-                        <td>${selectedItem2.duration}</td>
-                    </tr>
-                   <tr>
-                        <td>عدد الساعات الدراسية</td>
-                        <td>${selectedItem1.mid}</td>
-                        <td>${selectedItem2.mid}</td>
                     </tr>
                 `;
                 
@@ -3068,16 +3128,16 @@ function renderMajors(majorsList) {
                 detailsHTML = `
                     <div class="compare-detail-card">
                         <h4>${selectedItem1.title}</h4>
-                        <p><strong>فرص العمل:</strong> ${selectedItem1.jobo}</p>
-                        <p><strong>ملخص المهنة:</strong> ${selectedItem1.summarize}</p>
+                        <p><strong>المجال:</strong> ${selectedItem1.industry}</p>
+                        <p><strong>الوصف:</strong> ${selectedItem1.description}</p>
                         <p><strong>الراتب:</strong> $${selectedItem1.avgSalary}</p>
                         <p><strong>الخبرة المطلوبة:</strong> ${selectedItem1.experience}</p>
                         <p><strong>مستوى الطلب:</strong> ${selectedItem1.demand}</p>
                     </div>
                     <div class="compare-detail-card">
                         <h4>${selectedItem2.title}</h4>
-                        <p><strong>فرص العمل :</strong> ${selectedItem2.jobo}</p>
-                        <p><strong>الوصف:</strong> ${selectedItem2.summarize}</p>
+                        <p><strong>المجال:</strong> ${selectedItem2.industry}</p>
+                        <p><strong>الوصف:</strong> ${selectedItem2.description}</p>
                         <p><strong>الراتب:</strong> $${selectedItem2.avgSalary}</p>
                         <p><strong>الخبرة المطلوبة:</strong> ${selectedItem2.experience}</p>
                         <p><strong>مستوى الطلب:</strong> ${selectedItem2.demand}</p>
@@ -3087,8 +3147,8 @@ function renderMajors(majorsList) {
                 detailsHTML = `
                     <div class="compare-detail-card">
                         <h4>${selectedItem1.name}</h4>
-                        <p><strong>فرص العمل :</strong> ${selectedItem1.jobo}</p>
-                        <p><strong>ملخص التخصص :</strong> ${selectedItem1.description}</p>
+                        <p><strong>المجال:</strong> ${selectedItem1.field}</p>
+                        <p><strong>الوصف:</strong> ${selectedItem1.description}</p>
                         ${selectedItem1.relatedJobs && selectedItem1.relatedJobs.length > 0 ? `
                             <p><strong>الوظائف المرتبطة:</strong></p>
                             <ul>
@@ -3100,8 +3160,8 @@ function renderMajors(majorsList) {
                     </div>
                     <div class="compare-detail-card">
                         <h4>${selectedItem2.name}</h4>
-                        <p><strong>فرص العمل :</strong> ${selectedItem2.field}</p>
-                        <p><strong>ملخص التخصص :</strong> ${selectedItem2.summarize}</p>
+                        <p><strong>المجال:</strong> ${selectedItem2.field}</p>
+                        <p><strong>الوصف:</strong> ${selectedItem2.description}</p>
                         ${selectedItem2.relatedJobs && selectedItem2.relatedJobs.length > 0 ? `
                             <p><strong>الوظائف المرتبطة:</strong></p>
                             <ul>
@@ -3286,7 +3346,7 @@ function renderMajors(majorsList) {
                 matchElement.innerHTML = `
                     <h4>${prof.title}</h4>
                     <div class="match-percent">${prof.matchPercent}%</div>
-                    <p><strong>فرص العمل :</strong> ${prof.jobo}</p>
+                    <p><strong>المجال:</strong> ${prof.industry}</p>
                     <p><strong>الراتب المتوسط:</strong> $${prof.avgSalary}</p>
                     <p><strong>الطلب:</strong> ${prof.demand}</p>
                 `;
@@ -3316,7 +3376,7 @@ function renderMajors(majorsList) {
                 else if (preferences.salary === 'any') score += 5;
                 
                 // مطابقة المجال
-                if ((preferences.field === 'tech' && (prof.category === 'AI')) ||
+                if ((preferences.field === 'tech' && (prof.category === 'AI' || prof.industry === 'التكنولوجيا')) ||
                     (preferences.field === 'medical' && prof.category === 'طب') ||
                     (preferences.field === 'engineering' && prof.category === 'هندسة') ||
                     (preferences.field === 'business' && prof.category === 'أعمال')) {
@@ -3456,7 +3516,7 @@ function performSearch(query, type) {
             professions: professions.filter(prof =>
                 prof.title.toLowerCase().includes(normalizedQuery) ||
                 prof.description.toLowerCase().includes(normalizedQuery) ||
-                prof.category.toLowerCase().includes(normalizedQuery)
+                prof.industry.toLowerCase().includes(normalizedQuery)
             ),
             majors: []
         };
@@ -3535,7 +3595,7 @@ if (activeSection === '#jobs') {
             item.innerHTML = `
                 <h4>${prof.title}</h4>
                 <p>${prof.description.substring(0, 60)}...</p>
-                <small>فرص العمل: ${prof.jobo}</small>
+                <small>المجال: ${prof.industry}</small>
             `;
             item.addEventListener('click', () => {
                 showDetails(prof);
@@ -3550,7 +3610,7 @@ if (activeSection === '#jobs') {
             item.innerHTML = `
                 <h4>${major.name}</h4>
                 <p>${major.description.substring(0, 60)}...</p>
-                <small>فرص العمل: ${major.jobo}</small>
+                <small>المجال: ${major.field}</small>
             `;
             item.addEventListener('click', () => {
                 showMajorDetails(major);
@@ -3587,8 +3647,8 @@ function renderMajorsResults(majors) {
                 <h3>${major.name}</h3>
                 <p>ملخص التخصص : ${major.summarize}</p>
                 <div class="salary-info">
-                    <span>السنوات الدراسية :</span>
-                    <span class="highlight">${major.duration}</span>
+                    <span>عدد الوظائف:</span>
+                    <span class="highlight">${major.relatedJobs.length}</span>
                 </div>
             </div>
         `;
@@ -3637,41 +3697,5 @@ document.addEventListener('click', (e) => {
         }
 
     </script>
-
-<script>
-// Original onFilterChange()
-function onFilterChange() {
-    const query = document.getElementById('searchInput').value.trim().toLowerCase();
-    const checkboxes = document.querySelectorAll('#jobFieldsFilter input[type="checkbox"]:checked');
-    const selectedCategories = Array.from(checkboxes).map(cb => cb.value);
-    const isFiltering = selectedCategories.length > 0;
-
-    const dataSource = currentSearchType === 'jobs' ? professions : majors;
-    const results = dataSource.filter(item => {
-        const title = (item.title || item.name || '').toLowerCase();
-        const category = item.category || item.field || '';
-        const matchesSearch = !query || title.includes(query);
-        const matchesFilter = !isFiltering || selectedCategories.includes(category);
-        return matchesSearch && matchesFilter;
-    });
-
-    if (currentSearchType === 'jobs') {
-        renderProfessions(results);
-    } else {
-        renderMajors(results);
-    }
-}
-
-// Modify search event to trigger onFilterChange after typing
-const searchInput = document.getElementById('searchInput');
-if (searchInput) {
-    searchInput.addEventListener('input', () => {
-        onFilterChange();
-        document.getElementById('mainSearchResults').style.display = searchInput.value.trim() ? 'block' : 'none';
-        document.getElementById('searchQueryText').innerText = searchInput.value.trim();
-    });
-}
-</script>
-
 </body>
 </html>
