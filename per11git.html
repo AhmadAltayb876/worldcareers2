@@ -286,7 +286,7 @@
         .header {
             background: linear-gradient(135deg, var(--primary) 0%, #1B2A4E 100%);
             color: white;
-            padding: 4rem 1rem;
+            padding: 3rem 1rem;
             text-align: center;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
             border-bottom: 4px solid var(--secondary);
@@ -411,7 +411,7 @@
         /* أقسام المحتوى */
         .content-section {
             max-width: 1000px;
-            margin: 4rem auto;
+            margin: 1rem auto;
             padding: 0 2rem;
             display: none;
             direction: rtl;
@@ -1557,7 +1557,7 @@
     justify-content: center;
     gap: 1rem;
     width: 100%;
-    margin-bottom: 2rem;
+    margin-bottom: 0.5rem;
 }
 
 /* تحسين الشكل عند النقر */
@@ -1591,7 +1591,7 @@
 /* التعديلات الجديدة فقط للأزرار */
 #jobs .filter-group {
     margin-top: 30px ; /* مسافة أكبر من الهيدر */
-    gap: 10px ; /* مسافة بين الأزرار */
+    gap: 0px ; /* مسافة بين الأزرار */
 }
 
 #jobs .filter-item {
@@ -1599,7 +1599,7 @@
     font-size: 16px ;
     width: auto ; /* عرض حسب المحتوى */
     min-width: 160px ; /* أقل عرض مسموح */
-    border-radius: 25px ;
+    border-radius: 10px ;
     background: var(--light) ;
     border: 2px solid var(--primary) ;
     color: var(--primary) ;
@@ -1702,6 +1702,76 @@
     white-space: nowrap;
   }
 }
+/* داخل media query للشاشات الصغيرة */
+@media (max-width: 768px) {
+  #com\/hunt .compare-quiz-container > div {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem;
+  }
+}
+#com\/hunt table {
+  width: 100%;
+  min-width: 800px; /* حد أدنى للعرض */
+  table-layout: fixed;
+}
+
+#com\/hunt th, 
+#com\/hunt td {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 1rem;
+}
+#com\/hunt .search-container {
+  max-width: 100%;
+  margin: 0;
+}
+
+#com\/hunt .search-input {
+  width: 100%;
+  padding: 1rem;
+}
+
+#com\/hunt #compareBtn {
+  width: 100%;
+  max-width: 300px;
+  padding: 1rem;
+  font-size: 1.1rem;
+}
+#com\/hunt .content-card {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+#com\/hunt .compare-quiz-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+@media (max-width: 480px) {
+  #com\/hunt .filter-item {
+    font-size: 0.9rem;
+    padding: 0.8rem;
+  }
+  
+  #com\/hunt table {
+    font-size: 0.9rem;
+  }
+  
+  #com\/hunt .compare-detail-card {
+    padding: 1rem;
+  }
+}
+#com\/hunt .compare-detail-card {
+  transition: transform 0.3s ease;
+  border: 2px solid var(--light);
+}
+
+#com\/hunt .compare-detail-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--primary);
+}
 
     </style>
 </head>
@@ -1749,7 +1819,6 @@
 </header>
 <!-- قسم Best Jobs & Majors -->
 <section class="content-section" id="best-jobs">
-<h2 style="color: var(--primary); text-align: center; margin-bottom: 2rem;">Best Jobs &amp; Majors</h2>
 <div class="filter-box">
 <div class="filter-group">
 <div class="filter-item" data-filter="best" onclick="toggleFilter(this, 'best')">
@@ -1773,7 +1842,6 @@
 </section>
 <!-- قسم compare / Hunt a job -->
 <section class="content-section" id="com/hunt">
-<h2 style="color: var(--primary); text-align: center; margin-bottom: 2rem;">Compare / Hunt a job</h2>
 <div class="content-card">
 <div class="compare-quiz-container">
 <!-- قسم المقارنة (الآن على اليسار) -->
@@ -1834,7 +1902,6 @@
 </section>
 <!-- قسم About Us -->
 <section class="content-section" id="about">
-<h2 style="color: var(--primary); text-align: center; margin-bottom: 2rem;">About Us</h2>
 <div class="content-card">
 <p style="margin-bottom: 1.5rem; font-size: 1.1rem;">نحن منصة متخصصة في توفير المعلومات المهنية والوظيفية حول أكثر من <strong>10,287</strong> مهنة حول العالم.</p>
 <p style="margin-bottom: 1.5rem; font-size: 1.1rem;">تأسس موقعنا في عام 2015 بهدف مساعدة الباحثين عن عمل والمهنيين في اتخاذ قراراتهم الوظيفية بناءً على بيانات دقيقة.</p>
@@ -1844,9 +1911,7 @@
 </section>
 <!-- قسم الاختبار المستقل -->
 <section class="content-section" id="quiz">
-    <h2 style="color: var(--primary); text-align: center; margin-bottom: 2rem;">
-      اختبار المهن المناسبة
-    </h2>
+  
     <div class="quiz-container">
         <div class="quiz-header">
             <h3>اختبار المهن المناسبة</h3>
@@ -2637,9 +2702,9 @@ function renderMajors(majorsList) {
             // أفضل المهن (Best Careers)
             {
                 industry: "fhfhf" ,
-                title: "مهندس تعلم الآلة",
+                title: "مطور ذكاء اصطناعي",
                 category: "AI",
-                avgSalary: "180,000 - 350,000",
+                avgSalary: "",
                 experience: "5+ سنوات",
                 demand: "مرتفع جدًا",
                 profitability: "عالية",
