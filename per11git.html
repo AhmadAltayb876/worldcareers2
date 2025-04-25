@@ -52,6 +52,7 @@
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 <style>
         :root {
             --primary: #0A84FF;
@@ -1151,7 +1152,6 @@
 /* أنماط الاختبار المهني */
 .quiz-container {
     background: white;
-    padding: 0.5rem;
     border-radius: 15px;
     box-shadow: 0 5px 25px rgba(0,0,0,0.1);
     margin-bottom: 2rem;
@@ -1782,7 +1782,6 @@
 
 .quiz-header {
   padding: 2rem;
-  border-radius: 18px 18px 0 0;
 }
 .quiz-header {
   background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
@@ -1887,6 +1886,7 @@
 /* تحسينات الجوال العامة */
 @media (max-width: 768px) {
   .quiz-container {
+    margin: 0rem;
     border-radius: 15px;
   }
 
@@ -1971,110 +1971,6 @@ html, body {
 @keyframes bounce {
   0%, 100% { transform: translateY(-50%); }
   50% { transform: translateY(-30%); }
-}
-/* تحسينات شاملة للجوال */
-@media (max-width: 480px) {
-  .quiz-container {
-    border-radius: 15px;
-    transform: scale(0.98); /* تصغير طفيف للعناصر */
-  }
-
-  .quiz-header h3 {
-    font-size: 1.3rem;
-    margin-bottom: 0.8rem;
-  }
-
-  .quiz-header p {
-    font-size: 0.85rem;
-    line-height: 1.4;
-  }
-
-  .quiz-step {
-    padding: 1rem;
-  }
-
-  .quiz-options {
-    gap: 0.8rem;
-  }
-
-  .quiz-option {
-    padding: 1rem;
-    font-size: 0.9rem;
-    border-radius: 12px;
-  }
-
-  .option-number {
-    width: 25px;
-    height: 25px;
-    font-size: 0.9rem;
-  }
-
-  .start-quiz-btn {
-    font-size: 1rem;
-    padding: 1rem 1.5rem;
-  }
-
-  .career-match {
-    margin: 0.5rem 0;
-    padding: 1rem;
-  }
-
-  .match-percent {
-    font-size: 1.6rem;
-  }
-}
-
-/* تحسينات خاصة للشاشات الضيقة (مثل iPhone SE) */
-@media (max-width: 320px) {
-  .quiz-header {
-    padding: 1rem;
-  }
-
-  .quiz-header h3 {
-    font-size: 1.2rem;
-  }
-
-  .question-text {
-    font-size: 1rem;
-  }
-
-  .quiz-option {
-    padding: 0.8rem;
-    font-size: 0.85rem;
-  }
-}
-/* منع التمرير الأفقي */
-.quiz-container {
-  overflow-x: hidden;
-  max-width: 100vw;
-}
-
-/* تحسين الظلال للشاشات الصغيرة */
-@media (max-width: 480px) {
-  .quiz-option:hover {
-    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
-  }
-}
-
-/* تعديلات الخطوط الدقيقة */
-.quiz-step {
-  font-size: 1rem;
-  line-height: 1.5;
-}
-#quizQuestions {
-  scroll-margin-bottom: 10px; /* تعويض ارتفاع الشريط العلوي */
-}
-
-
-body {
-  scroll-behavior: smooth;
-}
-#quizQuestions {
-  scroll-margin-top: 80px; /* تعويض ارتفاع الشريط العلوي */
-}
-
-body {
-  scroll-behavior: smooth;
 }
     </style>
 </head>
@@ -2243,8 +2139,11 @@ body {
             <p style="margin-bottom: 1.5rem;">بناءً على إجاباتك، إليك أفضل المهن التي تناسبك:</p>
             <div id="careerMatches"></div>
             <div class="quiz-actions">
-            <button class="quiz-btn restart-btn" onclick="startQuiz()">
-            <i class="fas fa-redo"></i> إعادة الاختبار
+                <div id="quizResults">
+                    <button onclick="restartQuiz()" class="quiz-btn home-btn" style="background-color: #0A84FF;">
+                      <i class="fas fa-redo"></i> إعادة الاختبار
+                    </button>
+                  </div>
                                         </button>
             <button class="quiz-btn home-btn" onclick="goToHome()">
             <i class="fas fa-home"></i> الصفحة الرئيسية
@@ -3673,7 +3572,10 @@ function renderMajors(majorsList) {
             }
         ];
 
+        // بدء الاختبار
         function startQuiz() {
+          currentQuestion = 0;
+  quizAnswers = [];
   // 1. إخفاء قسم البداية فوراً
   document.getElementById('quizWelcome').style.display = 'none';
 
@@ -3694,8 +3596,7 @@ function renderMajors(majorsList) {
   currentQuestion = 0;
   quizAnswers = [];
   showQuestion();
-}
-        
+        }
 
         // عرض السؤال الحالي
         function showQuestion() {
@@ -4138,6 +4039,32 @@ if (searchInput) {
         document.getElementById('mainSearchResults').style.display = searchInput.value.trim() ? 'block' : 'none';
         document.getElementById('searchQueryText').innerText = searchInput.value.trim();
     });
+}
+// أضف هذه الدالة في قسم الـ Script
+function restartQuiz() {
+  // 1. إعادة تعيين جميع المتغيرات
+  currentQuestion = 0;
+  quizAnswers = [];
+  
+  // 2. إعادة تنسيق العناصر
+  document.getElementById('quizWelcome').style.display = 'block';
+  document.getElementById('quizQuestions').style.display = 'none';
+  document.getElementById('quizResults').style.display = 'none';
+  
+  // 3. إعادة تعيين جميع خيارات الأسئلة
+  const options = document.querySelectorAll('.quiz-option');
+  options.forEach(option => {
+    option.classList.remove('selected');
+  });
+  
+  // 4. التمرير إلى الأعلى بسلاسة
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+  
+  // 5. إعادة تعيين شريط التقدم
+  document.getElementById('quizProgressBar').style.width = '0%';
 }
 </script>
 
