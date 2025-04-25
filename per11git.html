@@ -3407,7 +3407,13 @@ function renderMajors(majorsList) {
         // اختيار إجابة
         function selectAnswer(answer) {
             quizAnswers.push(answer);
-            
+             // إزالة التحديد من كل الخيارات
+  document.querySelectorAll('.quiz-option').forEach(opt => 
+    opt.classList.remove('selected'));
+  
+  // إضافة التحديد للخيار المختار
+  event.currentTarget.classList.add('selected');
+  
             if (currentQuestion < quizQuestions.length - 1) {
                 currentQuestion++;
                 showQuestion();
