@@ -52,7 +52,6 @@
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"/>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 <style>
         :root {
             --primary: #0A84FF;
@@ -1374,9 +1373,7 @@
     
     
     }
-@media (max-width: 768px) { /* Tablet */ }
-@media (max-width: 1024px) { /* Laptop */ }
-@media (max-width: 1200px) { /* Laptop */ }
+
 
 .search-container {
     position: relative;
@@ -1528,6 +1525,7 @@
     pointer-events: none !important;
     height: 0 !important;
 }
+
 @media (max-width: 768px) {
     #mainSearchResults {
         margin-top: -30px !important; /* تعويض المسافة للشاشات الصغيرة */
@@ -1945,9 +1943,7 @@
   }
 }
 /* منع التمرير الأفقي غير الضروري */
-html, body {
-  overflow-x: hidden;
-}
+
 
 /* تحسين تجربة التمرير */
 .quiz-step {
@@ -2526,6 +2522,7 @@ html, body {
     }
 
     const results = performSearch(query, currentSearchType);
+    resetFilters();
     displaySearchResults(results);
     });
             initSearch();
@@ -2608,6 +2605,7 @@ html, body {
                 return;
             }
             const results = performSearch(query, currentSearchType);
+            resetFilters();
             displaySearchResults(results);
         }, 300); // تأخير 300 مللي ثانية
     });
@@ -3994,9 +3992,11 @@ function calculateCompatibility(prof, prefs) {
     const searchQuery = document.getElementById('searchInput').value.trim();
     if (searchQuery) {
         const results = performSearch(searchQuery, type);
+        resetFilters();
         displaySearchResults(results);
     }
 }
+
 
 function performSearch(query, type) {
     const normalizedQuery = query.trim().toLowerCase();
@@ -4232,6 +4232,20 @@ function restartQuiz() {
   // 5. إعادة تعيين شريط التقدم
   document.getElementById('quizProgressBar').style.width = '0%';
 }
+function resetFilters() {
+    // 1. إلغاء تحديد جميع الـ checkboxes
+    const checkboxes = document.querySelectorAll('#jobFieldsFilter input[type="checkbox"]');
+    checkboxes.forEach(checkbox => {
+        checkbox.checked = false;
+    });
+
+    // 2. إزالة الكلاس active من جميع الفلاتر
+    const activeFilters = document.querySelectorAll('.filter-item.active');
+    activeFilters.forEach(filter => {
+        filter.classList.remove('active');
+    });
+}
+
 </script>
 
 
