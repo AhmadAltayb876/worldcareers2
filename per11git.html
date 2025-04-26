@@ -2644,22 +2644,24 @@
                 container.innerHTML = '<p style="text-align: center; color: #666;">لا توجد نتائج مطابقة</p>';
                 return;
             }
+            else{
+                results.forEach(profession => {
+                    const card = document.createElement('div');
+                    card.className = 'profession-card';
+                    card.innerHTML = `
+                        <div class="category-tag">${profession.category}</div>
+                        <h3>${profession.title}</h3>
+                        <pملخص المهنة : ${profession.summarize}</p>
+                        <div class="salary-info">
+                            <span>الراتب السنوي:</span>
+                            <span class="highlight">$${profession.avgSalary}</span>
+                        </div>
+                    `;
             
-            results.forEach(profession => {
-                const card = document.createElement('div');
-                card.className = 'profession-card';
-                card.innerHTML = `
-                    <div class="category-tag">${profession.category}</div>
-                    <h3>${profession.title}</h3>
-                    <pملخص المهنة : ${profession.summarize}</p>
-                    <div class="salary-info">
-                        <span>الراتب السنوي:</span>
-                        <span class="highlight">$${profession.avgSalary}</span>
-                    </div>
-                `;
                 card.addEventListener('click', () => showDetails(profession));
                 container.appendChild(card);
-            });
+                });
+            }
         }
         
         // دالة لمسح البحث
