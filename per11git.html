@@ -1541,80 +1541,100 @@
            
      
 }
-/* تحسين أزرار التبديل بين المهن والتخصصات */
-#jobs .filter-item {
-    flex: 1; /* توسيع الأزرار لتملأ المساحة المتاحة */
-    max-width: 45%; /* تحديد أقصى عرض لكل زر */
-    padding: 1rem 1.5rem; /* زيادة الحشو الداخلي */
-    font-size: 1.1rem; /* تكبير حجم الخط */
-    margin: 0 0.5rem; /* إضافة هوامش جانبية */
-}
-
-/* ترتيب الأزرار أفقياً */
-#jobs .filter-group {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    width: 100%;
-    margin-bottom: 0.5rem;
-}
-
-/* تحسين الشكل عند النقر */
-#jobs .filter-item.active {
-    transform: scale(1.05);
-    box-shadow: 0 4px 15px rgba(10, 132, 255, 0.3);
-}
-
-/* تحسينات للجوال */
-@media (max-width: 768px) {
-    #jobs .filter-item {
-        font-size: 1rem;
-        padding: 0.8rem 1.2rem;
-        max-width: 48%;
+    /* أنماط محسنة لأزرار التبديل بين المهن والتخصصات */
+    #jobs .filter-group {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin: 2rem 0;
+        flex-wrap: wrap;
     }
-}
-/* التعديلات الجديدة فقط للأزرار */
-#jobs .filter-item {
-    padding: 0.6rem 1.2rem !important; /* حجم موحد */
-    font-size: 0.9rem !important; /* حجم خط موحد */
-    width: 140px !important; /* عرض موحد */
-    text-align: center !important; /* محاذاة النص */
-    margin: 0 0.3rem !important; /* مسافات متساوية */
-}
-
-/* التأكد من تساوي الحجم في الحالة النشطة */
-#jobs .filter-item.active {
-    transform: none !important; /* إزالة أي تأثيرات حركية */
-    padding: 0.6rem 1.2rem !important; /* نفس الحشو */
-}
-/* التعديلات الجديدة فقط للأزرار */
-#jobs .filter-group {
-    margin-top: 30px ; /* مسافة أكبر من الهيدر */
-    gap: 0px ; /* مسافة بين الأزرار */
-}
-
-#jobs .filter-item {
-    padding: 12px 25px ;
-    font-size: 16px ;
-    width: auto ; /* عرض حسب المحتوى */
-    min-width: 160px ; /* أقل عرض مسموح */
-    border-radius: 10px ;
-    background: var(--light) ;
-    border: 2px solid var(--primary) ;
-    color: var(--primary) ;
-    transition: all 0.2s ease ;
-}
-
-#jobs .filter-item.active {
-    background: var(--primary) ;
-    color: white ;
-    box-shadow: 0 3px 10px rgba(10, 132, 255, 0.2);
-}
-
-#jobs .filter-item:hover:not(.active) {
-    background: rgba(10, 132, 255, 0.1) ;
-    transform: translateY(-1px);
-}
+    
+    #jobs .filter-item {
+        padding: 0.8rem 1.8rem;
+        border-radius: 30px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+        border: 2px solid var(--primary);
+        background: white;
+        color: var(--primary);
+        box-shadow: 0 2px 8px rgba(10, 132, 255, 0.1);
+        min-width: 180px;
+        text-align: center;
+    }
+    
+    #jobs .filter-item:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(10, 132, 255, 0.2);
+    }
+    
+    #jobs .filter-item.active {
+        background: var(--primary);
+        color: white;
+        border-color: var(--primary);
+        box-shadow: 0 4px 16px rgba(10, 132, 255, 0.3);
+    }
+    
+    #jobs .filter-item::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+        z-index: -1;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+    
+    #jobs .filter-item.active::before {
+        opacity: 1;
+    }
+    
+    #jobs .filter-item i {
+        margin-left: 0.5rem;
+        font-size: 1rem;
+    }
+    
+    /* تأثير النقر */
+    #jobs .filter-item:active {
+        transform: scale(0.95);
+    }
+    
+    /* تحسينات للجوال */
+    @media (max-width: 768px) {
+        #jobs .filter-item {
+            padding: 0.7rem 1.2rem;
+            font-size: 1rem;
+            min-width: 160px;
+        }
+        
+        #jobs .filter-group {
+            gap: 0.8rem;
+            margin: 1.5rem 0;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        #jobs .filter-item {
+            padding: 0.6rem 1rem;
+            font-size: 0.95rem;
+            min-width: 140px;
+        }
+        
+        #jobs .filter-item i {
+            margin-left: 0.3rem;
+            font-size: 0.9rem;
+        }
+    }
+    
+    
 
 .nav-link.quiz-btn {
     color: white;
@@ -1976,8 +1996,194 @@
     border-color: var(--primary) !important;
     opacity: 1 !important;
 }
+/* أنماط الفلترة الجديدة */
+.filter-group {
+    display: flex;
+    justify-content: center;
+    margin: 1.5rem 0;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
 
-    </style>
+.filter-toggle {
+    position: relative;
+    display: inline-block;
+    width: 280px;
+    height: 60px;
+    margin: 10px 0;
+}
+
+.filter-toggle input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.filter-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #f0f0f0;
+    transition: .4s;
+    border-radius: 34px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.filter-slider:before {
+    position: absolute;
+    content: "";
+    height: 50px;
+    width: 140px;
+    left: 5px;
+    bottom: 5px;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    transition: .4s;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+}
+
+.filter-toggle input:checked + .filter-slider:before {
+    transform: translateX(130px);
+}
+
+.filter-slider-text {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-weight: bold;
+    color: var(--dark);
+}
+
+.filter-slider-text span {
+    width: 50%;
+    text-align: center;
+    z-index: 1;
+    transition: color 0.3s;
+}
+
+.filter-toggle input:checked + .filter-slider .filter-slider-text span:first-child {
+    color: #999;
+}
+
+.filter-toggle input:not(:checked) + .filter-slider .filter-slider-text span:last-child {
+    color: #999;
+}
+
+/* بطاقات الفلترة */
+.field-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    margin: 1.5rem 0;
+}
+
+.field-filter-card {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.field-filter-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.field-filter-card input:checked ~ .field-filter-inner {
+    transform: rotateY(180deg);
+}
+
+.field-filter-front, .field-filter-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s;
+}
+
+.field-filter-front {
+    background: white;
+    border: 2px solid var(--light);
+}
+
+.field-filter-back {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    color: white;
+    transform: rotateY(180deg);
+}
+
+.field-filter-card input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.field-filter-icon {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary);
+}
+
+.field-filter-back .field-filter-icon {
+    color: white;
+}
+
+.field-filter-name {
+    font-weight: bold;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.field-filter-card:hover .field-filter-front {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* تأثيرات للشاشات الصغيرة */
+@media (max-width: 768px) {
+    .field-filter-card {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .filter-toggle {
+        width: 240px;
+        height: 50px;
+    }
+    
+    .filter-slider:before {
+        height: 40px;
+        width: 110px;
+    }
+    
+    .filter-toggle input:checked + .filter-slider:before {
+        transform: translateX(110px);
+    }
+}
+</style>
 </head>
 <body>
 <!-- الترويسة -->
@@ -2161,60 +2367,106 @@
     </div>
   </section>
 <!-- قسم Jobs and Careers (الواجهة الأساسية) -->
+<!-- قسم Jobs and Careers (الواجهة الأساسية) -->
 <section id="jobs">
-<!-- بالنسخة المعدلة -->
-<div class="filter-group">
-<button class="filter-item active" id="showProfessionsBtn" onclick="linkSearchTypeToView('jobs')">
-        عرض المهن <i class="fas fa-briefcase"></i>
-</button>
-<button class="filter-item" id="showMajorsBtn" onclick="linkSearchTypeToView('majors')">
-        عرض التخصصات <i class="fas fa-graduation-cap"></i>
-</button>
-</div>
-<div class="filter-container">
-<div class="filter-box" id="jobFieldsFilter">
-<h3 class="filter-title">Filter by Job Field:</h3>
-<label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
-<input onchange="onFilterChange()" type="checkbox" value="AI"/>
-<span>AI</span>
-</label>
-<label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
-<input onchange="onFilterChange()" type="checkbox" value="طب"/>
-<span>Medicine</span>
-</label>
-<label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
-<input onchange="onFilterChange()" type="checkbox" value="UX/UI"/>
-<span>UX/UI</span>
-</label>
-<label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
-<input onchange="onFilterChange()" type="checkbox" value="هندسة"/>
-<span>Engineering</span>
-</label>
-<label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
-<input onchange="onFilterChange()" type="checkbox" value="أعمال"/>
-<span>Business</span>
-</label>
-</div>
-</div>
-<!-- في قسم Jobs and Careers -->
-<!-- قسم نتائج البحث الرئيسية -->
-<div class="search-results-section" id="mainSearchResults">
-<h3 class="search-results-title">
-<i class="fas fa-search"></i>
-                    نتائج البحث لـ "<span id="searchQueryText"></span>"
-                    <button class="clear-search-btn" onclick="clearSearch()">
-<i class="fas fa-times"></i> مسح البحث
-                    </button>
-</h3>
-</div>
-<!-- قسم المهن الأساسي -->
-<div class="professions-grid" id="professionsContainer">
-<!-- سيتم إضافة البطاقات هنا -->
-</div>
-<!-- قسم التخصصات الجامعية (مخفي افتراضياً) -->
-<div class="professions-grid" id="majorsContainer" style="display: none;"></div>
-<!-- سيتم إضافة التخصصات هنا -->
+    <!-- Toggle Switch للتبديل بين المهن والتخصصات -->
+    <!-- HTML المعدل -->
+    <div class="filter-group">
+        <button class="filter-item active" id="showProfessionsBtn" onclick="linkSearchTypeToView('jobs')">
+            عرض المهن <i class="fas fa-briefcase"></i>
+        </button>
+        <button class="filter-item" id="showMajorsBtn" onclick="linkSearchTypeToView('majors')">
+            عرض التخصصات <i class="fas fa-graduation-cap"></i>
+        </button>
+    </div>
 
+    <!-- فلترة المجالات -->
+    <div class="filter-container">
+        <h3 class="filter-title" style="text-align: center; margin-bottom: 1rem;">تصفية حسب المجال:</h3>
+        <div class="field-filters" id="jobFieldsFilter">
+            <!-- بطاقة AI -->
+            <label class="field-filter-card">
+                <input type="checkbox" value="AI" onchange="onFilterChange()">
+                <div class="field-filter-inner">
+                    <div class="field-filter-front">
+                        <i class="fas fa-robot field-filter-icon"></i>
+                        <span class="field-filter-name">AI</span>
+                    </div>
+                    <div class="field-filter-back">
+                        <i class="fas fa-robot field-filter-icon"></i>
+                        <span class="field-filter-name">AI</span>
+                    </div>
+                </div>
+            </label>
+            
+            <!-- بطاقة الطب -->
+            <label class="field-filter-card">
+                <input type="checkbox" value="طب" onchange="onFilterChange()">
+                <div class="field-filter-inner">
+                    <div class="field-filter-front">
+                        <i class="fas fa-hospital field-filter-icon"></i>
+                        <span class="field-filter-name">الطب</span>
+                    </div>
+                    <div class="field-filter-back">
+                        <i class="fas fa-hospital field-filter-icon"></i>
+                        <span class="field-filter-name">الطب</span>
+                    </div>
+                </div>
+            </label>
+            
+            <!-- بطاقة UX/UI -->
+            <label class="field-filter-card">
+                <input type="checkbox" value="UX/UI" onchange="onFilterChange()">
+                <div class="field-filter-inner">
+                    <div class="field-filter-front">
+                        <i class="fas fa-paint-brush field-filter-icon"></i>
+                        <span class="field-filter-name">UX/UI</span>
+                    </div>
+                    <div class="field-filter-back">
+                        <i class="fas fa-paint-brush field-filter-icon"></i>
+                        <span class="field-filter-name">UX/UI</span>
+                    </div>
+                </div>
+            </label>
+            
+            <!-- بطاقة الهندسة -->
+            <label class="field-filter-card">
+                <input type="checkbox" value="هندسة" onchange="onFilterChange()">
+                <div class="field-filter-inner">
+                    <div class="field-filter-front">
+                        <i class="fas fa-cogs field-filter-icon"></i>
+                        <span class="field-filter-name">الهندسة</span>
+                    </div>
+                    <div class="field-filter-back">
+                        <i class="fas fa-cogs field-filter-icon"></i>
+                        <span class="field-filter-name">الهندسة</span>
+                    </div>
+                </div>
+            </label>
+            
+            <!-- بطاقة الأعمال -->
+            <label class="field-filter-card">
+                <input type="checkbox" value="أعمال" onchange="onFilterChange()">
+                <div class="field-filter-inner">
+                    <div class="field-filter-front">
+                        <i class="fas fa-chart-line field-filter-icon"></i>
+                        <span class="field-filter-name">الأعمال</span>
+                    </div>
+                    <div class="field-filter-back">
+                        <i class="fas fa-chart-line field-filter-icon"></i>
+                        <span class="field-filter-name">الأعمال</span>
+                    </div>
+                </div>
+            </label>
+        </div>
+    </div>
+
+    <!-- بقية المحتوى يبقى كما هو -->
+    <div class="search-results-section" id="mainSearchResults">
+        <!-- ... -->
+    </div>
+    <div class="professions-grid" id="professionsContainer"></div>
+    <div class="professions-grid" id="majorsContainer" style="display: none;"></div>
 </section>
 <!-- قسم نتائج البحث الرئيسية -->
 <div class="search-results-section" id="mainSearchResults">
