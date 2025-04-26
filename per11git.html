@@ -1101,8 +1101,9 @@
 }
 
 #jobs .filter-item.active {
-    background: var(--primary);
+    background: var(--primary) !important;
     color: white;
+    border-color: var(--primary)!important;
 }
 
 #jobs .filter-item:hover {
@@ -1968,6 +1969,14 @@
   0%, 100% { transform: translateY(-50%); }
   50% { transform: translateY(-30%); }
 }
+#showProfessionsBtn.active,
+#showMajorsBtn.active {
+    background: var(--primary) !important;
+    color: white !important;
+    border-color: var(--primary) !important;
+    opacity: 1 !important;
+}
+
     </style>
 </head>
 <body>
@@ -4417,8 +4426,8 @@ function resetFilters() {
         checkbox.checked = false;
     });
 
-    // 2. إزالة الكلاس active من جميع الفلاتر
-    const activeFilters = document.querySelectorAll('.filter-item.active');
+    // 2. إزالة الكلاس active من جميع الفلاتر (باستثناء أزرار العرض)
+    const activeFilters = document.querySelectorAll('.filter-item.active:not(#showProfessionsBtn):not(#showMajorsBtn)');
     activeFilters.forEach(filter => {
         filter.classList.remove('active');
     });
