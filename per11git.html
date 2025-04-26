@@ -4215,10 +4215,12 @@ function displaySearchResults(results) {
     searchResults.innerHTML = ''; // مسح النتائج القديمة
     if (results.professions.length > 0 || results.majors.length > 0) {
         const targetPosition = mainSearchResults.getBoundingClientRect().top + window.pageYOffset;
-        window.scrollTo({
-            top: targetPosition - navbarHeight - 20, // 20px مسافة إضافية
-            behavior: 'smooth'
-        });
+        setTimeout(() => {
+            window.scrollTo({
+                top: targetPosition - navbarHeight - 20, // 20px مسافة إضافية
+                behavior: 'smooth'
+            });
+        }, 100);
     }
 
 
