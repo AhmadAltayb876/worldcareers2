@@ -311,19 +311,34 @@ let currentSearchType = 'jobs'; // القيمة الافتراضية
             renderProfessions(professions);
             renderMajors(majors);
             
-            document.querySelectorAll('input[type="checkbox"][data-filter]').forEach(checkbox => {
-                checkbox.addEventListener('change', () => {
-                    const selectedFilter = checkbox.getAttribute('data-filter');
-                    if (checkbox.checked) {
-                        filterProfessionsByFilterName(selectedFilter);
-                        filterMajorsByFilterName(selectedFilter);
-                    } else {
-                        // لو ألغى التحديد، نظهر كل شيء
+                document.querySelectorAll('input[type="checkbox"][data-filter]').forEach(checkbox => {
+                    checkbox.addEventListener('change', () => {
+                        // اجمع كل الفلاتر المختارة
+                        const selectedFilters = Array.from(document.querySelectorAll('input[type="checkbox"][data-filter]:checked'))
+                        .map(cb => cb.getAttribute('data-filter'));
+                
+                        if (selectedFilters.length > 0) {
+                        // جلب جميع التصنيفات المرتبطة بكل الفلاتر المختارة
+                        const allRelatedCategories = selectedFilters.flatMap(filter => getCategoriesForFilter(filter));
+                
+                        // فلترة المهن
+                        const filteredProfessions = professions.filter(profession =>
+                            allRelatedCategories.includes(profession.category)
+                        );
+                        renderProfessions(filteredProfessions);
+                
+                        // فلترة التخصصات
+                        const filteredMajors = majors.filter(major =>
+                            allRelatedCategories.includes(major.field)
+                        );
+                        renderMajors(filteredMajors);
+                        } else {
+                        // لو ما في ولا فلتر محدد، اعرض كل شيء
                         renderProfessions(professions);
                         renderMajors(majors);
-                    }
+                        }
+                    });
                 });
-            });
     // تفعيل البحث
     document.getElementById('searchInput').addEventListener('input', function(e) { 
         const currentSection = document.querySelector('.nav-link.active').getAttribute('href');
