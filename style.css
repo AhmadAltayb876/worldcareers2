@@ -2352,31 +2352,4 @@ transform: translateX(110px);
       font-size: 0.9rem !important;
     }
   }
-  /* الهيكل الأساسي */
-.nav-container {
-    display: flex;
-    flex-wrap: wrap; /* السماح بعناصر جديدة في سطر جديد */
-    gap: 1rem;
-  }
-  
-  .search-container {
-    flex-grow: 1; /* ملء المساحة المتاحة */
-    min-width: 300px; /* عرض أدنى لمنع التداخل */
-  }
-  @media (max-width: 1024px) {
-    .nav-links {
-      order: 3; /* نقل روابط التنقل لأسفل */
-      width: 100%;
-      justify-content: center;
-    }
-  
-    .search-container {
-      order: 2; /* وضع شريط البحث قبل الروابط */
-      min-width: 100%; /* ملء العرض الكامل */
-    }
-  
-    .logo-quiz-wrapper {
-      order: 1; /* الشعار يبقى في الأعلى */
-    }
-  }
   
