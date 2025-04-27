@@ -687,191 +687,488 @@ let currentSearchType = 'jobs'; // القيمة الافتراضية
         function closeModal() {
             document.getElementById('detailsModal').style.display = 'none';
         }
-        // بيانات Best Jobs المخصصة
         const bestProfessions = [
+           
             // أفضل المهن (Best Careers)
             {
-                industry: "fhfhf" ,
-                jobo: "كثير"  ,
-                title: "مهندس ذكاء اصطناعي",
-                avgSalary: "95,000 - 250,000",
-                experience: "5+ سنوات",
-                demand: "مرتفع جدًا",
-                description: "تطوير أنظمة الذكاء الاصطناعي وتعلم الآلة",
-                summarize: "hghghghghg" ,
-                category: "AI",
-                skills: ["تحليلية", "تقنية", "AI", "بيانات"]
+                
+                industry: "x" ,
+                title: "عالم بيانات (Data Scientist)",//
+                category: "تحليل البيانات",//
+                avgSalary: "120,000 - 180,000 دولار",//
+                demand: "مرتفع جدًا",//
+                description: "تحليل البيانات لاستخلاص رؤى قيمة.",//
+                experience: " 4-6",
+                profitability: " x ",
+                growthRate: "36%" ,
+                jobType: "best",
+                requiredSpecialties: [
+            " Python, R, SQL," ,  
+             " Machine Learning,",
+              " Data Visualization," ,  
+               " Statistics, Cloud Computing (AWS)"  , 
+                ], 
+               
             },
             {
-                industry: "fhfhf" ,
-                jobo: "كثير"  ,
-                title: "جراح تجميل",
-                avgSalary: "120,000-300,000",
-                experience: "12+ سنوات",
-                demand: "مرتفع",
-                description: "إجراء عمليات التجميل التصحيحية والجمالية",
-                summarize: "hghghghghg" ,
-                category: "طب",
-                skills: ["طب", "يدوية", "تركيز"]
+                industry: "x" ,
+                 title: "مهندس ذكاء اصطناعي (AI Engineer)",
+                 description: "بناء أنظمة ذكية تتعلم وتحلل.",
+                 demand: "مرتفع جدًا",
+                 category: "تقنية" ,
+                   avgSalary:"130,000 - 200,000 دولار",
+                 experience:"3+",
+                profitability: "x",
+                growthRate:"26%",
+                jobType:"best",
+                requiredSpecialties: [
+                  " Python, R, Machine Learning",
+                  "DL Frameworks (TensorFlow, PyTorch),",
+                  "Prompt Engineering, Communication, Ethics",
+                  "Cloud Platforms",
+                ], 
+             
+            
             },
-            {
-                industry: "fhfhf" ,
-                jobo: "كثير"  ,
-                title: "طبيب أشعة تداخلية",
-                avgSalary: "280,000 - 450,000",
-                experience: "8+ سنوات",
-                demand: "متوسط",
-                description: "تشخيص وعلاج الأمراض باستخدام التصوير الإشعاعي",
-                summarize: "hghghghghg" ,
-                category: "طب",
-                skills: ["طب", "تحليلية", "تقنية"]
-            },
-            {
-                industry: "fhfhf" ,
-                jobo: "كثير"  ,
-                title: "مطور بلوك تشين",
-                avgSalary: "120,000 - 300,000",
-                experience: "4+ سنوات",
-                demand: "مرتفع جدًا",
-                description: "تطوير أنظمة لامركزية باستخدام تقنية البلوك تشين",
-                summarize: "hghghghghg" ,
-                category: "AI",
-                skills: ["تقنية", "تحليلية", "أمن"]
-            },
-            {
-                industry: "fhfhf" ,
-                jobo: "كثير"  ,
-                title: "مهندس حوسبة كمومية",
-                avgSalary: "80,000-150,000",
-                experience: "6+ سنوات",
-                demand: "مرتفع",
-                description: "تصميم أنظمة الحوسبة الكمومية",
-                summarize: "hghghghghg" ,
-                category: "AI",
-                skills: ["تقنية", "تحليلية", "رياضيات"]
-            },
-            {
-                industry: "fhfhf" ,
-                jobo: "كثير"  ,
-                title: "مهندس طاقة الرياح البحرية",
-                avgSalary: "90,000 - 180,000",
-                experience: "5+ سنوات",
-                demand: "مرتفع",
-                description: "تصميم وتنفيذ مزارع الرياح البحرية",
-                summarize: "hghghghghg" ,
-                category: "هندسة",
-                skills: ["هندسة", "تحليلية", "بيئية"]
-            },
-            {
-                industry: "fhfhf" ,
-                jobo: "كثير"  ,
-                title: "باحث في تقنية النانو",
-                avgSalary: "85,000 - 160,000",
-                experience: "4+ سنوات",
-                demand: "متوسط",
-                description: "بحث وتطوير مواد متقدمة بمقياس النانو",
-                summarize: "hghghghghg" ,
-                category: "هندسة",
-                skills: ["هندسة", "بحثية", "تحليلية"]
-            },
-            {
-                industry: "fhfhf" ,
-                jobo: "كثير"  ,
-                title: "مدير استثمار العملات الرقمية",
-                avgSalary: "130,000 - 400,000",
-                experience: "5+ سنوات",
-                demand: "مرتفع",
-                description: "إدارة محافظ استثمارية في العملات المشفرة",
-                summarize: "hghghghghg" ,
-                category: "أعمال",
-                skills: ["مالية", "تحليلية", "قيادة"]
-            },
-            {
-                industry: "fhfhf" ,
-                jobo: "كثير"  ,
-                title: "محلل بيانات سلوكية",
-                avgSalary: "95,000 - 220,000",
-                experience: "3+ سنوات",
-                demand: "مرتفع",
-                description: "تحليل السلوك الاقتصادي للأفراد والشركات",
-                summarize: "hghghghghg" ,
-                category: "أعمال",
-                skills: ["تحليلية", "اجتماعية", "بحثية"]
-            },
-            {
-                industry: "fhfhf" ,
-                jobo: "كثير"  ,
-                title: "مصمم واقع معزز",
-                avgSalary: "70,000 - 150,000",
-                experience: "3+ سنوات",
-                demand: "مرتفع",
-                description: "تصميم تجارب تفاعلية باستخدام تقنيات AR",
-                summarize: "hghghghghg" ,
-                category: "UX/UI",
-                skills: ["إبداعية", "تقنية", "تصميم"]
-            },
-            {
-                industry: "fhfhf" ,
-                jobo: "كثير"  ,
-                title: "محامي جرائم سيبرانية",
-                avgSalary: "110,000 - 250,000",
-                experience: "6+ سنوات",
-                demand: "مرتفع",
-                description: "معالجة القضايا القانونية المتعلقة بالجرائم الإلكترونية",
-                summarize: "hghghghghg" ,
-                category: "AI",
-                skills: ["قانونية", "تحليلية", "أمن"]
-            },
-            {
-                industry: "fhfhf" ,
-                jobo: "كثير"  ,
-                title: "جراح قلب",
-                avgSalary: "200,000 - 450,000",
-                experience: "10+ سنوات",
-                demand: "مرتفع",
-                description: "إجراء عمليات جراحية معقدة في القلب",
-                summarize: "hghghghghg" ,
-                category: "طب",
-                skills: ["طب", "يدوية", "تركيز"]
-            },
-            {
-                industry: "fhfhf" ,
-                jobo: "كثير"  ,
-                title: "مصمم تجربة المستخدم",
-                avgSalary: "65,000 - 140,000",
-                experience: "3+ سنوات",
-                demand: "مرتفع",
-                description: "تصميم واجهات المستخدم وتحسين التجربة الرقمية",
-                summarize: "hghghghghg" ,
-                category: "UX/UI",
-                skills: ["إبداعية", "تواصل", "تصميم"]
-            },
-            {
-                industry: "fhfhf" ,
-                jobo: "كثير"  ,
-                summarize: "hghghghghg" ,
-                title: "مهندس ميكانيكي",
-                avgSalary: "70,000 - 120,000",
-                experience: "4+ سنوات",
-                demand: "متوسط",
-                description: "تصميم الأنظمة الميكانيكية والآلات",
-                category: "هندسة",
-                skills: ["هندسة", "تحليلية", "تقنية"]
-            },
-            {
-                industry: "fhfhf" ,
-                jobo: "كثير"  ,
-                summarize: "hghghghghg" ,
-                title: "مدير مشاريع تقنية",
-                avgSalary: "90,000 - 160,000",
-                experience: "5+ سنوات",
-                demand: "مرتفع",
-                description: "إدارة فرق العمل والمشاريع التقنية",
-                category: "أعمال",
-                skills: ["قيادة", "تنظيمية", "تواصل"]
-            }
-        ];
 
+      {
+         title: "جراح أعصاب (Neurosurgeon)",
+          description: "إجراء عمليات دقيقة للجهاز العصبي.",
+           avgSalary: "300,000 - 800,000 دولار",
+            demand: "مرتفع", 
+            category: "الطب" ,
+            jobType: "best",
+            experience: "14-16 سنة",
+            growthRate: "3%",
+            requiredSpecialties: [
+            "Neurosurgical dexterity",
+             "Neuroanatomy",
+             "Critical thinking",
+              "Decision making under pressure",
+              "Teamwork",
+             "Stress management"
+    ],
+        },
+      { 
+        title: "مدير منتج تقني (Technical Product Manager)",
+       description: "إدارة تطوير المنتجات التقنية.",
+       avgSalary: "110,000 - 160,000 دولار",
+         demand: "مرتفع", 
+         category: "إدارة",
+         jobType: "best",
+         experience: "3-5 سنوات",
+    growthRate: "7%",
+    requiredSpecialties: [
+      "Product roadmapping",
+      "Technical acumen",
+      "Stakeholder management",
+      "Agile methodologies",
+      "Data analysis",
+      "Communication"
+    ],
+         },
+      {
+         title: "خبير أمن سيبراني (Cybersecurity Specialist)",
+       description: "حماية البيانات والأنظمة الرقمية.",
+       avgSalary: "100,000 - 170,000 دولار",
+         demand: "مرتفع جدًا",
+          category: "أمن المعلومات",
+          jobType: "best",
+         experience: "+5 سنوات",
+    growthRate: "33%",
+    requiredSpecialties: [
+      "Cybersecurity",
+      "Vulnerability assessment",
+      "Auditing",
+      "Incident response",
+      "Risk analysis",
+      "Security controls",
+      "SIEM",
+      "Threat intelligence"
+    ],
+        },
+        {
+             title: "جراح أعصاب (Neurosurgeon)",
+             description: "أعلى دخل طبي عالميًا.",
+             avgSalary: "300,000 - 800,000 دولار",
+             jobType: "profit",
+             demand: "مرتفع",
+             category: "الطب",
+             experience: "14-16 سنوات",
+    growthRate: "3%",
+    requiredSpecialties: [
+      "Neurosurgical techniques",
+      "Neuroanatomy",
+      "Microsurgery",
+      "Critical thinking",
+      "Decision making under pressure",
+      "Teamwork",
+      "Stress management"
+    ]
+  },
+        
+
+      {
+        title: "جراح تجميل (Plastic Surgeon)",
+         description: "تصحيح وتحسين المظهر الجسدي.",
+         avgSalary: "250,000 - 500,000 دولار",
+         jobType: "profit",
+           demand: "مرتفع",
+            category: "الطب" ,
+            experience: "14-16 سنوات",
+    growthRate: "3%",
+    requiredSpecialties: [
+      "Cosmetic and reconstructive surgery",
+      "Microsurgery",
+      "Anatomy",
+      "Aesthetics",
+      "Patient consultation",
+      "Decision making under pressure",
+      "Teamwork"
+    ]
+        },
+
+      {
+         title: "مدير تنفيذي (CEO)",
+       description: "قيادة الشركات إلى النجاح.",
+       avgSalary: "200,000 - 400,000 دولار",
+       jobType: "profit",
+         demand: "مرتفع", 
+         category: "إدارة الأعمال" ,
+         experience: "10-15 سنوات",
+    growthRate: "6%",
+    requiredSpecialties: [
+      "Strategic planning",
+      "Leadership",
+      "Financial acumen",
+      "Stakeholder management",
+      "Decision making",
+      "Communication",
+      "Risk management"
+    ]
+        },
+      {
+         title: "مستشار استثماري (Investment Consultant)", 
+         description: "توجيه الاستثمارات لزيادة الأرباح.",
+         avgSalary: "150,000 - 300,000 دولار",
+         jobType: "profit",
+         demand: "مرتفع",
+         category: "المالية",
+         experience: "3-5 سنوات",
+    growthRate: "17.1%",
+    requiredSpecialties: [
+      "Financial analysis",
+      "Portfolio management",
+      "Risk assessment",
+      "Client relationship management",
+      "Market research",
+      "Regulatory compliance",
+      "Communication"
+    ]
+         },
+      {
+         title: "طبيب قلب (Cardiologist)",
+         description: "علاج أمراض القلب والشرايين.",
+         avgSalary: "250,000 - 450,000 دولار",
+         jobType: "profit",
+         demand: "مرتفع",
+         category: "الطب",
+         experience: "12-15 سنوات",
+    growthRate: "5%",
+    requiredSpecialties: [
+      "Cardiac imaging",
+      "Interventional procedures",
+      "Patient diagnosis",
+      "Critical thinking",
+      "Decision making under pressure",
+      "Teamwork"
+    ]
+         },
+          
+            
+            // الأكثر طلبًا (Most In-Demand)
+            { 
+                title: "مطور برمجيات (Software Developer)",
+                 description: "تطوير تطبيقات وحلول رقمية.", 
+                 jobType: "demand",
+                 avgSalary: "90,000 - 140,000 دولار",
+                  demand: "مرتفع جدًا", 
+                  category: "تقنية",
+    experience: "2-5 سنوات",
+    growthRate: "25%",
+    requiredSpecialties: [
+      "Programming (Python, Java, C#)",
+      "Software Design",
+      "Problem-solving",
+      "Debugging",
+      "Cloud Computing",
+      "Version Control (Git)"
+    
+    ],
+                },
+      {
+         title: "خبير تسويق رقمي (Digital Marketing Specialist)",
+          description: "تسويق عبر الإنترنت بكفاءة.",
+          jobType: "demand",
+           avgSalary: "70,000 - 120,000 دولار",
+            demand: "مرتفع جدًا",
+             category: "تسويق" ,
+             experience: "1-3 سنوات",
+    growthRate: "10%",
+    requiredSpecialties: [
+      "SEO/SEM",
+      "Content Marketing",
+      "Social Media Management",
+      "Email Marketing",
+      "Google Analytics",
+      "Paid Advertising (PPC)"
+    ]
+            },
+      { 
+        title: "ممرض مسجل (Registered Nurse)",
+         description: "رعاية صحية متخصصة.",
+         jobType: "demand",
+          avgSalary: "75,000 - 110,000 دولار",
+           demand: "مرتفع",
+            category: "الصحة",
+            experience: "0-2 سنوات",
+    growthRate: "6%",
+    requiredSpecialties: [
+      "Patient Care",
+      "Clinical Procedures",
+      "Critical Thinking",
+      "Communication Skills",
+      "Medical Recordkeeping",
+      "Emergency Response"
+    ]
+         } ,
+           
+      { 
+        title: "خبير أمن معلومات (Information Security Analyst)",
+       description: "تأمين البيانات من الهجمات.",
+       jobType: "demand",
+        avgSalary: "95,000 - 140,000 دولار",
+         demand: "مرتفع جدًا",
+          category: "أمن المعلومات",
+          experience: "2-5 سنوات",
+    growthRate: "32%",
+    requiredSpecialties: [
+      "Cybersecurity",
+      "Risk Assessment",
+      "Incident Response",
+      "Network Security",
+      "Penetration Testing",
+      "Security Compliance (e.g., ISO, NIST)"
+    ]
+         },
+      {
+         title: "فني أجهزة طبية (Medical Equipment Technician)", 
+      description: "صيانة الأجهزة الطبية الحيوية.",
+      jobType: "demand",
+       avgSalary: "65,000 - 90,000 دولار", 
+       demand: "مرتفع",
+        category: "الصحة",
+        experience: "1-3 سنوات",
+    growthRate: "10%",
+    requiredSpecialties: [
+      "Medical Equipment Repair",
+      "Technical Diagnostics",
+      "Preventive Maintenance",
+      "Calibration",
+      "Electronics Knowledge",
+      "Compliance with Safety Standards"
+    ]
+
+    },
+    
+            
+            // أكثر فرص عمل (Most Job Opportunities)
+            { 
+                title: "سائق شاحنات ثقيلة (Heavy Truck Driver)",
+                jobType:"opportunities",
+                description: "نقل البضائع عبر المسافات الطويلة.",
+                avgSalary: "60,000 - 85,000 دولار",
+                demand: "مرتفع",
+                category: "النقل",
+                experience: "1-3 سنوات",
+                growthRate: "4%",
+                requiredSpecialties: [
+                 "قيادة آمنة",
+               "معرفة أنظمة المرور",
+                "صيانة الشاحنة الأساسية",
+                 "التخطيط للمسارات",
+                  "إدارة الوقت",
+                    "الالتزام بالسلامة"
+    ]
+             },
+      { 
+        title: "معلم لغة إنجليزية (English Teacher)", 
+        jobType:"opportunities",
+        description: "تدريس اللغة الإنجليزية عالميًا.",
+         avgSalary: "50,000 - 75,000 دولار",
+          demand: "مرتفع",
+           category: "التعليم",
+           experience: "2-4 سنوات",
+    growthRate: "5%",
+    requiredSpecialties: [
+      "إتقان اللغة الإنجليزية",
+      "مهارات التدريس",
+      "إعداد المناهج",
+      "إدارة الصف",
+      "التواصل مع الطلاب",
+      "استخدام التكنولوجيا في التعليم"
+    ]
+        },
+      {
+         title: "موظف خدمة عملاء (Customer Service Representative)",
+         jobType:"opportunities",
+          description: "التواصل مع العملاء ودعمهم.",
+           avgSalary: "40,000 - 60,000 دولار",
+            demand: "مرتفع",
+             category: "خدمة العملاء",
+             experience: "0-2 سنوات",
+    growthRate: "5%",
+    requiredSpecialties: [
+      "التواصل الفعال",
+      "حل المشكلات",
+      "التعامل مع الشكاوى",
+      "إدارة الوقت",
+      "معرفة أنظمة إدارة علاقات العملاء (CRM)",
+      "اللباقة والصبر"
+      ]
+             },
+      { 
+        title: "فني صيانة كهربائية (Electrical Maintenance Technician)",
+        jobType:"opportunities",
+       description: "صيانة الأنظمة الكهربائية.",
+        avgSalary: "55,000 - 80,000 دولار",
+         demand: "مرتفع",
+          category: "الهندسة",
+          experience: "2-5 سنوات",
+    growthRate: "3%",
+    requiredSpecialties: [
+      "تشخيص الأعطال الكهربائية",
+      "صيانة وإصلاح الأنظمة الكهربائية",
+      "قراءة المخططات الكهربائية",
+      "الالتزام بإجراءات السلامة",
+      "استخدام أدوات الصيانة",
+      "العمل تحت الضغط"
+    ]
+
+        },
+      {
+        title: "مساعد مبيعات (Sales Associate)",
+        jobType:"opportunities",
+       description: "مساعدة العملاء في المبيعات.",
+        avgSalary: "35,000 - 55,000 دولار", 
+        demand: "مرتفع",
+         category: "مبيعات",
+         experience: "0-2 سنوات",
+    growthRate: "2%",
+    requiredSpecialties: [
+      "خدمة العملاء",
+      "مهارات البيع",
+      "معرفة بالمنتجات",
+      "التواصل الفعال",
+      "التعامل مع الكاشير",
+      "العمل ضمن فريق"
+    ]
+         },
+    
+            // للمبتدئين (Entry-Level Friendly)
+            {
+                 title: "مساعد إداري (Administrative Assistant)",
+                 jobType: "entry",
+                  description: "دعم إداري وتنظيمي للمكاتب.", 
+                  avgSalary: "40,000 - 60,000 دولار",
+                   demand: "مرتفع", 
+                   category: "إدارة",
+                    experience: "13 سنوات",
+                     growthRate: "5%",
+                   requiredSpecialties: [
+      "تنظيم الملفات",
+      "إدارة المواعيد",
+      "التواصل الفعال",
+      "إجادة برامج الأوفيس",
+      "تحضير التقارير",
+      "إدارة البريد الإلكتروني"
+    ]
+                 },
+
+      {
+         title: "موظف دعم فني (Technical Support Representative)",
+         jobType: "entry",
+       description: "مساعدة العملاء في المشكلات التقنية.",
+        avgSalary: "45,000 - 65,000 دولار",
+         demand: "مرتفع",
+          category: "تقنية",
+          experience: "1-3 سنوات",
+    growthRate: "6%",
+    requiredSpecialties: [
+      "تشخيص الأعطال التقنية",
+      "التواصل مع العملاء",
+      "معرفة أنظمة التشغيل",
+      "حل المشكلات التقنية",
+      "إدارة قواعد البيانات",
+      "القدرة على العمل تحت الضغط"
+    ]
+        },
+      { 
+        title: "مندوب مبيعات (Sales Representative)",
+        jobType: "entry",
+         description: "التواصل مع العملاء لبيع المنتجات.",
+          avgSalary: "50,000 - 70,000 دولار",
+           demand: "مرتفع",
+            category: "مبيعات",
+            experience: "1-3 سنوات",
+    growthRate: "4%",
+    requiredSpecialties: [
+      "التفاوض والإقناع",
+      "خدمة العملاء",
+      "إدارة علاقات العملاء",
+      "التواصل الفعال",
+      "تحقيق الأهداف البيعية",
+      "معرفة بالمنتجات والخدمات"
+    ]
+        },
+      {
+         title: "مشرف مخازن (Warehouse Supervisor)",
+         jobType: "entry",
+          description: "تنظيم وإدارة المخزون.",
+           avgSalary: "45,000 - 65,000 دولار",
+            demand: "مرتفع",
+             category: "الخدمات اللوجستية",
+             experience: "3-5 سنوات",
+    growthRate: "3%",
+    requiredSpecialties: [
+      "إدارة المخزون",
+      "تنظيم العمليات اللوجستية",
+      "قيادة الفريق",
+      "التعامل مع أنظمة إدارة المخزون",
+      "التخطيط للعمليات",
+      "ضمان الالتزام بإجراءات السلامة"
+    ]
+             },
+      { 
+
+        title: "مدخل بيانات (Data Entry Clerk)",
+        jobType: "entry",
+         description: "إدخال البيانات بدقة عالية.",
+          avgSalary: "35,000 - 50,000 دولار",
+           demand: "مرتفع",
+            category: "إدارة بيانات",
+            experience: "0-2 سنوات",
+    growthRate: "3%",
+    requiredSpecialties: [
+      "السرعة في الكتابة",
+      "دقة إدخال البيانات",
+      "التعامل مع برامج الحاسب الآلي",
+      "تنظيم المعلومات",
+      "التحقق من صحة البيانات",
+      "العمل تحت الضغط"
+    ]
+        }
+        ];
         // بيانات التخصصات الجامعية
         // بيانات التخصصات المعدلة
         const majors = [
