@@ -312,6 +312,7 @@ let currentSearchType = 'jobs'; // القيمة الافتراضية
             renderMajors(majors);
             document.querySelectorAll('input[type="checkbox"][data-filter]').forEach(checkbox => {
                 checkbox.addEventListener('change', () => {
+                    onFilterChange();
                     // اجمع كل الفلاتر المختارة
                     const selectedFilters = Array.from(document.querySelectorAll('input[type="checkbox"][data-filter]:checked'))
                     .map(cb => cb.getAttribute('data-filter'));    
@@ -349,7 +350,6 @@ let currentSearchType = 'jobs'; // القيمة الافتراضية
                     return;
                 }
                 const results = performSearch(query, currentSearchType);
-                resetFilters();
                 displaySearchResults(results);
             });
             initSearch();
@@ -418,7 +418,6 @@ let currentSearchType = 'jobs'; // القيمة الافتراضية
                         return;
                     }
                     const results = performSearch(query, currentSearchType);
-                    resetFilters();
                     displaySearchResults(results);
                 }, 100); // تأخير 300 مللي ثانية
             });
@@ -2061,7 +2060,7 @@ function calculateCompatibility(prof, prefs) {
         const searchInput = document.getElementById('searchInput');
         document.getElementById('mainSearchResults').style.display = 'none'; // إخفاء نتائج البحث القديمة
     // تحديث الـ placeholder حسب النوع
-    if(type === 'jobs') {
+        if(type === 'jobs') {
             searchInput.placeholder = "ابحث عن مهنة...";
         } else {
             searchInput.placeholder = "ابحث عن تخصص...";
@@ -2086,33 +2085,43 @@ function calculateCompatibility(prof, prefs) {
         const searchQuery = document.getElementById('searchInput').value.trim();
         if (searchQuery) {
             const results = performSearch(searchQuery, type);
-            resetFilters();
             displaySearchResults(results);
         }
         resetFilters();
     }
 
 
-function performSearch(query, type) {
-    const normalizedQuery = query.trim().toLowerCase();
-    if (type === 'jobs') {
-        return {
-            professions: professions.filter(prof =>
-                prof.title.toLowerCase().includes(normalizedQuery) ||
-                prof.avgSalary.toLowerCase().includes(normalizedQuery)
-            ),
-            majors: []
-        };
-    } else {
-        return {
-            professions: [],
-            majors: majors.filter(major =>
-                major.name.toLowerCase().includes(normalizedQuery)
-            )
-        };
+    function performSearch(query, type) {
+        const normalizedQuery = query.trim().toLowerCase();
+        const checkboxes = document.querySelectorAll('#jobFieldsFilter input[type="checkbox"]:checked');
+        const selectedCategories = Array.from(checkboxes).map(cb => cb.value);
+        const isFiltering = selectedCategories.length > 0;
+        const relatedCategories = selectedCategories.flatMap(filter => getCategoriesForFilter(filter));
+    
+        let results = { professions: [], majors: [] };
+    
+        if (type === 'jobs') {
+            results.professions = professions.filter(prof => {
+                const matchesQuery = 
+                    prof.title.toLowerCase().includes(normalizedQuery) ||
+                    prof.summarize.toLowerCase().includes(normalizedQuery) ||
+                    prof.avgSalary.toLowerCase().includes(normalizedQuery);
+                const matchesFilter = !isFiltering || relatedCategories.includes(prof.category);
+                return matchesQuery && matchesFilter;
+            });
+        } else {
+            results.majors = majors.filter(major => {
+                const matchesQuery = 
+                    major.name.toLowerCase().includes(normalizedQuery) ||
+                    major.summarize.toLowerCase().includes(normalizedQuery) ||
+                    major.description.toLowerCase().includes(normalizedQuery);
+                const matchesFilter = !isFiltering || relatedCategories.includes(major.field);
+                return matchesQuery && matchesFilter;
+            });
+        }
+    
+        return results;
     }
-    document.getElementById('showMajorsBtn').classList.toggle('active', currentSearchType === 'majors');
-}
 function scrollToResults() {
     const mainSearchResults = document.getElementById('mainSearchResults');
     const navbarHeight = document.querySelector('.navbar').offsetHeight;
@@ -2133,16 +2142,14 @@ function displaySearchResults(results) {
     const currentSection = currentNavLink ? currentNavLink.getAttribute('href') : '';
 
     // تحقق إذا كانت لا توجد نتائج
-    if ((results.professions.length === 0) && (results.majors.length === 0)) {
+    if (results.professions.length === 0 && results.majors.length === 0) {
         searchResults.innerHTML = '<p style="text-align: center; color: #666; padding: 1rem;">لا توجد نتائج مطابقة</p>';
         searchResults.style.display = 'block';
-        // تمرير تلقائي لمكان النتائج
-        
         scrollToResults();
         return;
     }
 
-    // ✅ هنا نعرض النتائج فقط لو لم نكن داخل قسم "المهن والتخصصات"
+    // عرض النتائج في القائمة المنسدلة إذا لم نكن في قسم المهن والتخصصات
     if (currentSection !== '#jobs') {
         results.professions.forEach(profession => {
             const item = document.createElement('div');
@@ -2168,11 +2175,15 @@ function displaySearchResults(results) {
 
         searchResults.style.display = 'block';
     } else {
-        // لو كنت في قسم #jobs، لا نعرض قائمة البحث المنسدلة
         searchResults.style.display = 'none';
+        // عرض النتائج في الحاويات الرئيسية
+        if (currentSearchType === 'jobs') {
+            renderProfessions(results.professions);
+        } else {
+            renderMajors(results.majors);
+        }
     }
 
-    // تمرير تلقائي لمكان النتائج لو في بحث عادي
     scrollToResults();
 }
 
@@ -2255,17 +2266,39 @@ function onFilterChange() {
     const selectedCategories = Array.from(checkboxes).map(cb => cb.value);
     const isFiltering = selectedCategories.length > 0;
     const dataSource = currentSearchType === 'jobs' ? professions : majors;
-    const results = dataSource.filter(item => {
+
+    // الخطوة 1: تصفية البيانات بناءً على نص البحث
+    let filteredResults = dataSource.filter(item => {
         const title = (item.title || item.name || '').toLowerCase();
-        const category = item.category || item.field || '';
-        const matchesSearch = !query || title.includes(query);
-        const matchesFilter = !isFiltering || selectedCategories.includes(category);
-        return matchesSearch && matchesFilter;
+        const description = (item.description || item.summarize || '').toLowerCase();
+        return !query || title.includes(query) || description.includes(query);
     });
+
+    // الخطوة 2: تصفية النتائج بناءً على الفلاتر إذا كانت موجودة
+    if (isFiltering) {
+        const relatedCategories = selectedCategories.flatMap(filter => getCategoriesForFilter(filter));
+        filteredResults = filteredResults.filter(item => {
+            const category = item.category || item.field || '';
+            return relatedCategories.every(cat => category === cat);
+        });
+    }
+
+    // الخطوة 3: عرض النتائج
     if (currentSearchType === 'jobs') {
-        renderProfessions(results);
+        renderProfessions(filteredResults);
     } else {
-        renderMajors(results);
+        renderMajors(filteredResults);
+    }
+
+    // تحديث نتائج البحث الرئيسية
+    const mainSearchResults = document.getElementById('mainSearchResults');
+    mainSearchResults.style.display = filteredResults.length > 0 && query ? 'block' : 'none';
+    document.getElementById('searchQueryText').innerText = query;
+
+    // إخفاء قائمة البحث المنسدلة إذا كنت في قسم المهن والتخصصات
+    const currentSection = document.querySelector('.nav-link.active')?.getAttribute('href') || '';
+    if (currentSection === '#jobs') {
+        document.getElementById('searchResults').style.display = 'none';
     }
 }
 
