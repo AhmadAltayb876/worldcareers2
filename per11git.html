@@ -482,40 +482,23 @@
     </div>
 </div>
 
-    <!-- بقية المحتوى يبقى كما هو -->
-    <div class="search-results-section" id="mainSearchResults">
-        <!-- ... -->
-    </div>
-    <div class="professions-grid" id="professionsContainer"></div>
-    <div class="professions-grid" id="majorsContainer" style="display: none;"></div>
-</section>
-<!-- قسم نتائج البحث الرئيسية -->
 <div class="search-results-section" id="mainSearchResults">
-<h3 class="search-results-title">
-<i class="fas fa-search"></i>
-                نتائج البحث لـ "<span id="searchQueryText"></span>"
-                <button class="clear-search-btn" onclick="clearSearch()">
-<i class="fas fa-times"></i> مسح البحث
-                </button>
-</h3>
-<div class="professions-grid" id="searchResultsContainer"></div>
-</div>
-<!-- قسم المهن الأساسي -->
-<div class="professions-grid" id="professionsContainer">
-<!-- سيتم إضافة البطاقات هنا -->
-</div>
-
-<!-- نافذة التفاصيل المنبثقة -->
-<div class="modal" id="detailsModal">
-<div class="modal-content">
-<span class="close-btn" onclick="closeModal()">×</span>
-<div class="modal-header">
-<h2 id="modalTitle"></h2>
-<div class="category-tag" id="modalCategory"></div>
-</div>
-<div id="modalContent"></div>
-</div>
-</div>
+    <h3 class="search-results-title">
+    <i class="fas fa-search"></i>
+                        نتائج البحث لـ "<span id="searchQueryText"></span>"
+                        <button class="clear-search-btn" onclick="clearSearch()">
+    <i class="fas fa-times"></i> مسح البحث
+                        </button>
+    </h3>
+    </div>
+    <!-- قسم المهن الأساسي -->
+    <div class="professions-grid" id="professionsContainer">
+    <!-- سيتم إضافة البطاقات هنا -->
+    </div>
+    <!-- قسم التخصصات الجامعية (مخفي افتراضياً) -->
+    <div class="professions-grid" id="majorsContainer" style="display: none;"></div>
+    <!-- سيتم إضافة التخصصات هنا -->
+</section>
 <script src="script.js"></script>
 
 
