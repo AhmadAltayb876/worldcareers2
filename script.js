@@ -205,7 +205,7 @@ let currentSearchType = 'jobs'; // القيمة الافتراضية
             jobo: "كثير"  ,
             summarize: "hghghghghg" ,
             name: "هندسة الحاسوب", 
-            field: "الهندسة والتكنولوجيا", 
+            field: "الهندسة", 
             description: "يجمع تخصص هندسة الحاسوب بين مبادئ الهندسة الكهربائية وعلوم الحاسوب. يدرس الطلاب تصميم وتطوير أنظمة الحاسوب المادية والبرمجية.",
             duration: "4 سنوات دراسية",
             universities: ["جامعة الملك فهد للبترول", "جامعة الأميرة نورة", "جامعة الطائف"],
@@ -219,7 +219,7 @@ let currentSearchType = 'jobs'; // القيمة الافتراضية
             jobo: "كثير"  ,
             summarize: "hghghghghg" ,
             name: "إدارة الأعمال", 
-            field: "العلوم الإدارية", 
+            field: "الاعمال", 
             description: "يركز تخصص إدارة الأعمال على دراسة العمليات الإدارية في المنظمات. يشمل التخطيط والتنظيم والقيادة والرقابة على الموارد لتحقيق الأهداف التنظيمية.",
             duration: "4 سنوات دراسية",
             universities: ["جامعة الملك سعود", "جامعة الإمام محمد بن سعود", "جامعة الدمام"],
@@ -233,7 +233,7 @@ let currentSearchType = 'jobs'; // القيمة الافتراضية
             jobo: "كثير"  ,
             summarize: "hghghghghg" ,
             name: "الهندسة المعمارية", 
-            field: "الهندسة والتصميم", 
+            field: "الهندسة", 
             description: "يتعلم طلاب الهندسة المعمارية تصميم المباني والهياكل مع مراعاة الجوانب الجمالية والوظيفية والسلامة. يجمع التخصص بين الفنون والهندسة.",
             duration: "5 سنوات دراسية",
             universities: ["جامعة الملك فهد للبترول", "جامعة الملك سعود", "جامعة جدة"],
@@ -246,8 +246,8 @@ let currentSearchType = 'jobs'; // القيمة الافتراضية
             mid: "176" ,
             jobo: "كثير"  ,
             summarize: "hghghghghg" ,
-            name: "الذكاء الاصطناعي", 
-            field: "علوم الحاسوب", 
+            name: "AI", 
+            field: "AI", 
             description: "يركز تخصص الذكاء الاصطناعي على تطوير أنظمة قادرة على محاكاة الذكاء البشري. يشمل تعلم الآلة، معالجة اللغة الطبيعية، الرؤية الحاسوبية وغيرها.",
             duration: "4 سنوات دراسية",
             universities: ["جامعة الملك سعود", "جامعة الأمير مقرن", "جامعة الملك عبدالله"],
@@ -257,14 +257,73 @@ let currentSearchType = 'jobs'; // القيمة الافتراضية
             ]
         }
         ];
-
+        // تعريف الماب (الربط) بين الفلاتر والمسميات
+    const filterToCategoryMapping = {
+        "الطب": ["الطب"],
+        "الهندسة": ["الهندسة"],
+        "IT & AI": ["IT", "AI"],
+        "الأعمال": ["الاعمال", "الأعمال"],
+        "العلوم": ["الفيزياء", "الكيمياء", "علم الاحياء"],
+        "القانون": ["القانون"],
+        "الزراعة": ["الزراعة"],
+        "اللغات": ["اللغات"],
+        "النقل": ["النقل"],
+        "الفنون": ["الفنون"],
+        "السياحة": ["السياحة"],
+        "علوم النفس": ["العلوم النفسية"],
+        "البناء": ["البناء"],
+        "الرياضة": ["الرياضة"],
+        "الطاقة": ["الطاقة"]
+    };
+    
+    // دالة تقوم بالربط حسب الفلتر
+    function getCategoriesForFilter(filterName) {
+        return filterToCategoryMapping[filterName] || [];
+    }
+    
+    // مثال: كيف تستخدمها
+    function filterProfessionsByFilterName(filterName) {
+        const relatedCategories = getCategoriesForFilter(filterName);
+      
+        const filteredProfessions = professions.filter(profession =>
+          relatedCategories.includes(profession.category)
+        );
+      
+        // عرض النتائج
+        renderProfessions(filteredProfessions);
+      }
+      function filterMajorsByFilterName(filterName) {
+        const relatedFields = getCategoriesForFilter(filterName);
+      
+        const filteredMajors = majors.filter(major =>
+          relatedFields.includes(major.field)
+        );
+      
+        // عرض النتائج
+        renderMajors(filteredMajors);
+      }
+      
+    
         // تهيئة الصفحة عند التحميل
         document.addEventListener('DOMContentLoaded', function() {
             document.getElementById('jobs').style.display = 'block';
            // تهيئة البيانات
-    renderProfessions(professions);
-    renderMajors(majors);
-    
+            renderProfessions(professions);
+            renderMajors(majors);
+            
+            document.querySelectorAll('input[type="checkbox"][data-filter]').forEach(checkbox => {
+                checkbox.addEventListener('change', () => {
+                    const selectedFilter = checkbox.getAttribute('data-filter');
+                    if (checkbox.checked) {
+                        filterProfessionsByFilterName(selectedFilter);
+                        filterMajorsByFilterName(selectedFilter);
+                    } else {
+                        // لو ألغى التحديد، نظهر كل شيء
+                        renderProfessions(professions);
+                        renderMajors(majors);
+                    }
+                });
+            });
     // تفعيل البحث
     document.getElementById('searchInput').addEventListener('input', function(e) { 
         const currentSection = document.querySelector('.nav-link.active').getAttribute('href');

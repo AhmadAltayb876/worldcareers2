@@ -250,85 +250,237 @@
     </div>
 
     <!-- فلترة المجالات -->
-    <div class="filter-container">
-        <h3 class="filter-title" style="text-align: center; margin-bottom: 1rem;">تصفية حسب المجال:</h3>
-        <div class="field-filters" id="jobFieldsFilter">
-            <!-- بطاقة AI -->
-            <label class="field-filter-card">
-                <input type="checkbox" value="AI" onchange="onFilterChange()">
-                <div class="field-filter-inner">
-                    <div class="field-filter-front">
-                        <i class="fas fa-robot field-filter-icon"></i>
-                        <span class="field-filter-name">AI</span>
-                    </div>
-                    <div class="field-filter-back">
-                        <i class="fas fa-robot field-filter-icon"></i>
-                        <span class="field-filter-name">AI</span>
-                    </div>
+    <!-- فلترة المجالات المعدلة -->
+<div class="filter-container">
+    <h3 class="filter-title" style="text-align: center; margin-bottom: 1rem;">تصفية حسب المجال:</h3>
+    <div class="field-filters" id="jobFieldsFilter">
+        
+        <!-- الطب -->
+        <label class="field-filter-card">
+            <input type="checkbox" value="الطب" onchange="onFilterChange()" data-filter="الطب">
+            <div class="field-filter-inner">
+                <div class="field-filter-front">
+                    <i class="fas fa-hospital field-filter-icon"></i>
+                    <span class="field-filter-name">الطب</span>
                 </div>
-            </label>
-            
-            <!-- بطاقة الطب -->
-            <label class="field-filter-card">
-                <input type="checkbox" value="طب" onchange="onFilterChange()">
-                <div class="field-filter-inner">
-                    <div class="field-filter-front">
-                        <i class="fas fa-hospital field-filter-icon"></i>
-                        <span class="field-filter-name">الطب</span>
-                    </div>
-                    <div class="field-filter-back">
-                        <i class="fas fa-hospital field-filter-icon"></i>
-                        <span class="field-filter-name">الطب</span>
-                    </div>
+                <div class="field-filter-back">
+                    <i class="fas fa-hospital field-filter-icon"></i>
+                    <span class="field-filter-name">الطب</span>
                 </div>
-            </label>
-            
-            <!-- بطاقة UX/UI -->
-            <label class="field-filter-card">
-                <input type="checkbox" value="UX/UI" onchange="onFilterChange()">
-                <div class="field-filter-inner">
-                    <div class="field-filter-front">
-                        <i class="fas fa-paint-brush field-filter-icon"></i>
-                        <span class="field-filter-name">UX/UI</span>
-                    </div>
-                    <div class="field-filter-back">
-                        <i class="fas fa-paint-brush field-filter-icon"></i>
-                        <span class="field-filter-name">UX/UI</span>
-                    </div>
+            </div>
+        </label>
+        
+        <!-- الهندسة -->
+        <label class="field-filter-card">
+            <input type="checkbox" value="الهندسة" onchange="onFilterChange()" data-filter="الهندسة">
+            <div class="field-filter-inner">
+                <div class="field-filter-front">
+                    <i class="fas fa-cogs field-filter-icon"></i>
+                    <span class="field-filter-name">الهندسة</span>
                 </div>
-            </label>
-            
-            <!-- بطاقة الهندسة -->
-            <label class="field-filter-card">
-                <input type="checkbox" value="هندسة" onchange="onFilterChange()">
-                <div class="field-filter-inner">
-                    <div class="field-filter-front">
-                        <i class="fas fa-cogs field-filter-icon"></i>
-                        <span class="field-filter-name">الهندسة</span>
-                    </div>
-                    <div class="field-filter-back">
-                        <i class="fas fa-cogs field-filter-icon"></i>
-                        <span class="field-filter-name">الهندسة</span>
-                    </div>
+                <div class="field-filter-back">
+                    <i class="fas fa-cogs field-filter-icon"></i>
+                    <span class="field-filter-name">الهندسة</span>
                 </div>
-            </label>
-            
-            <!-- بطاقة الأعمال -->
-            <label class="field-filter-card">
-                <input type="checkbox" value="أعمال" onchange="onFilterChange()">
-                <div class="field-filter-inner">
-                    <div class="field-filter-front">
-                        <i class="fas fa-chart-line field-filter-icon"></i>
-                        <span class="field-filter-name">الأعمال</span>
-                    </div>
-                    <div class="field-filter-back">
-                        <i class="fas fa-chart-line field-filter-icon"></i>
-                        <span class="field-filter-name">الأعمال</span>
-                    </div>
+            </div>
+        </label>
+        
+        <!-- التكنولوجيا -->
+        <label class="field-filter-card">
+            <input type="checkbox" value="IT & AI" onchange="onFilterChange()" data-filter="IT & AI">
+            <div class="field-filter-inner">
+                <div class="field-filter-front">
+                    <i class="fas fa-robot field-filter-icon"></i>
+                    <span class="field-filter-name">IT & AI</span>
                 </div>
-            </label>
-        </div>
+                <div class="field-filter-back">
+                    <i class="fas fa-robot field-filter-icon"></i>
+                    <span class="field-filter-name">IT & AI</span>
+                </div>
+            </div>
+        </label>
+        
+        <!-- العلوم -->
+        <label class="field-filter-card">
+            <input type="checkbox" value="العلوم" onchange="onFilterChange()" data-filter="العلوم">
+            <div class="field-filter-inner">
+                <div class="field-filter-front">
+                    <i class="fas fa-flask field-filter-icon"></i>
+                    <span class="field-filter-name">العلوم</span>
+                </div>
+                <div class="field-filter-back">
+                    <i class="fas fa-flask field-filter-icon"></i>
+                    <span class="field-filter-name">العلوم</span>
+                </div>
+            </div>
+        </label>
+        
+        <!-- الأعمال -->
+        <label class="field-filter-card">
+            <input type="checkbox" value="الأعمال" onchange="onFilterChange()" data-filter="الأعمال">
+            <div class="field-filter-inner">
+                <div class="field-filter-front">
+                    <i class="fas fa-chart-line field-filter-icon"></i>
+                    <span class="field-filter-name">الأعمال</span>
+                </div>
+                <div class="field-filter-back">
+                    <i class="fas fa-chart-line field-filter-icon"></i>
+                    <span class="field-filter-name">الأعمال</span>
+                </div>
+            </div>
+        </label>
+        
+        <!-- القانون -->
+        <label class="field-filter-card">
+            <input type="checkbox" value="القانون" onchange="onFilterChange()" data-filter="القانون">
+            <div class="field-filter-inner">
+                <div class="field-filter-front">
+                    <i class="fas fa-gavel field-filter-icon"></i>
+                    <span class="field-filter-name">القانون</span>
+                </div>
+                <div class="field-filter-back">
+                    <i class="fas fa-gavel field-filter-icon"></i>
+                    <span class="field-filter-name">القانون</span>
+                </div>
+            </div>
+        </label>
+        
+        <!-- الفنون -->
+        <label class="field-filter-card">
+            <input type="checkbox" value="الفنون" onchange="onFilterChange()" data-filter="الفنون">
+            <div class="field-filter-inner">
+                <div class="field-filter-front">
+                    <i class="fas fa-palette field-filter-icon"></i>
+                    <span class="field-filter-name">الفنون</span>
+                </div>
+                <div class="field-filter-back">
+                    <i class="fas fa-palette field-filter-icon"></i>
+                    <span class="field-filter-name">الفنون</span>
+                </div>
+            </div>
+        </label>
+        
+        <!-- التعليم -->
+        <label class="field-filter-card">
+            <input type="checkbox" value="اللغات" onchange="onFilterChange()" data-filter="اللغات">
+            <div class="field-filter-inner">
+                <div class="field-filter-front">
+                    <i class="fas fa-book field-filter-icon"></i>
+                    <span class="field-filter-name">اللغات</span>
+                </div>
+                <div class="field-filter-back">
+                    <i class="fas fa-book field-filter-icon"></i>
+                    <span class="field-filter-name">اللغات</span>
+                </div>
+            </div>
+        </label>
+        
+        <!-- الزراعة -->
+        <label class="field-filter-card">
+            <input type="checkbox" value="الزراعة" onchange="onFilterChange()" data-filter="الزراعة">
+            <div class="field-filter-inner">
+                <div class="field-filter-front">
+                    <i class="fas fa-leaf field-filter-icon"></i>
+                    <span class="field-filter-name">الزراعة</span>
+                </div>
+                <div class="field-filter-back">
+                    <i class="fas fa-leaf field-filter-icon"></i>
+                    <span class="field-filter-name">الزراعة</span>
+                </div>
+            </div>
+        </label>
+        
+        <!-- النقل -->
+        <label class="field-filter-card">
+            <input type="checkbox" value="النقل" onchange="onFilterChange()" data-filter="النقل">
+            <div class="field-filter-inner">
+                <div class="field-filter-front">
+                    <i class="fas fa-truck field-filter-icon"></i>
+                    <span class="field-filter-name">النقل</span>
+                </div>
+                <div class="field-filter-back">
+                    <i class="fas fa-truck field-filter-icon"></i>
+                    <span class="field-filter-name">النقل</span>
+                </div>
+            </div>
+        </label>
+        
+        <!-- البناء -->
+        <label class="field-filter-card">
+            <input type="checkbox" value="البناء" onchange="onFilterChange()" data-filter="البناء">
+            <div class="field-filter-inner">
+                <div class="field-filter-front">
+                    <i class="fas fa-hard-hat field-filter-icon"></i>
+                    <span class="field-filter-name">البناء</span>
+                </div>
+                <div class="field-filter-back">
+                    <i class="fas fa-hard-hat field-filter-icon"></i>
+                    <span class="field-filter-name">البناء</span>
+                </div>
+            </div>
+        </label>
+        
+        <!-- السياحة -->
+        <label class="field-filter-card">
+            <input type="checkbox" value="السياحة" onchange="onFilterChange()" data-filter="السياحة">
+            <div class="field-filter-inner">
+                <div class="field-filter-front">
+                    <i class="fas fa-umbrella-beach field-filter-icon"></i>
+                    <span class="field-filter-name">السياحة</span>
+                </div>
+                <div class="field-filter-back">
+                    <i class="fas fa-umbrella-beach field-filter-icon"></i>
+                    <span class="field-filter-name">السياحة</span>
+                </div>
+            </div>
+        </label>
+        
+        <!-- الطاقة -->
+        <label class="field-filter-card">
+            <input type="checkbox" value="الطاقة" onchange="onFilterChange()" data-filter=""الطاقة>
+            <div class="field-filter-inner">
+                <div class="field-filter-front">
+                    <i class="fas fa-bolt field-filter-icon"></i>
+                    <span class="field-filter-name">الطاقة</span>
+                </div>
+                <div class="field-filter-back">
+                    <i class="fas fa-bolt field-filter-icon"></i>
+                    <span class="field-filter-name">الطاقة</span>
+                </div>
+            </div>
+        </label>
+        
+        <!-- الرياضة -->
+        <label class="field-filter-card">
+            <input type="checkbox" value="الرياضة" onchange="onFilterChange()" data-filter="الرياضة">
+            <div class="field-filter-inner">
+                <div class="field-filter-front">
+                    <i class="fas fa-running field-filter-icon"></i>
+                    <span class="field-filter-name">الرياضة</span>
+                </div>
+                <div class="field-filter-back">
+                    <i class="fas fa-running field-filter-icon"></i>
+                    <span class="field-filter-name">الرياضة</span>
+                </div>
+            </div>
+        </label>
+        
+        <!-- الخدمات -->
+        <label class="field-filter-card">
+            <input type="checkbox" value="علوم النفس" onchange="onFilterChange()" data-filعلومter="">
+            <div class="field-filter-inner">
+                <div class="field-filter-front">
+                    <i class="fas fa-comments field-filter-icon"></i>
+                    <span class="field-filter-name">علوم النفس</span>
+                </div>
+                <div class="field-filter-back">
+                    <i class="fas fa-comments field-filter-icon"></i>
+                    <span class="field-filter-name">علوم النفس</span>
+                </div>
+            </div>
+        </label>
     </div>
+</div>
 
     <!-- بقية المحتوى يبقى كما هو -->
     <div class="search-results-section" id="mainSearchResults">

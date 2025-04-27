@@ -2128,3 +2128,74 @@ width: 110px;
 transform: translateX(110px);
 }
 }
+/* أضف هذا الكود في نهاية ملف style.css */
+
+@media (min-width: 360px) and (max-width: 396px) {
+    /* تعديلات بطاقات الفلترة */
+    .field-filter-card {
+        width: 90px; /* تقليل العرض */
+        height: 90px; /* تقليل الارتفاع */
+        margin: 0.2rem; /* تقليل الهوامش */
+    }
+
+    .field-filter-icon {
+        font-size: 1.5rem; /* تصغير حجم الأيقونات */
+    }
+
+    .field-filter-name {
+        font-size: 0.75rem; /* تصغير حجم النص */
+    }
+
+    /* تعديلات أزرار التبديل بين المهن والتخصصات */
+    #jobs .filter-item {
+        padding: 0.5rem 0.8rem;
+        font-size: 0.8rem;
+        min-width: 100px;
+    }
+
+    /* تعديلات شريط البحث */
+    .search-input {
+        padding-left: 90px !important;
+    }
+
+    .search-type {
+        padding: 0.2rem 0.5rem;
+        font-size: 0.7rem;
+    }
+
+    /* تعديلات الفلاتر في قسم best-jobs */
+    #best-jobs .filter-item {
+        padding: 0.5rem 0.8rem;
+        font-size: 0.8rem;
+        min-width: 100px;
+    }
+
+    /* ضبط عدد الأعمدة في grid */
+    .field-filters {
+        grid-template-columns: repeat(3, 1fr); /* 3 أعمدة بدلاً من 2 */
+        gap: 0.5rem; /* تقليل المسافة بين العناصر */
+    }
+
+    /* تعديلات إضافية لتحسين المساحة */
+    .filter-container {
+        padding: 0 0.5rem;
+    }
+
+    .filter-title {
+        font-size: 0.9rem;
+        margin-bottom: 0.3rem;
+    }
+}
+
+/* تحسينات إضافية للشاشات بين 395px و 480px */
+@media (min-width: 396px) and (max-width: 480px) {
+    .field-filter-card {
+        width: 100px;
+        height: 100px;
+    }
+
+    .field-filters {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.8rem;
+    }
+}
