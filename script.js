@@ -692,358 +692,259 @@ let currentSearchType = 'jobs'; // القيمة الافتراضية
             // أفضل المهن (Best Careers)
             {
                 industry: "fhfhf" ,
-                title: "جراح الأعصاب",
-                category: "طب",
-                avgSalary: "350,000-$1,200,000",
-                experience: "10+ سنوات",
+                jobo: "كثير"  ,
+                title: "مهندس ذكاء اصطناعي",
+                avgSalary: "95,000 - 250,000",
+                experience: "5+ سنوات",
                 demand: "مرتفع جدًا",
-                profitability: "عالية",
-                growthRate: "12%",
-                jobType: "best",
-                requiredSpecialties: [
-                    "الجراحة الروبوتية (دافنشي)",
-                    " الجراحة المجهرية",
-                ],
-                description: "تشخيص وعلاج أمراض الجهاز العصبي (الدماغ، الحبل الشوكي، الأعصاب الطرفية)"
+                description: "تطوير أنظمة الذكاء الاصطناعي وتعلم الآلة",
+                summarize: "hghghghghg" ,
+                category: "AI",
+                skills: ["تحليلية", "تقنية", "AI", "بيانات"]
             },
             {
                 industry: "fhfhf" ,
-                title: "جراح الأعصاب",
-                category: "طب",
-                avgSalary: "350,000-$1,200,000",
-                experience: "10+ سنوات",
-                demand: "مرتفع جدًا",
-                profitability: "عالية",
-                growthRate: "12%",
-                jobType: "profit",
-                requiredSpecialties: [
-                    "الجراحة الروبوتية (دافنشي)",
-                    " الجراحة المجهرية",
-                    "البورد الأميركي أو السعودي",
-                ],
-                description: "تشخيص وعلاج أمراض الجهاز العصبي (الدماغ، الحبل الشوكي، الأعصاب الطرفية)"
-            },
-            {
-                title: "مهندس الحوسبة الكمومية",
-                category: "هندسة",
-                avgSalary: "130,000-300,000",
-                experience: "7+ سنوات",
+                jobo: "كثير"  ,
+                title: "جراح تجميل",
+                avgSalary: "120,000-300,000",
+                experience: "12+ سنوات",
                 demand: "مرتفع",
-                profitability: "استثنائية",
-                growthRate: "20%",
-                jobType: "best",
-                requiredSpecialties: [
-                    "Qiskit, Cirq,Python, Q#",
-                    "	ميكانيكا الكم الأساسية,	نظرية الحقل الكمومي",
-                    "	شهادات من منصات مثل IBM Quantum	شهادات متقدمة مثل Quantum Machine Learning",
-                ],
-                description: "تصميم وتطوير أنظمة حوسبة كمومية لحل مشكلات معقدة (مثل تحسين سلاسل التوريد، اكتشاف الأدوية)."
-            },
-           
-            
-             // الأكثر ربحًا (Most Profitable)
-           
-            {
-                title:"جراح التجميل الافتراضي",
+                description: "إجراء عمليات التجميل التصحيحية والجمالية",
+                summarize: "hghghghghg" ,
                 category: "طب",
-                avgSalary: "250,000 - 500,000",
+                skills: ["طب", "يدوية", "تركيز"]
+            },
+            {
+                industry: "fhfhf" ,
+                jobo: "كثير"  ,
+                title: "طبيب أشعة تداخلية",
+                avgSalary: "280,000 - 450,000",
                 experience: "8+ سنوات",
-
-                demand: "مرتفع",
-                profitability: "استثنائية",
-
-                growthRate: " 45%",
-                jobType: "profit",
-                requiredSpecialties: [
-               " استخدام تقنيات AR/VR في التصميم الجراحي",
-"- شهادة Board Certified Plastic Surgeon",
-                ],
-                description: "تصميم عمليات تجميلية افتراضية لعملاء في المملكة العربية السعودية باستخدام تقنيات Metaverse."
+                demand: "متوسط",
+                description: "تشخيص وعلاج الأمراض باستخدام التصوير الإشعاعي",
+                summarize: "hghghghghg" ,
+                category: "طب",
+                skills: ["طب", "تحليلية", "تقنية"]
             },
             {
-                title:" مدير صناديق العملات الرقمية",
-                category: "هندسة",
-                avgSalary: "	90,000-180,000",
+                industry: "fhfhf" ,
+                jobo: "كثير"  ,
+                title: "مطور بلوك تشين",
+                avgSalary: "120,000 - 300,000",
+                experience: "4+ سنوات",
+                demand: "مرتفع جدًا",
+                description: "تطوير أنظمة لامركزية باستخدام تقنية البلوك تشين",
+                summarize: "hghghghghg" ,
+                category: "AI",
+                skills: ["تقنية", "تحليلية", "أمن"]
+            },
+            {
+                industry: "fhfhf" ,
+                jobo: "كثير"  ,
+                title: "مهندس حوسبة كمومية",
+                avgSalary: "80,000-150,000",
+                experience: "6+ سنوات",
+                demand: "مرتفع",
+                description: "تصميم أنظمة الحوسبة الكمومية",
+                summarize: "hghghghghg" ,
+                category: "AI",
+                skills: ["تقنية", "تحليلية", "رياضيات"]
+            },
+            {
+                industry: "fhfhf" ,
+                jobo: "كثير"  ,
+                title: "مهندس طاقة الرياح البحرية",
+                avgSalary: "90,000 - 180,000",
                 experience: "5+ سنوات",
                 demand: "مرتفع",
-                profitability: "استثنائية",
-                growthRate: "25%",
-                jobType: "profit",
-                requiredSpecialties: [
-                "- تحليل الأسواق الرقمي",
-"- شهادات مثل CAIA أو CFA",
-"- معرفة بقوانين الهيئة السعودية للأسواق المالية (CMA)",
-                ],
-                description:"	إدارة محافظ استثمارية في بورصات مثل Binance وRain (السعودية)."
+                description: "تصميم وتنفيذ مزارع الرياح البحرية",
+                summarize: "hghghghghg" ,
+                category: "هندسة",
+                skills: ["هندسة", "تحليلية", "بيئية"]
             },
             {
-                title: "خبير استشارات الذكاء الاصطناعي التنظيمي",
-                category: "تكنولوجيا",
-                avgSalary: "150,000 - 300,000",
+                industry: "fhfhf" ,
+                jobo: "كثير"  ,
+                title: "باحث في تقنية النانو",
+                avgSalary: "85,000 - 160,000",
+                experience: "4+ سنوات",
+                demand: "متوسط",
+                description: "بحث وتطوير مواد متقدمة بمقياس النانو",
+                summarize: "hghghghghg" ,
+                category: "هندسة",
+                skills: ["هندسة", "بحثية", "تحليلية"]
+            },
+            {
+                industry: "fhfhf" ,
+                jobo: "كثير"  ,
+                title: "مدير استثمار العملات الرقمية",
+                avgSalary: "130,000 - 400,000",
+                experience: "5+ سنوات",
+                demand: "مرتفع",
+                description: "إدارة محافظ استثمارية في العملات المشفرة",
+                summarize: "hghghghghg" ,
+                category: "أعمال",
+                skills: ["مالية", "تحليلية", "قيادة"]
+            },
+            {
+                industry: "fhfhf" ,
+                jobo: "كثير"  ,
+                title: "محلل بيانات سلوكية",
+                avgSalary: "95,000 - 220,000",
                 experience: "3+ سنوات",
                 demand: "مرتفع",
-                profitability: "ممتازة",
-                growthRate: "35%",
-                jobType: "profit",
-                requiredSpecialties: [
-              "  - معرفة بقوانين مثل لائحة الذكاء الاصطناعي السعودي",
- "- تحليل مخاطر أنظمة AI",
- "- شهادة CIPP/E أو CIPM"
-                ],
-                description: "تقديم استشارات لشركات ناشئة في مدينة دبي للإنترنت حول تشريعات الذكاء الاصطناعي"
+                description: "تحليل السلوك الاقتصادي للأفراد والشركات",
+                summarize: "hghghghghg" ,
+                category: "أعمال",
+                skills: ["تحليلية", "اجتماعية", "بحثية"]
             },
-            
-            // الأكثر طلبًا (Most In-Demand)
-            
-    {
-        title: "مطور نماذج ذكاء اصطناعي المتخصصة",
-        category: "الذكاء الاصطناعي والتقنيات المتقدمة",
-        avgSalary:  "90,000 - 180,000",
-        
-        experience:"3+ سنوات",
-      
-        demand: "مرتفع جدًا",
-        profitability: "استثنائية",
-        growthRate: "35%",
-        jobType: "demand",
-        requiredSpecialties: [
-            "Python | PyTorch | TensorFlow",
-            "معالجة اللغة الطبيعية (NLP)",
-            "خبرة في تدريب النماذج الضخمة (LLMs)"
-        ],
-        description: "تصميم وتدريب نماذج ذكاء اصطناعي مُخصصة لحلول مثل التشخيص الطبي أو التمويل الذكي."
-    },
-    {
-        title: "فني الصحة الرقمية",
-        category: "القطاع الصحي والتكنولوجيا",
-        avgSalary:  "45,000 - 80,000",
-        experience: "+4 سنوات",
-        demand: "مرتفع",
-        profitability: "عالي",
-        growthRate: "30%",
-        jobType: "demand",
-        requiredSpecialties: [
-            "إدارة السجلات الطبية الإلكترونية (EHR)",
-            "تحليل بيانات المرضى",
-            "أمن المعلومات الصحية (HIPAA)"
-        ],
-        description: "إدارة وتطوير الأنظمة الرقمية في المستشفيات ومراكز الرعاية الصحية."
-    },
-    {
-        title: "مهندس البنية التحتية للسيارات ذاتية القيادة",
-        category: "الهندسة والتكنولوجيا",
-        avgSalary:"90,000 - 150,000", 
-        experience:  "5 سنوات",
-        demand: "مرتفع",
-        profitability: "استثنائي",
-        growthRate: "25%",
-        jobType: "demand",
-        requiredSpecialties: [
-            "LiDAR وأنظمة الاستشعار",
-            "برمجة أنظمة التحكم (ROS)",
-            "شبكات اتصال V2X"
-        ],
-        description: "تصميم البنية التحتية الذكية لدعم السيارات ذاتية القيادة في المدن المستقبلية."
-    },
-    {
-        title: "اختصاصي زراعة العمودية الذكية",
-        category: "الزراعة التكنولوجية",
-        avgSalary: "50,000 - 85,000",
-        experience: "3+ سنوات ",
-        demand: "متوسط-مرتفع",
-        profitability: "عالي",
-        growthRate:" 32%",
-        jobType: "demand",
-        requiredSpecialties: [
-            "أنظمة الري الذكية",
-            "الزراعة الهيدروبونية",
-            "تحليل البيانات الزراعية"
-        ],
-        description: "تطوير مزارع عمودية ذكية لزيادة الإنتاجية في المناطق الصحراوية."
-    },
-    {
-        title: "مصمم الواقع الممتد (XR)",
-        category: "التصميم والتكنولوجيا",
-        avgSalary:  "60,000 - 110,000",
-        experience: "3+سنوات ",
-        demand: "مرتفع",
-        profitability: "عالي",
-        growthRate:"45%",
-        jobType: "demand",
-        requiredSpecialties: [
-            "تصميم 3D متقدم",
-            "برمجة تفاعلية (C#/JavaScript)",
-            "خبرة في منصات Metaverse"
-        ],
-        description: "إنشاء عواقع افتراضية وغامرة للتطبيقات التعليمية أو الترفيهية."
-    },
-         
-            
-            // أكثر فرص عمل (Most Job Opportunities)
-    
-    {
-        title: "مسؤول التحول الرقمي",
-        "category": "التكنولوجيا والاستراتيجية الرقمية",
-        "avgSalary": "100,000 - 180,000",
-        experience: "5+ سنوات",
-        demand: "مرتفع جدًا",
-        profitability: "استثنائية",
-        growthRate: "32%",
-            jobType:"opportunities",
-        requiredSpecialties: [
-            "إدارة عمليات التحول الرقمي",
-            "تحليل البيانات الضخمة",
-            "معرفة بمنصات مثل SAP أو Salesforce"
-        ],
-        description: "قيادة التحول الرقمي للشركات وتطبيق حلول تكنولوجية متقدمة لتحسين الكفاءة."
-    },
-    {
-        title: "فني توربينات الرياح البحرية",
-        category: "الطاقة المتجددة",
-        avgSalary: "55,000 - 90,000",
-        experience: "3+ سنوات",
-        demand: "مرتفع",
-        profitability: "عالي",
-        growthRate: "40%",
-        jobType:"opportunities",
-        requiredSpecialties: [
-            "صيانة التوربينات البحرية",
-            "السلامة الصناعية",
-            "أنظمة التحكم الكهربائية"
-        ],
-        description: "تركيب وصيانة توربينات الرياح في المناطق البحرية لتوليد الطاقة النظيفة."
-    },
-    {
-        title: "محلل بيانات الجينوم",
-        category: "التكنولوجيا الحيوية",
-    avgSalary: "75,000 - 130,000",
-        experience: "4+ سنوات",
-        demand: "متوسط-مرتفع",
-        profitability: "عالي",
-        growthRate: "40%",
-        jobType:"opportunities",
-        requiredSpecialties: [
-            "تحليل تسلسل الحمض النووي",
-            "أدوات مثل Python/R للبيولوجيا الحسابية",
-            "فهم الأمراض الوراثية"
-        ],
-        description: "تحليل البيانات الجينية لاكتشاف الأمراض الوراثية وتطوير علاجات مخصصة."
-    },
-    {
-        title: "مدرب الذكاء الاصطناعي الأخلاقي",
-        category: "الأخلاقيات التكنولوجية",
-        avgSalary: "80,000 - 150,000",
-        experience: "5+ سنوات ",
-        demand: "مرتفع",
-        profitability: "استثنائي",
-        growthRate: "30%",
-        jobType:"opportunities",
-        requiredSpecialties: [
-            "فلسفة الأخلاقيات التطبيقية",
-            "تشريعات الذكاء الاصطناعي العالمية",
-            "تصميم برامج تدريبية تفاعلية"
-        ],
-        description: "تدريب الشركات على تطبيق مبادئ أخلاقية في تصميم أنظمة الذكاء الاصطناعي."
-    },
-    {
-        "title": "أخصائي أمن سيبراني للإنترنت الصناعي (IIoT)",
-        "category": "الأمن السيبراني",
-        "avgSalary":  "95,000 - 160,000",
-        experience: "5+ سنوات ",
-        demand: "مرتفع جدًا",
-        profitability: "استثنائية",
-        growthRate: "45%",
-        jobType: "opportunities",
-        requiredSpecialties: [
-            "حماية أنظمة SCADA/ICS",
-            "الكشف عن تهديدات الـ OT",
-            "معايير NIST SP 800-82",
-        ],
-        description: "حماية البنية التحتية الصناعية من الهجمات الإلكترونية مثل محطات الطاقة والمصانع."
-    },
-
-            // للمبتدئين (Entry-Level Friendly)
             {
-        title: "مطور ويب / تطبيقات الهاتف (Web & Mobile Developer)",
-        category: "التكنولوجيا والبرمجة",
-        avgSalary: "40,000 - 70,000",
-        experience: "1-3 سنوات",
-        demand: "مرتفع جدًا",
-        profitability: "عالي",
-        growthRate: "25%",
-        jobType: "entry",
-        requiredSpecialties: [
-            "HTML/CSS/JavaScript",
-            "React, Flutter, أو Swift",
-            "قواعد البيانات (SQL/MongoDB)"
-        ],
-        description: "تصميم وتطوير مواقع وتطبيقات متنقلة باستخدام أحدث الأدوات والتقنيات."
-    },
-    {
-        title: "فني طاقة شمسية (Solar Energy Technician)",
-        category: "الطاقة المتجددة",
-        avgSalary: "35,000 - 55,000",
-        experience: "1-3 سنوات",
-        demand: "مرتفع",
-        profitability: "عالي",
-        growthRate:"35%",
-        jobType: "entry",
-        requiredSpecialties: [
-            "تركيب الألواح الشمسية",
-            "صيانة الأنظمة الكهروضوئية",
-            "شهادة NABCEP (ميزة)"
-        ],
-        description: "تركيب وصيانة أنظمة الطاقة الشمسية للمنازل والمشاريع التجارية."
-    },
-    {
-        title: "مصمم جرافيك (Graphic Designer)",
-        category: "التصميم الإبداعي",
-        "avgSalary": "25,000 - 45,000",
-           
-        experience: "1-3 سنوات",
-        demand: "مرتفع",
-        profitability: "متوسط",
-        growthRate:"25%",
-        jobType: "entry",
-        requiredSpecialties: [
-            "Adobe Photoshop/Illustrator",
-            "تصميم الشعارات والمواد التسويقية",
-            "فهم العلامات التجارية"
-        ],
-        description: "إنشاء تصاميم مرئية مبتكرة للشركات والإعلانات الرقمية."
-    },
-    {
-        title: "فني دعم فني (IT Support Specialist)",
-        category: "تكنولوجيا المعلومات",
-        avgSalary: "30,000 - 50,000",
-        experience:"1-3 سنوات",
-        demand: "مرتفع",
-        profitability: "عالي",
-        growthRate: "18%",
-        jobType: "entry",
-        requiredSpecialties: [
-            "إصلاح الشبكات والأنظمة",
-            "إدارة أنظمة التشغيل (Windows/macOS)",
-            "شهادة CompTIA A+"
-        ],
-        description: "تقديم دعم تقني وحل مشكلات الأجهزة والبرمجيات للمستخدمين."
-    },
-    {
-        title: "أخصائي تسويق رقمي (Digital Marketer)",
-        category: "التسويق الرقمي",
-        avgSalary:"35,000 - 60,000",
-        experience:  "1-3 سنوات",
-        demand: "مرتفع جدًا",
-        profitability: "عالي",
-        growthRate: "28%",
-        jobType: "entry",
-        requiredSpecialties: [
-            "إدارة حملات Google Ads/Meta",
-            "تحليل البيانات (Google Analytics)",
-            "إنشاء محتوى تفاعلي"
-        ],
-        description: "إدارة الحملات الإعلانية وتحليل أدائها على المنصات الرقمية."
-    }
+                industry: "fhfhf" ,
+                jobo: "كثير"  ,
+                title: "مصمم واقع معزز",
+                avgSalary: "70,000 - 150,000",
+                experience: "3+ سنوات",
+                demand: "مرتفع",
+                description: "تصميم تجارب تفاعلية باستخدام تقنيات AR",
+                summarize: "hghghghghg" ,
+                category: "UX/UI",
+                skills: ["إبداعية", "تقنية", "تصميم"]
+            },
+            {
+                industry: "fhfhf" ,
+                jobo: "كثير"  ,
+                title: "محامي جرائم سيبرانية",
+                avgSalary: "110,000 - 250,000",
+                experience: "6+ سنوات",
+                demand: "مرتفع",
+                description: "معالجة القضايا القانونية المتعلقة بالجرائم الإلكترونية",
+                summarize: "hghghghghg" ,
+                category: "AI",
+                skills: ["قانونية", "تحليلية", "أمن"]
+            },
+            {
+                industry: "fhfhf" ,
+                jobo: "كثير"  ,
+                title: "جراح قلب",
+                avgSalary: "200,000 - 450,000",
+                experience: "10+ سنوات",
+                demand: "مرتفع",
+                description: "إجراء عمليات جراحية معقدة في القلب",
+                summarize: "hghghghghg" ,
+                category: "طب",
+                skills: ["طب", "يدوية", "تركيز"]
+            },
+            {
+                industry: "fhfhf" ,
+                jobo: "كثير"  ,
+                title: "مصمم تجربة المستخدم",
+                avgSalary: "65,000 - 140,000",
+                experience: "3+ سنوات",
+                demand: "مرتفع",
+                description: "تصميم واجهات المستخدم وتحسين التجربة الرقمية",
+                summarize: "hghghghghg" ,
+                category: "UX/UI",
+                skills: ["إبداعية", "تواصل", "تصميم"]
+            },
+            {
+                industry: "fhfhf" ,
+                jobo: "كثير"  ,
+                summarize: "hghghghghg" ,
+                title: "مهندس ميكانيكي",
+                avgSalary: "70,000 - 120,000",
+                experience: "4+ سنوات",
+                demand: "متوسط",
+                description: "تصميم الأنظمة الميكانيكية والآلات",
+                category: "هندسة",
+                skills: ["هندسة", "تحليلية", "تقنية"]
+            },
+            {
+                industry: "fhfhf" ,
+                jobo: "كثير"  ,
+                summarize: "hghghghghg" ,
+                title: "مدير مشاريع تقنية",
+                avgSalary: "90,000 - 160,000",
+                experience: "5+ سنوات",
+                demand: "مرتفع",
+                description: "إدارة فرق العمل والمشاريع التقنية",
+                category: "أعمال",
+                skills: ["قيادة", "تنظيمية", "تواصل"]
+            }
+        ];
+
+        // بيانات التخصصات الجامعية
+        // بيانات التخصصات المعدلة
+        const majors = [
+        { 
+            mid: "176" ,
+            jobo: "كثير"  ,
+            summarize: "hghghghghg" ,
+            name: "الطب البشري", 
+            field: "العلوم الطبية", 
+            description: "يهدف تخصص الطب البشري إلى إعداد أطباء مؤهلين لتشخيص وعلاج الأمراض والإصابات. يتضمن الدراسة العميقة لجسم الإنسان ووظائفه والأمراض التي تصيبه وطرق علاجها.",
+            duration: "6 سنوات + سنة امتياز",
+            universities: ["جامعة الملك سعود", "جامعة الملك عبدالعزيز", "جامعة القصيم"],
+            jobs: "3 وظائف",
+            relatedJobs: [
+            "طبيب عام" , "أخصائي جراحة","طبيب باطنية","طبيب أطفال"
+            ]
+        },
+        { 
+            mid: "176" ,
+            jobo: "كثير"  ,
+            summarize: "hghghghghg" ,
+            name: "هندسة الحاسوب", 
+            field: "الهندسة والتكنولوجيا", 
+            description: "يجمع تخصص هندسة الحاسوب بين مبادئ الهندسة الكهربائية وعلوم الحاسوب. يدرس الطلاب تصميم وتطوير أنظمة الحاسوب المادية والبرمجية.",
+            duration: "4 سنوات دراسية",
+            universities: ["جامعة الملك فهد للبترول", "جامعة الأميرة نورة", "جامعة الطائف"],
+            jobs: "3 وظائف",
+            relatedJobs: [
+            "مهندس أمن سيبراني"  , "مهندس برمجيات" , "مهندس شبكات"
+            ]
+        },
+        { 
+            mid: "176" ,
+            jobo: "كثير"  ,
+            summarize: "hghghghghg" ,
+            name: "إدارة الأعمال", 
+            field: "العلوم الإدارية", 
+            description: "يركز تخصص إدارة الأعمال على دراسة العمليات الإدارية في المنظمات. يشمل التخطيط والتنظيم والقيادة والرقابة على الموارد لتحقيق الأهداف التنظيمية.",
+            duration: "4 سنوات دراسية",
+            universities: ["جامعة الملك سعود", "جامعة الإمام محمد بن سعود", "جامعة الدمام"],
+            jobs: "3 وظائف",
+            relatedJobs: [
+            "مدير تسويق" ,  "مدير مشاريع" , "محلل أعمال"
+            ]
+        },
+        { 
+            mid: "176" ,
+            jobo: "كثير"  ,
+            summarize: "hghghghghg" ,
+            name: "الهندسة المعمارية", 
+            field: "الهندسة والتصميم", 
+            description: "يتعلم طلاب الهندسة المعمارية تصميم المباني والهياكل مع مراعاة الجوانب الجمالية والوظيفية والسلامة. يجمع التخصص بين الفنون والهندسة.",
+            duration: "5 سنوات دراسية",
+            universities: ["جامعة الملك فهد للبترول", "جامعة الملك سعود", "جامعة جدة"],
+            jobs: "3 وظائف",
+            relatedJobs: [
+            "مهندس معماري" , "مصمم داخلي" , "مدير موقع بناء"
+            ]
+        },
+        { 
+            mid: "176" ,
+            jobo: "كثير"  ,
+            summarize: "hghghghghg" ,
+            name: "الذكاء الاصطناعي", 
+            field: "علوم الحاسوب", 
+            description: "يركز تخصص الذكاء الاصطناعي على تطوير أنظمة قادرة على محاكاة الذكاء البشري. يشمل تعلم الآلة، معالجة اللغة الطبيعية، الرؤية الحاسوبية وغيرها.",
+            duration: "4 سنوات دراسية",
+            universities: ["جامعة الملك سعود", "جامعة الأمير مقرن", "جامعة الملك عبدالله"],
+            jobs: "3 وظائف",
+            relatedJobs: [
+                "مهندس تعلم آلي","باحث في الذكاء الاصطناعي","مطور خوارزميات"
+            ]
+        }
         ];
 
         // نظام الفلترة
