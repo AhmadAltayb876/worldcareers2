@@ -90,7 +90,7 @@ body {
     width: 100%;
     padding: 0.7rem 2.5rem 0.7rem 1rem;
     border: 2px solid rgba(10, 132, 255, 0.2);
-    border-radius: 30px;
+    border-radius: 23px;
     font-size: 0.95rem;
     transition: all 0.3s ease;
     background-color: #f8f9fa;
@@ -628,7 +628,7 @@ grid-template-columns: repeat(2, 1fr);
     font-size: 1.2rem;
     }
 }
-@media (max-height: 768px) {
+@media (max-height: 840px) {
     .modal-content {
         width: 95%;
         max-height: 90vh;
@@ -1268,7 +1268,7 @@ gap: 1rem;
 
 .quiz-btn {
 padding: 0.8rem 1.5rem;
-border-radius: 30px;
+border-radius: 10px;
 cursor: pointer;
 font-weight: bold;
 transition: all 0.3s;
@@ -1576,7 +1576,7 @@ padding: 0.4rem 1rem;
 transition: transform 0.3s ease, box-shadow 0.3s ease;
 
 background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-border-radius: 25px;
+border-radius: 20px;
 display: flex
 ;
 align-items: center;
@@ -2188,3 +2188,195 @@ transform: translateX(110px);
         gap: 0.8rem;
     }
 }
+@media (max-width: 768px) {
+    .nav-links {
+      display: flex !important;
+      flex-wrap: nowrap !important; /* منع النزول لسطر جديد */
+      overflow-x: auto !important; /* تمكين التمرير الأفقي إذا لزم الأمر */
+      -webkit-overflow-scrolling: touch; /* تمرير سلس على الأجهزة المحمولة */
+      gap: 0.5rem !important;
+      padding-bottom: 0.5rem; /* مساحة للتمرير */
+    }
+  
+    .nav-link {
+      flex-shrink: 0 !important; /* منع الأزرار من التقلص */
+      white-space: nowrap !important;
+      padding: 0.4rem 0.8rem !important;
+      font-size: 0.85rem !important;
+    }
+    
+    /* إخفاء شريط التمرير المرئي */
+    .nav-links::-webkit-scrollbar {
+      display: none;
+    }
+  }
+  @media (max-width: 480px) {
+    .nav-link {
+      font-size: 0.8rem !important;
+      padding: 0.3rem 0.6rem !important;
+    }
+    
+    .nav-links {
+      gap: 0.3rem !important;
+    }
+    
+    /* تثبيت الزر النشط */
+    .nav-link.active {
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      position: relative;
+      z-index: 1;
+    }
+  }
+  /* تنسيقات أزرار التبديل الجديدة */
+.search-type {
+    padding: 0.4rem 1.4rem;
+    border: none;
+    border-radius: 20px;
+    background: rgba(10, 132, 255, 0.1);
+    color: var(--primary);
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+    border: 1px solid rgba(10, 132, 255, 0.3);
+  }
+  
+  .search-type.active {
+    background: var(--primary);
+    color: white !important;
+    box-shadow: 0 3px 8px rgba(10, 132, 255, 0.2);
+    border-color: transparent;
+  }
+  
+  .search-type:not(.active):hover {
+    background: rgba(10, 132, 255, 0.15);
+    transform: translateY(-1px);
+  }
+  
+  /* تأثيرات بسيطة للتركيز */
+  .search-type::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 20px;
+    box-shadow: 0 2px 6px rgba(10, 132, 255, 0.1);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .search-type.active::after {
+    opacity: 1;
+  }
+  
+  /* تحسينات للشاشات الصغيرة */
+  @media (max-width: 768px) {
+    .search-type {
+      padding: 0.35rem 1.2rem;
+      font-size: 0.85rem;
+    }
+  }
+  @media (max-width: 768px) {
+    .search-input {
+      font-size: 0.9rem; /* حجم نص مناسب للجوال */
+      padding: 0.6rem 1rem;
+    }
+    
+    .search-type {
+      font-size: 0.8rem; /* نص أصغر مع الحفاظ على الوضوح */
+      padding: 0.4rem 1rem;
+    }
+  }
+  .search-input {
+    padding-right: 50px !important; /* مساحة للأيقونة على اليمين */
+    padding-left: 130px !important; /* مساحة للأزرار على اليسار */
+  }
+  .search-btn {
+    right: 15px !important;
+    left: auto !important;
+    width: 24px;
+    height: 24px;
+    pointer-events: none; /* منع التداخل مع النقر */
+  }
+  .search-container {
+    width: 100%; /* ملء العرض المتاح */
+    max-width: 100%; /* إزالة أي حدود قصوى */
+    margin: 0 10px; /* هوامش جانبية صغيرة */
+    border-radius: 25px; /* زوايا مدورة */
+  }
+  @media (max-width: 768px) {
+    .search-container {
+      margin: 0 8px !important; /* تقليل الهوامش */
+      height: 48px; /* ارتفاع مناسب للجوال */
+    }
+  
+    .search-input {
+      padding-left: 120px !important; /* مساحة مخصصة للأزرار */
+      padding-right: 45px !important; /* مساحة مخصصة للأيقونة */
+    }
+  
+    .search-type-buttons {
+      left: 6px !important; /* محاذاة دقيقة للأزرار */
+      gap: 5px !important; /* تقليل المسافة بين الأزرار */
+    }
+  
+    .search-type {
+      padding: 0.3rem 0.9rem !important; /* حجم مضغوط */
+      font-size: 0.8rem !important; /* حجم خط أصغر */
+    }
+  
+    .search-btn {
+      right: 12px !important; /* أيقونة أقرب للحافة */
+      font-size: 1rem !important;
+    }
+  }
+  @media (max-width: 480px) {
+    .search-container {
+      margin: 0 5px !important;
+      height: 44px; /* ارتفاع أكثر إحكاما */
+    }
+  
+    .search-input {
+      padding-left: 110px !important;
+      padding-right: 40px !important;
+      font-size: 0.9rem !important; /* نص أكبر للقراءة */
+    }
+  
+    .search-type {
+      padding: 0.25rem 0.8rem !important;
+      font-size: 0.75rem !important; /* نص واضح حتى على الشاشات الصغيرة */
+    }
+  
+    .search-btn {
+      right: 10px !important;
+      font-size: 0.9rem !important;
+    }
+  }
+  /* الهيكل الأساسي */
+.nav-container {
+    display: flex;
+    flex-wrap: wrap; /* السماح بعناصر جديدة في سطر جديد */
+    gap: 1rem;
+  }
+  
+  .search-container {
+    flex-grow: 1; /* ملء المساحة المتاحة */
+    min-width: 300px; /* عرض أدنى لمنع التداخل */
+  }
+  @media (max-width: 1024px) {
+    .nav-links {
+      order: 3; /* نقل روابط التنقل لأسفل */
+      width: 100%;
+      justify-content: center;
+    }
+  
+    .search-container {
+      order: 2; /* وضع شريط البحث قبل الروابط */
+      min-width: 100%; /* ملء العرض الكامل */
+    }
+  
+    .logo-quiz-wrapper {
+      order: 1; /* الشعار يبقى في الأعلى */
+    }
+  }
+  
