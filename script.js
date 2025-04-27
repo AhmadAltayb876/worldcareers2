@@ -2338,3 +2338,4 @@ function resetFilters() {
         filter.classList.remove('active');
     });
 }
+  
