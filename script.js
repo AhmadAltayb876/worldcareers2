@@ -381,11 +381,12 @@ let currentSearchType = 'jobs'; // القيمة الافتراضية
                 // إظهار الهيدر الأزرق في جميع الأقسام بما فيها Best Jobs
                 document.querySelector('.header').style.display = 'block';
                 // إزالة الفئة النشطة من جميع الروابط
+                // إزالة الفئة النشطة من جميع روابط التنقل فقط
                 document.querySelectorAll('.nav-link').forEach(navLink => {
                     navLink.classList.remove('active');
                 });
-                // إضافة الفئة النشطة للرابط المحدد
-                this.classList.add('active');
+                // إضافة الفئة النشطة للرابط الذي ضغط عليه المستخدم
+                    this.classList.add('active');
                 // عرض القسم المحدد
                 const targetId = this.getAttribute('href').substring(1);
                 document.getElementById(targetId).style.display = 'block';
@@ -399,6 +400,7 @@ let currentSearchType = 'jobs'; // القيمة الافتراضية
                 if(targetId === 'jobs') {
                     renderProfessions(professions);
                 }
+                resetFilters();
             });
         });
         // تهيئة وظيفة البحث
@@ -688,7 +690,7 @@ let currentSearchType = 'jobs'; // القيمة الافتراضية
             document.getElementById('detailsModal').style.display = 'none';
         }
         const bestProfessions = [
-             
+           
             // أفضل المهن (Best Careers)
             {
                 
@@ -741,12 +743,12 @@ let currentSearchType = 'jobs'; // القيمة الافتراضية
             experience: "14-16 سنة",
             growthRate: "3%",
             requiredSpecialties: [
-                "البراعة الجراحية في مجال الأعصاب",
-             "التشريح العصبي",
-             "التفكير النقدي",
-             "اتخاذ القرار تحت الضغط",
-              "العمل الجماعي",
-             "إدارة الإجهاد"
+            "Neurosurgical dexterity",
+             "Neuroanatomy",
+             "Critical thinking",
+              "Decision making under pressure",
+              "Teamwork",
+             "Stress management"
     ],
         },
       { 
@@ -759,12 +761,12 @@ let currentSearchType = 'jobs'; // القيمة الافتراضية
          experience: "3-5 سنوات",
     growthRate: "7%",
     requiredSpecialties: [
-        "تخطيط مسار المنتج",
-        "البراعة التقنية",
-        "إدارة أصحاب المصلحة",
-        "منهجيات أجايل",
-        "تحليل البيانات",
-    "التواصل"
+      "Product roadmapping",
+      "Technical acumen",
+      "Stakeholder management",
+      "Agile methodologies",
+      "Data analysis",
+      "Communication"
     ],
          },
       {
@@ -777,16 +779,14 @@ let currentSearchType = 'jobs'; // القيمة الافتراضية
          experience: "+5 سنوات",
     growthRate: "33%",
     requiredSpecialties: [
-        "الأمن السيبراني",
-        "تقييم الثغرات الأمنية",
-        "التدقيق الأمني",
-        "الاستجابة للحوادث الأمنية",
-        "تحليل المخاطر",
-        "ضوابط الأمن",
-        "نظام إدارة معلومات وأحداث الأمن (SIEM)",
-        "استخبارات التهديدات"
-        
-        
+      "Cybersecurity",
+      "Vulnerability assessment",
+      "Auditing",
+      "Incident response",
+      "Risk analysis",
+      "Security controls",
+      "SIEM",
+      "Threat intelligence"
     ],
         },
         {
@@ -799,13 +799,13 @@ let currentSearchType = 'jobs'; // القيمة الافتراضية
              experience: "14-16 سنوات",
     growthRate: "3%",
     requiredSpecialties: [
-        "تقنيات جراحة الأعصاب",
-        "تشريح الجهاز العصبي",
-        "جراحة المجهرية (Microsurgery)",
-        "التفكير النقدي",
-        "اتخاذ القرار تحت الضغط",
-        "العمل الجماعي (Teamwork)",
-        "إدارة الإجهاد (Stress management)"
+      "Neurosurgical techniques",
+      "Neuroanatomy",
+      "Microsurgery",
+      "Critical thinking",
+      "Decision making under pressure",
+      "Teamwork",
+      "Stress management"
     ]
   },
         
@@ -820,12 +820,13 @@ let currentSearchType = 'jobs'; // القيمة الافتراضية
             experience: "14-16 سنوات",
     growthRate: "3%",
     requiredSpecialties: [
-        "جراحة المجهرية (Microsurgery)",
-        "التشريح (Anatomy)",
-        "الجماليات (Aesthetics)",
-        "استشارة المريض (Patient consultation)",
-        "اتخاذ القرار تحت الضغط",
-        "العمل الجماعي (Teamwork)"
+      "Cosmetic and reconstructive surgery",
+      "Microsurgery",
+      "Anatomy",
+      "Aesthetics",
+      "Patient consultation",
+      "Decision making under pressure",
+      "Teamwork"
     ]
         },
 
@@ -839,13 +840,13 @@ let currentSearchType = 'jobs'; // القيمة الافتراضية
          experience: "10-15 سنوات",
     growthRate: "6%",
     requiredSpecialties: [
-        "التخطيط الاستراتيجي",
-        "القيادة (Leadership)",
-        "الدهاء المالي (Financial acumen)",
-        "إدارة أصحاب المصلحة (Stakeholder management)",
-        "اتخاذ القرار (Decision making)",
-        "التواصل (Communication)",
-        "إدارة المخاطر (Risk management)"
+      "Strategic planning",
+      "Leadership",
+      "Financial acumen",
+      "Stakeholder management",
+      "Decision making",
+      "Communication",
+      "Risk management"
     ]
         },
       {
@@ -858,13 +859,13 @@ let currentSearchType = 'jobs'; // القيمة الافتراضية
          experience: "3-5 سنوات",
     growthRate: "17.1%",
     requiredSpecialties: [
-        "التحليل المالي (Financial analysis)",
-        "إدارة المحفظة (Portfolio management)",
-        "تقييم المخاطر (Risk assessment)",
-        "إدارة علاقات العملاء (Client relationship management)",
-        "بحث السوق (Market research)",
-        "الامتثال التنظيمي (Regulatory compliance)",
-        "التواصل (Communication)"
+      "Financial analysis",
+      "Portfolio management",
+      "Risk assessment",
+      "Client relationship management",
+      "Market research",
+      "Regulatory compliance",
+      "Communication"
     ]
          },
       {
@@ -877,12 +878,12 @@ let currentSearchType = 'jobs'; // القيمة الافتراضية
          experience: "12-15 سنوات",
     growthRate: "5%",
     requiredSpecialties: [
-        "تصوير القلب (Cardiac imaging)",
-        "الإجراءات التدخلية (Interventional procedures)",
-        "تشخيص المريض (Patient diagnosis)",
-        "التفكير النقدي",
-        "اتخاذ القرار تحت الضغط",
-        "العمل الجماعي (Teamwork)"
+      "Cardiac imaging",
+      "Interventional procedures",
+      "Patient diagnosis",
+      "Critical thinking",
+      "Decision making under pressure",
+      "Teamwork"
     ]
          },
           
@@ -898,12 +899,12 @@ let currentSearchType = 'jobs'; // القيمة الافتراضية
     experience: "2-5 سنوات",
     growthRate: "25%",
     requiredSpecialties: [
-        "البرمجة (Python, Java, C#)",
-        "تصميم البرمجيات (Software Design)",
-        "حل المشكلات (Problem-solving)",
-        "تصحيح الأخطاء (Debugging)",
-        "الحوسبة السحابية (Cloud Computing)",
-        "التحكم في الإصدارات (Git - Version Control)"
+      "Programming (Python, Java, C#)",
+      "Software Design",
+      "Problem-solving",
+      "Debugging",
+      "Cloud Computing",
+      "Version Control (Git)"
     
     ],
                 },
@@ -917,12 +918,12 @@ let currentSearchType = 'jobs'; // القيمة الافتراضية
              experience: "1-3 سنوات",
     growthRate: "10%",
     requiredSpecialties: [
-        "SEO/SEM",
-        "تسويق المحتوى (Content Marketing)",
-        "إدارة وسائل التواصل الاجتماعي (Social Media Management)",
-        "التسويق عبر البريد الإلكتروني (Email Marketing)",
-        "Google Analytics",
-        "الإعلان المدفوع (PPC - Paid Advertising)"
+      "SEO/SEM",
+      "Content Marketing",
+      "Social Media Management",
+      "Email Marketing",
+      "Google Analytics",
+      "Paid Advertising (PPC)"
     ]
             },
       { 
@@ -935,12 +936,12 @@ let currentSearchType = 'jobs'; // القيمة الافتراضية
             experience: "0-2 سنوات",
     growthRate: "6%",
     requiredSpecialties: [
-        "رعاية المريض (Patient Care)",
-        "الإجراءات السريرية (Clinical Procedures)",
-        "التفكير النقدي",
-        "مهارات التواصل (Communication Skills)",
-        "حفظ السجلات الطبية (Medical Recordkeeping)",
-        "الاستجابة للطوارئ (Emergency Response)"
+      "Patient Care",
+      "Clinical Procedures",
+      "Critical Thinking",
+      "Communication Skills",
+      "Medical Recordkeeping",
+      "Emergency Response"
     ]
          } ,
            
@@ -954,12 +955,12 @@ let currentSearchType = 'jobs'; // القيمة الافتراضية
           experience: "2-5 سنوات",
     growthRate: "32%",
     requiredSpecialties: [
-        "الأمن السيبراني (Cybersecurity)",
-        "تقييم المخاطر (Risk Assessment)",
-        "الاستجابة للحوادث (Incident Response)",
-        "أمن الشبكات (Network Security)",
-        "اختبار الاختراق (Penetration Testing)",
-        "الامتثال الأمني (مثل ISO, NIST)"
+      "Cybersecurity",
+      "Risk Assessment",
+      "Incident Response",
+      "Network Security",
+      "Penetration Testing",
+      "Security Compliance (e.g., ISO, NIST)"
     ]
          },
       {
@@ -972,13 +973,12 @@ let currentSearchType = 'jobs'; // القيمة الافتراضية
         experience: "1-3 سنوات",
     growthRate: "10%",
     requiredSpecialties: [
-        "إصلاح المعدات الطبية (Medical Equipment Repair)",
-        "التشخيص التقني (Technical Diagnostics)",
-        "الصيانة الوقائية (Preventive Maintenance)",
-        "المعايرة (Calibration)",
-        "معرفة الإلكترونيات (Electronics Knowledge)",
-        "الامتثال لمعايير السلامة (Compliance with Safety Standards)"
-  
+      "Medical Equipment Repair",
+      "Technical Diagnostics",
+      "Preventive Maintenance",
+      "Calibration",
+      "Electronics Knowledge",
+      "Compliance with Safety Standards"
     ]
 
     },
@@ -1171,8 +1171,6 @@ let currentSearchType = 'jobs'; // القيمة الافتراضية
     ]
         }
         ];
-
-        
 
         // نظام الفلترة
         let activeFilter = null;
@@ -2056,39 +2054,40 @@ function calculateCompatibility(prof, prefs) {
         }
 
         function linkSearchTypeToView(type) {
-    currentSearchType = type;
-    const searchInput = document.getElementById('searchInput');
-    document.getElementById('mainSearchResults').style.display = 'none'; // إخفاء نتائج البحث القديمة
-   // تحديث الـ placeholder حسب النوع
-   if(type === 'jobs') {
-        searchInput.placeholder = "ابحث عن مهنة...";
-    } else {
-        searchInput.placeholder = "ابحث عن تخصص...";
-    }
-    
+        currentSearchType = type;
+        const searchInput = document.getElementById('searchInput');
+        document.getElementById('mainSearchResults').style.display = 'none'; // إخفاء نتائج البحث القديمة
+    // تحديث الـ placeholder حسب النوع
+    if(type === 'jobs') {
+            searchInput.placeholder = "ابحث عن مهنة...";
+        } else {
+            searchInput.placeholder = "ابحث عن تخصص...";
+        }
+        
 
 
-    // تحديث الأزرار النشطة
-    document.querySelectorAll('.search-type').forEach(btn => {
-        btn.classList.toggle('active', btn.dataset.type === type);
-    });
-   
-    // تحديث أزرار القسم الرئيسي
-    document.getElementById('showProfessionsBtn').classList.toggle('active', type === 'jobs');
-    document.getElementById('showMajorsBtn').classList.toggle('active', type === 'majors');
+        // تحديث الأزرار النشطة
+        document.querySelectorAll('.search-type').forEach(btn => {
+            btn.classList.toggle('active', btn.dataset.type === type);
+        });
     
-    // إظهار/إخفاء المحتوى
-    document.getElementById('professionsContainer').style.display = type === 'jobs' ? 'grid' : 'none';
-    document.getElementById('majorsContainer').style.display = type === 'majors' ? 'grid' : 'none';
-    
-    // إعادة البحث إذا كان هناك نص
-    const searchQuery = document.getElementById('searchInput').value.trim();
-    if (searchQuery) {
-        const results = performSearch(searchQuery, type);
+        // تحديث أزرار القسم الرئيسي
+        document.getElementById('showProfessionsBtn').classList.toggle('active', type === 'jobs');
+        document.getElementById('showMajorsBtn').classList.toggle('active', type === 'majors');
+        
+        // إظهار/إخفاء المحتوى
+        document.getElementById('professionsContainer').style.display = type === 'jobs' ? 'grid' : 'none';
+        document.getElementById('majorsContainer').style.display = type === 'majors' ? 'grid' : 'none';
+        
+        // إعادة البحث إذا كان هناك نص
+        const searchQuery = document.getElementById('searchInput').value.trim();
+        if (searchQuery) {
+            const results = performSearch(searchQuery, type);
+            resetFilters();
+            displaySearchResults(results);
+        }
         resetFilters();
-        displaySearchResults(results);
     }
-}
 
 
 function performSearch(query, type) {
@@ -2113,25 +2112,21 @@ function performSearch(query, type) {
 }
 function displaySearchResults(results) {
     
+
     const searchinput = document.getElementById('searchInput');
     const mainSearchResults = document.getElementById('mainSearchResults');
     const activeSection = document.querySelector('.nav-link.active').getAttribute('href');
     const searchResults = document.getElementById('searchResults');
     const navbarHeight = document.querySelector('.navbar').offsetHeight;
 
-    if ((activeSection === 'jobs' && results.professions.length === 0) ||
-    (activeSection === 'majors' && results.majors.length === 0)) {
-        searchResults.innerHTML = '<div class="no-results">لا توجد نتائج مطابقة</div>';
-        searchResults.style.display = 'block';
-        return;
-    }
+    
     // تحديث نص البحث في العنوان
-    document.getElementById('searchQueryText').textContent = searchinput.value.trim();
     
     // إظهار قسم النتائج الرئيسي
     mainSearchResults.style.display = 'block';
     const mainMajorsContainer = document.getElementById('majorsContainer'); // القسم الرئيسي للتخصصات
     searchResults.innerHTML = ''; // مسح النتائج القديمة
+    document.getElementById('searchQueryText').textContent = searchinput.value.trim();
     
     if (results.professions.length > 0 || results.majors.length > 0) {
         const targetPosition = mainSearchResults.getBoundingClientRect().top + window.pageYOffset;
@@ -2142,7 +2137,7 @@ function displaySearchResults(results) {
             });
         }, 100);
     }
-
+    
 
 // أخفاء النافذة فقط في قسم المهن
 if (activeSection === '#jobs') {
@@ -2150,7 +2145,7 @@ if (activeSection === '#jobs') {
         searchResults.style.visibility = 'hidden';
         searchResults.style.pointerEvents = 'none';
         searchResults.style.height = '0';
-    } else {
+    } else if(activeSection === '#majors') {
         searchResults.style.opacity = '1';
         searchResults.style.visibility = 'visible';
         searchResults.style.pointerEvents = 'auto';
@@ -2158,17 +2153,25 @@ if (activeSection === '#jobs') {
     }
 
 
-
+    if ((currentSearchType === 'jobs' && results.professions.length === 0)) {
+        searchResults.innerHTML = '<div class="no-results">لا توجد نتائج مطابقة</div>';
+        searchResults.style.display = 'block';
+        return searchResults ;
+    }
+    else if ((currentSearchType === 'majors' && results.majors.length === 0)) {
+        searchResults.innerHTML = '<div class="no-results">لا توجد نتائج مطابقة</div>';
+        searchResults.style.display = 'block';
+        return searchResults ;
+    }
 
     if (currentSearchType === 'majors') {
         renderMajorsResults(results.majors); // عرض النتائج في majorsContainer
-    } else {
+    } else if(currentSearchType === 'jobs'){
         renderProfessions(results.professions);
     }
     
     // إذا كانت النتائج فارغة
     
-
     // عرض النتائج حسب النوع
     if (currentSearchType === 'jobs') {
         results.professions.forEach(prof => {
@@ -2185,7 +2188,7 @@ if (activeSection === '#jobs') {
             });
             searchResults.appendChild(item);
         });
-    } else {
+    } else if(currentSearchType === 'majors'){
         results.majors.forEach(major => {
             const item = document.createElement('div');
             item.className = 'search-result-item';
