@@ -690,7 +690,7 @@ let currentSearchType = 'jobs'; // القيمة الافتراضية
             document.getElementById('detailsModal').style.display = 'none';
         }
         const bestProfessions = [
-           
+             
             // أفضل المهن (Best Careers)
             {
                 
@@ -743,12 +743,12 @@ let currentSearchType = 'jobs'; // القيمة الافتراضية
             experience: "14-16 سنة",
             growthRate: "3%",
             requiredSpecialties: [
-            "Neurosurgical dexterity",
-             "Neuroanatomy",
-             "Critical thinking",
-              "Decision making under pressure",
-              "Teamwork",
-             "Stress management"
+                "البراعة الجراحية في مجال الأعصاب",
+             "التشريح العصبي",
+             "التفكير النقدي",
+             "اتخاذ القرار تحت الضغط",
+              "العمل الجماعي",
+             "إدارة الإجهاد"
     ],
         },
       { 
@@ -761,12 +761,12 @@ let currentSearchType = 'jobs'; // القيمة الافتراضية
          experience: "3-5 سنوات",
     growthRate: "7%",
     requiredSpecialties: [
-      "Product roadmapping",
-      "Technical acumen",
-      "Stakeholder management",
-      "Agile methodologies",
-      "Data analysis",
-      "Communication"
+        "تخطيط مسار المنتج",
+        "البراعة التقنية",
+        "إدارة أصحاب المصلحة",
+        "منهجيات أجايل",
+        "تحليل البيانات",
+    "التواصل"
     ],
          },
       {
@@ -779,14 +779,16 @@ let currentSearchType = 'jobs'; // القيمة الافتراضية
          experience: "+5 سنوات",
     growthRate: "33%",
     requiredSpecialties: [
-      "Cybersecurity",
-      "Vulnerability assessment",
-      "Auditing",
-      "Incident response",
-      "Risk analysis",
-      "Security controls",
-      "SIEM",
-      "Threat intelligence"
+        "الأمن السيبراني",
+        "تقييم الثغرات الأمنية",
+        "التدقيق الأمني",
+        "الاستجابة للحوادث الأمنية",
+        "تحليل المخاطر",
+        "ضوابط الأمن",
+        "نظام إدارة معلومات وأحداث الأمن (SIEM)",
+        "استخبارات التهديدات"
+        
+        
     ],
         },
         {
@@ -799,13 +801,13 @@ let currentSearchType = 'jobs'; // القيمة الافتراضية
              experience: "14-16 سنوات",
     growthRate: "3%",
     requiredSpecialties: [
-      "Neurosurgical techniques",
-      "Neuroanatomy",
-      "Microsurgery",
-      "Critical thinking",
-      "Decision making under pressure",
-      "Teamwork",
-      "Stress management"
+        "تقنيات جراحة الأعصاب",
+        "تشريح الجهاز العصبي",
+        "جراحة المجهرية (Microsurgery)",
+        "التفكير النقدي",
+        "اتخاذ القرار تحت الضغط",
+        "العمل الجماعي (Teamwork)",
+        "إدارة الإجهاد (Stress management)"
     ]
   },
         
@@ -820,13 +822,12 @@ let currentSearchType = 'jobs'; // القيمة الافتراضية
             experience: "14-16 سنوات",
     growthRate: "3%",
     requiredSpecialties: [
-      "Cosmetic and reconstructive surgery",
-      "Microsurgery",
-      "Anatomy",
-      "Aesthetics",
-      "Patient consultation",
-      "Decision making under pressure",
-      "Teamwork"
+        "جراحة المجهرية (Microsurgery)",
+        "التشريح (Anatomy)",
+        "الجماليات (Aesthetics)",
+        "استشارة المريض (Patient consultation)",
+        "اتخاذ القرار تحت الضغط",
+        "العمل الجماعي (Teamwork)"
     ]
         },
 
@@ -840,13 +841,13 @@ let currentSearchType = 'jobs'; // القيمة الافتراضية
          experience: "10-15 سنوات",
     growthRate: "6%",
     requiredSpecialties: [
-      "Strategic planning",
-      "Leadership",
-      "Financial acumen",
-      "Stakeholder management",
-      "Decision making",
-      "Communication",
-      "Risk management"
+        "التخطيط الاستراتيجي",
+        "القيادة (Leadership)",
+        "الدهاء المالي (Financial acumen)",
+        "إدارة أصحاب المصلحة (Stakeholder management)",
+        "اتخاذ القرار (Decision making)",
+        "التواصل (Communication)",
+        "إدارة المخاطر (Risk management)"
     ]
         },
       {
@@ -859,13 +860,13 @@ let currentSearchType = 'jobs'; // القيمة الافتراضية
          experience: "3-5 سنوات",
     growthRate: "17.1%",
     requiredSpecialties: [
-      "Financial analysis",
-      "Portfolio management",
-      "Risk assessment",
-      "Client relationship management",
-      "Market research",
-      "Regulatory compliance",
-      "Communication"
+        "التحليل المالي (Financial analysis)",
+        "إدارة المحفظة (Portfolio management)",
+        "تقييم المخاطر (Risk assessment)",
+        "إدارة علاقات العملاء (Client relationship management)",
+        "بحث السوق (Market research)",
+        "الامتثال التنظيمي (Regulatory compliance)",
+        "التواصل (Communication)"
     ]
          },
       {
@@ -878,12 +879,12 @@ let currentSearchType = 'jobs'; // القيمة الافتراضية
          experience: "12-15 سنوات",
     growthRate: "5%",
     requiredSpecialties: [
-      "Cardiac imaging",
-      "Interventional procedures",
-      "Patient diagnosis",
-      "Critical thinking",
-      "Decision making under pressure",
-      "Teamwork"
+        "تصوير القلب (Cardiac imaging)",
+        "الإجراءات التدخلية (Interventional procedures)",
+        "تشخيص المريض (Patient diagnosis)",
+        "التفكير النقدي",
+        "اتخاذ القرار تحت الضغط",
+        "العمل الجماعي (Teamwork)"
     ]
          },
           
@@ -899,12 +900,12 @@ let currentSearchType = 'jobs'; // القيمة الافتراضية
     experience: "2-5 سنوات",
     growthRate: "25%",
     requiredSpecialties: [
-      "Programming (Python, Java, C#)",
-      "Software Design",
-      "Problem-solving",
-      "Debugging",
-      "Cloud Computing",
-      "Version Control (Git)"
+        "البرمجة (Python, Java, C#)",
+        "تصميم البرمجيات (Software Design)",
+        "حل المشكلات (Problem-solving)",
+        "تصحيح الأخطاء (Debugging)",
+        "الحوسبة السحابية (Cloud Computing)",
+        "التحكم في الإصدارات (Git - Version Control)"
     
     ],
                 },
@@ -918,12 +919,12 @@ let currentSearchType = 'jobs'; // القيمة الافتراضية
              experience: "1-3 سنوات",
     growthRate: "10%",
     requiredSpecialties: [
-      "SEO/SEM",
-      "Content Marketing",
-      "Social Media Management",
-      "Email Marketing",
-      "Google Analytics",
-      "Paid Advertising (PPC)"
+        "SEO/SEM",
+        "تسويق المحتوى (Content Marketing)",
+        "إدارة وسائل التواصل الاجتماعي (Social Media Management)",
+        "التسويق عبر البريد الإلكتروني (Email Marketing)",
+        "Google Analytics",
+        "الإعلان المدفوع (PPC - Paid Advertising)"
     ]
             },
       { 
@@ -936,12 +937,12 @@ let currentSearchType = 'jobs'; // القيمة الافتراضية
             experience: "0-2 سنوات",
     growthRate: "6%",
     requiredSpecialties: [
-      "Patient Care",
-      "Clinical Procedures",
-      "Critical Thinking",
-      "Communication Skills",
-      "Medical Recordkeeping",
-      "Emergency Response"
+        "رعاية المريض (Patient Care)",
+        "الإجراءات السريرية (Clinical Procedures)",
+        "التفكير النقدي",
+        "مهارات التواصل (Communication Skills)",
+        "حفظ السجلات الطبية (Medical Recordkeeping)",
+        "الاستجابة للطوارئ (Emergency Response)"
     ]
          } ,
            
@@ -955,12 +956,12 @@ let currentSearchType = 'jobs'; // القيمة الافتراضية
           experience: "2-5 سنوات",
     growthRate: "32%",
     requiredSpecialties: [
-      "Cybersecurity",
-      "Risk Assessment",
-      "Incident Response",
-      "Network Security",
-      "Penetration Testing",
-      "Security Compliance (e.g., ISO, NIST)"
+        "الأمن السيبراني (Cybersecurity)",
+        "تقييم المخاطر (Risk Assessment)",
+        "الاستجابة للحوادث (Incident Response)",
+        "أمن الشبكات (Network Security)",
+        "اختبار الاختراق (Penetration Testing)",
+        "الامتثال الأمني (مثل ISO, NIST)"
     ]
          },
       {
@@ -973,12 +974,13 @@ let currentSearchType = 'jobs'; // القيمة الافتراضية
         experience: "1-3 سنوات",
     growthRate: "10%",
     requiredSpecialties: [
-      "Medical Equipment Repair",
-      "Technical Diagnostics",
-      "Preventive Maintenance",
-      "Calibration",
-      "Electronics Knowledge",
-      "Compliance with Safety Standards"
+        "إصلاح المعدات الطبية (Medical Equipment Repair)",
+        "التشخيص التقني (Technical Diagnostics)",
+        "الصيانة الوقائية (Preventive Maintenance)",
+        "المعايرة (Calibration)",
+        "معرفة الإلكترونيات (Electronics Knowledge)",
+        "الامتثال لمعايير السلامة (Compliance with Safety Standards)"
+  
     ]
 
     },
@@ -1172,6 +1174,7 @@ let currentSearchType = 'jobs'; // القيمة الافتراضية
         }
         ];
 
+        
         // نظام الفلترة
         let activeFilter = null;
         const demandOrder = ['مرتفع جدًا', 'مرتفع', 'متوسط', 'منخفض'];
