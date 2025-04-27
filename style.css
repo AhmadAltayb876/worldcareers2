@@ -628,7 +628,7 @@ grid-template-columns: repeat(2, 1fr);
     font-size: 1.2rem;
     }
 }
-@media (max-height: 840px) {
+@media (max-height: 768px) {
     .modal-content {
         width: 95%;
         max-height: 90vh;
