@@ -2113,102 +2113,68 @@ function performSearch(query, type) {
     }
     document.getElementById('showMajorsBtn').classList.toggle('active', currentSearchType === 'majors');
 }
-function displaySearchResults(results) {
-    
-
-    const searchinput = document.getElementById('searchInput');
+function scrollToResults() {
     const mainSearchResults = document.getElementById('mainSearchResults');
-    const activeSection = document.querySelector('.nav-link.active').getAttribute('href');
-    const searchResults = document.getElementById('searchResults');
     const navbarHeight = document.querySelector('.navbar').offsetHeight;
 
-    
-    // تحديث نص البحث في العنوان
-    
-    // إظهار قسم النتائج الرئيسي
-    mainSearchResults.style.display = 'block';
-    const mainMajorsContainer = document.getElementById('majorsContainer'); // القسم الرئيسي للتخصصات
-    searchResults.innerHTML = ''; // مسح النتائج القديمة
-    document.getElementById('searchQueryText').textContent = searchinput.value.trim();
-    
-    if (results.professions.length > 0 || results.majors.length > 0) {
-        const targetPosition = mainSearchResults.getBoundingClientRect().top + window.pageYOffset;
-        setTimeout(() => {
-            window.scrollTo({
-                top: targetPosition - navbarHeight - 20, // 20px مسافة إضافية
-                behavior: 'smooth'
-            });
-        }, 100);
+    if (mainSearchResults) {
+        window.scrollTo({
+            top: mainSearchResults.offsetTop - navbarHeight - 30,
+            behavior: 'smooth'
+        });
     }
-    
+}
 
-// أخفاء النافذة فقط في قسم المهن
-if (activeSection === '#jobs') {
-        searchResults.style.opacity = '0';
-        searchResults.style.visibility = 'hidden';
-        searchResults.style.pointerEvents = 'none';
-        searchResults.style.height = '0';
-    } else if(activeSection === '#majors') {
-        searchResults.style.opacity = '1';
-        searchResults.style.visibility = 'visible';
-        searchResults.style.pointerEvents = 'auto';
-        searchResults.style.height = 'auto';
-    }
+function displaySearchResults(results) {
+    const searchResults = document.getElementById('searchResults');
+    searchResults.innerHTML = '';
 
+    const currentNavLink = document.querySelector('.nav-links .nav-link.active');
+    const currentSection = currentNavLink ? currentNavLink.getAttribute('href') : '';
 
-    if ((currentSearchType === 'jobs' && results.professions.length === 0)) {
-        searchResults.innerHTML = '<div class="no-results">لا توجد نتائج مطابقة</div>';
+    // تحقق إذا كانت لا توجد نتائج
+    if ((results.professions.length === 0) && (results.majors.length === 0)) {
+        searchResults.innerHTML = '<p style="text-align: center; color: #666; padding: 1rem;">لا توجد نتائج مطابقة</p>';
         searchResults.style.display = 'block';
-        return searchResults ;
-    }
-    else if ((currentSearchType === 'majors' && results.majors.length === 0)) {
-        searchResults.innerHTML = '<div class="no-results">لا توجد نتائج مطابقة</div>';
-        searchResults.style.display = 'block';
-        return searchResults ;
+        // تمرير تلقائي لمكان النتائج
+        scrollToResults();
+        return;
     }
 
-    if (currentSearchType === 'majors') {
-        renderMajorsResults(results.majors); // عرض النتائج في majorsContainer
-    } else if(currentSearchType === 'jobs'){
-        renderProfessions(results.professions);
-    }
-    
-    // إذا كانت النتائج فارغة
-    
-    // عرض النتائج حسب النوع
-    if (currentSearchType === 'jobs') {
-        results.professions.forEach(prof => {
+    // ✅ هنا نعرض النتائج فقط لو لم نكن داخل قسم "المهن والتخصصات"
+    if (currentSection !== '#jobs') {
+        results.professions.forEach(profession => {
             const item = document.createElement('div');
             item.className = 'search-result-item';
             item.innerHTML = `
-                <h4>${prof.title}</h4>
-                <p>ملخص المهنة :${prof.summarize.substring(0, 60)}...</p>
-                <small>فرص العمل: ${prof.jobo}</small>
+                <h4>${profession.title}</h4>
+                <p>${profession.summarize}</p>
             `;
-            item.addEventListener('click', () => {
-                showDetails(prof);
-                searchResults.style.display = 'none'; // إخفاء النتائج بعد النقر
-            });
+            item.addEventListener('click', () => showDetails(profession));
             searchResults.appendChild(item);
         });
-    } else if(currentSearchType === 'majors'){
+
         results.majors.forEach(major => {
             const item = document.createElement('div');
             item.className = 'search-result-item';
             item.innerHTML = `
                 <h4>${major.name}</h4>
-                <p>ملخص التخصص :${major.summarize.substring(0, 60)}...</p>
-                <small>فرص العمل: ${major.jobo}</small>
+                <p>${major.summarize}</p>
             `;
-            item.addEventListener('click', () => {
-                showMajorDetails(major);
-                searchResults.style.display = 'none'; // إخفاء النتائج بعد النقر
-            });
+            item.addEventListener('click', () => showMajorDetails(major));
             searchResults.appendChild(item);
         });
+
+        searchResults.style.display = 'block';
+    } else {
+        // لو كنت في قسم #jobs، لا نعرض قائمة البحث المنسدلة
+        searchResults.style.display = 'none';
     }
-    searchResults.style.display = 'block';
+
+    // تمرير تلقائي لمكان النتائج لو في بحث عادي
+    scrollToResults();
 }
+
 
    // حدث موحد لجميع الأزرار
 document.querySelectorAll('.search-type, #showProfessionsBtn, #showMajorsBtn').forEach(btn => {
