@@ -1985,20 +1985,26 @@ function performSearch(query, type) {
 }
 function displaySearchResults(results) {
     
-    const searchInput = document.getElementById('searchInput');
+    const searchinput = document.getElementById('searchInput');
     const mainSearchResults = document.getElementById('mainSearchResults');
     const activeSection = document.querySelector('.nav-link.active').getAttribute('href');
     const searchResults = document.getElementById('searchResults');
     const navbarHeight = document.querySelector('.navbar').offsetHeight;
 
-   
+    if ((activeSection === 'jobs' && results.professions.length === 0) ||
+    (activeSection === 'majors' && results.majors.length === 0)) {
+        searchResults.innerHTML = '<div class="no-results">لا توجد نتائج مطابقة</div>';
+        searchResults.style.display = 'block';
+        return;
+    }
     // تحديث نص البحث في العنوان
-    document.getElementById('searchQueryText').textContent = searchInput.value.trim();
+    document.getElementById('searchQueryText').textContent = searchinput.value.trim();
     
     // إظهار قسم النتائج الرئيسي
     mainSearchResults.style.display = 'block';
     const mainMajorsContainer = document.getElementById('majorsContainer'); // القسم الرئيسي للتخصصات
     searchResults.innerHTML = ''; // مسح النتائج القديمة
+    
     if (results.professions.length > 0 || results.majors.length > 0) {
         const targetPosition = mainSearchResults.getBoundingClientRect().top + window.pageYOffset;
         setTimeout(() => {
@@ -2033,12 +2039,7 @@ if (activeSection === '#jobs') {
     }
     
     // إذا كانت النتائج فارغة
-    if ((currentSearchType === 'jobs' && results.professions.length === 0) ||
-        (currentSearchType === 'majors' && results.majors.length === 0)) {
-        searchResults.innerHTML = '<div class="no-results">لا توجد نتائج مطابقة</div>';
-        searchResults.style.display = 'block';
-        return;
-    }
+    
 
     // عرض النتائج حسب النوع
     if (currentSearchType === 'jobs') {
@@ -2047,7 +2048,7 @@ if (activeSection === '#jobs') {
             item.className = 'search-result-item';
             item.innerHTML = `
                 <h4>${prof.title}</h4>
-                <p>${prof.description.substring(0, 60)}...</p>
+                <p>ملخص المهنة :${prof.summarize.substring(0, 60)}...</p>
                 <small>فرص العمل: ${prof.jobo}</small>
             `;
             item.addEventListener('click', () => {
@@ -2062,7 +2063,7 @@ if (activeSection === '#jobs') {
             item.className = 'search-result-item';
             item.innerHTML = `
                 <h4>${major.name}</h4>
-                <p>${major.description.substring(0, 60)}...</p>
+                <p>ملخص التخصص :${major.summarize.substring(0, 60)}...</p>
                 <small>فرص العمل: ${major.jobo}</small>
             `;
             item.addEventListener('click', () => {
