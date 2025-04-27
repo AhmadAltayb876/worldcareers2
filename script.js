@@ -22,7 +22,7 @@ let currentSearchType = 'jobs'; // القيمة الافتراضية
                 demand: "مرتفع",
                 description: "إجراء عمليات التجميل التصحيحية والجمالية",
                 summarize: "hghghghghg" ,
-                category: "طب",
+                category: "الطب",
                 skills: ["طب", "يدوية", "تركيز"]
             },
             {
@@ -34,7 +34,7 @@ let currentSearchType = 'jobs'; // القيمة الافتراضية
                 demand: "متوسط",
                 description: "تشخيص وعلاج الأمراض باستخدام التصوير الإشعاعي",
                 summarize: "hghghghghg" ,
-                category: "طب",
+                category: "الطب",
                 skills: ["طب", "تحليلية", "تقنية"]
             },
             {
@@ -70,7 +70,7 @@ let currentSearchType = 'jobs'; // القيمة الافتراضية
                 demand: "مرتفع",
                 description: "تصميم وتنفيذ مزارع الرياح البحرية",
                 summarize: "hghghghghg" ,
-                category: "هندسة",
+                category: "الهندسة",
                 skills: ["هندسة", "تحليلية", "بيئية"]
             },
             {
@@ -82,7 +82,7 @@ let currentSearchType = 'jobs'; // القيمة الافتراضية
                 demand: "متوسط",
                 description: "بحث وتطوير مواد متقدمة بمقياس النانو",
                 summarize: "hghghghghg" ,
-                category: "هندسة",
+                category: "الهندسة",
                 skills: ["هندسة", "بحثية", "تحليلية"]
             },
             {
@@ -94,7 +94,7 @@ let currentSearchType = 'jobs'; // القيمة الافتراضية
                 demand: "مرتفع",
                 description: "إدارة محافظ استثمارية في العملات المشفرة",
                 summarize: "hghghghghg" ,
-                category: "أعمال",
+                category: "الأعمال",
                 skills: ["مالية", "تحليلية", "قيادة"]
             },
             {
@@ -106,7 +106,7 @@ let currentSearchType = 'jobs'; // القيمة الافتراضية
                 demand: "مرتفع",
                 description: "تحليل السلوك الاقتصادي للأفراد والشركات",
                 summarize: "hghghghghg" ,
-                category: "أعمال",
+                category: "الأعمال",
                 skills: ["تحليلية", "اجتماعية", "بحثية"]
             },
             {
@@ -118,7 +118,7 @@ let currentSearchType = 'jobs'; // القيمة الافتراضية
                 demand: "مرتفع",
                 description: "تصميم تجارب تفاعلية باستخدام تقنيات AR",
                 summarize: "hghghghghg" ,
-                category: "UX/UI",
+                category: "الفنون",
                 skills: ["إبداعية", "تقنية", "تصميم"]
             },
             {
@@ -142,7 +142,7 @@ let currentSearchType = 'jobs'; // القيمة الافتراضية
                 demand: "مرتفع",
                 description: "إجراء عمليات جراحية معقدة في القلب",
                 summarize: "hghghghghg" ,
-                category: "طب",
+                category: "الطب",
                 skills: ["طب", "يدوية", "تركيز"]
             },
             {
@@ -154,7 +154,7 @@ let currentSearchType = 'jobs'; // القيمة الافتراضية
                 demand: "مرتفع",
                 description: "تصميم واجهات المستخدم وتحسين التجربة الرقمية",
                 summarize: "hghghghghg" ,
-                category: "UX/UI",
+                category: "الفنون",
                 skills: ["إبداعية", "تواصل", "تصميم"]
             },
             {
@@ -166,7 +166,7 @@ let currentSearchType = 'jobs'; // القيمة الافتراضية
                 experience: "4+ سنوات",
                 demand: "متوسط",
                 description: "تصميم الأنظمة الميكانيكية والآلات",
-                category: "هندسة",
+                category: "الهندسة",
                 skills: ["هندسة", "تحليلية", "تقنية"]
             },
             {
@@ -178,7 +178,7 @@ let currentSearchType = 'jobs'; // القيمة الافتراضية
                 experience: "5+ سنوات",
                 demand: "مرتفع",
                 description: "إدارة فرق العمل والمشاريع التقنية",
-                category: "أعمال",
+                category: "الأعمال",
                 skills: ["قيادة", "تنظيمية", "تواصل"]
             }
         ];
@@ -191,7 +191,7 @@ let currentSearchType = 'jobs'; // القيمة الافتراضية
             jobo: "كثير"  ,
             summarize: "hghghghghg" ,
             name: "الطب البشري", 
-            field: "العلوم الطبية", 
+            field: "الطب", 
             description: "يهدف تخصص الطب البشري إلى إعداد أطباء مؤهلين لتشخيص وعلاج الأمراض والإصابات. يتضمن الدراسة العميقة لجسم الإنسان ووظائفه والأمراض التي تصيبه وطرق علاجها.",
             duration: "6 سنوات + سنة امتياز",
             universities: ["جامعة الملك سعود", "جامعة الملك عبدالعزيز", "جامعة القصيم"],
@@ -219,7 +219,7 @@ let currentSearchType = 'jobs'; // القيمة الافتراضية
             jobo: "كثير"  ,
             summarize: "hghghghghg" ,
             name: "إدارة الأعمال", 
-            field: "الاعمال", 
+            field: "الأعمال", 
             description: "يركز تخصص إدارة الأعمال على دراسة العمليات الإدارية في المنظمات. يشمل التخطيط والتنظيم والقيادة والرقابة على الموارد لتحقيق الأهداف التنظيمية.",
             duration: "4 سنوات دراسية",
             universities: ["جامعة الملك سعود", "جامعة الإمام محمد بن سعود", "جامعة الدمام"],
@@ -262,7 +262,7 @@ let currentSearchType = 'jobs'; // القيمة الافتراضية
         "الطب": ["الطب"],
         "الهندسة": ["الهندسة"],
         "IT & AI": ["IT", "AI"],
-        "الأعمال": ["الاعمال", "الأعمال"],
+        "الأعمال": ["الأعمال"],
         "العلوم": ["الفيزياء", "الكيمياء", "علم الاحياء"],
         "القانون": ["القانون"],
         "الزراعة": ["الزراعة"],
