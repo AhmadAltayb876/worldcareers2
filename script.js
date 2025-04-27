@@ -2119,7 +2119,7 @@ function scrollToResults() {
 
     if (mainSearchResults) {
         window.scrollTo({
-            top: mainSearchResults.offsetTop - navbarHeight - 30,
+            top: mainSearchResults.offsetTop - navbarHeight - 20,
             behavior: 'smooth'
         });
     }
@@ -2137,6 +2137,7 @@ function displaySearchResults(results) {
         searchResults.innerHTML = '<p style="text-align: center; color: #666; padding: 1rem;">لا توجد نتائج مطابقة</p>';
         searchResults.style.display = 'block';
         // تمرير تلقائي لمكان النتائج
+        
         scrollToResults();
         return;
     }
