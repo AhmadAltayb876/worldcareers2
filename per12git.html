@@ -881,14 +881,7 @@
     padding: 1.5rem;
     margin: 0.5rem;
     }
-    
-    #best-jobs .profitability-badge {
-    font-size: 0.8rem;
-    padding: 0.4rem 1rem;
-    top: -10px;
-    
-    }
-    
+   
     #best-jobs .stats-grid {
     grid-template-columns: 1fr;
     gap: 0.8rem;
@@ -1541,7 +1534,6 @@
     
     #jobs .filter-item {
     padding: 0.8rem 1.8rem;
-    border-radius: 30px;
     font-size: 1.1rem;
     font-weight: 600;
     cursor: pointer;
@@ -2411,12 +2403,9 @@
     max-height: 90vh;
     overflow-y: auto;
 }
-.nav-links {
-    overflow-x: auto;
-    scrollbar-width: thin;
-}
 </style>
-
+      
+</style>
 </head>
 <body>
 <!-- الترويسة -->
@@ -3585,14 +3574,13 @@ document.querySelectorAll('.nav-link').forEach(link => {
             // أفضل المهن (Best Careers)
             {
                 
-                industry: "x" ,
+                industry: "" ,
                 title: "عالم بيانات (Data Scientist)",//
                 category: "تحليل البيانات",//
                 avgSalary: "120,000 - 180,000 دولار",//
                 demand: "مرتفع جدًا",//
                 description: "تحليل البيانات لاستخلاص رؤى قيمة.",//
                 experience: " 4-6",
-                profitability: " x ",
                 growthRate: "36%" ,
                 jobType: "best",
                 requiredSpecialties: [
@@ -3604,14 +3592,13 @@ document.querySelectorAll('.nav-link').forEach(link => {
                
             },
             {
-                industry: "x" ,
+                industry: "منتع" ,
                  title: "مهندس ذكاء اصطناعي (AI Engineer)",
                  description: "بناء أنظمة ذكية تتعلم وتحلل.",
                  demand: "مرتفع جدًا",
                  category: "تقنية" ,
                    avgSalary:"130,000 - 200,000 دولار",
                  experience:"3+",
-                profitability: "x",
                 growthRate:"26%",
                 jobType:"best",
                 requiredSpecialties: [
@@ -3626,6 +3613,7 @@ document.querySelectorAll('.nav-link').forEach(link => {
 
       {
          title: "جراح أعصاب (Neurosurgeon)",
+         industry: "" ,
           description: "إجراء عمليات دقيقة للجهاز العصبي.",
            avgSalary: "300,000 - 800,000 دولار",
             demand: "مرتفع", 
@@ -3645,6 +3633,7 @@ document.querySelectorAll('.nav-link').forEach(link => {
       { 
         title: "مدير منتج تقني (Technical Product Manager)",
        description: "إدارة تطوير المنتجات التقنية.",
+       industry: "" ,
        avgSalary: "110,000 - 160,000 دولار",
          demand: "مرتفع", 
          category: "إدارة",
@@ -3662,6 +3651,7 @@ document.querySelectorAll('.nav-link').forEach(link => {
          },
       {
          title: "خبير أمن سيبراني (Cybersecurity Specialist)",
+         industry: "" ,
        description: "حماية البيانات والأنظمة الرقمية.",
        avgSalary: "100,000 - 170,000 دولار",
          demand: "مرتفع جدًا",
@@ -3684,6 +3674,7 @@ document.querySelectorAll('.nav-link').forEach(link => {
         },
         {
              title: "جراح أعصاب (Neurosurgeon)",
+             industry: "" ,
              description: "أعلى دخل طبي عالميًا.",
              avgSalary: "300,000 - 800,000 دولار",
              jobType: "profit",
@@ -3705,6 +3696,7 @@ document.querySelectorAll('.nav-link').forEach(link => {
 
       {
         title: "جراح تجميل (Plastic Surgeon)",
+        industry: "" ,
          description: "تصحيح وتحسين المظهر الجسدي.",
          avgSalary: "250,000 - 500,000 دولار",
          jobType: "profit",
@@ -3724,6 +3716,7 @@ document.querySelectorAll('.nav-link').forEach(link => {
 
       {
          title: "مدير تنفيذي (CEO)",
+         industry: "" ,
        description: "قيادة الشركات إلى النجاح.",
        avgSalary: "200,000 - 400,000 دولار",
        jobType: "profit",
@@ -3743,6 +3736,7 @@ document.querySelectorAll('.nav-link').forEach(link => {
         },
       {
          title: "مستشار استثماري (Investment Consultant)", 
+         industry: "" ,
          description: "توجيه الاستثمارات لزيادة الأرباح.",
          avgSalary: "150,000 - 300,000 دولار",
          jobType: "profit",
@@ -3762,6 +3756,7 @@ document.querySelectorAll('.nav-link').forEach(link => {
          },
       {
          title: "طبيب قلب (Cardiologist)",
+         industry: "" ,
          description: "علاج أمراض القلب والشرايين.",
          avgSalary: "250,000 - 450,000 دولار",
          jobType: "profit",
@@ -3783,6 +3778,7 @@ document.querySelectorAll('.nav-link').forEach(link => {
             // الأكثر طلبًا (Most In-Demand)
             { 
                 title: "مطور برمجيات (Software Developer)",
+                industry: "" ,
                  description: "تطوير تطبيقات وحلول رقمية.", 
                  jobType: "demand",
                  avgSalary: "90,000 - 140,000 دولار",
@@ -3802,6 +3798,7 @@ document.querySelectorAll('.nav-link').forEach(link => {
                 },
       {
          title: "خبير تسويق رقمي (Digital Marketing Specialist)",
+         industry: "" ,
           description: "تسويق عبر الإنترنت بكفاءة.",
           jobType: "demand",
            avgSalary: "70,000 - 120,000 دولار",
@@ -3820,6 +3817,7 @@ document.querySelectorAll('.nav-link').forEach(link => {
             },
       { 
         title: "ممرض مسجل (Registered Nurse)",
+        industry: "" ,
          description: "رعاية صحية متخصصة.",
          jobType: "demand",
           avgSalary: "75,000 - 110,000 دولار",
@@ -3839,6 +3837,7 @@ document.querySelectorAll('.nav-link').forEach(link => {
            
       { 
         title: "خبير أمن معلومات (Information Security Analyst)",
+        industry: "" ,
        description: "تأمين البيانات من الهجمات.",
        jobType: "demand",
         avgSalary: "95,000 - 140,000 دولار",
@@ -3857,6 +3856,7 @@ document.querySelectorAll('.nav-link').forEach(link => {
          },
       {
          title: "فني أجهزة طبية (Medical Equipment Technician)", 
+         industry: "" ,
       description: "صيانة الأجهزة الطبية الحيوية.",
       jobType: "demand",
        avgSalary: "65,000 - 90,000 دولار", 
@@ -3881,6 +3881,7 @@ document.querySelectorAll('.nav-link').forEach(link => {
             { 
                 title: "سائق شاحنات ثقيلة (Heavy Truck Driver)",
                 jobType:"opportunities",
+                industry: "" ,
                 description: "نقل البضائع عبر المسافات الطويلة.",
                 avgSalary: "60,000 - 85,000 دولار",
                 demand: "مرتفع",
@@ -3899,6 +3900,7 @@ document.querySelectorAll('.nav-link').forEach(link => {
       { 
         title: "معلم لغة إنجليزية (English Teacher)", 
         jobType:"opportunities",
+        industry: "" ,
         description: "تدريس اللغة الإنجليزية عالميًا.",
          avgSalary: "50,000 - 75,000 دولار",
           demand: "مرتفع",
@@ -3917,6 +3919,7 @@ document.querySelectorAll('.nav-link').forEach(link => {
       {
          title: "موظف خدمة عملاء (Customer Service Representative)",
          jobType:"opportunities",
+         industry: "" ,
           description: "التواصل مع العملاء ودعمهم.",
            avgSalary: "40,000 - 60,000 دولار",
             demand: "مرتفع",
@@ -3935,6 +3938,7 @@ document.querySelectorAll('.nav-link').forEach(link => {
       { 
         title: "فني صيانة كهربائية (Electrical Maintenance Technician)",
         jobType:"opportunities",
+        industry: "" ,
        description: "صيانة الأنظمة الكهربائية.",
         avgSalary: "55,000 - 80,000 دولار",
          demand: "مرتفع",
@@ -3954,6 +3958,7 @@ document.querySelectorAll('.nav-link').forEach(link => {
       {
         title: "مساعد مبيعات (Sales Associate)",
         jobType:"opportunities",
+        industry: "" ,
        description: "مساعدة العملاء في المبيعات.",
         avgSalary: "35,000 - 55,000 دولار", 
         demand: "مرتفع",
@@ -3974,6 +3979,7 @@ document.querySelectorAll('.nav-link').forEach(link => {
             {
                  title: "مساعد إداري (Administrative Assistant)",
                  jobType: "entry",
+                 industry: "" ,
                   description: "دعم إداري وتنظيمي للمكاتب.", 
                   avgSalary: "40,000 - 60,000 دولار",
                    demand: "مرتفع", 
@@ -3993,6 +3999,7 @@ document.querySelectorAll('.nav-link').forEach(link => {
       {
          title: "موظف دعم فني (Technical Support Representative)",
          jobType: "entry",
+         industry: "" ,
        description: "مساعدة العملاء في المشكلات التقنية.",
         avgSalary: "45,000 - 65,000 دولار",
          demand: "مرتفع",
@@ -4011,6 +4018,7 @@ document.querySelectorAll('.nav-link').forEach(link => {
       { 
         title: "مندوب مبيعات (Sales Representative)",
         jobType: "entry",
+        industry: "" ,
          description: "التواصل مع العملاء لبيع المنتجات.",
           avgSalary: "50,000 - 70,000 دولار",
            demand: "مرتفع",
@@ -4029,6 +4037,7 @@ document.querySelectorAll('.nav-link').forEach(link => {
       {
          title: "مشرف مخازن (Warehouse Supervisor)",
          jobType: "entry",
+         industry: "" ,
           description: "تنظيم وإدارة المخزون.",
            avgSalary: "45,000 - 65,000 دولار",
             demand: "مرتفع",
@@ -4048,6 +4057,7 @@ document.querySelectorAll('.nav-link').forEach(link => {
 
         title: "مدخل بيانات (Data Entry Clerk)",
         jobType: "entry",
+        industry: "" ,
          description: "إدخال البيانات بدقة عالية.",
           avgSalary: "35,000 - 50,000 دولار",
            demand: "مرتفع",
@@ -4141,7 +4151,6 @@ document.querySelectorAll('.nav-link').forEach(link => {
                 const card = document.createElement('div');
                 card.className = 'profession-card';
                 card.innerHTML = `
-                    <div class="profitability-badge">${job.profitability}</div>
                     <h3>${job.title}</h3>
                     <div class="stats-grid">
                         <div class="stat-item">
