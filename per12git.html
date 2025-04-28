@@ -1,0 +1,5216 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar">
+<head>
+<!-- Primary Meta Tags -->
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0" name="viewport"/>
+<meta content="index, follow, max-image-preview:large" name="robots"/>
+<meta content="اكتشف الأسرار المالية للمهن النادرة! ✨ رواتب تصل لـ 2 مليون دولار سنويًا + نصائح احترافية لاختيار المسار الوظيفي الذهبي" name="description"/>
+<meta content="أعلى الرواتب العالمية, المهن الأكثر طلبًا 2024, مستقبل الوظائف الذكية, نصائح الترقية الوظيفية, مقارنة الرواتب الدولية" name="keywords"/>
+<meta content="Career Masters Team" name="author"/>
+<!-- Open Graph / Facebook -->
+<meta content="website" property="og:type"/>
+<meta content="https://careerhub.example/" property="og:url"/>
+<meta content="🔥 صدمة الرواتب! اكتشف ما يخفيه أصحاب المليارات عن مساراتهم الوظيفية" property="og:title"/>
+<meta content="معلومات حصرية لن تجدها ailleurs: 137 مهنة نادرة مع رواتب خيالية + دليل التخصصات القاتلة للبطالة" property="og:description"/>
+<meta content="https://careerhub.example/og-image.jpg" property="og:image"/>
+<!-- Twitter -->
+<meta content="summary_large_image" property="twitter:card"/>
+<meta content="https://careerhub.example/" property="twitter:url"/>
+<meta content="🚀 انهيار التوقعات! هذه المهن ستهيمن على سوق العمل 2024-2030" property="twitter:title"/>
+<meta content="شاهد بنفسك: تقرير مفصل عن 89 مهنة مستقبلية مع معدل نمو يصل لـ 300% + شهادات معتمدة مجانًا" property="twitter:description"/>
+<meta content="https://careerhub.example/twitter-card.jpg" property="twitter:image"/>
+<!-- Schema.org for Rich Snippets -->
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Career Oracle",
+    "url": "https://careerhub.example/",
+    "description": "منصة الثورة الوظيفية الأولى عربيًا 🏆 مقارنات رواتب حية بين 150+ دولة + تحليل مسارات التطور الوظيفي",
+    "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://careerhub.example/search?q={search_term}",
+    "query-input": "required name=search_term"
+}
+}
+
+        // دالة وسيطة لفصل الفلترة بناءً على النوع الحالي
+        function onFilterChange() {
+            if (currentSearchType === 'jobs') {
+                filterProfessions();
+            } else {
+                filterMajors();
+            }
+        }
+
+    </script>
+<title>World Careers Hub - الدليل المهني العالمي</title>
+<link href="https://careerhub.example/" rel="canonical"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"/>
+<style>
+    :root {
+        --primary: #0A84FF;
+        --secondary: #3AAFA9;
+        --accent: #FF6B6B;
+        --light: #F8F9FA;
+        --dark: #212529;
+    }
+    
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: 'Tajawal', sans-serif;
+    }
+    
+    body {
+        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        color: var(--dark);
+        line-height: 1.6;
+    }
+    
+    /* الترويسة */
+    .navbar {
+        background: white;
+        box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+        padding: 1rem 2rem;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        direction: ltr;
+    }
+    
+    .nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1400px;
+        margin: 0 auto;
+        gap: 1.5rem;
+    }
+    
+    .logo {
+        font-weight: 700;
+        font-size: 1.5rem;
+        color: var(--primary);
+        text-decoration: none;
+        white-space: nowrap;
+    }
+    
+    .logo span {
+        color: var(--secondary);
+    }
+    
+    .nav-links {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .nav-link {
+        color: var(--dark);
+        text-decoration: none;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        padding: 0.5rem 1rem;
+        border-radius: 5px;
+        white-space: nowrap;
+    }
+    
+    .nav-link:hover {
+        color: var(--secondary);
+        background: rgba(58,175,169,0.1);
+    }
+    
+    .nav-link.active {
+        color: white;
+        background: var(--primary);
+    }
+    
+    /* شريط البحث */
+    .search-container {
+        flex: 1;
+        max-width: 100%;
+        position: relative;
+        margin: 0 1rem;
+    }
+    
+    .search-input {
+        width: 100%;
+        padding: 0.7rem 2.5rem 0.7rem 1rem;
+        border: 2px solid rgba(10, 132, 255, 0.2);
+        border-radius: 23px;
+        font-size: 0.95rem;
+        transition: all 0.3s ease;
+        background-color: #f8f9fa;
+        outline: none;
+    }
+    
+    .search-input:focus {
+        border-color: var(--primary);
+        box-shadow: 0 0 0 3px rgba(10, 132, 255, 0.2);
+        background-color: white;
+    }
+    
+    .search-btn {
+        position: absolute;
+        right: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+        background: none;
+        border: none;
+        color: var(--primary);
+        cursor: pointer;
+        font-size: 1.1rem;
+    }
+    
+    /* نتائج البحث المنسدلة */
+    .search-results {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        max-height: 400px;
+        overflow-y: auto;
+        background: white;
+        border-radius: 0 0 10px 10px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        z-index: 100;
+        display: none;
+    }
+    
+    .search-result-item {
+        padding: 0.8rem 1rem;
+        border-bottom: 1px solid #eee;
+        cursor: pointer;
+        transition: background 0.2s;
+    }
+    
+    .search-result-item:hover {
+        background: #f8f9fa;
+    }
+    #majorsContainer .profession-card {
+        background: white;
+        border-radius: 15px;
+        padding: 1.8rem !important;
+        box-shadow: 0 5px 25px rgba(0, 0, 0, 0.438);
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+        margin: 0; /* إزالة الهوامش الإضافية */
+    }
+    
+    #majorsContainer .profession-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.836);
+    }
+    
+    #majorsContainer .profession-card::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: linear-gradient(90deg, var(--secondary) 0%, var(--primary) 100%);
+        transition: height 0.3s ease;
+    }
+    
+    #majorsContainer .profession-card:hover::after {
+        height: 6px;
+    }
+    #majorsContainer .profession-card {
+        padding: 1.5rem !important;
+        /* بقية الخصائص */
+    }
+    .search-result-item h4 {
+        color: var(--primary);
+        margin-bottom: 0.3rem;
+    }
+    
+    .search-result-item p {
+        font-size: 0.85rem;
+        color: #666;
+    }
+    
+    .no-results {
+        padding: 1rem;
+        text-align: center;
+        color: #666;
+    }
+    
+    /* نتائج البحث الرئيسية */
+    .search-results-section {
+        max-width: 1400px;
+        margin: 1rem auto;
+        padding: 0 2rem;
+        display: none;
+    }
+    
+    .search-results-title {
+        color: var(--primary);
+        margin-bottom: 1rem;
+        font-size: 1.2rem;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    
+    .search-results-title i {
+        color: var(--secondary);
+    }
+    
+    .clear-search-btn {
+        background: var(--accent);
+        color: white;
+        border: none;
+        padding: 0.3rem 0.8rem;
+        border-radius: 20px;
+        cursor: pointer;
+        margin-right: 0.5rem;
+        font-size: 0.8rem;
+        transition: all 0.3s;
+    }
+    
+    .clear-search-btn:hover {
+        background: #ff5252;
+    }
+    
+    /* بقية الأنماط */
+    .header {
+        background: linear-gradient(135deg, var(--primary) 0%, #1B2A4E 100%);
+        color: white;
+        padding: 3rem 1rem;
+        text-align: center;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        border-bottom: 4px solid var(--secondary);
+        margin-top: 0;
+        direction: ltr;
+    }
+    
+    .header h1 {
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .professions-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        gap: 2rem;
+        padding: 2rem;
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+    
+    .profession-card {
+        background: white;
+        border-radius: 15px;
+        padding: 1.8rem;
+        box-shadow: 0 5px 25px rgba(0, 0, 0, 0.438);
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .profession-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.836);
+    }
+    
+    .profession-card::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: linear-gradient(90deg, var(--secondary) 0%, var(--primary) 100%);
+        transition: height 0.3s ease;
+    }
+    
+    .profession-card:hover::after {
+        height: 6px;
+    }
+    
+    .profession-card h3 {
+        color: var(--primary);
+        margin-bottom: 1rem;
+        font-size: 1.4rem;
+    }
+    
+    .salary-info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 1.5rem;
+        padding-top: 1.2rem;
+        border-top: 2px solid rgba(0,0,0,0.05);
+    }
+    
+    .highlight {
+        color: var(--secondary);
+        font-weight: 700;
+        font-size: 1.1rem;
+        background: rgba(58,175,169,0.1);
+        padding: 0.3rem 0.8rem;
+        border-radius: 20px;
+    }
+    .highlight {
+        color: var(--secondary);
+        font-weight: 700;
+        font-size: 1.1rem;
+        background: rgba(58,175,169,0.1);
+        padding: 0.3rem 0.8rem;
+        border-radius: 20px;
+        justify-content: left;
+    
+    }
+    
+    .category-tag {
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+        background: var(--accent);
+        color: white;
+        padding: 0.3rem 0.8rem;
+        border-radius: 15px;
+        font-size: 0.85rem;
+        box-shadow: 0 2px 8px rgba(255,107,107,0.2);
+    }
+    
+    /* الفلترة */
+    .filter-container {
+        max-width: 1400px;
+        margin: 1rem auto;
+        padding: 0 2rem;
+    }
+    
+    .filter-box {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        background: rgba(42,63,95,0.05);
+        padding: 1.5rem;
+        border-radius: 10px;
+    }
+    
+    .filter-title {
+        color: var(--secondary);
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+    
+    /* أقسام المحتوى */
+    .content-section {
+        max-width: 1000px;
+        margin: 1rem auto;
+        padding: 0 2rem;
+        display: none;
+        direction: rtl;
+    }
+    
+    .content-card {
+        background: white;
+        padding: 2rem;
+        border-radius: 15px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.377);
+        margin-bottom: 2rem;
+    }
+    
+    /* النافذة المنبثقة */
+    .modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.7);
+        backdrop-filter: blur(5px);
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+    }
+    
+    .modal-content {
+        background: white;
+        padding: 2.5rem;
+        border-radius: 20px;
+        max-width: 600px;
+        width: 90%;
+        position: relative;
+        border: 2px solid var(--primary);
+        box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        position: relative;
+        padding: 2rem;
+    }
+    
+    .close-btn {
+        position: absolute;
+            top: 1rem;
+    left: 1rem;
+    font-size: 2.5rem;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    cursor: pointer;
+    z-index: 1001;
+    color: var(--accent);
+    transition: all 0.3s ease;
+    }
+    /* تحسينات للجوال */
+    
+    
+    /* تأثيرات عند التمرير */
+    .close-btn:hover {
+    transform: rotate(90deg) scale(1.1);
+    color: var(--primary);
+    }
+    .close-btn::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 150%;
+    height: 150%;
+    background: rgba(0,0,0,0.1);
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    }
+    
+    .close-btn:hover::after {
+    opacity: 1;
+    }
+    .modal-header {
+    position: relative;
+    z-index: 1000;
+    }
+    @media (hover: none) {
+    .close-btn:hover {
+    transform: none;
+    }
+    .close-btn:hover::after {
+    opacity: 0;
+    }
+    }
+    .close-btn:hover {
+        transform: rotate(90deg);
+    }
+    
+    .modal-header {
+        position: relative;
+        padding-top: 3.5rem;
+        min-height: 5rem;
+        border-bottom: 2px solid rgba(0,0,0,0.1);
+        padding-bottom: 1rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    #modalCategory {
+        position: absolute;
+        top: 4rem;
+        left: 1.5rem;
+        margin: 0;
+        font-size: 0.85rem;
+    }
+    
+    .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+        margin-top: 1.5rem;
+    }
+    
+    .stat-item {
+        background: rgba(42,63,95,0.03);
+        padding: 1rem;
+        border-radius: 10px;
+        text-align: center;
+    }
+    
+    .stat-item span:first-child {
+        color: var(--primary);
+        font-weight: 700;
+        display: block;
+        margin-bottom: 0.5rem;
+    }
+    
+    /* التكيف مع الشاشات الصغيرة */
+    @media (max-width: 1024px) {
+        .nav-container {
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .search-container {
+            order: 3;
+            max-width: 100%;
+            margin: 0.5rem 0;
+        }
+        
+        .nav-links {
+            width: 100%;
+            justify-content: center;
+        }
+        
+    }
+    
+    @media (max-width: 768px) {
+        .professions-grid {
+            grid-template-columns: 1fr;
+            padding: 1rem;
+    
+        }
+        
+    @media (max-width: 768px) {
+    #best-jobs .filter-item {
+    flex: 1 1 100%;
+    text-align: center;
+    padding: 0.7rem;
+    
+    #best-jobs .profession-card {
+    padding: 1.2rem;
+    }
+    }
+    #best-jobs .growth-rate {
+    font-size: 0.8rem;
+    }
+    }
+    }
+        .header h1 {
+            font-size: 2rem;
+        }
+        
+        .nav-links {
+            gap: 0.5rem;
+        }
+        
+        .nav-link {
+            padding: 0.3rem 0.6rem;
+            font-size: 0.9rem;
+        }
+    
+    
+    @media (max-width: 480px) {
+    /* تحسينات الهيدر للجوال */
+    .navbar {
+    padding: 0.5rem 1rem;
+    }
+    
+    .nav-container {
+    flex-direction: column;
+    gap: 0.5rem;
+    }
+    
+    .nav-links {
+    width: 100%;
+    justify-content: flex-start;
+    padding-bottom: 0.5rem;
+    -webkit-overflow-scrolling: touch;
+    }
+    
+    .nav-link {
+    font-size: 0.9rem;
+    padding: 0.3rem 0.8rem;
+    white-space: nowrap;
+    }
+    
+    .nav-link.active {
+    padding: 0.3rem 0.8rem;
+    }
+    
+    /* إخفاء النص وعرض الأيقونات فقط عند الحاجة */
+    
+    
+    /* تحسين شريط البحث */
+    .search-container {
+    margin: 0;
+    width: 100%;
+    text-align: right;
+    }
+    
+    .search-input {
+    font-size: 0.9rem;
+    padding: 0.5rem 1.5rem 0.5rem 1rem;
+    }
+    
+    .search-btn {
+    right: 0.8rem;
+    font-size: 1rem;
+    }
+    
+    /* تحسين بطاقات المهن */
+    .profession-card {
+    padding: 1rem;
+    margin: 0.5rem;
+    }
+    
+    .profession-card h3 {
+    font-size: 1.2rem;
+    }
+    
+    .salary-info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    }
+    
+    #jobFieldsFilter {
+    order: -1;
+    width: 100%;
+    grid-template-columns: repeat(2, 1fr);
+    }
+    }
+    @media (max-width: 360px) {
+        .nav-link span {
+        display: none;
+        }
+        .nav-link i {
+        margin-right: 0;
+        font-size: 1.2rem;
+        }
+    }
+    @media (max-height: 840px) {
+        .modal-content {
+            width: 95%;
+            max-height: 90vh;
+            overflow-y: auto;
+            padding-top: 0.3rem;   
+            padding: 0.5rem;
+            
+        }
+        .close-btn {
+            font-size: 3rem;
+            top: 0.5rem;
+            left: 0.5rem;
+            width: 40px;
+            height: 40px;
+        } 
+        .modal-header {
+            padding-top:auto;
+            min-height: auto;
+        }
+        
+        #modalCategory {
+            top: 2.5rem;
+            left: 0.8rem;
+            font-size: 0.8rem;
+        }
+        .stat-item{
+            padding: 0 0 0 0 ;
+        }
+    }
+    
+    /* تحسينات إضافية للشاشات المتوسطة */
+    @media (max-width: 768px) {
+    .header h1 {
+    font-size: 1.8rem;
+    }
+    
+    .header p {
+    font-size: 0.9rem;
+    }
+    
+    .profession-card {
+    margin: 0.5rem;
+    }
+    
+    .nav-link {
+    font-size: 0.85rem;
+    }
+    }
+    /* شريط البحث */
+    .search-container {
+    flex: 1;
+    max-width: 100%; /* زيادة العرض الأقصى */
+    position: relative;
+    margin: 0 1rem;
+    transition: all 0.3s ease;
+    }
+    
+    @media (max-width: 1024px) {
+    .search-container {
+    max-width: 100%;
+    margin: 0;
+    order: 3;
+    width: 100%;
+    }
+    
+    .search-input {
+    padding: 0.8rem 3rem 0.8rem 1.5rem;
+    font-size: 1rem;
+    }
+    
+    .search-btn {
+    right: 1.5rem;
+    font-size: 1.2rem;
+    }
+    }
+    
+    @media (max-width: 768px) {
+    .search-container {
+    max-width: 100%;
+    margin: 0;
+    order: 3;
+    width: 100%;
+    }
+    
+    .search-input {
+    padding: 0.8rem 3rem 0.8rem 1.5rem;
+    font-size: 1rem;
+    }
+    
+    .search-btn {
+    right: 1.5rem;
+    font-size: 1.2rem;
+    }
+    }
+    
+    @media (max-width: 480px) {
+    .search-input {
+    padding: 0.9rem 3.5rem 0.9rem 2rem;
+    border-radius: 25px;
+    }
+    
+    .search-btn {
+    right: 2rem;
+    font-size: 1.3rem;
+    }
+    
+    .search-results {
+    border-radius: 15px;
+    }
+    }
+    
+    /* أنماط محاذاة الأزرار في القسم الرئيسي */
+    
+    @media (max-width: 768px) {
+    .header {
+    padding: 2rem 1rem !important; /* تقليل الحشو */
+    }
+    .header h1 {
+    font-size: 1.8rem !important; /* تصغير حجم العنوان */
+    line-height: 1.3;
+    }
+    
+    .header p {
+    font-size: 0.9rem !important; /* تصغير حجم النص الفرعي */
+    margin-top: 0.5rem;
+    }
+    }
+    @media (max-width: 768px) {
+    .nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start; /* المحاذاة من اليسار */
+    width: 100%;
+    direction: rtl;
+    }
+    
+    /* ترتيب العناصر كما تريد */
+    .nav-link[href="#com/hunt"] { order: 3; }
+    .nav-link[href="#best-jobs"] { order: 2; }
+    .nav-link[href="#jobs"] { order: 1; }
+    .nav-link[href="#about"] { order: 4}
+    
+    /* تعديلات إضافية لتحسين المظهر */
+    .nav-link {
+    margin:auto;
+    padding: auto;
+    }
+    }
+    .header {
+    transition: all 0.3s ease-in-out;
+    /* بقية الخصائص كما هي */
+    }
+    .header {
+    display: block !important; /* التأكد من ظهور الهيدر دائماً */
+    transition: all 0.3s ease-in-out;
+    /* بقية الخصائص كما هي */
+    }
+    /* أنماط خاصة بقسم Best Jobs */
+    #best-jobs .filter-box {
+    background: rgba(58, 175, 169, 0.1);
+    padding: 1.5rem;
+    border-radius: 15px;
+    margin: 2rem auto;
+    max-width: 1400px;
+    }
+    
+    #best-jobs .filter-group {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    min-width: 100%;
+    }
+    
+    #best-jobs .filter-item {
+    background: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid var(--primary);
+    }
+    
+    #best-jobs .filter-item.active {
+    background: var(--primary);
+    color: white;
+    }
+    
+    #best-jobs .professions-grid {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    padding: 1rem;
+    }
+    
+    #best-jobs .profession-card {
+    padding: 1.5rem;
+    margin: 0.5rem;
+    }
+    
+    #best-jobs .profitability-badge {
+    font-size: 0.8rem;
+    padding: 0.4rem 1rem;
+    top: -10px;
+    
+    }
+    
+    #best-jobs .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+    }
+    
+    #best-jobs .stat-item {
+    background: rgba(10, 132, 255, 0.05);
+    padding: 1rem;
+    border-radius: 10px;
+    text-align: center;
+    }
+    
+    #best-jobs .specialties-list {
+    list-style: none;
+    margin-top: 1rem;
+    }
+    
+    #best-jobs .specialties-list li {
+    font-size: 0.8rem;
+    padding: 0.3rem;
+    }
+    
+    .demand-indicator {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    }
+    
+    .demand-bar {
+    height: 8px;
+    border-radius: 4px;
+    background: #eee;
+    flex-grow: 1;
+    position: relative;
+    }
+    
+    .demand-fill {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    border-radius: 4px;
+    background: var(--secondary);
+    }
+    
+    .growth-rate {
+    color: var(--secondary);
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    }
+    @media (max-width: 480px) {
+    #best-jobs .filter-box {
+    padding: 1rem;
+    }
+    
+    #best-jobs .profession-card h3 {
+    font-size: 1.2rem;
+    }
+    
+    #best-jobs .demand-indicator {
+    flex-direction: column;
+    gap: 0.5rem;
+    }
+    
+    #best-jobs .demand-bar {
+    width: 100%;
+    }
+    }
+    /* تحسينات استجابة إضافية */
+    #best-jobs .specialties-title {
+    color: var(--primary);
+    margin: 1rem 0 0.5rem;
+    font-size: 0.95rem;
+    }
+    
+    #best-jobs .job-description {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #666;
+    margin-top: 1rem;
+    }
+    #best-jobs .filter-item[data-filter="best"] {
+    background: var(--primary) !important;
+    color: white !important;
+    }
+    
+    #best-jobs .filter-item:not(.active) {
+    background: white !important;
+    color: var(--primary) !important;
+    }
+    
+    @media (max-width: 1024px) {
+    #best-jobs .professions-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    }
+    }
+    
+    @media (max-width: 360px) {
+    #best-jobs .profession-card {
+    padding: 1rem;
+    }
+    
+    #best-jobs .stats-grid {
+    gap: 0.5rem;
+    }
+    
+    #best-jobs .specialties-list li {
+    font-size: 0.75rem;
+    }
+    }
+    @media (min-width : 600px) {
+    #best-jobs .filter-group {
+    justify-content: center; /* توسيط العناصر */
+    gap: 0.8rem; /* تقليل المسافة بين العناصر */
+    }
+    
+    #best-jobs .filter-item {
+    flex: 0 0 auto; /* منع العناصر من التمدد */
+    padding: 0.6rem 1.2rem; /* تعديل الحشو */
+    font-size: 0.9rem; /* تصغير حجم الخط */
+    margin: 0.2rem; /* إضافة هوامش صغيرة */
+    }
+    
+    #best-jobs .filter-item i {
+    margin-left: 0.3rem; /* تعديل مسافة الأيقونة */
+    }
+    }
+    @media (max-width : 480px) {
+    #best-jobs .filter-group {
+    justify-content: center; /* توسيط العناصر */
+    gap: 0.8rem; /* تقليل المسافة بين العناصر */
+    }
+    
+    #best-jobs .filter-item {
+    display: inline-block;
+    flex: 0 0 auto; /* منع العناصر من التمدد */
+    padding: 0.6rem 1.2rem; /* تعديل الحشو */
+    font-size: 0.9rem; /* تصغير حجم الخط */
+    margin: 0.2rem; /* إضافة هوامش صغيرة */
+    min-width: 100%;
+    }
+    
+    #best-jobs .filter-item i {
+    margin-left: 0.3rem; /* تعديل مسافة الأيقونة */
+    }
+    }
+    @media (max-width: 480px) {
+    
+    }
+    /* أنماط قسم المقارنة */
+    #com\/hunt .filter-item {
+    background: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid var(--primary);
+    flex: 1;
+    text-align: center;
+    margin: 0;
+    }
+    
+    #com\/hunt .filter-item.active {
+    background: var(--primary);
+    color: white;
+    }
+    
+    #com\/hunt table {
+    margin: 1rem 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    
+    #com\/hunt th, #com\/hunt td {
+    padding: 0.8rem 1rem;
+    border: 1px solid #eee;
+    text-align: right;
+    }
+    
+    #com\/hunt tr:nth-child(even) {
+    background-color: #f9f9f9;
+    }
+    
+    #com\/hunt tr:hover {
+    background-color: #f1f1f1;
+    }
+    
+    .compare-detail-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    }
+    /* أنماط أزرار التبديل بين المهن والتخصصات */
+    #jobs .filter-item {
+    background: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid var(--primary);
+    flex: 1;
+    text-align: center;
+    margin: 0;
+    font-weight: 500;
+    color: var(--primary);
+    }
+    
+    #jobs .filter-item.active {
+    background: var(--primary) !important;
+    color: white;
+    border-color: var(--primary)!important;
+    }
+    
+    #jobs .filter-item:hover {
+    background: rgba(10, 132, 255, 0.1);
+    }
+    
+    #jobs .filter-item.active:hover {
+    background: var(--primary);
+    opacity: 0.9;
+    }
+    .compare-detail-card h4 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--secondary);
+    }
+    
+    .compare-winner {
+    background-color: rgba(58, 175, 169, 0.1) !important;
+    position: relative;
+    }
+    
+    .compare-winner::after {
+    content: "✓ الأفضل";
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--secondary);
+    color: white;
+    padding: 0.2rem 0.5rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    }
+    
+    @media (max-width: 768px) {
+    #com\/hunt .content-card > div > div {
+    grid-template-columns: 1fr !important;
+    }
+    
+    #com\/hunt .compare-detail-card {
+    margin-bottom: 1rem;
+    }
+    }
+    
+    /* أنماط الاختبار المهني */
+    .quiz-container {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+    }
+    
+    .quiz-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    }
+    
+    .quiz-header h3 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+    }
+    
+    .quiz-header p {
+    color: #666;
+    }
+    
+    .start-quiz-btn {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 0.8rem 2rem;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: bold;
+    display: block;
+    margin: 0 auto;
+    transition: all 0.3s;
+    }
+    
+    .start-quiz-btn:hover {
+    background: #0873d7;
+    transform: translateY(-2px);
+    }
+    
+    .quiz-step {
+    display: none;
+    animation: fadeIn 0.5s ease;
+    }
+    
+    .quiz-step.active {
+    display: block;
+    }
+    
+    .quiz-progress {
+    height: 8px;
+    background: #eee;
+    border-radius: 4px;
+    margin-bottom: 2rem;
+    overflow: hidden;
+    }
+    
+    .quiz-progress-bar {
+    height: 100%;
+    background: var(--secondary);
+    transition: width 0.3s ease;
+    }
+    
+    .question-text {
+    font-size: 1.2rem;
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+    text-align: center;
+    }
+    
+    .quiz-options {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    }
+    
+    .quiz-option {
+    padding: 1rem;
+    background: #f8f9fa;
+    border: 2px solid rgba(10, 132, 255, 0.1);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    }
+    .related-jobs-container {
+    margin-top: 1rem;
+    border-top: 2px solid rgba(0,0,0,0.05);
+    padding-top: 1rem;
+    }
+    
+    .related-jobs-title {
+    color: var(--primary);
+    font-size: 1rem;
+    margin-bottom: 0.8rem;
+    }
+    
+    .related-jobs-list {
+    list-style: none;
+    padding-right: 0;
+    }
+    
+    .related-jobs-list li {
+    padding: 0.5rem 0;
+    border-bottom: 1px dashed #eee;
+    display: flex;
+    justify-content: space-between;
+    }
+    
+    .related-jobs-list li:last-child {
+    border-bottom: none;
+    }
+    
+    .job-salary {
+    color: var(--secondary);
+    font-weight: bold;
+    }
+    .quiz-option:hover {
+    border-color: var(--primary);
+    transform: translateY(-3px);
+    }
+    
+    .quiz-option.selected {
+    background: rgba(58, 175, 169, 0.1);
+    border-color: var(--secondary);
+    }
+    
+    .option-number {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: var(--primary);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    }
+    
+    .quiz-results {
+    text-align: center;
+    }
+    
+    .career-match {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin: 1rem 0;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+    transition: transform 0.3s;
+    cursor: pointer;
+    }
+    
+    .career-match:hover {
+    transform: translateY(-5px);
+    }
+    
+    .match-percent {
+    font-size: 1.8rem;
+    color: var(--secondary);
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    }
+    
+    .quiz-actions {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    }
+    
+    .quiz-btn {
+    padding: 0.8rem 1.5rem;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s;
+    border: none;
+    }
+    
+    .restart-btn {
+    background: var(--primary);
+    color: white;
+    }
+    
+    .home-btn {
+    background: var(--secondary);
+    color: white;
+    }
+    
+    .quiz-btn:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+    }
+    
+    @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+    }
+    
+    /* تعديلات التخطيط لقسم المقارنة والاختبار */
+    .compare-quiz-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    }
+    
+    @media (max-width: 1024px) {
+    .compare-quiz-container {
+    grid-template-columns: 1fr;
+    }
+    }
+    
+    
+    
+    .search-container {
+    position: relative;
+    flex: 1;
+        max-width: 100%;
+      
+        margin: 0 1rem;
+    }
+    
+    .search-buttons {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    gap: 5px;
+    z-index: 2;
+    }
+    
+    .search-type {
+    padding: 0.4rem 1rem;
+    border: none;
+    border-radius: 20px;
+    background: rgba(10, 132, 255, 0.1);
+    color: var(--primary);
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(10, 132, 255, 0.3);
+    }
+    
+    .search-type.active {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+    }
+    
+    
+    
+    
+    @media (max-width: 768px) {
+    .search-buttons {
+    left: 5px;
+    }
+    
+    .search-type {
+    padding: 0.2rem 0.6rem;
+    font-size: 0.8rem;
+    }
+    
+    .search-input {
+    padding-left: 110px !important;
+    }
+    }
+    .search-type-buttons {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    gap: 0.5rem;
+    z-index: 2;
+    }
+    
+    
+    @media (max-width: 768px) {
+    .search-type-buttons {
+    left: 10px;
+    gap: 0.3rem;
+    }
+    
+    .search-type {
+    padding: 0.3rem 0.8rem;
+    font-size: 0.8rem;
+    }
+    
+    
+    }
+    .search-type.active {
+    background: var(--primary);
+    color: white;
+    }
+    @media (max-width: 480px) {
+    .search-results-title {
+    font-size: 0.2rem;
+    
+    
+    
+    }
+    .search-results {
+    max-height: 60vh;
+    font-size: 0.9rem;
+    }
+    }
+    /* تحسينات النافذة المنسدلة */
+    .search-results {
+    font-family: 'Tajawal', sans-serif;
+    text-align: right;
+    direction: rtl;
+    max-height: 400px;
+    overflow-y: auto;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    margin-top: 0.5rem;
+    }
+    
+    .search-result-item {
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+    transition: background 0.2s;
+    cursor: pointer;
+    }
+    
+    .search-result-item:hover {
+    background: #f8f9fa;
+    }
+    
+    .search-result-item h4 {
+    color: var(--primary);
+    margin: 0 0 4px 0;
+    font-size: 1rem;
+    }
+    
+    .search-result-item p {
+    color: #666;
+    font-size: 0.9rem;
+    margin: 0;
+    }
+    
+    .search-result-item small {
+    color: var(--secondary);
+    font-size: 0.8rem;
+    }
+    
+    .no-results {
+    padding: 12px;
+    color: #666;
+    text-align: center;
+    }
+    /* داخل media query أو في نهاية ملف الـ CSS */
+    #jobs .search-results {
+    display: none !important;
+    }
+    /* أضف هذا في نهاية قسم الأنماط CSS */
+    #jobs .search-results {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    height: 0 !important;
+    }
+    
+    @media (max-width: 768px) {
+    #mainSearchResults {
+    margin-top: -30px !important; /* تعويض المسافة للشاشات الصغيرة */
+    }
+    }
+    
+    .search-results-title {
+    padding-top: 40px; /* مساحة أعلى العنوان */
+    margin-top: -40px; /* تعويض للتمرير الدقيق */
+    scroll-margin-top: 100px; /* منع التداخل مع الشريط العلوي */
+        font-size: 1rem;
+       
+    
+    }
+    /* أنماط محسنة لأزرار التبديل بين المهن والتخصصات */
+    #jobs .filter-group {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 2rem 0;
+    flex-wrap: wrap;
+    }
+    
+    #jobs .filter-item {
+    padding: 0.8rem 1.8rem;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    border: 2px solid var(--primary);
+    background: white;
+    color: var(--primary);
+    box-shadow: 0 2px 8px rgba(10, 132, 255, 0.1);
+    min-width: 180px;
+    text-align: center;
+    }
+    
+    #jobs .filter-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(10, 132, 255, 0.2);
+    }
+    
+    #jobs .filter-item.active {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+    box-shadow: 0 4px 16px rgba(10, 132, 255, 0.3);
+    }
+    
+    #jobs .filter-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    }
+    
+    #jobs .filter-item.active::before {
+    opacity: 1;
+    }
+    
+    #jobs .filter-item i {
+    margin-left: 0.5rem;
+    font-size: 1rem;
+    }
+    
+    /* تأثير النقر */
+    #jobs .filter-item:active {
+    transform: scale(0.95);
+    }
+    
+    /* تحسينات للجوال */
+    @media (max-width: 768px) {
+    #jobs .filter-item {
+        padding: 0.7rem 1.2rem;
+        font-size: 1rem;
+        min-width: 160px;
+    }
+    
+    #jobs .filter-group {
+        gap: 0.8rem;
+        margin: 1.5rem 0;
+    }
+    }
+    
+    @media (max-width: 480px) {
+    #jobs .filter-item {
+        padding: 0.6rem 1rem;
+        font-size: 0.95rem;
+        min-width: 140px;
+    }
+    
+    #jobs .filter-item i {
+        margin-left: 0.3rem;
+        font-size: 0.9rem;
+    }
+    }
+    
+    
+    
+    .nav-link.quiz-btn {
+    color: white;
+    padding: 0.4rem 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    border-radius: 20px;
+    display: flex
+    ;
+    align-items: center;
+    gap: 0.7rem;
+    margin-left: 0.5rem;
+    box-shadow: 0 3px 12px rgba(10, 132, 255, 0.2);
+    position: relative;
+    z-index: 1000;
+    border: none;
+    text-decoration: none !important;
+    
+    
+    }
+    .nav-link.quiz-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+    }
+    
+    
+    
+    /* حاوية الشعار وزر الاختبار */
+    .logo-quiz-wrapper {
+    display: flex;
+    align-items: center;
+    }
+    
+    /* تحكم في ظهور زر الاختبار في الlogo والnav-links */
+    @media (min-width: 567px) {
+    .logo-quiz-btn { display: none !important; }
+    .navbar .nav-links .quiz-btn { display: inline-block !important; }
+    }
+    @media (max-width: 568px) {
+    .navbar .nav-links .quiz-btn { display: none !important; }
+    .logo-quiz-btn { display: inline-block !important; }
+    }
+    
+    .logo-quiz-wrapper .logo-quiz-btn {
+    margin-left: 100px !important;
+    }
+    
+    .quiz-label {
+    display: inline !important;
+    font-size: 0.9rem;
+    }
+    
+    .fa-brain {
+    font-size: 1rem;
+    }
+    
+    @media (max-width: 568px) {
+    /* stack & center the container */
+    .nav-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    }
+    
+    /* full-width, evenly spaced links */
+    .nav-links {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+    }
+    
+    /* each link grows to fill the same space */
+    .nav-link,
+    .nav-link.quiz-btn {
+    flex: 1 1 auto;
+    max-width: none;     /* no cap on width */
+    padding: 0.6rem 0.8rem;
+    text-align: center;
+    margin: 0;
+    white-space: nowrap;
+    }
+    }
+    /* داخل media query للشاشات الصغيرة */
+    @media (max-width: 768px) {
+    #com\/hunt .compare-quiz-container > div {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem;
+    }
+    }
+    #com\/hunt table {
+    width: 100%;
+    min-width: 800px; /* حد أدنى للعرض */
+    table-layout: fixed;
+    }
+    
+    #com\/hunt th, 
+    #com\/hunt td {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 1rem;
+    }
+    #com\/hunt .search-container {
+    max-width: 100%;
+    margin: 0;
+    }
+    
+    #com\/hunt .search-input {
+    width: 100%;
+    padding: 1rem;
+    }
+    
+    #com\/hunt #compareBtn {
+    width: 100%;
+    max-width: 300px;
+    padding: 1rem;
+    font-size: 1.1rem;
+    }
+    #com\/hunt .content-card {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
+    }
+    
+    #com\/hunt .compare-quiz-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    }
+    @media (max-width: 480px) {
+    #com\/hunt .filter-item {
+    font-size: 0.9rem;
+    padding: 0.8rem;
+    }
+    
+    #com\/hunt table {
+    font-size: 0.9rem;
+    }
+    
+    #com\/hunt .compare-detail-card {
+    padding: 1rem;
+    }
+    }
+    #com\/hunt .compare-detail-card {
+    transition: transform 0.3s ease;
+    border: 2px solid var(--light);
+    }
+    
+    #com\/hunt .compare-detail-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary);
+    }
+    /* تحسينات عامة للاختبار */
+    .quiz-container {
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    border: 2px solid var(--primary);
+    border-radius: 20px;
+    overflow: hidden;
+    }
+    
+    .quiz-header {
+    padding: 2rem;
+    }
+    .quiz-header {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    color: white !important; /* إجبار اللون الأبيض */
+    }
+    .quiz-option {
+    background: rgba(255, 255, 255, 0.95);
+    color: var(--dark);
+    border: 2px solid var(--primary);
+    }
+    
+    .quiz-option.selected {
+    background: var(--secondary);
+    color: white;
+    border-color: var(--secondary);
+    }
+    .quiz-step {
+    padding: 2rem;
+    }
+    
+    .quiz-option {
+    background: white;
+    border: 2px solid rgba(10, 132, 255, 0.1);
+    border-radius: 15px;
+    padding: 1.2rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .quiz-option:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    
+    .quiz-option.selected {
+    border-color: var(--secondary);
+    background: rgba(58, 175, 169, 0.05);
+    }
+    
+    /* تصميم البطاقات النهائية */
+    .career-match {
+    background: white;
+    border-radius: 15px;
+    padding: 1.5rem;
+    margin: 1rem 0;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+    position: relative;
+    }
+    
+    .career-match::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--secondary) 0%, var(--primary) 100%);
+    }
+    
+    .match-percent {
+    font-size: 2rem;
+    color: var(--primary);
+    font-weight: 800;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    /* تحسينات للجوال */
+    @media (max-width: 768px) {
+    .quiz-option {
+    padding: 1rem;
+    font-size: 0.9rem;
+    }
+    
+    .career-match {
+    margin: 0.5rem 0;
+    }
+    }
+    .career-match {
+    box-shadow: 0 8px 30px rgba(10, 132, 255, 0.1);
+    border: 1px solid rgba(10, 132, 255, 0.15);
+    }
+    .match-percent {
+    color: var(--secondary);
+    background: rgba(58, 175, 169, 0.1);
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    }
+    .quiz-container {
+    background: rgba(248, 249, 250, 0.95);
+    backdrop-filter: blur(10px);
+    }
+    @media (max-width: 768px) {
+    .quiz-option {
+    font-size: 1rem;
+    padding: 1.2rem;
+    }
+    
+    .career-match h4 {
+    font-size: 1.2rem;
+    }
+    }
+    /* تحسينات الجوال العامة */
+    @media (max-width: 768px) {
+    .quiz-container {
+    margin: 0rem;
+    border-radius: 15px;
+    }
+    
+    .quiz-header {
+    padding: 1.5rem;
+    }
+    
+    .quiz-header h3 {
+    font-size: 1.4rem;
+    line-height: 1.3;
+    }
+    
+    .quiz-step {
+    padding: 1.5rem;
+    }
+    
+    .quiz-option {
+    padding: 1rem;
+    gap: 0.8rem;
+    }
+    
+    .option-number {
+    width: 25px;
+    height: 25px;
+    font-size: 0.9rem;
+    }
+    
+    .start-quiz-btn {
+    width: 100%;
+    padding: 1rem;
+    }
+    }
+    
+    /* تحسينات للشاشات الصغيرة جدًا */
+    @media (max-width: 480px) {
+    .quiz-header p {
+    font-size: 0.9rem;
+    }
+    
+    .question-text {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    }
+    
+    .quiz-option {
+    font-size: 0.9rem;
+    padding: 0.8rem;
+    }
+    
+    .career-match {
+    padding: 1rem;
+    }
+    
+    .match-percent {
+    font-size: 1.5rem;
+    }
+    }
+    /* منع التمرير الأفقي غير الضروري */
+    
+    
+    /* تحسين تجربة التمرير */
+    .quiz-step {
+    scroll-margin-top: 80px; /* تعويض ارتفاع الهيدر */
+    }
+    .start-quiz-btn {
+    /* إضافة أيقونة سهم */
+    position: relative;
+    padding-right: 2.5rem !important;
+    }
+    
+    .start-quiz-btn::after {
+    content: "↓";
+    position: absolute;
+    right: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    animation: bounce 1s infinite;
+    }
+    
+    @keyframes bounce {
+    0%, 100% { transform: translateY(-50%); }
+    50% { transform: translateY(-30%); }
+    }
+    #showProfessionsBtn.active,
+    #showMajorsBtn.active {
+    background: var(--primary) !important;
+    color: white !important;
+    border-color: var(--primary) !important;
+    opacity: 1 !important;
+    }
+    /* أنماط الفلترة الجديدة */
+    .filter-group {
+    display: flex;
+    justify-content: center;
+    margin: 1.5rem 0;
+    gap: 1rem;
+    flex-wrap: wrap;
+    }
+    
+    .filter-toggle {
+    position: relative;
+    display: inline-block;
+    width: 280px;
+    height: 60px;
+    margin: 10px 0;
+    }
+    
+    .filter-toggle input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    }
+    
+    .filter-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #f0f0f0;
+    transition: .4s;
+    border-radius: 34px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    
+    .filter-slider:before {
+    position: absolute;
+    content: "";
+    height: 50px;
+    width: 140px;
+    left: 5px;
+    bottom: 5px;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    transition: .4s;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    }
+    
+    .filter-toggle input:checked + .filter-slider:before {
+    transform: translateX(130px);
+    }
+    
+    .filter-slider-text {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-weight: bold;
+    color: var(--dark);
+    }
+    
+    .filter-slider-text span {
+    width: 50%;
+    text-align: center;
+    z-index: 1;
+    transition: color 0.3s;
+    }
+    
+    .filter-toggle input:checked + .filter-slider .filter-slider-text span:first-child {
+    color: #999;
+    }
+    
+    .filter-toggle input:not(:checked) + .filter-slider .filter-slider-text span:last-child {
+    color: #999;
+    }
+    
+    /* بطاقات الفلترة */
+    .field-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    margin: 1.5rem 0;
+    }
+    
+    .field-filter-card {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    perspective: 1000px;
+    cursor: pointer;
+    }
+    
+    .field-filter-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    }
+    
+    .field-filter-card input:checked ~ .field-filter-inner {
+    transform: rotateY(180deg);
+    }
+    
+    .field-filter-front, .field-filter-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s;
+    }
+    
+    .field-filter-front {
+    background: white;
+    border: 2px solid var(--light);
+    }
+    
+    .field-filter-back {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    color: white;
+    transform: rotateY(180deg);
+    }
+    
+    .field-filter-card input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    }
+    
+    .field-filter-icon {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary);
+    }
+    
+    .field-filter-back .field-filter-icon {
+    color: white;
+    }
+    
+    .field-filter-name {
+    font-weight: bold;
+    text-align: center;
+    font-size: 0.9rem;
+    }
+    
+    .field-filter-card:hover .field-filter-front {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+    
+    /* تأثيرات للشاشات الصغيرة */
+    @media (max-width: 768px) {
+    .field-filter-card {
+    width: 100px;
+    height: 100px;
+    }
+    
+    .filter-toggle {
+    width: 240px;
+    height: 50px;
+    }
+    
+    .filter-slider:before {
+    height: 40px;
+    width: 110px;
+    }
+    
+    .filter-toggle input:checked + .filter-slider:before {
+    transform: translateX(110px);
+    }
+    }
+    /* أضف هذا الكود في نهاية ملف style.css */
+    
+    @media (min-width: 360px) and (max-width: 396px) {
+        /* تعديلات بطاقات الفلترة */
+        .field-filter-card {
+            width: 90px; /* تقليل العرض */
+            height: 90px; /* تقليل الارتفاع */
+            margin: 0.2rem; /* تقليل الهوامش */
+        }
+    
+        .field-filter-icon {
+            font-size: 1.5rem; /* تصغير حجم الأيقونات */
+        }
+    
+        .field-filter-name {
+            font-size: 0.75rem; /* تصغير حجم النص */
+        }
+    
+        /* تعديلات أزرار التبديل بين المهن والتخصصات */
+        #jobs .filter-item {
+            padding: 0.5rem 0.8rem;
+            font-size: 0.8rem;
+            min-width: 100px;
+        }
+    
+        /* تعديلات شريط البحث */
+        .search-input {
+            padding-left: 90px !important;
+        }
+    
+        .search-type {
+            padding: 0.2rem 0.5rem;
+            font-size: 0.7rem;
+        }
+    
+        /* تعديلات الفلاتر في قسم best-jobs */
+        #best-jobs .filter-item {
+            padding: 0.5rem 0.8rem;
+            font-size: 0.8rem;
+            min-width: 100px;
+        }
+    
+        /* ضبط عدد الأعمدة في grid */
+        .field-filters {
+            grid-template-columns: repeat(3, 1fr); /* 3 أعمدة بدلاً من 2 */
+            gap: 0.5rem; /* تقليل المسافة بين العناصر */
+        }
+    
+        /* تعديلات إضافية لتحسين المساحة */
+        .filter-container {
+            padding: 0 0.5rem;
+        }
+    
+        .filter-title {
+            font-size: 0.9rem;
+            margin-bottom: 0.3rem;
+        }
+    }
+    
+    /* تحسينات إضافية للشاشات بين 395px و 480px */
+    @media (min-width: 396px) and (max-width: 480px) {
+        .field-filter-card {
+            width: 100px;
+            height: 100px;
+        }
+    
+        .field-filters {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.8rem;
+        }
+    }
+    @media (max-width: 768px) {
+        .nav-links {
+          display: flex !important;
+          flex-wrap: nowrap !important; /* منع النزول لسطر جديد */
+          overflow-x: auto !important; /* تمكين التمرير الأفقي إذا لزم الأمر */
+          -webkit-overflow-scrolling: touch; /* تمرير سلس على الأجهزة المحمولة */
+          gap: 0.5rem !important;
+          padding-bottom: 0.5rem; /* مساحة للتمرير */
+        }
+      
+        .nav-link {
+          flex-shrink: 0 !important; /* منع الأزرار من التقلص */
+          white-space: nowrap !important;
+          padding: 0.4rem 0.8rem !important;
+          font-size: 0.85rem !important;
+        }
+        
+        /* إخفاء شريط التمرير المرئي */
+        .nav-links::-webkit-scrollbar {
+          display: none;
+        }
+      }
+      @media (max-width: 480px) {
+        .nav-link {
+          font-size: 0.8rem !important;
+          padding: 0.3rem 0.6rem !important;
+        }
+        
+        .nav-links {
+          gap: 0.3rem !important;
+        }
+        
+        /* تثبيت الزر النشط */
+        .nav-link.active {
+          box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+          position: relative;
+          z-index: 1;
+        }
+      }
+      /* تنسيقات أزرار التبديل الجديدة */
+    .search-type {
+        padding: 0.4rem 1.4rem;
+        border: none;
+        border-radius: 20px;
+        background: rgba(10, 132, 255, 0.1);
+        color: var(--primary);
+        font-weight: 600;
+        font-size: 0.9rem;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        position: relative;
+        border: 1px solid rgba(10, 132, 255, 0.3);
+      }
+      
+      .search-type.active {
+        background: var(--primary);
+        color: white !important;
+        box-shadow: 0 3px 8px rgba(10, 132, 255, 0.2);
+        border-color: transparent;
+      }
+      
+      .search-type:not(.active):hover {
+        background: rgba(10, 132, 255, 0.15);
+        transform: translateY(-1px);
+      }
+      
+      /* تأثيرات بسيطة للتركيز */
+      .search-type::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: 20px;
+        box-shadow: 0 2px 6px rgba(10, 132, 255, 0.1);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+      
+      .search-type.active::after {
+        opacity: 1;
+      }
+      
+      /* تحسينات للشاشات الصغيرة */
+      @media (max-width: 768px) {
+        .search-type {
+          padding: 0.35rem 1.2rem;
+          font-size: 0.85rem;
+        }
+      }
+      @media (max-width: 768px) {
+        .search-input {
+          font-size: 0.9rem; /* حجم نص مناسب للجوال */
+          padding: 0.6rem 1rem;
+        }
+        
+        .search-type {
+          font-size: 0.8rem; /* نص أصغر مع الحفاظ على الوضوح */
+          padding: 0.4rem 1rem;
+        }
+      }
+      .search-input {
+        padding-right: 50px !important; /* مساحة للأيقونة على اليمين */
+        padding-left: 130px !important; /* مساحة للأزرار على اليسار */
+      }
+      .search-btn {
+        right: 15px !important;
+        left: auto !important;
+        width: 24px;
+        height: 24px;
+        pointer-events: none; /* منع التداخل مع النقر */
+      }
+      .search-container {
+        width: 100%; /* ملء العرض المتاح */
+        max-width: 100%; /* إزالة أي حدود قصوى */
+        margin: 0 10px; /* هوامش جانبية صغيرة */
+        border-radius: 25px; /* زوايا مدورة */
+      }
+      @media (max-width: 768px) {
+        .search-container {
+          margin: 0 8px !important; /* تقليل الهوامش */
+          height: 48px; /* ارتفاع مناسب للجوال */
+        }
+      
+        .search-input {
+          padding-left: 120px !important; /* مساحة مخصصة للأزرار */
+          padding-right: 45px !important; /* مساحة مخصصة للأيقونة */
+        }
+      
+        .search-type-buttons {
+          left: 6px !important; /* محاذاة دقيقة للأزرار */
+          gap: 5px !important; /* تقليل المسافة بين الأزرار */
+        }
+      
+        .search-type {
+          padding: 0.3rem 0.9rem !important; /* حجم مضغوط */
+          font-size: 0.8rem !important; /* حجم خط أصغر */
+        }
+      
+        .search-btn {
+          right: 12px !important; /* أيقونة أقرب للحافة */
+          font-size: 1rem !important;
+        }
+      }
+      @media (max-width: 480px) {
+        .search-container {
+          margin: 0 5px !important;
+          height: 44px; /* ارتفاع أكثر إحكاما */
+        }
+      
+        .search-input {
+          padding-left: 110px !important;
+          padding-right: 40px !important;
+          font-size: 0.9rem !important; /* نص أكبر للقراءة */
+        }
+      
+        .search-type {
+          padding: 0.25rem 0.8rem !important;
+          font-size: 0.75rem !important; /* نص واضح حتى على الشاشات الصغيرة */
+        }
+      
+        .search-btn {
+          right: 10px !important;
+          font-size: 0.9rem !important;
+        }
+      }
+      
+</style>
+</head>
+<body>
+<!-- الترويسة -->
+<nav class="navbar">
+    <div class="nav-container">
+    <div class="logo-quiz-wrapper">
+      <a class="logo" href="#">World<span>Careers</span></a>
+      <a class="nav-link quiz-btn logo-quiz-btn" href="#quiz">
+        <i class="fas fa-brain"></i>
+        <span class="quiz-label"style="font: 1.1em sans-serif;">اكتشف مهنتك</span>
+    
+    </a>
+    </div>
+    <!-- شريط البحث -->
+    <!-- داخل قسم navbar -->
+    <div class="search-container">
+    <input class="search-input" dir="rtl" id="searchInput" placeholder="ابحث عن مهنة..." type="text"/>
+    <div class="search-type-buttons">
+    <button class="search-type" data-type="majors">التخصص</button>
+    <button class="search-type active" data-type="jobs">المهنة</button>
+    </div>
+    <button class="search-btn"><i class="fas fa-search"></i></button>
+    <div class="search-results" id="searchResults"></div>
+    </div>
+    <!-- في قسم navbar -->
+    <div class="nav-links">
+    <a class="nav-link" href="#about">عنا</a>
+    <a class="nav-link" href="#com/hunt">قارن </a>
+    <a class="nav-link" href="#best-jobs">مهن ذهبية</a>
+    
+    <a class="nav-link active" href="#jobs">المهن و التخصصات</a> 
+    <!-- إضافة زر الاختبار هنا -->
+          <a class="nav-link quiz-btn" href="#quiz" >
+            <i class="fas fa-brain"></i>
+            <span class="quiz-label"style="font: 1.1em sans-serif;">اكتشف مهنتك</span>
+        </a>
+    </div>
+    </div>
+    </nav>
+<header class="header">
+<h1>دليل المهن العالمي</h1>
+<p>كل ماتريد معرفته عن الرواتب والمهن موجود هنا</p>
+</header>
+<!-- قسم Best Jobs & Majors -->
+<section class="content-section" id="best-jobs">
+<div class="filter-box">
+<div class="filter-group">
+<div class="filter-item" data-filter="best" onclick="toggleFilter(this, 'best')">
+              مهن ذهبية  <i class="fas fa-medal"></i>
+</div>
+<div class="filter-item" data-filter="profit" onclick="toggleFilter(this, 'profit')">
+                الأكثر ربحًا <i class="fas fa-coins"></i>
+</div>
+<div class="filter-item" data-filter="demand" onclick="toggleFilter(this, 'demand')">
+                الأكثر طلبًا <i class="fas fa-fire"></i>
+</div>
+<div class="filter-item" data-filter="opportunities" onclick="toggleFilter(this, 'opportunities')">
+                أكثر فرص عمل <i class="fas fa-briefcase"></i>
+</div>
+<div class="filter-item" data-filter="entry" onclick="toggleFilter(this, 'entry')">
+                مبتدئ-friendly <i class="fas fa-user-graduate"></i>
+</div>
+</div>
+</div>
+<div class="professions-grid" id="bestJobsContainer"></div>
+</section>
+<!-- قسم compare / Hunt a job -->
+<section class="content-section" id="com/hunt">
+<div class="content-card">
+<div class="compare-quiz-container">
+<!-- قسم المقارنة (الآن على اليسار) -->
+<div>
+<h3 style="color: var(--secondary); margin-bottom: 1rem;">مقارنة المهن</h3>
+<div style="display: flex; gap: 1rem; margin-bottom: 1.5rem;">
+<button class="filter-item active" id="compareJobsBtn" onclick="setCompareType('jobs')">
+                        مقارنة المهن <i class="fas fa-briefcase"></i>
+</button>
+<button class="filter-item" id="compareMajorsBtn" onclick="setCompareType('majors')">
+                        مقارنة التخصصات <i class="fas fa-graduation-cap"></i>
+</button>
+</div>
+<!-- حقول إدخال البحث -->
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+<div>
+<h4 style="color: var(--primary); margin-bottom: 0.5rem;">المادة الأولى</h4>
+<div class="search-container" style="position: relative;">
+<input autocomplete="off" class="search-input" id="compareInput1" placeholder="ابحث عن مهنة..." type="text"/>
+<button class="search-btn"><i class="fas fa-search"></i></button>
+<div class="search-results" id="compareResults1"></div>
+</div>
+</div>
+<div>
+<h4 style="color: var(--primary); margin-bottom: 0.5rem;">المادة الثانية</h4>
+<div class="search-container" style="position: relative;">
+<input autocomplete="off" class="search-input" id="compareInput2" placeholder="ابحث عن مهنة..." type="text"/>
+<button class="search-btn"><i class="fas fa-search"></i></button>
+<div class="search-results" id="compareResults2"></div>
+</div>
+</div>
+</div>
+<button id="compareBtn" onclick="compareItems()" style="display: block; margin: 1.5rem auto 0; padding: 0.8rem 2rem; background: var(--primary); color: white; border: none; border-radius: 30px; cursor: pointer; font-weight: bold;">
+                    مقارنة الآن <i class="fas fa-exchange-alt"></i>
+</button>
+<!-- نتائج المقارنة -->
+<div id="compareResults" style="display: none; margin-top: 2rem;">
+<h3 style="color: var(--primary); text-align: center; margin-bottom: 1.5rem; border-bottom: 2px solid var(--secondary); padding-bottom: 0.5rem;">نتائج المقارنة</h3>
+<div style="overflow-x: auto;">
+<table style="width: 100%; border-collapse: collapse;">
+<thead>
+<tr style="background: var(--primary); color: white;">
+<th style="padding: 1rem; text-align: right;">المعيار</th>
+<th id="compareHeader1" style="padding: 1rem; text-align: center;"></th>
+<th id="compareHeader2" style="padding: 1rem; text-align: center;"></th>
+</tr>
+</thead>
+<tbody id="compareTableBody">
+<!-- سيتم ملؤه بالبيانات -->
+</tbody>
+</table>
+</div>
+<div id="compareDetails" style="margin-top: 2rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+<!-- تفاصيل كل عنصر -->
+</div>
+</div>
+</div>
+</section>
+<!-- قسم About Us -->
+<section class="content-section" id="about">
+<div class="content-card">
+<p style="margin-bottom: 1.5rem; font-size: 1.1rem;">نحن منصة متخصصة في توفير المعلومات المهنية والوظيفية حول أكثر من <strong>10,287</strong> مهنة حول العالم.</p>
+<p style="margin-bottom: 1.5rem; font-size: 1.1rem;">تأسس موقعنا في عام 2015 بهدف مساعدة الباحثين عن عمل والمهنيين في اتخاذ قراراتهم الوظيفية بناءً على بيانات دقيقة.</p>
+<p style="margin-bottom: 1.5rem; font-size: 1.1rem;">فريقنا يتكون من <strong>45</strong> خبيراً في التوظيف واقتصاديات العمل من مختلف أنحاء العالم.</p>
+<p style="font-size: 1.1rem;">نقدم معلومات محدثة عن الرواتب، متطلبات المهارات، اتجاهات سوق العمل، وأفضل المسارات الوظيفية.</p>
+</div>
+</section>
+<!-- قسم الاختبار المستقل -->
+<section class="content-section" id="quiz">
+  
+    <div class="quiz-container">
+        <div class="quiz-header">
+            <h1 style="color: white;">اختبار المهن المناسبة</h1>
+            <p style="color: white;">اكتشف المهنة التي تناسب مهاراتك واهتماماتك من خلال هذا الاختبار البسيط</p>
+            </div>
+            <div class="quiz-step active" id="quizWelcome">
+            <p style="text-align: center; margin-bottom: 2rem;">سيساعدك هذا الاختبار على تحديد المهن التي تتوافق مع تفضيلاتك في:</p>
+            <ul style="margin-bottom: 2rem; padding-right: 1.5rem;">
+            <li>نطاق الراتب المطلوب</li>
+            <li>مجال العمل المفضل</li>
+            <li>مستوى الطلب في سوق العمل</li>
+            <li>المهارات الشخصية</li>
+            </ul>
+            <button class="start-quiz-btn" onclick="startQuiz()">ابدأ الاختبار</button>
+            </div>
+            <div class="quiz-step" id="quizQuestions">
+            <div class="quiz-progress">
+            <div class="quiz-progress-bar" id="quizProgressBar" style="width: 0%"></div>
+            </div>
+            <div class="question-text" id="currentQuestion"></div>
+            <div class="quiz-options" id="quizOptions"></div>
+            </div>
+            <div class="quiz-step" id="quizResults">
+            <div class="quiz-results">
+            <h3 style="color: var(--primary); margin-bottom: 1.5rem;">نتائج الاختبار</h3>
+            <p style="margin-bottom: 1.5rem;">بناءً على إجاباتك، إليك أفضل المهن التي تناسبك:</p>
+            <div id="careerMatches"></div>
+            <div class="quiz-actions">
+                <div id="quizResults">
+                    <button onclick="restartQuiz()" class="quiz-btn home-btn" style="background-color: #0A84FF;">
+                      <i class="fas fa-redo"></i> إعادة الاختبار
+                    </button>
+                  </div>
+                                        </button>
+            <button class="quiz-btn home-btn" onclick="goToHome()">
+            <i class="fas fa-home"></i> الصفحة الرئيسية
+                                        </button>
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+    </div>
+  </section>
+<!-- قسم Jobs and Careers (الواجهة الأساسية) -->
+<!-- قسم Jobs and Careers (الواجهة الأساسية) -->
+<section id="jobs">
+    <!-- Toggle Switch للتبديل بين المهن والتخصصات -->
+    <!-- HTML المعدل -->
+    <div class="filter-group">
+        <button class="filter-item active" id="showProfessionsBtn" onclick="linkSearchTypeToView('jobs')">
+            عرض المهن <i class="fas fa-briefcase"></i>
+        </button>
+        <button class="filter-item" id="showMajorsBtn" onclick="linkSearchTypeToView('majors')">
+            عرض التخصصات <i class="fas fa-graduation-cap"></i>
+        </button>
+    </div>
+
+    <!-- فلترة المجالات -->
+    <!-- فلترة المجالات المعدلة -->
+<div class="filter-container">
+    <h3 class="filter-title" style="text-align: center; margin-bottom: 1rem;">تصفية حسب المجال:</h3>
+    <div class="field-filters" id="jobFieldsFilter">
+        
+        <!-- الطب -->
+        <label class="field-filter-card">
+            <input type="checkbox" value="الطب" onchange="onFilterChange()" data-filter="الطب">
+            <div class="field-filter-inner">
+                <div class="field-filter-front">
+                    <i class="fas fa-hospital field-filter-icon"></i>
+                    <span class="field-filter-name">الطب</span>
+                </div>
+                <div class="field-filter-back">
+                    <i class="fas fa-hospital field-filter-icon"></i>
+                    <span class="field-filter-name">الطب</span>
+                </div>
+            </div>
+        </label>
+        
+        <!-- الهندسة -->
+        <label class="field-filter-card">
+            <input type="checkbox" value="الهندسة" onchange="onFilterChange()" data-filter="الهندسة">
+            <div class="field-filter-inner">
+                <div class="field-filter-front">
+                    <i class="fas fa-cogs field-filter-icon"></i>
+                    <span class="field-filter-name">الهندسة</span>
+                </div>
+                <div class="field-filter-back">
+                    <i class="fas fa-cogs field-filter-icon"></i>
+                    <span class="field-filter-name">الهندسة</span>
+                </div>
+            </div>
+        </label>
+        
+        <!-- التكنولوجيا -->
+        <label class="field-filter-card">
+            <input type="checkbox" value="IT & AI" onchange="onFilterChange()" data-filter="IT & AI">
+            <div class="field-filter-inner">
+                <div class="field-filter-front">
+                    <i class="fas fa-robot field-filter-icon"></i>
+                    <span class="field-filter-name">IT & AI</span>
+                </div>
+                <div class="field-filter-back">
+                    <i class="fas fa-robot field-filter-icon"></i>
+                    <span class="field-filter-name">IT & AI</span>
+                </div>
+            </div>
+        </label>
+        
+        <!-- العلوم -->
+        <label class="field-filter-card">
+            <input type="checkbox" value="العلوم" onchange="onFilterChange()" data-filter="العلوم">
+            <div class="field-filter-inner">
+                <div class="field-filter-front">
+                    <i class="fas fa-flask field-filter-icon"></i>
+                    <span class="field-filter-name">العلوم</span>
+                </div>
+                <div class="field-filter-back">
+                    <i class="fas fa-flask field-filter-icon"></i>
+                    <span class="field-filter-name">العلوم</span>
+                </div>
+            </div>
+        </label>
+        
+        <!-- الأعمال -->
+        <label class="field-filter-card">
+            <input type="checkbox" value="الأعمال" onchange="onFilterChange()" data-filter="الأعمال">
+            <div class="field-filter-inner">
+                <div class="field-filter-front">
+                    <i class="fas fa-chart-line field-filter-icon"></i>
+                    <span class="field-filter-name">الأعمال</span>
+                </div>
+                <div class="field-filter-back">
+                    <i class="fas fa-chart-line field-filter-icon"></i>
+                    <span class="field-filter-name">الأعمال</span>
+                </div>
+            </div>
+        </label>
+        
+        <!-- القانون -->
+        <label class="field-filter-card">
+            <input type="checkbox" value="القانون" onchange="onFilterChange()" data-filter="القانون">
+            <div class="field-filter-inner">
+                <div class="field-filter-front">
+                    <i class="fas fa-gavel field-filter-icon"></i>
+                    <span class="field-filter-name">القانون</span>
+                </div>
+                <div class="field-filter-back">
+                    <i class="fas fa-gavel field-filter-icon"></i>
+                    <span class="field-filter-name">القانون</span>
+                </div>
+            </div>
+        </label>
+        
+        <!-- الفنون -->
+        <label class="field-filter-card">
+            <input type="checkbox" value="الفنون" onchange="onFilterChange()" data-filter="الفنون">
+            <div class="field-filter-inner">
+                <div class="field-filter-front">
+                    <i class="fas fa-palette field-filter-icon"></i>
+                    <span class="field-filter-name">الفنون</span>
+                </div>
+                <div class="field-filter-back">
+                    <i class="fas fa-palette field-filter-icon"></i>
+                    <span class="field-filter-name">الفنون</span>
+                </div>
+            </div>
+        </label>
+        
+        <!-- التعليم -->
+        <label class="field-filter-card">
+            <input type="checkbox" value="اللغات" onchange="onFilterChange()" data-filter="اللغات">
+            <div class="field-filter-inner">
+                <div class="field-filter-front">
+                    <i class="fas fa-book field-filter-icon"></i>
+                    <span class="field-filter-name">اللغات</span>
+                </div>
+                <div class="field-filter-back">
+                    <i class="fas fa-book field-filter-icon"></i>
+                    <span class="field-filter-name">اللغات</span>
+                </div>
+            </div>
+        </label>
+        
+        <!-- الزراعة -->
+        <label class="field-filter-card">
+            <input type="checkbox" value="الزراعة" onchange="onFilterChange()" data-filter="الزراعة">
+            <div class="field-filter-inner">
+                <div class="field-filter-front">
+                    <i class="fas fa-leaf field-filter-icon"></i>
+                    <span class="field-filter-name">الزراعة</span>
+                </div>
+                <div class="field-filter-back">
+                    <i class="fas fa-leaf field-filter-icon"></i>
+                    <span class="field-filter-name">الزراعة</span>
+                </div>
+            </div>
+        </label>
+        
+        <!-- النقل -->
+        <label class="field-filter-card">
+            <input type="checkbox" value="النقل" onchange="onFilterChange()" data-filter="النقل">
+            <div class="field-filter-inner">
+                <div class="field-filter-front">
+                    <i class="fas fa-truck field-filter-icon"></i>
+                    <span class="field-filter-name">النقل</span>
+                </div>
+                <div class="field-filter-back">
+                    <i class="fas fa-truck field-filter-icon"></i>
+                    <span class="field-filter-name">النقل</span>
+                </div>
+            </div>
+        </label>
+        
+        <!-- البناء -->
+        <label class="field-filter-card">
+            <input type="checkbox" value="البناء" onchange="onFilterChange()" data-filter="البناء">
+            <div class="field-filter-inner">
+                <div class="field-filter-front">
+                    <i class="fas fa-hard-hat field-filter-icon"></i>
+                    <span class="field-filter-name">البناء</span>
+                </div>
+                <div class="field-filter-back">
+                    <i class="fas fa-hard-hat field-filter-icon"></i>
+                    <span class="field-filter-name">البناء</span>
+                </div>
+            </div>
+        </label>
+        
+        <!-- السياحة -->
+        <label class="field-filter-card">
+            <input type="checkbox" value="السياحة" onchange="onFilterChange()" data-filter="السياحة">
+            <div class="field-filter-inner">
+                <div class="field-filter-front">
+                    <i class="fas fa-landmark field-filter-icon"></i>
+                    <span class="field-filter-name">السياحة</span>
+                </div>
+                <div class="field-filter-back">
+                    <i class="fas fa-landmark field-filter-icon"></i>
+                    <span class="field-filter-name">السياحة</span>
+                </div>
+            </div>
+        </label>
+        
+        <!-- الطاقة -->
+        <label class="field-filter-card">
+            <input type="checkbox" value="الطاقة" onchange="onFilterChange()" data-filter="الطاقة">
+            <div class="field-filter-inner">
+                <div class="field-filter-front">
+                    <i class="fas fa-bolt field-filter-icon"></i>
+                    <span class="field-filter-name">الطاقة</span>
+                </div>
+                <div class="field-filter-back">
+                    <i class="fas fa-bolt field-filter-icon"></i>
+                    <span class="field-filter-name">الطاقة</span>
+                </div>
+            </div>
+        </label>
+        
+        <!-- الرياضة -->
+        <label class="field-filter-card">
+            <input type="checkbox" value="الرياضة" onchange="onFilterChange()" data-filter="الرياضة">
+            <div class="field-filter-inner">
+                <div class="field-filter-front">
+                    <i class="fas fa-running field-filter-icon"></i>
+                    <span class="field-filter-name">الرياضة</span>
+                </div>
+                <div class="field-filter-back">
+                    <i class="fas fa-running field-filter-icon"></i>
+                    <span class="field-filter-name">الرياضة</span>
+                </div>
+            </div>
+        </label>
+        
+        <!-- الخدمات -->
+        <label class="field-filter-card">
+            <input type="checkbox" value="علوم النفس" onchange="onFilterChange()" data-filter="علوم النفس">
+            <div class="field-filter-inner">
+                <div class="field-filter-front">
+                    <i class="fas fa-comments field-filter-icon"></i>
+                    <span class="field-filter-name">علوم النفس</span>
+                </div>
+                <div class="field-filter-back">
+                    <i class="fas fa-comments field-filter-icon"></i>
+                    <span class="field-filter-name">علوم النفس</span>
+                </div>
+            </div>
+        </label>
+    </div>
+</div>
+
+<div class="search-results-section" id="mainSearchResults">
+    <h3 class="search-results-title">
+    <i class="fas fa-search"></i>
+                        نتائج البحث لـ "<span id="searchQueryText"></span>"
+                        <button class="clear-search-btn" onclick="clearSearch()">
+    <i class="fas fa-times"></i> مسح البحث
+                        </button>
+    </h3>
+    </div>
+    <!-- قسم المهن الأساسي -->
+    <div class="professions-grid" id="professionsContainer">
+    <!-- سيتم إضافة البطاقات هنا -->
+    </div>
+    <!-- قسم التخصصات الجامعية (مخفي افتراضياً) -->
+    <div class="professions-grid" id="majorsContainer" style="display: none;"></div>
+    <!-- سيتم إضافة التخصصات هنا -->
+</section>
+<!-- نافذة التفاصيل المنبثقة -->
+<div class="modal" id="detailsModal">
+    <div class="modal-content">
+    <span class="close-btn" onclick="closeModal()">×</span>
+    <div class="modal-header">
+    <h2 id="modalTitle"></h2>
+    <div class="category-tag" id="modalCategory"></div>
+    </div>
+    <div id="modalContent"></div>
+    </div>
+    </div>
+<script>
+    let currentSearchType = 'jobs'; // القيمة الافتراضية
+        // بيانات المهن
+        const professions = [
+            {
+                industry: "fhfhf" ,
+                jobo: "كثير"  ,
+                title: "مهندس ذكاء اصطناعي",
+                avgSalary: "95,000 - 250,000",
+                experience: "5+ سنوات",
+                demand: "مرتفع جدًا",
+                description: "تطوير أنظمة الذكاء الاصطناعي وتعلم الآلة",
+                summarize: "hghghghghg" ,
+                category: "AI",
+                skills: ["تحليلية", "تقنية", "AI", "بيانات"]
+            },
+            {
+                industry: "fhfhf" ,
+                jobo: "كثير"  ,
+                title: "جراح تجميل",
+                avgSalary: "120,000-300,000",
+                experience: "12+ سنوات",
+                demand: "مرتفع",
+                description: "إجراء عمليات التجميل التصحيحية والجمالية",
+                summarize: "hghghghghg" ,
+                category: "الطب",
+                skills: ["طب", "يدوية", "تركيز"]
+            },
+            {
+                industry: "fhfhf" ,
+                jobo: "كثير"  ,
+                title: "طبيب أشعة تداخلية",
+                avgSalary: "280,000 - 450,000",
+                experience: "8+ سنوات",
+                demand: "متوسط",
+                description: "تشخيص وعلاج الأمراض باستخدام التصوير الإشعاعي",
+                summarize: "hghghghghg" ,
+                category: "الطب",
+                skills: ["طب", "تحليلية", "تقنية"]
+            },
+            {
+                industry: "fhfhf" ,
+                jobo: "كثير"  ,
+                title: "مطور بلوك تشين",
+                avgSalary: "120,000 - 300,000",
+                experience: "4+ سنوات",
+                demand: "مرتفع جدًا",
+                description: "تطوير أنظمة لامركزية باستخدام تقنية البلوك تشين",
+                summarize: "hghghghghg" ,
+                category: "AI",
+                skills: ["تقنية", "تحليلية", "أمن"]
+            },
+            {
+                industry: "fhfhf" ,
+                jobo: "كثير"  ,
+                title: "مهندس حوسبة كمومية",
+                avgSalary: "80,000-150,000",
+                experience: "6+ سنوات",
+                demand: "مرتفع",
+                description: "تصميم أنظمة الحوسبة الكمومية",
+                summarize: "hghghghghg" ,
+                category: "AI",
+                skills: ["تقنية", "تحليلية", "رياضيات"]
+            },
+            {
+                industry: "fhfhf" ,
+                jobo: "كثير"  ,
+                title: "مهندس طاقة الرياح البحرية",
+                avgSalary: "90,000 - 180,000",
+                experience: "5+ سنوات",
+                demand: "مرتفع",
+                description: "تصميم وتنفيذ مزارع الرياح البحرية",
+                summarize: "hghghghghg" ,
+                category: "الهندسة",
+                skills: ["هندسة", "تحليلية", "بيئية"]
+            },
+            {
+                industry: "fhfhf" ,
+                jobo: "كثير"  ,
+                title: "باحث في تقنية النانو",
+                avgSalary: "85,000 - 160,000",
+                experience: "4+ سنوات",
+                demand: "متوسط",
+                description: "بحث وتطوير مواد متقدمة بمقياس النانو",
+                summarize: "hghghghghg" ,
+                category: "الهندسة",
+                skills: ["هندسة", "بحثية", "تحليلية"]
+            },
+            {
+                industry: "fhfhf" ,
+                jobo: "كثير"  ,
+                title: "مدير استثمار العملات الرقمية",
+                avgSalary: "130,000 - 400,000",
+                experience: "5+ سنوات",
+                demand: "مرتفع",
+                description: "إدارة محافظ استثمارية في العملات المشفرة",
+                summarize: "hghghghghg" ,
+                category: "الأعمال",
+                skills: ["مالية", "تحليلية", "قيادة"]
+            },
+            {
+                industry: "fhfhf" ,
+                jobo: "كثير"  ,
+                title: "محلل بيانات سلوكية",
+                avgSalary: "95,000 - 220,000",
+                experience: "3+ سنوات",
+                demand: "مرتفع",
+                description: "تحليل السلوك الاقتصادي للأفراد والشركات",
+                summarize: "hghghghghg" ,
+                category: "الأعمال",
+                skills: ["تحليلية", "اجتماعية", "بحثية"]
+            },
+            {
+                industry: "fhfhf" ,
+                jobo: "كثير"  ,
+                title: "مصمم واقع معزز",
+                avgSalary: "70,000 - 150,000",
+                experience: "3+ سنوات",
+                demand: "مرتفع",
+                description: "تصميم تجارب تفاعلية باستخدام تقنيات AR",
+                summarize: "hghghghghg" ,
+                category: "الفنون",
+                skills: ["إبداعية", "تقنية", "تصميم"]
+            },
+            {
+                industry: "fhfhf" ,
+                jobo: "كثير"  ,
+                title: "محامي جرائم سيبرانية",
+                avgSalary: "110,000 - 250,000",
+                experience: "6+ سنوات",
+                demand: "مرتفع",
+                description: "معالجة القضايا القانونية المتعلقة بالجرائم الإلكترونية",
+                summarize: "hghghghghg" ,
+                category: "AI",
+                skills: ["قانونية", "تحليلية", "أمن"]
+            },
+            {
+                industry: "fhfhf" ,
+                jobo: "كثير"  ,
+                title: "جراح قلب",
+                avgSalary: "200,000 - 450,000",
+                experience: "10+ سنوات",
+                demand: "مرتفع",
+                description: "إجراء عمليات جراحية معقدة في القلب",
+                summarize: "hghghghghg" ,
+                category: "الطب",
+                skills: ["طب", "يدوية", "تركيز"]
+            },
+            {
+                industry: "fhfhf" ,
+                jobo: "كثير"  ,
+                title: "مصمم تجربة المستخدم",
+                avgSalary: "65,000 - 140,000",
+                experience: "3+ سنوات",
+                demand: "مرتفع",
+                description: "تصميم واجهات المستخدم وتحسين التجربة الرقمية",
+                summarize: "hghghghghg" ,
+                category: "الفنون",
+                skills: ["إبداعية", "تواصل", "تصميم"]
+            },
+            {
+                industry: "fhfhf" ,
+                jobo: "كثير"  ,
+                summarize: "hghghghghg" ,
+                title: "مهندس ميكانيكي",
+                avgSalary: "70,000 - 120,000",
+                experience: "4+ سنوات",
+                demand: "متوسط",
+                description: "تصميم الأنظمة الميكانيكية والآلات",
+                category: "الهندسة",
+                skills: ["هندسة", "تحليلية", "تقنية"]
+            },
+            {
+                industry: "fhfhf" ,
+                jobo: "كثير"  ,
+                summarize: "hghghghghg" ,
+                title: "مدير مشاريع تقنية",
+                avgSalary: "90,000 - 160,000",
+                experience: "5+ سنوات",
+                demand: "مرتفع",
+                description: "إدارة فرق العمل والمشاريع التقنية",
+                category: "الأعمال",
+                skills: ["قيادة", "تنظيمية", "تواصل"]
+            }
+        ];
+
+        // بيانات التخصصات الجامعية
+        // بيانات التخصصات المعدلة
+        const majors = [
+        { 
+            mid: "176" ,
+            jobo: "كثير"  ,
+            summarize: "hghghghghg" ,
+            name: "الطب البشري", 
+            field: "الطب", 
+            description: "يهدف تخصص الطب البشري إلى إعداد أطباء مؤهلين لتشخيص وعلاج الأمراض والإصابات. يتضمن الدراسة العميقة لجسم الإنسان ووظائفه والأمراض التي تصيبه وطرق علاجها.",
+            duration: "6 سنوات + سنة امتياز",
+            universities: ["جامعة الملك سعود", "جامعة الملك عبدالعزيز", "جامعة القصيم"],
+            jobs: "3 وظائف",
+            relatedJobs: [
+            "طبيب عام" , "أخصائي جراحة","طبيب باطنية","طبيب أطفال"
+            ]
+        },
+        { 
+            mid: "176" ,
+            jobo: "كثير"  ,
+            summarize: "hghghghghg" ,
+            name: "هندسة الحاسوب", 
+            field: "الهندسة", 
+            description: "يجمع تخصص هندسة الحاسوب بين مبادئ الهندسة الكهربائية وعلوم الحاسوب. يدرس الطلاب تصميم وتطوير أنظمة الحاسوب المادية والبرمجية.",
+            duration: "4 سنوات دراسية",
+            universities: ["جامعة الملك فهد للبترول", "جامعة الأميرة نورة", "جامعة الطائف"],
+            jobs: "3 وظائف",
+            relatedJobs: [
+            "مهندس أمن سيبراني"  , "مهندس برمجيات" , "مهندس شبكات"
+            ]
+        },
+        { 
+            mid: "176" ,
+            jobo: "كثير"  ,
+            summarize: "hghghghghg" ,
+            name: "إدارة الأعمال", 
+            field: "الأعمال", 
+            description: "يركز تخصص إدارة الأعمال على دراسة العمليات الإدارية في المنظمات. يشمل التخطيط والتنظيم والقيادة والرقابة على الموارد لتحقيق الأهداف التنظيمية.",
+            duration: "4 سنوات دراسية",
+            universities: ["جامعة الملك سعود", "جامعة الإمام محمد بن سعود", "جامعة الدمام"],
+            jobs: "3 وظائف",
+            relatedJobs: [
+            "مدير تسويق" ,  "مدير مشاريع" , "محلل أعمال"
+            ]
+        },
+        { 
+            mid: "176" ,
+            jobo: "كثير"  ,
+            summarize: "hghghghghg" ,
+            name: "الهندسة المعمارية", 
+            field: "الهندسة", 
+            description: "يتعلم طلاب الهندسة المعمارية تصميم المباني والهياكل مع مراعاة الجوانب الجمالية والوظيفية والسلامة. يجمع التخصص بين الفنون والهندسة.",
+            duration: "5 سنوات دراسية",
+            universities: ["جامعة الملك فهد للبترول", "جامعة الملك سعود", "جامعة جدة"],
+            jobs: "3 وظائف",
+            relatedJobs: [
+            "مهندس معماري" , "مصمم داخلي" , "مدير موقع بناء"
+            ]
+        },
+        { 
+            mid: "176" ,
+            jobo: "كثير"  ,
+            summarize: "hghghghghg" ,
+            name: "AI", 
+            field: "AI", 
+            description: "يركز تخصص الذكاء الاصطناعي على تطوير أنظمة قادرة على محاكاة الذكاء البشري. يشمل تعلم الآلة، معالجة اللغة الطبيعية، الرؤية الحاسوبية وغيرها.",
+            duration: "4 سنوات دراسية",
+            universities: ["جامعة الملك سعود", "جامعة الأمير مقرن", "جامعة الملك عبدالله"],
+            jobs: "3 وظائف",
+            relatedJobs: [
+                "مهندس تعلم آلي","باحث في الذكاء الاصطناعي","مطور خوارزميات"
+            ]
+        }
+        ];
+        // تعريف الماب (الربط) بين الفلاتر والمسميات
+    const filterToCategoryMapping = {
+        "الطب": ["الطب"],
+        "الهندسة": ["الهندسة"],
+        "IT & AI": ["IT", "AI"],
+        "الأعمال": ["الأعمال"],
+        "العلوم": ["الفيزياء", "الكيمياء", "علم الاحياء"],
+        "القانون": ["القانون"],
+        "الزراعة": ["الزراعة"],
+        "اللغات": ["اللغات"],
+        "النقل": ["النقل"],
+        "الفنون": ["الفنون"],
+        "السياحة": ["السياحة"],
+        "علوم النفس": ["العلوم النفسية"],
+        "البناء": ["البناء"],
+        "الرياضة": ["الرياضة"],
+        "الطاقة": ["الطاقة"]
+    };
+    
+    // دالة تقوم بالربط حسب الفلتر
+    function getCategoriesForFilter(filterName) {
+        return filterToCategoryMapping[filterName] || [];
+    }
+    
+    // مثال: كيف تستخدمها
+    function filterProfessionsByFilterName(filterName) {
+        const relatedCategories = getCategoriesForFilter(filterName);
+      
+        const filteredProfessions = professions.filter(profession =>
+          relatedCategories.includes(profession.category)
+        );
+      
+        // عرض النتائج
+        renderProfessions(filteredProfessions);
+      }
+      function filterMajorsByFilterName(filterName) {
+        const relatedFields = getCategoriesForFilter(filterName);
+      
+        const filteredMajors = majors.filter(major =>
+          relatedFields.includes(major.field)
+        );
+      
+        // عرض النتائج
+        renderMajors(filteredMajors);
+      }
+      
+    
+        // تهيئة الصفحة عند التحميل
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('jobs').style.display = 'block';
+           // تهيئة البيانات
+            renderProfessions(professions);
+            renderMajors(majors);
+            document.querySelectorAll('input[type="checkbox"][data-filter]').forEach(checkbox => {
+                checkbox.addEventListener('change', () => {
+                    onFilterChange();
+                    // اجمع كل الفلاتر المختارة
+                    const selectedFilters = Array.from(document.querySelectorAll('input[type="checkbox"][data-filter]:checked'))
+                    .map(cb => cb.getAttribute('data-filter'));    
+                    if (selectedFilters.length > 0) {
+                        // جلب جميع التصنيفات المرتبطة بكل الفلاتر المختارة
+                        const allRelatedCategories = selectedFilters.flatMap(filter => getCategoriesForFilter(filter));
+                        // فلترة المهن
+                        const filteredProfessions = professions.filter(profession =>
+                            allRelatedCategories.includes(profession.category)
+                        );
+                        renderProfessions(filteredProfessions);
+                        // فلترة التخصصات
+                        const filteredMajors = majors.filter(major =>
+                            allRelatedCategories.includes(major.field)
+                        );
+                        renderMajors(filteredMajors);
+                    } else {
+                        // لو ما في ولا فلتر محدد، اعرض كل شيء
+                        renderProfessions(professions);
+                        renderMajors(majors);
+                    }
+                });
+            });
+            // تفعيل البحث
+            document.getElementById('searchInput').addEventListener('input', function(e) { 
+                const currentSection = document.querySelector('.nav-link.active').getAttribute('href');
+                if (currentSection !== '#jobs') {
+                    // السلوك الطبيعي للأقسام الأخرى
+                    searchResults.style.display = 'block';
+                }
+                const rawValue = e.target.value; // e معرّفة الآن
+                const query = (rawValue || "").trim(); // معالجة القيم الفارغة
+                if (query === "") {
+                    clearSearch();
+                    return;
+                }
+                const results = performSearch(query, currentSearchType);
+                displaySearchResults(results);
+            });
+            initSearch();
+            initCompareSearch();
+            setCompareType('jobs');
+            // تفعيل الفلتر الافتراضي إذا كان القسم النشط هو Best Jobs
+            if (window.location.hash === '#best-jobs') {
+                activeFilter = 'best';
+                const bestFilterBtn = document.querySelector('#best-jobs .filter-item[data-filter="best"]');
+                if (bestFilterBtn) bestFilterBtn.classList.add('active');
+                applyFilters();
+            }
+            // تفعيل الفلتر الافتراضي إذا كان القسم النشط هو Best Jobs
+            if (window.location.hash === '#best-jobs') {
+                activeFilter = 'best';
+                const bestFilterBtn = document.querySelector('#best-jobs .filter-item[data-filter="best"]');
+                if (bestFilterBtn) bestFilterBtn.classList.add('active');
+                applyFilters();
+            }
+        });
+        // التحكم في عرض الأقسام عند النقر على الروابط
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                // إخفاء جميع الأقسام
+                document.querySelectorAll('section').forEach(section => {
+                    section.style.display = 'none';
+                });
+                // إظهار الهيدر الأزرق في جميع الأقسام بما فيها Best Jobs
+                document.querySelector('.header').style.display = 'block';
+                // إزالة الفئة النشطة من جميع الروابط
+                // إزالة الفئة النشطة من جميع روابط التنقل فقط
+                document.querySelectorAll('.nav-link').forEach(navLink => {
+                    navLink.classList.remove('active');
+                });
+                // إضافة الفئة النشطة للرابط الذي ضغط عليه المستخدم
+                    this.classList.add('active');
+                // عرض القسم المحدد
+                const targetId = this.getAttribute('href').substring(1);
+                document.getElementById(targetId).style.display = 'block';
+                // إذا كان القسم المحدد هو Best Jobs، نطبق الفلتر الافتراضي
+                if(targetId === 'best-jobs') {
+                    setTimeout(() => {
+                        applyFilters();
+                    }, 0);
+                }
+                // إذا كان القسم المحدد هو Jobs and Careers، نعيد عرض البطاقات
+                if(targetId === 'jobs') {
+                    renderProfessions(professions);
+                }
+                resetFilters();
+            });
+        });
+        // تهيئة وظيفة البحث
+        function initSearch() {
+            const searchResults = document.getElementById('searchResults');
+            const mainSearchResults = document.getElementById('mainSearchResults');
+            const searchInput = document.getElementById('searchInput');
+            let timeoutId;
+            searchInput.addEventListener('input', (e) => {
+                clearTimeout(timeoutId);
+                timeoutId = setTimeout(() => {
+                    const query = e.target.value.trim();
+                    if (query === '') {
+                        clearSearch();
+                        return;
+                    }
+                    const results = performSearch(query, currentSearchType);
+                    displaySearchResults(results);
+                }, 100); // تأخير 300 مللي ثانية
+            });
+            searchInput.addEventListener('input', function() {
+                const queryLower = this.value.trim().toLowerCase();
+                const results = performSearch(queryLower, currentSearchType);
+                // نتائج البحث المنسدلة
+                searchResults.style.display = 'block';
+                // نتائج البحث الرئيسية
+                // التحكم في ظهور قسم النتائج الرئيسي
+                mainSearchResults.style.display = (results.professions.length + results.majors.length) > 0 ? 'block' : 'none';
+            });
+        }
+        // دالة لعرض نتائج البحث الرئيسية
+        function renderSearchResults(results) {
+            const container = document.getElementById('searchResultsContainer');
+            container.innerHTML = '';
+            
+            if (results.length === 0) {
+                container.innerHTML = '<p style="text-align: center; color: #666;">لا توجد نتائج مطابقة</p>';
+                return;
+            }
+            else{
+                results.forEach(profession => {
+                    const card = document.createElement('div');
+                    card.className = 'profession-card';
+                    card.innerHTML = `
+                        <div class="category-tag">${profession.category}</div>
+                        <h3>${profession.title}</h3>
+                        <pملخص المهنة : ${profession.summarize}</p>
+                        <div class="salary-info">
+                            <span>الراتب السنوي:</span>
+                            <span class="highlight">$${profession.avgSalary}</span>
+                        </div>
+                    `;
+                    card.addEventListener('click', () => showDetails(profession));
+                    container.appendChild(card);
+                });
+            }
+        }
+        
+        // دالة لمسح البحث
+        function clearSearch() {
+            // 1. مسح نص البحث
+            const mainSearchResults = document.getElementById('mainSearchResults');
+            const navbarHeight = document.querySelector('.navbar').offsetHeight;
+            const searchInput = document.getElementById('searchInput');
+            searchInput.value = '';
+            document.getElementById('searchResults').style.display = 'none';
+            // 2. إخفاء نتائج البحث
+            document.getElementById('searchResults').style.display = 'none';
+            document.getElementById('mainSearchResults').style.display = 'none';
+        // التمرير للأعلى مع احتساب ارتفاع الشريط العلوي
+        window.scrollTo({
+                top: mainSearchResults.offsetTop - navbarHeight - 30,
+                behavior: 'smooth'
+            });
+            if (currentSearchType === 'majors') {
+                renderMajors(majors); // عرض التخصصات الأصلية
+            }
+            // 3. إعادة العرض الأصلي
+            if (currentSearchType === 'jobs') {
+                // إظهار بطاقات المهن
+                document.getElementById('professionsContainer').style.display = 'grid';
+                renderProfessions(professions);
+            } else {
+                // إظهار بطاقات التخصصات
+                document.getElementById('majorsContainer').style.display = 'grid';
+                renderMajors(majors);
+            }
+        }
+        // دالة لعرض تفاصيل المهنة من نتائج البحث
+        function showProfessionDetails(title) {
+            const profession = professions.find(p => p.title === title);
+            if (profession) showDetails(profession);
+        }
+        // دالة للانتقال إلى التخصص الجامعي
+        function navigateToMajor(majorName) {
+            // إظهار قسم الوظائف والتخصصات
+            document.querySelectorAll('section').forEach(section => {
+                section.style.display = 'none';
+            });
+            
+            document.getElementById('jobs').style.display = 'block';
+            
+            // عرض قسم التخصصات
+            showMajorsView();
+            
+            // تحديث الروابط النشطة
+            document.querySelectorAll('.nav-link').forEach(navLink => {
+                navLink.classList.remove('active');
+            });
+            
+            document.querySelector('.nav-link[href="#jobs"]').classList.add('active');
+            
+            // تصفير نتائج البحث
+            document.getElementById('searchInput').value = '';
+            document.getElementById('searchResults').style.display = 'none';
+        }
+
+        // دالة لعرض المهن
+        function renderProfessions(professionsArray) {
+            const container = document.getElementById('professionsContainer');
+            container.innerHTML = '';
+
+            professionsArray.forEach(profession => {
+                const card = document.createElement('div');
+                card.className = 'profession-card';
+                card.innerHTML = `
+                    <div class="category-tag">${profession.category}</div>
+                    <h3>${profession.title}</h3>
+                    <p>ملخص المهنة : ${profession.summarize}</p>
+                    <div class="salary-info">
+                        <span>الراتب السنوي:</span>
+                        <span class="highlight">$${profession.avgSalary}</span>
+                    </div>
+                `;
+                card.addEventListener('click', () => showDetails(profession));
+                container.appendChild(card);
+            });
+        }
+
+        // دالة لعرض التخصصات الجامعية
+        // دالة عرض التخصصات المعدلة
+        
+        function renderMajors(majorsList) {
+            const container = document.getElementById("majorsContainer");
+            container.innerHTML = "";
+
+            majorsList.forEach(major => {
+                const card = document.createElement("div");
+                card.className = "profession-card";
+                
+                card.innerHTML = `
+                    <div class="category-tag">${major.field}</div>
+                    <h3>${major.name}</h3>
+                    <p style="margin: 1rem 0;">ملخص التخصص : ${major.summarize}</p>
+                    <div class="salary-info">
+                        <span>السنوات الدراسية :</span>
+                        <span class="highlight">${major.duration}</span>
+                    </div>
+                `;
+                
+                card.addEventListener('click', () => showMajorDetails(major));
+                container.appendChild(card);
+            });
+        }
+
+        // دالة فلترة المهن
+        function filterProfessions() {
+            const checkboxes = document.querySelectorAll('#jobs input[type="checkbox"]');
+            const selectedCategories = Array.from(checkboxes)
+                .filter(checkbox => checkbox.checked)
+                .map(checkbox => checkbox.value);
+            
+            const searchInput = document.getElementById('searchInput');
+            const isSearchActive = searchInput.value.trim().length > 0;
+            
+            if (isSearchActive) {
+                // إذا كان البحث نشطًا، نطبق الفلترة على نتائج البحث
+                const query = searchInput.value.trim().toLowerCase();
+                let filteredProfessions = professions.filter(prof => 
+                    (prof.category.toLowerCase().includes(query))
+                );
+                
+                if (selectedCategories.length > 0) {
+                    filteredProfessions = filteredProfessions.filter(profession => 
+                        selectedCategories.includes(profession.category)
+                    );
+                }
+                
+                renderSearchResults(filteredProfessions);
+            } else {
+                // إذا لم يكن البحث نشطًا، نطبق الفلترة على القائمة الكاملة
+                if (selectedCategories.length === 0) {
+                    renderProfessions(professions);
+                } else {
+                    const filtered = professions.filter(profession => 
+                        selectedCategories.includes(profession.category)
+                    );
+                    renderProfessions(filtered);
+                }
+            }
+        }
+
+        // دالة فلترة التخصصات الجامعية
+        function filterMajors() {
+            const checkboxes = document.querySelectorAll('#jobFieldsFilter input[type="checkbox"]');
+            const selectedFields = Array.from(checkboxes)
+                .filter(checkbox => checkbox.checked)
+                .map(checkbox => checkbox.value);
+            
+            if (selectedFields.length === 0) {
+                renderMajors(majors);
+            } else {
+                const filteredMajors = majors.filter(major => 
+                    selectedFields.includes(major.field)
+                );
+                renderMajors(filteredMajors);
+            }
+        }
+
+        // دالة لعرض تفاصيل المهنة
+        function showDetails(profession) {
+            const modal = document.getElementById('detailsModal');
+            const title = document.getElementById('modalTitle');
+            const content = document.getElementById('modalContent');
+            const category = document.getElementById('modalCategory');
+
+            title.textContent = profession.title;
+            category.textContent = profession.category;
+            content.innerHTML = `
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <span>فرص العمل</span>
+                        ${profession.jobo}
+                    </div>
+                    <div class="stat-item">
+                        <span>الخبرة</span>
+                        ${profession.experience}
+                    </div>
+                    <div class="stat-item">
+                        <span>الطلب</span>
+                        <span style="color: ${getDemandColor(profession.demand)}">${profession.demand}</span>
+                    </div>
+                    <div class="stat-item">
+                        <span>الراتب المتوسط</span>
+                        $${profession.avgSalary}
+                    </div>
+                </div>
+                <h3 style="margin: 1.5rem 0; color: var(--primary);">الوصف الوظيفي</h3>
+                <p>${profession.description}</p>
+                ${profession.skills ? `
+                <h3 style="margin: 1.5rem 0; color: var(--primary);">المهارات المطلوبة</h3>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                    ${profession.skills.map(skill => `
+                        <span style="background: rgba(58,175,169,0.1); color: var(--secondary); padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.9rem;">
+                            ${skill}
+                        </span>
+                    `).join('')}
+                </div>
+                ` : ''}
+            `;
+
+            modal.style.display = 'flex';
+            document.getElementById('searchResults').style.display = 'none';
+        }
+
+        // دالة للحصول على لون حسب مستوى الطلب
+        function getDemandColor(demand) {
+            const colors = {
+                'مرتفع جدًا': '#2ecc71',
+                'مرتفع': '#3498db',
+                'متوسط': '#f1c40f',
+                'منخفض': '#e74c3c'
+            };
+            return colors[demand] || '#333';
+        }
+
+        // إغلاق النافذة المنبثقة عند النقر خارجها
+        window.onclick = function(event) {
+            const modal = document.getElementById('detailsModal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        }
+        // دالة لإغلاق النافذة المنبثقة
+        function closeModal() {
+            document.getElementById('detailsModal').style.display = 'none';
+        }
+        const bestProfessions = [
+             
+            // أفضل المهن (Best Careers)
+            {
+                
+                industry: "x" ,
+                title: "عالم بيانات (Data Scientist)",//
+                category: "تحليل البيانات",//
+                avgSalary: "120,000 - 180,000 دولار",//
+                demand: "مرتفع جدًا",//
+                description: "تحليل البيانات لاستخلاص رؤى قيمة.",//
+                experience: " 4-6",
+                profitability: " x ",
+                growthRate: "36%" ,
+                jobType: "best",
+                requiredSpecialties: [
+            " Python, R, SQL," ,  
+             " Machine Learning,",
+              " Data Visualization," ,  
+               " Statistics, Cloud Computing (AWS)"  , 
+                ], 
+               
+            },
+            {
+                industry: "x" ,
+                 title: "مهندس ذكاء اصطناعي (AI Engineer)",
+                 description: "بناء أنظمة ذكية تتعلم وتحلل.",
+                 demand: "مرتفع جدًا",
+                 category: "تقنية" ,
+                   avgSalary:"130,000 - 200,000 دولار",
+                 experience:"3+",
+                profitability: "x",
+                growthRate:"26%",
+                jobType:"best",
+                requiredSpecialties: [
+                  " Python, R, Machine Learning",
+                  "DL Frameworks (TensorFlow, PyTorch),",
+                  "Prompt Engineering, Communication, Ethics",
+                  "Cloud Platforms",
+                ], 
+             
+            
+            },
+
+      {
+         title: "جراح أعصاب (Neurosurgeon)",
+          description: "إجراء عمليات دقيقة للجهاز العصبي.",
+           avgSalary: "300,000 - 800,000 دولار",
+            demand: "مرتفع", 
+            category: "الطب" ,
+            jobType: "best",
+            experience: "14-16 سنة",
+            growthRate: "3%",
+            requiredSpecialties: [
+                "البراعة الجراحية في مجال الأعصاب",
+             "التشريح العصبي",
+             "التفكير النقدي",
+             "اتخاذ القرار تحت الضغط",
+              "العمل الجماعي",
+             "إدارة الإجهاد"
+    ],
+        },
+      { 
+        title: "مدير منتج تقني (Technical Product Manager)",
+       description: "إدارة تطوير المنتجات التقنية.",
+       avgSalary: "110,000 - 160,000 دولار",
+         demand: "مرتفع", 
+         category: "إدارة",
+         jobType: "best",
+         experience: "3-5 سنوات",
+    growthRate: "7%",
+    requiredSpecialties: [
+        "تخطيط مسار المنتج",
+        "البراعة التقنية",
+        "إدارة أصحاب المصلحة",
+        "منهجيات أجايل",
+        "تحليل البيانات",
+    "التواصل"
+    ],
+         },
+      {
+         title: "خبير أمن سيبراني (Cybersecurity Specialist)",
+       description: "حماية البيانات والأنظمة الرقمية.",
+       avgSalary: "100,000 - 170,000 دولار",
+         demand: "مرتفع جدًا",
+          category: "أمن المعلومات",
+          jobType: "best",
+         experience: "+5 سنوات",
+    growthRate: "33%",
+    requiredSpecialties: [
+        "الأمن السيبراني",
+        "تقييم الثغرات الأمنية",
+        "التدقيق الأمني",
+        "الاستجابة للحوادث الأمنية",
+        "تحليل المخاطر",
+        "ضوابط الأمن",
+        "نظام إدارة معلومات وأحداث الأمن (SIEM)",
+        "استخبارات التهديدات"
+        
+        
+    ],
+        },
+        {
+             title: "جراح أعصاب (Neurosurgeon)",
+             description: "أعلى دخل طبي عالميًا.",
+             avgSalary: "300,000 - 800,000 دولار",
+             jobType: "profit",
+             demand: "مرتفع",
+             category: "الطب",
+             experience: "14-16 سنوات",
+    growthRate: "3%",
+    requiredSpecialties: [
+        "تقنيات جراحة الأعصاب",
+        "تشريح الجهاز العصبي",
+        "جراحة المجهرية (Microsurgery)",
+        "التفكير النقدي",
+        "اتخاذ القرار تحت الضغط",
+        "العمل الجماعي (Teamwork)",
+        "إدارة الإجهاد (Stress management)"
+    ]
+  },
+        
+
+      {
+        title: "جراح تجميل (Plastic Surgeon)",
+         description: "تصحيح وتحسين المظهر الجسدي.",
+         avgSalary: "250,000 - 500,000 دولار",
+         jobType: "profit",
+           demand: "مرتفع",
+            category: "الطب" ,
+            experience: "14-16 سنوات",
+    growthRate: "3%",
+    requiredSpecialties: [
+        "جراحة المجهرية (Microsurgery)",
+        "التشريح (Anatomy)",
+        "الجماليات (Aesthetics)",
+        "استشارة المريض (Patient consultation)",
+        "اتخاذ القرار تحت الضغط",
+        "العمل الجماعي (Teamwork)"
+    ]
+        },
+
+      {
+         title: "مدير تنفيذي (CEO)",
+       description: "قيادة الشركات إلى النجاح.",
+       avgSalary: "200,000 - 400,000 دولار",
+       jobType: "profit",
+         demand: "مرتفع", 
+         category: "إدارة الأعمال" ,
+         experience: "10-15 سنوات",
+    growthRate: "6%",
+    requiredSpecialties: [
+        "التخطيط الاستراتيجي",
+        "القيادة (Leadership)",
+        "الدهاء المالي (Financial acumen)",
+        "إدارة أصحاب المصلحة (Stakeholder management)",
+        "اتخاذ القرار (Decision making)",
+        "التواصل (Communication)",
+        "إدارة المخاطر (Risk management)"
+    ]
+        },
+      {
+         title: "مستشار استثماري (Investment Consultant)", 
+         description: "توجيه الاستثمارات لزيادة الأرباح.",
+         avgSalary: "150,000 - 300,000 دولار",
+         jobType: "profit",
+         demand: "مرتفع",
+         category: "المالية",
+         experience: "3-5 سنوات",
+    growthRate: "17.1%",
+    requiredSpecialties: [
+        "التحليل المالي (Financial analysis)",
+        "إدارة المحفظة (Portfolio management)",
+        "تقييم المخاطر (Risk assessment)",
+        "إدارة علاقات العملاء (Client relationship management)",
+        "بحث السوق (Market research)",
+        "الامتثال التنظيمي (Regulatory compliance)",
+        "التواصل (Communication)"
+    ]
+         },
+      {
+         title: "طبيب قلب (Cardiologist)",
+         description: "علاج أمراض القلب والشرايين.",
+         avgSalary: "250,000 - 450,000 دولار",
+         jobType: "profit",
+         demand: "مرتفع",
+         category: "الطب",
+         experience: "12-15 سنوات",
+    growthRate: "5%",
+    requiredSpecialties: [
+        "تصوير القلب (Cardiac imaging)",
+        "الإجراءات التدخلية (Interventional procedures)",
+        "تشخيص المريض (Patient diagnosis)",
+        "التفكير النقدي",
+        "اتخاذ القرار تحت الضغط",
+        "العمل الجماعي (Teamwork)"
+    ]
+         },
+          
+            
+            // الأكثر طلبًا (Most In-Demand)
+            { 
+                title: "مطور برمجيات (Software Developer)",
+                 description: "تطوير تطبيقات وحلول رقمية.", 
+                 jobType: "demand",
+                 avgSalary: "90,000 - 140,000 دولار",
+                  demand: "مرتفع جدًا", 
+                  category: "تقنية",
+    experience: "2-5 سنوات",
+    growthRate: "25%",
+    requiredSpecialties: [
+        "البرمجة (Python, Java, C#)",
+        "تصميم البرمجيات (Software Design)",
+        "حل المشكلات (Problem-solving)",
+        "تصحيح الأخطاء (Debugging)",
+        "الحوسبة السحابية (Cloud Computing)",
+        "التحكم في الإصدارات (Git - Version Control)"
+    
+    ],
+                },
+      {
+         title: "خبير تسويق رقمي (Digital Marketing Specialist)",
+          description: "تسويق عبر الإنترنت بكفاءة.",
+          jobType: "demand",
+           avgSalary: "70,000 - 120,000 دولار",
+            demand: "مرتفع جدًا",
+             category: "تسويق" ,
+             experience: "1-3 سنوات",
+    growthRate: "10%",
+    requiredSpecialties: [
+        "SEO/SEM",
+        "تسويق المحتوى (Content Marketing)",
+        "إدارة وسائل التواصل الاجتماعي (Social Media Management)",
+        "التسويق عبر البريد الإلكتروني (Email Marketing)",
+        "Google Analytics",
+        "الإعلان المدفوع (PPC - Paid Advertising)"
+    ]
+            },
+      { 
+        title: "ممرض مسجل (Registered Nurse)",
+         description: "رعاية صحية متخصصة.",
+         jobType: "demand",
+          avgSalary: "75,000 - 110,000 دولار",
+           demand: "مرتفع",
+            category: "الصحة",
+            experience: "0-2 سنوات",
+    growthRate: "6%",
+    requiredSpecialties: [
+        "رعاية المريض (Patient Care)",
+        "الإجراءات السريرية (Clinical Procedures)",
+        "التفكير النقدي",
+        "مهارات التواصل (Communication Skills)",
+        "حفظ السجلات الطبية (Medical Recordkeeping)",
+        "الاستجابة للطوارئ (Emergency Response)"
+    ]
+         } ,
+           
+      { 
+        title: "خبير أمن معلومات (Information Security Analyst)",
+       description: "تأمين البيانات من الهجمات.",
+       jobType: "demand",
+        avgSalary: "95,000 - 140,000 دولار",
+         demand: "مرتفع جدًا",
+          category: "أمن المعلومات",
+          experience: "2-5 سنوات",
+    growthRate: "32%",
+    requiredSpecialties: [
+        "الأمن السيبراني (Cybersecurity)",
+        "تقييم المخاطر (Risk Assessment)",
+        "الاستجابة للحوادث (Incident Response)",
+        "أمن الشبكات (Network Security)",
+        "اختبار الاختراق (Penetration Testing)",
+        "الامتثال الأمني (مثل ISO, NIST)"
+    ]
+         },
+      {
+         title: "فني أجهزة طبية (Medical Equipment Technician)", 
+      description: "صيانة الأجهزة الطبية الحيوية.",
+      jobType: "demand",
+       avgSalary: "65,000 - 90,000 دولار", 
+       demand: "مرتفع",
+        category: "الصحة",
+        experience: "1-3 سنوات",
+    growthRate: "10%",
+    requiredSpecialties: [
+        "إصلاح المعدات الطبية (Medical Equipment Repair)",
+        "التشخيص التقني (Technical Diagnostics)",
+        "الصيانة الوقائية (Preventive Maintenance)",
+        "المعايرة (Calibration)",
+        "معرفة الإلكترونيات (Electronics Knowledge)",
+        "الامتثال لمعايير السلامة (Compliance with Safety Standards)"
+  
+    ]
+
+    },
+    
+            
+            // أكثر فرص عمل (Most Job Opportunities)
+            { 
+                title: "سائق شاحنات ثقيلة (Heavy Truck Driver)",
+                jobType:"opportunities",
+                description: "نقل البضائع عبر المسافات الطويلة.",
+                avgSalary: "60,000 - 85,000 دولار",
+                demand: "مرتفع",
+                category: "النقل",
+                experience: "1-3 سنوات",
+                growthRate: "4%",
+                requiredSpecialties: [
+                 "قيادة آمنة",
+               "معرفة أنظمة المرور",
+                "صيانة الشاحنة الأساسية",
+                 "التخطيط للمسارات",
+                  "إدارة الوقت",
+                    "الالتزام بالسلامة"
+    ]
+             },
+      { 
+        title: "معلم لغة إنجليزية (English Teacher)", 
+        jobType:"opportunities",
+        description: "تدريس اللغة الإنجليزية عالميًا.",
+         avgSalary: "50,000 - 75,000 دولار",
+          demand: "مرتفع",
+           category: "التعليم",
+           experience: "2-4 سنوات",
+    growthRate: "5%",
+    requiredSpecialties: [
+      "إتقان اللغة الإنجليزية",
+      "مهارات التدريس",
+      "إعداد المناهج",
+      "إدارة الصف",
+      "التواصل مع الطلاب",
+      "استخدام التكنولوجيا في التعليم"
+    ]
+        },
+      {
+         title: "موظف خدمة عملاء (Customer Service Representative)",
+         jobType:"opportunities",
+          description: "التواصل مع العملاء ودعمهم.",
+           avgSalary: "40,000 - 60,000 دولار",
+            demand: "مرتفع",
+             category: "خدمة العملاء",
+             experience: "0-2 سنوات",
+    growthRate: "5%",
+    requiredSpecialties: [
+      "التواصل الفعال",
+      "حل المشكلات",
+      "التعامل مع الشكاوى",
+      "إدارة الوقت",
+      "معرفة أنظمة إدارة علاقات العملاء (CRM)",
+      "اللباقة والصبر"
+      ]
+             },
+      { 
+        title: "فني صيانة كهربائية (Electrical Maintenance Technician)",
+        jobType:"opportunities",
+       description: "صيانة الأنظمة الكهربائية.",
+        avgSalary: "55,000 - 80,000 دولار",
+         demand: "مرتفع",
+          category: "الهندسة",
+          experience: "2-5 سنوات",
+    growthRate: "3%",
+    requiredSpecialties: [
+      "تشخيص الأعطال الكهربائية",
+      "صيانة وإصلاح الأنظمة الكهربائية",
+      "قراءة المخططات الكهربائية",
+      "الالتزام بإجراءات السلامة",
+      "استخدام أدوات الصيانة",
+      "العمل تحت الضغط"
+    ]
+
+        },
+      {
+        title: "مساعد مبيعات (Sales Associate)",
+        jobType:"opportunities",
+       description: "مساعدة العملاء في المبيعات.",
+        avgSalary: "35,000 - 55,000 دولار", 
+        demand: "مرتفع",
+         category: "مبيعات",
+         experience: "0-2 سنوات",
+    growthRate: "2%",
+    requiredSpecialties: [
+      "خدمة العملاء",
+      "مهارات البيع",
+      "معرفة بالمنتجات",
+      "التواصل الفعال",
+      "التعامل مع الكاشير",
+      "العمل ضمن فريق"
+    ]
+         },
+    
+            // للمبتدئين (Entry-Level Friendly)
+            {
+                 title: "مساعد إداري (Administrative Assistant)",
+                 jobType: "entry",
+                  description: "دعم إداري وتنظيمي للمكاتب.", 
+                  avgSalary: "40,000 - 60,000 دولار",
+                   demand: "مرتفع", 
+                   category: "إدارة",
+                    experience: "13 سنوات",
+                     growthRate: "5%",
+                   requiredSpecialties: [
+      "تنظيم الملفات",
+      "إدارة المواعيد",
+      "التواصل الفعال",
+      "إجادة برامج الأوفيس",
+      "تحضير التقارير",
+      "إدارة البريد الإلكتروني"
+    ]
+                 },
+
+      {
+         title: "موظف دعم فني (Technical Support Representative)",
+         jobType: "entry",
+       description: "مساعدة العملاء في المشكلات التقنية.",
+        avgSalary: "45,000 - 65,000 دولار",
+         demand: "مرتفع",
+          category: "تقنية",
+          experience: "1-3 سنوات",
+    growthRate: "6%",
+    requiredSpecialties: [
+      "تشخيص الأعطال التقنية",
+      "التواصل مع العملاء",
+      "معرفة أنظمة التشغيل",
+      "حل المشكلات التقنية",
+      "إدارة قواعد البيانات",
+      "القدرة على العمل تحت الضغط"
+    ]
+        },
+      { 
+        title: "مندوب مبيعات (Sales Representative)",
+        jobType: "entry",
+         description: "التواصل مع العملاء لبيع المنتجات.",
+          avgSalary: "50,000 - 70,000 دولار",
+           demand: "مرتفع",
+            category: "مبيعات",
+            experience: "1-3 سنوات",
+    growthRate: "4%",
+    requiredSpecialties: [
+      "التفاوض والإقناع",
+      "خدمة العملاء",
+      "إدارة علاقات العملاء",
+      "التواصل الفعال",
+      "تحقيق الأهداف البيعية",
+      "معرفة بالمنتجات والخدمات"
+    ]
+        },
+      {
+         title: "مشرف مخازن (Warehouse Supervisor)",
+         jobType: "entry",
+          description: "تنظيم وإدارة المخزون.",
+           avgSalary: "45,000 - 65,000 دولار",
+            demand: "مرتفع",
+             category: "الخدمات اللوجستية",
+             experience: "3-5 سنوات",
+    growthRate: "3%",
+    requiredSpecialties: [
+      "إدارة المخزون",
+      "تنظيم العمليات اللوجستية",
+      "قيادة الفريق",
+      "التعامل مع أنظمة إدارة المخزون",
+      "التخطيط للعمليات",
+      "ضمان الالتزام بإجراءات السلامة"
+    ]
+             },
+      { 
+
+        title: "مدخل بيانات (Data Entry Clerk)",
+        jobType: "entry",
+         description: "إدخال البيانات بدقة عالية.",
+          avgSalary: "35,000 - 50,000 دولار",
+           demand: "مرتفع",
+            category: "إدارة بيانات",
+            experience: "0-2 سنوات",
+    growthRate: "3%",
+    requiredSpecialties: [
+      "السرعة في الكتابة",
+      "دقة إدخال البيانات",
+      "التعامل مع برامج الحاسب الآلي",
+      "تنظيم المعلومات",
+      "التحقق من صحة البيانات",
+      "العمل تحت الضغط"
+    ]
+        }
+        ];
+
+        
+        // نظام الفلترة
+        let activeFilter = null;
+        const demandOrder = ['مرتفع جدًا', 'مرتفع', 'متوسط', 'منخفض'];
+
+        function toggleFilter(element, filterType) {
+            const prevActive = document.querySelector('#best-jobs .filter-item.active');
+            
+            if (prevActive) {
+                prevActive.classList.remove('active');
+            }
+            
+            if (activeFilter === filterType) {
+                activeFilter = null;
+                element.classList.remove('active');
+            } else {
+                activeFilter = filterType;
+                element.classList.add('active');
+            }
+            
+            applyFilters();
+        }
+
+        function applyFilters() {
+            let filteredJobs = [...bestProfessions];
+            
+            // تطبيق الفلتر النشط إذا كان موجوداً
+            if (activeFilter) {
+                filteredJobs = filteredJobs.filter(job => job.jobType === activeFilter);
+            } else {
+                // إذا لم يكن هناك فلتر نشط، نطبق الفلتر الافتراضي (أفضل المهن)
+                activeFilter = 'best';
+                const bestFilterBtn = document.querySelector('#best-jobs .filter-item[data-filter="best"]');
+                if (bestFilterBtn) bestFilterBtn.classList.add('active');
+                filteredJobs = filteredJobs.filter(job => job.jobType === 'best');
+            }
+            
+            // ترتيب النتائج حسب نوع الفلتر
+            switch(activeFilter) {
+                case 'profit':
+                    filteredJobs.sort((a, b) => 
+                        parseInt(b.avgSalary.replace(/\D/g,'')) - parseInt(a.avgSalary.replace(/\D/g,'')));
+                    break;
+                case 'demand':
+                    filteredJobs.sort((a, b) => 
+                        demandOrder.indexOf(b.demand) - demandOrder.indexOf(a.demand));
+                    break;
+                case 'entry':
+                    filteredJobs.sort((a, b) => 
+                        parseInt(a.experience) - parseInt(b.experience));
+                    break;
+                case 'opportunities':
+                    filteredJobs.sort((a, b) => 
+                        parseInt(b.growthRate) - parseInt(a.growthRate));
+                    break;
+                default: // الحالة الافتراضية (أفضل المهن)
+                    filteredJobs.sort((a, b) => 
+                        (parseInt(b.growthRate) * 2 + parseInt(b.avgSalary.replace(/\D/g,''))/10000) -
+                        (parseInt(a.growthRate) * 2 + parseInt(a.avgSalary.replace(/\D/g,''))/10000)
+                    );
+            }
+            
+            // عرض النتائج المصفاة
+            renderBestJobs(filteredJobs);
+        }
+        // تعديل دالة renderMajors لعرض البطاقات بنفس نمط المهن
+        
+        // دالة عرض Best Jobs
+        function renderBestJobs(jobs) {
+            const container = document.getElementById('bestJobsContainer');
+            container.innerHTML = '';
+
+            jobs.forEach(job => {
+                const card = document.createElement('div');
+                card.className = 'profession-card';
+                card.innerHTML = `
+                    <div class="profitability-badge">${job.profitability}</div>
+                    <h3>${job.title}</h3>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <span>متوسط الراتب</span>
+                            <div class="highlight">$${job.avgSalary}</div>
+                        </div>
+                        <div class="stat-item">
+                            <span>سنوات الخبرة</span>
+                            <div class="highlight">${job.experience}</div>
+                        </div>
+                    </div>
+                    <div class="demand-indicator">
+                        <span>معدل الطلب:</span>
+                        <div class="demand-bar">
+                            <div class="demand-fill" style="width: ${getDemandWidth(job.demand)}"></div>
+                        </div>
+                        <span class="growth-rate">
+                            <i class="fas fa-chart-line"></i>
+                            ${job.growthRate} نمو متوقع
+                        </span>
+                    </div>
+                    <h4 class="specialties-title">المهارات المطلوبة:</h4>
+                    <ul class="specialties-list">
+                        ${job.requiredSpecialties.map(spec => `<li>${spec}</li>`).join('')}
+                    </ul>
+                    <p class="job-description">${job.description}</p>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        // دالة مساعدة لتحديد عرض شريط الطلب
+        function getDemandWidth(demand) {
+            const demandLevels = {
+                'مرتفع جدًا': '95%',
+                'مرتفع': '75%',
+                'متوسط': '50%',
+                'منخفض': '25%'
+            };
+            return demandLevels[demand] || '50%';
+        }
+
+        // متغيرات المقارنة
+        let compareType = 'jobs'; // 'jobs' أو 'majors'
+        let selectedItem1 = null;
+        let selectedItem2 = null;
+
+        // تعيين نوع المقارنة
+        function setCompareType(type) {
+            compareType = type;
+            
+            // تحديث الأزرار النشطة
+            document.getElementById('compareJobsBtn').classList.toggle('active', type === 'jobs');
+            document.getElementById('compareMajorsBtn').classList.toggle('active', type === 'majors');
+            
+            // تحديث نصوص placeholder
+            const placeholderText = type === 'jobs' ? 'ابحث عن مهنة...' : 'ابحث عن تخصص...';
+            document.getElementById('compareInput1').placeholder = placeholderText;
+            document.getElementById('compareInput2').placeholder = placeholderText;
+            
+            // مسح الحقول والنتائج
+            document.getElementById('compareInput1').value = '';
+            document.getElementById('compareInput2').value = '';
+            document.getElementById('compareResults1').style.display = 'none';
+            document.getElementById('compareResults2').style.display = 'none';
+            document.getElementById('compareResults').style.display = 'none';
+            selectedItem1 = null;
+            selectedItem2 = null;
+        }
+
+        // تهيئة البحث في قسم المقارنة
+        function initCompareSearch() {
+            const input1 = document.getElementById('compareInput1');
+            const input2 = document.getElementById('compareInput2');
+            const results1 = document.getElementById('compareResults1');
+            const results2 = document.getElementById('compareResults2');
+            
+            // البحث للحقل الأول
+            input1.addEventListener('input', function() {
+                const query = this.value.trim().toLowerCase();
+                showCompareResults(results1, query, 1);
+            });
+            
+            // البحث للحقل الثاني
+            input2.addEventListener('input', function() {
+                const query = this.value.trim().toLowerCase();
+                showCompareResults(results2, query, 2);
+            });
+            
+            // إخفاء نتائج البحث عند النقر خارجها
+            document.addEventListener('click', function(e) {
+                if (!input1.contains(e.target)) results1.style.display = 'none';
+                if (!input2.contains(e.target)) results2.style.display = 'none';
+                if (!e.target.closest('.search-container')) {
+        document.getElementById('searchResults').style.display = 'none';
+    }
+            });
+        }
+
+        // عرض نتائج البحث في قسم المقارنة
+        function showCompareResults(resultsContainer, query, inputNumber) {
+            if (query.length === 0) {
+                resultsContainer.style.display = 'none';
+                return;
+            }
+            
+            let results = [];
+            if (compareType === 'jobs') {
+                results = professions.filter(prof => 
+                    prof.title.toLowerCase().includes(query) || 
+                    prof.description.toLowerCase().includes(query)
+                );
+            } else {
+                results = majors.filter(major => 
+                    major.name.toLowerCase().includes(query) || 
+                    major.description.toLowerCase().includes(query)
+                );
+            }
+            
+            if (results.length === 0) {
+                resultsContainer.innerHTML = '<div class="no-results">لا توجد نتائج مطابقة</div>';
+                resultsContainer.style.display = 'block';
+                return;
+            }
+            
+            let html = '';
+            results.forEach(item => {
+                const title = compareType === 'jobs' ? item.title : item.name;
+                const desc = compareType === 'jobs' ? item.description : item.description;
+                const type = compareType === 'jobs' ? item.jobo : item.jobo;
+                
+                html += `
+                    <div class="search-result-item" onclick="selectCompareItem(${inputNumber}, '${title.replace(/'/g, "\\'")}')">
+                        <h4>${title}</h4>
+                        <p>${desc.substring(0, 60)}...</p>
+                        <small style="color: var(--secondary);">${type}</small>
+                    </div>
+                `;
+            });
+            
+            resultsContainer.innerHTML = html;
+            resultsContainer.style.display = 'block';
+        }
+
+        // اختيار عنصر للمقارنة
+        function selectCompareItem(inputNumber, title) {
+            const inputElement = inputNumber === 1 ? 
+                document.getElementById('compareInput1') : 
+                document.getElementById('compareInput2');
+            
+            const resultsContainer = inputNumber === 1 ? 
+                document.getElementById('compareResults1') : 
+                document.getElementById('compareResults2');
+            
+            inputElement.value = title;
+            resultsContainer.style.display = 'none';
+            
+            if (compareType === 'jobs') {
+                const item = professions.find(p => p.title === title);
+                if (inputNumber === 1) selectedItem1 = item;
+                else selectedItem2 = item;
+            } else {
+                const item = majors.find(m => m.name === title);
+                if (inputNumber === 1) selectedItem1 = item;
+                else selectedItem2 = item;
+            }
+        }
+
+        // تنفيذ المقارنة
+        function compareItems() {
+            if (!selectedItem1 || !selectedItem2) {
+                alert('الرجاء اختيار العنصرين للمقارنة');
+                return;
+            }
+            
+            const resultsDiv = document.getElementById('compareResults');
+            const tableBody = document.getElementById('compareTableBody');
+            const detailsDiv = document.getElementById('compareDetails');
+            
+            // تعيين العناوين
+            document.getElementById('compareHeader1').textContent = 
+                compareType === 'jobs' ? selectedItem1.title : selectedItem1.name;
+            document.getElementById('compareHeader2').textContent = 
+                compareType === 'jobs' ? selectedItem2.title : selectedItem2.name;
+            
+            // إنشاء جدول المقارنة
+            let tableHTML = '';
+            
+            if (compareType === 'jobs') {
+                // مقارنة المهن
+                tableHTML = `
+                    <tr>
+                        <td>ملخص المهنة</td>
+                        <td>${selectedItem1.summarize}</td>
+                        <td>${selectedItem2.summarize}</td>
+                    </tr>
+                    <tr>
+                        <td>فرص العمل</td>
+                        <td>${selectedItem1.jobo}</td>
+                        <td>${selectedItem2.jobo}</td>
+                    </tr>
+                    <tr>
+                        <td>الراتب السنوي</td>
+                        <td>$${selectedItem1.avgSalary}</td>
+                        <td>$${selectedItem2.avgSalary}</td>
+                    </tr>
+                    <tr>
+                        <td>سنوات الخبرة المطلوبة</td>
+                        <td>${selectedItem1.experience}</td>
+                        <td>${selectedItem2.experience}</td>
+                    </tr>
+                    <tr>
+                        <td>مستوى الطلب</td>
+                        <td>${selectedItem1.demand}</td>
+                        <td>${selectedItem2.demand}</td>
+                    </tr>
+                `;
+                
+                // تحديد الأفضل في كل فئة
+                highlightBest(tableBody, [3, 4]); // أعمدة الراتب والطلب
+            } else {
+                // مقارنة التخصصات
+                tableHTML = `
+                    <tr>
+                        <td>ملخص المهنة</td>
+                        <td>${selectedItem1.summarize}</td>
+                        <td>${selectedItem2.summarize}</td>
+                    </tr>
+                    <tr>
+                        <td>فرص العمل</td>
+                        <td>${selectedItem1.jobo}</td>
+                        <td>${selectedItem2.jobo}</td>
+                    </tr>
+                    <tr>
+                        <td>عدد الوظائف المرتبطة</td>
+                        <td>${selectedItem1.relatedJobs ? selectedItem1.relatedJobs.length : 0}</td>
+                        <td>${selectedItem2.relatedJobs ? selectedItem2.relatedJobs.length : 0}</td>
+                    </tr>
+                    <tr>
+                        <td>السنوات الدرسية/td>
+                        <td>${selectedItem1.duration}</td>
+                        <td>${selectedItem2.duration}</td>
+                    </tr>
+                   <tr>
+                        <td>عدد الساعات الدراسية</td>
+                        <td>${selectedItem1.mid}</td>
+                        <td>${selectedItem2.mid}</td>
+                    </tr>
+                `;
+                
+                // تحديد الأفضل في كل فئة
+                highlightBest(tableBody, [2]); // عمود عدد الوظائف
+            }
+            
+            tableBody.innerHTML = tableHTML;
+            
+            // عرض تفاصيل كل عنصر
+            let detailsHTML = '';
+            if (compareType === 'jobs') {
+                detailsHTML = `
+                    <div class="compare-detail-card">
+                        <h4>${selectedItem1.title}</h4>
+                        <p><strong>فرص العمل:</strong> ${selectedItem1.jobo}</p>
+                        <p><strong>ملخص المهنة:</strong> ${selectedItem1.summarize}</p>
+                        <p><strong>الراتب:</strong> $${selectedItem1.avgSalary}</p>
+                        <p><strong>الخبرة المطلوبة:</strong> ${selectedItem1.experience}</p>
+                        <p><strong>مستوى الطلب:</strong> ${selectedItem1.demand}</p>
+                    </div>
+                    <div class="compare-detail-card">
+                        <h4>${selectedItem2.title}</h4>
+                        <p><strong>فرص العمل :</strong> ${selectedItem2.jobo}</p>
+                        <p><strong>الوصف:</strong> ${selectedItem2.summarize}</p>
+                        <p><strong>الراتب:</strong> $${selectedItem2.avgSalary}</p>
+                        <p><strong>الخبرة المطلوبة:</strong> ${selectedItem2.experience}</p>
+                        <p><strong>مستوى الطلب:</strong> ${selectedItem2.demand}</p>
+                    </div>
+                `;
+            } else {
+                detailsHTML = `
+                    <div class="compare-detail-card">
+                        <h4>${selectedItem1.name}</h4>
+                        <p><strong>فرص العمل :</strong> ${selectedItem1.jobo}</p>
+                        <p><strong>ملخص التخصص :</strong> ${selectedItem1.description}</p>
+                        ${selectedItem1.relatedJobs && selectedItem1.relatedJobs.length > 0 ? `
+                            <p><strong>الوظائف المرتبطة:</strong></p>
+                            <ul>
+                                ${selectedItem1.relatedJobs.map(job => `
+                                    <li>${job.title} (${job.salary})</li>
+                                `).join('')}
+                            </ul>
+                        ` : ''}
+                    </div>
+                    <div class="compare-detail-card">
+                        <h4>${selectedItem2.name}</h4>
+                        <p><strong>فرص العمل :</strong> ${selectedItem2.field}</p>
+                        <p><strong>ملخص التخصص :</strong> ${selectedItem2.summarize}</p>
+                        ${selectedItem2.relatedJobs && selectedItem2.relatedJobs.length > 0 ? `
+                            <p><strong>الوظائف المرتبطة:</strong></p>
+                            <ul>
+                                ${selectedItem2.relatedJobs.map(job => `
+                                    <li>${job.title} (${job.salary})</li>
+                                `).join('')}
+                            </ul>
+                        ` : ''}
+                    </div>
+                `;
+            }
+            
+            detailsDiv.innerHTML = detailsHTML;
+            resultsDiv.style.display = 'block';
+            
+            // التمرير إلى نتائج المقارنة
+            resultsDiv.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // تحديد الأفضل في كل فئة
+        function highlightBest(tableBody, columnsToCompare) {
+            const rows = tableBody.querySelectorAll('tr');
+            
+            columnsToCompare.forEach(col => {
+                if (col >= rows.length) return;
+                
+                const cells = rows[col].querySelectorAll('td');
+                const value1 = cells[1].textContent;
+                const value2 = cells[2].textContent;
+                
+                // مقارنة الراتب (تحويل إلى أرقام)
+                if (col === 3) {
+                    const salary1 = parseInt(value1.replace(/[^0-9]/g, '').split('-')[0]);
+                    const salary2 = parseInt(value2.replace(/[^0-9]/g, '').split('-')[0]);
+                    
+                    if (salary1 > salary2) {
+                        cells[1].classList.add('compare-winner');
+                    } else if (salary2 > salary1) {
+                        cells[2].classList.add('compare-winner');
+                    }
+                }
+                // مقارنة الطلب
+                else if (col === 4) {
+                    const demandOrder = ['مرتفع جدًا', 'مرتفع', 'متوسط', 'منخفض'];
+                    const demand1 = demandOrder.indexOf(value1);
+                    const demand2 = demandOrder.indexOf(value2);
+                    
+                    if (demand1 < demand2) {
+                        cells[1].classList.add('compare-winner');
+                    } else if (demand2 < demand1) {
+                        cells[2].classList.add('compare-winner');
+                    }
+                }
+                // مقارنة عدد الوظائف (للتخصصات)
+                else if (col === 2) {
+                    const num1 = parseInt(value1);
+                    const num2 = parseInt(value2);
+                    
+                    if (num1 > num2) {
+                        cells[1].classList.add('compare-winner');
+                    } else if (num2 > num1) {
+                        cells[2].classList.add('compare-winner');
+                    }
+                }
+            });
+        }
+
+        // متغيرات الاختبار المهني
+        let currentQuestion = 0;
+        let quizAnswers = [];
+        const quizQuestions = [
+            {
+                question: "ما هو مستوى الراتب الذي تفضله؟",
+                options: [
+                    { text: "أكثر من 200,000 دولار سنوياً", value: "high" },
+                    { text: "بين 100,000 و 200,000 دولار سنوياً", value: "medium" },
+                    { text: "أقل من 100,000 دولار سنوياً", value: "low" },
+                    { text: "الراتب ليس عاملاً حاسماً بالنسبة لي", value: "any" }
+                ]
+            },
+            {
+                question: "ما هو مجال العمل الذي تفضله؟",
+                options: [
+                    { text: "التكنولوجيا والذكاء الاصطناعي", value: "tech" },
+                    { text: "الطب والرعاية الصحية", value: "medical" },
+                    { text: "الهندسة والتصميم", value: "engineering" },
+                    { text: "الأعمال والإدارة", value: "business" }
+                ]
+            },
+            {
+                question: "ما هي المهارات التي تمتلكها؟",
+                options: [
+                    { text: "مهارات تحليلية ورياضية", value: "analytical" },
+                    { text: "مهارات إبداعية وتصميم", value: "creative" },
+                    { text: "مهارات تواصل وقيادة", value: "leadership" },
+                    { text: "مهارات يدوية وتقنية", value: "technical" }
+                ]
+            },
+            {
+                question: "ما هو مستوى الخبرة لديك؟",
+                options: [
+                    { text: "خبرة أكثر من 5 سنوات", value: "senior" },
+                    { text: "خبرة بين 2-5 سنوات", value: "mid" },
+                    { text: "خبرة أقل من سنتين", value: "junior" },
+                    { text: "لا أمتلك خبرة عملية", value: "entry" }
+                ]
+            },
+            {
+        question: "ما هو نمط العمل الذي تفضله؟",
+        options: [
+            { text: "العمل الفردي المستقل", value: "solo" },
+            { text: "العمل ضمن فريق", value: "team" },
+            { text: "القيادة والإشراف", value: "leadership" },
+            { text: "مزيج بين العمل الفردي والجماعي", value: "mixed" }
+        ]
+    },
+    {
+        question: "ما هي البيئة العملية المثالية لك؟",
+        options: [
+            { text: "مكتب تقليدي", value: "office" },
+            { text: "عمل عن بُعد", value: "remote" },
+            { text: "عمل ميداني", value: "field" },
+            { text: "مساحة عمل مرنة", value: "flex" }
+        ]
+    },
+    {
+        question: "ما هو مستوى السفر الذي تستطيع تحمله؟",
+        options: [
+            { text: "لا أرغب في السفر", value: "none" },
+            { text: "سفر محلي محدود", value: "local" },
+            { text: "سفر دولي متكرر", value: "international" },
+            { text: "أعيش في مواقع مختلفة", value: "nomad" }
+        ]
+    },
+    {
+        question: "ما هي طبيعة العمل المفضلة؟",
+        options: [
+            { text: "مهام روتينية منظمة", value: "routine" },
+            { text: "مشاريع متغيرة", value: "dynamic" },
+            { text: "عمل إبداعي", value: "creative" },
+            { text: "حل مشكلات معقدة", value: "problem_solving" }
+        ]
+    },
+    {
+        question: "ما هو مستوى التفاعل الاجتماعي المفضل؟",
+        options: [
+            { text: "تفاعل محدود مع الناس", value: "low" },
+            { text: "تفاعل مع زملاء العمل فقط", value: "medium" },
+            { text: "تفاعل مع عملاء/مرضى", value: "high" },
+            { text: "تفاعل مع جمهور كبير", value: "public" }
+        ]
+    },
+    {
+        question: "ما هي أولوية التوازن بين الحياة والعمل؟",
+        options: [
+            { text: "العمل أولاً", value: "work_first" },
+            { text: "توازن صارم", value: "strict_balance" },
+            { text: "مرونة حسب الظروف", value: "flexible" },
+            { text: "حسب متطلبات الوظيفة", value: "job_dependent" }
+        ]
+    },
+    {
+        question: "ما هي طريقة التعلم المفضلة؟",
+        options: [
+            { text: "التدريب العملي", value: "hands_on" },
+            { text: "الدراسة الأكاديمية", value: "academic" },
+            { text: "التعلم الذاتي عبر الإنترنت", value: "online" },
+            { text: "التلمذة المهنية", value: "apprenticeship" }
+        ]
+    },
+    {
+        question: "ما هو مستوى الضغط الذي تتعامل معه؟",
+        options: [
+            { text: "بيئة هادئة", value: "low" },
+            { text: "ضغط متوسط مع فترات ذروة", value: "medium" },
+            { text: "ضغط عالي دائم", value: "high" },
+            { text: "أزمة/حالات طوارئ", value: "crisis" }
+        ]
+    },
+    {
+        question: "ما هي توقعاتك للتطور الوظيفي؟",
+        options: [
+            { text: "ترقيات سريعة", value: "fast" },
+            { text: "تطور تدريجي", value: "steady" },
+            { text: "استقرار في المنصب", value: "stable" },
+            { text: "تغيير مجالات العمل", value: "change" }
+        ]
+    },
+    {
+        question: "ما هو مستوى الإبداع المطلوب؟",
+        options: [
+            { text: "اتباع تعليمات محددة", value: "low" },
+            { text: "تحسين العمليات الحالية", value: "medium" },
+            { text: "ابتكار حلول جديدة", value: "high" },
+            { text: "بحث وتطوير مكثف", value: "rnd" }
+        ]
+    },
+    {
+        question: "ما هي طبيعة المهام المفضلة؟",
+        options: [
+            { text: "مهام تقنية متخصصة", value: "technical" },
+            { text: "مهام إدارية", value: "managerial" },
+            { text: "مهام خدمية", value: "service" },
+            { text: "مهام بحثية", value: "research" }
+        ]
+    },
+    {
+        question: "ما هي أولوياتك في الوظيفة؟",
+        options: [
+            { text: "الراتب والمزايا", value: "salary" },
+            { text: "التوازن الحياة/العمل", value: "balance" },
+            { text: "التأثير الاجتماعي", value: "impact" },
+            { text: "التطور الشخصي", value: "growth" }
+        ]
+    },
+    {
+        question: "ما هو نمط القيادة المفضل؟",
+        options: [
+            { text: "قيادة مباشرة", value: "directive" },
+            { text: "قيادة تعاونية", value: "collaborative" },
+            { text: "قيادة تحفيزية", value: "motivational" },
+            { text: "تفويض الصلاحيات", value: "delegative" }
+        ]
+    },
+    {
+        question: "ما هي طبيعة القرارات المفضلة؟",
+        options: [
+            { text: "قرارات فورية", value: "instant" },
+            { text: "قرارات مدروسة", value: "planned" },
+            { text: "قرارات جماعية", value: "group" },
+            { text: "قرارات قائمة على البيانات", value: "data_driven" }
+        ]
+    },
+    {
+        question: "ما هو مستوى المسؤولية المطلوب؟",
+        options: [
+            { text: "مسؤولية محددة", value: "defined" },
+            { text: "مسؤولية عن فريق", value: "team" },
+            { text: "مسؤولية عن مشاريع", value: "projects" },
+            { text: "مسؤولية تنظيمية", value: "organizational" }
+        ]
+    }
+        ];
+
+        // بدء الاختبار
+        function startQuiz() {
+          currentQuestion = 0;
+  quizAnswers = [];
+  // 1. إخفاء قسم البداية فوراً
+  document.getElementById('quizWelcome').style.display = 'none';
+
+  // 2. إظهار قسم الأسئلة
+  const quizQuestions = document.getElementById('quizQuestions');
+  quizQuestions.style.display = 'block';
+
+  // 3. استخدام scrollIntoView مع خيارات مخصصة
+  setTimeout(() => {
+    quizQuestions.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+      inline: 'nearest'
+    });
+  }, 50);
+
+  // 4. تهيئة الأسئلة
+  currentQuestion = 0;
+  quizAnswers = [];
+  showQuestion();
+        }
+
+        // عرض السؤال الحالي
+        function showQuestion() {
+            const question = quizQuestions[currentQuestion];
+            document.getElementById('currentQuestion').textContent = question.question;
+            
+            const optionsContainer = document.getElementById('quizOptions');
+            optionsContainer.innerHTML = '';
+            
+            question.options.forEach((option, index) => {
+                const optionElement = document.createElement('div');
+                optionElement.className = 'quiz-option';
+                optionElement.innerHTML = `
+                    <div class="option-number">${index + 1}</div>
+                    <div>${option.text}</div>
+                `;
+                optionElement.addEventListener('click', () => selectAnswer(option.value));
+                optionsContainer.appendChild(optionElement);
+            });
+            
+            // تحديث شريط التقدم
+            const progress = ((currentQuestion) / quizQuestions.length) * 100;
+            document.getElementById('quizProgressBar').style.width = `${progress}%`;
+        }
+
+        // اختيار إجابة
+        function selectAnswer(answer) {
+            quizAnswers.push(answer);
+             // إزالة التحديد من كل الخيارات
+  document.querySelectorAll('.quiz-option').forEach(opt => 
+    opt.classList.remove('selected'));
+  
+  // إضافة التحديد للخيار المختار
+  event.currentTarget.classList.add('selected');
+  
+            if (currentQuestion < quizQuestions.length - 1) {
+                currentQuestion++;
+                showQuestion();
+            } else {
+                showResults();
+            }
+        }
+
+        // عرض النتائج
+        function showResults() {
+            document.getElementById('quizQuestions').style.display = 'none';
+            document.getElementById('quizResults').style.display = 'block';
+            
+            // حساب النتائج بناءً على الإجابات
+            const matchedProfessions = calculateMatches();
+            const matchesContainer = document.getElementById('careerMatches');
+            matchesContainer.innerHTML = '';
+            
+            if (matchedProfessions.length === 0) {
+                matchesContainer.innerHTML = '<p>لا توجد مهن مطابقة لاختياراتك. حاول تعديل بعض الإجابات.</p>';
+                return;
+            }
+            
+            matchedProfessions.forEach(prof => {
+                const matchElement = document.createElement('div');
+                matchElement.className = 'career-match';
+                matchElement.innerHTML = `
+                    <h4>${prof.title}</h4>
+                    <div class="match-percent">${prof.matchPercent}%</div>
+                    <p><strong>فرص العمل :</strong> ${prof.jobo}</p>
+                    <p><strong>الراتب المتوسط:</strong> $${prof.avgSalary}</p>
+                    <p><strong>الطلب:</strong> ${prof.demand}</p>
+                `;
+                matchElement.addEventListener('click', () => showDetails(prof));
+                matchesContainer.appendChild(matchElement);
+            });
+        }
+
+        // حساب المهن المطابقة
+        function calculateMatches() {
+            const preferences = {
+        work_style: quizAnswers[0],
+        environment: quizAnswers[1],
+        travel: quizAnswers[2],
+        work_nature: quizAnswers[3],
+        social: quizAnswers[4],
+        balance: quizAnswers[5],
+        learning: quizAnswers[6],
+        stress: quizAnswers[7],
+        career_growth: quizAnswers[8],
+        creativity: quizAnswers[9],
+        tasks: quizAnswers[10],
+        priorities: quizAnswers[11],
+        leadership: quizAnswers[12],
+        decisions: quizAnswers[13],
+        responsibility: quizAnswers[14]
+    };
+    const scoredProfessions = professions.map(prof => {
+        let score = 0;
+        
+        // نظام النقاط المتقدم
+        score += calculateCompatibility(prof, preferences);
+        
+        return {
+            ...prof,
+            matchPercent: Math.min(100, Math.round(score))
+        };
+    });
+
+    return scoredProfessions
+        .filter(prof => prof.matchPercent >= 60)
+        .sort((a, b) => b.matchPercent - a.matchPercent)
+        .slice(0, 5);
+}
+
+function calculateCompatibility(prof, prefs) {
+    let score = 0;
+    
+    // مثال: تحليل التوافق مع نمط العمل
+    if (prof.work_style === prefs.work_style) score += 15;
+    
+    // مثال: تحليل التوافق مع بيئة العمل
+    if (prof.environment === prefs.environment) score += 10;
+    
+    // إضافة معايير أخرى بنفس المنطق...
+    
+    return score;
+            // حساب درجة المطابقة لكل مهنة
+            const scoredProfessions = professions.map(prof => {
+                let score = 0;
+                
+                // مطابقة الراتب
+                if (preferences.salary === 'high' && parseInt(prof.avgSalary.replace(/\D/g,'')) > 200000) score += 20;
+                else if (preferences.salary === 'medium' && parseInt(prof.avgSalary.replace(/\D/g,'')) > 100000) score += 15;
+                else if (preferences.salary === 'low' && parseInt(prof.avgSalary.replace(/\D/g,'')) < 100000) score += 10;
+                else if (preferences.salary === 'any') score += 5;
+                
+                // مطابقة المجال
+                if ((preferences.field === 'tech' && (prof.category === 'AI')) ||
+                    (preferences.field === 'medical' && prof.category === 'طب') ||
+                    (preferences.field === 'engineering' && prof.category === 'هندسة') ||
+                    (preferences.field === 'business' && prof.category === 'أعمال')) {
+                    score += 20;
+                }
+                
+                // مطابقة المهارات
+                if (prof.skills) {
+                    if ((preferences.skills === 'analytical' && prof.skills.includes('تحليلية')) ||
+                        (preferences.skills === 'creative' && prof.skills.includes('إبداعية')) ||
+                        (preferences.skills === 'leadership' && prof.skills.includes('قيادة')) ||
+                        (preferences.skills === 'technical' && prof.skills.includes('تقنية'))) {
+                        score += 20;
+                    }
+                }
+                
+                // مطابقة الخبرة
+                if (preferences.experience === 'senior' && prof.experience.includes('+5')) score += 20;
+                    else if (preferences.experience === 'mid' && prof.experience.includes('+2')) score += 15;
+                    else if (preferences.experience === 'junior' && prof.experience.includes('+1')) score += 10;
+                    else if (preferences.experience === 'entry' && prof.experience.includes('0')) score += 5;
+
+// مطابقة الطلب
+                if (preferences.demand === 'high' && prof.demand === 'مرتفع جدًا') score += 20;
+                    else if (preferences.demand === 'medium' && prof.demand === 'مرتفع') score += 15;
+                    else if (preferences.demand === 'any') score += 5;
+                return {
+                    ...prof,
+                    matchPercent: Math.min(100, Math.round(score))
+                };
+            });
+            
+            // تصفية وترتيب النتائج
+            return scoredProfessions
+                .filter(prof => prof.matchPercent >= 50)
+                .sort((a, b) => b.matchPercent - a.matchPercent)
+                .slice(0, 3); // أفضل 5 نتائج فقط
+        }
+        // دالة لعرض تفاصيل التخصص في نافذة منبثقة
+        function showMajorDetails(major) {
+            const modal = document.getElementById('detailsModal');
+    const title = document.getElementById('modalTitle');
+    const content = document.getElementById('modalContent');
+    const category = document.getElementById('modalCategory');
+
+    title.textContent = major.name;
+    category.textContent = major.field;
+    
+    const jobsList = major.relatedJobs.map(job => `
+        <li>${job.title} <span class="job-salary">${job.salary}</span></li>
+    `).join('');
+    
+    content.innerHTML = `
+        <div class="stats-grid">
+            <div class="stat-item">
+                <span>فرص العمل</span>
+                ${major.jobo}
+            </div>
+            <div class="stat-item">
+                <span>عدد الوظائف</span>
+                ${major.relatedJobs.length}
+            </div>
+            <div class="stat-item">
+                <span>السنوات الدراسية</span>
+                ${major.duration}
+            </div>
+            <div class="stat-item">
+                <span>متوسط عدد الساعات الدراسية</span>
+                ${major.mid}
+            </div>
+        </div>
+        <h3 style="margin: 1.5rem 0; color: var(--primary);">وصف التخصص</h3>
+        <p>${major.description}</p>
+        ${major.relatedJobs ? `
+                <h3 style="margin: 1.5rem 0; color: var(--primary);">اشهر المهن المرتبطة</h3>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                    ${major.relatedJobs.map(relatedJobs => `
+                        <span style="background: rgba(58,175,169,0.1); color: var(--secondary); padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.9rem;">
+                            ${relatedJobs}
+                        </span>
+                    `).join('')}
+                </div>
+                ` : ''}
+            `;
+
+    modal.style.display = 'flex';
+        }
+        // العودة إلى الصفحة الرئيسية
+        function goToHome() {
+            document.getElementById('quizWelcome').style.display = 'block';
+            document.getElementById('quizQuestions').style.display = 'none';
+            document.getElementById('quizResults').style.display = 'none';
+            
+            // إظهار قسم الوظائف
+            document.querySelectorAll('section').forEach(section => {
+                section.style.display = 'none';
+            });
+            document.getElementById('jobs').style.display = 'block';
+            
+            // تحديث الروابط النشطة
+            document.querySelectorAll('.nav-link').forEach(navLink => {
+                navLink.classList.remove('active');
+            });
+            document.querySelector('.nav-link[href="#jobs"]').classList.add('active');
+        }
+
+        function linkSearchTypeToView(type) {
+            resetFilters();
+        currentSearchType = type;
+        const searchInput = document.getElementById('searchInput');
+        document.getElementById('mainSearchResults').style.display = 'none'; // إخفاء نتائج البحث القديمة
+    // تحديث الـ placeholder حسب النوع
+        if(type === 'jobs') {
+            searchInput.placeholder = "ابحث عن مهنة...";
+        } else {
+            searchInput.placeholder = "ابحث عن تخصص...";
+        }
+        
+
+
+        // تحديث الأزرار النشطة
+        document.querySelectorAll('.search-type').forEach(btn => {
+            btn.classList.toggle('active', btn.dataset.type === type);
+        });
+    
+        // تحديث أزرار القسم الرئيسي
+        document.getElementById('showProfessionsBtn').classList.toggle('active', type === 'jobs');
+        document.getElementById('showMajorsBtn').classList.toggle('active', type === 'majors');
+        
+        // إظهار/إخفاء المحتوى
+        document.getElementById('professionsContainer').style.display = type === 'jobs' ? 'grid' : 'none';
+        document.getElementById('majorsContainer').style.display = type === 'majors' ? 'grid' : 'none';
+        
+        // إعادة البحث إذا كان هناك نص
+        const searchQuery = document.getElementById('searchInput').value.trim();
+        if (searchQuery) {
+            const results = performSearch(searchQuery, type);
+            displaySearchResults(results);
+        }
+    }
+
+
+    function performSearch(query, type) {
+        const normalizedQuery = query.trim().toLowerCase();
+        const checkboxes = document.querySelectorAll('#jobFieldsFilter input[type="checkbox"]:checked');
+        const selectedCategories = Array.from(checkboxes).map(cb => cb.value);
+        const isFiltering = selectedCategories.length > 0;
+        const relatedCategories = selectedCategories.flatMap(filter => getCategoriesForFilter(filter));
+    
+        let results = { professions: [], majors: [] };
+    
+        if (type === 'jobs') {
+            results.professions = professions.filter(prof => {
+                const matchesQuery = 
+                    prof.title.toLowerCase().includes(normalizedQuery) ||
+                    prof.summarize.toLowerCase().includes(normalizedQuery) ||
+                    prof.avgSalary.toLowerCase().includes(normalizedQuery);
+                const matchesFilter = !isFiltering || relatedCategories.includes(prof.category);
+                return matchesQuery && matchesFilter;
+            });
+        } else {
+            results.majors = majors.filter(major => {
+                const matchesQuery = 
+                    major.name.toLowerCase().includes(normalizedQuery) ||
+                    major.summarize.toLowerCase().includes(normalizedQuery) ||
+                    major.description.toLowerCase().includes(normalizedQuery);
+                const matchesFilter = !isFiltering || relatedCategories.includes(major.field);
+                return matchesQuery && matchesFilter;
+            });
+        }
+    
+        return results;
+    }
+function scrollToResults() {
+    const mainSearchResults = document.getElementById('mainSearchResults');
+    const navbarHeight = document.querySelector('.navbar').offsetHeight;
+
+    if (mainSearchResults) {
+        window.scrollTo({
+            top: mainSearchResults.offsetTop - navbarHeight - 20,
+            behavior: 'smooth'
+        });
+    }
+}
+
+function displaySearchResults(results) {
+    const searchResults = document.getElementById('searchResults');
+    searchResults.innerHTML = '';
+
+    const currentNavLink = document.querySelector('.nav-links .nav-link.active');
+    const currentSection = currentNavLink ? currentNavLink.getAttribute('href') : '';
+
+    // تحقق إذا كانت لا توجد نتائج
+    if (results.professions.length === 0 && results.majors.length === 0) {
+        searchResults.innerHTML = '<p style="text-align: center; color: #666; padding: 1rem;">لا توجد نتائج مطابقة</p>';
+        searchResults.style.display = 'block';
+        scrollToResults();
+        return;
+    }
+
+    // عرض النتائج في القائمة المنسدلة إذا لم نكن في قسم المهن والتخصصات
+    if (currentSection !== '#jobs') {
+        results.professions.forEach(profession => {
+            const item = document.createElement('div');
+            item.className = 'search-result-item';
+            item.innerHTML = `
+                <h4>${profession.title}</h4>
+                <p>${profession.summarize}</p>
+            `;
+            item.addEventListener('click', () => showDetails(profession));
+            searchResults.appendChild(item);
+        });
+
+        results.majors.forEach(major => {
+            const item = document.createElement('div');
+            item.className = 'search-result-item';
+            item.innerHTML = `
+                <h4>${major.name}</h4>
+                <p>${major.summarize}</p>
+            `;
+            item.addEventListener('click', () => showMajorDetails(major));
+            searchResults.appendChild(item);
+        });
+
+        searchResults.style.display = 'block';
+    } else {
+        searchResults.style.display = 'none';
+        // عرض النتائج في الحاويات الرئيسية
+        if (currentSearchType === 'jobs') {
+            renderProfessions(results.professions);
+        } else {
+            renderMajors(results.majors);
+        }
+    }
+
+    scrollToResults();
+}
+
+
+   // حدث موحد لجميع الأزرار
+document.querySelectorAll('.search-type, #showProfessionsBtn, #showMajorsBtn').forEach(btn => {
+    btn.addEventListener('click', function() {
+        const type = this.dataset.type || (this.id === 'showMajorsBtn' ? 'majors' : 'jobs');
+        linkSearchTypeToView(type);
+    });
+});
+//فلاتر
+const checkboxes = document.querySelectorAll('#jobs input[type="checkbox"]');
+checkboxes.forEach(checkbox => {
+    checkbox.checked = false;
+});
+
+// دالة جديدة لعرض التخصصات
+function renderMajorsResults(majors) {
+    const container = document.getElementById('majorsContainer');
+    container.innerHTML = ''; // نمسح المحتوى القديم
+    
+    majors.forEach(major => {
+        const card = `
+            <div class="profession-card">
+                <div class="category-tag">${major.field}</div>
+                <h3>${major.name}</h3>
+                <p>ملخص التخصص : ${major.summarize}</p>
+                <div class="salary-info">
+                    <span>السنوات الدراسية :</span>
+                    <span class="highlight">${major.duration}</span>
+                </div>
+            </div>
+        `;
+        container.innerHTML += card;
+    });
+}
+function clearFilters() {
+    // إعادة تعيين الفلاتر إذا كانت موجودة
+    const checkboxes = document.querySelectorAll('#jobs input[type="checkbox"]');
+    checkboxes.forEach(checkbox => {
+        checkbox.checked = false;
+    });
+    
+    // إعادة عرض البيانات الأصلية
+    if (currentSearchType === 'jobs') {
+        renderProfessions(professions);
+    } else {
+        renderMajors(majors);
+    }
+}
+const searchInput = document.getElementById('searchInput');
+if (searchInput) {
+    searchInput.addEventListener('input', () => {
+        onFilterChange();
+        document.getElementById('mainSearchResults').style.display = searchInput.value.trim() ? 'block' : 'none';
+        document.getElementById('searchQueryText').innerText = searchInput.value.trim();
+    });
+}
+let timeout;
+searchInput.addEventListener('input', (e) => {
+    clearTimeout(timeout);
+    timeout = setTimeout(() => {
+        const query = e.target.value.trim();
+        // ...perform search
+    }, 300);
+});
+// إخفاء النافذة عند النقر خارجها
+document.addEventListener('click', (e) => {
+    const searchContainer = document.querySelector('.search-container');
+    const searchResults = document.getElementById('searchResults');
+    
+    if (!searchContainer.contains(e.target)) {
+        searchResults.style.display = 'none';
+    }
+});
+function onFilterChange() {
+    const query = document.getElementById('searchInput').value.trim().toLowerCase();
+    const checkboxes = document.querySelectorAll('#jobFieldsFilter input[type="checkbox"]:checked');
+    const selectedCategories = Array.from(checkboxes).map(cb => cb.value);
+    const isFiltering = selectedCategories.length > 0;
+    const dataSource = currentSearchType === 'jobs' ? professions : majors;
+
+    // الخطوة 1: تصفية البيانات بناءً على نص البحث
+    let filteredResults = dataSource.filter(item => {
+        const title = (item.title || item.name || '').toLowerCase();
+        const description = (item.description || item.summarize || '').toLowerCase();
+        return !query || title.includes(query) || description.includes(query);
+    });
+
+    // الخطوة 2: تصفية النتائج بناءً على الفلاتر إذا كانت موجودة
+    if (isFiltering) {
+        const relatedCategories = selectedCategories.flatMap(filter => getCategoriesForFilter(filter));
+        filteredResults = filteredResults.filter(item => {
+            const category = item.category || item.field || '';
+            return relatedCategories.every(cat => category === cat);
+        });
+    }
+
+    // الخطوة 3: عرض النتائج
+    if (currentSearchType === 'jobs') {
+        renderProfessions(filteredResults);
+    } else {
+        renderMajors(filteredResults);
+    }
+
+    // تحديث نتائج البحث الرئيسية
+    const mainSearchResults = document.getElementById('mainSearchResults');
+    mainSearchResults.style.display = filteredResults.length > 0 && query ? 'block' : 'none';
+    document.getElementById('searchQueryText').innerText = query;
+
+    // إخفاء قائمة البحث المنسدلة إذا كنت في قسم المهن والتخصصات
+    const currentSection = document.querySelector('.nav-link.active')?.getAttribute('href') || '';
+    if (currentSection === '#jobs') {
+        document.getElementById('searchResults').style.display = 'none';
+    }
+}
+
+// Modify search event to trigger onFilterChange after typing
+// أضف هذه الدالة في قسم الـ Script
+function restartQuiz() {
+    // 1. إعادة تعيين جميع المتغيرات
+    currentQuestion = 0;
+    quizAnswers = [];
+    // 2. إعادة تنسيق العناصر
+    document.getElementById('quizWelcome').style.display = 'block';
+    document.getElementById('quizQuestions').style.display = 'none';
+    document.getElementById('quizResults').style.display = 'none';
+    // 3. إعادة تعيين جميع خيارات الأسئلة
+    const options = document.querySelectorAll('.quiz-option');
+    options.forEach(option => {
+        option.classList.remove('selected');
+    });
+    // 4. التمرير إلى الأعلى بسلاسة
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+    // 5. إعادة تعيين شريط التقدم
+    document.getElementById('quizProgressBar').style.width = '0%';
+}
+function resetFilters() {
+    // 1. إلغاء تحديد جميع الـ checkboxes
+    const checkboxes = document.querySelectorAll('#jobFieldsFilter input[type="checkbox"]');
+    checkboxes.forEach(checkbox => {
+        checkbox.checked = false;
+    });
+
+    // 2. إزالة الكلاس active من جميع الفلاتر (باستثناء أزرار العرض)
+    const activeFilters = document.querySelectorAll('.filter-item.active:not(#showProfessionsBtn):not(#showMajorsBtn)');
+    activeFilters.forEach(filter => {
+        filter.classList.remove('active');
+    });
+}
+  
+
+</script>
+
+
+</body>
+</html>
