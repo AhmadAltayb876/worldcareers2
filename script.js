@@ -359,50 +359,65 @@ let currentSearchType = 'jobs'; // القيمة الافتراضية
             if (window.location.hash === '#best-jobs') {
                 activeFilter = 'best';
                 const bestFilterBtn = document.querySelector('#best-jobs .filter-item[data-filter="best"]');
-                if (bestFilterBtn) bestFilterBtn.classList.add('active');
+                if (bestFilterBtn) document.getElementById('showProfessionsBtn').classList.add('active');
                 applyFilters();
             }
             // تفعيل الفلتر الافتراضي إذا كان القسم النشط هو Best Jobs
-            if (window.location.hash === '#best-jobs') {
-                activeFilter = 'best';
-                const bestFilterBtn = document.querySelector('#best-jobs .filter-item[data-filter="best"]');
-                if (bestFilterBtn) bestFilterBtn.classList.add('active');
-                applyFilters();
+            if (window.location.hash === '#com/hunt') {
+                document.getElementById('compareJobsBtn').classList.add('.nav-link.active')
+                setCompareType();
             }
         });
         // التحكم في عرض الأقسام عند النقر على الروابط
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                // إخفاء جميع الأقسام
-                document.querySelectorAll('section').forEach(section => {
-                    section.style.display = 'none';
-                });
-                // إظهار الهيدر الأزرق في جميع الأقسام بما فيها Best Jobs
-                document.querySelector('.header').style.display = 'block';
-                // إزالة الفئة النشطة من جميع الروابط
-                // إزالة الفئة النشطة من جميع روابط التنقل فقط
-                document.querySelectorAll('.nav-link').forEach(navLink => {
-                    navLink.classList.remove('active');
-                });
-                // إضافة الفئة النشطة للرابط الذي ضغط عليه المستخدم
-                    this.classList.add('active');
-                // عرض القسم المحدد
-                const targetId = this.getAttribute('href').substring(1);
-                document.getElementById(targetId).style.display = 'block';
-                // إذا كان القسم المحدد هو Best Jobs، نطبق الفلتر الافتراضي
-                if(targetId === 'best-jobs') {
-                    setTimeout(() => {
-                        applyFilters();
-                    }, 0);
-                }
-                // إذا كان القسم المحدد هو Jobs and Careers، نعيد عرض البطاقات
-                if(targetId === 'jobs') {
-                    renderProfessions(professions);
-                }
-                resetFilters();
-            });
+        // التحكم في عرض الأقسام عند النقر على الروابط
+document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', function(e) {
+        e.preventDefault();
+        // إخفاء جميع الأقسام
+        document.querySelectorAll('section').forEach(section => {
+            section.style.display = 'none';
         });
+        // إظهار الهيدر الأزرق في جميع الأقسام بما فيها Best Jobs
+        document.querySelector('.header').style.display = 'block';
+        // إزالة الفئة النشطة من جميع روابط التنقل
+        document.querySelectorAll('.nav-link').forEach(navLink => {
+            navLink.classList.remove('active');
+        });
+        // إضافة الفئة النشطة للرابط الذي ضغط عليه المستخدم
+        this.classList.add('active');
+        // عرض القسم المحدد
+        const targetId = this.getAttribute('href').substring(1);
+        document.getElementById(targetId).style.display = 'block';
+
+        // إعادة تعيين الفلاتر والأزرار الافتراضية بناءً على القسم
+        if (targetId === 'best-jobs') {
+            // تفعيل زر "مهن ذهبية" افتراضياً
+            activeFilter = 'best';
+            const bestFilterBtn = document.querySelector('#best-jobs .filter-item[data-filter="best"]');
+            if (bestFilterBtn) {
+                // إضافة الكلاس active لزر "مهن ذهبية"
+                bestFilterBtn.classList.add('active');
+            }
+            setTimeout(() => {
+                applyFilters();
+            }, 0);
+        } else if (targetId === 'com/hunt') {
+            // تفعيل زر "مقارنة المهن" افتراضياً
+            setCompareType('jobs');
+            const compareJobsBtn = document.getElementById('compareJobsBtn');
+            if (compareJobsBtn) {
+                // إزالة الكلاس active من زر مقارنة التخصصات
+                document.getElementById('compareMajorsBtn').classList.remove('active');
+                // إضافة الكلاس active لزر مقارنة المهن
+                compareJobsBtn.classList.add('active');
+            }
+        } else if (targetId === 'jobs') {
+            renderProfessions(professions);
+        }
+        resetFilters();
+    });
+});
+
         // تهيئة وظيفة البحث
         function initSearch() {
             const searchResults = document.getElementById('searchResults');
@@ -1298,9 +1313,8 @@ let currentSearchType = 'jobs'; // القيمة الافتراضية
         let selectedItem2 = null;
 
         // تعيين نوع المقارنة
-        function setCompareType(type) {
+        function setCompareType(type = 'jobs') { // تعيين 'jobs' كقيمة افتراضية
             compareType = type;
-            
             // تحديث الأزرار النشطة
             document.getElementById('compareJobsBtn').classList.toggle('active', type === 'jobs');
             document.getElementById('compareMajorsBtn').classList.toggle('active', type === 'majors');
@@ -2056,6 +2070,7 @@ function calculateCompatibility(prof, prefs) {
         }
 
         function linkSearchTypeToView(type) {
+            resetFilters();
         currentSearchType = type;
         const searchInput = document.getElementById('searchInput');
         document.getElementById('mainSearchResults').style.display = 'none'; // إخفاء نتائج البحث القديمة
@@ -2087,7 +2102,6 @@ function calculateCompatibility(prof, prefs) {
             const results = performSearch(searchQuery, type);
             displaySearchResults(results);
         }
-        resetFilters();
     }
 
 
