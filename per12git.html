@@ -821,7 +821,7 @@
     }
     
     /* ترتيب العناصر كما تريد */
-    .nav-link[href="#com/hunt"] { order: 3; }
+    .nav-link[href="#compare"] { order: 3; }
     .nav-link[href="#best-jobs"] { order: 2; }
     .nav-link[href="#jobs"] { order: 1; }
     .nav-link[href="#about"] { order: 4}
@@ -881,7 +881,7 @@
     padding: 1.5rem;
     margin: 0.5rem;
     }
-   
+    
     #best-jobs .stats-grid {
     grid-template-columns: 1fr;
     gap: 0.8rem;
@@ -1031,52 +1031,88 @@
     margin-left: 0.3rem; /* تعديل مسافة الأيقونة */
     }
     }
-    @media (max-width: 480px) {
     
-    }
+    
     /* أنماط قسم المقارنة */
-    #com\/hunt .filter-item {
-    background: white;
-    padding: 0.8rem 1.5rem;
-    border-radius: 25px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    border: 2px solid var(--primary);
-    flex: 1;
-    text-align: center;
-    margin: 0;
+    #compare .filter-item {
+        background: white;
+        padding: 0.8rem 1.5rem;
+        border-radius: 25px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        border: 2px solid var(--primary);
+        flex: 1;
+        text-align: center;
+        margin: 0;
     }
     
-    #com\/hunt .filter-item.active {
-    background: var(--primary);
-    color: white;
+    #compare .filter-item.active {
+        background: var(--primary);
+        color: white;
     }
     
-    #com\/hunt table {
-    margin: 1rem 0;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    #compare table {
+        margin: 1rem 0;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     }
     
-    #com\/hunt th, #com\/hunt td {
-    padding: 0.8rem 1rem;
-    border: 1px solid #eee;
-    text-align: right;
+    #compare th, #compare td {
+        padding: 0.8rem 1rem;
+        border: 1px solid #eee;
+        text-align: right;
     }
     
-    #com\/hunt tr:nth-child(even) {
-    background-color: #f9f9f9;
+    #compare tr:nth-child(even) {
+        background-color: #f9f9f9;
     }
     
-    #com\/hunt tr:hover {
-    background-color: #f1f1f1;
+    #compare tr:hover {
+        background-color: #f1f1f1;
     }
     
     .compare-detail-card {
-    background: white;
-    padding: 1.5rem;
-    border-radius: 10px;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        background: white;
+        padding: 1.5rem;
+        border-radius: 10px;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.1);
     }
+    
+    .compare-detail-card h4 {
+        color: var(--primary);
+        margin-bottom: 1rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 2px solid var(--secondary);
+    }
+    
+    .compare-winner {
+        background-color: rgba(58, 175, 169, 0.1) !important;
+        position: relative;
+    }
+    
+    .compare-winner::after {
+        content: "✓ الأفضل";
+        position: absolute;
+        left: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: var(--secondary);
+        color: white;
+        padding: 0.2rem 0.5rem;
+        border-radius: 15px;
+        font-size: 0.8rem;
+    }
+    
+    @media (max-width: 768px) {
+        #compare .content-card > div > div {
+            grid-template-columns: 1fr !important;
+        }
+        
+        #compare .compare-detail-card {
+            margin-bottom: 1rem;
+        }
+    }
+    
+    
     /* أنماط أزرار التبديل بين المهن والتخصصات */
     #jobs .filter-item {
     background: white;
@@ -1105,40 +1141,6 @@
     #jobs .filter-item.active:hover {
     background: var(--primary);
     opacity: 0.9;
-    }
-    .compare-detail-card h4 {
-    color: var(--primary);
-    margin-bottom: 1rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 2px solid var(--secondary);
-    }
-    
-    .compare-winner {
-    background-color: rgba(58, 175, 169, 0.1) !important;
-    position: relative;
-    }
-    
-    .compare-winner::after {
-    content: "✓ الأفضل";
-    position: absolute;
-    left: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    background: var(--secondary);
-    color: white;
-    padding: 0.2rem 0.5rem;
-    border-radius: 15px;
-    font-size: 0.8rem;
-    }
-    
-    @media (max-width: 768px) {
-    #com\/hunt .content-card > div > div {
-    grid-template-columns: 1fr !important;
-    }
-    
-    #com\/hunt .compare-detail-card {
-    margin-bottom: 1rem;
-    }
     }
     
     /* أنماط الاختبار المهني */
@@ -1343,26 +1345,14 @@
     to { opacity: 1; transform: translateY(0); }
     }
     
-    /* تعديلات التخطيط لقسم المقارنة والاختبار */
-    .compare-quiz-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    }
     
-    @media (max-width: 1024px) {
-    .compare-quiz-container {
-    grid-template-columns: 1fr;
-    }
-    }
     
     
     
     .search-container {
-    position: relative;
-    flex: 1;
+        position: relative;
+        flex: 1;
         max-width: 100%;
-      
         margin: 0 1rem;
     }
     
@@ -1442,9 +1432,6 @@
     @media (max-width: 480px) {
     .search-results-title {
     font-size: 0.2rem;
-    
-    
-    
     }
     .search-results {
     max-height: 60vh;
@@ -1703,75 +1690,7 @@
     }
     }
     /* داخل media query للشاشات الصغيرة */
-    @media (max-width: 768px) {
-    #com\/hunt .compare-quiz-container > div {
-    grid-template-columns: 1fr !important;
-    gap: 1.5rem;
-    }
-    }
-    #com\/hunt table {
-    width: 100%;
-    min-width: 800px; /* حد أدنى للعرض */
-    table-layout: fixed;
-    }
     
-    #com\/hunt th, 
-    #com\/hunt td {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    padding: 1rem;
-    }
-    #com\/hunt .search-container {
-    max-width: 100%;
-    margin: 0;
-    }
-    
-    #com\/hunt .search-input {
-    width: 100%;
-    padding: 1rem;
-    }
-    
-    #com\/hunt #compareBtn {
-    width: 100%;
-    max-width: 300px;
-    padding: 1rem;
-    font-size: 1.1rem;
-    }
-    #com\/hunt .content-card {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 2rem;
-    }
-    
-    #com\/hunt .compare-quiz-container {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2rem;
-    }
-    @media (max-width: 480px) {
-    #com\/hunt .filter-item {
-    font-size: 0.9rem;
-    padding: 0.8rem;
-    }
-    
-    #com\/hunt table {
-    font-size: 0.9rem;
-    }
-    
-    #com\/hunt .compare-detail-card {
-    padding: 1rem;
-    }
-    }
-    #com\/hunt .compare-detail-card {
-    transition: transform 0.3s ease;
-    border: 2px solid var(--light);
-    }
-    
-    #com\/hunt .compare-detail-card:hover {
-    transform: translateY(-5px);
-    border-color: var(--primary);
-    }
     /* تحسينات عامة للاختبار */
     .quiz-container {
     background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
@@ -2400,11 +2319,11 @@
       .modal-content {
     max-height: 90vh;
     overflow-y: auto;
-}
-
-/* أضف هذه الأنماط في قسم الـ CSS */
-
-#best-jobs .profession-card {
+    }
+    
+    /* أضف هذه الأنماط في قسم الـ CSS */
+    
+    #best-jobs .profession-card {
     background: linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%);
     border-radius: 20px;
     padding: 2rem;
@@ -2414,14 +2333,14 @@
     position: relative;
     overflow: visible;
     margin-bottom: 1.5rem;
-}
-
-#best-jobs .profession-card:hover {
+    }
+    
+    #best-jobs .profession-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 12px 40px rgba(10, 132, 255, 0.15);
-}
-
-#best-jobs .profession-card::after {
+    }
+    
+    #best-jobs .profession-card::after {
     content: "";
     position: absolute;
     bottom: -10px;
@@ -2432,17 +2351,17 @@
     filter: blur(15px);
     z-index: -1;
     transition: all 0.3s ease;
-}
-
-#best-jobs .profession-card h3 {
+    }
+    
+    #best-jobs .profession-card h3 {
     color: var(--primary);
     font-size: 1.5rem;
     margin-bottom: 1.2rem;
     position: relative;
     padding-bottom: 0.8rem;
-}
-
-#best-jobs .profession-card h3::after {
+    }
+    
+    #best-jobs .profession-card h3::after {
     content: "";
     position: absolute;
     bottom: 0;
@@ -2451,54 +2370,54 @@
     height: 3px;
     background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
     border-radius: 2px;
-}
-
-#best-jobs .stats-grid {
+    }
+    
+    #best-jobs .stats-grid {
     grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
     gap: 1.2rem;
     margin: 1.5rem 0;
-}
-
-#best-jobs .stat-item {
+    }
+    
+    #best-jobs .stat-item {
     background: rgba(255, 255, 255, 0.9);
     border: 1px solid rgba(10, 132, 255, 0.1);
     backdrop-filter: blur(5px);
     padding: 1.2rem;
     border-radius: 12px;
-}
-
-#best-jobs .specialties-list li {
+    }
+    
+    #best-jobs .specialties-list li {
     padding: 0.6rem 1rem;
     margin: 0.4rem 0;
     background: rgba(58, 175, 169, 0.05);
     border-radius: 8px;
     transition: all 0.2s ease;
-}
-
-#best-jobs .specialties-list li:hover {
+    }
+    
+    #best-jobs .specialties-list li:hover {
     background: rgba(58, 175, 169, 0.1);
     transform: translateX(5px);
-}
-
-#best-jobs .demand-bar {
+    }
+    
+    #best-jobs .demand-bar {
     height: 10px;
     border-radius: 5px;
     background: rgba(10, 132, 255, 0.1);
-}
-
-#best-jobs .demand-fill {
+    }
+    
+    #best-jobs .demand-fill {
     border-radius: 5px;
     background: linear-gradient(90deg, var(--secondary) 0%, var(--primary) 100%);
-}
-
-#best-jobs .growth-rate {
+    }
+    
+    #best-jobs .growth-rate {
     font-size: 0.95rem;
     padding: 0.5rem 1rem;
     background: rgba(58, 175, 169, 0.1);
     border-radius: 20px;
-}
-
-@media (max-width: 768px) {
+    }
+    
+    @media (max-width: 768px) {
     #best-jobs .profession-card {
         padding: 1.5rem;
         margin: 0 0 1rem 0;
@@ -2511,14 +2430,14 @@
     #best-jobs .stats-grid {
         grid-template-columns: 1fr;
     }
-}
-/* التعديلات الجديدة */
-#best-jobs .professions-grid {
+    }
+    /* التعديلات الجديدة */
+    #best-jobs .professions-grid {
     grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
     gap: 2.5rem;
-}
-
-#best-jobs .profession-card {
+    }
+    
+    #best-jobs .profession-card {
     background: linear-gradient(145deg, #ffffff 0%, #f8faff 100%);
     border-radius: 24px;
     padding: 2.5rem;
@@ -2529,16 +2448,16 @@
     transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
     position: relative;
     overflow: visible;
-}
-
-#best-jobs .profession-card:hover {
+    }
+    
+    #best-jobs .profession-card:hover {
     transform: translateY(-8px) scale(1.02);
     box-shadow: 
         0 16px 40px rgba(10, 132, 255, 0.15),
         0 8px 20px rgba(58, 175, 169, 0.1);
-}
-
-#best-jobs .profession-card::before {
+    }
+    
+    #best-jobs .profession-card::before {
     content: "";
     position: absolute;
     top: -2px;
@@ -2552,22 +2471,22 @@
     border-radius: 26px;
     opacity: 0;
     transition: opacity 0.3s ease;
-}
-
-#best-jobs .profession-card:hover::before {
+    }
+    
+    #best-jobs .profession-card:hover::before {
     opacity: 1;
-}
-
-/* تحسين العنوان */
-#best-jobs .profession-card h3 {
+    }
+    
+    /* تحسين العنوان */
+    #best-jobs .profession-card h3 {
     color: var(--primary);
     font-size: 1.6rem;
     margin-bottom: 1.5rem;
     position: relative;
     padding-bottom: 1rem;
-}
-
-#best-jobs .profession-card h3::after {
+    }
+    
+    #best-jobs .profession-card h3::after {
     content: "";
     position: absolute;
     bottom: 0;
@@ -2578,10 +2497,10 @@
         var(--primary) 0%, 
         var(--secondary) 100%);
     border-radius: 4px;
-}
-
-/* تحسين الأزرار والعلامات */
-#best-jobs .filter-item {
+    }
+    
+    /* تحسين الأزرار والعلامات */
+    #best-jobs .filter-item {
     padding: 1rem 2rem;
     border-radius: 32px;
     border: 2px solid var(--primary);
@@ -2590,9 +2509,9 @@
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
-}
-
-#best-jobs .filter-item::before {
+    }
+    
+    #best-jobs .filter-item::before {
     content: "";
     position: absolute;
     top: 0;
@@ -2605,43 +2524,44 @@
     opacity: 0;
     transition: opacity 0.3s ease;
     z-index: -1;
-}
-
-#best-jobs .filter-item.active {
+    }
+    
+    #best-jobs .filter-item.active {
     color: white;
     border-color: transparent;
-}
-
-#best-jobs .filter-item.active::before {
+    }
+    
+    #best-jobs .filter-item.active::before {
     opacity: 1;
-}
-
-#best-jobs .filter-item:hover {
+    }
+    
+    #best-jobs .filter-item:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(10, 132, 255, 0.15);
-}
-
-
-/* تحسين شريط الطلب */
-#best-jobs .demand-bar {
+    }
+    
+    
+    /* تحسين شريط الطلب */
+    #best-jobs .demand-bar {
     height: 12px;
     border-radius: 8px;
     background: rgba(10, 132, 255, 0.1);
-}
-
-#best-jobs .demand-fill {
+    }
+    
+    #best-jobs .demand-fill {
     border-radius: 8px;
     background: linear-gradient(90deg, 
         var(--secondary) 0%, 
         var(--primary) 100%);
     box-shadow: 0 2px 8px rgba(58, 175, 169, 0.3);
-}
-
-/* تعديلات الاستجابة */
-@media (max-width: 768px) {
+    }
+    
+    /* تعديلات الاستجابة */
+    @media (max-width: 768px) {
     #best-jobs .professions-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem;
+        
     }
     
     #best-jobs .profession-card {
@@ -2657,7 +2577,8 @@
         padding: 0.8rem 1.5rem;
         font-size: 0.95rem;
     }
-}
+    }
+    
 </style>
 
 </head>
