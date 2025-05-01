@@ -443,6 +443,7 @@
     .modal-content {
         background: white;
         padding: 2.5rem;
+        max-height: 90vh;
         border-radius: 20px;
         max-width: 600px;
         width: 90%;
@@ -683,14 +684,20 @@
         font-size: 1.2rem;
         }
     }
-    @media (max-height: 840px) {
+    @media (min-width: 587px) {
+        .modal-content {
+            overflow-y:hidden;
+        }
+
+
+
+    }
+    @media (max-height: 768px) {
         .modal-content {
             width: 95%;
             max-height: 90vh;
-            overflow-y: auto;
             padding-top: 0.3rem;   
-            padding: 0.5rem;
-            
+            overflow-x:hidden;
         }
         .close-btn {
             font-size: 3rem;
@@ -2316,10 +2323,6 @@
           font-size: 0.9rem !important;
         }
       }
-      .modal-content {
-    max-height: 90vh;
-    overflow-y: auto;
-    }
     
     /* أضف هذه الأنماط في قسم الـ CSS */
     
