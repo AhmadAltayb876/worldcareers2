@@ -338,6 +338,9 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     // تفعيل البحث
     document.getElementById('searchInput').addEventListener('input', function(e) { 
+        // تصفير الفلاتر عند أول إدخال
+        resetFilters();
+        document.querySelector('.filter-container').style.display = 'none'; // إخفاء الفلاتر
         const currentSection = document.querySelector('.nav-link.active').getAttribute('href');
         if (currentSection !== '#jobs') {
             // السلوك الطبيعي للأقسام الأخرى
@@ -434,7 +437,7 @@ function initSearch() {
             }
             const results = performSearch(query, currentSearchType);
             displaySearchResults(results);
-        }, 100); // تأخير 300 مللي ثانية
+        }); // تأخير 300 مللي ثانية
     });
     searchInput.addEventListener('input', function() {
         const queryLower = this.value.trim().toLowerCase();
@@ -503,6 +506,7 @@ window.scrollTo({
         document.getElementById('majorsContainer').style.display = 'grid';
         renderMajors(majors);
     }
+    document.querySelector('.filter-container').style.display = 'block'; // إظهار الفلاتر بعد مسح البحث
 }
 // دالة لعرض تفاصيل المهنة من نتائج البحث
 function showProfessionDetails(title) {
@@ -1107,27 +1111,27 @@ requiredSpecialties: [
 "التعامل مع الكاشير",
 "العمل ضمن فريق"
 ]
- },
+},
 
     // للمبتدئين (Entry-Level Friendly)
     {
-         title: "مساعد إداري (Administrative Assistant)",
-         jobType: "entry",
-         industry: "" ,
-          description: "دعم إداري وتنظيمي للمكاتب.", 
-          avgSalary: "40,000 - 60,000 دولار",
-           demand: "مرتفع", 
-           category: "إدارة",
-            experience: "13 سنوات",
-             growthRate: "5%",
-           requiredSpecialties: [
-"تنظيم الملفات",
-"إدارة المواعيد",
-"التواصل الفعال",
-"إجادة برامج الأوفيس",
-"تحضير التقارير",
-"إدارة البريد الإلكتروني"
-]
+        title: "مساعد إداري (Administrative Assistant)",
+        jobType: "entry",
+        industry: "" ,
+        description: "دعم إداري وتنظيمي للمكاتب.", 
+        avgSalary: "40,000 - 60,000 دولار",
+        demand: "مرتفع", 
+        category: "إدارة",
+        experience: "13 سنوات",
+        growthRate: "5%",
+        requiredSpecialties: [
+            "تنظيم الملفات",
+            "إدارة المواعيد",
+            "التواصل الفعال",
+            "إجادة برامج الأوفيس",
+            "تحضير التقارير",
+            "إدارة البريد الإلكتروني"
+        ]
          },
 
 {
@@ -2295,6 +2299,7 @@ searchResults.style.display = 'none';
 }
 });
 function onFilterChange() {
+
 const query = document.getElementById('searchInput').value.trim().toLowerCase();
 const checkboxes = document.querySelectorAll('#jobFieldsFilter input[type="checkbox"]:checked');
 const selectedCategories = Array.from(checkboxes).map(cb => cb.value);
@@ -2360,15 +2365,13 @@ behavior: 'smooth'
 document.getElementById('quizProgressBar').style.width = '0%';
 }
 function resetFilters() {
-// 1. إلغاء تحديد جميع الـ checkboxes
-const checkboxes = document.querySelectorAll('#jobFieldsFilter input[type="checkbox"]');
-checkboxes.forEach(checkbox => {
-checkbox.checked = false;
-});
+document.querySelectorAll('input[type="checkbox"][data-filter]').forEach(cb => cb.checked = false);
 
-// 2. إزالة الكلاس active من جميع الفلاتر (باستثناء أزرار العرض)
-const activeFilters = document.querySelectorAll('.filter-item.active:not(#showProfessionsBtn):not(#showMajorsBtn)');
-activeFilters.forEach(filter => {
-filter.classList.remove('active');
-});
+const currentSection = document.querySelector('.nav-link.active').getAttribute('href');
+if (currentSection === '#jobs') {
+renderProfessions(professions);
+} else {
+renderMajors(majors);
 }
+}
+
