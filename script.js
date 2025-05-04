@@ -2160,6 +2160,17 @@ if (type === 'jobs') {
 
 return results;
 }
+function scrollToResults() {
+    const mainSearchResults = document.getElementById('mainSearchResults');
+    const navbarHeight = document.querySelector('.navbar').offsetHeight;
+
+    if (mainSearchResults) {
+        window.scrollTo({
+            top: mainSearchResults.offsetTop - navbarHeight - 20,
+            behavior: 'smooth'
+        });
+    }
+}
 function displaySearchResults(results) {
     const searchResults = document.getElementById('searchResults');
     searchResults.innerHTML = '';
