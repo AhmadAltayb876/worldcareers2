@@ -80,7 +80,7 @@
     <!-- في قسم navbar -->
     <div class="nav-links">
     <a class="nav-link" href="#about">عنا</a>
-    <a class="nav-link" href="#com/hunt">قارن </a>
+    <a class="nav-link" href="#compare">قارن </a>
     <a class="nav-link" href="#best-jobs">مهن ذهبية</a>
     
     <a class="nav-link active" href="#jobs">المهن و التخصصات</a> 
@@ -100,7 +100,7 @@
 <section class="content-section" id="best-jobs">
 <div class="filter-box">
 <div class="filter-group">
-<div class="filter-item" data-filter="best" onclick="toggleFilter(this, 'best')">
+<div class="filter-item active" data-filter="best" onclick="toggleFilter(this, 'best')">
               مهن ذهبية  <i class="fas fa-medal"></i>
 </div>
 <div class="filter-item" data-filter="profit" onclick="toggleFilter(this, 'profit')">
@@ -120,12 +120,12 @@
 <div class="professions-grid" id="bestJobsContainer"></div>
 </section>
 <!-- قسم compare / Hunt a job -->
-<section class="content-section" id="com/hunt">
+<section class="content-section" id="compare">
 <div class="content-card">
 <div class="compare-quiz-container">
 <!-- قسم المقارنة (الآن على اليسار) -->
 <div>
-<h3 style="color: var(--secondary); margin-bottom: 1rem;">مقارنة المهن</h3>
+  
 <div style="display: flex; gap: 1rem; margin-bottom: 1.5rem;">
 <button class="filter-item active" id="compareJobsBtn" onclick="setCompareType('jobs')">
                         مقارنة المهن <i class="fas fa-briefcase"></i>
@@ -135,23 +135,23 @@
 </button>
 </div>
 <!-- حقول إدخال البحث -->
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
-<div>
-<h4 style="color: var(--primary); margin-bottom: 0.5rem;">المادة الأولى</h4>
-<div class="search-container" style="position: relative;">
-<input autocomplete="off" class="search-input" id="compareInput1" placeholder="ابحث عن مهنة..." type="text"/>
-<button class="search-btn"><i class="fas fa-search"></i></button>
-<div class="search-results" id="compareResults1"></div>
-</div>
-</div>
-<div>
-<h4 style="color: var(--primary); margin-bottom: 0.5rem;">المادة الثانية</h4>
-<div class="search-container" style="position: relative;">
-<input autocomplete="off" class="search-input" id="compareInput2" placeholder="ابحث عن مهنة..." type="text"/>
-<button class="search-btn"><i class="fas fa-search"></i></button>
-<div class="search-results" id="compareResults2"></div>
-</div>
-</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
+    <div>
+        <h4 style="color: var(--primary); margin-bottom: 0.5rem;">المادة الأولى</h4>
+        <div class="search-container" style="position: relative;">
+            <input type="text" class="search-input" placeholder="ابحث عن مهنة..." id="compareInput1" autocomplete="off">
+            <button class="search-btn"><i class="fas fa-search"></i></button>
+            <div class="search-results" id="compareResults1"></div>
+        </div>
+    </div>
+    <div>
+        <h4 style="color: var(--primary); margin-bottom: 0.5rem;">المادة الثانية</h4>
+        <div class="search-container" style="position: relative;">
+            <input type="text" class="search-input" placeholder="ابحث عن مهنة..." id="compareInput2" autocomplete="off">
+            <button class="search-btn"><i class="fas fa-search"></i></button>
+            <div class="search-results" id="compareResults2"></div>
+        </div>
+    </div>
 </div>
 <button id="compareBtn" onclick="compareItems()" style="display: block; margin: 1.5rem auto 0; padding: 0.8rem 2rem; background: var(--primary); color: white; border: none; border-radius: 30px; cursor: pointer; font-weight: bold;">
                     مقارنة الآن <i class="fas fa-exchange-alt"></i>

@@ -2368,10 +2368,6 @@ function resetFilters() {
 document.querySelectorAll('input[type="checkbox"][data-filter]').forEach(cb => cb.checked = false);
 
 const currentSection = document.querySelector('.nav-link.active').getAttribute('href');
-if (currentSection === '#jobs') {
 renderProfessions(professions);
-} else {
 renderMajors(majors);
 }
-}
-

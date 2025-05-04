@@ -364,12 +364,21 @@ body {
 
 .content-card {
     background: white;
-    padding: 2rem;
+    padding: 1.5rem;
     border-radius: 15px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.377);
     margin-bottom: 2rem;
 }
-
+@media (max-width: 503px) {
+    .content-card {
+    padding: 0.8rem;
+  
+}
+.content-section {
+    padding: 0 0.6rem;
+   
+}
+}
 /* النافذة المنبثقة */
 .modal {
     display: none;
@@ -388,6 +397,7 @@ body {
 .modal-content {
     background: white;
     padding: 2.5rem;
+    max-height: 90vh;
     border-radius: 20px;
     max-width: 600px;
     width: 90%;
@@ -628,14 +638,20 @@ grid-template-columns: repeat(2, 1fr);
     font-size: 1.2rem;
     }
 }
-@media (max-height: 840px) {
+@media (min-width: 587px) {
+    .modal-content {
+        overflow-y:hidden;
+    }
+
+
+
+}
+@media (max-height: 768px) {
     .modal-content {
         width: 95%;
         max-height: 90vh;
-        overflow-y: auto;
         padding-top: 0.3rem;   
-        padding: 0.5rem;
-        
+        overflow-x:hidden;
     }
     .close-btn {
         font-size: 3rem;
@@ -766,7 +782,7 @@ direction: rtl;
 }
 
 /* ترتيب العناصر كما تريد */
-.nav-link[href="#com/hunt"] { order: 3; }
+.nav-link[href="#compare"] { order: 3; }
 .nav-link[href="#best-jobs"] { order: 2; }
 .nav-link[href="#jobs"] { order: 1; }
 .nav-link[href="#about"] { order: 4}
@@ -976,52 +992,88 @@ min-width: 100%;
 margin-left: 0.3rem; /* تعديل مسافة الأيقونة */
 }
 }
-@media (max-width: 480px) {
 
-}
+
 /* أنماط قسم المقارنة */
-#com\/hunt .filter-item {
-background: white;
-padding: 0.8rem 1.5rem;
-border-radius: 25px;
-cursor: pointer;
-transition: all 0.3s ease;
-border: 2px solid var(--primary);
-flex: 1;
-text-align: center;
-margin: 0;
+#compare .filter-item {
+    background: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid var(--primary);
+    flex: 1;
+    text-align: center;
+    margin: 0;
 }
 
-#com\/hunt .filter-item.active {
-background: var(--primary);
-color: white;
+#compare .filter-item.active {
+    background: var(--primary);
+    color: white;
 }
 
-#com\/hunt table {
-margin: 1rem 0;
-box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+#compare table {
+    margin: 1rem 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
-#com\/hunt th, #com\/hunt td {
-padding: 0.8rem 1rem;
-border: 1px solid #eee;
-text-align: right;
+#compare th, #compare td {
+    padding: 0.8rem 1rem;
+    border: 1px solid #eee;
+    text-align: right;
 }
 
-#com\/hunt tr:nth-child(even) {
-background-color: #f9f9f9;
+#compare tr:nth-child(even) {
+    background-color: #f9f9f9;
 }
 
-#com\/hunt tr:hover {
-background-color: #f1f1f1;
+#compare tr:hover {
+    background-color: #f1f1f1;
 }
 
 .compare-detail-card {
-background: white;
-padding: 1.5rem;
-border-radius: 10px;
-box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
 }
+
+.compare-detail-card h4 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--secondary);
+}
+
+.compare-winner {
+    background-color: rgba(58, 175, 169, 0.1) !important;
+    position: relative;
+}
+
+.compare-winner::after {
+    content: "✓ الأفضل";
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--secondary);
+    color: white;
+    padding: 0.2rem 0.5rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+}
+
+@media (max-width: 768px) {
+    #compare .content-card > div > div {
+        grid-template-columns: 1fr !important;
+    }
+    
+    #compare .compare-detail-card {
+        margin-bottom: 1rem;
+    }
+}
+
+
 /* أنماط أزرار التبديل بين المهن والتخصصات */
 #jobs .filter-item {
 background: white;
@@ -1050,40 +1102,6 @@ background: rgba(10, 132, 255, 0.1);
 #jobs .filter-item.active:hover {
 background: var(--primary);
 opacity: 0.9;
-}
-.compare-detail-card h4 {
-color: var(--primary);
-margin-bottom: 1rem;
-padding-bottom: 0.5rem;
-border-bottom: 2px solid var(--secondary);
-}
-
-.compare-winner {
-background-color: rgba(58, 175, 169, 0.1) !important;
-position: relative;
-}
-
-.compare-winner::after {
-content: "✓ الأفضل";
-position: absolute;
-left: 10px;
-top: 50%;
-transform: translateY(-50%);
-background: var(--secondary);
-color: white;
-padding: 0.2rem 0.5rem;
-border-radius: 15px;
-font-size: 0.8rem;
-}
-
-@media (max-width: 768px) {
-#com\/hunt .content-card > div > div {
-grid-template-columns: 1fr !important;
-}
-
-#com\/hunt .compare-detail-card {
-margin-bottom: 1rem;
-}
 }
 
 /* أنماط الاختبار المهني */
@@ -1288,26 +1306,14 @@ from { opacity: 0; transform: translateY(20px); }
 to { opacity: 1; transform: translateY(0); }
 }
 
-/* تعديلات التخطيط لقسم المقارنة والاختبار */
-.compare-quiz-container {
-display: grid;
-grid-template-columns: 1fr 1fr;
-gap: 2rem;
-}
 
-@media (max-width: 1024px) {
-.compare-quiz-container {
-grid-template-columns: 1fr;
-}
-}
 
 
 
 .search-container {
-position: relative;
-flex: 1;
+    position: relative;
+    flex: 1;
     max-width: 100%;
-  
     margin: 0 1rem;
 }
 
@@ -1387,9 +1393,6 @@ color: white;
 @media (max-width: 480px) {
 .search-results-title {
 font-size: 0.2rem;
-
-
-
 }
 .search-results {
 max-height: 60vh;
@@ -1648,75 +1651,7 @@ white-space: nowrap;
 }
 }
 /* داخل media query للشاشات الصغيرة */
-@media (max-width: 768px) {
-#com\/hunt .compare-quiz-container > div {
-grid-template-columns: 1fr !important;
-gap: 1.5rem;
-}
-}
-#com\/hunt table {
-width: 100%;
-min-width: 800px; /* حد أدنى للعرض */
-table-layout: fixed;
-}
 
-#com\/hunt th, 
-#com\/hunt td {
-white-space: nowrap;
-overflow: hidden;
-text-overflow: ellipsis;
-padding: 1rem;
-}
-#com\/hunt .search-container {
-max-width: 100%;
-margin: 0;
-}
-
-#com\/hunt .search-input {
-width: 100%;
-padding: 1rem;
-}
-
-#com\/hunt #compareBtn {
-width: 100%;
-max-width: 300px;
-padding: 1rem;
-font-size: 1.1rem;
-}
-#com\/hunt .content-card {
-max-width: 1400px;
-margin: 0 auto;
-padding: 2rem;
-}
-
-#com\/hunt .compare-quiz-container {
-display: grid;
-grid-template-columns: 1fr;
-gap: 2rem;
-}
-@media (max-width: 480px) {
-#com\/hunt .filter-item {
-font-size: 0.9rem;
-padding: 0.8rem;
-}
-
-#com\/hunt table {
-font-size: 0.9rem;
-}
-
-#com\/hunt .compare-detail-card {
-padding: 1rem;
-}
-}
-#com\/hunt .compare-detail-card {
-transition: transform 0.3s ease;
-border: 2px solid var(--light);
-}
-
-#com\/hunt .compare-detail-card:hover {
-transform: translateY(-5px);
-border-color: var(--primary);
-}
 /* تحسينات عامة للاختبار */
 .quiz-container {
 background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
@@ -2342,10 +2277,6 @@ transform: translateX(110px);
       font-size: 0.9rem !important;
     }
   }
-  .modal-content {
-max-height: 90vh;
-overflow-y: auto;
-}
 
 /* أضف هذه الأنماط في قسم الـ CSS */
 
@@ -2587,6 +2518,7 @@ box-shadow: 0 2px 8px rgba(58, 175, 169, 0.3);
 #best-jobs .professions-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
+    
 }
 
 #best-jobs .profession-card {
