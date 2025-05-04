@@ -2095,37 +2095,37 @@ function goToHome() {
 
 function linkSearchTypeToView(type) {
     resetFilters();
-currentSearchType = type;
-const searchInput = document.getElementById('searchInput');
-document.getElementById('mainSearchResults').style.display = 'none'; // إخفاء نتائج البحث القديمة
-// تحديث الـ placeholder حسب النوع
-if(type === 'jobs') {
-    searchInput.placeholder = "ابحث عن مهنة...";
-} else {
-    searchInput.placeholder = "ابحث عن تخصص...";
-}
+    currentSearchType = type;
+    const searchInput = document.getElementById('searchInput');
+    const query = searchInput.value.trim();
+    
+    // تحديث الـ placeholder حسب النوع
+    searchInput.placeholder = type === 'jobs' ? "ابحث عن مهنة..." : "ابحث عن تخصص...";
 
+    // تحديث الأزرار النشطة
+    document.querySelectorAll('.search-type').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.type === type);
+    });
 
+    // تحديث أزرار القسم الرئيسي
+    document.getElementById('showProfessionsBtn').classList.toggle('active', type === 'jobs');
+    document.getElementById('showMajorsBtn').classList.toggle('active', type === 'majors');
 
-// تحديث الأزرار النشطة
-document.querySelectorAll('.search-type').forEach(btn => {
-    btn.classList.toggle('active', btn.dataset.type === type);
-});
+    // إظهار/إخفاء المحتوى
+    document.getElementById('professionsContainer').style.display = type === 'jobs' ? 'grid' : 'none';
+    document.getElementById('majorsContainer').style.display = type === 'majors' ? 'grid' : 'none';
 
-// تحديث أزرار القسم الرئيسي
-document.getElementById('showProfessionsBtn').classList.toggle('active', type === 'jobs');
-document.getElementById('showMajorsBtn').classList.toggle('active', type === 'majors');
-
-// إظهار/إخفاء المحتوى
-document.getElementById('professionsContainer').style.display = type === 'jobs' ? 'grid' : 'none';
-document.getElementById('majorsContainer').style.display = type === 'majors' ? 'grid' : 'none';
-
-// إعادة البحث إذا كان هناك نص
-const searchQuery = document.getElementById('searchInput').value.trim();
-if (searchQuery) {
-    const results = performSearch(searchQuery, type);
-    displaySearchResults(results);
-}
+    // إعادة البحث إذا كان هناك نص
+    if (query) {
+        const results = performSearch(query, type);
+        displaySearchResults(results);
+        
+        // إظهار قسم نتائج البحث الرئيسي
+        document.getElementById('mainSearchResults').style.display = 'block';
+        document.getElementById('searchQueryText').innerText = query;
+    } else {
+        document.getElementById('mainSearchResults').style.display = 'none';
+    }
 }
 
 
@@ -2160,69 +2160,65 @@ if (type === 'jobs') {
 
 return results;
 }
-function scrollToResults() {
-const mainSearchResults = document.getElementById('mainSearchResults');
-const navbarHeight = document.querySelector('.navbar').offsetHeight;
-
-if (mainSearchResults) {
-window.scrollTo({
-    top: mainSearchResults.offsetTop - navbarHeight - 20,
-    behavior: 'smooth'
-});
-}
-}
-
 function displaySearchResults(results) {
-const searchResults = document.getElementById('searchResults');
-searchResults.innerHTML = '';
+    const searchResults = document.getElementById('searchResults');
+    searchResults.innerHTML = '';
 
-const currentNavLink = document.querySelector('.nav-links .nav-link.active');
-const currentSection = currentNavLink ? currentNavLink.getAttribute('href') : '';
+    const currentSection = document.querySelector('.nav-link.active')?.getAttribute('href') || '';
 
-// تحقق إذا كانت لا توجد نتائج
-if (results.professions.length === 0 && results.majors.length === 0) {
-searchResults.innerHTML = '<p style="text-align: center; color: #666; padding: 1rem;">لا توجد نتائج مطابقة</p>';
-searchResults.style.display = 'block';
-scrollToResults();
-return;
-}
+    // تحقق إذا كانت لا توجد نتائج
+    if (results.professions.length === 0 && results.majors.length === 0) {
+        searchResults.innerHTML = '<p style="text-align: center; color: #666; padding: 1rem;">لا توجد نتائج مطابقة</p>';
+        searchResults.style.display = 'block';
+        
+        // إخفاء حاويات البطاقات
+        document.getElementById('professionsContainer').style.display = 'none';
+        document.getElementById('majorsContainer').style.display = 'none';
+        
+        scrollToResults();
+        return;
+    }
 
-// عرض النتائج في القائمة المنسدلة إذا لم نكن في قسم المهن والتخصصات
-if (currentSection !== '#jobs') {
-results.professions.forEach(profession => {
-    const item = document.createElement('div');
-    item.className = 'search-result-item';
-    item.innerHTML = `
-        <h4>${profession.title}</h4>
-        <p>${profession.summarize}</p>
-    `;
-    item.addEventListener('click', () => showDetails(profession));
-    searchResults.appendChild(item);
-});
+    // عرض النتائج في القائمة المنسدلة إذا لم نكن في قسم المهن والتخصصات
+    if (currentSection !== '#jobs') {
+        results.professions.forEach(profession => {
+            const item = document.createElement('div');
+            item.className = 'search-result-item';
+            item.innerHTML = `
+                <h4>${profession.title}</h4>
+            `;
+            item.addEventListener('click', () => showDetails(profession));
+            searchResults.appendChild(item);
+        });
 
-results.majors.forEach(major => {
-    const item = document.createElement('div');
-    item.className = 'search-result-item';
-    item.innerHTML = `
-        <h4>${major.name}</h4>
-        <p>${major.summarize}</p>
-    `;
-    item.addEventListener('click', () => showMajorDetails(major));
-    searchResults.appendChild(item);
-});
+        results.majors.forEach(major => {
+            const item = document.createElement('div');
+            item.className = 'search-result-item';
+            item.innerHTML = `
+                <h4>${major.name}</h4>
+            `;
+            item.addEventListener('click', () => showMajorDetails(major));
+            searchResults.appendChild(item);
+        });
 
-searchResults.style.display = 'block';
-} else {
-searchResults.style.display = 'none';
-// عرض النتائج في الحاويات الرئيسية
-if (currentSearchType === 'jobs') {
-    renderProfessions(results.professions);
-} else {
-    renderMajors(results.majors);
-}
-}
+        searchResults.style.display = 'block';
+    } else {
+        searchResults.style.display = 'none';
+        // عرض النتائج في الحاويات الرئيسية
+        if (currentSearchType === 'jobs') {
+            renderProfessions(results.professions);
+        } else {
+            renderMajors(results.majors);
+        }
+        
+        // إظهار قسم نتائج البحث الرئيسي إذا كان هناك بحث
+        if (document.getElementById('searchInput').value.trim()) {
+            document.getElementById('mainSearchResults').style.display = 'block';
+            document.getElementById('searchQueryText').innerText = document.getElementById('searchInput').value.trim();
+        }
+    }
 
-scrollToResults();
+    scrollToResults();
 }
 
 
