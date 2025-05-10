@@ -3441,6 +3441,7 @@
     document.querySelectorAll('.nav-link').forEach(navLink => {
         navLink.classList.remove('active');
     });
+    
     // إضافة الفئة النشطة للرابط الذي ضغط عليه المستخدم
     this.classList.add('active');
     // عرض القسم المحدد
@@ -3469,10 +3470,65 @@
             // إضافة الكلاس active لزر مقارنة المهن
             compareJobsBtn.classList.add('active');
         }
+
     } else if (targetId === 'jobs') {
-        renderProfessions(professions);
     }
     resetFilters();
+        // عند العودة لقسم المهن/التخصصات
+        if (targetId === 'jobs') {
+            const searchQuery = document.getElementById('searchInput').value.trim();
+    
+    // 1. الحصول على النتائج مع ضمان أنها مصفوفة
+    let results = [];
+    if (searchQuery) {
+        try {
+            results = performSearch(searchQuery, currentSearchType) || [];
+        } catch (e) {
+            console.error('Search error:', e);
+            results = [];
+        }
+    } else {
+        results = currentSearchType === 'jobs' 
+            ? Array.from(professions) // نسخ المصفوفة الأصلية
+            : Array.from(majors);
+    }
+
+    // 2. التحقق النهائي من نوع المصفوفة
+    if (!Array.isArray(results)) {
+        results = [];
+    }
+
+    // 3. العرض حسب النوع مع تحقق إضافي
+    if (currentSearchType === 'jobs') {
+        if (typeof renderProfessions === 'function') {
+            renderProfessions(results);
+        }
+    } else {
+        if (typeof renderMajors === 'function') {
+            renderMajors(results);
+        }
+    }
+
+    // 4. إدارة واجهة النتائج
+    const mainSearchResults = document.getElementById('mainSearchResults');
+    if (mainSearchResults) {
+        mainSearchResults.style.display = searchQuery ? 'block' : 'none';
+        const queryTextEl = document.getElementById('searchQueryText');
+        if (queryTextEl) {
+            queryTextEl.textContent = searchQuery;
+        }
+    }
+
+    // 5. معالجة الفلاتر بأمان
+    if (typeof onFilterChange === 'function') {
+        try {
+            onFilterChange();
+        } catch (filterError) {
+            console.error('Filter error:', filterError);
+        }
+    }
+        }
+    
     });
     });
     
