@@ -3542,7 +3542,7 @@
 
     searchInput.addEventListener('input', function(e) {
         clearTimeout(timeoutId); // إلغاء أي تأخير سابق
-        
+        const searchInput = document.getElementById('searchInput');
         // تنفيذ البحث فورًا مع كل تغيير
         const query = e.target.value.trim();
         
@@ -3558,6 +3558,7 @@
         }, 300);
     });
         searchInput.addEventListener('input', (e) => {
+            const searchInput = document.getElementById('searchInput');
             clearTimeout(timeoutId);
             timeoutId = setTimeout(() => {
                 const query = e.target.value.trim();
@@ -3569,7 +3570,17 @@
                 displaySearchResults(results);
             }); // تأخير 300 مللي ثانية
         });
+        
+// 1. إخفاء الكيبورد عند الضغط على Enter
+searchInput.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter' || e.keyCode === 13) {
+        this.blur(); // إزالة التركيز من الحقل
+        document.activeElement.blur(); // تأكيد إخفاء الكيبورد
+        e.preventDefault(); // منع أي سلوك افتراضي
+    }
+});
         searchInput.addEventListener('input', function() {
+            const searchInput = document.getElementById('searchInput');
             const queryLower = this.value.trim().toLowerCase();
             const results = performSearch(queryLower, currentSearchType);
             // نتائج البحث المنسدلة
