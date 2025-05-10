@@ -3480,8 +3480,27 @@
     function initSearch() {
         const searchResults = document.getElementById('searchResults');
         const mainSearchResults = document.getElementById('mainSearchResults');
+        
         const searchInput = document.getElementById('searchInput');
-        let timeoutId;
+    let timeoutId;
+
+    searchInput.addEventListener('input', function(e) {
+        clearTimeout(timeoutId); // إلغاء أي تأخير سابق
+        
+        // تنفيذ البحث فورًا مع كل تغيير
+        const query = e.target.value.trim();
+        
+        if (query === '') {
+            clearSearch();
+            return;
+        }
+
+        // إجراء البحث مع تأخير بسيط لتحسين الأداء
+        timeoutId = setTimeout(() => {
+            const results = performSearch(query, currentSearchType);
+            displaySearchResults(results);
+        }, 300);
+    });
         searchInput.addEventListener('input', (e) => {
             clearTimeout(timeoutId);
             timeoutId = setTimeout(() => {
@@ -3503,6 +3522,7 @@
             // التحكم في ظهور قسم النتائج الرئيسي
             mainSearchResults.style.display = (results.professions.length + results.majors.length) > 0 ? 'block' : 'none';
         });
+
     }
     // دالة لعرض نتائج البحث الرئيسية
     function renderSearchResults(results) {
@@ -3539,10 +3559,20 @@
         const navbarHeight = document.querySelector('.navbar').offsetHeight;
         const searchInput = document.getElementById('searchInput');
         searchInput.value = '';
+        searchResults.innerHTML = '';
+    professionsContainer.innerHTML = '';
+    majorsContainer.innerHTML = '';
+    const container = currentSearchType === 'jobs' ? 
+        document.getElementById('professionsContainer') : 
+        document.getElementById('majorsContainer');
+    
+    container.style.display = 'grid'; // إعادة عرض البطاقات عند الفراغ
+    renderProfessions(professions); // أو renderMajors حسب النوع
         document.getElementById('searchResults').style.display = 'none';
         // 2. إخفاء نتائج البحث
         document.getElementById('searchResults').style.display = 'none';
         document.getElementById('mainSearchResults').style.display = 'none';
+        resetFilters();
     // التمرير للأعلى مع احتساب ارتفاع الشريط العلوي
     window.scrollTo({
             top: mainSearchResults.offsetTop - navbarHeight - 30,
@@ -5231,7 +5261,17 @@
         searchResults.innerHTML = '';
     
         const currentSection = document.querySelector('.nav-link.active')?.getAttribute('href') || '';
-    
+        const container = currentSearchType === 'jobs' ? 
+        document.getElementById('professionsContainer') : 
+        document.getElementById('majorsContainer');
+
+    // إذا كانت النتائج فارغة، اخفِ البطاقات
+    if ((currentSearchType === 'jobs' && results.professions.length === 0) ||
+        (currentSearchType === 'majors' && results.majors.length === 0)) {
+        container.style.display = 'none';
+    } else {
+        container.style.display = 'grid'; // أظهر البطاقات إذا كانت هناك نتائج
+    }
         // تحقق إذا كانت لا توجد نتائج
         if (results.professions.length === 0 && results.majors.length === 0) {
             searchResults.innerHTML = '<p style="text-align: center; color: #666; padding: 1rem;">لا توجد نتائج مطابقة</p>';
