@@ -3146,7 +3146,7 @@
     <!-- داخل قسم navbar -->
     <div class="search-container">
     <input class="search-input" dir="rtl" id="searchInput" placeholder="ابحث عن مهنة..." type="text"/>
-    <div class="search-type-buttons">
+    <div class="search-type-buttons" style="display: none;">
     <button class="search-type" data-type="majors"><i class="fas fa-graduation-cap"> تخصص </i>  </button>
     <button class="search-type active" data-type="jobs"><i class="fas fa-briefcase" style="left: 0.1rem;"> مهنة </i></button>
     </div>
@@ -3942,10 +3942,20 @@
     renderMajors(filteredMajors);
     }
     
-    
+    function toggleSearchTypeButtons() {
+        const currentSection = document.querySelector('.nav-link.active').getAttribute('href');
+        const searchTypeButtons = document.querySelector('.search-type-buttons');
+        
+        if (currentSection === '#jobs') {
+            searchTypeButtons.style.display = 'none';
+        } else {
+            searchTypeButtons.style.display = 'flex'; // أو 'block' حسب تفضيلات التصميم
+        }
+    }
     // تهيئة الصفحة عند التحميل
     document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('jobs').style.display = 'block';
+        
        // تهيئة البيانات
         renderProfessions(professions);
         renderMajors(majors);
@@ -3973,18 +3983,21 @@
                     renderProfessions(professions);
                     renderMajors(majors);
                 }
+
             });
         });
-        
+
         // تفعيل البحث
         document.getElementById('searchInput').addEventListener('input', function(e) { 
             // تصفير الفلاتر عند أول إدخال
             resetFilters();
             document.querySelector('.filter-container').style.display = 'none'; // إخفاء الفلاتر
+            
             const currentSection = document.querySelector('.nav-link.active').getAttribute('href');
             if (currentSection !== '#jobs') {
                 // السلوك الطبيعي للأقسام الأخرى
                 searchResults.style.display = 'block';
+                    document.getElementById('search-type').style.display = 'flex';
             }
             const rawValue = e.target.value; // e معرّفة الآن
             const query = (rawValue || "").trim(); // معالجة القيم الفارغة
@@ -4035,6 +4048,8 @@
     const targetId = this.getAttribute('href').substring(1);
     document.getElementById(targetId).style.display = 'block';
         clearSearch() ;
+
+        toggleSearchTypeButtons();
     // إعادة تعيين الفلاتر والأزرار الافتراضية بناءً على القسم
     if (targetId === 'best-jobs') {
         // تفعيل زر "مهن ذهبية" افتراضياً
@@ -4118,6 +4133,7 @@
         }
     
     });
+    
     });
     
     // تهيئة وظيفة البحث
