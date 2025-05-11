@@ -3339,57 +3339,102 @@
     padding: 1rem;
     box-shadow: 0 4px 20px rgba(10, 132, 255, 0.411);
     border: 1px solid rgba(10, 132, 255, 0.15);
-    }
-    
-    #jobs .filter-item {
+}
+
+#jobs .filter-item {
     padding: 1.2rem 2.5rem !important;
     font-size: 1.1rem !important;
     border-radius: 12px !important;
-    
+   
     border: 2px solid var(--primary) !important;
     background: rgba(255, 255, 255, 0.95) !important;
     backdrop-filter: blur(4px);
     box-shadow: 0 4px 15px rgba(10, 132, 255, 0.1);
-    }
-    
-    #jobs .filter-item::before {
+}
+
+#jobs .filter-item::before {
     background: linear-gradient(45deg, 
         var(--primary) 0%, 
         var(--secondary) 100%);
-    
-    }
-    
-    #jobs .filter-item.active {
+   
+}
+
+#jobs .filter-item.active {
     color: white !important;
     border-color: transparent !important;
     box-shadow: 0 6px 25px rgba(10, 132, 255, 0.2);
-    }
-    
-    
-    #jobs .filter-item:hover {
+}
+
+
+#jobs .filter-item:hover {
     box-shadow: 0 6px 20px rgba(10, 132, 255, 0.2);
-    }
-    
-    #jobs .filter-item:not(.active):hover {
+}
+
+#jobs .filter-item:not(.active):hover {
     background: rgba(10, 132, 255, 0.253) !important;
-    }
-    
-    /* أيقونات الأزرار */
-    #jobs .filter-item i {
+}
+
+/* أيقونات الأزرار */
+#jobs .filter-item i {
     margin-left: 10px;
     font-size: 1.2em;
     transition: transform 0.3s ease;
-    }
-    
-    #jobs .filter-item.active i {
+}
+
+#jobs .filter-item.active i {
     transform: rotate(360deg);
+}
+#jobs .filter-group {
+margin: 0rem 0;
+
+}
+    
+/* للشاشات الصغيرة */
+@media (max-width: 768px) {
+    #jobs .filter-item {
+        padding: 1rem 0.4rem !important;
+        font-size: 1rem !important;
     }
+    
     #jobs .filter-group {
-    margin: 0rem 0;
-    
-    
-    
+        padding: 0.6rem ;
     }
+}
+@media (max-width: 480px) {
+    #jobs .filter-item {
+        padding: 1rem 1.5rem !important;
+        font-size: 0.8rem !important;
+    }
+    
+    #jobs .filter-group {
+        padding: 0.6rem;
+    }
+}
+
+@media (max-width: 420px) {
+    #jobs .filter-item {
+        font-size: 12px !important;
+    }
+    
+}
+
+@media (max-width: 406px) {
+    #jobs .filter-item {
+        font-size: 11px !important;
+
+    }
+   
+}
+
+@media (max-width: 374px) {
+    #jobs .filter-item {
+        font-size: 10px !important;
+
+    }
+     #jobs .filter-group {
+        padding: 0.4rem;
+    }
+}
     
     
 </style>
