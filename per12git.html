@@ -3125,8 +3125,62 @@
         font-size: 0.95rem;
     }
     }
-        /*تعديلات قسم المقارنة*/
-        
+    #jobs .filter-group {
+    background: rgba(10, 132, 255, 0.336);
+    padding: 1rem;
+    box-shadow: 0 4px 20px rgba(10, 132, 255, 0.411);
+    border: 1px solid rgba(10, 132, 255, 0.15);
+}
+
+#jobs .filter-item {
+    padding: 1.2rem 2.5rem !important;
+    font-size: 1.1rem !important;
+    border-radius: 12px !important;
+   
+    border: 2px solid var(--primary) !important;
+    background: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(4px);
+    box-shadow: 0 4px 15px rgba(10, 132, 255, 0.1);
+}
+
+#jobs .filter-item::before {
+    background: linear-gradient(45deg, 
+        var(--primary) 0%, 
+        var(--secondary) 100%);
+   
+}
+
+#jobs .filter-item.active {
+    color: white !important;
+    border-color: transparent !important;
+    box-shadow: 0 6px 25px rgba(10, 132, 255, 0.2);
+}
+
+
+#jobs .filter-item:hover {
+    box-shadow: 0 6px 20px rgba(10, 132, 255, 0.2);
+}
+
+#jobs .filter-item:not(.active):hover {
+    background: rgba(10, 132, 255, 0.253) !important;
+}
+
+/* أيقونات الأزرار */
+#jobs .filter-item i {
+    margin-left: 10px;
+    font-size: 1.2em;
+    transition: transform 0.3s ease;
+}
+
+#jobs .filter-item.active i {
+    transform: rotate(360deg);
+}
+#jobs .filter-group {
+margin: 0rem 0;
+
+
+
+}
     
 </style>
 
