@@ -827,6 +827,7 @@
     margin-top: 0.5rem;
     }
     }
+    
     @media (max-width: 768px) {
     .nav-links {
     display: flex;
@@ -1129,7 +1130,7 @@
     }
     
     #compareMajors:checked ~ .toggle-slider {
-        transform: translateX(155px);
+        transform: translateX(100%);
     }
     
     #compareJobs:checked ~ .toggle-option:first-child,
@@ -1968,7 +1969,7 @@
         padding: 12px 25px;
         border-radius: 5px;
         font-weight: bold;
-        font-size: 1.1rem;
+        font-size: 0.8rem;
         cursor: pointer;
         transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
         border: none;
@@ -3208,16 +3209,16 @@
                 </div>
   
         <!-- اختيار نوع المقارنة -->
-        <div class="compare-type-selector">
+        <div class="compare-type-selector" dir="rtl">
             <div class="toggle-switch">
-                <input type="radio" id="compareJobs" name="compareType" value="jobs" checked 
-                       onclick="setCompareType('jobs')">
-                <label for="compareJobs" class="toggle-option">
-                    <i class="fas fa-briefcase"></i> مقارنة المهن
-                </label>
                 
+                <input type="radio" id="compareJobs" name="compareType" value="jobs" checked 
+                       onclick="setCompareType('jobs')" >
+                <label for="compareJobs" class="toggle-option">
+                    <i class="fas fa-briefcase"></i> مقارنة المهن 
+                </label>
                 <input type="radio" id="compareMajors" name="compareType" value="majors" 
-                       onclick="setCompareType('majors')">
+                       onclick="setCompareType('majors')" >
                 <label for="compareMajors" class="toggle-option">
                     <i class="fas fa-graduation-cap"></i> مقارنة التخصصات
                 </label>
