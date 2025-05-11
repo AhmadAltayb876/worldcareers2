@@ -1951,7 +1951,87 @@
     margin-top: -30px !important; /* تعويض المسافة للشاشات الصغيرة */
     }
     }
+    /* كلاس جديد لأزرار التحكم في النتائج */
+    .result-controls {
+        display: none; /* مخفي افتراضيًا */
+        text-align: center;
+        margin: 30px 0;
+        animation: fadeIn 0.5s ease-out;
+    }
     
+    .result-controls .action-btn {
+        display: inline-block;
+        margin: 0 15px;
+        padding: 12px 25px;
+        border-radius: 30px;
+        font-weight: 700;
+        font-size: 1.1em;
+        cursor: pointer;
+        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        border: none;
+        color: white;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    .result-controls .action-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+    
+    .result-controls .action-btn:active {
+        transform: translateY(1px);
+    }
+    
+    .result-controls .action-btn i {
+        margin-left: 8px;
+    }
+    
+    /* زر إخفاء النتائج */
+    .result-controls .reset-btn {
+        background: linear-gradient(135deg, #0A84FF 0%, #0066CC 100%);
+    }
+    
+    /* زر الصفحة الرئيسية */
+    .result-controls .home-btn {
+        background: linear-gradient(135deg, #4CAF50 0%, #2E7D32 100%);
+    }
+    
+    /* تأثير hover للأزرار */
+    .result-controls .action-btn::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.2);
+        transform: translateX(-100%);
+        transition: transform 0.3s ease-out;
+    }
+    
+    .result-controls .action-btn:hover::after {
+        transform: translateX(0);
+    }
+    
+    /* تأثير الإطالة عند النقر */
+    @keyframes ripple {
+        to {
+            transform: scale(1.5);
+            opacity: 0;
+        }
+    }
+    
+    .result-controls .action-btn:focus:not(:active)::after {
+        animation: ripple 0.6s ease-out;
+    }
+    
+    /* ظهور تدريجي */
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
     .search-results-title {
     padding-top: 40px; /* مساحة أعلى العنوان */
     margin-top: -40px; /* تعويض للتمرير الدقيق */
@@ -3027,6 +3107,9 @@
         /*تعديلات قسم المقارنة*/
         
     
+        /*تعديلات قسم المقارنة*/
+        
+    
 </style>
 
 </head>
@@ -3191,21 +3274,18 @@
     </div>
 
 </div><!-- تفاصيل كل عنصر -->
-
-</div>
-<button onclick="resetcom()" class="quiz-btn home-btn" style="background-color: #0A84FF;">
-    <i class="fas fa-redo"></i> اخفاء النتائج
+<!-- استبدل الأزرار القديمة بهذا الكود -->
+<div class="result-controls" id="resultsControls">
+    <button onclick="resetcom()" class="action-btn reset-btn">
+        <i class="fas fa-redo"></i> إخفاء النتائج
+    </button>
+    <button onclick="goToHome()" class="action-btn home-btn">
+        <i class="fas fa-home"></i> الصفحة الرئيسية
     </button>
 </div>
-                        </button>
-<button class="quiz-btn home-btn" onclick="goToHome()">
-<i class="fas fa-home"></i> الصفحة الرئيسية
-                        </button>
-
 </div>
-
 </div>
-
+</div>
 </section>
 <!-- قسم About Us -->
 <section class="content-section" id="about">
@@ -3909,7 +3989,7 @@
             applyFilters();
         }
         // تفعيل الفلتر الافتراضي إذا كان القسم النشط هو Best Jobs
-        if (window.location.hash === '#com/hunt') {
+        if (window.location.hash === '#compare') {
             document.getElementById('compareJobsBtn').classList.add('.nav-link.active')
             setCompareType();
         }
@@ -3949,7 +4029,7 @@
         setTimeout(() => {
             applyFilters();
         }, 0);
-    } else if (targetId === 'com/hunt') {
+    } else if (targetId === 'compare') {
         // تفعيل زر "مقارنة المهن" افتراضياً
         setCompareType('jobs');
         const compareJobsBtn = document.getElementById('compareJobsBtn');
@@ -5010,42 +5090,10 @@ function resetcom() {
     
     // إخفاء نتائج المقارنة السابقة إن وجدت
     document.getElementById('compareResults').style.display = 'none';
+    document.getElementById('resultsControls').style.display = 'none';
 }
 // تحسين وظيفة compareItems
-function compareItems() {
-    const item1 = document.getElementById('compareInput1').value.trim();
-    const item2 = document.getElementById('compareInput2').value.trim();
-    
-    if (!item1 || !item2) {
-        alert('الرجاء اختيار المادتين للمقارنة');
-        return;
-    }
-    
-    if (item1 === item2) {
-        alert('لا يمكن مقارنة المادة مع نفسها');
-        return;
-    }
-    
-    // إضافة تأثير تحميل
-    const compareBtn = document.getElementById('compareBtn');
-    compareBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> جاري المقارنة...';
-    compareBtn.disabled = true;
-    
-    // محاكاة جلب البيانات (استبدل هذا بالاتصال الفعلي بالخادم)
-    setTimeout(() => {
-        // هنا سيتم جلب البيانات الفعلية
-        showComparisonResults(item1, item2);
-        
-        // إعادة زر المقارنة إلى حالته الأصلية
-        compareBtn.innerHTML = '<i class="fas fa-exchange-alt"></i> قارن الآن';
-        compareBtn.disabled = false;
-        
-        // التمرير إلى نتائج المقارنة
-        document.getElementById('compareResults').scrollIntoView({
-            behavior: 'smooth'
-        });
-    }, 800);
-}
+
     
     // تهيئة البحث في قسم المقارنة
     function initCompareSearch() {
@@ -5286,7 +5334,7 @@ function compareItems() {
         }
         detailsDiv.innerHTML = detailsHTML;
         resultsDiv.style.display = 'block';
-        
+        document.getElementById('resultsControls').style.display = 'block';
         // التمرير إلى نتائج المقارنة
         resultsDiv.scrollIntoView({ behavior: 'smooth' });
     }
