@@ -1083,6 +1083,7 @@
         background: #f5f5f5;
         border-radius: 50px;
         box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        
         overflow: hidden;
     }
     
@@ -1284,7 +1285,7 @@
         }
         
         #compareMajors:checked ~ .toggle-slider {
-            transform: translateX(135px);
+            transform: translateX(100%);
         }
         
         .compare-search .search-input {
@@ -3146,7 +3147,7 @@
     <!-- داخل قسم navbar -->
     <div class="search-container">
     <input class="search-input" dir="rtl" id="searchInput" placeholder="ابحث عن مهنة..." type="text"/>
-    <div class="search-type-buttons" style="display: none;">
+    <div class="search-type-buttons" >
     <button class="search-type" data-type="majors"><i class="fas fa-graduation-cap"> تخصص </i>  </button>
     <button class="search-type active" data-type="jobs"><i class="fas fa-briefcase" style="left: 0.1rem;"> مهنة </i></button>
     </div>
@@ -3942,16 +3943,7 @@
     renderMajors(filteredMajors);
     }
     
-    function toggleSearchTypeButtons() {
-        const currentSection = document.querySelector('.nav-link.active').getAttribute('href');
-        const searchTypeButtons = document.querySelector('.search-type-buttons');
-        
-        if (currentSection === '#jobs') {
-            searchTypeButtons.style.display = 'none';
-        } else {
-            searchTypeButtons.style.display = 'flex'; // أو 'block' حسب تفضيلات التصميم
-        }
-    }
+
     // تهيئة الصفحة عند التحميل
     document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('jobs').style.display = 'block';
@@ -4049,7 +4041,6 @@
     document.getElementById(targetId).style.display = 'block';
         clearSearch() ;
 
-        toggleSearchTypeButtons();
     // إعادة تعيين الفلاتر والأزرار الافتراضية بناءً على القسم
     if (targetId === 'best-jobs') {
         // تفعيل زر "مهن ذهبية" افتراضياً
