@@ -1276,7 +1276,7 @@
     /* تعديلات للجوال */
     @media (max-width: 768px) {
         .toggle-switch {
-            width: 80%;
+            width: 100%;
             height: 50px;
         }
         
@@ -1570,6 +1570,215 @@
             overflow-y: auto;
         }
     }
+    /* أضف هذه التعديلات في نهاية ملف style.css */
+    
+    /* أضف هذه التعديلات في نهاية ملف style.css */
+    
+    @media (max-width: 768px) {
+        /* تقليل المسافات في قسم المقارنة */
+        .compare-header {
+            margin-bottom: 1rem;
+        }
+        
+        .compare-header h2 {
+            font-size: 1.4rem;
+            margin-bottom: 0.3rem;
+        }
+        
+        .compare-header p {
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+        
+        /* تعديل حجم مفتاح التبديل */
+        .toggle-switch {
+            height: 45px;
+            width: 90%;
+        }
+        
+        .toggle-slider {
+            height: 35px;
+        }
+        
+        .toggle-option {
+            font-size: 0.9rem;
+        }
+        
+        /* تقليل المسافات بين حقول الإدخال */
+        .compare-inputs-container {
+            margin: 1rem 0;
+            gap: 1rem;
+        }
+        
+        .input-header {
+            margin-bottom: 0.5rem;
+        }
+        
+        .input-number {
+            width: 20px;
+            height: 20px;
+            font-size: 0.8rem;
+        }
+        
+        .compare-search .search-input {
+            height: 40px;
+            padding: 0.5rem 2.5rem 0.5rem 1rem;
+            font-size: 0.9rem;
+        }
+        
+        /* تعديل زر المقارنة */
+        .compare-button {
+            padding: 0.8rem 1.5rem;
+            font-size: 1rem;
+            margin-top: 1rem;
+        }
+        
+        /* تعديلات جدول النتائج */
+        #compare th, #compare td {
+            padding: 0.6rem;
+            font-size: 0.85rem;
+        }
+        
+        #compare .compare-winner::after {
+            font-size: 0.7rem;
+            padding: 0.2rem 0.6rem;
+        }
+        
+        /* تقليل مساحة البطاقات التفصيلية */
+        .compare-detail-card {
+            padding: 1rem;
+        }
+        
+        .compare-detail-card h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.8rem;
+        }
+        
+        .compare-detail-item {
+            margin-bottom: 0.8rem;
+            padding-bottom: 0.8rem;
+        }
+        
+        /* تعديل أزرار التحكم */
+        .compare-controls .control-btn {
+            padding: 0.7rem 1.2rem;
+            font-size: 0.9rem;
+            margin: 0 0.5rem;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        /* مزيد من التعديلات للشاشات الصغيرة جدًا */
+        .compare-header h2 {
+            font-size: 1.2rem;
+        }
+        
+        .toggle-switch {
+            height: 40px;
+        }
+        
+        .toggle-slider {
+            height: 30px;
+        }
+        
+        .toggle-option {
+            font-size: 0.8rem;
+        }
+        
+        .compare-inputs-container {
+            gap: 0.8rem;
+        }
+        
+        .compare-divider {
+            margin: 0.5rem 0;
+        }
+        
+        .vs-badge {
+            padding: 0.3rem 0.8rem;
+            font-size: 0.8rem;
+        }
+        
+        /* جعل جدول النتائج أكثر إحكاما */
+        #compare th, #compare td {
+            padding: 0.4rem;
+            font-size: 0.8rem;
+        }
+        
+        #compare .table-scroll {
+            max-height: 300px;
+        }
+        
+        /* تكبير شريط التمرير ليكون أكثر وضوحًا */
+        #compare .table-scroll::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        /* تكديس أزرار التحكم رأسيًا */
+        .compare-controls {
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        
+        .compare-controls .control-btn {
+            width: 100%;
+            margin: 0;
+        }
+    }
+    /* أضف هذا الكود في قسم الـ media queries للجوال */
+@media (max-width: 768px) {
+    /* تقليل ارتفاع قسم المقارنة الأساسي */
+    .compare-inputs-container {
+        margin: 0.5rem 0; /* تقليل الهوامش */
+        gap: 0.8rem;     /* تقليل المسافة بين الحقول */
+    }
+
+    .compare-search .search-input {
+        height: 42px;    /* تقليل ارتفاع حقل البحث */
+        padding: 0.5rem 2.5rem 0.5rem 1rem; /* تعديل الحشو */
+    }
+
+    /* تصغير زر VS */
+    .vs-badge {
+        padding: 0.2rem 0.6rem;
+        font-size: 0.8rem;
+    }
+
+    /* تصغير عناوين الحقول */
+    .input-header h4 {
+        font-size: 0.95rem;
+    }
+
+    /* تصغير الأرقام (1، 2) */
+    .input-number {
+        width: 18px;
+        height: 18px;
+        font-size: 0.75rem;
+    }
+
+    /* تعديل زر المقارنة */
+    .compare-button {
+        padding: 0.7rem 1.2rem;
+        font-size: 0.9rem;
+        margin-top: 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    /* مزيد من التكثيف للشاشات الصغيرة جدًا */
+    .compare-inputs-container {
+        gap: 0.5rem;
+    }
+
+    .compare-search .search-input {
+        height: 38px;
+        font-size: 0.85rem;
+    }
+
+    /* إخفاء الأيقونات في زر VS إذا لزم الأمر */
+    .vs-badge i {
+        display: none;
+    }
+}
     /* أنماط أزرار التبديل بين المهن والتخصصات */
     #jobs .filter-item {
     background: white;
@@ -3130,57 +3339,58 @@
     padding: 1rem;
     box-shadow: 0 4px 20px rgba(10, 132, 255, 0.411);
     border: 1px solid rgba(10, 132, 255, 0.15);
-}
-
-#jobs .filter-item {
+    }
+    
+    #jobs .filter-item {
     padding: 1.2rem 2.5rem !important;
     font-size: 1.1rem !important;
     border-radius: 12px !important;
-   
+    
     border: 2px solid var(--primary) !important;
     background: rgba(255, 255, 255, 0.95) !important;
     backdrop-filter: blur(4px);
     box-shadow: 0 4px 15px rgba(10, 132, 255, 0.1);
-}
-
-#jobs .filter-item::before {
+    }
+    
+    #jobs .filter-item::before {
     background: linear-gradient(45deg, 
         var(--primary) 0%, 
         var(--secondary) 100%);
-   
-}
-
-#jobs .filter-item.active {
+    
+    }
+    
+    #jobs .filter-item.active {
     color: white !important;
     border-color: transparent !important;
     box-shadow: 0 6px 25px rgba(10, 132, 255, 0.2);
-}
-
-
-#jobs .filter-item:hover {
+    }
+    
+    
+    #jobs .filter-item:hover {
     box-shadow: 0 6px 20px rgba(10, 132, 255, 0.2);
-}
-
-#jobs .filter-item:not(.active):hover {
+    }
+    
+    #jobs .filter-item:not(.active):hover {
     background: rgba(10, 132, 255, 0.253) !important;
-}
-
-/* أيقونات الأزرار */
-#jobs .filter-item i {
+    }
+    
+    /* أيقونات الأزرار */
+    #jobs .filter-item i {
     margin-left: 10px;
     font-size: 1.2em;
     transition: transform 0.3s ease;
-}
-
-#jobs .filter-item.active i {
+    }
+    
+    #jobs .filter-item.active i {
     transform: rotate(360deg);
-}
-#jobs .filter-group {
-margin: 0rem 0;
-
-
-
-}
+    }
+    #jobs .filter-group {
+    margin: 0rem 0;
+    
+    
+    
+    }
+    
     
 </style>
 
