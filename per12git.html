@@ -304,7 +304,7 @@
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
         gap: 2rem;
-        padding: 2rem;
+        padding: 0.5rem;
         max-width: 1400px;
         margin: 0 auto;
     }
@@ -412,14 +412,14 @@
     .content-section {
         max-width: 1000px;
         margin: 1rem auto;
-        padding: 0 2rem;
+        padding: 0 0.5rem;
         display: none;
         direction: rtl;
     }
     
     .content-card {
         background: white;
-        padding: 1.5rem;
+        padding: 0.75rem;
         border-radius: 15px;
         box-shadow: 0 5px 20px rgba(0, 0, 0, 0.377);
         margin-bottom: 2rem;
@@ -617,7 +617,7 @@
     @media (max-width: 480px) {
     /* تحسينات الهيدر للجوال */
     .navbar {
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 0.5rem;
     }
     
     .nav-container {
@@ -654,7 +654,7 @@
     
     .search-input {
     font-size: 0.9rem;
-    padding: 0.5rem 1.5rem 0.5rem 1rem;
+    padding: 0.8rem 1.5rem 0.5rem 1rem;
     }
     
     .search-btn {
@@ -891,7 +891,7 @@
     #best-jobs .professions-grid {
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 1.5rem;
-    padding: 1rem;
+    padding: 0.5rem;
     }
     
     #best-jobs .profession-card {
@@ -1082,7 +1082,7 @@
         height: 60px;
         background: #f5f5f5;
         border-radius: 50px;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.281);
         
         overflow: hidden;
     }
@@ -1311,7 +1311,7 @@
         }
         
         #compareMajors:checked ~ .toggle-slider {
-            transform: translateX(100%);
+            transform: translateX(120px);
         }
         
         .toggle-option {
@@ -1332,7 +1332,6 @@
         width: 100%;
         border-collapse: separate;
         border-spacing: 0;
-        margin: 1.5rem 0;
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
         border-radius: 12px;
         overflow: hidden;
@@ -1507,7 +1506,7 @@
         margin-top: 2rem;
         background: white;
         border-radius: 16px;
-        padding: 2.5rem;
+        padding: 0.5rem;
         box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
         border: 1px solid rgba(10, 132, 255, 0.1);
         animation: fadeIn 0.5s ease-out;
@@ -1517,7 +1516,7 @@
         color: var(--primary);
         text-align: center;
         margin-bottom: 2rem;
-        font-size: 1.8rem;
+        font-size: 1rem;
         position: relative;
         padding-bottom: 1rem;
     }
@@ -1548,9 +1547,7 @@
     
     /* تعديلات للجوال */
     @media (max-width: 768px) {
-        #compareResults {
-            padding: 1.5rem;
-        }
+     
         
         #compareDetails {
             grid-template-columns: 1fr;
@@ -1646,7 +1643,7 @@
         
         /* تقليل مساحة البطاقات التفصيلية */
         .compare-detail-card {
-            padding: 1rem;
+            padding: 0.5rem;
         }
         
         .compare-detail-card h4 {
@@ -1690,14 +1687,14 @@
         }
         
         .compare-divider {
-            margin: 0.5rem 0;
+            margin: 0rem 0;
         }
         
         .vs-badge {
             padding: 0.3rem 0.8rem;
             font-size: 0.8rem;
         }
-        
+    
         /* جعل جدول النتائج أكثر إحكاما */
         #compare th, #compare td {
             padding: 0.4rem;
@@ -2953,7 +2950,7 @@
       }
       /* تنسيقات أزرار التبديل الجديدة */
     .search-type {
-        padding: 0.4rem 1.4rem;
+        padding: 0.5rem 1rem;
         border: none;
         border-radius: 20px;
         background: rgba(10, 132, 255, 0.1);
@@ -2963,7 +2960,7 @@
         cursor: pointer;
         transition: all 0.2s ease;
         position: relative;
-        border: 1px solid rgba(10, 132, 255, 0.3);
+        border: 1px solid rgba(10, 132, 255, 0.384);
       }
       
       .search-type.active {
@@ -3003,7 +3000,7 @@
       @media (max-width: 768px) {
         .search-input {
           font-size: 0.9rem; /* حجم نص مناسب للجوال */
-          padding: 0.6rem 1rem;
+          padding: 0.8rem 1rem;
         }
         
         .search-type {
@@ -3045,7 +3042,6 @@
         }
       
         .search-type {
-          padding: 0.3rem 0.9rem !important; /* حجم مضغوط */
           font-size: 0.8rem !important; /* حجم خط أصغر */
         }
       
@@ -3067,8 +3063,8 @@
         }
       
         .search-type {
-          padding: 0.25rem 0.8rem !important;
-          font-size: 0.75rem !important; /* نص واضح حتى على الشاشات الصغيرة */
+          padding: 0.50rem 0.8rem !important;
+          font-size: 0.65rem !important; /* نص واضح حتى على الشاشات الصغيرة */
         }
       
         .search-btn {
@@ -3435,8 +3431,215 @@ margin: 0rem 0;
         padding: 0.4rem;
     }
 }
+    /* أنماط مخصصة للمفتاح التبديل */
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 320px; /* عرض مناسب للمحتوى */
+    height: 56px; /* ارتفاع مناسب لللمس */
+    background: #f0f0f0;
+    border-radius: 32px; /* زوايا دائرية كاملة */
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.toggle-switch input[type="radio"] {
+    display: none;
+}
+
+.toggle-option {
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    color: #444;
+    cursor: pointer;
+    transition: all 0.3s;
+    z-index: 2;
+    padding: 0 1rem;
+}
+
+#compareJobs + label {
+    left: 0;
+    direction: rtl;
+}
+
+#compareMajors + label {
+    right: 0;
+    direction: ltr;
+}
+
+.toggle-slider {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: calc(50% - 8px);
+    height: calc(100% - 8px);
+    background: linear-gradient(135deg, #0A84FF 0%, #3AAFA9 100%);
+    border-radius: 28px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1;
+}
+
+/* حالة التفعيل */
+#compareMajors:checked ~ .toggle-slider {
+    transform: translateX(calc(100% - 8px));
+}
+
+/* تنسيق النص والأيقونات */
+.toggle-option i {
+    font-size: 1.2rem;
+    margin: 0 0.5rem;
+    transition: transform 0.3s;
+}
+
+.toggle-option span {
+    white-space: nowrap;
+}
+
+/* حالة النشطة */
+#compareJobs:checked ~ .toggle-option:first-child,
+#compareMajors:checked ~ .toggle-option:last-child {
+    color: white;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+/* تأثيرات الhover */
+.toggle-option:hover {
+    color: #0A84FF;
+}
+
+/* استجابة للجوالات */
+@media (max-width: 768px) {
+    .toggle-switch {
+        width: 100%;
+        height: 52px;
+    }
     
+    .toggle-slider {
+        height: calc(100% - 8px);
+    }
     
+    .toggle-option {
+        font-size: 0.95rem;
+        padding: 0 0.8rem;
+    }
+    
+    .toggle-option i {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .toggle-switch {
+        height: 48px;
+    }
+    
+    .toggle-option {
+        font-size: 0.9rem;
+        padding: 0 0.6rem;
+    }
+    
+    .toggle-option i {
+        font-size: 1rem;
+        margin: 0 0.3rem;
+    }
+}
+   /* أنماط مخصصة للمفتاح التبديل - الإصدار المعدل */
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 500px; /* زيادة العرض من 320 إلى 380 */
+    height: 56px;
+    background: #f8f9fa;
+    border-radius: 32px;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.toggle-option {
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700; /* زيادة سماكة الخط */
+    color: #444;
+    cursor: pointer;
+    transition: all 0.3s;
+    z-index: 2;
+    padding: 0 1.5rem; /* زيادة المساحة الداخلية */
+    gap: 0.8rem; /* زيادة المسافة بين الأيقونة والنص */
+}
+
+.toggle-slider {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: calc(50% - 8px);
+    height: calc(100% - 8px);
+    background: linear-gradient(135deg, #0A84FF 0%, #3AAFA9 100%);
+    border-radius: 28px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1;
+}
+
+/* تعديلات الاستجابة للشاشات */
+@media (max-width: 768px) {
+    .toggle-switch {
+        width: 100%;
+        max-width: 450px; /* زيادة من 300 إلى 340 */
+        height: 54px;
+    }
+    
+    .toggle-option {
+        padding: 0 1.2rem;
+        gap: 0.6rem;
+        font-size: 1rem; /* حجم خط أكبر */
+    }
+}
+
+@media (max-width: 480px) {
+    .toggle-switch {
+
+        height: 50px;
+    }
+    
+    .toggle-option {
+        padding: 0 1rem;
+        gap: 0.5rem;
+        font-size: 0.95rem;
+    }
+    
+    .toggle-option i {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .toggle-switch {
+
+        height: 50px;
+    }
+}
+/* تأثيرات الhover المحسنة */
+.toggle-option:hover {
+    color: #0A84FF;
+    transform: scale(1.02);
+}
+
+.toggle-option:hover i {
+    transform: rotate(-5deg);
+} 
+
+
+
 </style>
 
 </head>
@@ -3457,8 +3660,8 @@ margin: 0rem 0;
     <div class="search-container">
     <input class="search-input" dir="rtl" id="searchInput" placeholder="ابحث عن مهنة..." type="text"/>
     <div class="search-type-buttons" >
-    <button class="search-type" data-type="majors"><i class="fas fa-graduation-cap"> تخصص </i>  </button>
-    <button class="search-type active" data-type="jobs"><i class="fas fa-briefcase" style="left: 0.1rem;"> مهنة </i></button>
+    <button class="search-type" data-type="majors"><i class="fas fa-graduation-cap"></i>    التخصص</button>
+    <button class="search-type active" data-type="jobs"><i class="fas fa-briefcase" style="left: 0.1rem;"></i>   المهنة</button>
     </div>
     <button class="search-btn"><i class="fas fa-search"></i></button>
     <div class="search-results" id="searchResults"></div>
@@ -3480,7 +3683,7 @@ margin: 0rem 0;
     </nav>
 <header class="header">
 <h1>دليل المهن العالمي</h1>
-<p>كل ماتريد معرفته عن الرواتب والمهن موجود ه<نا</p>
+<p>كل ماتريد معرفته عن الرواتب والمهن موجودهنا</p>
 </header>
 <!-- قسم Best Jobs & Majors -->
 <section class="content-section" id="best-jobs">
@@ -3511,7 +3714,7 @@ margin: 0rem 0;
             <div class="content-card">
                 <div class="compare-header">
                     <h2 style="color: var(--primary); text-align: center; margin-bottom: 1.5rem;">
-                        <i class="fas fa-balance-scale"></i> أداة المقارنة الذكية
+                     قسم المقارنة  <i class="fas fa-balance-scale"></i>
                     </h2>
                     <p style="text-align: center; color: #666; margin-bottom: 2rem;">
                         قارن بين المهن أو التخصصات الجامعية لاتخاذ القرار الأفضل لمستقبلك
@@ -3519,22 +3722,22 @@ margin: 0rem 0;
                 </div>
   
         <!-- اختيار نوع المقارنة -->
-        <div class="compare-type-selector" dir="rtl">
-            <div class="toggle-switch">
-                
-                <input type="radio" id="compareJobs" name="compareType" value="jobs" checked 
-                       onclick="setCompareType('jobs')" >
-                <label for="compareJobs" class="toggle-option">
-                    <i class="fas fa-briefcase"></i> مقارنة المهن 
-                </label>
-                <input type="radio" id="compareMajors" name="compareType" value="majors" 
-                       onclick="setCompareType('majors')" >
-                <label for="compareMajors" class="toggle-option">
-                    <i class="fas fa-graduation-cap"></i> مقارنة التخصصات
-                </label>
-                
-                <span class="toggle-slider"></span>
-            </div>
+        <div class="compare-type-selector" >
+           <div class="toggle-switch">
+    <input type="radio" id="compareJobs" name="compareType" value="jobs" checked onclick="setCompareType('jobs')">
+    <label for="compareJobs" class="toggle-option">
+        <span>مقارنة المهن</span>
+         <i class="fas fa-briefcase"></i>
+    </label>
+
+    <input type="radio" id="compareMajors" name="compareType" value="majors" onclick="setCompareType('majors')">
+    <label for="compareMajors" class="toggle-option">
+        <i class="fas fa-graduation-cap"></i>
+        <span>مقارنة التخصصات</span>
+    </label>
+
+    <span class="toggle-slider"></span>
+</div>
         </div>
 <!-- حقول إدخال البحث -->
 <div class="compare-inputs-container">
@@ -3553,7 +3756,6 @@ margin: 0rem 0;
 
     <div class="compare-divider">
         <div class="divider-line"></div>
-        <span class="vs-badge">VS</span>
     </div>
 
     <div class="compare-input-group">
@@ -3949,263 +4151,23 @@ margin: 0rem 0;
 <script>
     let currentSearchType = 'jobs'; // القيمة الافتراضية
     // بيانات المهن
-    const professions = [
-        {
-            industry: "fhfhf" ,
-            jobo: "كثير"  ,
-            title: "مهندس ذكاء اصطناعي",
-            avgSalary: "95,000 - 250,000",
-            experience: "5+ سنوات",
-            demand: "مرتفع جدًا",
-            description: "تطوير أنظمة الذكاء الاصطناعي وتعلم الآلة",
-            summarize: "hghghghghg" ,
-            category: "AI",
-            skills: ["تحليلية", "تقنية", "AI", "بيانات"]
-        },
-        {
-            industry: "fhfhf" ,
-            jobo: "كثير"  ,
-            title: "جراح تجميل",
-            avgSalary: "120,000-300,000",
-            experience: "12+ سنوات",
-            demand: "مرتفع",
-            description: "إجراء عمليات التجميل التصحيحية والجمالية",
-            summarize: "hghghghghg" ,
-            category: "الطب",
-            skills: ["طب", "يدوية", "تركيز"]
-        },
-        {
-            industry: "fhfhf" ,
-            jobo: "كثير"  ,
-            title: "طبيب أشعة تداخلية",
-            avgSalary: "280,000 - 450,000",
-            experience: "8+ سنوات",
-            demand: "متوسط",
-            description: "تشخيص وعلاج الأمراض باستخدام التصوير الإشعاعي",
-            summarize: "hghghghghg" ,
-            category: "الطب",
-            skills: ["طب", "تحليلية", "تقنية"]
-        },
-        {
-            industry: "fhfhf" ,
-            jobo: "كثير"  ,
-            title: "مطور بلوك تشين",
-            avgSalary: "120,000 - 300,000",
-            experience: "4+ سنوات",
-            demand: "مرتفع جدًا",
-            description: "تطوير أنظمة لامركزية باستخدام تقنية البلوك تشين",
-            summarize: "hghghghghg" ,
-            category: "AI",
-            skills: ["تقنية", "تحليلية", "أمن"]
-        },
-        {
-            industry: "fhfhf" ,
-            jobo: "كثير"  ,
-            title: "مهندس حوسبة كمومية",
-            avgSalary: "80,000-150,000",
-            experience: "6+ سنوات",
-            demand: "مرتفع",
-            description: "تصميم أنظمة الحوسبة الكمومية",
-            summarize: "hghghghghg" ,
-            category: "AI",
-            skills: ["تقنية", "تحليلية", "رياضيات"]
-        },
-        {
-            industry: "fhfhf" ,
-            jobo: "كثير"  ,
-            title: "مهندس طاقة الرياح البحرية",
-            avgSalary: "90,000 - 180,000",
-            experience: "5+ سنوات",
-            demand: "مرتفع",
-            description: "تصميم وتنفيذ مزارع الرياح البحرية",
-            summarize: "hghghghghg" ,
-            category: "الهندسة",
-            skills: ["هندسة", "تحليلية", "بيئية"]
-        },
-        {
-            industry: "fhfhf" ,
-            jobo: "كثير"  ,
-            title: "باحث في تقنية النانو",
-            avgSalary: "85,000 - 160,000",
-            experience: "4+ سنوات",
-            demand: "متوسط",
-            description: "بحث وتطوير مواد متقدمة بمقياس النانو",
-            summarize: "hghghghghg" ,
-            category: "الهندسة",
-            skills: ["هندسة", "بحثية", "تحليلية"]
-        },
-        {
-            industry: "fhfhf" ,
-            jobo: "كثير"  ,
-            title: "مدير استثمار العملات الرقمية",
-            avgSalary: "130,000 - 400,000",
-            experience: "5+ سنوات",
-            demand: "مرتفع",
-            description: "إدارة محافظ استثمارية في العملات المشفرة",
-            summarize: "hghghghghg" ,
-            category: "الأعمال",
-            skills: ["مالية", "تحليلية", "قيادة"]
-        },
-        {
-            industry: "fhfhf" ,
-            jobo: "كثير"  ,
-            title: "محلل بيانات سلوكية",
-            avgSalary: "95,000 - 220,000",
-            experience: "3+ سنوات",
-            demand: "مرتفع",
-            description: "تحليل السلوك الاقتصادي للأفراد والشركات",
-            summarize: "hghghghghg" ,
-            category: "الأعمال",
-            skills: ["تحليلية", "اجتماعية", "بحثية"]
-        },
-        {
-            industry: "fhfhf" ,
-            jobo: "كثير"  ,
-            title: "مصمم واقع معزز",
-            avgSalary: "70,000 - 150,000",
-            experience: "3+ سنوات",
-            demand: "مرتفع",
-            description: "تصميم تجارب تفاعلية باستخدام تقنيات AR",
-            summarize: "hghghghghg" ,
-            category: "الفنون",
-            skills: ["إبداعية", "تقنية", "تصميم"]
-        },
-        {
-            industry: "fhfhf" ,
-            jobo: "كثير"  ,
-            title: "محامي جرائم سيبرانية",
-            avgSalary: "110,000 - 250,000",
-            experience: "6+ سنوات",
-            demand: "مرتفع",
-            description: "معالجة القضايا القانونية المتعلقة بالجرائم الإلكترونية",
-            summarize: "hghghghghg" ,
-            category: "AI",
-            skills: ["قانونية", "تحليلية", "أمن"]
-        },
-        {
-            industry: "fhfhf" ,
-            jobo: "كثير"  ,
-            title: "جراح قلب",
-            avgSalary: "200,000 - 450,000",
-            experience: "10+ سنوات",
-            demand: "مرتفع",
-            description: "إجراء عمليات جراحية معقدة في القلب",
-            summarize: "hghghghghg" ,
-            category: "الطب",
-            skills: ["طب", "يدوية", "تركيز"]
-        },
-        {
-            industry: "fhfhf" ,
-            jobo: "كثير"  ,
-            title: "مصمم تجربة المستخدم",
-            avgSalary: "65,000 - 140,000",
-            experience: "3+ سنوات",
-            demand: "مرتفع",
-            description: "تصميم واجهات المستخدم وتحسين التجربة الرقمية",
-            summarize: "hghghghghg" ,
-            category: "الفنون",
-            skills: ["إبداعية", "تواصل", "تصميم"]
-        },
-        {
-            industry: "fhfhf" ,
-            jobo: "كثير"  ,
-            summarize: "hghghghghg" ,
-            title: "مهندس ميكانيكي",
-            avgSalary: "70,000 - 120,000",
-            experience: "4+ سنوات",
-            demand: "متوسط",
-            description: "تصميم الأنظمة الميكانيكية والآلات",
-            category: "الهندسة",
-            skills: ["هندسة", "تحليلية", "تقنية"]
-        },
-        {
-            industry: "fhfhf" ,
-            jobo: "كثير"  ,
-            summarize: "hghghghghg" ,
-            title: "مدير مشاريع تقنية",
-            avgSalary: "90,000 - 160,000",
-            experience: "5+ سنوات",
-            demand: "مرتفع",
-            description: "إدارة فرق العمل والمشاريع التقنية",
-            category: "الأعمال",
-            skills: ["قيادة", "تنظيمية", "تواصل"]
-        }
-    ];
-    
-    // بيانات التخصصات الجامعية
-    // بيانات التخصصات المعدلة
-    const majors = [
-    { 
-        mid: "176" ,
-        jobo: "كثير"  ,
-        summarize: "hghghghghg" ,
-        name: "الطب البشري", 
-        field: "الطب", 
-        description: "يهدف تخصص الطب البشري إلى إعداد أطباء مؤهلين لتشخيص وعلاج الأمراض والإصابات. يتضمن الدراسة العميقة لجسم الإنسان ووظائفه والأمراض التي تصيبه وطرق علاجها.",
-        duration: "6 سنوات + سنة امتياز",
-        universities: ["جامعة الملك سعود", "جامعة الملك عبدالعزيز", "جامعة القصيم"],
-        jobs: "3 وظائف",
-        relatedJobs: [
-        "طبيب عام" , "أخصائي جراحة","طبيب باطنية","طبيب أطفال"
-        ]
-    },
-    { 
-        mid: "176" ,
-        jobo: "كثير"  ,
-        summarize: "hghghghghg" ,
-        name: "هندسة الحاسوب", 
-        field: "الهندسة", 
-        description: "يجمع تخصص هندسة الحاسوب بين مبادئ الهندسة الكهربائية وعلوم الحاسوب. يدرس الطلاب تصميم وتطوير أنظمة الحاسوب المادية والبرمجية.",
-        duration: "4 سنوات دراسية",
-        universities: ["جامعة الملك فهد للبترول", "جامعة الأميرة نورة", "جامعة الطائف"],
-        jobs: "3 وظائف",
-        relatedJobs: [
-        "مهندس أمن سيبراني"  , "مهندس برمجيات" , "مهندس شبكات"
-        ]
-    },
-    { 
-        mid: "176" ,
-        jobo: "كثير"  ,
-        summarize: "hghghghghg" ,
-        name: "إدارة الأعمال", 
-        field: "الأعمال", 
-        description: "يركز تخصص إدارة الأعمال على دراسة العمليات الإدارية في المنظمات. يشمل التخطيط والتنظيم والقيادة والرقابة على الموارد لتحقيق الأهداف التنظيمية.",
-        duration: "4 سنوات دراسية",
-        universities: ["جامعة الملك سعود", "جامعة الإمام محمد بن سعود", "جامعة الدمام"],
-        jobs: "3 وظائف",
-        relatedJobs: [
-        "مدير تسويق" ,  "مدير مشاريع" , "محلل أعمال"
-        ]
-    },
-    { 
-        mid: "176" ,
-        jobo: "كثير"  ,
-        summarize: "hghghghghg" ,
-        name: "الهندسة المعمارية", 
-        field: "الهندسة", 
-        description: "يتعلم طلاب الهندسة المعمارية تصميم المباني والهياكل مع مراعاة الجوانب الجمالية والوظيفية والسلامة. يجمع التخصص بين الفنون والهندسة.",
-        duration: "5 سنوات دراسية",
-        universities: ["جامعة الملك فهد للبترول", "جامعة الملك سعود", "جامعة جدة"],
-        jobs: "3 وظائف",
-        relatedJobs: [
-        "مهندس معماري" , "مصمم داخلي" , "مدير موقع بناء"
-        ]
-    },
-    { 
-        mid: "176" ,
-        jobo: "كثير"  ,
-        summarize: "hghghghghg" ,
-        name: "AI", 
-        field: "AI", 
-        description: "يركز تخصص الذكاء الاصطناعي على تطوير أنظمة قادرة على محاكاة الذكاء البشري. يشمل تعلم الآلة، معالجة اللغة الطبيعية، الرؤية الحاسوبية وغيرها.",
-        duration: "4 سنوات دراسية",
-        universities: ["جامعة الملك سعود", "جامعة الأمير مقرن", "جامعة الملك عبدالله"],
-        jobs: "3 وظائف",
-        relatedJobs: [
-            "مهندس تعلم آلي","باحث في الذكاء الاصطناعي","مطور خوارزميات"
-        ]
-    }
-    ];
+    let majors = [];
+    let professions = []; // تعريف متغير فارغ سيتم ملؤه لاحقاً من الملف
+
+document.addEventListener('DOMContentLoaded', function () {
+    fetch('jobs.json')
+  .then(res => res.json())
+  .then(data => {
+    professions = data.professions;
+    majors = data.majors;
+    renderProfessions(professions);
+    renderMajors(majors);
+  })
+  .catch(error => {
+    console.error("فشل تحميل البيانات من jobs.json:", error);
+  });
+
+});
     // تعريف الماب (الربط) بين الفلاتر والمسميات
     const filterToCategoryMapping = {
     "الطب": ["الطب"],
@@ -5400,7 +5362,22 @@ function setCompareType(type) {
     // تحديث واجهة المستخدم
     const jobsBtn = document.querySelector('#compareJobs');
     const majorsBtn = document.querySelector('#compareMajors');
+    const slider = document.querySelector('.toggle-slider');
+    const containerWidth = document.querySelector('.toggle-switch').offsetWidth;
+    const translateValue = type === 'majors' ? containerWidth/2 : 0;
     
+    slider.style.transform = `translateX(${translateValue}px)`;
+    
+    // تحديث الحالة النشطة
+    document.querySelectorAll('.toggle-option').forEach(opt => {
+        opt.style.color = opt.htmlFor === `compare${type.charAt(0).toUpperCase() + type.slice(1)}` 
+            ? 'white' 
+            : '#444';
+    });
+    
+    // إضافة تأثير سلس
+    slider.style.transition = 'transform 0.4s cubic-bezier(0.4, 0, 0.2, 1)';
+
     if (type === 'jobs') {
         jobsBtn.checked = true;
         document.querySelectorAll('.compare-search input').forEach(input => {
