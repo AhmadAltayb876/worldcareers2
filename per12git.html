@@ -3638,6 +3638,129 @@ margin: 0rem 0;
 .toggle-option:hover i {
     transform: rotate(-15deg);
 } 
+
+#compareHeader1:hover, 
+#compareHeader2:hover {
+    color: var(--primary);
+    cursor: pointer;
+    text-decoration: underline;
+    transition: all 0.2s ease;
+}
+/* تأثيرات Hover لنتائج المقارنة */
+#compareResults table tbody tr:hover {
+    background-color: rgba(10, 132, 255, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+#compareResults table tbody tr td:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.compare-winner {
+    position: relative;
+}
+
+.compare-winner::after {
+    content: "✓ الأفضل";
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: #2ecc71;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 0.7rem;
+    font-weight: bold;
+}
+
+/* تأثيرات للعناوين عند Hover */
+#compareHeader1:hover, 
+#compareHeader2:hover {
+    color: black;
+    cursor: pointer;
+    text-decoration:none;
+    transition: all 0.2s ease;
+}
+/* تنسيق جدول المقارنة */
+#compareResults table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin: 1rem 0;
+}
+
+#compareResults table th {
+    background-color: var(--primary);
+    color: white;
+    padding: 12px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+}
+
+#compareResults table td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+#compareResults table tr:last-child td {
+    border-bottom: none;
+}
+
+#compareResults table td:nth-child(1) {
+    text-align: right;
+    font-weight: bold;
+    background-color: #f9f9f9;
+}
+
+#compareResults table tr:hover td:nth-child(1) {
+    background-color: #f1f1f1;
+}
+/* تحسينات النافذة المنبثقة */
+.modal-content {
+    animation: modalOpen 0.1s ease-out;
+}
+
+@keyframes modalOpen {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.modal {
+    backdrop-filter: blur(5px);
+}
+
+.close-btn:hover {
+    transform: rotate(90deg);
+    color: var(--primary);
+    transition: all 0.3s ease;
+}
+/* تأثيرات إضافية للبطاقات */
+.profession-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.profession-card:hover .category-tag {
+    background-color: var(--secondary);
+    color: white;
+}
+
+.profession-card:hover .highlight {
+    color: var(--primary);
+    font-weight: bold;
+}
 </style>
 
 </head>
@@ -5002,13 +5125,33 @@ function resetcom() {
         const resultsDiv = document.getElementById('compareResults');
         const tableBody = document.getElementById('compareTableBody');
         const detailsDiv = document.getElementById('compareDetails');
+        const header1 = document.getElementById('compareHeader1');
+        const header2 = document.getElementById('compareHeader2');
         
+        header1.innerHTML = compareType === 'jobs' ? selectedItem1.title : selectedItem1.name;
+        header2.innerHTML = compareType === 'jobs' ? selectedItem2.title : selectedItem2.name;
+            // جعل العناوين قابلة للنقر
+        header1.style.cursor = 'pointer';
+        header2.style.cursor = 'pointer';
+        
+        header1.onclick = () => {
+            if (compareType === 'jobs') {
+                showDetails(selectedItem1);
+            } else {
+                showMajorDetails(selectedItem1);
+            }
+        };
+        
+        header2.onclick = () => {
+            if (compareType === 'jobs') {
+                showDetails(selectedItem2);
+            } else {
+                showMajorDetails(selectedItem2);
+            }
+        };
+
         // تعيين العناوين
-        document.getElementById('compareHeader1').textContent = 
-            compareType === 'jobs' ? selectedItem1.title : selectedItem1.name;
-        document.getElementById('compareHeader2').textContent = 
-            compareType === 'jobs' ? selectedItem2.title : selectedItem2.name;
-        
+            
         // إنشاء جدول المقارنة
         let tableHTML = '';
         
