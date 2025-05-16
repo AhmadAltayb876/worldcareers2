@@ -4855,34 +4855,21 @@ searchInput.addEventListener('keydown', function(e) {
     // تعيين نوع المقارنة
     // تحسين وظيفة setCompareType
 function setCompareType(type) {
-    currentCompareType = type;
+    compareType = type; // تأكد من تحديث المتغير العالمي
     
     // تحديث واجهة المستخدم
-    const jobsBtn = document.querySelector('#compareJobs');
-    const majorsBtn = document.querySelector('#compareMajors');
-    const slider = document.querySelector('.toggle-slider');
-    const containerWidth = document.querySelector('.toggle-switch').offsetWidth;
-    const translateValue = type === 'majors' ? containerWidth/2 : 0;
+    const jobsBtn = document.getElementById('compareJobsBtn');
+    const majorsBtn = document.getElementById('compareMajorsBtn');
     
-    slider.style.transform = `translateX(${translateValue}px)`;
-    
-    // تحديث الحالة النشطة
-    document.querySelectorAll('.toggle-option').forEach(opt => {
-        opt.style.color = opt.htmlFor === `compare${type.charAt(0).toUpperCase() + type.slice(1)}` 
-            ? 'white' 
-            : '#444';
-    });
-    
-    // إضافة تأثير سلس
-    slider.style.transition = 'transform 0.4s cubic-bezier(0.4, 0, 0.2, 1)';
-
     if (type === 'jobs') {
-        jobsBtn.checked = true;
+        jobsBtn.classList.add('active');
+        majorsBtn.classList.remove('active');
         document.querySelectorAll('.compare-search input').forEach(input => {
             input.placeholder = "ابحث عن مهنة...";
         });
     } else {
-        majorsBtn.checked = true;
+        majorsBtn.classList.add('active');
+        jobsBtn.classList.remove('active');
         document.querySelectorAll('.compare-search input').forEach(input => {
             input.placeholder = "ابحث عن تخصص...";
         });
