@@ -302,10 +302,10 @@
     
     .professions-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(380px, 3fr));
         gap: 2rem;
         padding: 0.5rem;
-        max-width: 1400px;
+        max-width: 1500px;
         margin: 0 auto;
     }
     
@@ -578,11 +578,10 @@
         
     }
     
-    @media (max-width: 768px) {
+    @media (max-width: 192px) {
         .professions-grid {
             grid-template-columns: 1fr;
             padding: 1rem;
-    
         }
         
     @media (max-width: 768px) {
@@ -1124,7 +1123,7 @@
         left: 5px;
         width: 50%;
         height: 50px;
-        background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+        background: linear-gradient(135deg, black 0%, var(--secondary) 100%);
         border-radius: 45px;
         transition: all 0.3s ease;
         z-index: 0;
@@ -3509,7 +3508,7 @@ margin: 0rem 0;
 }
 
 /* تأثيرات الhover */
-.toggle-option:hover {
+.toggle-option .active :hover {
     color: #0A84FF;
 }
 
@@ -3629,20 +3628,16 @@ margin: 0rem 0;
     }
 }
 /* تأثيرات الhover المحسنة */
-.toggle-option:hover {
-    color: #0A84FF;
-    transform: scale(1.02);
+
+.toggle-option :hover {
+    color: #000000;
+    font-weight: bold;
+    transform: scale(1.08);
 }
 
 .toggle-option:hover i {
-    transform: rotate(-5deg);
+    transform: rotate(-15deg);
 } 
-
-
-
-
-
-
 </style>
 
 </head>
@@ -3728,7 +3723,7 @@ margin: 0rem 0;
         <div class="compare-type-selector" >
            <div class="toggle-switch">
     <input type="radio" id="compareJobs" name="compareType" value="jobs" checked onclick="setCompareType('jobs')">
-    <label for="compareJobs" class="toggle-option">
+    <label for="compareJobs" class="toggle-option .active">
         <span>مقارنة المهن</span>
          <i class="fas fa-briefcase"></i>
     </label>
@@ -3810,7 +3805,7 @@ margin: 0rem 0;
 <!-- داخل قسم compareResults بعد جدول النتائج -->
 <div class="compare-controls" id="compareControls">
     <button onclick="resetcom()" class="control-btn reset-btn">
-        <i class="fas fa-redo"></i> إخفاء النتائج
+        <i class="fas fa-redo"></i> إعادة الاختبار
     </button>
     <button onclick="goToHome()" class="control-btn home-btn">
         <i class="fas fa-home"></i> الصفحة الرئيسية
@@ -4858,24 +4853,29 @@ searchInput.addEventListener('keydown', function(e) {
     // تعيين نوع المقارنة
     // تحسين وظيفة setCompareType
 function setCompareType(type) {
-    compareType = type; // تأكد من تحديث المتغير العالمي
+    compareType = type;
     
-    // تحديث واجهة المستخدم
-    const jobsBtn = document.getElementById('compareJobsBtn');
-    const majorsBtn = document.getElementById('compareMajorsBtn');
+    // تحديث واجهة المستخدم مع التحقق من وجود العناصر
+    const jobsBtn = document.getElementById('compareJobs');
+    const majorsBtn = document.getElementById('compareMajors');
     
-    if (type === 'jobs') {
-        jobsBtn.classList.add('active');
-        majorsBtn.classList.remove('active');
-        document.querySelectorAll('.compare-search input').forEach(input => {
-            input.placeholder = "ابحث عن مهنة...";
-        });
+    if (jobsBtn && majorsBtn) {
+        if (type === 'jobs') {
+            jobsBtn.classList.add('active');
+            majorsBtn.classList.remove('active');
+            
+            document.querySelectorAll('.compare-search input').forEach(input => {
+                input.placeholder = "ابحث عن مهنة...";
+            });
+        } else {
+            majorsBtn.classList.add('active');
+            jobsBtn.classList.remove('active');
+            document.querySelectorAll('.compare-search input').forEach(input => {
+                input.placeholder = "ابحث عن تخصص...";
+            });
+        }
     } else {
-        majorsBtn.classList.add('active');
-        jobsBtn.classList.remove('active');
-        document.querySelectorAll('.compare-search input').forEach(input => {
-            input.placeholder = "ابحث عن تخصص...";
-        });
+        console.error('عناصر المقارنة غير موجودة في DOM');
     }
     
     resetcom();
@@ -5080,58 +5080,6 @@ function resetcom() {
         
         tableBody.innerHTML = tableHTML;
         
-        // عرض تفاصيل كل عنصر
-        let detailsHTML = '';
-        if (compareType === 'jobs') {
-            detailsHTML = `
-                <div class="compare-detail-card">
-                    <h4>${selectedItem1.title}</h4>
-                    <p><strong>فرص العمل:</strong> ${selectedItem1.jobo}</p>
-                    <p><strong>ملخص المهنة:</strong> ${selectedItem1.summarize}</p>
-                    <p><strong>الراتب:</strong> $${selectedItem1.avgSalary}</p>
-                    <p><strong>الخبرة المطلوبة:</strong> ${selectedItem1.experience}</p>
-                    <p><strong>مستوى الطلب:</strong> ${selectedItem1.demand}</p>
-                </div>
-                <div class="compare-detail-card">
-                    <h4>${selectedItem2.title}</h4>
-                    <p><strong>فرص العمل :</strong> ${selectedItem2.jobo}</p>
-                    <p><strong>الوصف:</strong> ${selectedItem2.summarize}</p>
-                    <p><strong>الراتب:</strong> $${selectedItem2.avgSalary}</p>
-                    <p><strong>الخبرة المطلوبة:</strong> ${selectedItem2.experience}</p>
-                    <p><strong>مستوى الطلب:</strong> ${selectedItem2.demand}</p>
-                </div>
-            `;
-        } else {
-            detailsHTML = `
-                <div class="compare-detail-card">
-                    <h4>${selectedItem1.name}</h4>
-                    <p><strong>فرص العمل :</strong> ${selectedItem1.jobo}</p>
-                    <p><strong>ملخص التخصص :</strong> ${selectedItem1.description}</p>
-                    ${selectedItem1.relatedJobs && selectedItem1.relatedJobs.length > 0 ? `
-                        <p><strong>الوظائف المرتبطة:</strong></p>
-                        <ul>
-                            ${selectedItem1.relatedJobs.map(job => `
-                                <li>${job.title} (${job.salary})</li>
-                            `).join('')}
-                        </ul>
-                    ` : ''}
-                </div>
-                <div class="compare-detail-card">
-                    <h4>${selectedItem2.name}</h4>
-                    <p><strong>فرص العمل :</strong> ${selectedItem2.field}</p>
-                    <p><strong>ملخص التخصص :</strong> ${selectedItem2.summarize}</p>
-                    ${selectedItem2.relatedJobs && selectedItem2.relatedJobs.length > 0 ? `
-                        <p><strong>الوظائف المرتبطة:</strong></p>
-                        <ul>
-                            ${selectedItem2.relatedJobs.map(job => `
-                                <li>${job.title} (${job.salary})</li>
-                            `).join('')}
-                        </ul>
-                    ` : ''}
-                </div>
-            `;
-        }
-        detailsDiv.innerHTML = detailsHTML;
         resultsDiv.style.display = 'block';
         document.getElementById('compareControls').style.display = 'block';
         // التمرير إلى نتائج المقارنة
