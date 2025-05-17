@@ -302,10 +302,10 @@
     
     .professions-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(380px, 3fr));
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
         gap: 2rem;
         padding: 0.5rem;
-        max-width: 1500px;
+        max-width: 1400px;
         margin: 0 auto;
     }
     
@@ -720,7 +720,7 @@
         }
         
         #modalCategory {
-            top: 2.5rem;
+            top: 1rem;
             left: 0.8rem;
             font-size: 0.8rem;
         }
@@ -859,9 +859,8 @@
     }
     /* أنماط خاصة بقسم Best Jobs */
     #best-jobs .filter-box {
-        background: rgba(58, 175, 169, 0.1);
+    background: rgba(58, 175, 169, 0.1);
     padding: 1.5rem;
-    margin-bottom: 1rem;
     border-radius: 15px;
     max-width: 1400px;
     gap:1rem;
@@ -869,13 +868,13 @@
     
     #best-jobs .filter-group {
     display: flex;
-    gap: 0.4rem;
+    gap: 0.6rem;
     flex-wrap: wrap;
     min-width: 100%;
     }
-
+    
     #best-jobs .filter-item {
-        background: white;
+    background: white;
     padding: 0.8rem 1.5rem;
     border-radius: 25px;
     cursor: pointer;
@@ -954,7 +953,7 @@
     }
     @media (max-width: 480px) {
     #best-jobs .filter-box {
-    padding: 0.2rem;
+    padding: 0rem;
     }
     
     #best-jobs .profession-card h3 {
@@ -1012,14 +1011,14 @@
     font-size: 0.75rem;
     }
     }
-    @media (min-width : 524px) {
+    @media (min-width : 600px) {
     #best-jobs .filter-group {
     justify-content: center; /* توسيط العناصر */
     }
     
     #best-jobs .filter-item {
     flex: 0 0 auto; /* منع العناصر من التمدد */
-    padding: 1rem 1.2rem; /* تعديل الحشو */
+    padding: 0.6rem 1.2rem; /* تعديل الحشو */
     font-size: 0.9rem; /* تصغير حجم الخط */
     margin: 0.2rem; /* إضافة هوامش صغيرة */
     }
@@ -1028,32 +1027,20 @@
     margin-left: 0.3rem; /* تعديل مسافة الأيقونة */
     }
     }
-    @media (max-width : 584px) {
-        #best-jobs .filter-group {
+    @media (max-width : 480px) {
+    #best-jobs .filter-group {
     justify-content: center; /* توسيط العناصر */
+    gap: 0.6rem; /* تقليل المسافة بين العناصر */
+    flex-direction: column;
     }
     
     #best-jobs .filter-item {
+    display: inline-block;
     flex: 0 0 auto; /* منع العناصر من التمدد */
-    padding: 0.8rem 1rem; /* تعديل الحشو */
-    font-size: 0.8rem; /* تصغير حجم الخط */
+    padding: 0.6rem 1.2rem; /* تعديل الحشو */
+    font-size: 0.9rem; /* تصغير حجم الخط */
     margin: 0.2rem; /* إضافة هوامش صغيرة */
-    }
-    
-    #best-jobs .filter-item i {
-    margin-left: 0.3rem; /* تعديل مسافة الأيقونة */
-    }
-    }
-    @media (max-width : 584px) {
-        #best-jobs .filter-group {
-    justify-content: center; /* توسيط العناصر */
-    }
-    
-    #best-jobs .filter-item {
-    flex: 0 0 auto; /* منع العناصر من التمدد */
-    padding: 0.8rem 1rem; /* تعديل الحشو */
-    font-size: 0.75rem; /* تصغير حجم الخط */
-    margin: 0.2rem; /* إضافة هوامش صغيرة */
+    min-width: 100%;
     }
     
     #best-jobs .filter-item i {
@@ -2361,6 +2348,7 @@
     @media (max-width: 480px) {
     #jobs .filter-item {
         padding: 0.6rem 1rem;
+        font-size: 0.95rem;
         min-width: 140px;
     }
     
@@ -3264,6 +3252,7 @@
     
     /* تحسين الأزرار والعلامات */
     #best-jobs .filter-item {
+    padding: 1rem 2rem;
     border-radius: 32px;
     border: 2px solid var(--primary);
     background: rgba(255, 255, 255, 0.95);
@@ -3334,7 +3323,11 @@
     #best-jobs .profession-card h3 {
         font-size: 1.4rem;
     }
-   
+    
+    #best-jobs .filter-item {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.95rem;
+    }
     }
     #jobs .filter-group {
     background: rgba(10, 132, 255, 0.336);
@@ -3630,7 +3623,6 @@ margin: 0rem 0;
 
 @media (max-width: 480px) {
     .toggle-switch {
-
         height: 50px;
     }
 }
@@ -4803,7 +4795,7 @@ searchInput.addEventListener('keydown', function(e) {
                     ${profession.jobo}
                 </div>
                 <div class="stat-item">
-                    <span>الخبرة</span>
+                    <span>السنوات الدراسية</span>
                     ${profession.experience}
                 </div>
                 <div class="stat-item">
@@ -4940,7 +4932,7 @@ searchInput.addEventListener('keydown', function(e) {
                         <div class="highlight">$${job.avgSalary}</div>
                     </div>
                     <div class="stat-item">
-                        <span>سنوات الخبرة</span>
+                        <span>السنوات الدراسية</span>
                         <div class="highlight">${job.experience}</div>
                     </div>
                 </div>
@@ -5181,7 +5173,7 @@ function resetcom() {
                     <td>$${selectedItem2.avgSalary}</td>
                 </tr>
                 <tr>
-                    <td>سنوات الخبرة المطلوبة</td>
+                    <td>السنوات الدراسية المطلوبة</td>
                     <td>${selectedItem1.experience}</td>
                     <td>${selectedItem2.experience}</td>
                 </tr>
