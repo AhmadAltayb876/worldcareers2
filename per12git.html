@@ -859,8 +859,9 @@
     }
     /* أنماط خاصة بقسم Best Jobs */
     #best-jobs .filter-box {
-    background: rgba(58, 175, 169, 0.1);
+        background: rgba(58, 175, 169, 0.1);
     padding: 1.5rem;
+    margin-bottom: 1rem;
     border-radius: 15px;
     max-width: 1400px;
     gap:1rem;
@@ -868,10 +869,11 @@
     
     #best-jobs .filter-group {
     display: flex;
-    gap: 0.6rem;
+    gap: 0.4rem;
     flex-wrap: wrap;
     min-width: 100%;
     }
+
     
     #best-jobs .filter-item {
     background: white;
@@ -953,7 +955,7 @@
     }
     @media (max-width: 480px) {
     #best-jobs .filter-box {
-    padding: 0rem;
+        padding: 0.2rem;
     }
     
     #best-jobs .profession-card h3 {
@@ -1011,14 +1013,14 @@
     font-size: 0.75rem;
     }
     }
-    @media (min-width : 600px) {
+    @media (min-width : 524px) {
     #best-jobs .filter-group {
     justify-content: center; /* توسيط العناصر */
     }
     
     #best-jobs .filter-item {
     flex: 0 0 auto; /* منع العناصر من التمدد */
-    padding: 0.6rem 1.2rem; /* تعديل الحشو */
+    padding: 1rem 1.2rem; /* تعديل الحشو */
     font-size: 0.9rem; /* تصغير حجم الخط */
     margin: 0.2rem; /* إضافة هوامش صغيرة */
     }
@@ -1027,20 +1029,34 @@
     margin-left: 0.3rem; /* تعديل مسافة الأيقونة */
     }
     }
-    @media (max-width : 480px) {
-    #best-jobs .filter-group {
+   
+
+    @media (max-width : 584px) {
+        #best-jobs .filter-group {
     justify-content: center; /* توسيط العناصر */
-    gap: 0.6rem; /* تقليل المسافة بين العناصر */
-    flex-direction: column;
     }
     
     #best-jobs .filter-item {
-    display: inline-block;
     flex: 0 0 auto; /* منع العناصر من التمدد */
-    padding: 0.6rem 1.2rem; /* تعديل الحشو */
-    font-size: 0.9rem; /* تصغير حجم الخط */
+    padding: 0.8rem 1rem; /* تعديل الحشو */
+    font-size: 0.8rem; /* تصغير حجم الخط */
     margin: 0.2rem; /* إضافة هوامش صغيرة */
-    min-width: 100%;
+    }
+    
+    #best-jobs .filter-item i {
+    margin-left: 0.3rem; /* تعديل مسافة الأيقونة */
+    }
+    }
+    @media (max-width : 584px) {
+        #best-jobs .filter-group {
+    justify-content: center; /* توسيط العناصر */
+    }
+    
+    #best-jobs .filter-item {
+    flex: 0 0 auto; /* منع العناصر من التمدد */
+    padding: 0.8rem 1rem; /* تعديل الحشو */
+    font-size: 0.75rem; /* تصغير حجم الخط */
+    margin: 0.2rem; /* إضافة هوامش صغيرة */
     }
     
     #best-jobs .filter-item i {
@@ -3252,7 +3268,6 @@
     
     /* تحسين الأزرار والعلامات */
     #best-jobs .filter-item {
-    padding: 1rem 2rem;
     border-radius: 32px;
     border: 2px solid var(--primary);
     background: rgba(255, 255, 255, 0.95);
@@ -3324,10 +3339,6 @@
         font-size: 1.4rem;
     }
     
-    #best-jobs .filter-item {
-        padding: 0.8rem 1.5rem;
-        font-size: 0.95rem;
-    }
     }
     #jobs .filter-group {
     background: rgba(10, 132, 255, 0.336);
@@ -4273,8 +4284,7 @@ margin: 0rem 0;
     // بيانات المهن
     let majors = [];
     let professions = [];
-    let bestProfessions = [];
-    let quizQuestions = []; // تعريف متغير فارغ سيتم ملؤه لاحقاً من الملف
+    let bestProfessions = []; // تعريف متغير فارغ سيتم ملؤه لاحقاً من الملف
 
 document.addEventListener('DOMContentLoaded', function () {
     fetch('./jobs.json')
@@ -4283,7 +4293,6 @@ document.addEventListener('DOMContentLoaded', function () {
     professions = data.professions;
     majors = data.majors;
     bestProfessions = data.bestProfessions;
-    quizQuestions = data.quizQuestions;
     renderProfessions(professions);
     renderMajors(majors);
   })
