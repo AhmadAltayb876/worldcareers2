@@ -4284,7 +4284,8 @@ margin: 0rem 0;
     // بيانات المهن
     let majors = [];
     let professions = [];
-    let bestProfessions = []; // تعريف متغير فارغ سيتم ملؤه لاحقاً من الملف
+    let bestProfessions = []; 
+    let quizQuestions = []; // تعريف متغير فارغ سيتم ملؤه لاحقاً من الملف
 
 document.addEventListener('DOMContentLoaded', function () {
     fetch('./jobs.json')
@@ -4293,6 +4294,7 @@ document.addEventListener('DOMContentLoaded', function () {
     professions = data.professions;
     majors = data.majors;
     bestProfessions = data.bestProfessions;
+    quizQuestions = data.quizQuestions;
     renderProfessions(professions);
     renderMajors(majors);
   })
@@ -5290,180 +5292,6 @@ function resetcom() {
     // متغيرات الاختبار المهني
     let currentQuestion = 0;
     let quizAnswers = [];
-    const quizQuestions = [
-        {
-            question: "ما هو مستوى الراتب الذي تفضله؟",
-            options: [
-                { text: "أكثر من 200,000 دولار سنوياً", value: "high" },
-                { text: "بين 100,000 و 200,000 دولار سنوياً", value: "medium" },
-                { text: "أقل من 100,000 دولار سنوياً", value: "low" },
-                { text: "الراتب ليس عاملاً حاسماً بالنسبة لي", value: "any" }
-            ]
-        },
-        {
-            question: "ما هو مجال العمل الذي تفضله؟",
-            options: [
-                { text: "التكنولوجيا والذكاء الاصطناعي", value: "tech" },
-                { text: "الطب والرعاية الصحية", value: "medical" },
-                { text: "الهندسة والتصميم", value: "engineering" },
-                { text: "الأعمال والإدارة", value: "business" }
-            ]
-        },
-        {
-            question: "ما هي المهارات التي تمتلكها؟",
-            options: [
-                { text: "مهارات تحليلية ورياضية", value: "analytical" },
-                { text: "مهارات إبداعية وتصميم", value: "creative" },
-                { text: "مهارات تواصل وقيادة", value: "leadership" },
-                { text: "مهارات يدوية وتقنية", value: "technical" }
-            ]
-        },
-        {
-            question: "ما هو مستوى الخبرة لديك؟",
-            options: [
-                { text: "خبرة أكثر من 5 سنوات", value: "senior" },
-                { text: "خبرة بين 2-5 سنوات", value: "mid" },
-                { text: "خبرة أقل من سنتين", value: "junior" },
-                { text: "لا أمتلك خبرة عملية", value: "entry" }
-            ]
-        },
-        {
-    question: "ما هو نمط العمل الذي تفضله؟",
-    options: [
-        { text: "العمل الفردي المستقل", value: "solo" },
-        { text: "العمل ضمن فريق", value: "team" },
-        { text: "القيادة والإشراف", value: "leadership" },
-        { text: "مزيج بين العمل الفردي والجماعي", value: "mixed" }
-    ]
-    },
-    {
-    question: "ما هي البيئة العملية المثالية لك؟",
-    options: [
-        { text: "مكتب تقليدي", value: "office" },
-        { text: "عمل عن بُعد", value: "remote" },
-        { text: "عمل ميداني", value: "field" },
-        { text: "مساحة عمل مرنة", value: "flex" }
-    ]
-    },
-    {
-    question: "ما هو مستوى السفر الذي تستطيع تحمله؟",
-    options: [
-        { text: "لا أرغب في السفر", value: "none" },
-        { text: "سفر محلي محدود", value: "local" },
-        { text: "سفر دولي متكرر", value: "international" },
-        { text: "أعيش في مواقع مختلفة", value: "nomad" }
-    ]
-    },
-    {
-    question: "ما هي طبيعة العمل المفضلة؟",
-    options: [
-        { text: "مهام روتينية منظمة", value: "routine" },
-        { text: "مشاريع متغيرة", value: "dynamic" },
-        { text: "عمل إبداعي", value: "creative" },
-        { text: "حل مشكلات معقدة", value: "problem_solving" }
-    ]
-    },
-    {
-    question: "ما هو مستوى التفاعل الاجتماعي المفضل؟",
-    options: [
-        { text: "تفاعل محدود مع الناس", value: "low" },
-        { text: "تفاعل مع زملاء العمل فقط", value: "medium" },
-        { text: "تفاعل مع عملاء/مرضى", value: "high" },
-        { text: "تفاعل مع جمهور كبير", value: "public" }
-    ]
-    },
-    {
-    question: "ما هي أولوية التوازن بين الحياة والعمل؟",
-    options: [
-        { text: "العمل أولاً", value: "work_first" },
-        { text: "توازن صارم", value: "strict_balance" },
-        { text: "مرونة حسب الظروف", value: "flexible" },
-        { text: "حسب متطلبات الوظيفة", value: "job_dependent" }
-    ]
-    },
-    {
-    question: "ما هي طريقة التعلم المفضلة؟",
-    options: [
-        { text: "التدريب العملي", value: "hands_on" },
-        { text: "الدراسة الأكاديمية", value: "academic" },
-        { text: "التعلم الذاتي عبر الإنترنت", value: "online" },
-        { text: "التلمذة المهنية", value: "apprenticeship" }
-    ]
-    },
-    {
-    question: "ما هو مستوى الضغط الذي تتعامل معه؟",
-    options: [
-        { text: "بيئة هادئة", value: "low" },
-        { text: "ضغط متوسط مع فترات ذروة", value: "medium" },
-        { text: "ضغط عالي دائم", value: "high" },
-        { text: "أزمة/حالات طوارئ", value: "crisis" }
-    ]
-    },
-    {
-    question: "ما هي توقعاتك للتطور الوظيفي؟",
-    options: [
-        { text: "ترقيات سريعة", value: "fast" },
-        { text: "تطور تدريجي", value: "steady" },
-        { text: "استقرار في المنصب", value: "stable" },
-        { text: "تغيير مجالات العمل", value: "change" }
-    ]
-    },
-    {
-    question: "ما هو مستوى الإبداع المطلوب؟",
-    options: [
-        { text: "اتباع تعليمات محددة", value: "low" },
-        { text: "تحسين العمليات الحالية", value: "medium" },
-        { text: "ابتكار حلول جديدة", value: "high" },
-        { text: "بحث وتطوير مكثف", value: "rnd" }
-    ]
-    },
-    {
-    question: "ما هي طبيعة المهام المفضلة؟",
-    options: [
-        { text: "مهام تقنية متخصصة", value: "technical" },
-        { text: "مهام إدارية", value: "managerial" },
-        { text: "مهام خدمية", value: "service" },
-        { text: "مهام بحثية", value: "research" }
-    ]
-    },
-    {
-    question: "ما هي أولوياتك في الوظيفة؟",
-    options: [
-        { text: "الراتب والمزايا", value: "salary" },
-        { text: "التوازن الحياة/العمل", value: "balance" },
-        { text: "التأثير الاجتماعي", value: "impact" },
-        { text: "التطور الشخصي", value: "growth" }
-    ]
-    },
-    {
-    question: "ما هو نمط القيادة المفضل؟",
-    options: [
-        { text: "قيادة مباشرة", value: "directive" },
-        { text: "قيادة تعاونية", value: "collaborative" },
-        { text: "قيادة تحفيزية", value: "motivational" },
-        { text: "تفويض الصلاحيات", value: "delegative" }
-    ]
-    },
-    {
-    question: "ما هي طبيعة القرارات المفضلة؟",
-    options: [
-        { text: "قرارات فورية", value: "instant" },
-        { text: "قرارات مدروسة", value: "planned" },
-        { text: "قرارات جماعية", value: "group" },
-        { text: "قرارات قائمة على البيانات", value: "data_driven" }
-    ]
-    },
-    {
-    question: "ما هو مستوى المسؤولية المطلوب؟",
-    options: [
-        { text: "مسؤولية محددة", value: "defined" },
-        { text: "مسؤولية عن فريق", value: "team" },
-        { text: "مسؤولية عن مشاريع", value: "projects" },
-        { text: "مسؤولية تنظيمية", value: "organizational" }
-    ]
-    }
-    ];
-    
     // بدء الاختبار
     function startQuiz() {
       currentQuestion = 0;
