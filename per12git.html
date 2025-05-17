@@ -390,7 +390,7 @@
     .filter-container {
         max-width: 1400px;
         margin: 1rem auto;
-        padding: 0 2rem;
+        padding: 0 0.3rem;
     }
     
     .filter-box {
@@ -3771,6 +3771,45 @@ margin: 0rem 0;
     color: var(--primary);
     font-weight: bold;
 }
+/* أنماط زر عرض المزيد */
+.show-more-btn {
+    background: transparent;
+    border: 1px solid var(--primary);
+    color: var(--primary);
+    padding: 0.5rem 1.5rem;
+    border-radius: 20px;
+    margin: 1rem auto;
+    display: block;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.show-more-btn:hover {
+    background: rgba(10, 132, 255, 0.1);
+}
+
+.show-more-btn i {
+    margin-left: 0.5rem;
+    transition: transform 0.3s ease;
+}
+
+.show-more-btn.active i {
+    transform: rotate(180deg);
+}
+
+/* تعديلات الفلترة للشاشات الصغيرة */
+@media (max-width: 768px) {
+    .field-filters {
+        max-height: 220px;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+    }
+    
+    .field-filters.expanded {
+        max-height: 1000px;
+    }
+}
 </style>
 
 </head>
@@ -4234,21 +4273,12 @@ margin: 0rem 0;
             </div>
         </label>
         
-        <!-- الخدمات -->
-        <label class="field-filter-card">
-            <input type="checkbox" value="علوم النفس" onchange="onFilterChange()" data-filter="علوم النفس">
-            <div class="field-filter-inner">
-                <div class="field-filter-front">
-                    <i class="fas fa-comments field-filter-icon"></i>
-                    <span class="field-filter-name">علوم النفس</span>
-                </div>
-                <div class="field-filter-back">
-                    <i class="fas fa-comments field-filter-icon"></i>
-                    <span class="field-filter-name">علوم النفس</span>
-                </div>
-            </div>
-        </label>
+      
     </div>
+    <button class="show-more-btn" id="showMoreFilters" onclick="toggleFilters()">
+        <span>عرض المزيد</span>
+        <i class="fas fa-chevron-down"></i>
+    </button>
 </div>
 
 <div class="search-results-section" id="mainSearchResults">
@@ -5853,6 +5883,37 @@ function resetcom() {
     renderProfessions(professions);
     renderMajors(majors);
     }
+    // دالة تبديل عرض الفلاتر
+function toggleFilters() {
+    const filtersContainer = document.querySelector('.field-filters');
+    const showMoreBtn = document.getElementById('showMoreFilters');
+    
+    filtersContainer.classList.toggle('expanded');
+    showMoreBtn.classList.toggle('active');
+    
+    if (filtersContainer.classList.contains('expanded')) {
+        showMoreBtn.querySelector('span').textContent = 'عرض أقل';
+    } else {
+        showMoreBtn.querySelector('span').textContent = 'عرض المزيد';
+    }
+}
+
+// تعديل دالة onFilterChange لضبط عرض الزر
+function onFilterChange() {
+    // الكود الحالي...
+    
+    // إظهار/إخفاء زر عرض المزيد حسب حجم الشاشة
+    const showMoreBtn = document.getElementById('showMoreFilters');
+    if (window.innerWidth > 768) {
+        showMoreBtn.style.display = 'none';
+    } else {
+        showMoreBtn.style.display = 'block';
+    }
+}
+
+// استدعاء الدالة عند تحميل الصفحة وتغيير حجمها
+window.addEventListener('resize', onFilterChange);
+document.addEventListener('DOMContentLoaded', onFilterChange);
 </script>
 
 
