@@ -1,739 +1,897 @@
 {
-    "professions": [
-      {
-        "industry": "fhfhf",
-        "jobo": "كثير",
-        "title": "مهندس ذكاء اصطناعي",
-        "avgSalary": "95,000 - 250,000",
-        "experience": "5+ سنوات",
-        "demand": "مرتفع جدًا",
-        "description": "تطوير أنظمة الذكاء الاصطناعي وتعلم الآلة",
-        "summarize": "hghghghghg",
-        "category": "AI",
-        "skills": ["تحليلية", "تقنية", "AI", "بيانات"]
-      },
-      {
-        "industry": "fhfhf",
-        "jobo": "كثير",
-        "title": "جراح تجميل",
-        "avgSalary": "120,000-300,000",
-        "experience": "12+ سنوات",
-        "demand": "مرتفع",
-        "description": "إجراء عمليات التجميل التصحيحية والجمالية",
-        "summarize": "hghghghghg",
-        "category": "الطب",
-        "skills": ["طب", "يدوية", "تركيز"]
-      },
-      
-        {
-          "industry": "fhfhf",
-          "jobo": "كثير",
-          "title": "طبيب أشعة تداخلية",
-          "avgSalary": "280,000 - 450,000",
-          "experience": "8+ سنوات",
-          "demand": "متوسط",
-          "description": "تشخيص وعلاج الأمراض باستخدام التصوير الإشعاعي",
-          "summarize": "hghghghghg",
-          "category": "الطب",
-          "skills": ["طب", "تحليلية", "تقنية"]
-        },
-        {
-          "industry": "fhfhf",
-          "jobo": "كثير",
-          "title": "مطور بلوك تشين",
-          "avgSalary": "120,000 - 300,000",
-          "experience": "4+ سنوات",
-          "demand": "مرتفع جدًا",
-          "description": "تطوير أنظمة لامركزية باستخدام تقنية البلوك تشين",
-          "summarize": "hghghghghg",
-          "category": "AI",
-          "skills": ["تقنية", "تحليلية", "أمن"]
-        },
-        {
-          "industry": "fhfhf",
-          "jobo": "كثير",
-          "title": "مهندس حوسبة كمومية",
-          "avgSalary": "80,000-150,000",
-          "experience": "6+ سنوات",
-          "demand": "مرتفع",
-          "description": "تصميم أنظمة الحوسبة الكمومية",
-          "summarize": "hghghghghg",
-          "category": "AI",
-          "skills": ["تقنية", "تحليلية", "رياضيات"]
-        },
-        {
-          "industry": "fhfhf",
-          "jobo": "كثير",
-          "title": "مهندس طاقة الرياح البحرية",
-          "avgSalary": "90,000 - 180,000",
-          "experience": "5+ سنوات",
-          "demand": "مرتفع",
-          "description": "تصميم وتنفيذ مزارع الرياح البحرية",
-          "summarize": "hghghghghg",
-          "category": "الهندسة",
-          "skills": ["هندسة", "تحليلية", "بيئية"]
-        },
-        {
-          "industry": "fhfhf",
-          "jobo": "كثير",
-          "title": "باحث في تقنية النانو",
-          "avgSalary": "85,000 - 160,000",
-          "experience": "4+ سنوات",
-          "demand": "متوسط",
-          "description": "بحث وتطوير مواد متقدمة بمقياس النانو",
-          "summarize": "hghghghghg",
-          "category": "الهندسة",
-          "skills": ["هندسة", "بحثية", "تحليلية"]
-        },
-        {
-          "industry": "fhfhf",
-          "jobo": "كثير",
-          "title": "مدير استثمار العملات الرقمية",
-          "avgSalary": "130,000 - 400,000",
-          "experience": "5+ سنوات",
-          "demand": "مرتفع",
-          "description": "إدارة محافظ استثمارية في العملات المشفرة",
-          "summarize": "hghghghghg",
-          "category": "الأعمال",
-          "skills": ["مالية", "تحليلية", "قيادة"]
-        },
-        {
-          "industry": "fhfhf",
-          "jobo": "كثير",
-          "title": "محلل بيانات سلوكية",
-          "avgSalary": "95,000 - 220,000",
-          "experience": "3+ سنوات",
-          "demand": "مرتفع",
-          "description": "تحليل السلوك الاقتصادي للأفراد والشركات",
-          "summarize": "hghghghghg",
-          "category": "الأعمال",
-          "skills": ["تحليلية", "اجتماعية", "بحثية"]
-        },
-        {
-          "industry": "fhfhf",
-          "jobo": "كثير",
-          "title": "مصمم واقع معزز",
-          "avgSalary": "70,000 - 150,000",
-          "experience": "3+ سنوات",
-          "demand": "مرتفع",
-          "description": "تصميم تجارب تفاعلية باستخدام تقنيات AR",
-          "summarize": "hghghghghg",
-          "category": "الفنون",
-          "skills": ["إبداعية", "تقنية", "تصميم"]
-        },
-        {
-          "industry": "fhfhf",
-          "jobo": "كثير",
-          "title": "محامي جرائم سيبرانية",
-          "avgSalary": "110,000 - 250,000",
-          "experience": "6+ سنوات",
-          "demand": "مرتفع",
-          "description": "معالجة القضايا القانونية المتعلقة بالجرائم الإلكترونية",
-          "summarize": "hghghghghg",
-          "category": "AI",
-          "skills": ["قانونية", "تحليلية", "أمن"]
-        },
-        {
-          "industry": "fhfhf",
-          "jobo": "كثير",
-          "title": "جراح قلب",
-          "avgSalary": "200,000 - 450,000",
-          "experience": "10+ سنوات",
-          "demand": "مرتفع",
-          "description": "إجراء عمليات جراحية معقدة في القلب",
-          "summarize": "hghghghghg",
-          "category": "الطب",
-          "skills": ["طب", "يدوية", "تركيز"]
-        },
-        {
-          "industry": "fhfhf",
-          "jobo": "كثير",
-          "title": "مصمم تجربة المستخدم",
-          "avgSalary": "65,000 - 140,000",
-          "experience": "3+ سنوات",
-          "demand": "مرتفع",
-          "description": "تصميم واجهات المستخدم وتحسين التجربة الرقمية",
-          "summarize": "hghghghghg",
-          "category": "الفنون",
-          "skills": ["إبداعية", "تواصل", "تصميم"]
-        },
-        {
-          "industry": "fhfhf",
-          "jobo": "كثير",
-          "summarize": "hghghghghg",
-          "title": "مهندس ميكانيكي",
-          "avgSalary": "70,000 - 120,000",
-          "experience": "4+ سنوات",
-          "demand": "متوسط",
-          "description": "تصميم الأنظمة الميكانيكية والآلات",
-          "category": "الهندسة",
-          "skills": ["هندسة", "تحليلية", "تقنية"]
-        },
-        {
-          "industry": "fhfhf",
-          "jobo": "كثير",
-          "summarize": "hghghghghg",
-          "title": "مدير مشاريع تقنية",
-          "avgSalary": "90,000 - 160,000",
-          "experience": "5+ سنوات",
-          "demand": "مرتفع",
-          "description": "إدارة فرق العمل والمشاريع التقنية",
-          "category": "الأعمال",
-          "skills": ["قيادة", "تنظيمية", "تواصل"]
-        }
-      
-      
-    ],
-    
-    "majors": [
-      {
-        "mid": "176",
-        "jobo": "كثير",
-        "summarize": "hghghghghg",
-        "name": "الطب البشري",
-        "field": "الطب",
-        "description": "يهدف تخصص الطب البشري إلى إعداد أطباء مؤهلين...",
-        "duration": "6 سنوات + سنة امتياز",
-        "universities": ["جامعة الملك سعود", "جامعة الملك عبدالعزيز"],
-        "jobs": "3 وظائف",
-        "relatedJobs": ["طبيب عام", "أخصائي جراحة"]
-      },
-      {
-        "mid": "176",
-        "jobo": "كثير",
-        "summarize": "hghghghghg",
-        "name": "هندسة الحاسوب",
-        "field": "الهندسة",
-        "description": "يجمع تخصص هندسة الحاسوب بين مبادئ الهندسة الكهربائية وعلوم الحاسوب. يدرس الطلاب تصميم وتطوير أنظمة الحاسوب المادية والبرمجية.",
-        "duration": "4 سنوات دراسية",
-        "universities": ["جامعة الملك فهد للبترول", "جامعة الأميرة نورة", "جامعة الطائف"],
-        "jobs": "3 وظائف",
-        "relatedJobs": ["مهندس أمن سيبراني", "مهندس برمجيات", "مهندس شبكات"]
-      },
-      {
-        "mid": "176",
-        "jobo": "كثير",
-        "summarize": "hghghghghg",
-        "name": "إدارة الأعمال",
-        "field": "الأعمال",
-        "description": "يركز تخصص إدارة الأعمال على دراسة العمليات الإدارية في المنظمات. يشمل التخطيط والتنظيم والقيادة والرقابة على الموارد لتحقيق الأهداف التنظيمية.",
-        "duration": "4 سنوات دراسية",
-        "universities": ["جامعة الملك سعود", "جامعة الإمام محمد بن سعود", "جامعة الدمام"],
-        "jobs": "3 وظائف",
-        "relatedJobs": ["مدير تسويق", "مدير مشاريع", "محلل أعمال"]
-      },
-      {
-        "mid": "176",
-        "jobo": "كثير",
-        "summarize": "hghghghghg",
-        "name": "الهندسة المعمارية",
-        "field": "الهندسة",
-        "description": "يتعلم طلاب الهندسة المعمارية تصميم المباني والهياكل مع مراعاة الجوانب الجمالية والوظيفية والسلامة. يجمع التخصص بين الفنون والهندسة.",
-        "duration": "5 سنوات دراسية",
-        "universities": ["جامعة الملك فهد للبترول", "جامعة الملك سعود", "جامعة جدة"],
-        "jobs": "3 وظائف",
-        "relatedJobs": ["مهندس معماري", "مصمم داخلي", "مدير موقع بناء"]
-      },
-      {
-        "mid": "176",
-        "jobo": "كثير",
-        "summarize": "hghghghghg",
-        "name": "AI",
-        "field": "AI",
-        "description": "يركز تخصص الذكاء الاصطناعي على تطوير أنظمة قادرة على محاكاة الذكاء البشري. يشمل تعلم الآلة، معالجة اللغة الطبيعية، الرؤية الحاسوبية وغيرها.",
-        "duration": "4 سنوات دراسية",
-        "universities": ["جامعة الملك سعود", "جامعة الأمير مقرن", "جامعة الملك عبدالله"],
-        "jobs": "3 وظائف",
-        "relatedJobs": ["مهندس تعلم آلي", "باحث في الذكاء الاصطناعي", "مطور خوارزميات"]
-      }
-    ],
-    "bestProfessions":[
-      
-        {
-          "industry": "",
-          "title": "عالم بيانات (Data Scientist)",
-          "category": "تحليل البيانات",
-          "avgSalary": "120,000 - 180,000 ",
-          "demand": "مرتفع جدًا",
-          "description": "تحليل البيانات لاستخلاص رؤى قيمة.",
-          "experience": "4-6",
-          "growthRate": "36%",
-          "jobType": "best",
-          "requiredSpecialties": [
-            "Python, R, SQL,",
-            "Machine Learning,",
-            "Data Visualization,",
-            "Statistics, Cloud Computing (AWS)"
-          ]
-        },
-        {
-          "industry": "منتع",
-          "title": "مهندس ذكاء اصطناعي (AI Engineer)",
-          "description": "بناء أنظمة ذكية تتعلم وتحلل.",
-          "demand": "مرتفع جدًا",
-          "category": "تقنية",
-          "avgSalary": "130,000 - 200,000 ",
-          "experience": "3+",
-          "growthRate": "26%",
-          "jobType": "best",
-          "requiredSpecialties": [
-            "Python, R, Machine Learning",
-            "DL Frameworks (TensorFlow, PyTorch),",
-            "Prompt Engineering, Communication, Ethics",
-            "Cloud Platforms"
-          ]
-        },
-        {
-          "title": "جراح أعصاب (Neurosurgeon)",
-          "industry": "",
-          "description": "إجراء عمليات دقيقة للجهاز العصبي.",
-          "avgSalary": "300,000 - 800,000 ",
-          "demand": "مرتفع",
-          "category": "الطب",
-          "jobType": "best",
-          "experience": "14-16 سنة",
-          "growthRate": "3%",
-          "requiredSpecialties": [
-            "البراعة الجراحية في مجال الأعصاب",
-            "التشريح العصبي",
-            "التفكير النقدي",
-            "اتخاذ القرار تحت الضغط",
-            "العمل الجماعي",
-            "إدارة الإجهاد"
-          ]
-        },
-        {
-          "title": "مدير منتج تقني (Technical Product Manager)",
-          "description": "إدارة تطوير المنتجات التقنية.",
-          "industry": "",
-          "avgSalary": "110,000 - 160,000 ",
-          "demand": "مرتفع",
-          "category": "إدارة",
-          "jobType": "best",
-          "experience": "3-5 سنوات",
-          "growthRate": "7%",
-          "requiredSpecialties": [
-            "تخطيط مسار المنتج",
-            "البراعة التقنية",
-            "إدارة أصحاب المصلحة",
-            "منهجيات أجايل",
-            "تحليل البيانات",
-            "التواصل"
-          ]
-        },
-        {
-          "title": "خبير أمن سيبراني (Cybersecurity Specialist)",
-          "industry": "",
-          "description": "حماية البيانات والأنظمة الرقمية.",
-          "avgSalary": "100,000 - 170,000 ",
-          "demand": "مرتفع جدًا",
-          "category": "أمن المعلومات",
-          "jobType": "best",
-          "experience": "+5 سنوات",
-          "growthRate": "33%",
-          "requiredSpecialties": [
-            "الأمن السيبراني",
-            "تقييم الثغرات الأمنية",
-            "التدقيق الأمني",
-            "الاستجابة للحوادث الأمنية",
-            "تحليل المخاطر",
-            "ضوابط الأمن",
-            "نظام إدارة معلومات وأحداث الأمن (SIEM)",
-            "استخبارات التهديدات"
-          ]
-        },
-        {
-          "title": "جراح أعصاب (Neurosurgeon)",
-          "industry": "",
-          "description": "أعلى دخل طبي عالميًا.",
-          "avgSalary": "300,000 - 800,000 ",
-          "jobType": "profit",
-          "demand": "مرتفع",
-          "category": "الطب",
-          "experience": "14-16 سنوات",
-          "growthRate": "3%",
-          "requiredSpecialties": [
-            "تقنيات جراحة الأعصاب",
-            "تشريح الجهاز العصبي",
-            "جراحة المجهرية (Microsurgery)",
-            "التفكير النقدي",
-            "اتخاذ القرار تحت الضغط",
-            "العمل الجماعي (Teamwork)",
-            "إدارة الإجهاد (Stress management)"
-          ]
-        },
-        {
-          "title": "جراح تجميل (Plastic Surgeon)",
-          "industry": "",
-          "description": "تصحيح وتحسين المظهر الجسدي.",
-          "avgSalary": "250,000 - 500,000 ",
-          "jobType": "profit",
-          "demand": "مرتفع",
-          "category": "الطب",
-          "experience": "14-16 سنوات",
-          "growthRate": "3%",
-          "requiredSpecialties": [
-            "جراحة المجهرية (Microsurgery)",
-            "التشريح (Anatomy)",
-            "الجماليات (Aesthetics)",
-            "استشارة المريض (Patient consultation)",
-            "اتخاذ القرار تحت الضغط",
-            "العمل الجماعي (Teamwork)"
-          ]
-        },
-        {
-          "title": "مدير تنفيذي (CEO)",
-          "industry": "",
-          "description": "قيادة الشركات إلى النجاح.",
-          "avgSalary": "200,000 - 400,000 ",
-          "jobType": "profit",
-          "demand": "مرتفع",
-          "category": "إدارة الأعمال",
-          "experience": "10-15 سنوات",
-          "growthRate": "6%",
-          "requiredSpecialties": [
-            "التخطيط الاستراتيجي",
-            "القيادة (Leadership)",
-            "الدهاء المالي (Financial acumen)",
-            "إدارة أصحاب المصلحة (Stakeholder management)",
-            "اتخاذ القرار (Decision making)",
-            "التواصل (Communication)",
-            "إدارة المخاطر (Risk management)"
-          ]
-        },
-        {
-          "title": "مستشار استثماري (Investment Consultant)",
-          "industry": "",
-          "description": "توجيه الاستثمارات لزيادة الأرباح.",
-          "avgSalary": "150,000 - 300,000 ",
-          "jobType": "profit",
-          "demand": "مرتفع",
-          "category": "المالية",
-          "experience": "3-5 سنوات",
-          "growthRate": "17.1%",
-          "requiredSpecialties": [
-            "التحليل المالي (Financial analysis)",
-            "إدارة المحفظة (Portfolio management)",
-            "تقييم المخاطر (Risk assessment)",
-            "إدارة علاقات العملاء (Client relationship management)",
-            "بحث السوق (Market research)",
-            "الامتثال التنظيمي (Regulatory compliance)",
-            "التواصل (Communication)"
-          ]
-        },
-        {
-          "title": "طبيب قلب (Cardiologist)",
-          "industry": "",
-          "description": "علاج أمراض القلب والشرايين.",
-          "avgSalary": "250,000 - 450,000 ",
-          "jobType": "profit",
-          "demand": "مرتفع",
-          "category": "الطب",
-          "experience": "12-15 سنوات",
-          "growthRate": "5%",
-          "requiredSpecialties": [
-            "تصوير القلب (Cardiac imaging)",
-            "الإجراءات التدخلية (Interventional procedures)",
-            "تشخيص المريض (Patient diagnosis)",
-            "التفكير النقدي",
-            "اتخاذ القرار تحت الضغط",
-            "العمل الجماعي (Teamwork)"
-          ]
-        },
-        
-          {
-            "title": "مطور برمجيات (Software Developer)",
-            "industry": "",
-            "description": "تطوير تطبيقات وحلول رقمية.",
-            "jobType": "demand",
-            "avgSalary": "90,000 - 140,000 ",
-            "demand": "مرتفع جدًا",
-            "category": "تقنية",
-            "experience": "2-5 سنوات",
-            "growthRate": "25%",
-            "requiredSpecialties": [
-              "البرمجة (Python, Java, C#)",
-              "تصميم البرمجيات (Software Design)",
-              "حل المشكلات (Problem-solving)",
-              "تصحيح الأخطاء (Debugging)",
-              "الحوسبة السحابية (Cloud Computing)",
-              "التحكم في الإصدارات (Git - Version Control)"
-            ]
-          },
-          {
-            "title": "خبير تسويق رقمي (Digital Marketing Specialist)",
-            "industry": "",
-            "description": "تسويق عبر الإنترنت بكفاءة.",
-            "jobType": "demand",
-            "avgSalary": "70,000 - 120,000 ",
-            "demand": "مرتفع جدًا",
-            "category": "تسويق",
-            "experience": "1-3 سنوات",
-            "growthRate": "10%",
-            "requiredSpecialties": [
-              "SEO/SEM",
-              "تسويق المحتوى (Content Marketing)",
-              "إدارة وسائل التواصل الاجتماعي (Social Media Management)",
-              "التسويق عبر البريد الإلكتروني (Email Marketing)",
-              "Google Analytics",
-              "الإعلان المدفوع (PPC - Paid Advertising)"
-            ]
-          },
-          {
-            "title": "ممرض مسجل (Registered Nurse)",
-            "industry": "",
-            "description": "رعاية صحية متخصصة.",
-            "jobType": "demand",
-            "avgSalary": "75,000 - 110,000 ",
-            "demand": "مرتفع",
-            "category": "الصحة",
-            "experience": "0-2 سنوات",
-            "growthRate": "6%",
-            "requiredSpecialties": [
-              "رعاية المريض (Patient Care)",
-              "الإجراءات السريرية (Clinical Procedures)",
-              "التفكير النقدي",
-              "مهارات التواصل (Communication Skills)",
-              "حفظ السجلات الطبية (Medical Recordkeeping)",
-              "الاستجابة للطوارئ (Emergency Response)"
-            ]
-          },
-          {
-            "title": "خبير أمن معلومات (Information Security Analyst)",
-            "industry": "",
-            "description": "تأمين البيانات من الهجمات.",
-            "jobType": "demand",
-            "avgSalary": "95,000 - 140,000 ",
-            "demand": "مرتفع جدًا",
-            "category": "أمن المعلومات",
-            "experience": "2-5 سنوات",
-            "growthRate": "32%",
-            "requiredSpecialties": [
-              "الأمن السيبراني (Cybersecurity)",
-              "تقييم المخاطر (Risk Assessment)",
-              "الاستجابة للحوادث (Incident Response)",
-              "أمن الشبكات (Network Security)",
-              "اختبار الاختراق (Penetration Testing)",
-              "الامتثال الأمني (مثل ISO, NIST)"
-            ]
-          },
-          {
-            "title": "فني أجهزة طبية (Medical Equipment Technician)",
-            "industry": "",
-            "description": "صيانة الأجهزة الطبية الحيوية.",
-            "jobType": "demand",
-            "avgSalary": "65,000 - 90,000 ",
-            "demand": "مرتفع",
-            "category": "الصحة",
-            "experience": "1-3 سنوات",
-            "growthRate": "10%",
-            "requiredSpecialties": [
-              "إصلاح المعدات الطبية (Medical Equipment Repair)",
-              "التشخيص التقني (Technical Diagnostics)",
-              "الصيانة الوقائية (Preventive Maintenance)",
-              "المعايرة (Calibration)",
-              "معرفة الإلكترونيات (Electronics Knowledge)",
-              "الامتثال لمعايير السلامة (Compliance with Safety Standards)"
-            ]
-          },
-          {
-            "title": "سائق شاحنات ثقيلة (Heavy Truck Driver)",
-            "jobType": "opportunities",
-            "industry": "",
-            "description": "نقل البضائع عبر المسافات الطويلة.",
-            "avgSalary": "60,000 - 85,000 ",
-            "demand": "مرتفع",
-            "category": "النقل",
-            "experience": "1-3 سنوات",
-            "growthRate": "4%",
-            "requiredSpecialties": [
-              "قيادة آمنة",
-              "معرفة أنظمة المرور",
-              "صيانة الشاحنة الأساسية",
-              "التخطيط للمسارات",
-              "إدارة الوقت",
-              "الالتزام بالسلامة"
-            ]
-          },
-          {
-            "title": "معلم لغة إنجليزية (English Teacher)",
-            "jobType": "opportunities",
-            "industry": "",
-            "description": "تدريس اللغة الإنجليزية عالميًا.",
-            "avgSalary": "50,000 - 75,000 ",
-            "demand": "مرتفع",
-            "category": "التعليم",
-            "experience": "2-4 سنوات",
-            "growthRate": "5%",
-            "requiredSpecialties": [
-              "إتقان اللغة الإنجليزية",
-              "مهارات التدريس",
-              "إعداد المناهج",
-              "إدارة الصف",
-              "التواصل مع الطلاب",
-              "استخدام التكنولوجيا في التعليم"
-            ]
-          },
-          {
-            "title": "موظف خدمة عملاء (Customer Service Representative)",
-            "jobType": "opportunities",
-            "industry": "",
-            "description": "التواصل مع العملاء ودعمهم.",
-            "avgSalary": "40,000 - 60,000 ",
-            "demand": "مرتفع",
-            "category": "خدمة العملاء",
-            "experience": "0-2 سنوات",
-            "growthRate": "5%",
-            "requiredSpecialties": [
-              "التواصل الفعال",
-              "حل المشكلات",
-              "التعامل مع الشكاوى",
-              "إدارة الوقت",
-              "معرفة أنظمة إدارة علاقات العملاء (CRM)",
-              "اللباقة والصبر"
-            ]
-          },
-          {
-            "title": "فني صيانة كهربائية (Electrical Maintenance Technician)",
-            "jobType": "opportunities",
-            "industry": "",
-            "description": "صيانة الأنظمة الكهربائية.",
-            "avgSalary": "55,000 - 80,000 ",
-            "demand": "مرتفع",
-            "category": "الهندسة",
-            "experience": "2-5 سنوات",
-            "growthRate": "3%",
-            "requiredSpecialties": [
-              "تشخيص الأعطال الكهربائية",
-              "صيانة وإصلاح الأنظمة الكهربائية",
-              "قراءة المخططات الكهربائية",
-              "الالتزام بإجراءات السلامة",
-              "استخدام أدوات الصيانة",
-              "العمل تحت الضغط"
-            ]
-          },
-          {
-            "title": "مساعد مبيعات (Sales Associate)",
-            "jobType": "opportunities",
-            "industry": "",
-            "description": "مساعدة العملاء في المبيعات.",
-            "avgSalary": "35,000 - 55,000 ",
-            "demand": "مرتفع",
-            "category": "مبيعات",
-            "experience": "0-2 سنوات",
-            "growthRate": "2%",
-            "requiredSpecialties": [
-              "خدمة العملاء",
-              "مهارات البيع",
-              "معرفة بالمنتجات",
-              "التواصل الفعال",
-              "التعامل مع الكاشير",
-              "العمل ضمن فريق"
-            ]
-          },
-          {
-            "title": "مساعد إداري (Administrative Assistant)",
-            "jobType": "entry",
-            "industry": "",
-            "description": "دعم إداري وتنظيمي للمكاتب.",
-            "avgSalary": "40,000 - 60,000 ",
-            "demand": "مرتفع",
-            "category": "إدارة",
-            "experience": "1-3 سنوات",
-            "growthRate": "5%",
-            "requiredSpecialties": [
-              "تنظيم الملفات",
-              "إدارة المواعيد",
-              "التواصل الفعال",
-              "إجادة برامج الأوفيس",
-              "تحضير التقارير",
-              "إدارة البريد الإلكتروني"
-            ]
-          },
-          {
-            "title": "موظف دعم فني (Technical Support Representative)",
-            "jobType": "entry",
-            "industry": "",
-            "description": "مساعدة العملاء في المشكلات التقنية.",
-            "avgSalary": "45,000 - 65,000 ",
-            "demand": "مرتفع",
-            "category": "تقنية",
-            "experience": "1-3 سنوات",
-            "growthRate": "6%",
-            "requiredSpecialties": [
-              "تشخيص الأعطال التقنية",
-              "التواصل مع العملاء",
-              "معرفة أنظمة التشغيل",
-              "حل المشكلات التقنية",
-              "إدارة قواعد البيانات",
-              "القدرة على العمل تحت الضغط"
-            ]
-          },
-          {
-            "title": "مندوب مبيعات (Sales Representative)",
-            "jobType": "entry",
-            "industry": "",
-            "description": "التواصل مع العملاء لبيع المنتجات.",
-            "avgSalary": "50,000 - 70,000 ",
-            "demand": "مرتفع",
-            "category": "مبيعات",
-            "experience": "1-3 سنوات",
-            "growthRate": "4%",
-            "requiredSpecialties": [
-              "التفاوض والإقناع",
-              "خدمة العملاء",
-              "إدارة علاقات العملاء",
-              "التواصل الفعال",
-              "تحقيق الأهداف البيعية",
-              "معرفة بالمنتجات والخدمات"
-            ]
-          },
-          {
-            "title": "مشرف مخازن (Warehouse Supervisor)",
-            "jobType": "entry",
-            "industry": "",
-            "description": "تنظيم وإدارة المخزون.",
-            "avgSalary": "45,000 - 65,000 ",
-            "demand": "مرتفع",
-            "category": "الخدمات اللوجستية",
-            "experience": "3-5 سنوات",
-            "growthRate": "3%",
-            "requiredSpecialties": [
-              "إدارة المخزون",
-              "تنظيم العمليات اللوجستية",
-              "قيادة الفريق",
-              "التعامل مع أنظمة إدارة المخزون",
-              "التخطيط للعمليات",
-              "ضمان الالتزام بإجراءات السلامة"
-            ]
-          },
-          {
-            "title": "مدخل بيانات (Data Entry Clerk)",
-            "jobType": "entry",
-            "industry": "",
-            "description": "إدخال البيانات بدقة عالية.",
-            "avgSalary": "35,000 - 50,000",
-            "demand": "مرتفع",
-            "category": "إدارة بيانات",
-            "experience": "0-2 سنوات",
-            "growthRate": "3%",
-            "requiredSpecialties": [
-              "السرعة في الكتابة",
-              "دقة إدخال البيانات",
-              "التعامل مع برامج الحاسب الآلي",
-              "تنظيم المعلومات",
-              "التحقق من صحة البيانات",
-              "العمل تحت الضغط"
-            ]
-          }
-        
-        
-        
-        
+  "professions": [
+    {
+      "industry": "fhfhf",
+      "jobo": "كثير",
+      "title": "مهندس ذكاء اصطناعي",
+      "avgSalary": "95,000 - 250,000",
+      "experience": "5+ سنوات",
+      "demand": "مرتفع جدًا",
+      "description": "تطوير أنظمة الذكاء الاصطناعي وتعلم الآلة",
+      "summarize": "hghghghghg",
+      "category": "AI",
+      "skills": ["تحليلية", "تقنية", "AI", "بيانات"]
+    },
+    {
+      "industry": "fhfhf",
+      "jobo": "كثير",
+      "title": "جراح تجميل",
+      "avgSalary": "120,000-300,000",
+      "experience": "12+ سنوات",
+      "demand": "مرتفع",
+      "description": "إجراء عمليات التجميل التصحيحية والجمالية",
+      "summarize": "hghghghghg",
+      "category": "الطب",
+      "skills": ["طب", "يدوية", "تركيز"]
+    },
+    {
+      "industry": "fhfhf",
+      "jobo": "كثير",
+      "title": "طبيب أشعة تداخلية",
+      "avgSalary": "280,000 - 450,000",
+      "experience": "8+ سنوات",
+      "demand": "متوسط",
+      "description": "تشخيص وعلاج الأمراض باستخدام التصوير الإشعاعي",
+      "summarize": "hghghghghg",
+      "category": "الطب",
+      "skills": ["طب", "تحليلية", "تقنية"]
+    },
+    {
+      "industry": "fhfhf",
+      "jobo": "كثير",
+      "title": "مطور بلوك تشين",
+      "avgSalary": "120,000 - 300,000",
+      "experience": "4+ سنوات",
+      "demand": "مرتفع جدًا",
+      "description": "تطوير أنظمة لامركزية باستخدام تقنية البلوك تشين",
+      "summarize": "hghghghghg",
+      "category": "AI",
+      "skills": ["تقنية", "تحليلية", "أمن"]
+    },
+    {
+      "industry": "fhfhf",
+      "jobo": "كثير",
+      "title": "مهندس حوسبة كمومية",
+      "avgSalary": "80,000-150,000",
+      "experience": "6+ سنوات",
+      "demand": "مرتفع",
+      "description": "تصميم أنظمة الحوسبة الكمومية",
+      "summarize": "hghghghghg",
+      "category": "AI",
+      "skills": ["تقنية", "تحليلية", "رياضيات"]
+    },
+    {
+      "industry": "fhfhf",
+      "jobo": "كثير",
+      "title": "مهندس طاقة الرياح البحرية",
+      "avgSalary": "90,000 - 180,000",
+      "experience": "5+ سنوات",
+      "demand": "مرتفع",
+      "description": "تصميم وتنفيذ مزارع الرياح البحرية",
+      "summarize": "hghghghghg",
+      "category": "الهندسة",
+      "skills": ["هندسة", "تحليلية", "بيئية"]
+    },
+    {
+      "industry": "fhfhf",
+      "jobo": "كثير",
+      "title": "باحث في تقنية النانو",
+      "avgSalary": "85,000 - 160,000",
+      "experience": "4+ سنوات",
+      "demand": "متوسط",
+      "description": "بحث وتطوير مواد متقدمة بمقياس النانو",
+      "summarize": "hghghghghg",
+      "category": "الهندسة",
+      "skills": ["هندسة", "بحثية", "تحليلية"]
+    },
+    {
+      "industry": "fhfhf",
+      "jobo": "كثير",
+      "title": "مدير استثمار العملات الرقمية",
+      "avgSalary": "130,000 - 400,000",
+      "experience": "5+ سنوات",
+      "demand": "مرتفع",
+      "description": "إدارة محافظ استثمارية في العملات المشفرة",
+      "summarize": "hghghghghg",
+      "category": "الأعمال",
+      "skills": ["مالية", "تحليلية", "قيادة"]
+    },
+    {
+      "industry": "fhfhf",
+      "jobo": "كثير",
+      "title": "محلل بيانات سلوكية",
+      "avgSalary": "95,000 - 220,000",
+      "experience": "3+ سنوات",
+      "demand": "مرتفع",
+      "description": "تحليل السلوك الاقتصادي للأفراد والشركات",
+      "summarize": "hghghghghg",
+      "category": "الأعمال",
+      "skills": ["تحليلية", "اجتماعية", "بحثية"]
+    },
+    {
+      "industry": "fhfhf",
+      "jobo": "كثير",
+      "title": "مصمم واقع معزز",
+      "avgSalary": "70,000 - 150,000",
+      "experience": "3+ سنوات",
+      "demand": "مرتفع",
+      "description": "تصميم تجارب تفاعلية باستخدام تقنيات AR",
+      "summarize": "hghghghghg",
+      "category": "الفنون",
+      "skills": ["إبداعية", "تقنية", "تصميم"]
+    },
+    {
+      "industry": "fhfhf",
+      "jobo": "كثير",
+      "title": "محامي جرائم سيبرانية",
+      "avgSalary": "110,000 - 250,000",
+      "experience": "6+ سنوات",
+      "demand": "مرتفع",
+      "description": "معالجة القضايا القانونية المتعلقة بالجرائم الإلكترونية",
+      "summarize": "hghghghghg",
+      "category": "AI",
+      "skills": ["قانونية", "تحليلية", "أمن"]
+    },
+    {
+      "industry": "fhfhf",
+      "jobo": "كثير",
+      "title": "جراح قلب",
+      "avgSalary": "200,000 - 450,000",
+      "experience": "10+ سنوات",
+      "demand": "مرتفع",
+      "description": "إجراء عمليات جراحية معقدة في القلب",
+      "summarize": "hghghghghg",
+      "category": "الطب",
+      "skills": ["طب", "يدوية", "تركيز"]
+    },
+    {
+      "industry": "fhfhf",
+      "jobo": "كثير",
+      "title": "مصمم تجربة المستخدم",
+      "avgSalary": "65,000 - 140,000",
+      "experience": "3+ سنوات",
+      "demand": "مرتفع",
+      "description": "تصميم واجهات المستخدم وتحسين التجربة الرقمية",
+      "summarize": "hghghghghg",
+      "category": "الفنون",
+      "skills": ["إبداعية", "تواصل", "تصميم"]
+    },
+    {
+      "industry": "fhfhf",
+      "jobo": "كثير",
+      "summarize": "hghghghghg",
+      "title": "مهندس ميكانيكي",
+      "avgSalary": "70,000 - 120,000",
+      "experience": "4+ سنوات",
+      "demand": "متوسط",
+      "description": "تصميم الأنظمة الميكانيكية والآلات",
+      "category": "الهندسة",
+      "skills": ["هندسة", "تحليلية", "تقنية"]
+    },
+    {
+      "industry": "fhfhf",
+      "jobo": "كثير",
+      "summarize": "hghghghghg",
+      "title": "مدير مشاريع تقنية",
+      "avgSalary": "90,000 - 160,000",
+      "experience": "5+ سنوات",
+      "demand": "مرتفع",
+      "description": "إدارة فرق العمل والمشاريع التقنية",
+      "category": "الأعمال",
+      "skills": ["قيادة", "تنظيمية", "تواصل"]
+    }
+  ],
+  "majors": [
+    {
+      "mid": "176",
+      "jobo": "كثير",
+      "summarize": "hghghghghg",
+      "name": "الطب البشري",
+      "field": "الطب",
+      "description": "يهدف تخصص الطب البشري إلى إعداد أطباء مؤهلين...",
+      "duration": "6 سنوات + سنة امتياز",
+      "universities": ["جامعة الملك سعود", "جامعة الملك عبدالعزيز"],
+      "jobs": "3 وظائف",
+      "relatedJobs": ["طبيب عام", "أخصائي جراحة"]
+    },
+    {
+      "mid": "176",
+      "jobo": "كثير",
+      "summarize": "hghghghghg",
+      "name": "هندسة الحاسوب",
+      "field": "الهندسة",
+      "description": "يجمع تخصص هندسة الحاسوب بين مبادئ الهندسة الكهربائية وعلوم الحاسوب. يدرس الطلاب تصميم وتطوير أنظمة الحاسوب المادية والبرمجية.",
+      "duration": "4 سنوات دراسية",
+      "universities": ["جامعة الملك فهد للبترول", "جامعة الأميرة نورة", "جامعة الطائف"],
+      "jobs": "3 وظائف",
+      "relatedJobs": ["مهندس أمن سيبراني", "مهندس برمجيات", "مهندس شبكات"]
+    },
+    {
+      "mid": "176",
+      "jobo": "كثير",
+      "summarize": "hghghghghg",
+      "name": "إدارة الأعمال",
+      "field": "الأعمال",
+      "description": "يركز تخصص إدارة الأعمال على دراسة العمليات الإدارية في المنظمات. يشمل التخطيط والتنظيم والقيادة والرقابة على الموارد لتحقيق الأهداف التنظيمية.",
+      "duration": "4 سنوات دراسية",
+      "universities": ["جامعة الملك سعود", "جامعة الإمام محمد بن سعود", "جامعة الدمام"],
+      "jobs": "3 وظائف",
+      "relatedJobs": ["مدير تسويق", "مدير مشاريع", "محلل أعمال"]
+    },
+    {
+      "mid": "176",
+      "jobo": "كثير",
+      "summarize": "hghghghghg",
+      "name": "الهندسة المعمارية",
+      "field": "الهندسة",
+      "description": "يتعلم طلاب الهندسة المعمارية تصميم المباني والهياكل مع مراعاة الجوانب الجمالية والوظيفية والسلامة. يجمع التخصص بين الفنون والهندسة.",
+      "duration": "5 سنوات دراسية",
+      "universities": ["جامعة الملك فهد للبترول", "جامعة الملك سعود", "جامعة جدة"],
+      "jobs": "3 وظائف",
+      "relatedJobs": ["مهندس معماري", "مصمم داخلي", "مدير موقع بناء"]
+    },
+    {
+      "mid": "176",
+      "jobo": "كثير",
+      "summarize": "hghghghghg",
+      "name": "AI",
+      "field": "AI",
+      "description": "يركز تخصص الذكاء الاصطناعي على تطوير أنظمة قادرة على محاكاة الذكاء البشري. يشمل تعلم الآلة، معالجة اللغة الطبيعية، الرؤية الحاسوبية وغيرها.",
+      "duration": "4 سنوات دراسية",
+      "universities": ["جامعة الملك سعود", "جامعة الأمير مقرن", "جامعة الملك عبدالله"],
+      "jobs": "3 وظائف",
+      "relatedJobs": ["مهندس تعلم آلي", "باحث في الذكاء الاصطناعي", "مطور خوارزميات"]
+    }
+  ],
+  "bestProfessions":[
+    {
+      "industry": "",
+      "title": "عالم بيانات (Data Scientist)",
+      "category": "تحليل البيانات",
+      "avgSalary": "120,000 - 180,000 ",
+      "demand": "مرتفع جدًا",
+      "description": "تحليل البيانات لاستخلاص رؤى قيمة.",
+      "experience": "4-6",
+      "growthRate": "36%",
+      "jobType": "best",
+      "requiredSpecialties": [
+        "Python, R, SQL,",
+        "Machine Learning,",
+        "Data Visualization,",
+        "Statistics, Cloud Computing (AWS)"
       ]
-      
-        
-        
-      
-      
-  }
+    },
+    {
+      "industry": "منتع",
+      "title": "مهندس ذكاء اصطناعي (AI Engineer)",
+      "description": "بناء أنظمة ذكية تتعلم وتحلل.",
+      "demand": "مرتفع جدًا",
+      "category": "تقنية",
+      "avgSalary": "130,000 - 200,000 ",
+      "experience": "3+",
+      "growthRate": "26%",
+      "jobType": "best",
+      "requiredSpecialties": [
+        "Python, R, Machine Learning",
+        "DL Frameworks (TensorFlow, PyTorch),",
+        "Prompt Engineering, Communication, Ethics",
+        "Cloud Platforms"
+      ]
+    },
+    {
+      "title": "جراح أعصاب (Neurosurgeon)",
+      "industry": "",
+      "description": "إجراء عمليات دقيقة للجهاز العصبي.",
+      "avgSalary": "300,000 - 800,000 ",
+      "demand": "مرتفع",
+      "category": "الطب",
+      "jobType": "best",
+      "experience": "14-16 سنة",
+      "growthRate": "3%",
+      "requiredSpecialties": [
+        "البراعة الجراحية في مجال الأعصاب",
+        "التشريح العصبي",
+        "التفكير النقدي",
+        "اتخاذ القرار تحت الضغط",
+        "العمل الجماعي",
+        "إدارة الإجهاد"
+      ]
+    },
+    {
+      "title": "مدير منتج تقني (Technical Product Manager)",
+      "description": "إدارة تطوير المنتجات التقنية.",
+      "industry": "",
+      "avgSalary": "110,000 - 160,000 ",
+      "demand": "مرتفع",
+      "category": "إدارة",
+      "jobType": "best",
+      "experience": "3-5 سنوات",
+      "growthRate": "7%",
+      "requiredSpecialties": [
+        "تخطيط مسار المنتج",
+        "البراعة التقنية",
+        "إدارة أصحاب المصلحة",
+        "منهجيات أجايل",
+        "تحليل البيانات",
+        "التواصل"
+      ]
+    },
+    {
+      "title": "خبير أمن سيبراني (Cybersecurity Specialist)",
+      "industry": "",
+      "description": "حماية البيانات والأنظمة الرقمية.",
+      "avgSalary": "100,000 - 170,000 ",
+      "demand": "مرتفع جدًا",
+      "category": "أمن المعلومات",
+      "jobType": "best",
+      "experience": "+5 سنوات",
+      "growthRate": "33%",
+      "requiredSpecialties": [
+        "الأمن السيبراني",
+        "تقييم الثغرات الأمنية",
+        "التدقيق الأمني",
+        "الاستجابة للحوادث الأمنية",
+        "تحليل المخاطر",
+        "ضوابط الأمن",
+        "نظام إدارة معلومات وأحداث الأمن (SIEM)",
+        "استخبارات التهديدات"
+      ]
+    },
+    {
+      "title": "جراح أعصاب (Neurosurgeon)",
+      "industry": "",
+      "description": "أعلى دخل طبي عالميًا.",
+      "avgSalary": "300,000 - 800,000 ",
+      "jobType": "profit",
+      "demand": "مرتفع",
+      "category": "الطب",
+      "experience": "14-16 سنوات",
+      "growthRate": "3%",
+      "requiredSpecialties": [
+        "تقنيات جراحة الأعصاب",
+        "تشريح الجهاز العصبي",
+        "جراحة المجهرية (Microsurgery)",
+        "التفكير النقدي",
+        "اتخاذ القرار تحت الضغط",
+        "العمل الجماعي (Teamwork)",
+        "إدارة الإجهاد (Stress management)"
+      ]
+    },
+    {
+      "title": "جراح تجميل (Plastic Surgeon)",
+      "industry": "",
+      "description": "تصحيح وتحسين المظهر الجسدي.",
+      "avgSalary": "250,000 - 500,000 ",
+      "jobType": "profit",
+      "demand": "مرتفع",
+      "category": "الطب",
+      "experience": "14-16 سنوات",
+      "growthRate": "3%",
+      "requiredSpecialties": [
+        "جراحة المجهرية (Microsurgery)",
+        "التشريح (Anatomy)",
+        "الجماليات (Aesthetics)",
+        "استشارة المريض (Patient consultation)",
+        "اتخاذ القرار تحت الضغط",
+        "العمل الجماعي (Teamwork)"
+      ]
+    },
+    {
+      "title": "مدير تنفيذي (CEO)",
+      "industry": "",
+      "description": "قيادة الشركات إلى النجاح.",
+      "avgSalary": "200,000 - 400,000 ",
+      "jobType": "profit",
+      "demand": "مرتفع",
+      "category": "إدارة الأعمال",
+      "experience": "10-15 سنوات",
+      "growthRate": "6%",
+      "requiredSpecialties": [
+        "التخطيط الاستراتيجي",
+        "القيادة (Leadership)",
+        "الدهاء المالي (Financial acumen)",
+        "إدارة أصحاب المصلحة (Stakeholder management)",
+        "اتخاذ القرار (Decision making)",
+        "التواصل (Communication)",
+        "إدارة المخاطر (Risk management)"
+      ]
+    },
+    {
+      "title": "مستشار استثماري (Investment Consultant)",
+      "industry": "",
+      "description": "توجيه الاستثمارات لزيادة الأرباح.",
+      "avgSalary": "150,000 - 300,000 ",
+      "jobType": "profit",
+      "demand": "مرتفع",
+      "category": "المالية",
+      "experience": "3-5 سنوات",
+      "growthRate": "17.1%",
+      "requiredSpecialties": [
+        "التحليل المالي (Financial analysis)",
+        "إدارة المحفظة (Portfolio management)",
+        "تقييم المخاطر (Risk assessment)",
+        "إدارة علاقات العملاء (Client relationship management)",
+        "بحث السوق (Market research)",
+        "الامتثال التنظيمي (Regulatory compliance)",
+        "التواصل (Communication)"
+      ]
+    },
+    {
+      "title": "طبيب قلب (Cardiologist)",
+      "industry": "",
+      "description": "علاج أمراض القلب والشرايين.",
+      "avgSalary": "250,000 - 450,000 ",
+      "jobType": "profit",
+      "demand": "مرتفع",
+      "category": "الطب",
+      "experience": "12-15 سنوات",
+      "growthRate": "5%",
+      "requiredSpecialties": [
+        "تصوير القلب (Cardiac imaging)",
+        "الإجراءات التدخلية (Interventional procedures)",
+        "تشخيص المريض (Patient diagnosis)",
+        "التفكير النقدي",
+        "اتخاذ القرار تحت الضغط",
+        "العمل الجماعي (Teamwork)"
+      ]
+    },
+    {
+      "title": "مطور برمجيات (Software Developer)",
+      "industry": "",
+      "description": "تطوير تطبيقات وحلول رقمية.",
+      "jobType": "demand",
+      "avgSalary": "90,000 - 140,000 ",
+      "demand": "مرتفع جدًا",
+      "category": "تقنية",
+      "experience": "2-5 سنوات",
+      "growthRate": "25%",
+      "requiredSpecialties": [
+        "البرمجة (Python, Java, C#)",
+        "تصميم البرمجيات (Software Design)",
+        "حل المشكلات (Problem-solving)",
+        "تصحيح الأخطاء (Debugging)",
+        "الحوسبة السحابية (Cloud Computing)",
+        "التحكم في الإصدارات (Git - Version Control)"
+      ]
+    },
+    {
+      "title": "خبير تسويق رقمي (Digital Marketing Specialist)",
+      "industry": "",
+      "description": "تسويق عبر الإنترنت بكفاءة.",
+      "jobType": "demand",
+      "avgSalary": "70,000 - 120,000 ",
+      "demand": "مرتفع جدًا",
+      "category": "تسويق",
+      "experience": "1-3 سنوات",
+      "growthRate": "10%",
+      "requiredSpecialties": [
+        "SEO/SEM",
+        "تسويق المحتوى (Content Marketing)",
+        "إدارة وسائل التواصل الاجتماعي (Social Media Management)",
+        "التسويق عبر البريد الإلكتروني (Email Marketing)",
+        "Google Analytics",
+        "الإعلان المدفوع (PPC - Paid Advertising)"
+      ]
+    },
+    {
+      "title": "ممرض مسجل (Registered Nurse)",
+      "industry": "",
+      "description": "رعاية صحية متخصصة.",
+      "jobType": "demand",
+      "avgSalary": "75,000 - 110,000 ",
+      "demand": "مرتفع",
+      "category": "الصحة",
+      "experience": "0-2 سنوات",
+      "growthRate": "6%",
+      "requiredSpecialties": [
+        "رعاية المريض (Patient Care)",
+        "الإجراءات السريرية (Clinical Procedures)",
+        "التفكير النقدي",
+        "مهارات التواصل (Communication Skills)",
+        "حفظ السجلات الطبية (Medical Recordkeeping)",
+        "الاستجابة للطوارئ (Emergency Response)"
+      ]
+    },
+    {
+      "title": "خبير أمن معلومات (Information Security Analyst)",
+      "industry": "",
+      "description": "تأمين البيانات من الهجمات.",
+      "jobType": "demand",
+      "avgSalary": "95,000 - 140,000 ",
+      "demand": "مرتفع جدًا",
+      "category": "أمن المعلومات",
+      "experience": "2-5 سنوات",
+      "growthRate": "32%",
+      "requiredSpecialties": [
+        "الأمن السيبراني (Cybersecurity)",
+        "تقييم المخاطر (Risk Assessment)",
+        "الاستجابة للحوادث (Incident Response)",
+        "أمن الشبكات (Network Security)",
+        "اختبار الاختراق (Penetration Testing)",
+        "الامتثال الأمني (مثل ISO, NIST)"
+      ]
+    },
+    {
+      "title": "فني أجهزة طبية (Medical Equipment Technician)",
+      "industry": "",
+      "description": "صيانة الأجهزة الطبية الحيوية.",
+      "jobType": "demand",
+      "avgSalary": "65,000 - 90,000 ",
+      "demand": "مرتفع",
+      "category": "الصحة",
+      "experience": "1-3 سنوات",
+      "growthRate": "10%",
+      "requiredSpecialties": [
+        "إصلاح المعدات الطبية (Medical Equipment Repair)",
+        "التشخيص التقني (Technical Diagnostics)",
+        "الصيانة الوقائية (Preventive Maintenance)",
+        "المعايرة (Calibration)",
+        "معرفة الإلكترونيات (Electronics Knowledge)",
+        "الامتثال لمعايير السلامة (Compliance with Safety Standards)"
+      ]
+    },
+    {
+      "title": "سائق شاحنات ثقيلة (Heavy Truck Driver)",
+      "jobType": "opportunities",
+      "industry": "",
+      "description": "نقل البضائع عبر المسافات الطويلة.",
+      "avgSalary": "60,000 - 85,000 ",
+      "demand": "مرتفع",
+      "category": "النقل",
+      "experience": "1-3 سنوات",
+      "growthRate": "4%",
+      "requiredSpecialties": [
+        "قيادة آمنة",
+        "معرفة أنظمة المرور",
+        "صيانة الشاحنة الأساسية",
+        "التخطيط للمسارات",
+        "إدارة الوقت",
+        "الالتزام بالسلامة"
+      ]
+    },
+    {
+      "title": "معلم لغة إنجليزية (English Teacher)",
+      "jobType": "opportunities",
+      "industry": "",
+      "description": "تدريس اللغة الإنجليزية عالميًا.",
+      "avgSalary": "50,000 - 75,000 ",
+      "demand": "مرتفع",
+      "category": "التعليم",
+      "experience": "2-4 سنوات",
+      "growthRate": "5%",
+      "requiredSpecialties": [
+        "إتقان اللغة الإنجليزية",
+        "مهارات التدريس",
+        "إعداد المناهج",
+        "إدارة الصف",
+        "التواصل مع الطلاب",
+        "استخدام التكنولوجيا في التعليم"
+      ]
+    },
+    {
+      "title": "موظف خدمة عملاء (Customer Service Representative)",
+      "jobType": "opportunities",
+      "industry": "",
+      "description": "التواصل مع العملاء ودعمهم.",
+      "avgSalary": "40,000 - 60,000 ",
+      "demand": "مرتفع",
+      "category": "خدمة العملاء",
+      "experience": "0-2 سنوات",
+      "growthRate": "5%",
+      "requiredSpecialties": [
+        "التواصل الفعال",
+        "حل المشكلات",
+        "التعامل مع الشكاوى",
+        "إدارة الوقت",
+        "معرفة أنظمة إدارة علاقات العملاء (CRM)",
+        "اللباقة والصبر"
+      ]
+    },
+    {
+      "title": "فني صيانة كهربائية (Electrical Maintenance Technician)",
+      "jobType": "opportunities",
+      "industry": "",
+      "description": "صيانة الأنظمة الكهربائية.",
+      "avgSalary": "55,000 - 80,000 ",
+      "demand": "مرتفع",
+      "category": "الهندسة",
+      "experience": "2-5 سنوات",
+      "growthRate": "3%",
+      "requiredSpecialties": [
+        "تشخيص الأعطال الكهربائية",
+        "صيانة وإصلاح الأنظمة الكهربائية",
+        "قراءة المخططات الكهربائية",
+        "الالتزام بإجراءات السلامة",
+        "استخدام أدوات الصيانة",
+        "العمل تحت الضغط"
+      ]
+    },
+    {
+      "title": "مساعد مبيعات (Sales Associate)",
+      "jobType": "opportunities",
+      "industry": "",
+      "description": "مساعدة العملاء في المبيعات.",
+      "avgSalary": "35,000 - 55,000 ",
+      "demand": "مرتفع",
+      "category": "مبيعات",
+      "experience": "0-2 سنوات",
+      "growthRate": "2%",
+      "requiredSpecialties": [
+        "خدمة العملاء",
+        "مهارات البيع",
+        "معرفة بالمنتجات",
+        "التواصل الفعال",
+        "التعامل مع الكاشير",
+        "العمل ضمن فريق"
+      ]
+    },
+    {
+      "title": "مساعد إداري (Administrative Assistant)",
+      "jobType": "entry",
+      "industry": "",
+      "description": "دعم إداري وتنظيمي للمكاتب.",
+      "avgSalary": "40,000 - 60,000 ",
+      "demand": "مرتفع",
+      "category": "إدارة",
+      "experience": "1-3 سنوات",
+      "growthRate": "5%",
+      "requiredSpecialties": [
+        "تنظيم الملفات",
+        "إدارة المواعيد",
+        "التواصل الفعال",
+        "إجادة برامج الأوفيس",
+        "تحضير التقارير",
+        "إدارة البريد الإلكتروني"
+      ]
+    },
+    {
+      "title": "موظف دعم فني (Technical Support Representative)",
+      "jobType": "entry",
+      "industry": "",
+      "description": "مساعدة العملاء في المشكلات التقنية.",
+      "avgSalary": "45,000 - 65,000 ",
+      "demand": "مرتفع",
+      "category": "تقنية",
+      "experience": "1-3 سنوات",
+      "growthRate": "6%",
+      "requiredSpecialties": [
+        "تشخيص الأعطال التقنية",
+        "التواصل مع العملاء",
+        "معرفة أنظمة التشغيل",
+        "حل المشكلات التقنية",
+        "إدارة قواعد البيانات",
+        "القدرة على العمل تحت الضغط"
+      ]
+    },
+    {
+      "title": "مندوب مبيعات (Sales Representative)",
+      "jobType": "entry",
+      "industry": "",
+      "description": "التواصل مع العملاء لبيع المنتجات.",
+      "avgSalary": "50,000 - 70,000 ",
+      "demand": "مرتفع",
+      "category": "مبيعات",
+      "experience": "1-3 سنوات",
+      "growthRate": "4%",
+      "requiredSpecialties": [
+        "التفاوض والإقناع",
+        "خدمة العملاء",
+        "إدارة علاقات العملاء",
+        "التواصل الفعال",
+        "تحقيق الأهداف البيعية",
+        "معرفة بالمنتجات والخدمات"
+      ]
+    },
+    {
+      "title": "مشرف مخازن (Warehouse Supervisor)",
+      "jobType": "entry",
+      "industry": "",
+      "description": "تنظيم وإدارة المخزون.",
+      "avgSalary": "45,000 - 65,000 ",
+      "demand": "مرتفع",
+      "category": "الخدمات اللوجستية",
+      "experience": "3-5 سنوات",
+      "growthRate": "3%",
+      "requiredSpecialties": [
+        "إدارة المخزون",
+        "تنظيم العمليات اللوجستية",
+        "قيادة الفريق",
+        "التعامل مع أنظمة إدارة المخزون",
+        "التخطيط للعمليات",
+        "ضمان الالتزام بإجراءات السلامة"
+      ]
+    },
+    {
+      "title": "مدخل بيانات (Data Entry Clerk)",
+      "jobType": "entry",
+      "industry": "",
+      "description": "إدخال البيانات بدقة عالية.",
+      "avgSalary": "35,000 - 50,000",
+      "demand": "مرتفع",
+      "category": "إدارة بيانات",
+      "experience": "0-2 سنوات",
+      "growthRate": "3%",
+      "requiredSpecialties": [
+        "السرعة في الكتابة",
+        "دقة إدخال البيانات",
+        "التعامل مع برامج الحاسب الآلي",
+        "تنظيم المعلومات",
+        "التحقق من صحة البيانات",
+        "العمل تحت الضغط"
+      ]
+    }
+  ],
+  "quizQuestions" : [
+    {
+      "question": "ما هو مستوى الراتب الذي تفضله؟",
+      "options": [
+        { "text": "أكثر من 200,000 دولار سنوياً", "value": "high" },
+        { "text": "بين 100,000 و 200,000 دولار سنوياً", "value": "medium" },
+        { "text": "أقل من 100,000 دولار سنوياً", "value": "low" },
+        { "text": "الراتب ليس عاملاً حاسماً بالنسبة لي", "value": "any" }
+      ]
+    },
+    {
+      "question": "ما هو مجال العمل الذي تفضله؟",
+      "options": [
+        { "text": "التكنولوجيا والذكاء الاصطناعي", "value": "tech" },
+        { "text": "الطب والرعاية الصحية", "value": "medical" },
+        { "text": "الهندسة والتصميم", "value": "engineering" },
+        { "text": "الأعمال والإدارة", "value": "business" }
+      ]
+    },
+    {
+      "question": "ما هي المهارات التي تمتلكها؟",
+      "options": [
+        { "text": "مهارات تحليلية ورياضية", "value": "analytical" },
+        { "text": "مهارات إبداعية وتصميم", "value": "creative" },
+        { "text": "مهارات تواصل وقيادة", "value": "leadership" },
+        { "text": "مهارات يدوية وتقنية", "value": "technical" }
+      ]
+    },
+    {
+      "question": "ما هو مستوى الخبرة لديك؟",
+      "options": [
+        { "text": "خبرة أكثر من 5 سنوات", "value": "senior" },
+        { "text": "خبرة بين 2-5 سنوات", "value": "mid" },
+        { "text": "خبرة أقل من سنتين", "value": "junior" },
+        { "text": "لا أمتلك خبرة عملية", "value": "entry" }
+      ]
+    },
+    {
+      "question": "ما هو نمط العمل الذي تفضله؟",
+      "options": [
+        { "text": "العمل الفردي المستقل", "value": "solo" },
+        { "text": "العمل ضمن فريق", "value": "team" },
+        { "text": "القيادة والإشراف", "value": "leadership" },
+        { "text": "مزيج بين العمل الفردي والجماعي", "value": "mixed" }
+      ]
+    },
+    {
+      "question": "ما هي البيئة العملية المثالية لك؟",
+      "options": [
+        { "text": "مكتب تقليدي", "value": "office" },
+        { "text": "عمل عن بُعد", "value": "remote" },
+        { "text": "عمل ميداني", "value": "field" },
+        { "text": "مساحة عمل مرنة", "value": "flex" }
+      ]
+    },
+    {
+      "question": "ما هو مستوى السفر الذي تستطيع تحمله؟",
+      "options": [
+        { "text": "لا أرغب في السفر", "value": "none" },
+        { "text": "سفر محلي محدود", "value": "local" },
+        { "text": "سفر دولي متكرر", "value": "international" },
+        { "text": "أعيش في مواقع مختلفة", "value": "nomad" }
+      ]
+    },
+    {
+      "question": "ما هي طبيعة العمل المفضلة؟",
+      "options": [
+        { "text": "مهام روتينية منظمة", "value": "routine" },
+        { "text": "مشاريع متغيرة", "value": "dynamic" },
+        { "text": "عمل إبداعي", "value": "creative" },
+        { "text": "حل مشكلات معقدة", "value": "problem_solving" }
+      ]
+    },
+    {
+      "question": "ما هو مستوى التفاعل الاجتماعي المفضل؟",
+      "options": [
+        { "text": "تفاعل محدود مع الناس", "value": "low" },
+        { "text": "تفاعل مع زملاء العمل فقط", "value": "medium" },
+        { "text": "تفاعل مع عملاء/مرضى", "value": "high" },
+        { "text": "تفاعل مع جمهور كبير", "value": "public" }
+      ]
+    },
+    {
+      "question": "ما هي أولوية التوازن بين الحياة والعمل؟",
+      "options": [
+        { "text": "العمل أولاً", "value": "work_first" },
+        { "text": "توازن صارم", "value": "strict_balance" },
+        { "text": "مرونة حسب الظروف", "value": "flexible" },
+        { "text": "حسب متطلبات الوظيفة", "value": "job_dependent" }
+      ]
+    },
+    {
+      "question": "ما هي طريقة التعلم المفضلة؟",
+      "options": [
+        { "text": "التدريب العملي", "value": "hands_on" },
+        { "text": "الدراسة الأكاديمية", "value": "academic" },
+        { "text": "التعلم الذاتي عبر الإنترنت", "value": "online" },
+        { "text": "التلمذة المهنية", "value": "apprenticeship" }
+      ]
+    },
+    {
+      "question": "ما هو مستوى الضغط الذي تتعامل معه؟",
+      "options": [
+        { "text": "بيئة هادئة", "value": "low" },
+        { "text": "ضغط متوسط مع فترات ذروة", "value": "medium" },
+        { "text": "ضغط عالي دائم", "value": "high" },
+        { "text": "أزمة/حالات طوارئ", "value": "crisis" }
+      ]
+    },
+    {
+      "question": "ما هي توقعاتك للتطور الوظيفي؟",
+      "options": [
+        { "text": "ترقيات سريعة", "value": "fast" },
+        { "text": "تطور تدريجي", "value": "steady" },
+        { "text": "استقرار في المنصب", "value": "stable" },
+        { "text": "تغيير مجالات العمل", "value": "change" }
+      ]
+    },
+    {
+      "question": "ما هو مستوى الإبداع المطلوب؟",
+      "options": [
+        { "text": "اتباع تعليمات محددة", "value": "low" },
+        { "text": "تحسين العمليات الحالية", "value": "medium" },
+        { "text": "ابتكار حلول جديدة", "value": "high" },
+        { "text": "بحث وتطوير مكثف", "value": "rnd" }
+      ]
+    },
+    {
+      "question": "ما هي طبيعة المهام المفضلة؟",
+      "options": [
+        { "text": "مهام تقنية متخصصة", "value": "technical" },
+        { "text": "مهام إدارية", "value": "managerial" },
+        { "text": "مهام خدمية", "value": "service" },
+        { "text": "مهام بحثية", "value": "research" }
+      ]
+    },
+    {
+      "question": "ما هي أولوياتك في الوظيفة؟",
+      "options": [
+        { "text": "الراتب والمزايا", "value": "salary" },
+        { "text": "التوازن الحياة/العمل", "value": "balance" },
+        { "text": "التأثير الاجتماعي", "value": "impact" },
+        { "text": "التطور الشخصي", "value": "growth" }
+      ]
+    },
+    {
+      "question": "ما هو نمط القيادة المفضل؟",
+      "options": [
+        { "text": "قيادة مباشرة", "value": "directive" },
+        { "text": "قيادة تعاونية", "value": "collaborative" },
+        { "text": "قيادة تحفيزية", "value": "motivational" },
+        { "text": "تفويض الصلاحيات", "value": "delegative" }
+      ]
+    },
+    {
+      "question": "ما هي طبيعة القرارات المفضلة؟",
+      "options": [
+        { "text": "قرارات فورية", "value": "instant" },
+        { "text": "قرارات مدروسة", "value": "planned" },
+        { "text": "قرارات جماعية", "value": "group" },
+        { "text": "قرارات قائمة على البيانات", "value": "data_driven" }
+      ]
+    },
+    {
+      "question": "ما هو مستوى المسؤولية المطلوب؟",
+      "options": [
+        { "text": "مسؤولية محددة", "value": "defined" },
+        { "text": "مسؤولية عن فريق", "value": "team" },
+        { "text": "مسؤولية عن مشاريع", "value": "projects" },
+        { "text": "مسؤولية تنظيمية", "value": "organizational" }
+      ]
+    }
+  ]
+}

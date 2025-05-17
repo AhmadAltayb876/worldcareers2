@@ -4273,7 +4273,8 @@ margin: 0rem 0;
     // بيانات المهن
     let majors = [];
     let professions = [];
-    let bestProfessions = []; // تعريف متغير فارغ سيتم ملؤه لاحقاً من الملف
+    let bestProfessions = [];
+    let quizQuestions = []; // تعريف متغير فارغ سيتم ملؤه لاحقاً من الملف
 
 document.addEventListener('DOMContentLoaded', function () {
     fetch('./jobs.json')
@@ -4282,6 +4283,7 @@ document.addEventListener('DOMContentLoaded', function () {
     professions = data.professions;
     majors = data.majors;
     bestProfessions = data.bestProfessions;
+    quizQuestions = data.quizQuestions;
     renderProfessions(professions);
     renderMajors(majors);
   })
