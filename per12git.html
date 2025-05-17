@@ -3802,6 +3802,19 @@ margin: 0rem 0;
         max-height: 1000px;
     }
 }
+
+/* تعديلات الفلترة للشاشات الصغيرة */
+@media (max-width: 394px) {
+    .field-filters {
+        max-height: 209px;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+    }
+    
+    .field-filters.expanded {
+        max-height: 1000px;
+    }
+}
 </style>
 
 </head>
