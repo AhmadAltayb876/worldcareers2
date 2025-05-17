@@ -461,6 +461,7 @@
         box-shadow: 0 10px 40px rgba(0,0,0,0.2);
         position: relative;
         padding: 2rem;
+        overflow-y: auto;
     }
     
     .close-btn {
@@ -692,20 +693,11 @@
         font-size: 1.2rem;
         }
     }
-    @media (min-width: 587px) {
-        .modal-content {
-            overflow-y:hidden;
-        }
-    
-    
-    
-    }
     @media (max-height: 768px) {
         .modal-content {
             width: 95%;
             max-height: 90vh;
             padding-top: 0.3rem;   
-            overflow-x:hidden;
         }
         .close-btn {
             font-size: 3rem;
@@ -4638,7 +4630,7 @@ searchInput.addEventListener('keydown', function(e) {
                 card.innerHTML = `
                     <div class="category-tag">${profession.category}</div>
                     <h3>${profession.title}</h3>
-                    <pملخص المهنة : ${profession.summarize}</p>
+                    <p>${profession.summarize}</p>
                     <div class="salary-info">
                         <span>الراتب السنوي:</span>
                         <span class="highlight">$${profession.avgSalary}</span>
@@ -4731,7 +4723,7 @@ searchInput.addEventListener('keydown', function(e) {
             card.innerHTML = `
                 <div class="category-tag">${profession.category}</div>
                 <h3>${profession.title}</h3>
-                <p>ملخص المهنة : ${profession.summarize}</p>
+                <p>${profession.summarize}</p>
                 <div class="salary-info">
                     <span>الراتب السنوي:</span>
                     <span class="highlight">$${profession.avgSalary}</span>
@@ -4756,7 +4748,7 @@ searchInput.addEventListener('keydown', function(e) {
             card.innerHTML = `
                 <div class="category-tag">${major.field}</div>
                 <h3>${major.name}</h3>
-                <p style="margin: 1rem 0;">ملخص التخصص : ${major.summarize}</p>
+                <p style="margin: 1rem 0;">${major.summarize}</p>
                 <div class="salary-info">
                     <span>السنوات الدراسية :</span>
                     <span class="highlight">${major.duration}</span>
@@ -5233,27 +5225,27 @@ function resetcom() {
             // مقارنة التخصصات
             tableHTML = `
                 <tr>
-                    <td>ملخص المهنة</td>
+                    <td>ملخص التخصص</td>
                     <td>${selectedItem1.summarize}</td>
                     <td>${selectedItem2.summarize}</td>
                 </tr>
                 <tr>
-                    <td>فرص العمل</td>
+                    <td>الطلب</td>
                     <td>${selectedItem1.jobo}</td>
                     <td>${selectedItem2.jobo}</td>
                 </tr>
                 <tr>
-                    <td>عدد الوظائف المرتبطة</td>
-                    <td>${selectedItem1.relatedJobs ? selectedItem1.relatedJobs.length : 0}</td>
-                    <td>${selectedItem2.relatedJobs ? selectedItem2.relatedJobs.length : 0}</td>
+                    <td>متوسط المجموع الادني في الثانوية</td>
+                    <td>${selectedItem1.jobs}</td>
+                    <td>${selectedItem2.jobs}</td>
                 </tr>
                 <tr>
-                    <td>السنوات الدرسية/td>
+                    <td>السنوات الدرسية</td>
                     <td>${selectedItem1.duration}</td>
                     <td>${selectedItem2.duration}</td>
                 </tr>
                <tr>
-                    <td>عدد الساعات الدراسية</td>
+                    <td>متوسط عدد الساعات المعتمدة</td>
                     <td>${selectedItem1.mid}</td>
                     <td>${selectedItem2.mid}</td>
                 </tr>
@@ -5540,15 +5532,15 @@ function resetcom() {
             ${major.jobo}
         </div>
         <div class="stat-item">
-            <span>عدد الوظائف</span>
-            ${major.relatedJobs.length}
+            <span>متوسط المجموع الادنى في الثانوية</span>
+            ${major.jobs}
         </div>
         <div class="stat-item">
             <span>السنوات الدراسية</span>
             ${major.duration}
         </div>
         <div class="stat-item">
-            <span>متوسط عدد الساعات الدراسية</span>
+            <span>متوسط عدد الساعات المعتمدة</span>
             ${major.mid}
         </div>
     </div>
@@ -5761,7 +5753,7 @@ function resetcom() {
         <div class="profession-card">
             <div class="category-tag">${major.field}</div>
             <h3>${major.name}</h3>
-            <p>ملخص التخصص : ${major.summarize}</p>
+            <p>${major.summarize}</p>
             <div class="salary-info">
                 <span>السنوات الدراسية :</span>
                 <span class="highlight">${major.duration}</span>
