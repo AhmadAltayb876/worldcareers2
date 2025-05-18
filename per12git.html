@@ -376,8 +376,8 @@
     
     .category-tag {
         position: absolute;
-        top: 1rem;
-        left: 1rem;
+        top: 1.5rem;
+        left: 1.5rem;
         background: var(--accent);
         color: white;
         padding: 0.3rem 0.8rem;
@@ -462,6 +462,8 @@
         position: relative;
         padding: 2rem;
         overflow-y: auto;
+        overflow-x: hidden;
+        scrollbar-width: none; /* للمتصفحات الحديثة */
     }
     
     .close-btn {
@@ -532,8 +534,8 @@
     
     #modalCategory {
         position: absolute;
-        top: 4rem;
-        left: 1.5rem;
+        top: -0.2rem;
+        left: 3rem;
         margin: 0;
         font-size: 0.85rem;
     }
@@ -4080,6 +4082,7 @@ margin: 0rem 0;
                         <i class="fas fa-arrow-right"></i> السؤال السابق
                     </button>
                 </div>
+            
             </div>
             <div class="quiz-step" id="quizResults">
             <div class="quiz-results">
