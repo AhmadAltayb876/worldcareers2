@@ -3815,6 +3815,56 @@ margin: 0rem 0;
         max-height: 1000px;
     }
 }
+/* أنماط زر السؤال السابق */
+.quiz-nav-btn.prev-btn {
+    background: linear-gradient(135deg, rgba(10, 132, 255, 0.1) 0%, rgba(58, 175, 169, 0.1) 100%);
+    color: var(--primary);
+    border: 2px solid var(--primary);
+    padding: 0.8rem 1.5rem;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 2px 8px rgba(10, 132, 255, 0.1);
+    margin-right: 0.5rem;
+    margin-top: 0.8rem;
+}
+
+.quiz-nav-btn.prev-btn:hover {
+    background: linear-gradient(135deg, rgba(10, 132, 255, 0.2) 0%, rgba(58, 175, 169, 0.2) 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(10, 132, 255, 0.15);
+}
+
+.quiz-nav-btn.prev-btn:active {
+    transform: translateY(0);
+}
+
+.quiz-nav-btn.prev-btn i {
+    margin-left: 0.5rem;
+    transition: transform 0.3s ease;
+}
+
+.quiz-nav-btn.prev-btn:hover i {
+    transform: translateX(5px);
+}
+@media (max-width: 768px) {
+    .quiz-nav-btn.prev-btn {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .quiz-nav-btn.prev-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
+    }
+    
+    .quiz-nav-btn.prev-btn i {
+        margin-left: 0.3rem;
+        font-size: 0.9rem;
+    }
+}
 </style>
 
 </head>
@@ -3982,7 +4032,7 @@ margin: 0rem 0;
 <!-- داخل قسم compareResults بعد جدول النتائج -->
 <div class="compare-controls" id="compareControls">
     <button onclick="resetcom()" class="control-btn reset-btn">
-        <i class="fas fa-redo"></i> إعادة الاختبار
+        <i class="fas fa-redo"></i> مقارنة اخرى 
     </button>
     <button onclick="goToHome()" class="control-btn home-btn">
         <i class="fas fa-home"></i> الصفحة الرئيسية
@@ -4020,11 +4070,17 @@ margin: 0rem 0;
             <button class="start-quiz-btn" onclick="startQuiz()">ابدأ الاختبار</button>
             </div>
             <div class="quiz-step" id="quizQuestions">
-            <div class="quiz-progress">
-            <div class="quiz-progress-bar" id="quizProgressBar" style="width: 0%"></div>
+                <div class="quiz-progress">
+                    <div class="quiz-progress-bar" id="quizProgressBar" style="width: 0%"></div>
+                </div>
+                <div class="question-text" id="currentQuestion"></div>
+                <div class="quiz-options" id="quizOptions"></div>
+                <div class="quiz-navigation">
+                    <button class="quiz-nav-btn prev-btn" id="prevQuestionBtn" style="display: block;">
+                        <i class="fas fa-arrow-right"></i> السؤال السابق
+                    </button>
+                </div>
             </div>
-            <div class="question-text" id="currentQuestion"></div>
-            <div class="quiz-options" id="quizOptions"></div>
             </div>
             <div class="quiz-step" id="quizResults">
             <div class="quiz-results">
@@ -5060,6 +5116,8 @@ function resetcom() {
     // إخفاء نتائج المقارنة السابقة إن وجدت
     document.getElementById('compareResults').style.display = 'none';
     document.getElementById('compareControls').style.display = 'none';
+    selectedItem1 = null ;
+    selectedItem2 = null ;
 }
 // تحسين وظيفة compareItems
 
@@ -5168,10 +5226,12 @@ function resetcom() {
             alert('الرجاء اختيار العنصرين للمقارنة');
             return;
         }
-        
+        if (selectedItem1 == selectedItem2) {
+            alert('لا يمكن مقارنة العنصر مع نفسه');
+            return;
+        }
         const resultsDiv = document.getElementById('compareResults');
         const tableBody = document.getElementById('compareTableBody');
-        const detailsDiv = document.getElementById('compareDetails');
         const header1 = document.getElementById('compareHeader1');
         const header2 = document.getElementById('compareHeader2');
         
@@ -5372,21 +5432,30 @@ function resetcom() {
             optionsContainer.appendChild(optionElement);
         });
         
+        // التحكم في ظهور زر السؤال السابق
+        const prevBtn = document.getElementById('prevQuestionBtn');
+        prevBtn.style.display = currentQuestion === 0 ? 'none' : 'flex';
+        
         // تحديث شريط التقدم
         const progress = ((currentQuestion) / quizQuestions.length) * 100;
         document.getElementById('quizProgressBar').style.width = `${progress}%`;
     }
-    
     // اختيار إجابة
     function selectAnswer(answer) {
-        quizAnswers.push(answer);
-         // إزالة التحديد من كل الخيارات
-    document.querySelectorAll('.quiz-option').forEach(opt => 
-    opt.classList.remove('selected'));
-    
-    // إضافة التحديد للخيار المختار
-    event.currentTarget.classList.add('selected');
-    
+        // إذا كان هناك إجابة مسجلة لهذا السؤال، استبدلها
+        if (quizAnswers[currentQuestion] !== undefined) {
+            quizAnswers[currentQuestion] = answer;
+        } else {
+            quizAnswers.push(answer);
+        }
+        
+        // إزالة التحديد من كل الخيارات
+        document.querySelectorAll('.quiz-option').forEach(opt => 
+            opt.classList.remove('selected'));
+        
+        // إضافة التحديد للخيار المختار
+        event.currentTarget.classList.add('selected');
+        
         if (currentQuestion < quizQuestions.length - 1) {
             currentQuestion++;
             showQuestion();
@@ -5915,7 +5984,27 @@ function onFilterChange() {
         showMoreBtn.style.display = 'block';
     }
 }
+function goToPreviousQuestion() {
+    if (currentQuestion > 0) {
+        // إزالة الإجابة الأخيرة
+        quizAnswers.pop();
+        currentQuestion--;
+        showQuestion();
+        
+        // إعادة تحديد الإجابة السابقة إن وجدت
+        if (quizAnswers[currentQuestion] !== undefined) {
+            const options = document.querySelectorAll('.quiz-option');
+            options.forEach((option, index) => {
+                if (quizQuestions[currentQuestion].options[index].value === quizAnswers[currentQuestion]) {
+                    option.classList.add('selected');
+                }
+            });
+        }
+    }
+}
 
+// في نهاية ملف script.js أضف حدث النقر للزر:
+document.getElementById('prevQuestionBtn').addEventListener('click', goToPreviousQuestion);
 // استدعاء الدالة عند تحميل الصفحة وتغيير حجمها
 window.addEventListener('resize', onFilterChange);
 document.addEventListener('DOMContentLoaded', onFilterChange);
