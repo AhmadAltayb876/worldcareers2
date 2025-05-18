@@ -4087,7 +4087,7 @@ margin: 0rem 0;
             <div class="quiz-step" id="quizResults">
             <div class="quiz-results">
             <h3 style="color: var(--primary); margin-bottom: 1.5rem;">نتائج الاختبار</h3>
-            <p style="margin-bottom: 1.5rem;">بناءً على إجاباتك، إليك أفضل المهن التي تناسبك:</p>
+            <p style="margin-bottom: 1.5rem; display: none ;" id="newsen">بناءً على إجاباتك، إليك أفضل المهن التي تناسبك:</p>
             <div id="careerMatches"></div>
             <div class="quiz-actions">
                 <div id="quizResults">
@@ -5480,6 +5480,9 @@ function resetcom() {
             matchesContainer.innerHTML = '<p>لا توجد مهن مطابقة لاختياراتك. حاول تعديل بعض الإجابات.</p>';
             return;
         }
+        else{
+            document.getElementById('newsen').style.display = 'block' ;
+        }
         
         matchedProfessions.forEach(prof => {
             const matchElement = document.createElement('div');
@@ -5710,10 +5713,9 @@ function resetcom() {
     let results = { professions: [], majors: [] };
     
     if (type === 'jobs') {
-        results.professions = professions.filter(prof => {
+        results.professions = professions.filter(prof => {  
             const matchesQuery = 
                 prof.title.toLowerCase().includes(normalizedQuery) ||
-                prof.summarize.toLowerCase().includes(normalizedQuery) ||
                 prof.avgSalary.toLowerCase().includes(normalizedQuery);
             const matchesFilter = !isFiltering || relatedCategories.includes(prof.category);
             return matchesQuery && matchesFilter;
@@ -5721,9 +5723,7 @@ function resetcom() {
     } else {
         results.majors = majors.filter(major => {
             const matchesQuery = 
-                major.name.toLowerCase().includes(normalizedQuery) ||
-                major.summarize.toLowerCase().includes(normalizedQuery) ||
-                major.description.toLowerCase().includes(normalizedQuery);
+                major.name.toLowerCase().includes(normalizedQuery)
             const matchesFilter = !isFiltering || relatedCategories.includes(major.field);
             return matchesQuery && matchesFilter;
         });
