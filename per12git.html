@@ -5498,92 +5498,94 @@ function resetcom() {
         });
     }
     
-   
+   //الاختبار 
     
     function calculateCompatibility(prof, prefs) {
-        let score = 0;
 
-// 1) مطابقة الطلب (demand)
-// نستخدم ترتيبًا تصاعديًا: مرتفع جدًا > مرتفع > متوسط > منخفض
-const demandOrder = ['منخفض', 'متوسط', 'مرتفع', 'مرتفع جدًا'];
-const userDemandIdx = demandOrder.indexOf(prefs.demand);
-const profDemandIdx = demandOrder.indexOf(prof.demand);
-if (userDemandIdx >= 0 && profDemandIdx >= 0) {
-  // أقرب لمتطلبات المستخدم يمنح نقاط أكثر
-  score += Math.max(0, 20 - 5 * Math.abs(userDemandIdx - profDemandIdx));
 }
-
-// 2) مطابقة الراتب (avgSalary)
-// نحول النص "120,000 – 250,000 دولار سنوياً" إلى عدد صحيح (أعلى قيمة)
-const maxSalary = parseInt(
-  prof.avgSalary
-      .replace(/[^0-9–-]/g, '') // يترك الأرقام والواصل
-      .split(/–|-/)[1] ||        // يختار الحد الأعلى
-      prof.avgSalary.replace(/[^0-9]/g, ''), // fallback
-  10
-);
-if (prefs.salary === 'high') {
-  if (maxSalary >= 150000) score += 20;
-  else if (maxSalary >= 100000) score += 10;
-}
-else if (prefs.salary === 'medium') {
-  if (maxSalary >= 80000 && maxSalary < 150000) score += 15;
-}
-else if (prefs.salary === 'low') {
-  if (maxSalary < 80000) score += 10;
-}
-
-// 3) مطابقة المجال (category)
-// افترضنا أن prefs.field تأتي بقيم عربية تطابق category في JSON
-if (prefs.field && prof.category === prefs.field) {
-  score += 15;
-}
-
-// 4) مطابقة الخبرة المطلوبة (experience)
-// نقارن السنوات الرقمية، نحتسب الرقم من "12+ سنة" أو "3 - 4 سنوات"
-const yearsMatch = (() => {
-  const match = prof.experience.match(/(\d+)(?=\+)/) || prof.experience.match(/(\d+)/);
-  return match ? parseInt(match[1], 10) : 0;
-})();
-if (prefs.experience === 'senior' && yearsMatch >= 10) score += 10;
-else if (prefs.experience === 'mid' && yearsMatch >= 5 && yearsMatch < 10) score += 10;
-else if (prefs.experience === 'junior' && yearsMatch < 5) score += 10;
-
-// 5) مطابقة المهارة الرئيسية (skills)
-// نفترض أن prefs.skill عبارة عن سلسلة تطابق إحدى مهارات prof.skills
-if (prefs.skill && prof.skills.includes(prefs.skill)) {
-  score += 15;
-}
-
-return score;
-}
-
-/**
-* يعيد قائمة المهن الأعلى توافقًا
-*/
 function calculateMatches() {
-// بناء كائن التفضيلات من إجابات الأسئلة
-const prefs = {
-  salary:     quizAnswers[0],  // نطاق الراتب المطلوب
-  field:      quizAnswers[1],  // مجال العمل المفضّل
-  demand:     quizAnswers[2],  // مستوى الطلب في السوق
-  experience: quizAnswers[3],  // سنوات الخبرة المطلوبة
-  skill:      quizAnswers[4]   // المهارة الشخصية الأساسية
-};
+    const preferences = {
+        salary: quizAnswers[0], // السؤال الأول عن الراتب
+        field: quizAnswers[1],  // السؤال الثاني عن المجال
+        skills: quizAnswers[2], // السؤال الثالث عن المهارات
+        experience: quizAnswers[3], // السؤال الرابع عن الخبرة
+        workStyle: quizAnswers[4], // السؤال الخامس عن نمط العمل
+        environment: quizAnswers[5], // السؤال السادس عن بيئة العمل
+        travel: quizAnswers[6], // السؤال السابع عن السفر
+        workNature: quizAnswers[7], // السؤال الثامن عن طبيعة العمل
+        socialInteraction: quizAnswers[8], // السؤال التاسع عن التفاعل الاجتماعي
+        workLifeBalance: quizAnswers[9], // السؤال العاشر عن التوازن
+        learningStyle: quizAnswers[10], // السؤال الحادي عشر عن أسلوب التعلم
+        stressLevel: quizAnswers[11], // السؤال الثاني عشر عن مستوى الضغط
+        careerGrowth: quizAnswers[12], // السؤال الثالث عشر عن التطور الوظيفي
+        creativity: quizAnswers[13], // السؤال الرابع عشر عن الإبداع
+        tasks: quizAnswers[14], // السؤال الخامس عشر عن المهام
+        priorities: quizAnswers[15], // السؤال السادس عشر عن الأولويات
+        leadership: quizAnswers[16], // السؤال السابع عشر عن القيادة
+        decisionMaking: quizAnswers[17], // السؤال الثامن عشر عن اتخاذ القرارات
+        responsibility: quizAnswers[18] // السؤال التاسع عشر عن المسؤولية
+    };
 
-const maxRaw = 80; // اجمع الأوزان القصوى الجديدة
-  return professions
-    .map(prof => {
-      const raw = calculateCompatibility(prof, prefs);
-      return {
-        ...prof,
-        matchPercent: Math.round((raw / maxRaw) * 100)
-      };
-    })
-    .filter(p => p.matchPercent >= 0)
-    .sort((a, b) => b.matchPercent - a.matchPercent)
-    .slice(0, 3);
-    }
+    // حساب التوافق لكل مهنة
+    const matchedProfessions = professions.map(profession => {
+        let score = 0;
+        
+        // التوافق مع الراتب
+        if (preferences.salary === 'high' && profession.avgSalary.includes('000')) {
+            score += 20;
+        } else if (preferences.salary === 'medium' && profession.avgSalary.includes('000')) {
+            score += 15;
+        } else if (preferences.salary === 'low' && !profession.avgSalary.includes('000')) {
+            score += 10;
+        }
+        
+        // التوافق مع المجال (الطب في هذه الحالة)
+        if (preferences.field === 'medical' && profession.category === 'الطب') {
+            score += 15;
+        }
+        
+        // التوافق مع المهارات
+        if (profession.skills) {
+            if (preferences.skills === 'analytical' && profession.skills.some(skill => skill.includes('تحليل') || skill.includes('تشخيص'))) {
+                score += 10;
+            }
+            if (preferences.skills === 'technical' && profession.skills.some(skill => skill.includes('تقنية') || skill.includes('أجهزة'))) {
+                score += 10;
+            }
+        }
+        
+        // التوافق مع الخبرة
+        const expYears = parseInt(profession.experience) || 0;
+        if (preferences.experience === 'senior' && expYears >= 5) {
+            score += 10;
+        } else if (preferences.experience === 'mid' && expYears >= 2 && expYears < 5) {
+            score += 8;
+        } else if (preferences.experience === 'junior' && expYears < 2) {
+            score += 5;
+        }
+        
+        // التوافق مع الطلب في السوق
+        if (profession.demand.includes('مرتفع')) {
+            score += 10;
+        } else if (profession.demand.includes('متوسط')) {
+            score += 5;
+        }
+        
+        // حساب النسبة المئوية للتطابق
+        const matchPercent = Math.min(100, Math.round(score * 100 / 80));
+        
+        return {
+            ...profession,
+            matchPercent
+        };
+    });
+    
+    // تصفية وترتيب النتائج
+    return matchedProfessions
+        .filter(p => p.matchPercent > 30)
+        .sort((a, b) => b.matchPercent - a.matchPercent)
+        .slice(0, 5); // أفضل 5 نتائج
+}
     // دالة لعرض تفاصيل التخصص في نافذة منبثقة
     function showMajorDetails(major) {
         const modal = document.getElementById('detailsModal');
