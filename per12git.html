@@ -3867,6 +3867,7 @@ margin: 0rem 0;
         font-size: 0.9rem;
     }
 }
+
 </style>
 
 </head>
@@ -4087,11 +4088,11 @@ margin: 0rem 0;
             <div class="quiz-step" id="quizResults">
             <div class="quiz-results">
             <h3 style="color: var(--primary); margin-bottom: 1.5rem;">نتائج الاختبار</h3>
-            <p style="margin-bottom: 1.5rem; display: none ;" id="newsen">بناءً على إجاباتك، إليك أفضل المهن التي تناسبك:</p>
+            <p style="margin-bottom: 1.5rem;">بناءً على إجاباتك، إليك أفضل المهن التي تناسبك:</p>
             <div id="careerMatches"></div>
             <div class="quiz-actions">
-                <div id="quizResults">
-                    <button onclick="restartQuiz()" class="quiz-btn home-btn" style="background-color: #0A84FF;">
+                <div id="resultControls">
+                <button onclick="restartQuiz()" class="quiz-btn home-btn" style="background-color: #0A84FF;">
                     <i class="fas fa-redo"></i> إعادة الاختبار
                     </button>
                 </div>
@@ -4952,6 +4953,7 @@ searchInput.addEventListener('keydown', function(e) {
     // دالة لإغلاق النافذة المنبثقة
     function closeModal() {
         document.getElementById('detailsModal').style.display = 'none';
+    
     }
     
     
@@ -5480,9 +5482,6 @@ function resetcom() {
             matchesContainer.innerHTML = '<p>لا توجد مهن مطابقة لاختياراتك. حاول تعديل بعض الإجابات.</p>';
             return;
         }
-        else{
-            document.getElementById('newsen').style.display = 'block' ;
-        }
         
         matchedProfessions.forEach(prof => {
             const matchElement = document.createElement('div');
@@ -5499,104 +5498,91 @@ function resetcom() {
         });
     }
     
-    // حساب المهن المطابقة
-    function calculateMatches() {
-        const preferences = {
-    work_style: quizAnswers[0],
-    environment: quizAnswers[1],
-    travel: quizAnswers[2],
-    work_nature: quizAnswers[3],
-    social: quizAnswers[4],
-    balance: quizAnswers[5],
-    learning: quizAnswers[6],
-    stress: quizAnswers[7],
-    career_growth: quizAnswers[8],
-    creativity: quizAnswers[9],
-    tasks: quizAnswers[10],
-    priorities: quizAnswers[11],
-    leadership: quizAnswers[12],
-    decisions: quizAnswers[13],
-    responsibility: quizAnswers[14]
-    };
-    const scoredProfessions = professions.map(prof => {
-    let score = 0;
-    
-    // نظام النقاط المتقدم
-    score += calculateCompatibility(prof, preferences);
-    
-    return {
-        ...prof,
-        matchPercent: Math.min(100, Math.round(score))
-    };
-    });
-    
-    return scoredProfessions
-    .filter(prof => prof.matchPercent >= 60)
-    .sort((a, b) => b.matchPercent - a.matchPercent)
-    .slice(0, 5);
-    }
+   
     
     function calculateCompatibility(prof, prefs) {
-    let score = 0;
-    
-    // مثال: تحليل التوافق مع نمط العمل
-    if (prof.work_style === prefs.work_style) score += 15;
-    
-    // مثال: تحليل التوافق مع بيئة العمل
-    if (prof.environment === prefs.environment) score += 10;
-    
-    // إضافة معايير أخرى بنفس المنطق...
-    
-    return score;
-        // حساب درجة المطابقة لكل مهنة
-        const scoredProfessions = professions.map(prof => {
-            let score = 0;
-            
-            // مطابقة الراتب
-            if (preferences.salary === 'high' && parseInt(prof.avgSalary.replace(/\D/g,'')) > 200000) score += 20;
-            else if (preferences.salary === 'medium' && parseInt(prof.avgSalary.replace(/\D/g,'')) > 100000) score += 15;
-            else if (preferences.salary === 'low' && parseInt(prof.avgSalary.replace(/\D/g,'')) < 100000) score += 10;
-            else if (preferences.salary === 'any') score += 5;
-            
-            // مطابقة المجال
-            if ((preferences.field === 'tech' && (prof.category === 'AI')) ||
-                (preferences.field === 'medical' && prof.category === 'طب') ||
-                (preferences.field === 'engineering' && prof.category === 'هندسة') ||
-                (preferences.field === 'business' && prof.category === 'أعمال')) {
-                score += 20;
-            }
-            
-            // مطابقة المهارات
-            if (prof.skills) {
-                if ((preferences.skills === 'analytical' && prof.skills.includes('تحليلية')) ||
-                    (preferences.skills === 'creative' && prof.skills.includes('إبداعية')) ||
-                    (preferences.skills === 'leadership' && prof.skills.includes('قيادة')) ||
-                    (preferences.skills === 'technical' && prof.skills.includes('تقنية'))) {
-                    score += 20;
-                }
-            }
-            
-            // مطابقة الخبرة
-            if (preferences.experience === 'senior' && prof.experience.includes('+5')) score += 20;
-                else if (preferences.experience === 'mid' && prof.experience.includes('+2')) score += 15;
-                else if (preferences.experience === 'junior' && prof.experience.includes('+1')) score += 10;
-                else if (preferences.experience === 'entry' && prof.experience.includes('0')) score += 5;
-    
-    // مطابقة الطلب
-            if (preferences.demand === 'high' && prof.demand === 'مرتفع جدًا') score += 20;
-                else if (preferences.demand === 'medium' && prof.demand === 'مرتفع') score += 15;
-                else if (preferences.demand === 'any') score += 5;
-            return {
-                ...prof,
-                matchPercent: Math.min(100, Math.round(score))
-            };
-        });
-        
-        // تصفية وترتيب النتائج
-        return scoredProfessions
-            .filter(prof => prof.matchPercent >= 50)
-            .sort((a, b) => b.matchPercent - a.matchPercent)
-            .slice(0, 3); // أفضل 5 نتائج فقط
+        let score = 0;
+
+// 1) مطابقة الطلب (demand)
+// نستخدم ترتيبًا تصاعديًا: مرتفع جدًا > مرتفع > متوسط > منخفض
+const demandOrder = ['منخفض', 'متوسط', 'مرتفع', 'مرتفع جدًا'];
+const userDemandIdx = demandOrder.indexOf(prefs.demand);
+const profDemandIdx = demandOrder.indexOf(prof.demand);
+if (userDemandIdx >= 0 && profDemandIdx >= 0) {
+  // أقرب لمتطلبات المستخدم يمنح نقاط أكثر
+  score += Math.max(0, 20 - 5 * Math.abs(userDemandIdx - profDemandIdx));
+}
+
+// 2) مطابقة الراتب (avgSalary)
+// نحول النص "120,000 – 250,000 دولار سنوياً" إلى عدد صحيح (أعلى قيمة)
+const maxSalary = parseInt(
+  prof.avgSalary
+      .replace(/[^0-9–-]/g, '') // يترك الأرقام والواصل
+      .split(/–|-/)[1] ||        // يختار الحد الأعلى
+      prof.avgSalary.replace(/[^0-9]/g, ''), // fallback
+  10
+);
+if (prefs.salary === 'high') {
+  if (maxSalary >= 150000) score += 20;
+  else if (maxSalary >= 100000) score += 10;
+}
+else if (prefs.salary === 'medium') {
+  if (maxSalary >= 80000 && maxSalary < 150000) score += 15;
+}
+else if (prefs.salary === 'low') {
+  if (maxSalary < 80000) score += 10;
+}
+
+// 3) مطابقة المجال (category)
+// افترضنا أن prefs.field تأتي بقيم عربية تطابق category في JSON
+if (prefs.field && prof.category === prefs.field) {
+  score += 15;
+}
+
+// 4) مطابقة الخبرة المطلوبة (experience)
+// نقارن السنوات الرقمية، نحتسب الرقم من "12+ سنة" أو "3 - 4 سنوات"
+const yearsMatch = (() => {
+  const match = prof.experience.match(/(\d+)(?=\+)/) || prof.experience.match(/(\d+)/);
+  return match ? parseInt(match[1], 10) : 0;
+})();
+if (prefs.experience === 'senior' && yearsMatch >= 10) score += 10;
+else if (prefs.experience === 'mid' && yearsMatch >= 5 && yearsMatch < 10) score += 10;
+else if (prefs.experience === 'junior' && yearsMatch < 5) score += 10;
+
+// 5) مطابقة المهارة الرئيسية (skills)
+// نفترض أن prefs.skill عبارة عن سلسلة تطابق إحدى مهارات prof.skills
+if (prefs.skill && prof.skills.includes(prefs.skill)) {
+  score += 15;
+}
+
+return score;
+}
+
+/**
+* يعيد قائمة المهن الأعلى توافقًا
+*/
+function calculateMatches() {
+// بناء كائن التفضيلات من إجابات الأسئلة
+const prefs = {
+  salary:     quizAnswers[0],  // نطاق الراتب المطلوب
+  field:      quizAnswers[1],  // مجال العمل المفضّل
+  demand:     quizAnswers[2],  // مستوى الطلب في السوق
+  experience: quizAnswers[3],  // سنوات الخبرة المطلوبة
+  skill:      quizAnswers[4]   // المهارة الشخصية الأساسية
+};
+
+const maxRaw = 80; // اجمع الأوزان القصوى الجديدة
+  return professions
+    .map(prof => {
+      const raw = calculateCompatibility(prof, prefs);
+      return {
+        ...prof,
+        matchPercent: Math.round((raw / maxRaw) * 100)
+      };
+    })
+    .filter(p => p.matchPercent >= 0)
+    .sort((a, b) => b.matchPercent - a.matchPercent)
+    .slice(0, 3);
     }
     // دالة لعرض تفاصيل التخصص في نافذة منبثقة
     function showMajorDetails(major) {
@@ -5713,9 +5699,10 @@ function resetcom() {
     let results = { professions: [], majors: [] };
     
     if (type === 'jobs') {
-        results.professions = professions.filter(prof => {  
+        results.professions = professions.filter(prof => {
             const matchesQuery = 
                 prof.title.toLowerCase().includes(normalizedQuery) ||
+                prof.summarize.toLowerCase().includes(normalizedQuery) ||
                 prof.avgSalary.toLowerCase().includes(normalizedQuery);
             const matchesFilter = !isFiltering || relatedCategories.includes(prof.category);
             return matchesQuery && matchesFilter;
@@ -5723,7 +5710,9 @@ function resetcom() {
     } else {
         results.majors = majors.filter(major => {
             const matchesQuery = 
-                major.name.toLowerCase().includes(normalizedQuery)
+                major.name.toLowerCase().includes(normalizedQuery) ||
+                major.summarize.toLowerCase().includes(normalizedQuery) ||
+                major.description.toLowerCase().includes(normalizedQuery);
             const matchesFilter = !isFiltering || relatedCategories.includes(major.field);
             return matchesQuery && matchesFilter;
         });
@@ -6010,6 +5999,7 @@ document.getElementById('prevQuestionBtn').addEventListener('click', goToPreviou
 // استدعاء الدالة عند تحميل الصفحة وتغيير حجمها
 window.addEventListener('resize', onFilterChange);
 document.addEventListener('DOMContentLoaded', onFilterChange);
+
 </script>
 
 
