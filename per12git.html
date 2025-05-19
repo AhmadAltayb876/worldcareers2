@@ -5418,9 +5418,28 @@ function resetcom() {
     }
     
     // عرض السؤال الحالي
+    // عرض السؤال الحالي
+    // عرض السؤال الحالي
     function showQuestion() {
         const question = quizQuestions[currentQuestion];
-        document.getElementById('currentQuestion').textContent = question.question;
+        
+        // تحديث نص السؤال مع العداد المنسق
+        document.getElementById('currentQuestion').innerHTML = `
+            <div style="
+                background: rgba(15, 260, 200, 0.1);
+                color: var(--primary);
+                padding: 0.5rem 1rem;
+                border-radius: 20px;
+                display: inline-block;
+                margin-bottom: 1rem;
+                font-size: 0.85rem;
+                font-weight: 500;
+            ">
+                السؤال <span style="font-weight: 700;">${currentQuestion + 1}</span> 
+                من <span style="font-weight: 700;">${quizQuestions.length}</span>
+            </div>
+            <div style="margin-top: 0.5rem; font-size: 1.1rem;">${question.question}</div>
+        `;
         
         const optionsContainer = document.getElementById('quizOptions');
         optionsContainer.innerHTML = '';
@@ -5429,7 +5448,10 @@ function resetcom() {
             const optionElement = document.createElement('div');
             optionElement.className = 'quiz-option';
             optionElement.innerHTML = `
-                <div class="option-number">${index + 1}</div>
+                <div class="option-number" style="
+                    background: var(--secondary);
+                    color: white;
+                ">${index + 1}</div>
                 <div>${option.text}</div>
             `;
             optionElement.addEventListener('click', () => selectAnswer(option.value));
@@ -5440,9 +5462,11 @@ function resetcom() {
         const prevBtn = document.getElementById('prevQuestionBtn');
         prevBtn.style.display = currentQuestion === 0 ? 'none' : 'flex';
         
-        // تحديث شريط التقدم
+        // تحديث شريط التقدم بلون الموقع الأساسي
         const progress = ((currentQuestion) / quizQuestions.length) * 100;
-        document.getElementById('quizProgressBar').style.width = `${progress}%`;
+        const progressBar = document.getElementById('quizProgressBar');
+        progressBar.style.width = `${progress}%`;
+        progressBar.style.backgroundColor = 'var(--primary)';
     }
     // اختيار إجابة
     function selectAnswer(answer) {
