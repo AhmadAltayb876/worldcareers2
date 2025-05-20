@@ -3868,6 +3868,7 @@ margin: 0rem 0;
     }
 }
 
+
 </style>
 
 </head>
@@ -4088,11 +4089,11 @@ margin: 0rem 0;
             <div class="quiz-step" id="quizResults">
             <div class="quiz-results">
             <h3 style="color: var(--primary); margin-bottom: 1.5rem;">نتائج الاختبار</h3>
-            <p style="margin-bottom: 1.5rem;">بناءً على إجاباتك، إليك أفضل المهن التي تناسبك:</p>
+            <p style="margin-bottom: 1.5rem; display: none ;" id="newsen">بناءً على إجاباتك، إليك أفضل المهن التي تناسبك:</p>
             <div id="careerMatches"></div>
             <div class="quiz-actions">
-                <div id="resultControls">
-                <button onclick="restartQuiz()" class="quiz-btn home-btn" style="background-color: #0A84FF;">
+                <div id="quizResults">
+                    <button onclick="restartQuiz()" class="quiz-btn home-btn" style="background-color: #0A84FF;">
                     <i class="fas fa-redo"></i> إعادة الاختبار
                     </button>
                 </div>
