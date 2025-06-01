@@ -60,20 +60,20 @@
         --light: #F8F9FA;
         --dark: #212529;
     }
-    
+
     * {
         box-sizing: border-box;
         margin: 0;
         padding: 0;
         font-family: 'Tajawal', sans-serif;
     }
-    
+
     body {
         background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
         color: var(--dark);
         line-height: 1.6;
     }
-    
+
     /* الترويسة */
     .navbar {
         background: white;
@@ -84,7 +84,7 @@
         z-index: 1000;
         direction: ltr;
     }
-    
+
     .nav-container {
         display: flex;
         justify-content: space-between;
@@ -93,7 +93,7 @@
         margin: 0 auto;
         gap: 1.5rem;
     }
-    
+
     .logo {
         font-weight: 700;
         font-size: 1.5rem;
@@ -101,18 +101,18 @@
         text-decoration: none;
         white-space: nowrap;
     }
-    
+
     .logo span {
         color: var(--secondary);
     }
-    
+
     .nav-links {
         display: flex;
         gap: 1rem;
         flex-wrap: wrap;
         justify-content: center;
     }
-    
+
     .nav-link {
         color: var(--dark);
         text-decoration: none;
@@ -122,17 +122,17 @@
         border-radius: 5px;
         white-space: nowrap;
     }
-    
+
     .nav-link:hover {
         color: var(--secondary);
         background: rgba(58,175,169,0.1);
     }
-    
+
     .nav-link.active {
         color: white;
         background: var(--primary);
     }
-    
+
     /* شريط البحث */
     .search-container {
         flex: 1;
@@ -140,7 +140,7 @@
         position: relative;
         margin: 0 1rem;
     }
-    
+
     .search-input {
         width: 100%;
         padding: 0.7rem 2.5rem 0.7rem 1rem;
@@ -151,13 +151,13 @@
         background-color: #f8f9fa;
         outline: none;
     }
-    
+
     .search-input:focus {
         border-color: var(--primary);
         box-shadow: 0 0 0 3px rgba(10, 132, 255, 0.2);
         background-color: white;
     }
-    
+
     .search-btn {
         position: absolute;
         right: 1rem;
@@ -169,7 +169,7 @@
         cursor: pointer;
         font-size: 1.1rem;
     }
-    
+
     /* نتائج البحث المنسدلة */
     .search-results {
         position: absolute;
@@ -184,14 +184,14 @@
         z-index: 100;
         display: none;
     }
-    
+
     .search-result-item {
         padding: 0.8rem 1rem;
         border-bottom: 1px solid #eee;
         cursor: pointer;
         transition: background 0.2s;
     }
-    
+
     .search-result-item:hover {
         background: #f8f9fa;
     }
@@ -206,12 +206,12 @@
         overflow: hidden;
         margin: 0; /* إزالة الهوامش الإضافية */
     }
-    
+
     #majorsContainer .profession-card:hover {
         transform: translateY(-8px);
         box-shadow: 0 12px 30px rgba(0, 0, 0, 0.836);
     }
-    
+
     #majorsContainer .profession-card::after {
         content: "";
         position: absolute;
@@ -222,7 +222,7 @@
         background: linear-gradient(90deg, var(--secondary) 0%, var(--primary) 100%);
         transition: height 0.3s ease;
     }
-    
+
     #majorsContainer .profession-card:hover::after {
         height: 6px;
     }
@@ -234,18 +234,18 @@
         color: var(--primary);
         margin-bottom: 0.3rem;
     }
-    
+
     .search-result-item p {
         font-size: 0.85rem;
         color: #666;
     }
-    
+
     .no-results {
         padding: 1rem;
         text-align: center;
         color: #666;
     }
-    
+
     /* نتائج البحث الرئيسية */
     .search-results-section {
         max-width: 1400px;
@@ -253,7 +253,7 @@
         padding: 0 2rem;
         display: none;
     }
-    
+
     .search-results-title {
         color: var(--primary);
         margin-bottom: 1rem;
@@ -261,11 +261,11 @@
         align-items: center;
         gap: 0.3rem;
     }
-    
+
     .search-results-title i {
         color: var(--secondary);
     }
-    
+
     .clear-search-btn {
         background: var(--accent);
         color: white;
@@ -277,11 +277,11 @@
         font-size: 0.8rem;
         transition: all 0.3s;
     }
-    
+
     .clear-search-btn:hover {
         background: #ff5252;
     }
-    
+
     /* بقية الأنماط */
     .header {
         background: linear-gradient(135deg, var(--primary) 0%, #1B2A4E 100%);
@@ -293,13 +293,13 @@
         margin-top: 0;
         direction: ltr;
     }
-    
+
     .header h1 {
         font-size: 2.5rem;
         margin-bottom: 0.5rem;
         text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
     }
-    
+
     .professions-grid {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
@@ -308,7 +308,7 @@
         max-width: 1400px;
         margin: 0 auto;
     }
-    
+
     .profession-card {
         background: white;
         border-radius: 15px;
@@ -319,12 +319,12 @@
         position: relative;
         overflow: hidden;
     }
-    
+
     .profession-card:hover {
         transform: translateY(-8px);
         box-shadow: 0 12px 30px rgba(0, 0, 0, 0.836);
     }
-    
+
     .profession-card::after {
         content: "";
         position: absolute;
@@ -335,18 +335,18 @@
         background: linear-gradient(90deg, var(--secondary) 0%, var(--primary) 100%);
         transition: height 0.3s ease;
     }
-    
+
     .profession-card:hover::after {
         height: 6px;
     }
-    
+
     .profession-card h3 {
         color: var(--primary);
         margin-bottom: 1rem;
         margin-left: 4.8rem;
         font-size: 1.4rem;
     }
-    
+
     .salary-info {
         display: flex;
         justify-content: space-between;
@@ -355,7 +355,7 @@
         padding-top: 1.2rem;
         border-top: 2px solid rgba(0,0,0,0.05);
     }
-    
+
     .highlight {
         color: var(--secondary);
         font-weight: 700;
@@ -372,9 +372,9 @@
         padding: 0.3rem 0.8rem;
         border-radius: 20px;
         justify-content: left;
-    
+
     }
-    
+
     .category-tag {
         position: absolute;
         top: 1.5rem;
@@ -386,14 +386,14 @@
         font-size: 0.85rem;
         box-shadow: 0 2px 8px rgba(255,107,107,0.2);
     }
-    
+
     /* الفلترة */
     .filter-container {
         max-width: 1400px;
         margin: 1rem auto;
         padding: 0 0.3rem;
     }
-    
+
     .filter-box {
         display: flex;
         flex-wrap: wrap;
@@ -402,13 +402,13 @@
         padding: 1.5rem;
         border-radius: 10px;
     }
-    
+
     .filter-title {
         color: var(--secondary);
         width: 100%;
         margin-bottom: 0.5rem;
     }
-    
+
     /* أقسام المحتوى */
     .content-section {
         max-width: 1000px;
@@ -417,7 +417,7 @@
         display: none;
         direction: rtl;
     }
-    
+
     .content-card {
         background: white;
         padding: 0.75rem;
@@ -428,11 +428,11 @@
     @media (max-width: 503px) {
         .content-card {
         padding: 0.8rem;
-      
+
     }
     .content-section {
         padding: 0 0.6rem;
-       
+
     }
     }
     /* النافذة المنبثقة */
@@ -449,7 +449,7 @@
         align-items: center;
         z-index: 1000;
     }
-    
+
     .modal-content {
         background: white;
         padding: 2.5rem;
@@ -483,8 +483,8 @@
     transition: all 0.3s ease;
     }
     /* تحسينات للجوال */
-    
-    
+
+
     /* تأثيرات عند التمرير */
     .close-btn:hover {
     transform: rotate(90deg) scale(1.1);
@@ -503,7 +503,7 @@
     opacity: 0;
     transition: opacity 0.3s ease;
     }
-    
+
     .close-btn:hover::after {
     opacity: 1;
     }
@@ -522,7 +522,7 @@
     .close-btn:hover {
         transform: rotate(90deg);
     }
-    
+
     .modal-header {
         position: relative;
         padding-top: 3.5rem;
@@ -531,7 +531,7 @@
         padding-bottom: 1rem;
         margin-bottom: 1.5rem;
     }
-    
+
     #modalCategory {
         position: absolute;
         top: -0.2rem;
@@ -539,54 +539,54 @@
         margin: 0;
         font-size: 0.85rem;
     }
-    
+
     .stats-grid {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 1.5rem;
         margin-top: 1.5rem;
     }
-    
+
     .stat-item {
         background: rgba(42,63,95,0.03);
         padding: 1rem;
         border-radius: 10px;
         text-align: center;
     }
-    
+
     .stat-item span:first-child {
         color: var(--primary);
         font-weight: 700;
         display: block;
         margin-bottom: 0.5rem;
     }
-    
+
     /* التكيف مع الشاشات الصغيرة */
     @media (max-width: 1024px) {
         .nav-container {
             flex-direction: column;
             gap: 1rem;
         }
-        
+
         .search-container {
             order: 3;
             max-width: 100%;
             margin: 0.5rem 0;
         }
-        
+
         .nav-links {
             width: 100%;
             justify-content: center;
         }
-        
+
     }
-    
+
     @media (max-width: 192px) {
         .professions-grid {
             grid-template-columns: 1fr;
             padding: 1rem;
         }
-        
+
     @media (max-width: 768px) {
     #best-jobs .filter-item {
     flex: 1 1 100%;
@@ -601,85 +601,85 @@
     font-size: 0.8rem;
     }
     }
-    
+
         .header h1 {
             font-size: 2rem;
         }
-        
+
         .nav-links {
             gap: 0.5rem;
         }
-        
+
         .nav-link {
             padding: 0.3rem 0.6rem;
             font-size: 0.9rem;
         }
-    
-    
+
+
     @media (max-width: 480px) {
     /* تحسينات الهيدر للجوال */
     .navbar {
     padding: 0.5rem 0.5rem;
     }
-    
+
     .nav-container {
     flex-direction: column;
     gap: 0.5rem;
     }
-    
+
     .nav-links {
     width: 100%;
     justify-content: flex-start;
     padding-bottom: 0.5rem;
     -webkit-overflow-scrolling: touch;
     }
-    
+
     .nav-link {
     font-size: 0.9rem;
     padding: 0.3rem 0.8rem;
     white-space: nowrap;
     }
-    
+
     .nav-link.active {
     padding: 0.3rem 0.8rem;
     }
-    
+
     /* إخفاء النص وعرض الأيقونات فقط عند الحاجة */
-    
-    
+
+
     /* تحسين شريط البحث */
     .search-container {
     margin: 0;
     width: 100%;
     text-align: right;
     }
-    
+
     .search-input {
     font-size: 0.9rem;
     padding: 0.8rem 1.5rem 0.5rem 1rem;
     }
-    
+
     .search-btn {
     right: 0.8rem;
     font-size: 1rem;
     }
-    
+
     /* تحسين بطاقات المهن */
     .profession-card {
     padding: 1rem;
     margin: 0.5rem;
     }
-    
+
     .profession-card h3 {
     font-size: 1.2rem;
     }
-    
+
     .salary-info {
     flex-direction: column;
     align-items: flex-start;
     gap: 0.5rem;
     }
-    
+
     #jobFieldsFilter {
     order: -1;
     width: 100%;
@@ -699,7 +699,7 @@
         .modal-content {
             width: 95%;
             max-height: 90vh;
-            padding-top: 0.3rem;   
+            padding-top: 0.3rem;
         }
         .close-btn {
             font-size: 3rem;
@@ -707,12 +707,12 @@
             left: 0.5rem;
             width: 40px;
             height: 40px;
-        } 
+        }
         .modal-header {
             padding-top:auto;
             min-height: auto;
         }
-        
+
         #modalCategory {
             top: 1rem;
             left: 0.8rem;
@@ -722,21 +722,21 @@
             padding: 0 0 0 0 ;
         }
     }
-    
+
     /* تحسينات إضافية للشاشات المتوسطة */
     @media (max-width: 768px) {
     .header h1 {
     font-size: 1.8rem;
     }
-    
+
     .header p {
     font-size: 0.9rem;
     }
-    
+
     .profession-card {
     margin: 0.5rem;
     }
-    
+
     .nav-link {
     font-size: 0.85rem;
     }
@@ -749,7 +749,7 @@
     margin: 0 1rem;
     transition: all 0.3s ease;
     }
-    
+
     @media (max-width: 1024px) {
     .search-container {
     max-width: 100%;
@@ -757,18 +757,18 @@
     order: 3;
     width: 100%;
     }
-    
+
     .search-input {
     padding: 0.8rem 3rem 0.8rem 1.5rem;
     font-size: 1rem;
     }
-    
+
     .search-btn {
     right: 1.5rem;
     font-size: 1.2rem;
     }
     }
-    
+
     @media (max-width: 768px) {
     .search-container {
     max-width: 100%;
@@ -776,36 +776,36 @@
     order: 3;
     width: 100%;
     }
-    
+
     .search-input {
     padding: 0.8rem 3rem 0.8rem 1.5rem;
     font-size: 1rem;
     }
-    
+
     .search-btn {
     right: 1.5rem;
     font-size: 1.2rem;
     }
     }
-    
+
     @media (max-width: 480px) {
     .search-input {
     padding: 0.9rem 3.5rem 0.9rem 2rem;
     border-radius: 25px;
     }
-    
+
     .search-btn {
     right: 2rem;
     font-size: 1.3rem;
     }
-    
+
     .search-results {
     border-radius: 15px;
     }
     }
-    
+
     /* أنماط محاذاة الأزرار في القسم الرئيسي */
-    
+
     @media (max-width: 768px) {
     .header {
     padding: 2rem 1rem !important; /* تقليل الحشو */
@@ -814,13 +814,13 @@
     font-size: 1.8rem !important; /* تصغير حجم العنوان */
     line-height: 1.3;
     }
-    
+
     .header p {
     font-size: 0.9rem !important; /* تصغير حجم النص الفرعي */
     margin-top: 0.5rem;
     }
     }
-    
+
     @media (max-width: 768px) {
     .nav-links {
     display: flex;
@@ -829,13 +829,13 @@
     width: 100%;
     direction: rtl;
     }
-    
+
     /* ترتيب العناصر كما تريد */
     .nav-link[href="#compare"] { order: 3; }
     .nav-link[href="#best-jobs"] { order: 2; }
     .nav-link[href="#jobs"] { order: 1; }
     .nav-link[href="#about"] { order: 4}
-    
+
     /* تعديلات إضافية لتحسين المظهر */
     .nav-link {
     margin:auto;
@@ -860,7 +860,7 @@
     max-width: 1400px;
     gap:1rem;
     }
-    
+
     #best-jobs .filter-group {
     display: flex;
     gap: 0.4rem;
@@ -868,7 +868,7 @@
     min-width: 100%;
     }
 
-    
+
     #best-jobs .filter-item {
     background: white;
     padding: 0.8rem 1.5rem;
@@ -877,52 +877,52 @@
     transition: all 0.3s ease;
     border: 2px solid var(--primary);
     }
-    
+
     #best-jobs .filter-item.active {
     background: var(--primary);
     color: white;
     }
-    
+
     #best-jobs .professions-grid {
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 1.5rem;
     padding: 0.5rem;
     }
-    
+
     #best-jobs .profession-card {
     padding: 1.5rem;
     margin: 0.5rem;
     }
-    
+
     #best-jobs .stats-grid {
     grid-template-columns: 1fr;
     gap: 0.8rem;
     }
-    
+
     #best-jobs .stat-item {
     background: rgba(10, 132, 255, 0.05);
     padding: 1rem;
     border-radius: 10px;
     text-align: center;
     }
-    
+
     #best-jobs .specialties-list {
     list-style: none;
     margin-top: 1rem;
     }
-    
+
     #best-jobs .specialties-list li {
     font-size: 0.8rem;
     padding: 0.3rem;
     }
-    
+
     .demand-indicator {
     display: flex;
     align-items: center;
     gap: 0.5rem;
     margin-top: 1rem;
     }
-    
+
     .demand-bar {
     height: 8px;
     border-radius: 4px;
@@ -930,7 +930,7 @@
     flex-grow: 1;
     position: relative;
     }
-    
+
     .demand-fill {
     position: absolute;
     left: 0;
@@ -939,7 +939,7 @@
     border-radius: 4px;
     background: var(--secondary);
     }
-    
+
     .growth-rate {
     color: var(--secondary);
     font-weight: bold;
@@ -951,16 +951,16 @@
     #best-jobs .filter-box {
         padding: 0.2rem;
     }
-    
+
     #best-jobs .profession-card h3 {
     font-size: 1.2rem;
     }
-    
+
     #best-jobs .demand-indicator {
     flex-direction: column;
     gap: 0.5rem;
     }
-    
+
     #best-jobs .demand-bar {
     width: 100%;
     }
@@ -971,7 +971,7 @@
     margin: 1rem 0 0.5rem;
     font-size: 0.95rem;
     }
-    
+
     #best-jobs .job-description {
     font-size: 0.9rem;
     line-height: 1.5;
@@ -982,27 +982,27 @@
     background: var(--primary) !important;
     color: white !important;
     }
-    
+
     #best-jobs .filter-item:not(.active) {
     background: white !important;
     color: var(--primary) !important;
     }
-    
+
     @media (max-width: 1024px) {
     #best-jobs .professions-grid {
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     }
     }
-    
+
     @media (max-width: 360px) {
     #best-jobs .profession-card {
     padding: 1rem;
     }
-    
+
     #best-jobs .stats-grid {
     gap: 0.5rem;
     }
-    
+
     #best-jobs .specialties-list li {
     font-size: 0.75rem;
     }
@@ -1011,32 +1011,32 @@
     #best-jobs .filter-group {
     justify-content: center; /* توسيط العناصر */
     }
-    
+
     #best-jobs .filter-item {
     flex: 0 0 auto; /* منع العناصر من التمدد */
     padding: 1rem 1.2rem; /* تعديل الحشو */
     font-size: 0.9rem; /* تصغير حجم الخط */
     margin: 0.2rem; /* إضافة هوامش صغيرة */
     }
-    
+
     #best-jobs .filter-item i {
     margin-left: 0.3rem; /* تعديل مسافة الأيقونة */
     }
     }
-   
+
 
     @media (max-width : 584px) {
         #best-jobs .filter-group {
     justify-content: center; /* توسيط العناصر */
     }
-    
+
     #best-jobs .filter-item {
     flex: 0 0 auto; /* منع العناصر من التمدد */
     padding: 0.8rem 1rem; /* تعديل الحشو */
     font-size: 0.8rem; /* تصغير حجم الخط */
     margin: 0.2rem; /* إضافة هوامش صغيرة */
     }
-    
+
     #best-jobs .filter-item i {
     margin-left: 0.3rem; /* تعديل مسافة الأيقونة */
     }
@@ -1045,45 +1045,45 @@
         #best-jobs .filter-group {
     justify-content: center; /* توسيط العناصر */
     }
-    
+
     #best-jobs .filter-item {
     flex: 0 0 auto; /* منع العناصر من التمدد */
     padding: 0.8rem 1rem; /* تعديل الحشو */
     font-size: 0.75rem; /* تصغير حجم الخط */
     margin: 0.2rem; /* إضافة هوامش صغيرة */
     }
-    
+
     #best-jobs .filter-item i {
     margin-left: 0.3rem; /* تعديل مسافة الأيقونة */
     }
     }
-    
-    
+
+
     /* أنماط قسم المقارنة */
     /* أنماط قسم المقارنة الجديدة */
     .compare-header {
         margin-bottom: 2rem;
         text-align: center;
     }
-    
+
     .compare-header h2 {
         font-size: 1.8rem;
         color: var(--primary);
         margin-bottom: 0.5rem;
     }
-    
+
     .compare-header p {
         color: #666;
         font-size: 1rem;
     }
-    
+
     /* مفتاح التبديل بين المهن والتخصصات */
     .compare-type-selector {
         margin: 2rem 0;
         display: flex;
         justify-content: center;
     }
-    
+
     .toggle-switch {
         position: relative;
         display: inline-block;
@@ -1092,14 +1092,14 @@
         background: #f5f5f5;
         border-radius: 50px;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.281);
-        
+
         overflow: hidden;
     }
-    
+
     .toggle-switch input[type="radio"] {
         display: none;
     }
-    
+
     .toggle-option {
         position: absolute;
         top: 0;
@@ -1114,19 +1114,19 @@
         transition: all 0.3s ease;
         z-index: 1;
     }
-    
+
     .toggle-option i {
         margin-left: 8px;
     }
-    
+
     #compareJobs + label {
         left: 0;
     }
-    
+
     #compareMajors + label {
         right: 0;
     }
-    
+
     .toggle-slider {
         position: absolute;
         top: 5px;
@@ -1138,16 +1138,16 @@
         transition: all 0.3s ease;
         z-index: 0;
     }
-    
+
     #compareMajors:checked ~ .toggle-slider {
         transform: translateX(100%);
     }
-    
+
     #compareJobs:checked ~ .toggle-option:first-child,
     #compareMajors:checked ~ .toggle-option:last-child {
         color: white;
     }
-    
+
     /* حاويات حقول الإدخال */
     .compare-inputs-container {
         display: flex;
@@ -1155,25 +1155,25 @@
         gap: 1.5rem;
         margin: 2rem 0;
     }
-    
+
     @media (min-width: 768px) {
         .compare-inputs-container {
             flex-direction: row;
             align-items: flex-start;
         }
     }
-    
+
     .compare-input-group {
         flex: 1;
         position: relative;
     }
-    
+
     .input-header {
         display: flex;
         align-items: center;
         margin-bottom: 0.8rem;
     }
-    
+
     .input-number {
         width: 25px;
         height: 25px;
@@ -1186,7 +1186,7 @@
         margin-left: 0.5rem;
         font-weight: bold;
     }
-    
+
     .compare-divider {
         position: relative;
         display: flex;
@@ -1196,13 +1196,13 @@
         padding-top: 0.8rem;
         padding-right: 0.8rem;
     }
-    
+
     @media (min-width: 768px) {
         .compare-divider {
             margin: 2rem 0;
         }
     }
-    
+
     .divider-line {
         position: absolute;
         width: 100%;
@@ -1210,7 +1210,7 @@
         background: rgba(0,0,0,0.1);
         z-index: 0;
     }
-    
+
     .vs-badge {
         background: white;
         color: var(--accent);
@@ -1221,24 +1221,24 @@
         z-index: 1;
         font-size: 0.9rem;
     }
-    
+
     .compare-search .search-input {
         padding-left: 3rem;
         padding-right: 3rem;
         font-size: 1rem;
         height: 50px;
     }
-    
+
     .compare-search .search-btn {
         right: 15px;
     }
-    
+
     /* زر المقارنة */
     .compare-action {
         text-align: center;
         margin-top: 2rem;
     }
-    
+
     .compare-button {
         background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
         color: white;
@@ -1253,16 +1253,16 @@
         overflow: hidden;
         box-shadow: 0 4px 15px rgba(10, 132, 255, 0.3);
     }
-    
+
     .compare-button:hover {
         transform: translateY(-3px);
         box-shadow: 0 8px 20px rgba(10, 132, 255, 0.4);
     }
-    
+
     .compare-button:active {
         transform: translateY(1px);
     }
-    
+
     .compare-button .tooltip {
         position: absolute;
         bottom: -30px;
@@ -1277,61 +1277,61 @@
         transition: opacity 0.3s ease;
         white-space: nowrap;
     }
-    
+
     .compare-button:hover .tooltip {
         opacity: 1;
     }
-    
+
     /* تعديلات للجوال */
     @media (max-width: 768px) {
         .toggle-switch {
             width: 100%;
             height: 50px;
         }
-        
+
         .toggle-slider {
             height: 40px;
         }
-        
+
         #compareMajors:checked ~ .toggle-slider {
             transform: translateX(100%);
         }
-        
+
         .compare-search .search-input {
             padding-left: 2.5rem;
             padding-right: 2.5rem;
             height: 45px;
         }
-        
+
         .compare-button {
             padding: 0.8rem 2rem;
             font-size: 1rem;
         }
     }
-    
+
     @media (max-width: 480px) {
         .toggle-switch {
             width: 100%;
             height: 45px;
         }
-        
+
         .toggle-slider {
             height: 35px;
         }
-        
+
         #compareMajors:checked ~ .toggle-slider {
             transform: translateX(120px);
         }
-        
+
         .toggle-option {
             font-size: 0.9rem;
         }
-        
+
         .compare-search .search-input {
             height: 42px;
             font-size: 0.9rem;
         }
-        
+
         .input-header h4 {
             font-size: 1rem;
         }
@@ -1346,7 +1346,7 @@
         overflow: hidden;
         background: white;
     }
-    
+
     #compare th {
         background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
         color: white;
@@ -1357,28 +1357,28 @@
         position: sticky;
         top: 0;
     }
-    
+
     #compare td {
         padding: 1rem;
         border-bottom: 1px solid rgba(0, 0, 0, 0.05);
         text-align: center;
         transition: background 0.2s;
     }
-    
+
     #compare tr:last-child td {
         border-bottom: none;
     }
-    
+
     #compare tr:hover td {
         background: rgba(10, 132, 255, 0.03);
     }
-    
+
     #compare .compare-winner {
         background: rgba(58, 175, 169, 0.08);
         position: relative;
         font-weight: 600;
     }
-    
+
     #compare .compare-winner::after {
         content: "✓ الأفضل";
         position: absolute;
@@ -1392,25 +1392,25 @@
         font-size: 0.8rem;
         box-shadow: 0 2px 8px rgba(58, 175, 169, 0.3);
     }
-    
+
     /* تأثيرات للخلايا المهمة */
     #compare td.highlight-cell {
         font-weight: 700;
         color: var(--primary);
         background: rgba(10, 132, 255, 0.05);
     }
-    
+
     /* شريط التمرير للجدول */
     #compare .table-scroll {
         max-height: 400px;
         overflow-y: hidden;
         border-radius: 12px;
     }
-    
+
     #compare .table-scroll::-webkit-scrollbar {
         width: 6px;
     }
-    
+
     #compare .table-scroll::-webkit-scrollbar-thumb {
         background: rgba(10, 132, 255, 0.3);
         border-radius: 3px;
@@ -1422,7 +1422,7 @@
         gap: 2rem;
         margin-top: 2.5rem;
     }
-    
+
     .compare-detail-card {
         background: white;
         border-radius: 16px;
@@ -1433,12 +1433,12 @@
         position: relative;
         overflow: hidden;
     }
-    
+
     .compare-detail-card:hover {
         transform: translateY(-5px);
         box-shadow: 0 12px 40px rgba(10, 132, 255, 0.15);
     }
-    
+
     .compare-detail-card::before {
         content: "";
         position: absolute;
@@ -1448,7 +1448,7 @@
         height: 100%;
         background: linear-gradient(to bottom, var(--primary), var(--secondary));
     }
-    
+
     .compare-detail-card h4 {
         color: var(--primary);
         font-size: 1.3rem;
@@ -1457,7 +1457,7 @@
         border-bottom: 2px solid rgba(10, 132, 255, 0.1);
         position: relative;
     }
-    
+
     .compare-detail-card h4::after {
         content: "";
         position: absolute;
@@ -1467,19 +1467,19 @@
         height: 3px;
         background: var(--secondary);
     }
-    
+
     .compare-detail-item {
         margin-bottom: 1rem;
         padding-bottom: 1rem;
         border-bottom: 1px dashed rgba(0, 0, 0, 0.1);
     }
-    
+
     .compare-detail-item:last-child {
         margin-bottom: 0;
         padding-bottom: 0;
         border-bottom: none;
     }
-    
+
     .compare-detail-label {
         font-weight: 600;
         color: var(--dark);
@@ -1488,18 +1488,18 @@
         align-items: center;
         gap: 0.5rem;
     }
-    
+
     .compare-detail-label i {
         color: var(--secondary);
         font-size: 1rem;
     }
-    
+
     .compare-detail-value {
         color: #555;
         font-size: 0.95rem;
         line-height: 1.5;
     }
-    
+
     .highlight-value {
         color: var(--secondary);
         font-weight: 700;
@@ -1520,7 +1520,7 @@
         border: 1px solid rgba(10, 132, 255, 0.1);
         animation: fadeIn 0.5s ease-out;
     }
-    
+
     #compareResults h3 {
         color: var(--primary);
         text-align: center;
@@ -1529,7 +1529,7 @@
         position: relative;
         padding-bottom: 1rem;
     }
-    
+
     #compareResults h3::after {
         content: "";
         position: absolute;
@@ -1541,32 +1541,32 @@
         background: linear-gradient(to right, var(--primary), var(--secondary));
         border-radius: 2px;
     }
-    
+
     .compare-section-divider {
         height: 1px;
         background: linear-gradient(to right, transparent, rgba(10, 132, 255, 0.3), transparent);
         margin: 2rem 0;
     }
-    
+
     /* تأثيرات الظهور */
     @keyframes fadeIn {
         from { opacity: 0; transform: translateY(20px); }
         to { opacity: 1; transform: translateY(0); }
     }
-    
+
     /* تعديلات للجوال */
     @media (max-width: 768px) {
-     
-        
+
+
         #compareDetails {
             grid-template-columns: 1fr;
             gap: 1.5rem;
         }
-        
+
         .compare-detail-card {
             padding: 1.5rem;
         }
-        
+
         #compare th, #compare td {
             padding: 0.8rem;
         }
@@ -1577,94 +1577,94 @@
         }
     }
     /* أضف هذه التعديلات في نهاية ملف style.css */
-    
+
     /* أضف هذه التعديلات في نهاية ملف style.css */
-    
+
     @media (max-width: 768px) {
         /* تقليل المسافات في قسم المقارنة */
         .compare-header {
             margin-bottom: 1rem;
         }
-        
+
         .compare-header h2 {
             font-size: 1.4rem;
             margin-bottom: 0.3rem;
         }
-        
+
         .compare-header p {
             margin-bottom: 1rem;
             font-size: 0.9rem;
         }
-        
+
         /* تعديل حجم مفتاح التبديل */
         .toggle-switch {
             height: 45px;
             width: 90%;
         }
-        
+
         .toggle-slider {
             height: 35px;
         }
-        
+
         .toggle-option {
             font-size: 0.9rem;
         }
-        
+
         /* تقليل المسافات بين حقول الإدخال */
         .compare-inputs-container {
             margin: 1rem 0;
             gap: 1rem;
         }
-        
+
         .input-header {
             margin-bottom: 0.5rem;
         }
-        
+
         .input-number {
             width: 20px;
             height: 20px;
             font-size: 0.8rem;
         }
-        
+
         .compare-search .search-input {
             height: 40px;
             padding: 0.5rem 2.5rem 0.5rem 1rem;
             font-size: 0.9rem;
         }
-        
+
         /* تعديل زر المقارنة */
         .compare-button {
             padding: 0.8rem 1.5rem;
             font-size: 1rem;
             margin-top: 1rem;
         }
-        
+
         /* تعديلات جدول النتائج */
         #compare th, #compare td {
             padding: 0.6rem;
             font-size: 0.85rem;
         }
-        
+
         #compare .compare-winner::after {
             font-size: 0.7rem;
             padding: 0.2rem 0.6rem;
         }
-        
+
         /* تقليل مساحة البطاقات التفصيلية */
         .compare-detail-card {
             padding: 0.5rem;
         }
-        
+
         .compare-detail-card h4 {
             font-size: 1.1rem;
             margin-bottom: 0.8rem;
         }
-        
+
         .compare-detail-item {
             margin-bottom: 0.8rem;
             padding-bottom: 0.8rem;
         }
-        
+
         /* تعديل أزرار التحكم */
         .compare-controls .control-btn {
             padding: 0.7rem 1.2rem;
@@ -1672,59 +1672,59 @@
             margin: 0 0.5rem;
         }
     }
-    
+
     @media (max-width: 480px) {
         /* مزيد من التعديلات للشاشات الصغيرة جدًا */
         .compare-header h2 {
             font-size: 1.2rem;
         }
-        
+
         .toggle-switch {
             height: 40px;
         }
-        
+
         .toggle-slider {
             height: 30px;
         }
-        
+
         .toggle-option {
             font-size: 0.8rem;
         }
-        
+
         .compare-inputs-container {
             gap: 0.8rem;
         }
-        
+
         .compare-divider {
             margin: 0rem 0;
         }
-        
+
         .vs-badge {
             padding: 0.3rem 0.8rem;
             font-size: 0.8rem;
         }
-    
+
         /* جعل جدول النتائج أكثر إحكاما */
         #compare th, #compare td {
             padding: 0.4rem;
             font-size: 0.8rem;
         }
-        
+
         #compare .table-scroll {
             max-height: 300px;
         }
-        
+
         /* تكبير شريط التمرير ليكون أكثر وضوحًا */
         #compare .table-scroll::-webkit-scrollbar {
             width: 8px;
         }
-        
+
         /* تكديس أزرار التحكم رأسيًا */
         .compare-controls {
             flex-direction: column;
             gap: 0.5rem;
         }
-        
+
         .compare-controls .control-btn {
             width: 100%;
             margin: 0;
@@ -1799,22 +1799,22 @@
     font-weight: 500;
     color: var(--primary);
     }
-    
+
     #jobs .filter-item.active {
     background: var(--primary) !important;
     color: white;
     border-color: var(--primary)!important;
     }
-    
+
     #jobs .filter-item:hover {
     background: rgba(10, 132, 255, 0.1);
     }
-    
+
     #jobs .filter-item.active:hover {
     background: var(--primary);
     opacity: 0.9;
     }
-    
+
     /* أنماط الاختبار المهني */
     .quiz-container {
     background: white;
@@ -1822,21 +1822,21 @@
     box-shadow: 0 5px 25px rgba(0,0,0,0.1);
     margin-bottom: 2rem;
     }
-    
+
     .quiz-header {
     text-align: center;
     margin-bottom: 2rem;
     }
-    
+
     .quiz-header h3 {
     color: var(--primary);
     margin-bottom: 1rem;
     }
-    
+
     .quiz-header p {
     color: #666;
     }
-    
+
     .start-quiz-btn {
     background: var(--primary);
     color: white;
@@ -1849,21 +1849,21 @@
     margin: 0 auto;
     transition: all 0.3s;
     }
-    
+
     .start-quiz-btn:hover {
     background: #0873d7;
     transform: translateY(-2px);
     }
-    
+
     .quiz-step {
     display: none;
     animation: fadeIn 0.5s ease;
     }
-    
+
     .quiz-step.active {
     display: block;
     }
-    
+
     .quiz-progress {
     height: 8px;
     background: #eee;
@@ -1871,26 +1871,26 @@
     margin-bottom: 2rem;
     overflow: hidden;
     }
-    
+
     .quiz-progress-bar {
     height: 100%;
     background: var(--secondary);
     transition: width 0.3s ease;
     }
-    
+
     .question-text {
     font-size: 1.2rem;
     color: var(--primary);
     margin-bottom: 1.5rem;
     text-align: center;
     }
-    
+
     .quiz-options {
     display: grid;
     grid-template-columns: 1fr;
     gap: 1rem;
     }
-    
+
     .quiz-option {
     padding: 1rem;
     background: #f8f9fa;
@@ -1907,29 +1907,29 @@
     border-top: 2px solid rgba(0,0,0,0.05);
     padding-top: 1rem;
     }
-    
+
     .related-jobs-title {
     color: var(--primary);
     font-size: 1rem;
     margin-bottom: 0.8rem;
     }
-    
+
     .related-jobs-list {
     list-style: none;
     padding-right: 0;
     }
-    
+
     .related-jobs-list li {
     padding: 0.5rem 0;
     border-bottom: 1px dashed #eee;
     display: flex;
     justify-content: space-between;
     }
-    
+
     .related-jobs-list li:last-child {
     border-bottom: none;
     }
-    
+
     .job-salary {
     color: var(--secondary);
     font-weight: bold;
@@ -1938,12 +1938,12 @@
     border-color: var(--primary);
     transform: translateY(-3px);
     }
-    
+
     .quiz-option.selected {
     background: rgba(58, 175, 169, 0.1);
     border-color: var(--secondary);
     }
-    
+
     .option-number {
     width: 30px;
     height: 30px;
@@ -1955,11 +1955,11 @@
     justify-content: center;
     font-weight: bold;
     }
-    
+
     .quiz-results {
     text-align: center;
     }
-    
+
     .career-match {
     background: white;
     padding: 1.5rem;
@@ -1969,25 +1969,25 @@
     transition: transform 0.3s;
     cursor: pointer;
     }
-    
+
     .career-match:hover {
     transform: translateY(-5px);
     }
-    
+
     .match-percent {
     font-size: 1.8rem;
     color: var(--secondary);
     font-weight: bold;
     margin-bottom: 0.5rem;
     }
-    
+
     .quiz-actions {
     margin-top: 2rem;
     display: flex;
     justify-content: center;
     gap: 1rem;
     }
-    
+
     .quiz-btn {
     padding: 0.8rem 1.5rem;
     border-radius: 10px;
@@ -1996,22 +1996,22 @@
     transition: all 0.3s;
     border: none;
     }
-    
+
     .restart-btn {
     background: var(--primary);
     color: white;
     }
-    
+
     .home-btn {
     background: var(--secondary);
     color: white;
     }
-    
+
     .quiz-btn:hover {
     opacity: 0.9;
     transform: translateY(-2px);
     }
-    
+
     @keyframes fadeIn {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
@@ -2022,7 +2022,7 @@
         max-width: 100%;
         margin: 0 1rem;
     }
-    
+
     .search-buttons {
     position: absolute;
     left: 10px;
@@ -2032,7 +2032,7 @@
     gap: 5px;
     z-index: 2;
     }
-    
+
     .search-type {
     padding: 0.4rem 1rem;
     border: none;
@@ -2044,26 +2044,26 @@
     transition: all 0.3s ease;
     border: 1px solid rgba(10, 132, 255, 0.3);
     }
-    
+
     .search-type.active {
     background: var(--primary);
     color: white;
     border-color: var(--primary);
     }
-    
-    
-    
-    
+
+
+
+
     @media (max-width: 768px) {
     .search-buttons {
     left: 5px;
     }
-    
+
     .search-type {
     padding: 0.2rem 0.6rem;
     font-size: 0.8rem;
     }
-    
+
     .search-input {
     padding-left: 110px !important;
     }
@@ -2077,20 +2077,20 @@
     gap: 0.5rem;
     z-index: 2;
     }
-    
-    
+
+
     @media (max-width: 768px) {
     .search-type-buttons {
     left: 10px;
     gap: 0.3rem;
     }
-    
+
     .search-type {
     padding: 0.3rem 0.8rem;
     font-size: 0.8rem;
     }
-    
-    
+
+
     }
     .search-type.active {
     background: var(--primary);
@@ -2117,35 +2117,35 @@
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     margin-top: 0.5rem;
     }
-    
+
     .search-result-item {
     padding: 12px;
     border-bottom: 1px solid #eee;
     transition: background 0.2s;
     cursor: pointer;
     }
-    
+
     .search-result-item:hover {
     background: #f8f9fa;
     }
-    
+
     .search-result-item h4 {
     color: var(--primary);
     margin: 0 0 4px 0;
     font-size: 1rem;
     }
-    
+
     .search-result-item p {
     color: #666;
     font-size: 0.9rem;
     margin: 0;
     }
-    
+
     .search-result-item small {
     color: var(--secondary);
     font-size: 0.8rem;
     }
-    
+
     .no-results {
     padding: 12px;
     color: #666;
@@ -2162,7 +2162,7 @@
     pointer-events: none !important;
     height: 0 !important;
     }
-    
+
     @media (max-width: 768px) {
     #mainSearchResults {
     margin-top: -30px !important; /* تعويض المسافة للشاشات الصغيرة */
@@ -2175,7 +2175,7 @@
         margin: 30px 0;
         animation: fadeIn 0.5s ease-out;
     }
-    
+
     .compare-controls .control-btn {
         display: inline-flex;
         align-items: center;
@@ -2195,32 +2195,32 @@
         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         text-decoration: none !important;
     }
-    
+
     .compare-controls .control-btn:hover {
         transform: translateY(-3px);
         box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
     }
-    
+
     .compare-controls .control-btn:active {
         transform: translateY(1px);
     }
-    
+
     .compare-controls .control-btn i {
         font-size: 1rem;
     }
-    
+
     /* زر إخفاء النتائج - نفس لون زر إعادة الاختبار */
     .compare-controls .reset-btn {
         background: var(--primary);
         color: white;
     }
-    
+
     /* زر الصفحة الرئيسية - نفس لون زر الصفحة الرئيسية في الاختبار */
     .compare-controls .home-btn {
         background: var(--secondary) ;
         color: white ;
     }
-    
+
     /* تأثيرات الـ Hover */
     .compare-controls .control-btn::after {
         content: '';
@@ -2233,36 +2233,36 @@
         transform: translateX(-100%);
         transition: transform 0.3s ease-out;
     }
-    
+
     .compare-controls .control-btn:hover::after {
         transform: translateX(100%);
     }
-    
+
     /* تأثير النقر */
     .compare-controls .control-btn:focus:not(:active)::after {
         animation: ripple 0.6s ease-out;
     }
-    
+
     /* تعديلات للجوال */
     @media (max-width: 768px) {
         .compare-controls {
             margin: 20px 0;
         }
-        
+
         .compare-controls .control-btn {
             padding: 10px 20px;
             font-size: 1em;
             margin: 0 10px;
         }
     }
-    
+
     @media (max-width: 480px) {
         .compare-controls {
             display: flex;
             flex-direction: column;
             gap: 10px;
         }
-        
+
         .compare-controls .control-btn {
             width: 100%;
             margin: 0;
@@ -2273,8 +2273,8 @@
     margin-top: -40px; /* تعويض للتمرير الدقيق */
     scroll-margin-top: 100px; /* منع التداخل مع الشريط العلوي */
         font-size: 1rem;
-       
-    
+
+
     }
     /* أنماط محسنة لأزرار التبديل بين المهن والتخصصات */
     #jobs .filter-group {
@@ -2284,7 +2284,7 @@
     margin: 2rem 0;
     flex-wrap: wrap;
     }
-    
+
     #jobs .filter-item {
     padding: 0.8rem 1.8rem;
     font-size: 1.1rem;
@@ -2301,19 +2301,19 @@
     min-width: 180px;
     text-align: center;
     }
-    
+
     #jobs .filter-item:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(10, 132, 255, 0.2);
     }
-    
+
     #jobs .filter-item.active {
     background: var(--primary);
     color: white;
     border-color: var(--primary);
     box-shadow: 0 4px 16px rgba(10, 132, 255, 0.3);
     }
-    
+
     #jobs .filter-item::before {
     content: '';
     position: absolute;
@@ -2326,21 +2326,21 @@
     opacity: 0;
     transition: opacity 0.3s ease;
     }
-    
+
     #jobs .filter-item.active::before {
     opacity: 1;
     }
-    
+
     #jobs .filter-item i {
     margin-left: 0.5rem;
     font-size: 1rem;
     }
-    
+
     /* تأثير النقر */
     #jobs .filter-item:active {
     transform: scale(0.95);
     }
-    
+
     /* تحسينات للجوال */
     @media (max-width: 768px) {
     #jobs .filter-item {
@@ -2348,33 +2348,33 @@
         font-size: 1rem;
         min-width: 160px;
     }
-    
+
     #jobs .filter-group {
         gap: 0.8rem;
         margin: 1.5rem 0;
     }
     }
-    
+
     @media (max-width: 480px) {
     #jobs .filter-item {
         padding: 0.6rem 1rem;
         font-size: 0.95rem;
         min-width: 140px;
     }
-    
+
     #jobs .filter-item i {
         margin-left: 0.3rem;
         font-size: 0.9rem;
     }
     }
-    
-    
-    
+
+
+
     .nav-link.quiz-btn {
     color: white;
     padding: 0.4rem 1rem;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    
+
     background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
     border-radius: 20px;
     display: flex
@@ -2387,22 +2387,22 @@
     z-index: 1000;
     border: none;
     text-decoration: none !important;
-    
-    
+
+
     }
     .nav-link.quiz-btn:hover {
     transform: scale(1.05);
     box-shadow: 0 6px 18px rgba(0,0,0,0.2);
     }
-    
-    
-    
+
+
+
     /* حاوية الشعار وزر الاختبار */
     .logo-quiz-wrapper {
     display: flex;
     align-items: center;
     }
-    
+
     /* تحكم في ظهور زر الاختبار في الlogo والnav-links */
     @media (min-width: 567px) {
     .logo-quiz-btn { display: none !important; }
@@ -2412,20 +2412,20 @@
     .navbar .nav-links .quiz-btn { display: none !important; }
     .logo-quiz-btn { display: inline-block !important; }
     }
-    
+
     .logo-quiz-wrapper .logo-quiz-btn {
     margin-left: 75px !important;
     }
-    
+
     .quiz-label {
     display: inline !important;
     font-size: 0.9rem;
     }
-    
+
     .fa-brain {
     font-size: 1rem;
     }
-    
+
     @media (max-width: 568px) {
     /* stack & center the container */
     .nav-container {
@@ -2433,7 +2433,7 @@
     align-items: center;
     padding: 0rem 0rem;
     }
-    
+
     /* full-width, evenly spaced links */
     .nav-links {
     width: 100%;
@@ -2443,7 +2443,7 @@
     gap: 0.5rem;
     margin-top: 0.5rem;
     }
-    
+
     /* each link grows to fill the same space */
     .nav-link,
     .nav-link.quiz-btn {
@@ -2456,7 +2456,7 @@
     }
     }
     /* داخل media query للشاشات الصغيرة */
-    
+
     /* تحسينات عامة للاختبار */
     .quiz-container {
     background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
@@ -2464,7 +2464,7 @@
     border-radius: 20px;
     overflow: hidden;
     }
-    
+
     .quiz-header {
     padding: 2rem;
     }
@@ -2477,7 +2477,7 @@
     color: var(--dark);
     border: 2px solid var(--primary);
     }
-    
+
     .quiz-option.selected {
     background: var(--secondary);
     color: white;
@@ -2486,7 +2486,7 @@
     .quiz-step {
     padding: 2rem;
     }
-    
+
     .quiz-option {
     background: white;
     border: 2px solid rgba(10, 132, 255, 0.1);
@@ -2494,17 +2494,17 @@
     padding: 1.2rem;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
-    
+
     .quiz-option:hover {
     transform: translateY(-3px);
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     }
-    
+
     .quiz-option.selected {
     border-color: var(--secondary);
     background: rgba(58, 175, 169, 0.05);
     }
-    
+
     /* تصميم البطاقات النهائية */
     .career-match {
     background: white;
@@ -2515,7 +2515,7 @@
     transition: all 0.3s ease;
     position: relative;
     }
-    
+
     .career-match::after {
     content: "";
     position: absolute;
@@ -2525,21 +2525,21 @@
     height: 4px;
     background: linear-gradient(90deg, var(--secondary) 0%, var(--primary) 100%);
     }
-    
+
     .match-percent {
     font-size: 2rem;
     color: var(--primary);
     font-weight: 800;
     text-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
-    
+
     /* تحسينات للجوال */
     @media (max-width: 768px) {
     .quiz-option {
     padding: 1rem;
     font-size: 0.9rem;
     }
-    
+
     .career-match {
     margin: 0.5rem 0;
     }
@@ -2563,7 +2563,7 @@
     font-size: 1rem;
     padding: 1.2rem;
     }
-    
+
     .career-match h4 {
     font-size: 1.2rem;
     }
@@ -2574,64 +2574,64 @@
     margin: 0rem;
     border-radius: 15px;
     }
-    
+
     .quiz-header {
     padding: 1.5rem;
     }
-    
+
     .quiz-header h3 {
     font-size: 1.4rem;
     line-height: 1.3;
     }
-    
+
     .quiz-step {
     padding: 1.5rem;
     }
-    
+
     .quiz-option {
     padding: 1rem;
     gap: 0.8rem;
     }
-    
+
     .option-number {
     width: 25px;
     height: 25px;
     font-size: 0.9rem;
     }
-    
+
     .start-quiz-btn {
     width: 100%;
     padding: 1rem;
     }
     }
-    
+
     /* تحسينات للشاشات الصغيرة جدًا */
     @media (max-width: 480px) {
     .quiz-header p {
     font-size: 0.9rem;
     }
-    
+
     .question-text {
     font-size: 1.1rem;
     margin-bottom: 1rem;
     }
-    
+
     .quiz-option {
     font-size: 0.9rem;
     padding: 0.8rem;
     }
-    
+
     .career-match {
     padding: 1rem;
     }
-    
+
     .match-percent {
     font-size: 1.5rem;
     }
     }
     /* منع التمرير الأفقي غير الضروري */
-    
-    
+
+
     /* تحسين تجربة التمرير */
     .quiz-step {
     scroll-margin-top: 80px; /* تعويض ارتفاع الهيدر */
@@ -2641,7 +2641,7 @@
     position: relative;
     padding-right: 2.5rem !important;
     }
-    
+
     .start-quiz-btn::after {
     content: "↓";
     position: absolute;
@@ -2650,7 +2650,7 @@
     transform: translateY(-50%);
     animation: bounce 1s infinite;
     }
-    
+
     @keyframes bounce {
     0%, 100% { transform: translateY(-50%); }
     50% { transform: translateY(-30%); }
@@ -2668,7 +2668,7 @@
     justify-content: center;
     flex-wrap: wrap;
     }
-    
+
     .filter-toggle {
     position: relative;
     display: inline-block;
@@ -2676,13 +2676,13 @@
     height: 60px;
     margin: 10px 0;
     }
-    
+
     .filter-toggle input {
     opacity: 0;
     width: 0;
     height: 0;
     }
-    
+
     .filter-slider {
     position: absolute;
     cursor: pointer;
@@ -2695,7 +2695,7 @@
     border-radius: 34px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     }
-    
+
     .filter-slider:before {
     position: absolute;
     content: "";
@@ -2712,11 +2712,11 @@
     color: white;
     font-weight: bold;
     }
-    
+
     .filter-toggle input:checked + .filter-slider:before {
     transform: translateX(130px);
     }
-    
+
     .filter-slider-text {
     position: absolute;
     width: 100%;
@@ -2727,22 +2727,22 @@
     font-weight: bold;
     color: var(--dark);
     }
-    
+
     .filter-slider-text span {
     width: 50%;
     text-align: center;
     z-index: 1;
     transition: color 0.3s;
     }
-    
+
     .filter-toggle input:checked + .filter-slider .filter-slider-text span:first-child {
     color: #999;
     }
-    
+
     .filter-toggle input:not(:checked) + .filter-slider .filter-slider-text span:last-child {
     color: #999;
     }
-    
+
     /* بطاقات الفلترة */
     .field-filters {
     display: flex;
@@ -2751,7 +2751,7 @@
     justify-content: center;
     margin: 1.5rem 0;
     }
-    
+
     .field-filter-card {
     position: relative;
     width: 120px;
@@ -2759,7 +2759,7 @@
     perspective: 1000px;
     cursor: pointer;
     }
-    
+
     .field-filter-inner {
     position: relative;
     width: 100%;
@@ -2767,11 +2767,11 @@
     transition: transform 0.6s;
     transform-style: preserve-3d;
     }
-    
+
     .field-filter-card input:checked ~ .field-filter-inner {
     transform: rotateY(180deg);
     }
-    
+
     .field-filter-front, .field-filter-back {
     position: absolute;
     width: 100%;
@@ -2786,69 +2786,69 @@
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     transition: all 0.3s;
     }
-    
+
     .field-filter-front {
     background: white;
     border: 2px solid var(--light);
     }
-    
+
     .field-filter-back {
     background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
     color: white;
     transform: rotateY(180deg);
     }
-    
+
     .field-filter-card input {
     position: absolute;
     opacity: 0;
     width: 0;
     height: 0;
     }
-    
+
     .field-filter-icon {
     font-size: 2rem;
     margin-bottom: 0.5rem;
     color: var(--primary);
     }
-    
+
     .field-filter-back .field-filter-icon {
     color: white;
     }
-    
+
     .field-filter-name {
     font-weight: bold;
     text-align: center;
     font-size: 0.9rem;
     }
-    
+
     .field-filter-card:hover .field-filter-front {
     transform: translateY(-5px);
     box-shadow: 0 8px 20px rgba(0,0,0,0.15);
     }
-    
+
     /* تأثيرات للشاشات الصغيرة */
     @media (max-width: 768px) {
     .field-filter-card {
     width: 100px;
     height: 100px;
     }
-    
+
     .filter-toggle {
     width: 240px;
     height: 50px;
     }
-    
+
     .filter-slider:before {
     height: 40px;
     width: 110px;
     }
-    
+
     .filter-toggle input:checked + .filter-slider:before {
     transform: translateX(110px);
     }
     }
     /* أضف هذا الكود في نهاية ملف style.css */
-    
+
     @media (min-width: 360px) and (max-width: 396px) {
         /* تعديلات بطاقات الفلترة */
         .field-filter-card {
@@ -2856,63 +2856,63 @@
             height: 90px; /* تقليل الارتفاع */
             margin: 0.2rem; /* تقليل الهوامش */
         }
-    
+
         .field-filter-icon {
             font-size: 1.5rem; /* تصغير حجم الأيقونات */
         }
-    
+
         .field-filter-name {
             font-size: 0.75rem; /* تصغير حجم النص */
         }
-    
+
         /* تعديلات أزرار التبديل بين المهن والتخصصات */
         #jobs .filter-item {
             padding: 0.5rem 0.8rem;
             font-size: 0.8rem;
             min-width: 100px;
         }
-    
+
         /* تعديلات شريط البحث */
         .search-input {
             padding-left: 90px !important;
         }
-    
+
         .search-type {
             padding: 0.2rem 0.5rem;
             font-size: 0.7rem;
         }
-    
+
         /* تعديلات الفلاتر في قسم best-jobs */
         #best-jobs .filter-item {
             padding: 0.5rem 0.8rem;
             font-size: 0.8rem;
             min-width: 100px;
         }
-    
+
         /* ضبط عدد الأعمدة في grid */
         .field-filters {
             grid-template-columns: repeat(3, 1fr); /* 3 أعمدة بدلاً من 2 */
             gap: 0.5rem; /* تقليل المسافة بين العناصر */
         }
-    
+
         /* تعديلات إضافية لتحسين المساحة */
         .filter-container {
             padding: 0 0.5rem;
         }
-    
+
         .filter-title {
             font-size: 0.9rem;
             margin-bottom: 0.3rem;
         }
     }
-    
+
     /* تحسينات إضافية للشاشات بين 395px و 480px */
     @media (min-width: 396px) and (max-width: 480px) {
         .field-filter-card {
             width: 100px;
             height: 100px;
         }
-    
+
         .field-filters {
             grid-template-columns: repeat(3, 1fr);
             gap: 0.8rem;
@@ -2927,14 +2927,14 @@
           gap: 0.5rem !important;
           padding-bottom: 0.5rem; /* مساحة للتمرير */
         }
-      
+
         .nav-link {
           flex-shrink: 0 !important; /* منع الأزرار من التقلص */
           white-space: nowrap !important;
           padding: 0.4rem 0.8rem !important;
           font-size: 0.85rem !important;
         }
-        
+
         /* إخفاء شريط التمرير المرئي */
         .nav-links::-webkit-scrollbar {
           display: none;
@@ -2945,11 +2945,11 @@
           font-size: 0.8rem !important;
           padding: 0.3rem 0.6rem !important;
         }
-        
+
         .nav-links {
           gap: 0.3rem !important;
         }
-        
+
         /* تثبيت الزر النشط */
         .nav-link.active {
           box-shadow: 0 2px 6px rgba(0,0,0,0.2);
@@ -2971,19 +2971,19 @@
         position: relative;
         border: 1px solid rgba(10, 132, 255, 0.384);
       }
-      
+
       .search-type.active {
         background: var(--primary);
         color: white !important;
         box-shadow: 0 3px 8px rgba(10, 132, 255, 0.2);
         border-color: transparent;
       }
-      
+
       .search-type:not(.active):hover {
         background: rgba(10, 132, 255, 0.15);
         transform: translateY(-1px);
       }
-      
+
       /* تأثيرات بسيطة للتركيز */
       .search-type::after {
         content: "";
@@ -2994,11 +2994,11 @@
         opacity: 0;
         transition: opacity 0.3s ease;
       }
-      
+
       .search-type.active::after {
         opacity: 1;
       }
-      
+
       /* تحسينات للشاشات الصغيرة */
       @media (max-width: 768px) {
         .search-type {
@@ -3011,7 +3011,7 @@
           font-size: 0.9rem; /* حجم نص مناسب للجوال */
           padding: 0.8rem 1rem;
         }
-        
+
         .search-type {
           font-size: 0.8rem; /* نص أصغر مع الحفاظ على الوضوح */
           padding: 0.4rem 1rem;
@@ -3039,21 +3039,21 @@
           margin: 0 8px !important; /* تقليل الهوامش */
           height: 48px; /* ارتفاع مناسب للجوال */
         }
-      
+
         .search-input {
           padding-left: 120px !important; /* مساحة مخصصة للأزرار */
           padding-right: 45px !important; /* مساحة مخصصة للأيقونة */
         }
-      
+
         .search-type-buttons {
           left: 6px !important; /* محاذاة دقيقة للأزرار */
           gap: 5px !important; /* تقليل المسافة بين الأزرار */
         }
-      
+
         .search-type {
           font-size: 0.8rem !important; /* حجم خط أصغر */
         }
-      
+
         .search-btn {
           right: 12px !important; /* أيقونة أقرب للحافة */
           font-size: 1rem !important;
@@ -3064,26 +3064,26 @@
           margin: 0 5px !important;
           height: 44px; /* ارتفاع أكثر إحكاما */
         }
-      
+
         .search-input {
           padding-left: 110px !important;
           padding-right: 40px !important;
           font-size: 0.9rem !important; /* نص أكبر للقراءة */
         }
-      
+
         .search-type {
           padding: 0.50rem 0.8rem !important;
           font-size: 0.65rem !important; /* نص واضح حتى على الشاشات الصغيرة */
         }
-      
+
         .search-btn {
           right: 10px !important;
           font-size: 0.9rem !important;
         }
       }
-    
+
     /* أضف هذه الأنماط في قسم الـ CSS */
-    
+
     #best-jobs .profession-card {
     background: linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%);
     border-radius: 20px;
@@ -3095,12 +3095,12 @@
     overflow: visible;
     margin-bottom: 1.5rem;
     }
-    
+
     #best-jobs .profession-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 12px 40px rgba(10, 132, 255, 0.15);
     }
-    
+
     #best-jobs .profession-card::after {
     content: "";
     position: absolute;
@@ -3113,7 +3113,7 @@
     z-index: -1;
     transition: all 0.3s ease;
     }
-    
+
     #best-jobs .profession-card h3 {
     color: var(--primary);
     font-size: 1.5rem;
@@ -3121,7 +3121,7 @@
     position: relative;
     padding-bottom: 0.8rem;
     }
-    
+
     #best-jobs .profession-card h3::after {
     content: "";
     position: absolute;
@@ -3132,13 +3132,13 @@
     background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
     border-radius: 2px;
     }
-    
+
     #best-jobs .stats-grid {
     grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
     gap: 1.2rem;
     margin: 1.5rem 0;
     }
-    
+
     #best-jobs .stat-item {
     background: rgba(255, 255, 255, 0.9);
     border: 1px solid rgba(10, 132, 255, 0.1);
@@ -3146,7 +3146,7 @@
     padding: 1.2rem;
     border-radius: 12px;
     }
-    
+
     #best-jobs .specialties-list li {
     padding: 0.6rem 1rem;
     margin: 0.4rem 0;
@@ -3154,40 +3154,40 @@
     border-radius: 8px;
     transition: all 0.2s ease;
     }
-    
+
     #best-jobs .specialties-list li:hover {
     background: rgba(58, 175, 169, 0.1);
     transform: translateX(5px);
     }
-    
+
     #best-jobs .demand-bar {
     height: 10px;
     border-radius: 5px;
     background: rgba(10, 132, 255, 0.1);
     }
-    
+
     #best-jobs .demand-fill {
     border-radius: 5px;
     background: linear-gradient(90deg, var(--secondary) 0%, var(--primary) 100%);
     }
-    
+
     #best-jobs .growth-rate {
     font-size: 0.95rem;
     padding: 0.5rem 1rem;
     background: rgba(58, 175, 169, 0.1);
     border-radius: 20px;
     }
-    
+
     @media (max-width: 768px) {
     #best-jobs .profession-card {
         padding: 1.5rem;
         margin: 0 0 1rem 0;
     }
-    
+
     #best-jobs .profession-card h3 {
         font-size: 1.3rem;
     }
-    
+
     #best-jobs .stats-grid {
         grid-template-columns: 1fr;
     }
@@ -3197,27 +3197,27 @@
     grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
     gap: 2.5rem;
     }
-    
+
     #best-jobs .profession-card {
     background: linear-gradient(145deg, #ffffff 0%, #f8faff 100%);
     border-radius: 24px;
     padding: 2.5rem;
     border: 1px solid rgba(10, 132, 255, 0.15);
-    box-shadow: 
+    box-shadow:
         0 12px 24px rgba(10, 132, 255, 0.08),
         0 4px 12px rgba(0, 0, 0, 0.05);
     transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
     position: relative;
     overflow: visible;
     }
-    
+
     #best-jobs .profession-card:hover {
     transform: translateY(-8px) scale(1.02);
-    box-shadow: 
+    box-shadow:
         0 16px 40px rgba(10, 132, 255, 0.15),
         0 8px 20px rgba(58, 175, 169, 0.1);
     }
-    
+
     #best-jobs .profession-card::before {
     content: "";
     position: absolute;
@@ -3225,7 +3225,7 @@
     left: -2px;
     right: -2px;
     bottom: -2px;
-    background: linear-gradient(45deg, 
+    background: linear-gradient(45deg,
         rgba(10, 132, 255, 0.1) 0%,
         rgba(58, 175, 169, 0.1) 100%);
     z-index: -1;
@@ -3233,11 +3233,11 @@
     opacity: 0;
     transition: opacity 0.3s ease;
     }
-    
+
     #best-jobs .profession-card:hover::before {
     opacity: 1;
     }
-    
+
     /* تحسين العنوان */
     #best-jobs .profession-card h3 {
     color: var(--primary);
@@ -3246,7 +3246,7 @@
     position: relative;
     padding-bottom: 1rem;
     }
-    
+
     #best-jobs .profession-card h3::after {
     content: "";
     position: absolute;
@@ -3254,12 +3254,12 @@
     left: 0;
     width: 60px;
     height: 4px;
-    background: linear-gradient(90deg, 
-        var(--primary) 0%, 
+    background: linear-gradient(90deg,
+        var(--primary) 0%,
         var(--secondary) 100%);
     border-radius: 4px;
     }
-    
+
     /* تحسين الأزرار والعلامات */
     #best-jobs .filter-item {
     border-radius: 32px;
@@ -3270,7 +3270,7 @@
     position: relative;
     overflow: hidden;
     }
-    
+
     #best-jobs .filter-item::before {
     content: "";
     position: absolute;
@@ -3278,61 +3278,61 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(45deg, 
-        var(--primary) 0%, 
+    background: linear-gradient(45deg,
+        var(--primary) 0%,
         var(--secondary) 100%);
     opacity: 0;
     transition: opacity 0.3s ease;
     z-index: -1;
     }
-    
+
     #best-jobs .filter-item.active {
     color: white;
     border-color: transparent;
     }
-    
+
     #best-jobs .filter-item.active::before {
     opacity: 1;
     }
-    
+
     #best-jobs .filter-item:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(10, 132, 255, 0.15);
     }
-    
-    
+
+
     /* تحسين شريط الطلب */
     #best-jobs .demand-bar {
     height: 12px;
     border-radius: 8px;
     background: rgba(10, 132, 255, 0.1);
     }
-    
+
     #best-jobs .demand-fill {
     border-radius: 8px;
-    background: linear-gradient(90deg, 
-        var(--secondary) 0%, 
+    background: linear-gradient(90deg,
+        var(--secondary) 0%,
         var(--primary) 100%);
     box-shadow: 0 2px 8px rgba(58, 175, 169, 0.3);
     }
-    
+
     /* تعديلات الاستجابة */
     @media (max-width: 768px) {
     #best-jobs .professions-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem;
-        
+
     }
-    
+
     #best-jobs .profession-card {
         padding: 1.8rem;
         margin: 0 0 1.2rem 0;
     }
-    
+
     #best-jobs .profession-card h3 {
         font-size: 1.4rem;
     }
-    
+
     }
     #jobs .filter-group {
     background: rgba(10, 132, 255, 0.336);
@@ -3345,7 +3345,7 @@
     padding: 1.2rem 2.5rem !important;
     font-size: 1.1rem !important;
     border-radius: 12px !important;
-   
+
     border: 2px solid var(--primary) !important;
     background: rgba(255, 255, 255, 0.95) !important;
     backdrop-filter: blur(4px);
@@ -3353,10 +3353,10 @@
 }
 
 #jobs .filter-item::before {
-    background: linear-gradient(45deg, 
-        var(--primary) 0%, 
+    background: linear-gradient(45deg,
+        var(--primary) 0%,
         var(--secondary) 100%);
-   
+
 }
 
 #jobs .filter-item.active {
@@ -3388,14 +3388,14 @@
 margin: 0rem 0;
 
 }
-    
+
 /* للشاشات الصغيرة */
 @media (max-width: 768px) {
     #jobs .filter-item {
         padding: 1rem 0.4rem !important;
         font-size: 1rem !important;
     }
-    
+
     #jobs .filter-group {
         padding: 0.6rem ;
     }
@@ -3405,7 +3405,7 @@ margin: 0rem 0;
         padding: 1rem 1.5rem !important;
         font-size: 0.8rem !important;
     }
-    
+
     #jobs .filter-group {
         padding: 0.6rem;
     }
@@ -3415,7 +3415,7 @@ margin: 0rem 0;
     #jobs .filter-item {
         font-size: 12px !important;
     }
-    
+
 }
 
 @media (max-width: 406px) {
@@ -3423,7 +3423,7 @@ margin: 0rem 0;
         font-size: 11px !important;
 
     }
-   
+
 }
 
 @media (max-width: 374px) {
@@ -3523,16 +3523,16 @@ margin: 0rem 0;
         width: 100%;
         height: 52px;
     }
-    
+
     .toggle-slider {
         height: calc(100% - 8px);
     }
-    
+
     .toggle-option {
         font-size: 0.95rem;
         padding: 0 0.8rem;
     }
-    
+
     .toggle-option i {
         font-size: 1.1rem;
     }
@@ -3542,12 +3542,12 @@ margin: 0rem 0;
     .toggle-switch {
         height: 48px;
     }
-    
+
     .toggle-option {
         font-size: 0.9rem;
         padding: 0 0.6rem;
     }
-    
+
     .toggle-option i {
         font-size: 1rem;
         margin: 0 0.3rem;
@@ -3601,7 +3601,7 @@ margin: 0rem 0;
         max-width: 450px; /* زيادة من 300 إلى 340 */
         height: 54px;
     }
-    
+
     .toggle-option {
         padding: 0 1.2rem;
         gap: 0.6rem;
@@ -3614,13 +3614,13 @@ margin: 0rem 0;
 
         height: 50px;
     }
-    
+
     .toggle-option {
         padding: 0 1rem;
         gap: 0.5rem;
         font-size: 0.95rem;
     }
-    
+
     .toggle-option i {
         font-size: 1.1rem;
     }
@@ -3641,9 +3641,9 @@ margin: 0rem 0;
 
 .toggle-option:hover i {
     transform: rotate(-15deg);
-} 
+}
 
-#compareHeader1:hover, 
+#compareHeader1:hover,
 #compareHeader2:hover {
     color: var(--primary);
     cursor: pointer;
@@ -3680,7 +3680,7 @@ margin: 0rem 0;
 }
 
 /* تأثيرات للعناوين عند Hover */
-#compareHeader1:hover, 
+#compareHeader1:hover,
 #compareHeader2:hover {
     color: black;
     cursor: pointer;
@@ -3799,7 +3799,7 @@ margin: 0rem 0;
         overflow: hidden;
         transition: max-height 0.3s ease;
     }
-    
+
     .field-filters.expanded {
         max-height: 1000px;
     }
@@ -3812,7 +3812,7 @@ margin: 0rem 0;
         overflow: hidden;
         transition: max-height 0.3s ease;
     }
-    
+
     .field-filters.expanded {
         max-height: 1000px;
     }
@@ -3861,7 +3861,7 @@ margin: 0rem 0;
         padding: 0.5rem 1rem;
         font-size: 0.85rem;
     }
-    
+
     .quiz-nav-btn.prev-btn i {
         margin-left: 0.3rem;
         font-size: 0.9rem;
@@ -3879,7 +3879,7 @@ margin: 0rem 0;
       <a class="nav-link quiz-btn logo-quiz-btn" href="#quiz">
         <i class="fas fa-brain"></i>
         <span class="quiz-label"style="font: 1.1em sans-serif;">اكتشف مهنتك</span>
-    
+
     </a>
     </div>
     <!-- شريط البحث -->
@@ -3898,8 +3898,8 @@ margin: 0rem 0;
     <a class="nav-link" href="#about">عنا</a>
     <a class="nav-link" href="#compare">قارن </a>
     <a class="nav-link" href="#best-jobs">مهن ذهبية</a>
-    
-    <a class="nav-link active" href="#jobs">المهن و التخصصات</a> 
+
+    <a class="nav-link active" href="#jobs">المهن و التخصصات</a>
     <!-- إضافة زر الاختبار هنا -->
           <a class="nav-link quiz-btn" href="#quiz" >
             <i class="fas fa-brain"></i>
@@ -3947,7 +3947,7 @@ margin: 0rem 0;
                         قارن بين المهن أو التخصصات الجامعية لاتخاذ القرار الأفضل لمستقبلك
                     </p>
                 </div>
-  
+
         <!-- اختيار نوع المقارنة -->
         <div class="compare-type-selector" >
            <div class="toggle-switch">
@@ -3974,7 +3974,7 @@ margin: 0rem 0;
             <h4>المادة الأولى</h4>
         </div>
         <div class="search-container compare-search">
-            <input type="text" class="search-input" placeholder="ابحث هنا..." 
+            <input type="text" class="search-input" placeholder="ابحث هنا..."
                    id="compareInput1" autocomplete="off" dir="rtl">
             <button class="search-btn"><i class="fas fa-search"></i></button>
             <div class="search-results" id="compareResults1"></div>
@@ -3991,7 +3991,7 @@ margin: 0rem 0;
             <h4>المادة الثانية</h4>
         </div>
         <div class="search-container compare-search">
-            <input type="text" class="search-input" placeholder="ابحث هنا..." 
+            <input type="text" class="search-input" placeholder="ابحث هنا..."
                    id="compareInput2" autocomplete="off" dir="rtl">
             <button class="search-btn"><i class="fas fa-search"></i></button>
             <div class="search-results" id="compareResults2"></div>
@@ -4007,7 +4007,7 @@ margin: 0rem 0;
 <!-- نتائج المقارنة -->
 <div id="compareResults" style="display: none;">
     <h3>نتائج المقارنة</h3>
-    
+
     <div class="table-scroll">
         <table>
             <thead>
@@ -4022,9 +4022,9 @@ margin: 0rem 0;
             </tbody>
         </table>
     </div>
-    
+
     <div class="compare-section-divider"></div>
-    
+
     <div id="compareDetails">
         <!-- تفاصيل كل عنصر -->
     </div>
@@ -4034,7 +4034,7 @@ margin: 0rem 0;
 <!-- داخل قسم compareResults بعد جدول النتائج -->
 <div class="compare-controls" id="compareControls">
     <button onclick="resetcom()" class="control-btn reset-btn">
-        <i class="fas fa-redo"></i> مقارنة اخرى 
+        <i class="fas fa-redo"></i> مقارنة اخرى
     </button>
     <button onclick="goToHome()" class="control-btn home-btn">
         <i class="fas fa-home"></i> الصفحة الرئيسية
@@ -4055,7 +4055,7 @@ margin: 0rem 0;
 </section>
 <!-- قسم الاختبار المستقل -->
 <section class="content-section" id="quiz">
-  
+
     <div class="quiz-container">
         <div class="quiz-header">
             <h1 style="color: white;">اختبار المهن المناسبة</h1>
@@ -4082,7 +4082,7 @@ margin: 0rem 0;
                         <i class="fas fa-arrow-right"></i> السؤال السابق
                     </button>
                 </div>
-            
+
             </div>
             <div class="quiz-step" id="quizResults">
             <div class="quiz-results">
@@ -4125,7 +4125,7 @@ margin: 0rem 0;
 <div class="filter-container">
     <h3 class="filter-title" style="text-align: center; margin-bottom: 1rem;">تصفية حسب المجال:</h3>
     <div class="field-filters" id="jobFieldsFilter">
-        
+
         <!-- الطب -->
         <label class="field-filter-card">
             <input type="checkbox" value="الطب" onchange="onFilterChange()" data-filter="الطب">
@@ -4140,7 +4140,7 @@ margin: 0rem 0;
                 </div>
             </div>
         </label>
-        
+
         <!-- الهندسة -->
         <label class="field-filter-card">
             <input type="checkbox" value="الهندسة" onchange="onFilterChange()" data-filter="الهندسة">
@@ -4155,7 +4155,7 @@ margin: 0rem 0;
                 </div>
             </div>
         </label>
-        
+
         <!-- التكنولوجيا -->
         <label class="field-filter-card">
             <input type="checkbox" value="IT & AI" onchange="onFilterChange()" data-filter="IT & AI">
@@ -4170,7 +4170,7 @@ margin: 0rem 0;
                 </div>
             </div>
         </label>
-        
+
         <!-- العلوم -->
         <label class="field-filter-card">
             <input type="checkbox" value="العلوم" onchange="onFilterChange()" data-filter="العلوم">
@@ -4185,7 +4185,7 @@ margin: 0rem 0;
                 </div>
             </div>
         </label>
-        
+
         <!-- الأعمال -->
         <label class="field-filter-card">
             <input type="checkbox" value="الأعمال" onchange="onFilterChange()" data-filter="الأعمال">
@@ -4200,67 +4200,67 @@ margin: 0rem 0;
                 </div>
             </div>
         </label>
-        
+
         <!-- القانون -->
         <label class="field-filter-card">
             <input type="checkbox" value="القانون" onchange="onFilterChange()" data-filter="القانون">
             <div class="field-filter-inner">
                 <div class="field-filter-front">
                     <i class="fas fa-gavel field-filter-icon"></i>
-                    <span class="field-filter-name">القانون</span>
+                    <span class="field-filter-name">الدراسات القانونية</span>
                 </div>
                 <div class="field-filter-back">
                     <i class="fas fa-gavel field-filter-icon"></i>
-                    <span class="field-filter-name">القانون</span>
+                    <span class="field-filter-name">الدراسات القانونيةspan>
                 </div>
             </div>
         </label>
-        
+
         <!-- الفنون -->
         <label class="field-filter-card">
             <input type="checkbox" value="الفنون" onchange="onFilterChange()" data-filter="الفنون">
             <div class="field-filter-inner">
                 <div class="field-filter-front">
                     <i class="fas fa-palette field-filter-icon"></i>
-                    <span class="field-filter-name">الفنون</span>
+                    <span class="field-filter-name">الفنون و التصميم</span>
                 </div>
                 <div class="field-filter-back">
                     <i class="fas fa-palette field-filter-icon"></i>
-                    <span class="field-filter-name">الفنون</span>
+                    <span class="field-filter-name">الفنون و التصميم/span>
                 </div>
             </div>
         </label>
-        
+
         <!-- التعليم -->
         <label class="field-filter-card">
             <input type="checkbox" value="اللغات" onchange="onFilterChange()" data-filter="اللغات">
             <div class="field-filter-inner">
                 <div class="field-filter-front">
                     <i class="fas fa-book field-filter-icon"></i>
-                    <span class="field-filter-name">اللغات</span>
+                    <span class="field-filter-name">التربية و التعليم</span>
                 </div>
                 <div class="field-filter-back">
                     <i class="fas fa-book field-filter-icon"></i>
-                    <span class="field-filter-name">اللغات</span>
+                    <span class="field-filter-name">التربية و التعليم</span>
                 </div>
             </div>
         </label>
-        
+
         <!-- الزراعة -->
         <label class="field-filter-card">
             <input type="checkbox" value="الزراعة" onchange="onFilterChange()" data-filter="الزراعة">
             <div class="field-filter-inner">
                 <div class="field-filter-front">
                     <i class="fas fa-leaf field-filter-icon"></i>
-                    <span class="field-filter-name">الزراعة</span>
+                    <span class="field-filter-name">العلوم البيئية</span>
                 </div>
                 <div class="field-filter-back">
                     <i class="fas fa-leaf field-filter-icon"></i>
-                    <span class="field-filter-name">الزراعة</span>
+                    <span class="field-filter-name">العلوم البيئية/span>
                 </div>
             </div>
         </label>
-        
+
         <!-- النقل -->
         <label class="field-filter-card">
             <input type="checkbox" value="النقل" onchange="onFilterChange()" data-filter="النقل">
@@ -4275,7 +4275,7 @@ margin: 0rem 0;
                 </div>
             </div>
         </label>
-        
+
         <!-- البناء -->
         <label class="field-filter-card">
             <input type="checkbox" value="البناء" onchange="onFilterChange()" data-filter="البناء">
@@ -4290,7 +4290,7 @@ margin: 0rem 0;
                 </div>
             </div>
         </label>
-        
+
         <!-- السياحة -->
         <label class="field-filter-card">
             <input type="checkbox" value="السياحة" onchange="onFilterChange()" data-filter="السياحة">
@@ -4305,7 +4305,7 @@ margin: 0rem 0;
                 </div>
             </div>
         </label>
-        
+
         <!-- الطاقة -->
         <label class="field-filter-card">
             <input type="checkbox" value="الطاقة" onchange="onFilterChange()" data-filter="الطاقة">
@@ -4320,7 +4320,7 @@ margin: 0rem 0;
                 </div>
             </div>
         </label>
-        
+
         <!-- الرياضة -->
         <label class="field-filter-card">
             <input type="checkbox" value="الرياضة" onchange="onFilterChange()" data-filter="الرياضة">
@@ -4335,8 +4335,8 @@ margin: 0rem 0;
                 </div>
             </div>
         </label>
-        
-      
+
+
     </div>
     <button class="show-more-btn" id="showMoreFilters" onclick="toggleFilters()">
         <span>عرض المزيد</span>
@@ -4377,7 +4377,7 @@ margin: 0rem 0;
     // بيانات المهن
     let majors = [];
     let professions = [];
-    let bestProfessions = []; 
+    let bestProfessions = [];
     let quizQuestions = []; // تعريف متغير فارغ سيتم ملؤه لاحقاً من الملف
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -4414,39 +4414,39 @@ document.addEventListener('DOMContentLoaded', function () {
     "الرياضة": ["الرياضة"],
     "الطاقة": ["الطاقة","الهندسة والطاقة","الهندسة والطاقة"]
     };
-    
+
     // دالة تقوم بالربط حسب الفلتر
     function getCategoriesForFilter(filterName) {
     return filterToCategoryMapping[filterName] || [];
     }
-    
+
     // مثال: كيف تستخدمها
     function filterProfessionsByFilterName(filterName) {
     const relatedCategories = getCategoriesForFilter(filterName);
-    
+
     const filteredProfessions = professions.filter(profession =>
       relatedCategories.includes(profession.category)
     );
-    
+
     // عرض النتائج
     renderProfessions(filteredProfessions);
     }
     function filterMajorsByFilterName(filterName) {
     const relatedFields = getCategoriesForFilter(filterName);
-    
+
     const filteredMajors = majors.filter(major =>
       relatedFields.includes(major.field)
     );
-    
+
     // عرض النتائج
     renderMajors(filteredMajors);
     }
-    
+
 
     // تهيئة الصفحة عند التحميل
     document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('jobs').style.display = 'block';
-        
+
        // تهيئة البيانات
         renderProfessions(professions);
         renderMajors(majors);
@@ -4455,7 +4455,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 onFilterChange();
                 // اجمع كل الفلاتر المختارة
                 const selectedFilters = Array.from(document.querySelectorAll('input[type="checkbox"][data-filter]:checked'))
-                .map(cb => cb.getAttribute('data-filter'));    
+                .map(cb => cb.getAttribute('data-filter'));
                 if (selectedFilters.length > 0) {
                     // جلب جميع التصنيفات المرتبطة بكل الفلاتر المختارة
                     const allRelatedCategories = selectedFilters.flatMap(filter => getCategoriesForFilter(filter));
@@ -4479,11 +4479,11 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 
         // تفعيل البحث
-        document.getElementById('searchInput').addEventListener('input', function(e) { 
+        document.getElementById('searchInput').addEventListener('input', function(e) {
             // تصفير الفلاتر عند أول إدخال
             resetFilters();
             document.querySelector('.filter-container').style.display = 'none'; // إخفاء الفلاتر
-            
+
             const currentSection = document.querySelector('.nav-link.active').getAttribute('href');
             if (currentSection !== '#jobs') {
                 // السلوك الطبيعي للأقسام الأخرى
@@ -4496,7 +4496,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 clearSearch();
                 return;
             }
-            
+
             const results = performSearch(query, currentSearchType);
             displaySearchResults(results);
         });
@@ -4516,7 +4516,7 @@ document.addEventListener('DOMContentLoaded', function () {
             setCompareType();
         }
     });
-    
+
     // التحكم في عرض الأقسام عند النقر على الروابط
     // التحكم في عرض الأقسام عند النقر على الروابط
     document.querySelectorAll('.nav-link').forEach(link => {
@@ -4532,7 +4532,7 @@ document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('.nav-link').forEach(navLink => {
         navLink.classList.remove('active');
     });
-    
+
     // إضافة الفئة النشطة للرابط الذي ضغط عليه المستخدم
     this.classList.add('active');
     // عرض القسم المحدد
@@ -4566,12 +4566,12 @@ document.addEventListener('DOMContentLoaded', function () {
     } else if (targetId === 'jobs') {
     }
     resetFilters();
-    
+
         // عند العودة لقسم المهن/التخصصات
         if (targetId === 'jobs') {
             const searchQuery = document.getElementById('searchInput').value.trim();
-            
-    
+
+
     // 1. الحصول على النتائج مع ضمان أنها مصفوفة
     let results = [];
     if (searchQuery) {
@@ -4582,7 +4582,7 @@ document.addEventListener('DOMContentLoaded', function () {
             results = [];
         }
     } else {
-        results = currentSearchType === 'jobs' 
+        results = currentSearchType === 'jobs'
             ? Array.from(professions) // نسخ المصفوفة الأصلية
             : Array.from(majors);
     }
@@ -4621,16 +4621,16 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
         }
-    
+
     });
-    
+
     });
-    
+
     // تهيئة وظيفة البحث
     function initSearch() {
         const searchResults = document.getElementById('searchResults');
         const mainSearchResults = document.getElementById('mainSearchResults');
-        
+
         const searchInput = document.getElementById('searchInput');
     let timeoutId;
 
@@ -4639,7 +4639,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const searchInput = document.getElementById('searchInput');
         // تنفيذ البحث فورًا مع كل تغيير
         const query = e.target.value.trim();
-        
+
         if (query === '') {
             clearSearch();
             return;
@@ -4664,7 +4664,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 displaySearchResults(results);
             }); // تأخير 300 مللي ثانية
         });
-        
+
 // 1. إخفاء الكيبورد عند الضغط على Enter
 searchInput.addEventListener('keydown', function(e) {
     if (e.key === 'Enter' || e.keyCode === 13) {
@@ -4689,7 +4689,7 @@ searchInput.addEventListener('keydown', function(e) {
     function renderSearchResults(results) {
         const container = document.getElementById('searchResultsContainer');
         container.innerHTML = '';
-        
+
         if (results.length === 0) {
             container.innerHTML = '<p style="text-align: center; color: #666;">لا توجد نتائج مطابقة</p>';
             return;
@@ -4712,7 +4712,7 @@ searchInput.addEventListener('keydown', function(e) {
             });
         }
     }
-    
+
     // دالة لمسح البحث
     function clearSearch() {
         // 1. مسح نص البحث
@@ -4723,10 +4723,10 @@ searchInput.addEventListener('keydown', function(e) {
         searchResults.innerHTML = '';
     professionsContainer.innerHTML = '';
     majorsContainer.innerHTML = '';
-    const container = currentSearchType === 'jobs' ? 
-        document.getElementById('professionsContainer') : 
+    const container = currentSearchType === 'jobs' ?
+        document.getElementById('professionsContainer') :
         document.getElementById('majorsContainer');
-    
+
     container.style.display = 'grid'; // إعادة عرض البطاقات عند الفراغ
     renderProfessions(professions); // أو renderMajors حسب النوع
         document.getElementById('searchResults').style.display = 'none';
@@ -4765,29 +4765,29 @@ searchInput.addEventListener('keydown', function(e) {
         document.querySelectorAll('section').forEach(section => {
             section.style.display = 'none';
         });
-        
+
         document.getElementById('jobs').style.display = 'block';
-        
+
         // عرض قسم التخصصات
         showMajorsView();
-        
+
         // تحديث الروابط النشطة
         document.querySelectorAll('.nav-link').forEach(navLink => {
             navLink.classList.remove('active');
         });
-        
+
         document.querySelector('.nav-link[href="#jobs"]').classList.add('active');
-        
+
         // تصفير نتائج البحث
         document.getElementById('searchInput').value = '';
         document.getElementById('searchResults').style.display = 'none';
     }
-    
+
     // دالة لعرض المهن
     function renderProfessions(professionsArray) {
         const container = document.getElementById('professionsContainer');
         container.innerHTML = '';
-    
+
         professionsArray.forEach(profession => {
             const card = document.createElement('div');
             card.className = 'profession-card';
@@ -4804,18 +4804,18 @@ searchInput.addEventListener('keydown', function(e) {
             container.appendChild(card);
         });
     }
-    
+
     // دالة لعرض التخصصات الجامعية
     // دالة عرض التخصصات المعدلة
-    
+
     function renderMajors(majorsList) {
         const container = document.getElementById("majorsContainer");
         container.innerHTML = "";
-    
+
         majorsList.forEach(major => {
             const card = document.createElement("div");
             card.className = "profession-card";
-            
+
             card.innerHTML = `
                 <div class="category-tag">${major.field}</div>
                 <h3>${major.name}</h3>
@@ -4825,73 +4825,73 @@ searchInput.addEventListener('keydown', function(e) {
                     <span class="highlight">${major.duration}</span>
                 </div>
             `;
-            
+
             card.addEventListener('click', () => showMajorDetails(major));
             container.appendChild(card);
         });
     }
-    
+
     // دالة فلترة المهن
     function filterProfessions() {
         const checkboxes = document.querySelectorAll('#jobs input[type="checkbox"]');
         const selectedCategories = Array.from(checkboxes)
             .filter(checkbox => checkbox.checked)
             .map(checkbox => checkbox.value);
-        
+
         const searchInput = document.getElementById('searchInput');
         const isSearchActive = searchInput.value.trim().length > 0;
-        
+
         if (isSearchActive) {
             // إذا كان البحث نشطًا، نطبق الفلترة على نتائج البحث
             const query = searchInput.value.trim().toLowerCase();
-            let filteredProfessions = professions.filter(prof => 
+            let filteredProfessions = professions.filter(prof =>
                 (prof.category.toLowerCase().includes(query))
             );
-            
+
             if (selectedCategories.length > 0) {
-                filteredProfessions = filteredProfessions.filter(profession => 
+                filteredProfessions = filteredProfessions.filter(profession =>
                     selectedCategories.includes(profession.category)
                 );
             }
-            
+
             renderSearchResults(filteredProfessions);
         } else {
             // إذا لم يكن البحث نشطًا، نطبق الفلترة على القائمة الكاملة
             if (selectedCategories.length === 0) {
                 renderProfessions(professions);
             } else {
-                const filtered = professions.filter(profession => 
+                const filtered = professions.filter(profession =>
                     selectedCategories.includes(profession.category)
                 );
                 renderProfessions(filtered);
             }
         }
     }
-    
+
     // دالة فلترة التخصصات الجامعية
     function filterMajors() {
         const checkboxes = document.querySelectorAll('#jobFieldsFilter input[type="checkbox"]');
         const selectedFields = Array.from(checkboxes)
             .filter(checkbox => checkbox.checked)
             .map(checkbox => checkbox.value);
-        
+
         if (selectedFields.length === 0) {
             renderMajors(majors);
         } else {
-            const filteredMajors = majors.filter(major => 
+            const filteredMajors = majors.filter(major =>
                 selectedFields.includes(major.field)
             );
             renderMajors(filteredMajors);
         }
     }
-    
+
     // دالة لعرض تفاصيل المهنة
     function showDetails(profession) {
         const modal = document.getElementById('detailsModal');
         const title = document.getElementById('modalTitle');
         const content = document.getElementById('modalContent');
         const category = document.getElementById('modalCategory');
-    
+
         title.textContent = profession.title;
         category.textContent = profession.category;
         content.innerHTML = `
@@ -4926,11 +4926,11 @@ searchInput.addEventListener('keydown', function(e) {
             </div>
             ` : ''}
         `;
-    
+
         modal.style.display = 'flex';
         document.getElementById('searchResults').style.display = 'none';
     }
-    
+
     // دالة للحصول على لون حسب مستوى الطلب
     function getDemandColor(demand) {
         const colors = {
@@ -4941,7 +4941,7 @@ searchInput.addEventListener('keydown', function(e) {
         };
         return colors[demand] || '#333';
     }
-    
+
     // إغلاق النافذة المنبثقة عند النقر خارجها
     window.onclick = function(event) {
         const modal = document.getElementById('detailsModal');
@@ -4952,22 +4952,22 @@ searchInput.addEventListener('keydown', function(e) {
     // دالة لإغلاق النافذة المنبثقة
     function closeModal() {
         document.getElementById('detailsModal').style.display = 'none';
-    
+
     }
-    
-    
-    
+
+
+
     // نظام الفلترة
     let activeFilter = null;
     const demandOrder = ['مرتفع جدًا', 'مرتفع', 'متوسط', 'منخفض'];
-    
+
     function toggleFilter(element, filterType) {
         const prevActive = document.querySelector('#best-jobs .filter-item.active');
-        
+
         if (prevActive) {
             prevActive.classList.remove('active');
         }
-        
+
         if (activeFilter === filterType) {
             activeFilter = null;
             element.classList.remove('active');
@@ -4975,13 +4975,13 @@ searchInput.addEventListener('keydown', function(e) {
             activeFilter = filterType;
             element.classList.add('active');
         }
-        
+
         applyFilters();
     }
-    
+
     function applyFilters() {
         let filteredJobs = [...bestProfessions];
-        
+
         // تطبيق الفلتر النشط إذا كان موجوداً
         if (activeFilter) {
             filteredJobs = filteredJobs.filter(job => job.jobType === activeFilter);
@@ -4992,42 +4992,42 @@ searchInput.addEventListener('keydown', function(e) {
             if (bestFilterBtn) bestFilterBtn.classList.add('active');
             filteredJobs = filteredJobs.filter(job => job.jobType === 'best');
         }
-        
+
         // ترتيب النتائج حسب نوع الفلتر
         switch(activeFilter) {
             case 'profit':
-                filteredJobs.sort((a, b) => 
+                filteredJobs.sort((a, b) =>
                     parseInt(b.avgSalary.replace(/\D/g,'')) - parseInt(a.avgSalary.replace(/\D/g,'')));
                 break;
             case 'demand':
-                filteredJobs.sort((a, b) => 
+                filteredJobs.sort((a, b) =>
                     demandOrder.indexOf(b.demand) - demandOrder.indexOf(a.demand));
                 break;
             case 'entry':
-                filteredJobs.sort((a, b) => 
+                filteredJobs.sort((a, b) =>
                     parseInt(a.experience) - parseInt(b.experience));
                 break;
             case 'opportunities':
-                filteredJobs.sort((a, b) => 
+                filteredJobs.sort((a, b) =>
                     parseInt(b.growthRate) - parseInt(a.growthRate));
                 break;
             default: // الحالة الافتراضية (أفضل المهن)
-                filteredJobs.sort((a, b) => 
+                filteredJobs.sort((a, b) =>
                     (parseInt(b.growthRate) * 2 + parseInt(b.avgSalary.replace(/\D/g,''))/10000) -
                     (parseInt(a.growthRate) * 2 + parseInt(a.avgSalary.replace(/\D/g,''))/10000)
                 );
         }
-        
+
         // عرض النتائج المصفاة
         renderBestJobs(filteredJobs);
     }
     // تعديل دالة renderMajors لعرض البطاقات بنفس نمط المهن
-    
+
     // دالة عرض Best Jobs
     function renderBestJobs(jobs) {
         const container = document.getElementById('bestJobsContainer');
         container.innerHTML = '';
-    
+
         jobs.forEach(job => {
             const card = document.createElement('div');
             card.className = 'profession-card';
@@ -5062,7 +5062,7 @@ searchInput.addEventListener('keydown', function(e) {
             container.appendChild(card);
         });
     }
-    
+
     // دالة مساعدة لتحديد عرض شريط الطلب
     function getDemandWidth(demand) {
         const demandLevels = {
@@ -5073,26 +5073,26 @@ searchInput.addEventListener('keydown', function(e) {
         };
         return demandLevels[demand] || '50%';
     }
-    
+
     // متغيرات المقارنة
     let compareType = 'jobs'; // 'jobs' أو 'majors'
     let selectedItem1 = null;
     let selectedItem2 = null;
-    
+
     // تعيين نوع المقارنة
     // تحسين وظيفة setCompareType
 function setCompareType(type) {
     compareType = type;
-    
+
     // تحديث واجهة المستخدم مع التحقق من وجود العناصر
     const jobsBtn = document.getElementById('compareJobs');
     const majorsBtn = document.getElementById('compareMajors');
-    
+
     if (jobsBtn && majorsBtn) {
         if (type === 'jobs') {
             jobsBtn.classList.add('active');
             majorsBtn.classList.remove('active');
-            
+
             document.querySelectorAll('.compare-search input').forEach(input => {
                 input.placeholder = "ابحث عن مهنة...";
             });
@@ -5106,7 +5106,7 @@ function setCompareType(type) {
     } else {
         console.error('عناصر المقارنة غير موجودة في DOM');
     }
-    
+
     resetcom();
 }
 function resetcom() {
@@ -5115,7 +5115,7 @@ function resetcom() {
     document.getElementById('compareInput2').value = '';
     document.getElementById('compareResults1').innerHTML = '';
     document.getElementById('compareResults2').innerHTML = '';
-    
+
     // إخفاء نتائج المقارنة السابقة إن وجدت
     document.getElementById('compareResults').style.display = 'none';
     document.getElementById('compareControls').style.display = 'none';
@@ -5124,26 +5124,26 @@ function resetcom() {
 }
 // تحسين وظيفة compareItems
 
-    
+
     // تهيئة البحث في قسم المقارنة
     function initCompareSearch() {
         const input1 = document.getElementById('compareInput1');
         const input2 = document.getElementById('compareInput2');
         const results1 = document.getElementById('compareResults1');
         const results2 = document.getElementById('compareResults2');
-        
+
         // البحث للحقل الأول
         input1.addEventListener('input', function() {
             const query = this.value.trim().toLowerCase();
             showCompareResults(results1, query, 1);
         });
-        
+
         // البحث للحقل الثاني
         input2.addEventListener('input', function() {
             const query = this.value.trim().toLowerCase();
             showCompareResults(results2, query, 2);
         });
-        
+
         // إخفاء نتائج البحث عند النقر خارجها
         document.addEventListener('click', function(e) {
             if (!input1.contains(e.target)) results1.style.display = 'none';
@@ -5153,65 +5153,61 @@ function resetcom() {
     }
         });
     }
-    
+
     // عرض نتائج البحث في قسم المقارنة
     function showCompareResults(resultsContainer, query, inputNumber) {
         if (query.length === 0) {
             resultsContainer.style.display = 'none';
             return;
         }
-        
+
         let results = [];
         if (compareType === 'jobs') {
-            results = professions.filter(prof => 
-                prof.title.toLowerCase().includes(query) || 
-                prof.description.toLowerCase().includes(query)
+            results = professions.filter(prof =>
+                prof.title.toLowerCase().includes(query)
+
             );
         } else {
-            results = majors.filter(major => 
-                major.name.toLowerCase().includes(query) || 
-                major.description.toLowerCase().includes(query)
+            results = majors.filter(major =>
+                major.name.toLowerCase().includes(query)
+
             );
         }
-        
+
         if (results.length === 0) {
             resultsContainer.innerHTML = '<div class="no-results">لا توجد نتائج مطابقة</div>';
             resultsContainer.style.display = 'block';
             return;
         }
-        
+
         let html = '';
         results.forEach(item => {
             const title = compareType === 'jobs' ? item.title : item.name;
-            const desc = compareType === 'jobs' ? item.description : item.description;
-            const type = compareType === 'jobs' ? item.jobo : item.jobo;
-            
+
             html += `
                 <div class="search-result-item" onclick="selectCompareItem(${inputNumber}, '${title.replace(/'/g, "\\'")}')">
                     <h4>${title}</h4>
-                    <p>${desc.substring(0, 60)}...</p>
-                    <small style="color: var(--secondary);">${type}</small>
                 </div>
             `;
         });
-        
+
         resultsContainer.innerHTML = html;
         resultsContainer.style.display = 'block';
     }
-    
+
     // اختيار عنصر للمقارنة
     function selectCompareItem(inputNumber, title) {
-        const inputElement = inputNumber === 1 ? 
-            document.getElementById('compareInput1') : 
+        const inputElement = inputNumber === 1 ?
+            document.getElementById('compareInput1') :
             document.getElementById('compareInput2');
-        
-        const resultsContainer = inputNumber === 1 ? 
-            document.getElementById('compareResults1') : 
+
+        const resultsContainer = inputNumber === 1 ?
+            document.getElementById('compareResults1') :
             document.getElementById('compareResults2');
-        
+
         inputElement.value = title;
         resultsContainer.style.display = 'none';
-        
+
         if (compareType === 'jobs') {
             const item = professions.find(p => p.title === title);
             if (inputNumber === 1) selectedItem1 = item;
@@ -5222,7 +5218,7 @@ function resetcom() {
             else selectedItem2 = item;
         }
     }
-    
+
     // تنفيذ المقارنة
     function compareItems() {
         if (!selectedItem1 || !selectedItem2) {
@@ -5237,13 +5233,13 @@ function resetcom() {
         const tableBody = document.getElementById('compareTableBody');
         const header1 = document.getElementById('compareHeader1');
         const header2 = document.getElementById('compareHeader2');
-        
+
         header1.innerHTML = compareType === 'jobs' ? selectedItem1.title : selectedItem1.name;
         header2.innerHTML = compareType === 'jobs' ? selectedItem2.title : selectedItem2.name;
             // جعل العناوين قابلة للنقر
         header1.style.cursor = 'pointer';
         header2.style.cursor = 'pointer';
-        
+
         header1.onclick = () => {
             if (compareType === 'jobs') {
                 showDetails(selectedItem1);
@@ -5251,7 +5247,7 @@ function resetcom() {
                 showMajorDetails(selectedItem1);
             }
         };
-        
+
         header2.onclick = () => {
             if (compareType === 'jobs') {
                 showDetails(selectedItem2);
@@ -5261,10 +5257,10 @@ function resetcom() {
         };
 
         // تعيين العناوين
-            
+
         // إنشاء جدول المقارنة
         let tableHTML = '';
-        
+
         if (compareType === 'jobs') {
             // مقارنة المهن
             tableHTML = `
@@ -5294,7 +5290,7 @@ function resetcom() {
                     <td>${selectedItem2.demand}</td>
                 </tr>
             `;
-            
+
             // تحديد الأفضل في كل فئة
             highlightBest(tableBody, [3, 4]); // أعمدة الراتب والطلب
         } else {
@@ -5326,35 +5322,35 @@ function resetcom() {
                     <td>${selectedItem2.mid}</td>
                 </tr>
             `;
-            
+
             // تحديد الأفضل في كل فئة
             highlightBest(tableBody, [2]); // عمود عدد الوظائف
         }
-        
+
         tableBody.innerHTML = tableHTML;
-        
+
         resultsDiv.style.display = 'block';
         document.getElementById('compareControls').style.display = 'block';
         // التمرير إلى نتائج المقارنة
         resultsDiv.scrollIntoView({ behavior: 'smooth' });
     }
-    
+
     // تحديد الأفضل في كل فئة
     function highlightBest(tableBody, columnsToCompare) {
         const rows = tableBody.querySelectorAll('tr');
-        
+
         columnsToCompare.forEach(col => {
             if (col >= rows.length) return;
-            
+
             const cells = rows[col].querySelectorAll('td');
             const value1 = cells[1].textContent;
             const value2 = cells[2].textContent;
-            
+
             // مقارنة الراتب (تحويل إلى أرقام)
             if (col === 3) {
                 const salary1 = parseInt(value1.replace(/[^0-9]/g, '').split('-')[0]);
                 const salary2 = parseInt(value2.replace(/[^0-9]/g, '').split('-')[0]);
-                
+
                 if (salary1 > salary2) {
                     cells[1].classList.add('compare-winner');
                 } else if (salary2 > salary1) {
@@ -5366,7 +5362,7 @@ function resetcom() {
                 const demandOrder = ['مرتفع جدًا', 'مرتفع', 'متوسط', 'منخفض'];
                 const demand1 = demandOrder.indexOf(value1);
                 const demand2 = demandOrder.indexOf(value2);
-                
+
                 if (demand1 < demand2) {
                     cells[1].classList.add('compare-winner');
                 } else if (demand2 < demand1) {
@@ -5377,7 +5373,7 @@ function resetcom() {
             else if (col === 2) {
                 const num1 = parseInt(value1);
                 const num2 = parseInt(value2);
-                
+
                 if (num1 > num2) {
                     cells[1].classList.add('compare-winner');
                 } else if (num2 > num1) {
@@ -5386,7 +5382,7 @@ function resetcom() {
             }
         });
     }
-    
+
     // متغيرات الاختبار المهني
     let currentQuestion = 0;
     let quizAnswers = [];
@@ -5396,11 +5392,11 @@ function resetcom() {
     quizAnswers = [];
     // 1. إخفاء قسم البداية فوراً
     document.getElementById('quizWelcome').style.display = 'none';
-    
+
     // 2. إظهار قسم الأسئلة
     const quizQuestions = document.getElementById('quizQuestions');
     quizQuestions.style.display = 'block';
-    
+
     // 3. استخدام scrollIntoView مع خيارات مخصصة
     setTimeout(() => {
     quizQuestions.scrollIntoView({
@@ -5409,19 +5405,19 @@ function resetcom() {
     inline: 'nearest'
     });
     }, 50);
-    
+
     // 4. تهيئة الأسئلة
     currentQuestion = 0;
     quizAnswers = [];
     showQuestion();
     }
-    
+
     // عرض السؤال الحالي
     // عرض السؤال الحالي
     // عرض السؤال الحالي
     function showQuestion() {
         const question = quizQuestions[currentQuestion];
-        
+
         // تحديث نص السؤال مع العداد المنسق
         document.getElementById('currentQuestion').innerHTML = `
             <div style="
@@ -5434,15 +5430,15 @@ function resetcom() {
                 font-size: 0.85rem;
                 font-weight: 500;
             ">
-                السؤال <span style="font-weight: 700;">${currentQuestion + 1}</span> 
+                السؤال <span style="font-weight: 700;">${currentQuestion + 1}</span>
                 من <span style="font-weight: 700;">${quizQuestions.length}</span>
             </div>
             <div style="margin-top: 0.5rem; font-size: 1.1rem;">${question.question}</div>
         `;
-        
+
         const optionsContainer = document.getElementById('quizOptions');
         optionsContainer.innerHTML = '';
-        
+
         question.options.forEach((option, index) => {
             const optionElement = document.createElement('div');
             optionElement.className = 'quiz-option';
@@ -5456,11 +5452,11 @@ function resetcom() {
             optionElement.addEventListener('click', () => selectAnswer(option.value));
             optionsContainer.appendChild(optionElement);
         });
-        
+
         // التحكم في ظهور زر السؤال السابق
         const prevBtn = document.getElementById('prevQuestionBtn');
         prevBtn.style.display = currentQuestion === 0 ? 'none' : 'flex';
-        
+
         // تحديث شريط التقدم بلون الموقع الأساسي
         const progress = ((currentQuestion) / quizQuestions.length) * 100;
         const progressBar = document.getElementById('quizProgressBar');
@@ -5475,14 +5471,14 @@ function resetcom() {
         } else {
             quizAnswers.push(answer);
         }
-        
+
         // إزالة التحديد من كل الخيارات
-        document.querySelectorAll('.quiz-option').forEach(opt => 
+        document.querySelectorAll('.quiz-option').forEach(opt =>
             opt.classList.remove('selected'));
-        
+
         // إضافة التحديد للخيار المختار
         event.currentTarget.classList.add('selected');
-        
+
         if (currentQuestion < quizQuestions.length - 1) {
             currentQuestion++;
             showQuestion();
@@ -5490,22 +5486,22 @@ function resetcom() {
             showResults();
         }
     }
-    
+
     // عرض النتائج
     function showResults() {
         document.getElementById('quizQuestions').style.display = 'none';
         document.getElementById('quizResults').style.display = 'block';
-        
+
         // حساب النتائج بناءً على الإجابات
         const matchedProfessions = calculateMatches();
         const matchesContainer = document.getElementById('careerMatches');
         matchesContainer.innerHTML = '';
-        
+
         if (matchedProfessions.length === 0) {
             matchesContainer.innerHTML = '<p>لا توجد مهن مطابقة لاختياراتك. حاول تعديل بعض الإجابات.</p>';
             return;
         }
-        
+
         matchedProfessions.forEach(prof => {
             const matchElement = document.createElement('div');
             matchElement.className = 'career-match';
@@ -5520,9 +5516,9 @@ function resetcom() {
             matchesContainer.appendChild(matchElement);
         });
     }
-    
-   //start Q 
-    
+
+   //start Q
+
     function calculateCompatibility(prof, prefs) {
 
 }
@@ -5552,7 +5548,7 @@ function calculateMatches() {
     // حساب التوافق لكل مهنة
     const matchedProfessions = professions.map(profession => {
         let score = 0;
-        
+
         // التوافق مع الراتب
         if (preferences.salary === 'high' && profession.avgSalary.includes('000')) {
             score += 20;
@@ -5561,12 +5557,12 @@ function calculateMatches() {
         } else if (preferences.salary === 'low' && !profession.avgSalary.includes('000')) {
             score += 10;
         }
-        
+
         // التوافق مع المجال (الطب في هذه الحالة)
         if (preferences.field === 'medical' && profession.category === 'الطب') {
             score += 15;
         }
-        
+
         // التوافق مع المهارات
         if (profession.skills) {
             if (preferences.skills === 'analytical' && profession.skills.some(skill => skill.includes('تحليل') || skill.includes('تشخيص'))) {
@@ -5576,7 +5572,7 @@ function calculateMatches() {
                 score += 10;
             }
         }
-        
+
         // التوافق مع الخبرة
         const expYears = parseInt(profession.experience) || 0;
         if (preferences.experience === 'senior' && expYears >= 5) {
@@ -5586,23 +5582,23 @@ function calculateMatches() {
         } else if (preferences.experience === 'junior' && expYears < 2) {
             score += 5;
         }
-        
+
         // التوافق مع الطلب في السوق
         if (profession.demand.includes('مرتفع')) {
             score += 10;
         } else if (profession.demand.includes('متوسط')) {
             score += 5;
         }
-        
+
         // حساب النسبة المئوية للتطابق
         const matchPercent = Math.min(100, Math.round(score * 100 / 80));
-        
+
         return {
             ...profession,
             matchPercent
         };
     });
-    
+
     // تصفية وترتيب النتائج
     return matchedProfessions
         .filter(p => p.matchPercent > 30)
@@ -5616,14 +5612,14 @@ function calculateMatches() {
     const title = document.getElementById('modalTitle');
     const content = document.getElementById('modalContent');
     const category = document.getElementById('modalCategory');
-    
+
     title.textContent = major.name;
     category.textContent = major.field;
-    
+
     const jobsList = major.relatedJobs.map(job => `
     <li>${job.title} <span class="job-salary">${job.salary}</span></li>
     `).join('');
-    
+
     content.innerHTML = `
     <div class="stats-grid">
         <div class="stat-item">
@@ -5656,7 +5652,7 @@ function calculateMatches() {
             </div>
             ` : ''}
         `;
-    
+
     modal.style.display = 'flex';
     }
     // العودة إلى الصفحة الرئيسية
@@ -5664,48 +5660,48 @@ function calculateMatches() {
         document.getElementById('quizWelcome').style.display = 'block';
         document.getElementById('quizQuestions').style.display = 'none';
         document.getElementById('quizResults').style.display = 'none';
-        
+
         // إظهار قسم الوظائف
         document.querySelectorAll('section').forEach(section => {
             section.style.display = 'none';
         });
         document.getElementById('jobs').style.display = 'block';
-        
+
         // تحديث الروابط النشطة
         document.querySelectorAll('.nav-link').forEach(navLink => {
             navLink.classList.remove('active');
         });
         document.querySelector('.nav-link[href="#jobs"]').classList.add('active');
     }
-    
+
     function linkSearchTypeToView(type) {
         resetFilters();
         clearSearch() ;
         currentSearchType = type;
         const searchInput = document.getElementById('searchInput');
         const query = searchInput.value.trim();
-        
+
         // تحديث الـ placeholder حسب النوع
         searchInput.placeholder = type === 'jobs' ? "ابحث عن مهنة..." : "ابحث عن تخصص...";
-    
+
         // تحديث الأزرار النشطة
         document.querySelectorAll('.search-type').forEach(btn => {
             btn.classList.toggle('active', btn.dataset.type === type);
         });
-    
+
         // تحديث أزرار القسم الرئيسي
         document.getElementById('showProfessionsBtn').classList.toggle('active', type === 'jobs');
         document.getElementById('showMajorsBtn').classList.toggle('active', type === 'majors');
-    
+
         // إظهار/إخفاء المحتوى
         document.getElementById('professionsContainer').style.display = type === 'jobs' ? 'grid' : 'none';
         document.getElementById('majorsContainer').style.display = type === 'majors' ? 'grid' : 'none';
-    
+
         // إعادة البحث إذا كان هناك نص
         if (query) {
             const results = performSearch(query, type);
             displaySearchResults(results);
-            
+
             // إظهار قسم نتائج البحث الرئيسي
             document.getElementById('mainSearchResults').style.display = 'block';
             document.getElementById('searchQueryText').innerText = query;
@@ -5713,20 +5709,20 @@ function calculateMatches() {
             document.getElementById('mainSearchResults').style.display = 'none';
         }
     }
-    
-    
+
+
     function performSearch(query, type) {
     const normalizedQuery = query.trim().toLowerCase();
     const checkboxes = document.querySelectorAll('#jobFieldsFilter input[type="checkbox"]:checked');
     const selectedCategories = Array.from(checkboxes).map(cb => cb.value);
     const isFiltering = selectedCategories.length > 0;
     const relatedCategories = selectedCategories.flatMap(filter => getCategoriesForFilter(filter));
-    
+
     let results = { professions: [], majors: [] };
-    
+
     if (type === 'jobs') {
         results.professions = professions.filter(prof => {
-            const matchesQuery = 
+            const matchesQuery =
                 prof.title.toLowerCase().includes(normalizedQuery) ||
                 prof.summarize.toLowerCase().includes(normalizedQuery) ||
                 prof.avgSalary.toLowerCase().includes(normalizedQuery);
@@ -5735,7 +5731,7 @@ function calculateMatches() {
         });
     } else {
         results.majors = majors.filter(major => {
-            const matchesQuery = 
+            const matchesQuery =
                 major.name.toLowerCase().includes(normalizedQuery) ||
                 major.summarize.toLowerCase().includes(normalizedQuery) ||
                 major.description.toLowerCase().includes(normalizedQuery);
@@ -5743,13 +5739,13 @@ function calculateMatches() {
             return matchesQuery && matchesFilter;
         });
     }
-    
+
     return results;
     }
     function scrollToResults() {
         const mainSearchResults = document.getElementById('mainSearchResults');
         const navbarHeight = document.querySelector('.navbar').offsetHeight;
-    
+
         if (mainSearchResults) {
             window.scrollTo({
                 top: mainSearchResults.offsetTop - navbarHeight - 20,
@@ -5760,10 +5756,10 @@ function calculateMatches() {
     function displaySearchResults(results) {
         const searchResults = document.getElementById('searchResults');
         searchResults.innerHTML = '';
-    
+
         const currentSection = document.querySelector('.nav-link.active')?.getAttribute('href') || '';
-        const container = currentSearchType === 'jobs' ? 
-        document.getElementById('professionsContainer') : 
+        const container = currentSearchType === 'jobs' ?
+        document.getElementById('professionsContainer') :
         document.getElementById('majorsContainer');
 
     // إذا كانت النتائج فارغة، اخفِ البطاقات
@@ -5777,15 +5773,15 @@ function calculateMatches() {
         if (results.professions.length === 0 && results.majors.length === 0) {
             searchResults.innerHTML = '<p style="text-align: center; color: #666; padding: 1rem;">لا توجد نتائج مطابقة</p>';
             searchResults.style.display = 'block';
-            
+
             // إخفاء حاويات البطاقات
             document.getElementById('professionsContainer').style.display = 'none';
             document.getElementById('majorsContainer').style.display = 'none';
-            
+
             scrollToResults();
             return;
         }
-    
+
         // عرض النتائج في القائمة المنسدلة إذا لم نكن في قسم المهن والتخصصات
         if (currentSection !== '#jobs') {
             results.professions.forEach(profession => {
@@ -5797,7 +5793,7 @@ function calculateMatches() {
                 item.addEventListener('click', () => showDetails(profession));
                 searchResults.appendChild(item);
             });
-    
+
             results.majors.forEach(major => {
                 const item = document.createElement('div');
                 item.className = 'search-result-item';
@@ -5807,7 +5803,7 @@ function calculateMatches() {
                 item.addEventListener('click', () => showMajorDetails(major));
                 searchResults.appendChild(item);
             });
-    
+
             searchResults.style.display = 'block';
         } else {
             searchResults.style.display = 'none';
@@ -5817,18 +5813,18 @@ function calculateMatches() {
             } else {
                 renderMajors(results.majors);
             }
-            
+
             // إظهار قسم نتائج البحث الرئيسي إذا كان هناك بحث
             if (document.getElementById('searchInput').value.trim()) {
                 document.getElementById('mainSearchResults').style.display = 'block';
                 document.getElementById('searchQueryText').innerText = document.getElementById('searchInput').value.trim();
             }
         }
-    
+
         scrollToResults();
     }
-    
-    
+
+
     // حدث موحد لجميع الأزرار
     document.querySelectorAll('.search-type, #showProfessionsBtn, #showMajorsBtn').forEach(btn => {
     btn.addEventListener('click', function() {
@@ -5841,12 +5837,12 @@ function calculateMatches() {
     checkboxes.forEach(checkbox => {
     checkbox.checked = false;
     });
-    
+
     // دالة جديدة لعرض التخصصات
     function renderMajorsResults(majors) {
     const container = document.getElementById('majorsContainer');
     container.innerHTML = ''; // نمسح المحتوى القديم
-    
+
     majors.forEach(major => {
     const card = `
         <div class="profession-card">
@@ -5868,7 +5864,7 @@ function calculateMatches() {
     checkboxes.forEach(checkbox => {
     checkbox.checked = false;
     });
-    
+
     // إعادة عرض البيانات الأصلية
     if (currentSearchType === 'jobs') {
     renderProfessions(professions);
@@ -5896,26 +5892,26 @@ function calculateMatches() {
     document.addEventListener('click', (e) => {
     const searchContainer = document.querySelector('.search-container');
     const searchResults = document.getElementById('searchResults');
-    
+
     if (!searchContainer.contains(e.target)) {
     searchResults.style.display = 'none';
     }
     });
     function onFilterChange() {
-    
+
     const query = document.getElementById('searchInput').value.trim().toLowerCase();
     const checkboxes = document.querySelectorAll('#jobFieldsFilter input[type="checkbox"]:checked');
     const selectedCategories = Array.from(checkboxes).map(cb => cb.value);
     const isFiltering = selectedCategories.length > 0;
     const dataSource = currentSearchType === 'jobs' ? professions : majors;
-    
+
     // الخطوة 1: تصفية البيانات بناءً على نص البحث
     let filteredResults = dataSource.filter(item => {
     const title = (item.title || item.name || '').toLowerCase();
     const description = (item.description || item.summarize || '').toLowerCase();
     return !query || title.includes(query) || description.includes(query);
     });
-    
+
     // الخطوة 2: تصفية النتائج بناءً على الفلاتر إذا كانت موجودة
     if (isFiltering) {
     const relatedCategories = selectedCategories.flatMap(filter => getCategoriesForFilter(filter));
@@ -5924,26 +5920,26 @@ function calculateMatches() {
         return relatedCategories.every(cat => category === cat);
     });
     }
-    
+
     // الخطوة 3: عرض النتائج
     if (currentSearchType === 'jobs') {
     renderProfessions(filteredResults);
     } else {
     renderMajors(filteredResults);
     }
-    
+
     // تحديث نتائج البحث الرئيسية
     const mainSearchResults = document.getElementById('mainSearchResults');
     mainSearchResults.style.display = filteredResults.length > 0 && query ? 'block' : 'none';
     document.getElementById('searchQueryText').innerText = query;
-    
+
     // إخفاء قائمة البحث المنسدلة إذا كنت في قسم المهن والتخصصات
     const currentSection = document.querySelector('.nav-link.active')?.getAttribute('href') || '';
     if (currentSection === '#jobs') {
     document.getElementById('searchResults').style.display = 'none';
     }
     }
-    
+
     // Modify search event to trigger onFilterChange after typing
     // أضف هذه الدالة في قسم الـ Script
     function restartQuiz() {
@@ -5969,7 +5965,7 @@ function calculateMatches() {
     }
     function resetFilters() {
     document.querySelectorAll('input[type="checkbox"][data-filter]').forEach(cb => cb.checked = false);
-    
+
     const currentSection = document.querySelector('.nav-link.active').getAttribute('href');
     renderProfessions(professions);
     renderMajors(majors);
@@ -5978,10 +5974,10 @@ function calculateMatches() {
 function toggleFilters() {
     const filtersContainer = document.querySelector('.field-filters');
     const showMoreBtn = document.getElementById('showMoreFilters');
-    
+
     filtersContainer.classList.toggle('expanded');
     showMoreBtn.classList.toggle('active');
-    
+
     if (filtersContainer.classList.contains('expanded')) {
         showMoreBtn.querySelector('span').textContent = 'عرض أقل';
     } else {
@@ -5992,7 +5988,7 @@ function toggleFilters() {
 // تعديل دالة onFilterChange لضبط عرض الزر
 function onFilterChange() {
     // الكود الحالي...
-    
+
     // إظهار/إخفاء زر عرض المزيد حسب حجم الشاشة
     const showMoreBtn = document.getElementById('showMoreFilters');
     if (window.innerWidth > 768) {
@@ -6007,7 +6003,7 @@ function goToPreviousQuestion() {
         quizAnswers.pop();
         currentQuestion--;
         showQuestion();
-        
+
         // إعادة تحديد الإجابة السابقة إن وجدت
         if (quizAnswers[currentQuestion] !== undefined) {
             const options = document.querySelectorAll('.quiz-option');
