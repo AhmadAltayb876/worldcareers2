@@ -3909,7 +3909,7 @@ margin: 0rem 0;
     </div>
     </nav>
 <header class="header">
-<h1>دليل المهن العالمي</h1>
+<h1>دليل المهن العربي</h1>
 <p>كل ماتريد معرفته عن المهن والتخصصات في الخليج أو في الوطن العربي موجود هنا</p>
 </header>
 <!-- قسم Best Jobs & Majors -->
@@ -4171,20 +4171,6 @@ margin: 0rem 0;
             </div>
         </label>
         
-        <!-- التكنولوجيا -->
-        <label class="field-filter-card">
-            <input type="checkbox" value="التكنولوجيا" onchange="onFilterChange()" data-filter="التكنولوجيا">
-            <div class="field-filter-inner">
-                <div class="field-filter-front">
-                    <i class="fas fa-server field-filter-icon"></i>
-                    <span class="field-filter-name">التكنولوجيا</span>
-                </div>
-                <div class="field-filter-back">
-                    <i class="fas fa-server field-filter-icon"></i>
-                    <span class="field-filter-name">التكنولوجيا</span>
-                </div>
-            </div>
-        </label>
         <!-- العلوم -->
         <label class="field-filter-card">
             <input type="checkbox" value="العلوم" onchange="onFilterChange()" data-filter="العلوم">
@@ -4335,7 +4321,20 @@ margin: 0rem 0;
             </div>
         </label>
         
-        
+        <!-- الرياضة -->
+        <label class="field-filter-card">
+            <input type="checkbox" value="الرياضة" onchange="onFilterChange()" data-filter="الرياضة">
+            <div class="field-filter-inner">
+                <div class="field-filter-front">
+                    <i class="fas fa-running field-filter-icon"></i>
+                    <span class="field-filter-name">الرياضة</span>
+                </div>
+                <div class="field-filter-back">
+                    <i class="fas fa-running field-filter-icon"></i>
+                    <span class="field-filter-name">الرياضة</span>
+                </div>
+            </div>
+        </label>
         
       
     </div>
@@ -4365,14 +4364,14 @@ margin: 0rem 0;
 <!-- نافذة التفاصيل المنبثقة -->
 <div class="modal" id="detailsModal">
     <div class="modal-content">
-        <span class="close-btn" onclick="closeModal()">×</span>
-        <div class="modal-header">
-            <h2 id="modalTitle"></h2>
-            <div class="category-tag" id="modalCategory"></div>
-        </div>
-        <div id="modalContent"></div>
+    <span class="close-btn" onclick="closeModal()">×</span>
+    <div class="modal-header">
+    <h2 id="modalTitle"></h2>
+    <div class="category-tag" id="modalCategory"></div>
     </div>
-</div>
+    <div id="modalContent"></div>
+    </div>
+    </div>
 <script>
     let currentSearchType = 'jobs'; // القيمة الافتراضية
     // بيانات المهن
@@ -4399,21 +4398,21 @@ document.addEventListener('DOMContentLoaded', function () {
 });
     // تعريف الماب (الربط) بين الفلاتر والمسميات
     const filterToCategoryMapping = {
-    "الطب": ["الطب"],
-    "الهندسة": ["الهندسة"],
-    "IT & AI": ["IT", "AI"],
-    "الأعمال": ["الأعمال"],
-    "العلوم": ["الفيزياء", "الكيمياء", "علم الاحياء"],
+    "الطب": ["الطب","هندسةوطب","العلوم والطب"],
+    "الهندسة": ["الهندسة","الهندسة والطب","هندسة&AI","هندسة&IT","الهندسة والبناء","الهندسة والعلوم","الهندسة والزراعة","الهندسة والطاقة","الهندسة والفنون","الهندسة والنقل"],
+    "IT & AI": ["IT", "AI","هندسة&AI","هندسة&IT"],
+    "الأعمال": ["الأعمال","الأعمال والنقل"],
+    "العلوم": ["الفيزياء", "الكيمياء", "علم الاحياء","علوم","الهندسة والعلوم","العلوم والزراعة","العلوم والطب"],
     "القانون": ["القانون"],
-    "الزراعة": ["الزراعة"],
+    "الزراعة": ["الزراعة","الهندسة والزراعة","العلوم والزراعة",],
     "اللغات": ["اللغات"],
     "النقل": ["النقل"],
-    "الفنون": ["الفنون"],
+    "الفنون": ["الفنون","الفنون وIT"],
     "السياحة": ["السياحة"],
     "علوم النفس": ["العلوم النفسية"],
-    "البناء": ["البناء"],
+    "البناء": ["البناء","الهندسة والبناء"],
     "الرياضة": ["الرياضة"],
-    "الطاقة": ["الطاقة"]
+    "الطاقة": ["الطاقة","الهندسة والطاقة","الهندسة والطاقة"]
     };
     
     // دالة تقوم بالربط حسب الفلتر
@@ -5522,7 +5521,7 @@ function resetcom() {
         });
     }
     
-   //الاختبار 
+   //start Q 
     
     function calculateCompatibility(prof, prefs) {
 
@@ -5610,6 +5609,7 @@ function calculateMatches() {
         .sort((a, b) => b.matchPercent - a.matchPercent)
         .slice(0, 5); // أفضل 5 نتائج
 }
+//end Q
     // دالة لعرض تفاصيل التخصص في نافذة منبثقة
     function showMajorDetails(major) {
         const modal = document.getElementById('detailsModal');
