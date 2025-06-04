@@ -60,12 +60,30 @@
         --light: #F8F9FA;
         --dark: #212529;
     }
-    
+    .logo {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #333;
+        text-decoration: none;
+    }
+
+    .logo span {
+        color: var(--primary); /* لون مميز لجزء Careers */
+    }
+
+    .logo-img {
+        width: 50px;
+        height: 50px;
+        object-fit: contain;
+    }
     * {
         box-sizing: border-box;
         margin: 0;
         padding: 0;
-        font-family: 'Amiri', serif;
+        font-family:'tajwal', sans-serif; /* لنصوص عربية طويلة (مثل المقالات) */;
     }
     
     body {
@@ -3888,8 +3906,8 @@ margin: 0rem 0;
 <nav class="navbar">
     <div class="nav-container">
     <div class="logo-quiz-wrapper">
-      <a class="logo" href="#">World<span>Careers</span></a>
-      <a class="nav-link quiz-btn logo-quiz-btn" href="#quiz">
+    <a class="logo" href="#">World<span>Careers</span><img src="/WorldCareerslogo.svg" alt="World Careers Logo" class="logo-img"></a>
+    <a class="nav-link quiz-btn logo-quiz-btn" href="#quiz">
         <i class="fas fa-brain"></i>
         <span class="quiz-label"style="font: 1.1em sans-serif;">اكتشف مهنتك</span>
     
@@ -3964,7 +3982,7 @@ margin: 0rem 0;
         <!-- اختيار نوع المقارنة -->
         <div class="compare-type-selector" >
            <div class="toggle-switch">
-    <input type="radio" id="compareJobs" name="compareType" value="jobs" checked onclick="setCompareType('jobs')">
+    <input type="radio" id="compareJobs" name="compareType" value="jobs" checked onclick="setCompareType('jobs')" title="زر لعرض جميع البطاقات المتعلقة بالمهن مرتبين حسب الطلب">
     <label for="compareJobs" class="toggle-option .active">
         <span>مقارنة المهن</span>
          <i class="fas fa-briefcase"></i>
@@ -4224,7 +4242,7 @@ margin: 0rem 0;
                 </div>
                 <div class="field-filter-back">
                     <i class="fas fa-gavel field-filter-icon"></i>
-                    <span class="field-filter-name">الدراسات القانونيةspan>
+                    <span class="field-filter-name">الدراسات القانونية<span>
                 </div>
             </div>
         </label>
@@ -4239,7 +4257,7 @@ margin: 0rem 0;
                 </div>
                 <div class="field-filter-back">
                     <i class="fas fa-palette field-filter-icon"></i>
-                    <span class="field-filter-name">الفنون و التصميم/span>
+                    <span class="field-filter-name">الفنون و التصميم</span>
                 </div>
             </div>
         </label>
@@ -4269,7 +4287,7 @@ margin: 0rem 0;
                 </div>
                 <div class="field-filter-back">
                     <i class="fas fa-leaf field-filter-icon"></i>
-                    <span class="field-filter-name">العلوم البيئية/span>
+                    <span class="field-filter-name">العلوم البيئية</span>
                 </div>
             </div>
         </label>
@@ -4288,6 +4306,7 @@ margin: 0rem 0;
                 </div>
             </div>
         </label>
+        <!-- العلوم الانسانية -->
         <label class="field-filter-card">
             <input type="checkbox" value="السياحة" onchange="onFilterChange()" data-filter="السياحة">
             <div class="field-filter-inner">
