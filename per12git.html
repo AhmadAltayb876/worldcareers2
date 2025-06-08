@@ -549,44 +549,101 @@
         font-size: 0.95rem;
         margin-bottom: 1.2rem;
     }
-
-    
 }
-    .logo {
-        display: flex;
-        align-items: center;
-        font-size: 1.5rem;
-        font-weight: 700;
-        color: #333;
-        text-decoration: none;
-    }
+/* حاوية اللوغو والنص */
+.logo-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
 
-    .logo span {
-        color: var(--primary); /* لون مميز لجزء Careers */
-    }
+/* صورة اللوغو */
+.logo-img {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    left: 65%;
+    transform: translateX(-100%);
+    z-index: 100;
+}
 
-    .logo-img {
-        width: 50px;
-        height: 50px;
-        object-fit: contain;
-        padding-left: 2px;
+/* النص */
+.logo-text {
+    display: flex;
+}
+
+.logo-text span.world {
+    color: var(--primary); /* لون كلمة World */
+}
+
+.logo-text span.careers {
+    color: var(--secondary); /* لون كلمة Careers */
+}
+
+.logo-text span {
+    opacity: 0;
+    font-size: 1.8em;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+/* حركة اللوغو المعدلة */
+@keyframes logoAnimation {
+    0% {
+        left: 65%;
+        transform: translateX(-100%) rotate(0deg);
     }
+    9% {
+        left: 10%;
+        transform: translateX(-100%) rotate(360deg);
+    }
+    25%, 76% {
+        left: 10%;
+        transform: translateX(-100%) rotate(360deg);
+    }
+    83% {
+        left: 65%;
+        transform: translateX(-100%) rotate(720deg);
+    }
+    100% {
+        left: 65%;
+        transform: translateX(-100%) rotate(720deg);
+    }
+}
+
+/* حركة النص المعدلة */
+@keyframes textAnimation {
+    0%, 8% {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    15%, 75% {
+        opacity: 1;
+        transform: translateX(15px);
+    }
+    82%, 100% {
+        opacity: 0;
+        transform: translateX(200px);
+    }
+}
+
+/* تطبيق الحركات المعدلة */
+.logo-img {
+    animation: logoAnimation 20s infinite linear;
+}
+
+.logo-text span {
+    animation: textAnimation 20s infinite linear;
+    animation-delay: 0.3s;
+}
+
+
     * {
         box-sizing: border-box;
         margin: 0;
         padding: 0;
         font-family: 'Tajawal', sans-serif;
-    }
-    @media(max-width: 413px){
-        .logo-img{
-            width: 30px;
-            height: 30px;
-        }
-    }
-    @media(max-width: 413px){
-        .logo-img{
-            display: none;
-        }
     }
     body {
         background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
@@ -615,18 +672,7 @@
         margin: 0 auto;
         gap: 1.5rem;
     }
-    
-    .logo {
-        font-weight: 700;
-        font-size: 1.5rem;
-        color: var(--primary);
-        text-decoration: none;
-        white-space: nowrap;
-    }
-    
-    .logo span {
-        color: var(--secondary);
-    }
+
     
     .nav-links {
         display: flex;
@@ -4412,10 +4458,16 @@ margin: 0rem 0;
         <nav class="navbar">
             <div class="nav-container">
                 <div class="logo-quiz-wrapper">
-                    <a class="logo" href="#">World<span>Careers</span><img src="/WorldCareerslogo.svg" alt="World Careers Logo" class="logo-img"></a>
+                    <div class="logo-container">
+                        <img src="/WorldCareerslogo.svg" alt="Logo" class="logo-img">
+                        <div class="logo-text">
+                            <span class="world">World</span>
+                            <span class="careers">Careers</span>
+                        </div>
+                    </div>
                     <a class="nav-link quiz-btn logo-quiz-btn" href="#quiz">
                         <i class="fas fa-brain"></i>
-                        <span class="quiz-label"style="font: 1.1em sans-serif;">اكتشف مهنتك</span>
+                        <span class="quiz-label">اكتشف مهنتك</span>
                     </a>
                 </div>
                 <!-- شريط البحث -->
