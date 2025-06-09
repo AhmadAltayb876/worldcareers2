@@ -106,20 +106,28 @@
     bottom: -15px;
     left: 50%;
     transform: translateX(-50%);
-    width: 100px;
+    width: 0;
     height: 5px;
     background: var(--secondary);
     border-radius: 3px;
-    opacity: 0.7;
+    opacity: 0;
+    transition: all 2s ease-in-out; /* تأثير سلس */
+    animation-delay: 0.3s;
 }
 
-.profile-tagline {
-    font-size: 1.4rem;
+.profile-heading.active::after {
+    width: 100px;
+    opacity: 0.7;
+}
+#profile-tagline {
+    font-size: 24px;
     color: var(--text-secondary);
     max-width: 700px;
     margin: 0 auto;
     line-height: 1.6;
     font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 /* أنماط البطاقات */
@@ -587,34 +595,73 @@
     font-weight: bold;
     white-space: nowrap;
 }
-
+@media (max-width: 475px){
+    .logo-img {
+        width: 50px;
+        height: 50px;
+        z-index: 75;
+    }
+    .logo-text span {
+        font-size: 1.6em;
+    }
+}
+@media (max-width: 425px){
+    .logo-img {
+        width: 40px;
+        height: 40px;
+        z-index: 50;
+    }
+    .logo-text span {
+        font-size: 1.4em;
+    }
+}
+@media (max-width: 400px){
+    .logo-img {
+        width: 40px;
+        height: 40px;
+        z-index: 25;
+    }
+    .logo-text span {
+        font-size: 1.2em;
+    }
+}
+@media (max-width: 380px){
+    .logo-img {
+        width: 32px;
+        height: 32px;
+        z-index: 25;
+    }
+    .logo-text span {
+        font-size: 1em;
+    }
+}
 /* حركة اللوغو المعدلة */
 @keyframes logoAnimation {
     0% {
         left: 65%;
         transform: translateX(-100%) rotate(0deg);
     }
-    9% {
+    8% {
         left: 10%;
-        transform: translateX(-100%) rotate(360deg);
+        transform: translateX(-100%) rotate(-360deg);
     }
-    25%, 76% {
+    15%, 76% {
         left: 10%;
-        transform: translateX(-100%) rotate(360deg);
+        transform: translateX(-100%) rotate(-360deg);
     }
     83% {
         left: 65%;
-        transform: translateX(-100%) rotate(720deg);
+        transform: translateX(-100%) rotate(-720deg);
     }
     100% {
         left: 65%;
-        transform: translateX(-100%) rotate(720deg);
+        transform: translateX(-100%) rotate(-720deg);
     }
 }
 
 /* حركة النص المعدلة */
 @keyframes textAnimation {
-    0%, 8% {
+    0%, 11% {
         opacity: 0;
         transform: translateX(-20px);
     }
@@ -630,11 +677,11 @@
 
 /* تطبيق الحركات المعدلة */
 .logo-img {
-    animation: logoAnimation 20s infinite linear;
+    animation: logoAnimation 16s infinite linear;
 }
 
 .logo-text span {
-    animation: textAnimation 20s infinite linear;
+    animation: textAnimation 16s infinite linear;
     animation-delay: 0.3s;
 }
 
@@ -1470,6 +1517,7 @@
     #best-jobs .specialties-list li {
     font-size: 0.8rem;
     padding: 0.3rem;
+    text-align: center;
     }
 
     .demand-indicator {
@@ -4523,7 +4571,7 @@ margin: 0rem 0;
                     <div class="search-results" id="searchResults"></div>
                 </div>
                 <div class="nav-links">
-                    <a class="nav-link" href="#about">من نحن</a>
+                    <a class="nav-link"  id="about-link" href="#about" onclick="startTyping(); return false;">من نحن</a>
                     <a class="nav-link" href="#compare">قارن </a>
                     <a class="nav-link" href="#best-jobs">المهن ذهبية</a>
                     <a class="nav-link active" href="#jobs">المهن و التخصصات</a> 
@@ -4661,8 +4709,8 @@ margin: 0rem 0;
         <section class="company-profile" id="about">
             <div class="profile-container">
                 <div class="profile-header">
-                    <h2 class="profile-heading">WorldCareers: بوابتك إلى المستقبل المهني</h2>
-                    <p class="profile-tagline">نحو جيل واعٍ باختياراته، متمكنٍ من مساره</p>
+                    <h2 class="profile-heading">WorldCareers</h2>
+                    <p id="profile-tagline"></p>
                 </div>
                 <div class="profile-features">
                     <!-- بطاقة الهوية -->
@@ -5055,7 +5103,7 @@ margin: 0rem 0;
             </div>
         </div>
         <script>
-            let currentSearchType = 'jobs'; // القيمة الافتراضية
+             let currentSearchType = 'jobs'; // القيمة الافتراضية
     // بيانات المهن
     let majors = [];
     let professions = [];
@@ -6527,7 +6575,34 @@ function goToPreviousQuestion() {
         }
     }
 }
+function startTyping() {
+        const text = "بوابتك الى مستقبلك المهني .";
+        const element = document.getElementById("profile-tagline");
+        let i = 0;
+        element.innerHTML = "";
 
+        function type() {
+            if (i < text.length) {
+                element.innerHTML += text[i];
+                i++;
+                setTimeout(type, 80);
+            }
+        }
+        type();
+    }
+document.addEventListener('DOMContentLoaded', function() {
+    const aboutLink = document.getElementById('about-link');
+    const profileHeading = document.querySelector('.profile-heading');
+    
+    aboutLink.addEventListener('click', function(e) {
+        e.preventDefault(); // منع السلوك الافتراضي للرابط
+        
+        // إعادة تعيين الأنيميشن
+        profileHeading.classList.remove('active');
+        void profileHeading.offsetWidth; // خدعة لإعادة تشغيل الأنيميشن
+        profileHeading.classList.add('active');
+    });
+});
 // في نهاية ملف script.js أضف حدث النقر للزر:
 document.getElementById('prevQuestionBtn').addEventListener('click', goToPreviousQuestion);
 // استدعاء الدالة عند تحميل الصفحة وتغيير حجمها
