@@ -816,7 +816,7 @@
     #majorsContainer .profession-card {
         background: white;
         border-radius: 15px;
-        padding: 1.8rem !important;
+        padding: 1.8rem ;
         box-shadow: 0 5px 25px rgba(0, 0, 0, 0.438);
         transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         cursor: pointer;
@@ -844,10 +844,7 @@
     #majorsContainer .profession-card:hover::after {
         height: 6px;
     }
-    #majorsContainer .profession-card {
-        padding: 1.5rem !important;
-        /* بقية الخصائص */
-    }
+  
     .search-result-item h4 {
         color: var(--primary);
         margin-bottom: 0.3rem;
@@ -936,6 +933,39 @@
         cursor: pointer;
         position: relative;
         overflow: hidden;
+            /* تنسيق جديد للبطاقات مع الراتب في الأسفل */
+
+   
+    }
+    @media (min-width: 855px) {
+        
+    
+    .profession-card{
+           /* تنسيق جديد للبطاقات مع الراتب في الأسفل */
+
+    position: relative;
+    padding-bottom: 6rem; /* مساحة للراتب في الأسفل */
+
+    
+    }
+    #majorsContainer .profession-card {
+        
+    position: relative;
+    padding-bottom: 6rem; /* مساحة للراتب في الأسفل */
+
+    }
+    
+.profession-card .salary-info {
+    position: absolute;
+    bottom: 1rem;
+    left: 1.5rem;
+    right: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px dashed rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
     }
 
     .profession-card:hover {
