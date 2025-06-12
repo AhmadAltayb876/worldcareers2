@@ -78,7 +78,7 @@
 }
 
 .profile-container {
-    max-width: 1200px;
+    min-width: 100%;
     margin: 0 auto;
     padding: 0 2rem;
 }
@@ -132,10 +132,11 @@
 
 /* أنماط البطاقات */
 .profile-features {
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
     gap: 3rem;
     margin-bottom: 5rem;
-    display: flex;
+    width: 100%;
     align-items: center;
     justify-content: center;
 }
@@ -153,12 +154,9 @@
     overflow: hidden;
     border: none;
     z-index: 1;
-    width: 33%;
-    padding: 0 15px;
-    min-height: 870px;
-    min-width: 430px;
+    padding: 20px; /* تعديل الحشو الداخلي */
+    height: 100%; /* لجعل جميع البطاقات بنفس الارتفاع */
 }
-
 
 .feature-card::before {
     content: '';
@@ -597,6 +595,17 @@
     font-size: 1.8em;
     font-weight: bold;
     white-space: nowrap;
+}
+
+@media (max-width: 1535px){
+    .logo-img {
+        width: 45px;
+        height: 45px;
+        z-index: 75;
+    }
+    .logo-text span {
+        font-size: 1.7em;
+    }
 }
 @media (max-width: 475px){
     .logo-img {
@@ -1217,12 +1226,6 @@
 
     }
 
-    @media (max-width: 192px) {
-        .professions-grid {
-            grid-template-columns: 1fr;
-            padding: 1rem;
-        }
-
     @media (max-width: 768px) {
     #best-jobs .filter-item {
     flex: 1 1 100%;
@@ -1231,10 +1234,6 @@
     }
     #best-jobs.profession-card {
     padding: 1.2rem;
-    }
-    }
-    #best-jobs .growth-rate {
-    font-size: 0.8rem;
     }
     }
 
