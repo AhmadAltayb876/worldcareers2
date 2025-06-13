@@ -3214,7 +3214,7 @@
     }
 
     .quiz-step {
-    padding: 1.5rem;
+        padding: 0.5rem;
     }
 
     .quiz-option {
@@ -4591,6 +4591,124 @@ margin: 0rem 0;
   text-decoration:underline;
 
 }
+.download-btn{
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+  padding: 0.9rem 1.8rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 40px;
+  display: inline-block;
+  margin-top: 2rem;
+  text-decoration: none;
+  box-shadow: 0 8px 25px rgba(10, 132, 255, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: pulseGlow 2.8s infinite;
+}
+
+.download-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 30px rgba(10, 132, 255, 0.5);
+}
+
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 0 0 rgba(10, 132, 255, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(10, 132, 255, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(10, 132, 255, 0);
+  }
+}
+.premium-offer-card {
+  background: linear-gradient(135deg, #fdfdfd, #f5faff);
+  border: 2px solid var(--primary);
+  padding: 2.5rem;
+  border-radius: 24px;
+  box-shadow: 0 12px 35px rgba(10, 132, 255, 0.12);
+  text-align: center;
+  margin: 3rem auto;
+  max-width: 1000px;
+  width: 100%;
+  animation: fadeInUp 0.6s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.premium-offer-card h2 {
+  font-size: 2rem;
+  color: var(--primary);
+  margin-bottom: 1.2rem;
+}
+
+.premium-offer-card p {
+  font-size: 1.1rem;
+  color: #333;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+  max-width: 750px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.premium-offer-card .price-note {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--primary);
+  margin-top: 1rem;
+}
+
+.cta-buy-button {
+  background: var(--primary);
+  color: white;
+  padding: 1rem 2.2rem;
+  border-radius: 40px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.05rem;
+  margin-top: 1rem;
+  display: inline-block;
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0 5px 20px rgba(10, 132, 255, 0.2);
+}
+
+.cta-buy-button:hover {
+  background: var(--secondary);
+  transform: scale(1.04);
+  box-shadow: 0 8px 30px rgba(10, 132, 255, 0.3);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 600px) {
+  .premium-offer-card {
+    padding: 1.8rem;
+  }
+  
+  .premium-offer-card h2 {
+    font-size: 1.6rem;
+  }
+
+  .premium-offer-card p {
+    font-size: 1rem;
+  }
+
+  .cta-buy-button {
+    padding: 0.9rem 1.6rem;
+    font-size: 1rem;
+  }
+}
 
 
         </style>
@@ -4645,8 +4763,10 @@ margin: 0rem 0;
             </div>
         </nav>
         <header class="header">
+
             <h1>دليل المهن العربي</h1>
             <p>كل ماتريد معرفته عن المهن والتخصصات في الخليج أو في الوطن العربي موجود هنا</p>
+                        <a href="#download-guide" class="download-btn">احصل على الكتاب الآن</a>
         </header>
         <!-- قسم Best Jobs & Majors -->
         <section class="content-section" id="best-jobs">
@@ -4942,6 +5062,49 @@ margin: 0rem 0;
                         <h3 style="color: var(--primary); margin-bottom: 1.5rem;">نتائج الاختبار</h3>
                         <p style="margin-bottom: 1.5rem; display: none ;" id="newsen">بناءً على إجاباتك، إليك أفضل المهن التي تناسبك:</p>
                         <div id="careerMatches"></div>
+                        <div class="premium-offer-card">
+  <h2>📘 دليلك المهني الخاص، مبني على رغبتك</h2>
+  <p>
+    الاختبار أضاء لك الاتجاه، لكن اختيار المسار لا يُبنى على الانطباع الأول فقط.  
+    هذا الدليل صُمم ليقدّم لك تصورًا أعمق:  
+    من أين تبدأ، ما الذي يناسبك فعليًا، وكيف ترتبط شخصيتك بتخصصات ومجالات واقعية في سوق العمل.  
+    بدلاً من التشتت أو التخمين، يمنحك محتوى مبني على تحليل حقيقي، لتتقدم بخطى واضحة نحو قرارك المهني.
+</p>
+<p>
+لقد أعددنا دليلاً إلكترونيًا احترافيًا، يُبنى على نمطك وتحليلك،  
+ليأخذك خطوة بخطوة من “أنا محتار” إلى “أنا أعرف تمامًا ما أريد”.  
+ولأن هدفنا في WorldCareers هو دعم جيل واعٍ يختار مساره بثقة،  
+قدّمنا هذا المحتوى بسعر رمزي يضمن الوصول اليه دون أن يُضحّي بالجودة.
+</p>
+
+  <p>
+    يشمل الكتاب:
+    <ul style="text-align: right; margin: 1rem auto; max-width: 500px;">
+      <li> تحليل شخصية مهني مفصل حسب إجاباتك ✔️</li>
+      <li> اقتراحات لأفضل التخصصات الجامعية المتوافقة معك ✔️</li>
+      <li> قائمة بالمهن الأنسب لك بناءً على شخصيتك، مهاراتك، وتفضيلاتك ✔️</li>
+      <li> معلومات دقيقة عن الرواتب، بيئة العمل، ودرجة الضغط ✔️</li>
+      <li> مقارنة بين المسارات الممكنة لتساعدك في اتخاذ قرار مدروس ✔️</li>
+      <li> خطوات عملية للتطوير الذاتي والاستعداد لسوق العمل الخليجي والعالمي ✔️</li>
+    </ul>
+  </p>
+
+  <p>
+    الأمر لا يتعلق بمجرد “كتاب”…  
+    بل هو <strong>خريطة أولية لمستقبلك</strong>، يمكنك أن تبدأ بها بثقة، .
+  </p>
+<p class="price-note">
+اختيارك المهني قرار طويل الأمد،  
+والكتاب الذي بين يديك صُمم ليساعدك على اتخاذه بثقة، استنادًا إلى تحليل دقيق ومخصص لنتيجتك.  
+<p>
+إنه أداة عملية تختصر عليك سنوات من التردد — ويمكنك الحصول عليه الآن <strong style="color:#3AAFA9;">  وفقط ب 1.99$ دولار  </strong> وذلك بمناسبة انتهاء الامتحانات النهائية والاقتراب  التسجيل  في الجامعات   
+</p>
+
+</p>
+<a href="/buy-book.html" class="cta-buy-button"> اشترِ الكتاب الآن</a>
+
+</div>
+
                         <div class="quiz-actions">
                             <div id="quizResults">
                                 <button onclick="restartQuiz()" class="quiz-btn home-btn" style="background-color: #0A84FF;">
