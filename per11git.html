@@ -4626,13 +4626,14 @@ margin: 0rem 0;
 
 .notice-icon {
     position: absolute;
-    top: 1rem;
+    top: 71.2rem;
     left: 1rem;
     font-size: 2.5rem;
     color: rgb(249, 56, 56);
 }
 
 .notice-content h3 {
+    margin-top: 2rem;
     color: var(--primary);
     margin-bottom: 1.5rem;
     font-size: 1.5rem;
@@ -4787,6 +4788,117 @@ margin: 0rem 0;
         padding: 1.5rem;
     }
 }
+/* تنسيقات قسم تعريف الموقع */
+.about-platform {
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    padding: 3rem 0;
+    text-align: center;
+}
+
+.platform-intro {
+    max-width: 800px;
+    margin: 0 auto 2rem;
+    padding: 0 1.5rem;
+}
+
+.platform-intro h2 {
+    color: var(--primary);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.platform-intro i {
+    color: var(--secondary);
+    margin-left: 0.5rem;
+}
+
+.platform-description {
+    color: var(--dark);
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.platform-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.feature-card {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: right;
+    border-top: 4px solid var(--primary);
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.feature-card h3 {
+    color: var(--dark);
+    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+    position: relative;
+}
+
+.feature-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.feature-list li {
+    margin-bottom: 0.8rem;
+    padding-right: 1.8rem;
+    position: relative;
+    line-height: 1.5;
+}
+
+.feature-list i {
+    position: absolute;
+    right: 0;
+    top: 0.3rem;
+    color: var(--secondary);
+}
+
+/* تخصيص البطاقات المختلفة */
+.gold-feature {
+    border-top-color: #FFD700;
+}
+
+.compare-feature {
+    border-top-color: #3AAFA9;
+}
+
+.test-feature {
+    border-top-color: rgb(215, 40, 215);
+}
+
+
+@media (max-width: 768px) {
+    .platform-intro h2 {
+        font-size: 1.6rem;
+    }
+    
+    .platform-features {
+        grid-template-columns: 1fr;
+    }
+}
         </style>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-WBM8BPHZRL"></script>
@@ -4866,6 +4978,66 @@ margin: 0rem 0;
                 <div class="notice-card">
                     <div class="notice-icon">
                         <i class="fas fa-exclamation-circle"></i>
+                    </div>
+                    <div class="platform-intro">
+                        <h2><i class="fas fa-star"></i> منصة WorldCareers دليلك الشامل للمستقبل المهني</h2>
+                        <p class="platform-description">
+                            نقدم لك المنصة العربية الأكثر تطوراً لاكتشاف المهن والتخصصات الجامعية بدقة غير مسبوقة
+                        </p>
+                    </div>
+
+                    <div class="platform-features">
+                        <!-- بطاقة معلومات المهن -->
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-search-plus"></i>
+                            </div>
+                            <h3>معلومات شاملة ودقيقة</h3>
+                            <ul class="feature-list">
+                                <li><i class="fas fa-check-circle"></i> تغطي أغلب المهن والتخصصات الشائعة عالمياً</li>
+                                <li><i class="fas fa-check-circle"></i>تفاصيل شاملة عن جميع المهن و التخصصات الموجودة في المنصة</li>
+                                <li><i class="fas fa-check-circle"></i> محرك بحث متقدم مع فلترة حسب المجالات</li>
+                            </ul>
+                        </div>
+
+                        <!-- بطاقة المهن الذهبية -->
+                        <div class="feature-card gold-feature">
+                            <div class="feature-icon">
+                                <i class="fas fa-medal"></i>
+                            </div>
+                            <h3>المهن الذهبية</h3>
+                            <ul class="feature-list">
+                                <li><i class="fas fa-crown"></i> قائمة بأفضل المهن عالمياً حسب معايير متعددة</li>
+                                <li><i class="fas fa-crown"></i> المهن الأكثر طلباً و الاكثر ربحا في سوق العمل</li>
+                                <li><i class="fas fa-crown"></i> المهن ذات اكبر فرص عمل و اسرع الوظائف تاهيلا</li>
+                            </ul>
+                        </div>
+
+                        <!-- بطاقة المقارنة -->
+                        <div class="feature-card compare-feature">
+                            <div class="feature-icon">
+                                <i class="fas fa-balance-scale-right"></i>
+                            </div>
+                            <h3>أداة المقارنة الذكية</h3>
+                            <ul class="feature-list">
+                                <li><i class="fas fa-exchange-alt"></i> قارن بين أي تخصصين أو مهنتين بسهولة</li>
+                                <li><i class="fas fa-exchange-alt"></i> اظهار الفروقات في المعلومات الدقيقة و التفصيلية</li>
+                                <li><i class="fas fa-exchange-alt"></i> جداول مقارنة تفصيلية تساعدك في اتخاذ القرار</li>
+                            </ul>
+                        </div>
+
+                        <!-- بطاقة الاختبار المهني -->
+                        <div class="feature-card test-feature">
+                            <div class="feature-icon">
+                                <i class="fas fa-brain" style="font-size: 2rem;"></i>
+                            </div>
+                            <h3>اختبار المسار المهني</h3>
+                            <ul class="feature-list">
+                                <li><i class="fas fa-question-circle"></i> أسئلة نفسية تحلل شخصيتك وميولك</li>
+                                <li><i class="fas fa-question-circle"></i> تقييم للظروف الخاصة والقدرات</li>
+                                <li><i class="fas fa-question-circle"></i> نتائج دقيقة حسب الاجوبة المقدمة مع نسبة التقارب بين الاجوبة و كل نتيجة</li>
+                            </ul>
+                        </div>
                     </div>
                     <div class="notice-content">
                         <h3>تنويه هام حول دقة المعلومات</h3>
@@ -5456,7 +5628,7 @@ margin: 0rem 0;
             </div>
         </div>
         <script>
-             let currentSearchType = 'jobs'; // القيمة الافتراضية
+            let currentSearchType = 'jobs'; // القيمة الافتراضية
     // بيانات المهن
     let majors = [];
     let professions = [];
