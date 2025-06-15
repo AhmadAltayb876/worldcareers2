@@ -4622,13 +4622,35 @@ margin: 0rem 0;
     position: relative;
     overflow: hidden;
 }
+.notice-cards {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    padding: 2rem;
+    margin: 2rem auto;
+    padding-top: 0.2rem;
+    max-width: 800px;
+    border-left: 5px solid var(--accent);
+    text-align: right;
+    position: relative;
+    overflow: hidden;
+}
 
 .notice-icon {
     position: absolute;
-    top: 71.2rem;
+    top: 1rem;
     left: 1rem;
     font-size: 2.5rem;
     color: rgb(249, 56, 56);
+}
+@media (max-width: 480px) {
+    .notice-icon {
+    position: absolute;
+    top: 0.2rem;
+    left: 1rem;
+    font-size: 2rem;
+    color: rgb(249, 56, 56);
+}
 }
 
 .notice-content h3 {
@@ -5035,7 +5057,6 @@ margin: 0rem 0;
     padding-right: 1rem;
   }
 }
-
         </style>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-WBM8BPHZRL"></script>
@@ -5095,35 +5116,28 @@ margin: 0rem 0;
         <!-- قسم الرئيسية -->
         <section id="home">
             <div class="home-container">
-             
                 <!-- تنويه مهم -->
                 <div class="notice-card">
-                    <div class="notice-icon">
-                      
+                    <center>
+                        <div class="home-header">
+                            <h1>مرحبًا بك في WorldCareers</h1>
+                            <p> اكتشف جميع المهن والتخصصات الأكثر شمولاً في الوطن العربي</p>
+                        </div>
+                    </center>
+                    <!-- أزرار رئيسية -->
+                    <div class="home-actions">
+                        <a href="#quiz" class="home-btn primary-btn">
+                            <i class="fas fa-brain"></i>
+                            <span>ابدأ اختبار المهن</span>
+                        </a>
+                        <a href="#jobs" class="home-btn secondary-btn">
+                            <i class="fas fa-briefcase"></i>
+                            <span>قسم المهن والتخصصات</span>
+                        </a>
                     </div>
-                       <!-- الهيدر -->
-                        <center>
-                <div class="home-header">
-                    <h1>مرحبًا بك في WorldCareers</h1>
-                    <p> اكتشف جميع المهن والتخصصات الأكثر شمولاً في الوطن العربي</p>
-                </div>
-            </center>
-                <!-- أزرار رئيسية -->
-                <div class="home-actions">
-                    <a href="#quiz" class="home-btn primary-btn">
-                        <i class="fas fa-brain"></i>
-                        <span>ابدأ اختبار المهن</span>
-                    </a>
-                    <a href="#jobs" class="home-btn secondary-btn">
-                        <i class="fas fa-briefcase"></i>
-                        <span>قسم المهن والتخصصات</span>
-                    </a>
-                </div>
                     <div class="platform-intro">
                         <h2><i class="fas fa-star"></i> منصة WorldCareers دليلك الشامل للمستقبل المهني</h2>
-                       
                     </div>
-
                     <div class="platform-features">
                         <!-- بطاقة معلومات المهن -->
                         <div class="feature-card">
@@ -5177,8 +5191,15 @@ margin: 0rem 0;
                             </ul>
                         </div>
                     </div>
+                </div>
+                <div class="notice-cards">
                     <div class="notice-content">
-                        <h3>تنويه هام حول دقة المعلومات</h3>
+                        <h3 class="notice-title">
+                            <div class="notice-icon">
+                                <i class="fas fa-exclamation-circle"></i>
+                            </div>
+                            تنويه هام حول دقة المعلومات
+                        </h3>
                         <ul class="notice-list">
                             <li><i class="fas fa-times-circle"></i> <strong>الرواتب:</strong> تختلف حسب الدولة، الشركة، والخبرة</li>
                             <li><i class="fas fa-times-circle"></i> <strong>متطلبات القبول:</strong> قد تختلف بين الجامعات بفروق طفيفة</li>
