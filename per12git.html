@@ -131,9 +131,9 @@
 
 /* أنماط البطاقات */
 .profile-features {
-    display: grid;
+   display: grid;
     grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-    gap: 3rem;
+    gap:  3rem;
     margin-bottom: 5rem;
     width: 100%;
     align-items: center;
@@ -1480,7 +1480,7 @@
     /* بقية الخصائص كما هي */
     }
     .header {
-    display: block !important; /* التأكد من ظهور الهيدر دائماً */
+    display: block ; /* التأكد من ظهور الهيدر دائماً */
     transition: all 0.3s ease-in-out;
     /* بقية الخصائص كما هي */
     }
@@ -4589,12 +4589,10 @@ margin: 0rem 0;
 /* تنسيقات قسم الرئيسية */
 #home {
     background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-    padding: 3rem 0;
     text-align: center;
 }
 
 .home-container {
-    max-width: 1200px;
     margin: 0 auto;
     padding: 0 1.5rem;
 }
@@ -4615,9 +4613,10 @@ margin: 0rem 0;
     background-color: white;
     border-radius: 12px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-    padding: 2rem;
+    padding: 1rem;
+    padding-top: 2rem;
     margin: 2rem auto;
-    max-width: 800px;
+    max-width: 100%;
     border-left: 5px solid var(--accent);
     text-align: right;
     position: relative;
@@ -4785,7 +4784,7 @@ margin: 0rem 0;
     }
     
     .notice-card {
-        padding: 1.5rem;
+        padding: 1rem;
     }
 }
 /* تنسيقات قسم تعريف الموقع */
@@ -4796,7 +4795,6 @@ margin: 0rem 0;
 }
 
 .platform-intro {
-    max-width: 800px;
     margin: 0 auto 2rem;
     padding: 0 1.5rem;
 }
@@ -4899,6 +4897,35 @@ margin: 0rem 0;
         grid-template-columns: 1fr;
     }
 }
+#home .header {
+    display: none !important;
+}
+.platform-features {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 أعمدة */
+  gap: 2rem;
+  padding: 2rem;
+  justify-items: stretch;
+  width: 100%;
+  max-width: 1400px;
+  margin: auto;
+}
+
+.feature-card {
+  width: 100%;
+}
+@media (max-width: 1024px) {
+  .platform-features {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .platform-features {
+    grid-template-columns: 1fr;
+  }
+}
+
         </style>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-WBM8BPHZRL"></script>
@@ -4984,9 +5011,7 @@ margin: 0rem 0;
                 </div>
                     <div class="platform-intro">
                         <h2><i class="fas fa-star"></i> منصة WorldCareers دليلك الشامل للمستقبل المهني</h2>
-                        <p class="platform-description">
-                            نقدم لك المنصة العربية الأكثر تطوراً لاكتشاف المهن والتخصصات الجامعية بدقة غير مسبوقة
-                        </p>
+                       
                     </div>
 
                     <div class="platform-features">
@@ -7211,6 +7236,18 @@ document.getElementById('prevQuestionBtn').addEventListener('click', goToPreviou
 // استدعاء الدالة عند تحميل الصفحة وتغيير حجمها
 window.addEventListener('resize', onFilterChange);
 document.addEventListener('DOMContentLoaded', onFilterChange);
+document.addEventListener("DOMContentLoaded", function () {
+    function toggleHeaderVisibility() {
+        const hash = window.location.hash;
+        const header = document.querySelector(".header");
+        if (header) {
+            header.style.display = (hash === "#home" || hash === "") ? "none" : "block";
+        }
+    }
+
+    window.addEventListener("hashchange", toggleHeaderVisibility);
+    toggleHeaderVisibility();
+});
 
         </script>
     </body>
