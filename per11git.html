@@ -5079,6 +5079,13 @@ margin: 0rem 0;
   }
 
 }
+#jobs.content-section {
+padding: 0;
+margin: 0;
+
+}
+
+
         </style>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-WBM8BPHZRL"></script>
@@ -5894,12 +5901,12 @@ document.addEventListener('DOMContentLoaded', function () {
             targetSection.style.display = 'block';
         }
 
-        // إدارة الهيدر (إظهاره في جميع الأقسام ما عدا الرئيسية)
-        if (targetId === 'home') {
-            document.querySelector('.header').style.display = 'none';
-        } else {
-            document.querySelector('.header').style.display = 'block';
-        }
+      if (targetId === 'home' || targetId === 'about') {
+    document.querySelector('.header').style.display = 'none';
+} else {
+    document.querySelector('.header').style.display = 'block';
+}
+
 
         // إزالة الكلاس النشط من جميع الروابط
         document.querySelectorAll('.nav-link').forEach(link => {
