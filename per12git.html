@@ -586,20 +586,43 @@
 }
 
 .logo-text span.careers {
+    padding-right: 0.5rem;
     color: var(--secondary); /* لون كلمة Careers */
 }
 
 .logo-text span {
     opacity: 0;
-    font-size: 1.8em;
+    font-size: 1.7em;
     font-weight: bold;
     white-space: nowrap;
 }
 
-@media (max-width: 1535px){
+@media (max-width: 1500px){
     .logo-img {
         width: 45px;
         height: 45px;
+        z-index: 75;
+    }
+    .logo-text span {
+        font-size: 1.5em;
+    }
+}
+@media (min-width: 1240px) and (max-width: 1480px){
+    .logo-img {
+        display: none;
+    }
+    .logo-text span {
+        opacity: 1 !important;
+        animation: none !important;
+    }
+    .logo-text span.world {
+        padding-left: 0.7rem;
+    }
+}
+@media (max-width: 1240px){
+    .logo-img {
+        width: 60px;
+        height: 60px;
         z-index: 75;
     }
     .logo-text span {
@@ -608,18 +631,18 @@
 }
 @media (max-width: 475px){
     .logo-img {
-        width: 50px;
-        height: 50px;
+        width: 45px;
+        height: 45px;
         z-index: 75;
     }
     .logo-text span {
-        font-size: 1.6em;
+        font-size: 1.4em;
     }
 }
 @media (max-width: 425px){
     .logo-img {
-        width: 40px;
-        height: 40px;
+        width: 44px;
+        height: 44px;
         z-index: 50;
     }
     .logo-text span {
@@ -638,9 +661,10 @@
 }
 @media (max-width: 380px){
     .logo-img {
-        width: 32px;
-        height: 32px;
+        width: 33px;
+        height: 33px;
         z-index: 25;
+        margin-left: 0.4rem;
     }
     .logo-text span {
         font-size: 1em;
@@ -1063,7 +1087,6 @@
         margin-bottom: 0.5rem;
     }
 
-    /* أقسام المحتوى */
     .content-section {
         max-width: 1000px;
         margin: 1rem auto;
@@ -1074,7 +1097,7 @@
 
     .content-card {
         background: white;
-        padding: 2rem;
+        padding: 0.75rem;
         border-radius: 15px;
         box-shadow: 0 5px 20px rgba(0, 0, 0, 0.377);
         margin-bottom: 2rem;
@@ -1083,9 +1106,7 @@
         .content-card {
         padding: 0.8rem;
         }
-        .content-section {
-            padding: 0 0.6rem;
-        }
+     
     }
     /* النافذة المنبثقة */
     .modal {
@@ -1249,7 +1270,7 @@
         }
 
 
-    @media (max-width: 480px) {
+    @media (max-width: 500px) {
     /* تحسينات الهيدر للجوال */
     .navbar {
     padding: 0.5rem 0.5rem;
@@ -1451,28 +1472,6 @@
     .header p {
     font-size: 0.9rem !important; /* تصغير حجم النص الفرعي */
     margin-top: 0.5rem;
-    }
-    }
-
-    @media (max-width: 768px) {
-    .nav-links {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start; /* المحاذاة من اليسار */
-    width: 100%;
-    direction: rtl;
-    }
-
-    /* ترتيب العناصر كما تريد */
-    .nav-link[href="#compare"] { order: 4; }
-    .nav-link[href="#best-jobs"] { order: 3; }
-    .nav-link[href="#jobs"] { order: 2; }
-    .nav-link[href="#about"] { order: 5}
-    .nav-link[href="#home"] { order: 1}
-
-    /* تعديلات إضافية لتحسين المظهر */
-    .nav-link {
-    margin-top:0.4rem;
     }
     }
     .header {
@@ -3034,7 +3033,10 @@
     @media (max-width: 643px) {
     .navbar .nav-links .quiz-btn { display: none !important; }
     .logo-quiz-btn { display: inline-block !important; }
-
+.nav-links {
+          
+            justify-content: center;
+        }
     }
 
     .logo-quiz-wrapper .logo-quiz-btn {
@@ -4594,7 +4596,7 @@ margin: 0rem 0;
 
 .home-container {
     margin: 0 auto;
-    padding: 0 1.5rem;
+    padding: 0 0.7rem;
 }
 
 .home-header h1 {
@@ -4613,7 +4615,7 @@ margin: 0rem 0;
     background-color: white;
     border-radius: 12px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-    padding: 1rem;
+    padding: 0.4rem;
     padding-top: 2rem;
     margin: 2rem auto;
     max-width: 100%;
@@ -4622,13 +4624,35 @@ margin: 0rem 0;
     position: relative;
     overflow: hidden;
 }
+.notice-cards {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    padding: 2rem;
+    margin: 2rem auto;
+    padding-top: 0.2rem;
+    max-width: 800px;
+    border-left: 5px solid var(--accent);
+    text-align: right;
+    position: relative;
+    overflow: hidden;
+}
 
 .notice-icon {
     position: absolute;
-    top: 71.2rem;
+    top: 1rem;
     left: 1rem;
     font-size: 2.5rem;
     color: rgb(249, 56, 56);
+}
+@media (max-width: 480px) {
+    .notice-icon {
+    position: absolute;
+    top: 0.2rem;
+    left: 1rem;
+    font-size: 2rem;
+    color: rgb(249, 56, 56);
+}
 }
 
 .notice-content h3 {
@@ -4641,6 +4665,8 @@ margin: 0rem 0;
 .notice-list {
     list-style: none;
     padding: 0;
+    padding-right: 0;
+    margin-right: 0;
     margin-bottom: 1.5rem;
 }
 
@@ -4784,7 +4810,7 @@ margin: 0rem 0;
     }
     
     .notice-card {
-        padding: 1rem;
+        padding: 0.4rem;
     }
 }
 /* تنسيقات قسم تعريف الموقع */
@@ -4925,6 +4951,140 @@ margin: 0rem 0;
     grid-template-columns: 1fr;
   }
 }
+@media (max-width: 768px) {
+  .platform-intro {
+    padding: 0 1rem;
+  }
+
+  .platform-intro h2 {
+    font-size: 1.4rem;
+  }
+
+  .platform-description {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .platform-features {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+    padding: 1rem;
+  }
+
+  .feature-card {
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  }
+
+  .feature-title {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+  }
+
+  .feature-icon {
+    width: 60px;
+    height: 60px;
+    margin: 1.5rem auto;
+  }
+
+  .feature-icon svg {
+    width: 28px;
+    height: 28px;
+  }
+
+  .feature-content {
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+
+  .feature-list li {
+    font-size: 0.9rem;
+    padding-right: 1.2rem;
+  }
+}
+@media (max-width: 480px) {
+  .platform-intro {
+    padding: 0 0.8rem;
+    text-align: center;
+  }
+
+  .platform-intro h2 {
+    font-size: 1.2rem;
+    line-height: 1.4;
+    margin-bottom: 0.5rem;
+  }
+
+  .platform-description {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  .platform-features {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 0.8rem;
+  }
+
+  .feature-card {
+    padding: 1rem;
+    border-radius: 10px;
+  }
+
+  .feature-title {
+    font-size: 1.1rem;
+  }
+
+  .feature-icon {
+    width: 50px;
+    height: 50px;
+    margin: 1rem auto;
+  }
+
+  .feature-icon svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .feature-content {
+    font-size: 0.85rem;
+    line-height: 1.6;
+  }
+
+  .feature-content p {
+    margin-bottom: 0.8rem;
+  }
+
+  .feature-item {
+    font-size: 0.85rem;
+    padding-right: 1rem;
+  }
+}
+@media (max-width: 420px) {
+  
+  .nav-link {
+   
+    font-size: 0.669rem !important;           /* خط أصغر */
+  }
+
+  
+}
+
+@media (max-width: 380px) {
+  
+  .nav-link {
+   
+    font-size: 0.61rem !important;           /* خط أصغر */
+  }
+
+}
+#jobs.content-section {
+padding: 0;
+margin: 0;
+
+}
+
 
         </style>
 <!-- Google tag (gtag.js) -->
@@ -4985,35 +5145,28 @@ margin: 0rem 0;
         <!-- قسم الرئيسية -->
         <section id="home">
             <div class="home-container">
-             
                 <!-- تنويه مهم -->
                 <div class="notice-card">
-                    <div class="notice-icon">
-                      
+                    <center>
+                        <div class="home-header">
+                            <h1>مرحبًا بك في WorldCareers</h1>
+                            <p> اكتشف جميع المهن والتخصصات الأكثر شمولاً في الوطن العربي</p>
+                        </div>
+                    </center>
+                    <!-- أزرار رئيسية -->
+                    <div class="home-actions">
+                        <a href="#quiz" class="home-btn primary-btn">
+                            <i class="fas fa-brain"></i>
+                            <span>ابدأ اختبار المهن</span>
+                        </a>
+                        <a href="#jobs" class="home-btn secondary-btn">
+                            <i class="fas fa-briefcase"></i>
+                            <span>قسم المهن والتخصصات</span>
+                        </a>
                     </div>
-                       <!-- الهيدر -->
-                        <center>
-                <div class="home-header">
-                    <h1>مرحبًا بك في WorldCareers</h1>
-                    <p> اكتشف جميع المهن والتخصصات الأكثر شمولاً في الوطن العربي</p>
-                </div>
-            </center>
-                <!-- أزرار رئيسية -->
-                <div class="home-actions">
-                    <a href="#quiz" class="home-btn primary-btn">
-                        <i class="fas fa-brain"></i>
-                        <span>ابدأ اختبار المهن</span>
-                    </a>
-                    <a href="#jobs" class="home-btn secondary-btn">
-                        <i class="fas fa-briefcase"></i>
-                        <span>قسم المهن والتخصصات</span>
-                    </a>
-                </div>
                     <div class="platform-intro">
                         <h2><i class="fas fa-star"></i> منصة WorldCareers دليلك الشامل للمستقبل المهني</h2>
-                       
                     </div>
-
                     <div class="platform-features">
                         <!-- بطاقة معلومات المهن -->
                         <div class="feature-card">
@@ -5067,14 +5220,23 @@ margin: 0rem 0;
                             </ul>
                         </div>
                     </div>
+                </div>
+                <div class="notice-cards">
                     <div class="notice-content">
-                        <h3>تنويه هام حول دقة المعلومات</h3>
+                        <h3 class="notice-title">
+                            <div class="notice-icon">
+                                <i class="fas fa-exclamation-circle"></i>
+                            </div>
+                            تنويه هام حول دقة المعلومات
+                        </h3>
                         <ul class="notice-list">
-                            <li><i class="fas fa-times-circle"></i> <strong>الرواتب:</strong> تختلف حسب الدولة، الشركة، والخبرة</li>
-                            <li><i class="fas fa-times-circle"></i> <strong>متطلبات القبول:</strong> قد تختلف بين الجامعات بفروق طفيفة</li>
-                            <li><i class="fas fa-times-circle"></i> <strong>الطلب :</strong> قد يختلف من دولة و مدينة الى اخرى</li>
-                            <li><i class="fas fa-times-circle"></i> <strong>السنوات الدراسية :</strong> قد تختلف بين الجامعات بفروق طفيفة</li>
-                            <li><i class="fas fa-check-circle"></i> <strong>باقي المعلومات:</strong> دقيقة بنسبة 100% ومدعمة ببيانات حديثة</li>
+                            <li><i class="fas fa-circle"></i> <strong>الرواتب:</strong> تختلف حسب الدولة والشركة ومستوى الخبرة.</li>
+                            <li><i class="fas fa-circle"></i> <strong>متطلبات القبول:</strong> قد تختلف بشكل طفيف بين الجامعات.</li>
+                            <li><i class="fas fa-circle"></i> <strong>الطلب:</strong> يختلف من دولة إلى أخرى، وحتى بين المدن.</li>
+                            <li><i class="fas fa-circle"></i> <strong>السنوات الدراسية:</strong> قد توجد اختلافات بسيطة بين الجامعات.</li>
+                            <li><i class="fas fa-circle"></i> <strong>باقي المعلومات:</strong> دقيقة بنسبة 100% ومدعومة بأحدث البيانات.</li>
+                            <li><i class="fas fa-circle"></i> <strong>التخصصات:</strong> بعض التخصصات متوفرة على المنصة ولكن قد لا تكون متاحة في جامعتك، لأنها تختلف من جامعة لأخرى.</li>
+                            <li><i class="fas fa-circle"></i> <strong>ترتيب المهن والتخصصات:</strong> حرصنا على دقته حسب الطلب ومعدلات النمو، لكنه متغير باستمرار، خاصة مع الارتفاع المستمر في التخصصات الإلكترونية.</li>
                         </ul>
                         <p class="notice-summary">
                             حرصنا على تقديم أقرب تقدير ممكن للبيانات التي قد تختلف حسب الظروف،
@@ -5739,12 +5901,12 @@ document.addEventListener('DOMContentLoaded', function () {
             targetSection.style.display = 'block';
         }
 
-        // إدارة الهيدر (إظهاره في جميع الأقسام ما عدا الرئيسية)
-        if (targetId === 'home') {
-            document.querySelector('.header').style.display = 'none';
-        } else {
-            document.querySelector('.header').style.display = 'block';
-        }
+      if (targetId === 'home' || targetId === 'about') {
+    document.querySelector('.header').style.display = 'none';
+} else {
+    document.querySelector('.header').style.display = 'block';
+}
+
 
         // إزالة الكلاس النشط من جميع الروابط
         document.querySelectorAll('.nav-link').forEach(link => {
