@@ -7426,7 +7426,11 @@ document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener("hashchange", toggleHeaderVisibility);
     toggleHeaderVisibility();
 });
-
+if (targetId === 'home' || targetId === 'about') {
+    document.querySelector('.header').style.display = 'none';
+} else {
+    document.querySelector('.header').style.display = 'block';
+}
         </script>
     </body>
 </html>
