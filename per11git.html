@@ -7421,15 +7421,16 @@ document.addEventListener("DOMContentLoaded", function () {
             header.style.display = (hash === "#home" || hash === "") ? "none" : "block";
         }
     }
-
-    window.addEventListener("hashchange", toggleHeaderVisibility);
-    toggleHeaderVisibility();
-});
 if (targetId === 'home' || targetId === 'about') {
     document.querySelector('.header').style.display = 'none';
 } else {
     document.querySelector('.header').style.display = 'block';
 }
+    window.addEventListener("hashchange", toggleHeaderVisibility);
+    toggleHeaderVisibility();
+});
+
+
         </script>
     </body>
 </html>
