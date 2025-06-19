@@ -7419,16 +7419,16 @@ document.addEventListener("DOMContentLoaded", function () {
         const hash = window.location.hash;
         const header = document.querySelector(".header");
        
-if (targetId === 'home' || targetId === 'about') {
-    document.querySelector('.header').style.display = 'none';
-} else {
-    document.querySelector('.header').style.display = 'block';
-}
     }
 
     window.addEventListener("hashchange", toggleHeaderVisibility);
     toggleHeaderVisibility();
 });
+if (targetId === 'home' || targetId === 'about') {
+    document.querySelector('.header').style.display = 'none';
+} else {
+    document.querySelector('.header').style.display = 'block';
+}
         </script>
     </body>
 </html>
