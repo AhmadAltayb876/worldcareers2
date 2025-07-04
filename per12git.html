@@ -20,7 +20,7 @@
         <meta property="og:type" content="website">
         <meta property="og:title" content="📚 اكتشف مهنتك وتخصصك المناسب بدقة غير مسبوقة | WorldCareers">
         <meta property="og:url" content="https://careerhub.example/">
-        <meta name="google-adsense-account" content="ca-pub-7598344882701441">
+       <meta name="google-adsense-account" content="ca-pub-7598344882701441">
         <meta property="og:image" content="https://careerhub.example/assets/og-cover.jpg">
         <!-- ✅ Twitter Cards -->
         <meta name="twitter:card" content="summary_large_image">
@@ -2437,7 +2437,6 @@
     display: block;
     margin: 0 auto;
     transition: all 0.3s;
-    width: 25%;
     }
 
     .start-quiz-btn:hover {
@@ -3069,7 +3068,7 @@
     border-color: var(--secondary);
     }
     .quiz-step {
-    padding: 0.5rem;
+    padding: 2rem;
     }
 
     .quiz-option {
@@ -3170,7 +3169,7 @@
     }
 
     .quiz-step {
-    padding: 0.5rem;
+    padding: 1.5rem;
     }
 
     .quiz-option {
@@ -3185,7 +3184,7 @@
     }
 
     .start-quiz-btn {
-    width: 50%;
+    width: 100%;
     padding: 1rem;
     }
     }
@@ -4649,7 +4648,7 @@ margin: 0rem 0;
 .home-actions {
     display: flex;
     justify-content: center;
-    gap: 0.5rem;
+    gap: 1.5rem;
     margin: 3rem 0;
     flex-wrap: wrap;
 }
@@ -4686,8 +4685,6 @@ margin: 0rem 0;
     transition: all 0.5s ease;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     animation: gradientBG 3s ease infinite;
-    padding-left: 4rem;
-    padding-right: 4rem;
 }
 
 .primary-btn:hover {
@@ -5041,191 +5038,11 @@ padding: 0;
 margin: 0;
 
 }
-@keyframes gradientShift{0%{background-position:0 50%}50%{background-position:100% 50%}100%{background-position:0 50%}}
-@keyframes glowPulse{0%{box-shadow:0 0 0 0#0457bcd6}70%{box-shadow:0 0 35px 30px rgba(255,75,31,0)}100%{box-shadow:0 0 0 0 rgba(255,75,31,0)}}
-.guide-btn{
-    background:linear-gradient(135deg,var(--accent) 0%,#0026fff9 25%,var(--secondary) 75%,var(--primary) 100%);
-    background-size:200% 200%;
-    color:#fff;
-    padding:1.2rem 2.6rem;
-    border:none;
-    border-radius:60px;
-    font-size:1.15rem;
-    font-weight:800;
-    cursor:pointer;
-    transition:transform .35s cubic-bezier(.2,.6,.3,1),box-shadow .35s;
-    position:relative;
-    overflow:hidden;
-    animation:gradientShift 6s ease infinite,glowPulse 2.5s ease-in-out infinite;
-    pointer-events: auto;
-    text-decoration: none;   
-}
-.guide-btn i{margin-left:.6rem;font-size:1.2rem}
-.guide-btn:hover{
-    transform:translateY(-6px) scale(1.05) rotate(-1deg);
-    box-shadow:0 12px 30px rgba(255,144,104,.45);
-}
-.guide-btn:active{transform:scale(.96)}
-.guide-btn::before{
-    content:"";
-    position:absolute;
-    top:-50%;left:-50%;width:200%;height:200%;
-    background:radial-gradient(circle at center,rgba(255,255,255,.45) 0%,rgba(255,255,255,0) 60%);
-    transform:scale(0);
-    opacity:0;
-    transition:transform .6s,opacity .6s;
-}
-.guide-btn:hover::before{
-transform:scale(1.3);opacity:1
-}
-@media(max-width:480px){
-    
-    .guide-btn{
-        font-size:.95rem;
-    }
 
-}
 
-.premium-offer-card {
-  background: linear-gradient(135deg, #fdfdfd, #f5faff);
-  border: 2px solid var(--primary);
-  padding: 0.5rem;
-  padding-top: 2rem;
-  border-radius: 24px;
-  box-shadow: 0 12px 35px rgba(10, 132, 255, 0.12);
-  text-align: center;
-  margin: 3rem auto;
-  max-width: 1000px;
-  width: 100%;
-  animation: fadeInUp 0.6s ease-in-out;
-  transition: all 0.3s ease-in-out;
-}
-
-.premium-offer-card h2 {
-  font-size: 2rem;
-  color: var(--primary);
-  margin-bottom: 1.2rem;
-}
-
-.premium-offer-card p {
-  font-size: 1.1rem;
-  color: #333;
-  line-height: 1.8;
-  margin-bottom: 1rem;
-  max-width: 750px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.premium-offer-card .price-note {
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: var(--primary);
-  margin-top: 1rem;
-}
-
-#cta-buy-button {
-  padding: 1rem 2.2rem;
-  border-radius: 40px;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 1.05rem;
-  margin-top: 1rem;
-  display: inline-block;
-  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-  box-shadow: 0 5px 20px rgba(10, 132, 255, 0.2);
-     background: rgba(7, 15, 242, 0.695);
-        color: white;
-        padding: 1rem 2rem;
-        border-radius: 40px;
-        font-size: 1.2rem;
-        display: inline-block;
-    text-align: center;
-      width: 30% !important;
-    font-size: 1rem !important;
-    padding: 0.9rem !important;
-    border-radius: 30px !important;
-    margin-top: 1.2rem !important;
-       background:linear-gradient(135deg,var(--accent) 0%,#1100fff9 25%,var(--secondary) 75%,var(--primary) 100%);
-    background-size:200% 200%;
-    color:#fff;
-      transition:transform .35s cubic-bezier(.2,.6,.3,1),box-shadow .35s;
-    position:relative;
-    overflow:hidden;
-    animation:gradientShift 6s ease infinite,glowPulse 2.5s ease-in-out infinite;
-    pointer-events: auto;
-    text-decoration: none;   
-}
-
-#cta-buy-button:hover {
- 
-     transform:translateY(-6px) scale(1.05) rotate(-1deg);
-    box-shadow:0 12px 30px rgba(225, 70, 14, 0.862);
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-@media (max-width: 760px) {
-  .premium-offer-card {
-    border-radius: 18px !important;
-    box-shadow: 0 10px 30px rgba(0, 123, 255, 0.15) !important;
-    background: linear-gradient(135deg, #ffffff, #f0f8ff) !important;
-    text-align: center !important;
-  }
-
-  .premium-offer-card h2 {
-    font-size: 1.2rem !important;
-    line-height: 1.4;
-    margin-bottom: 1rem;
-    color: var(--primary);
-  }
-
-  .premium-offer-card p,
-  .premium-offer-card .price-note {
-    font-size: 0.95rem !important;
-    line-height: 1.7 !important;
-    color: #222 !important;
-    margin: 0.6rem auto !important;
-    padding: 0 0.2rem;
-  }
-
-  .premium-offer-card .price-note {
-    font-weight: bold;
-    font-size: 1rem;
-    color: var(--primary) !important;
-  }
-
-  #cta-buy-button {
-    width: 65% !important;
-    font-size: 1rem !important;
-    padding: 0.9rem !important;
-    border-radius: 30px !important;
-    margin-top: 1.2rem !important;
-        color: white;
-        padding: 1rem 2rem;
-        border-radius: 40px;
-        font-size: 1.2rem;
-        display: inline-block;
-    text-align: center;
-  }
-
-  #cta-buy-button:hover {
-    transform: scale(1.02);
-  }
-}
         </style>
 
 </script>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7598344882701441"
-     crossorigin="anonymous"></script>
     </head>
     <body>
         <!-- الترويسة -->
@@ -5289,15 +5106,7 @@ transform:scale(1.3);opacity:1
                             <i class="fas fa-briefcase"></i>
                             <span>قسم المهن والتخصصات</span>
                         </a>
-             
                     </div>
-                     <div class="home-actions">   
-    <a href="/book.html" class="guide-btn" id="careerGuideBtn">
-        <i class="fas fa-rocket"></i>
-        <span>احصل على دليلك المهني الآن</span>
-        
-    </a>
-                                               </div>
                     <div class="platform-intro">
                         <h2><i class="fas fa-star"></i> منصة WorldCareers دليلك الشامل للمستقبل المهني</h2>
                     </div>
@@ -5724,55 +5533,6 @@ transform:scale(1.3);opacity:1
                         <h3 style="color: var(--primary); margin-bottom: 1.5rem;">نتائج الاختبار</h3>
                         <p style="margin-bottom: 1.5rem; display: none ;" id="newsen">بناءً على إجاباتك، إليك أفضل المهن التي تناسبك:</p>
                         <div id="careerMatches"></div>
-                         <div class="premium-offer-card">
-  <h2> دليلك المهني الخاص، مبني على رغبتك</h2>
-  <p>
-    الاختبار أضاء لك الاتجاه، لكن اختيار المسار لا يُبنى على الانطباع الأول فقط.  
-    هذا الدليل صُمم ليقدّم لك تصورًا أعمق:  
-    من أين تبدأ، ما الذي يناسبك فعليًا، وكيف ترتبط شخصيتك بتخصصات ومجالات واقعية في سوق العمل.  
-    بدلاً من التشتت أو التخمين، يمنحك محتوى مبني على تحليل حقيقي، لتتقدم بخطى واضحة نحو قرارك المهني.
-</p>
-<p>
-لقد أعددنا دليلاً إلكترونيًا احترافيًا، يُبنى على نمطك وتحليلك،  
-ليأخذك خطوة بخطوة من “أنا محتار” إلى “أنا أعرف تمامًا ما أريد”.  
-ولأن هدفنا في WorldCareers هو دعم جيل واعٍ يختار مساره بثقة،  
-قدّمنا هذا المحتوى بسعر رمزي يضمن الوصول اليه دون أن يُضحّي بالجودة.
-</p>
-
-  <p>
-    يشمل الكتاب:
-    <ul style="text-align: right; margin: 1rem auto; max-width: 500px;"> 
-   <p>
-🔹 فهم الذات و الشخصية المهنية<br>
-🔹 اختيار التخصص الجامعي بوعي وواقعية<br>
-🔹 مقارنة عملية بين المهن من حيث الضغط، البيئة، والفرص<br>
-🔹 تحليل المسارات المهنية المختلفة وتخطيط المستقبل الوظيفي<br>
-🔹 تعرّف على المهارات المطلوبة في سوق العمل اليوم والمستقبل<br>
-🔹 مهن المستقبل والتخصصات النادرة ذات الطلب العالي<br>
-🔹 كيف تبني سيرة ذاتية قوية وتستعد للمقابلات الوظيفية؟<br>
-🔹 نصائح لاختيار الجامعة المناسبة لك<br>
-🔹 فهم عميق للعلاقة بين الشخصية والتخصص والمهنة<br>
-🔹 خريطة مهنية متكاملة من الدراسة إلى النجاح الوظيفي
-</p>
-
-    </ul>
-  </p>
-
-  <p>
-    الأمر لا يتعلق بمجرد “كتاب”…  
-    بل هو <strong>خريطة أولية لمستقبلك</strong>، يمكنك أن تبدأ بها بثقة، .
-  </p>
-<p class="price-note">
-اختيارك المهني قرار طويل الأمد،  
-والكتاب الذي بين يديك صُمم ليساعدك على اتخاذ قرارك بثقة، استنادًا إلى تحليل دقيق ومخصص لك.  
-<p>
-إنه أداة عملية تختصر عليك سنوات من التردد — ويمكنك الحصول عليه الآن <strong style="color:#3AAFA9;">  وفقط ب 1.99$ دولار  </strong> وذلك بمناسبة انتهاء الامتحانات النهائية و اقتراب  التسجيل  في الجامعات
-</p>
-
-</p>
-<a href="/book.html" class="quiz-btn" id="cta-buy-button"> احصل على نسختك الآن</a>
-
-</div>
                         <div class="quiz-actions">
                             <div id="quizResults">
                                 <button onclick="restartQuiz()" class="quiz-btn home-btn" style="background-color: #0A84FF;">
@@ -7577,7 +7337,6 @@ document.getElementById('prevQuestionBtn').addEventListener('click', goToPreviou
 // استدعاء الدالة عند تحميل الصفحة وتغيير حجمها
 window.addEventListener('resize', onFilterChange);
 document.addEventListener('DOMContentLoaded', onFilterChange);
-
 
         </script>
     </body>
