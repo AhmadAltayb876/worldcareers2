@@ -5213,6 +5213,36 @@ transform:scale(1.3);opacity:1
     transform: scale(1.02);
   }
 }
+
+.browse-articles-container {
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.browse-articles-btn {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+  font-weight: bold;
+  padding: 0.9rem 2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 15px rgba(10, 132, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.browse-articles-btn:hover {
+  transform: translateY(-3px);
+  background: linear-gradient(135deg, var(--secondary), var(--primary));
+  box-shadow: 0 6px 20px rgba(10, 132, 255, 0.4);
+}
+
+.browse-articles-btn i {
+  margin-left: 0.5rem;
+}
+
         </style>
 
 </script>
@@ -5344,6 +5374,10 @@ transform:scale(1.3);opacity:1
                             </ul>
                         </div>
                     </div>
+                        <div class="browse-articles-container">
+  <a href="/blogs.html" class="browse-articles-btn">
+    <i class="fas fa-newspaper"></i> تصفح المقالات
+  </a>
                 </div>
                 <div class="notice-cards">
                     <div class="notice-content">
