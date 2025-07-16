@@ -2,10 +2,10 @@
 <IfModule mod_rewrite.c>
   RewriteEngine On
 
-  # تأكد من أن الطلب ليس لملف فعلي أو مجلد
+  # إذا لم يكن ملفًا أو مجلدًا موجودًا
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
 
-  # إعادة التوجيه إلى index.html
-  RewriteRule ^ per12git.html [QSA,L]
+  # أعِد التوجيه إلى index.html
+  RewriteRule ^ per12git.html [L]
 </IfModule>

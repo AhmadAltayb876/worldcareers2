@@ -5259,7 +5259,7 @@ transform:scale(1.3);opacity:1
                             <span class="careers">Careers</span>
                         </div>
                     </div>
-                    <a class="nav-link quiz-btn logo-quiz-btn" href="#quiz">
+                    <a class="nav-link quiz-btn logo-quiz-btn" href="/quiz">
                         <i class="fas fa-brain"></i>
                         <span class="quiz-label">اكتشف مهنتك</span>
                     </a>
@@ -5275,13 +5275,13 @@ transform:scale(1.3);opacity:1
                     <div class="search-results" id="searchResults"></div>
                 </div>
                 <div class="nav-links">
-                    <a class="nav-link"  id="about-link" href="#about" onclick="startTyping(); return false;">من نحن</a>
-                    <a class="nav-link" href="#compare">قارن </a>
-                    <a class="nav-link" href="#best-jobs">المهن ذهبية</a>
-                    <a class="nav-link" href="#jobs">المهن و التخصصات</a>
-                    <a class="nav-link active" href="#home">الرئيسية </a>
+                    <a class="nav-link"  id="about-link" href="/about" onclick="startTyping(); return false;">من نحن</a>
+                    <a class="nav-link" href="/compare">قارن </a>
+                    <a class="nav-link" href="/best-jobs">المهن ذهبية</a>
+                    <a class="nav-link" href="/jobs">المهن و التخصصات</a>
+                    <a class="nav-link active" href="/home">الرئيسية </a>
                     <!-- إضافة زر الاختبار هنا -->
-                    <a class="nav-link quiz-btn" href="#quiz" >
+                    <a class="nav-link quiz-btn" href="/quiz" >
                         <i class="fas fa-brain"></i>
                         <span class="quiz-label"style="font: 1.1em sans-serif;">اكتشف مهنتك</span>
                     </a>
@@ -5301,11 +5301,11 @@ transform:scale(1.3);opacity:1
                     </center>
                     <!-- أزرار رئيسية -->
                     <div class="home-actions">
-                        <a href="#quiz" class="home-btn primary-btn">
+                        <a href="/quiz" class="home-btn primary-btn">
                             <i class="fas fa-brain"></i>
                             <span>ابدأ اختبار المهن</span>
                         </a>
-                        <a href="#jobs" class="home-btn secondary-btn">
+                        <a href="/jobs" class="home-btn secondary-btn">
                             <i class="fas fa-briefcase"></i>
                             <span>قسم المهن والتخصصات</span>
                         </a>
@@ -6134,7 +6134,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // إظهار القسم الرئيسي افتراضيًا
         document.getElementById('home').style.display = 'block';
         // تعيين الرابط النشط
-        document.querySelector('.nav-link[href="#home"]').classList.add('active');
+        document.querySelector('.nav-link[href="/home"]').classList.add('active');
 
         // إضافة حدث النقر لجميع روابط التنقل في النافبار
         document.querySelectorAll('.nav-link').forEach(link => {
@@ -6202,7 +6202,7 @@ document.addEventListener('DOMContentLoaded', function () {
             document.querySelector('.filter-container').style.display = 'none'; // إخفاء الفلاتر
 
             const currentSection = document.querySelector('.nav-link.active').getAttribute('href');
-            if (currentSection !== '#jobs') {
+            if (currentSection !== '/jobs') {
                 // السلوك الطبيعي للأقسام الأخرى
                 searchResults.style.display = 'block';
                 document.getElementById('search-type').style.display = 'flex';
@@ -6228,7 +6228,7 @@ document.addEventListener('DOMContentLoaded', function () {
             applyFilters();
         }
         // تفعيل الفلتر الافتراضي إذا كان القسم النشط هو Best Jobs
-        if (window.location.hash === '#compare') {
+        if (window.location.hash === '/compare') {
             document.getElementById('compareJobsBtn').classList.add('.nav-link.active')
             setCompareType();
         }
@@ -6491,7 +6491,7 @@ searchInput.addEventListener('keydown', function(e) {
             navLink.classList.remove('active');
         });
 
-        document.querySelector('.nav-link[href="#jobs"]').classList.add('active');
+        document.querySelector('.nav-link[href="/jobs"]').classList.add('active');
 
         // تصفير نتائج البحث
         document.getElementById('searchInput').value = '';
@@ -6548,7 +6548,7 @@ searchInput.addEventListener('keydown', function(e) {
 
     // دالة فلترة المهن
     function filterProfessions() {
-        const checkboxes = document.querySelectorAll('#jobs input[type="checkbox"]');
+        const checkboxes = document.querySelectorAll('/jobs input[type="checkbox"]');
         const selectedCategories = Array.from(checkboxes)
             .filter(checkbox => checkbox.checked)
             .map(checkbox => checkbox.value);
@@ -7276,7 +7276,7 @@ function resetcom() {
         document.querySelectorAll('.nav-link').forEach(navLink => {
             navLink.classList.remove('active');
         });
-        document.querySelector('.nav-link[href="#home"]').classList.add('active');
+        document.querySelector('.nav-link[href="/home"]').classList.add('active');
         scrollToResults();
     }
 
@@ -7389,7 +7389,7 @@ function resetcom() {
         }
 
         // عرض النتائج في القائمة المنسدلة إذا لم نكن في قسم المهن والتخصصات
-        if (currentSection !== '#jobs') {
+        if (currentSection !== '/jobs') {
             results.professions.forEach(profession => {
                 const item = document.createElement('div');
                 item.className = 'search-result-item';
@@ -7466,7 +7466,7 @@ function resetcom() {
     }
     function clearFilters() {
     // إعادة تعيين الفلاتر إذا كانت موجودة
-    const checkboxes = document.querySelectorAll('#jobs input[type="checkbox"]');
+    const checkboxes = document.querySelectorAll('/jobs input[type="checkbox"]');
     checkboxes.forEach(checkbox => {
     checkbox.checked = false;
     });
@@ -7604,7 +7604,6 @@ document.getElementById('prevQuestionBtn').addEventListener('click', goToPreviou
 window.addEventListener('resize', onFilterChange);
 document.addEventListener('DOMContentLoaded', onFilterChange);
 
-
 const sections = {
   quiz: {
     title: "🎯 اكتشف مهنتك المثالية في أقل من 5 دقائق | اختبار مهني ذكي ومجاني – WorldCareers",
@@ -7612,28 +7611,24 @@ const sections = {
     url: "/quiz",
     keywords: "اختبار تحديد المهنة, اختبار شخصية وظيفي, اختبار تخصص جامعي, اختبار مهني للطلاب, اكتشاف المهنة المناسبة, مسار مهني ذكي, career test بالعربي"
   },
-
   about: {
     title: "عن منصة WorldCareers | خبراء التوجيه المهني في العالم العربي",
     description: "نحن منصة مهنية وتقنية متخصصة في دعم الشباب العربي لاختيار تخصصهم الجامعي ومسارهم المهني عبر أدوات تحليل متقدمة، اختبارات ذكية، ومقارنات سوقية دقيقة.",
     url: "/about",
     keywords: "منصة توجيه مهني, عن WorldCareers, فريق التخصصات والمهن, من نحن, توجيه طلاب, مستشار مهني رقمي"
   },
-
   compare: {
     title: "🔍 قارن بين التخصصات والمهن حسب الرواتب، الضغط والنمو الوظيفي | WorldCareers",
     description: "أداة ذكية لمقارنة المهن والتخصصات الجامعية حسب الدخل السنوي، بيئة العمل، مستقبل السوق، ومعدل التوظيف. اتخذ قرارك المهني بثقة وبيانات دقيقة.",
     url: "/compare",
     keywords: "مقارنة المهن والتخصصات, رواتب الوظائف في الخليج, نمو الوظائف, تحليل ضغط العمل, أفضل تخصص حسب الراتب, اتخاذ قرار مهني"
   },
-
   'best-jobs': {
     title: "🚀 أكثر المهن والتخصصات مطلوبة في الخليج | رواتب وطلب مرتفع",
     description: "تعرف على الوظائف والتخصصات ذات النمو الأسرع في السعودية والإمارات حتى عام 2030. تحليل شامل للرواتب، مؤشرات السوق، ومستقبل الذكاء الاصطناعي في المهن.",
     url: "/best-jobs",
     keywords: "أفضل المهن في السعودية, وظائف المستقبل 2030, تخصصات مطلوبة في الإمارات, وظائف عالية الدخل, نمو المهن, مستقبل الوظائف, وظائف الذكاء الاصطناعي"
   },
-
   jobs: {
     title: "📘 دليل شامل للمهن والتخصصات المطلوبة حاليًا في الخليج | WorldCareers",
     description: "استعرض أكثر من 200 مهنة وتخصص جامعي مطلوبين اليوم في الخليج. تصفح حسب المجال، المهارات، الراتب، ونسبة الطلب. قاعدة بيانات ذكية تساعدك على التخطيط لمستقبلك.",
@@ -7682,12 +7677,12 @@ function showSection(sectionId) {
   const section = sections[sectionId];
   if (!section) return;
 
-  // إظهار القسم الصحيح وإخفاء البقية
-  document.querySelectorAll('.section').forEach(el => {
-    el.style.display = el.id === sectionId ? 'block' : 'none';
+  // إظهار القسم المطلوب فقط
+  document.querySelectorAll('.section').forEach(sec => {
+    sec.style.display = (sec.id === sectionId) ? 'block' : 'none';
   });
 
-  // تحديث البيانات الوصفية
+  // تحديث بيانات الميتا
   document.title = section.title;
   updateMetaTag("description", section.description);
   updateMetaTag("keywords", section.keywords || "");
@@ -7700,54 +7695,44 @@ function showSection(sectionId) {
 
   updateCanonical(window.location.origin + section.url);
 
-  // تحديث الرابط في العنوان (URL) باستخدام hash
-  window.history.pushState({ section: sectionId }, section.title, `/#${sectionId}`);
+  window.history.pushState({ section: sectionId }, section.title, section.url);
 }
 
-// التنقل عند الضغط على الروابط
+// عند النقر على روابط التنقل
 document.querySelectorAll('.nav-link').forEach(link => {
   link.addEventListener('click', function (event) {
     event.preventDefault();
-    const href = this.getAttribute('href');
-    const sectionId = href.replace(/^#/, '').replace(/^\//, '');
-    if (sections[sectionId]) {
-      showSection(sectionId);
+    const href = this.getAttribute('href').replace(/^#|^\//, '');
+    if (sections[href]) {
+      showSection(href);
       document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
       this.classList.add('active');
     }
   });
 });
 
-// عند الضغط على زر العودة أو التقديم في المتصفح
+// عند الرجوع أو التقديم في المتصفح
 window.onpopstate = function (event) {
-  const hash = window.location.hash.replace(/^#/, '');
-  const sectionId = event.state?.section || hash || window.location.pathname.replace(/^\//, '');
-  if (!sections[sectionId]) return;
-  showSection(sectionId);
-
-  document.querySelectorAll('.nav-link').forEach(l => {
-    const href = l.getAttribute('href').replace(/^#/, '').replace(/^\//, '');
-    l.classList.toggle('active', href === sectionId);
-  });
+  const sectionId = event.state?.section || window.location.pathname.replace(/^\//, '');
+  if (sections[sectionId]) {
+    showSection(sectionId);
+    document.querySelectorAll('.nav-link').forEach(l => {
+      const href = l.getAttribute('href').replace(/^#|^\//, '');
+      l.classList.toggle('active', href === sectionId);
+    });
+  }
 };
 
-// عند تحميل الصفحة مباشرة (مثل /about أو /#about)
+// عند تحميل الصفحة مباشرة
 window.onload = function () {
-  let path = window.location.pathname.replace(/^\//, '');
-  let hash = window.location.hash.replace(/^#/, '');
-  const sectionId = hash || path;
-
-  if (!sections[sectionId]) return;
-
+  let sectionId = window.location.pathname.replace(/^\//, '');
+  if (!sections[sectionId]) sectionId = "quiz"; // قسم افتراضي
   showSection(sectionId);
-
   document.querySelectorAll('.nav-link').forEach(l => {
-    const href = l.getAttribute('href').replace(/^#/, '').replace(/^\//, '');
+    const href = l.getAttribute('href').replace(/^#|^\//, '');
     l.classList.toggle('active', href === sectionId);
   });
 };
-
-
         </script>
     </body>
 </html>
