@@ -7604,7 +7604,69 @@ document.getElementById('prevQuestionBtn').addEventListener('click', goToPreviou
 window.addEventListener('resize', onFilterChange);
 document.addEventListener('DOMContentLoaded', onFilterChange);
 
+const sections = {
+  quiz: {
+    title: "🎯 اكتشف مهنتك المثالية في أقل من 5 دقائق | اختبار مهني ذكي ومجاني – WorldCareers",
+    description: "اعرف التخصص الجامعي والمجال الوظيفي الأمثل لك من خلال اختبار مهني دقيق مبني على الذكاء الاصطناعي وتحليل الشخصية. النتائج فورية وموثوقة.",
+  },
+  about: {
+    title: "عن منصة WorldCareers | خبراء التوجيه المهني في العالم العربي",
+    description: "نحن منصة مهنية وتقنية متخصصة في دعم الشباب العربي لاختيار تخصصهم الجامعي ومسارهم المهني عبر أدوات تحليل متقدمة، اختبارات ذكية، ومقارنات سوقية دقيقة.",
+  },
+  compare: {
+    title: "🔍 قارن بين التخصصات والمهن حسب الرواتب، الضغط والنمو الوظيفي | WorldCareers",
+    description: "أداة ذكية لمقارنة المهن والتخصصات الجامعية حسب الدخل السنوي، بيئة العمل، مستقبل السوق، ومعدل التوظيف.",
+  },
+  'best-jobs': {
+    title: "🚀 أكثر المهن والتخصصات مطلوبة في الخليج | رواتب وطلب مرتفع",
+    description: "تعرف على الوظائف والتخصصات ذات النمو الأسرع في السعودية والإمارات حتى عام 2030.",
+  },
+  jobs: {
+    title: "📘 دليل شامل للمهن والتخصصات المطلوبة حاليًا في الخليج | WorldCareers",
+    description: "استعرض أكثر من 200 مهنة وتخصص جامعي مطلوبين اليوم في الخليج.",
+  }
+};
 
+function updateMeta(title, desc) {
+  document.title = title;
+  let metaDesc = document.querySelector('meta[name="description"]');
+  if (!metaDesc) {
+    metaDesc = document.createElement('meta');
+    metaDesc.name = "description";
+    document.head.appendChild(metaDesc);
+  }
+  metaDesc.content = desc;
+}
+
+function showSection(sectionId) {
+  document.querySelectorAll('.section').forEach(section => {
+    section.style.display = (section.id === sectionId) ? 'block' : 'none';
+  });
+
+  // تحديث العنوان والوصف
+  const data = sections[sectionId];
+  if (data) {
+    updateMeta(data.title, data.description);
+  }
+
+  // تفعيل الرابط النشط
+  document.querySelectorAll('.nav-link').forEach(link => {
+    const linkTarget = link.getAttribute('href').replace(/^#/, '');
+    link.classList.toggle('active', linkTarget === sectionId);
+  });
+}
+
+// عند تغيير الرابط في المتصفح
+window.addEventListener("hashchange", () => {
+  const sectionId = location.hash.replace(/^#/, '') || 'quiz';
+  showSection(sectionId);
+});
+
+// عند تحميل الصفحة أول مرة
+window.addEventListener("DOMContentLoaded", () => {
+  const sectionId = location.hash.replace(/^#/, '') || 'quiz';
+  showSection(sectionId);
+});
         </script>
     </body>
 </html>
