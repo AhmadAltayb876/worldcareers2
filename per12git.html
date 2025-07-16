@@ -7605,6 +7605,149 @@ window.addEventListener('resize', onFilterChange);
 document.addEventListener('DOMContentLoaded', onFilterChange);
 
 
+const sections = {
+  quiz: {
+    title: "🎯 اكتشف مهنتك المثالية في أقل من 5 دقائق | اختبار مهني ذكي ومجاني – WorldCareers",
+    description: "اعرف التخصص الجامعي والمجال الوظيفي الأمثل لك من خلال اختبار مهني دقيق مبني على الذكاء الاصطناعي وتحليل الشخصية. النتائج فورية وموثوقة.",
+    url: "/quiz",
+    keywords: "اختبار تحديد المهنة, اختبار شخصية وظيفي, اختبار تخصص جامعي, اختبار مهني للطلاب, اكتشاف المهنة المناسبة, مسار مهني ذكي, career test بالعربي"
+  },
+
+  about: {
+    title: "عن منصة WorldCareers | خبراء التوجيه المهني في العالم العربي",
+    description: "نحن منصة مهنية وتقنية متخصصة في دعم الشباب العربي لاختيار تخصصهم الجامعي ومسارهم المهني عبر أدوات تحليل متقدمة، اختبارات ذكية، ومقارنات سوقية دقيقة.",
+    url: "/about",
+    keywords: "منصة توجيه مهني, عن WorldCareers, فريق التخصصات والمهن, من نحن, توجيه طلاب, مستشار مهني رقمي"
+  },
+
+  compare: {
+    title: "🔍 قارن بين التخصصات والمهن حسب الرواتب، الضغط والنمو الوظيفي | WorldCareers",
+    description: "أداة ذكية لمقارنة المهن والتخصصات الجامعية حسب الدخل السنوي، بيئة العمل، مستقبل السوق، ومعدل التوظيف. اتخذ قرارك المهني بثقة وبيانات دقيقة.",
+    url: "/compare",
+    keywords: "مقارنة المهن والتخصصات, رواتب الوظائف في الخليج, نمو الوظائف, تحليل ضغط العمل, أفضل تخصص حسب الراتب, اتخاذ قرار مهني"
+  },
+
+  'best-jobs': {
+    title: "🚀 أكثر المهن والتخصصات مطلوبة في الخليج | رواتب وطلب مرتفع",
+    description: "تعرف على الوظائف والتخصصات ذات النمو الأسرع في السعودية والإمارات حتى عام 2030. تحليل شامل للرواتب، مؤشرات السوق، ومستقبل الذكاء الاصطناعي في المهن.",
+    url: "/best-jobs",
+    keywords: "أفضل المهن في السعودية, وظائف المستقبل 2030, تخصصات مطلوبة في الإمارات, وظائف عالية الدخل, نمو المهن, مستقبل الوظائف, وظائف الذكاء الاصطناعي"
+  },
+
+  jobs: {
+    title: "📘 دليل شامل للمهن والتخصصات المطلوبة حاليًا في الخليج | WorldCareers",
+    description: "استعرض أكثر من 200 مهنة وتخصص جامعي مطلوبين اليوم في الخليج. تصفح حسب المجال، المهارات، الراتب، ونسبة الطلب. قاعدة بيانات ذكية تساعدك على التخطيط لمستقبلك.",
+    url: "/jobs",
+    keywords: "وظائف اليوم في السعودية, تخصصات مطلوبة 2025, دليل المهن في الخليج, وظائف عالية الطلب, قاعدة بيانات وظائف, تخطيط مهني, تحليل سوق العمل"
+  }
+};
+
+function updateMetaTag(name, content) {
+  let element = document.querySelector(`meta[name="${name}"]`);
+  if (element) {
+    element.setAttribute("content", content);
+  } else {
+    element = document.createElement('meta');
+    element.name = name;
+    element.content = content;
+    document.head.appendChild(element);
+  }
+}
+
+function updateMetaProperty(property, content) {
+  let element = document.querySelector(`meta[property="${property}"]`);
+  if (element) {
+    element.setAttribute("content", content);
+  } else {
+    element = document.createElement('meta');
+    element.setAttribute("property", property);
+    element.content = content;
+    document.head.appendChild(element);
+  }
+}
+
+function updateCanonical(url) {
+  let canonical = document.querySelector("link[rel='canonical']");
+  if (canonical) {
+    canonical.setAttribute("href", url);
+  } else {
+    canonical = document.createElement("link");
+    canonical.setAttribute("rel", "canonical");
+    canonical.setAttribute("href", url);
+    document.head.appendChild(canonical);
+  }
+}
+
+function showSection(sectionId) {
+  const section = sections[sectionId];
+  if (!section) return;
+
+  // إظهار القسم الصحيح وإخفاء البقية
+  document.querySelectorAll('.section').forEach(el => {
+    el.style.display = el.id === sectionId ? 'block' : 'none';
+  });
+
+  // تحديث البيانات الوصفية
+  document.title = section.title;
+  updateMetaTag("description", section.description);
+  updateMetaTag("keywords", section.keywords || "");
+  updateMetaTag("robots", "index, follow");
+
+  updateMetaProperty("og:title", section.title);
+  updateMetaProperty("og:description", section.description);
+  updateMetaProperty("og:url", window.location.origin + section.url);
+  updateMetaProperty("og:type", "website");
+
+  updateCanonical(window.location.origin + section.url);
+
+  // تحديث الرابط في العنوان (URL) باستخدام hash
+  window.history.pushState({ section: sectionId }, section.title, `/#${sectionId}`);
+}
+
+// التنقل عند الضغط على الروابط
+document.querySelectorAll('.nav-link').forEach(link => {
+  link.addEventListener('click', function (event) {
+    event.preventDefault();
+    const href = this.getAttribute('href');
+    const sectionId = href.replace(/^#/, '').replace(/^\//, '');
+    if (sections[sectionId]) {
+      showSection(sectionId);
+      document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+      this.classList.add('active');
+    }
+  });
+});
+
+// عند الضغط على زر العودة أو التقديم في المتصفح
+window.onpopstate = function (event) {
+  const hash = window.location.hash.replace(/^#/, '');
+  const sectionId = event.state?.section || hash || window.location.pathname.replace(/^\//, '');
+  if (!sections[sectionId]) return;
+  showSection(sectionId);
+
+  document.querySelectorAll('.nav-link').forEach(l => {
+    const href = l.getAttribute('href').replace(/^#/, '').replace(/^\//, '');
+    l.classList.toggle('active', href === sectionId);
+  });
+};
+
+// عند تحميل الصفحة مباشرة (مثل /about أو /#about)
+window.onload = function () {
+  let path = window.location.pathname.replace(/^\//, '');
+  let hash = window.location.hash.replace(/^#/, '');
+  const sectionId = hash || path;
+
+  if (!sections[sectionId]) return;
+
+  showSection(sectionId);
+
+  document.querySelectorAll('.nav-link').forEach(l => {
+    const href = l.getAttribute('href').replace(/^#/, '').replace(/^\//, '');
+    l.classList.toggle('active', href === sectionId);
+  });
+};
+
+
         </script>
     </body>
 </html>
