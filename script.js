@@ -167,29 +167,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  // إضافة حدث النقر لأزرار القسم الرئيسي
-  const homeButtons = document.querySelectorAll(".home-btn");
-  homeButtons.forEach((button) => {
-    button.addEventListener("click", function (e) {
-      e.preventDefault();
-      const targetHref = this.getAttribute("href");
-
-      // استخدام نفس الدالة للتعامل مع النقر
-      const fakeLink = {
-        getAttribute: () => targetHref,
-        preventDefault: () => {},
-        classList: { remove: () => {}, add: () => {} },
-      };
-
-      // إنشاء كائن مشابه لحدث النقر
-      const fakeEvent = {
-        preventDefault: () => {},
-        target: fakeLink,
-      };
-
-      handleNavLinkClick.call(fakeLink, fakeEvent);
-    });
-  });
   // تهيئة البيانات
   renderProfessions(professions);
   renderMajors(majors);
