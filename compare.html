@@ -1,0 +1,352 @@
+ <!DOCTYPE html>
+<html dir="rtl" lang="ar">
+    <head>
+       <link rel="stylesheet" href="style.css">
+         
+        <meta charset="utf-8"/>
+        <meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0" name="viewport"/>
+        <meta content="index, follow, max-image-preview:large" name="robots"/>
+       
+        <meta content="website" property="og:type"/>
+       <meta name="google-adsense-account" content="ca-pub-7598344882701441">
+    
+        <link rel="stylesheet" href="style.css">
+        <link href="https://fonts.googleapis.com" rel="preconnect"/>
+        <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+        <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;700&amp;display=swap" rel="stylesheet"/>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"/>
+     <meta name="p:domain_verify" content="04153131ab858816b50b3a656a9e3729"/>
+     <link rel="icon" type="image/png" href="WorldCareerslogo.svg" sizes="64x64">
+<!-- ✅ Robots -->
+<meta name="robots" content="index, follow, max-image-preview:large"/>
+
+<!-- ✅ Title -->
+<title>قارن بين المهن والتخصصات | WorldCareers - اختر مسارك بثقة</title>
+
+<!-- ✅ Description -->
+<meta name="description" content="استخدم أداة المقارنة التفاعلية من WorldCareers لمقارنة المهن والتخصصات الجامعية بدقة. استكشف الفروقات في الرواتب، بيئة العمل، الضغط، المهارات المطلوبة، ومستقبل كل مهنة حتى عام 2030. قارن بين وظائف مثل الطب، الهندسة، البرمجة، الأمن السيبراني، الذكاء الاصطناعي، التسويق، والتعليم لتحديد الخيار الأمثل لمستقبلك.">
+
+<!-- ✅ Keywords -->
+<meta name="keywords" content="مقارنة المهن, مقارنة التخصصات الجامعية, اختيار التخصص الأفضل, الفرق بين المهن, مقارنة الرواتب, بيئة العمل, ضغط المهنة, مهارات المستقبل, مقارنة وظائف البرمجة, مقارنة وظائف الهندسة, مقارنة وظائف الطب, الأمن السيبراني مقابل الذكاء الاصطناعي, UX UI مقابل التسويق الرقمي, تخصص مناسب لي, مقارنة المهن المطلوبة في الخليج, مقارنة وظائف المستقبل 2030">
+
+<!-- ✅ Author -->
+<meta name="author" content="WorldCareers Team"/>
+
+<!-- ✅ Canonical -->
+<link rel="canonical" href="https://worldcareers.net/compare.html"/>
+
+<!-- ✅ Open Graph / Facebook -->
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="قارن بين المهن والتخصصات | WorldCareers"/>
+<meta property="og:description" content="قارن بين المهن والتخصصات الجامعية من حيث الرواتب، الضغط، بيئة العمل، والمهارات المطلوبة. أداة تفاعلية تساعدك على اتخاذ قرار مهني صحيح."/>
+<meta property="og:url" content="https://worldcareers.net/compare.html"/>
+<meta property="og:image" content="https://worldcareers.net/assets/og-compare.jpg"/>
+
+<!-- ✅ Twitter Cards -->
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="⚖️ أداة المقارنة بين المهن والتخصصات | WorldCareers"/>
+<meta name="twitter:description" content="قارن بين الطب، الهندسة، البرمجة، الأمن السيبراني، التسويق، التعليم، وغيرها. استكشف الفروقات في الرواتب والمهارات المستقبلية حتى 2030."/>
+<meta name="twitter:image" content="https://worldcareers.net/assets/twitter-compare.jpg"/>
+
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WBM8BPHZRL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-WBM8BPHZRL');
+</script>
+      
+
+</script>
+
+<style>
+      /* أنماط محسنة لجدول المقارنة */
+     table {
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 0;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        border-radius: 12px;
+        overflow: hidden;
+        background: white;
+    }
+
+     th {
+        background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+        color: white;
+        padding: 1.2rem;
+        text-align: center;
+        font-weight: 700;
+        font-size: 1.1rem;
+        position: sticky;
+        top: 0;
+    }
+
+     td {
+        padding: 1rem;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        text-align: center;
+        transition: background 0.2s;
+    }
+
+     tr:last-child td {
+        border-bottom: none;
+    }
+
+     tr:hover td {
+        background: rgba(10, 132, 255, 0.03);
+    }
+
+     .compare-winner {
+        background: rgba(58, 175, 169, 0.08);
+        position: relative;
+        font-weight: 600;
+    }
+
+     .compare-winner::after {
+        content: "✓ الأفضل";
+        position: absolute;
+        left: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: var(--secondary);
+        color: white;
+        padding: 0.3rem 0.8rem;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        box-shadow: 0 2px 8px rgba(58, 175, 169, 0.3);
+    }
+
+    /* تأثيرات للخلايا المهمة */
+     td.highlight-cell {
+        font-weight: 700;
+        color: var(--primary);
+        background: rgba(10, 132, 255, 0.05);
+    }
+
+    /* شريط التمرير للجدول */
+     .table-scroll {
+        max-height: 400px;
+        overflow-y: hidden;
+        border-radius: 12px;
+    }
+
+     .table-scroll::-webkit-scrollbar {
+        width: 6px;
+    }
+
+     .table-scroll::-webkit-scrollbar-thumb {
+        background: rgba(10, 132, 255, 0.3);
+        border-radius: 3px;
+    }
+    /* أنماط محسنة لبطاقات نتائج المقارنة */
+    Details {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-top: 2.5rem;
+    }
+  Results {
+        display: none;
+        margin-top: 2rem;
+        background: white;
+        border-radius: 16px;
+        padding: 0.5rem;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+        border: 1px solid rgba(10, 132, 255, 0.1);
+        animation: fadeIn 0.5s ease-out;
+    }
+
+    Results h3 {
+        color: var(--primary);
+        text-align: center;
+        margin-bottom: 2rem;
+        font-size: 1rem;
+        position: relative;
+        padding-bottom: 1rem;
+    }
+
+    Results h3::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 4px;
+        background: linear-gradient(to right, var(--primary), var(--secondary));
+        border-radius: 2px;
+    }
+@media(max-width: 480px) {
+ /* تكبير شريط التمرير ليكون أكثر وضوحًا */
+         .table-scroll::-webkit-scrollbar {
+            width: 8px;
+        }
+
+
+
+
+}
+
+</style>
+ </head>
+ <body>
+            <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo-quiz-wrapper">
+                    <div class="logo-container">
+                        <img src="/WorldCareerslogo.svg" alt="Logo" class="logo-img">
+                        <div class="logo-text">
+                            <span class="world">World</span>
+                            <span class="careers">Careers</span>
+                        </div>
+                    </div>
+                    <a class="nav-link quiz-btn logo-quiz-btn" href="#quiz">
+                        <i class="fas fa-brain"></i>
+                        <span class="quiz-label">اكتشف مهنتك</span>
+                    </a>
+                </div>
+                <!-- شريط البحث -->
+                <div class="search-container">
+                    <input class="search-input" dir="rtl" id="searchInput" placeholder="ابحث عن مهنة..." type="text"/>
+                    <div class="search-type-buttons" >
+                        <button class="search-type" data-type="majors"><i class="fas fa-graduation-cap"></i>    التخصص</button>
+                        <button class="search-type active" data-type="jobs"><i class="fas fa-briefcase" style="left: 0.1rem;"></i>   المهنة</button>
+                    </div>
+                    <button class="search-btn"><i class="fas fa-search"></i></button>
+                    <div class="search-results" id="searchResults"></div>
+                </div>
+                <div class="nav-links">
+                    <a class="nav-link"  id="about-link" href="/about.html" onclick="startTyping(); return false;">من نحن</a>
+                    <a class="nav-link" href="/compare.html">قارن </a>
+                    <a class="nav-link" href="/best-jobs.html">المهن ذهبية</a>
+                    <a class="nav-link " href="/jobs.html">المهن و التخصصات</a>
+                    <a class="nav-link " href="/per12git.html">الرئيسية </a>
+                    <!-- إضافة زر الاختبار هنا -->
+                    <a class="nav-link quiz-btn" href="/quiz.html" >
+                        <i class="fas fa-brain"></i>
+                        <span class="quiz-label"style="font: 1.1em sans-serif;">اكتشف مهنتك</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    <!-- قسم compare / Hunt a job -->
+                <!-- اختيار نوع المقارنة -->
+        <section class="content-section" id="compare">
+            <div class="content-card">
+                <div class="compare-header">
+                    <h2 style="color: var(--primary); text-align: center; margin-bottom: 1.5rem;">
+                        قسم المقارنة  <i class="fas fa-balance-scale"></i>
+                    </h2>
+                    <p style="text-align: center; color: #666; margin-bottom: 2rem;">
+                        قارن بين المهن أو التخصصات الجامعية لاتخاذ القرار الأفضل لمستقبلك
+                    </p>
+                </div>
+                <!-- اختيار نوع المقارنة -->
+                <div class="compare-type-selector" >
+                    <div class="toggle-switch">
+                        <input type="radio" id="compareJobs" name="compareType" value="jobs" checked onclick="setCompareType('jobs')" title="زر لعرض جميع البطاقات المتعلقة بالمهن مرتبين حسب الطلب">
+                        <label for="compareJobs" class="toggle-option .active">
+                            <span>مقارنة المهن</span>
+                            <i class="fas fa-briefcase"></i>
+                        </label>
+                        <input type="radio" id="compareMajors" name="compareType" value="majors" onclick="setCompareType('majors')">
+                        <label for="compareMajors" class="toggle-option">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>مقارنة التخصصات</span>
+                        </label>
+                        <span class="toggle-slider"></span>
+                    </div>
+                </div>
+                <!-- حقول إدخال البحث -->
+                <div class="compare-inputs-container">
+                    <div class="compare-input-group">
+                        <div class="input-header">
+                            <span class="input-number">1</span>
+                            <h4>المادة الأولى</h4>
+                        </div>
+                        <div class="search-container compare-search">
+                            <input type="text" class="search-input" placeholder="ابحث هنا..."
+                                id="compareInput1" autocomplete="off" dir="rtl">
+                            <button class="search-btn"><i class="fas fa-search"></i></button>
+                            <div class="search-results" id="compareResults1"></div>
+                        </div>
+                    </div>
+                    <div class="compare-divider">
+                        <div class="divider-line"></div>
+                    </div>
+                    <div class="compare-input-group">
+                        <div class="input-header">
+                            <span class="input-number">2</span>
+                            <h4>المادة الثانية</h4>
+                        </div>
+                        <div class="search-container compare-search">
+                            <input type="text" class="search-input" placeholder="ابحث هنا..."
+                                id="compareInput2" autocomplete="off" dir="rtl">
+                            <button class="search-btn"><i class="fas fa-search"></i></button>
+                            <div class="search-results" id="compareResults2"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="compare-action">
+                    <button id="compareBtn" onclick="compareItems()" class="compare-button">
+                    <i class="fas fa-exchange-alt"></i> قارن الآن
+                    <span class="tooltip">سيتم عرض النتائج في الأسفل</span>
+                    </button>
+                </div>
+                <!-- نتائج المقارنة -->
+                <div id="compareResults" style="display: none;">
+                    <h3>نتائج المقارنة</h3>
+                    <div class="table-scroll">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>المعيار</th>
+                                    <th id="compareHeader1"></th>
+                                    <th id="compareHeader2"></th>
+                                </tr>
+                            </thead>
+                            <tbody id="compareTableBody">
+                                <!-- سيتم ملؤه بالبيانات -->
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="compare-section-divider"></div>
+                    <div id="compareDetails">
+                        <!-- تفاصيل كل عنصر -->
+                    </div>
+                </div>
+                <div class="compare-controls" id="compareControls">
+                    <button onclick="resetcom()" class="control-btn reset-btn">
+                        <i class="fas fa-redo"></i> مقارنة اخرى
+                    </button>
+                    <button onclick="goToHome()" class="control-btn home-btn">
+                        <i class="fas fa-home"></i> الصفحة الرئيسية
+                    </button>
+                </div>
+            </div>
+        </section>
+       
+        <div class="modal" id="detailsModal">
+            <div class="modal-content">
+              <span class="close-btn" onclick="closeModal()">×</span>
+              <div class="modal-header">
+                <h2 id="modalTitle"></h2>
+                <div class="category-tag" id="modalCategory"></div>
+              </div>
+              <div id="modalContent"></div>
+            </div>
+          </div>
+                <script src="script.js"></script>
+                <script>
+                    // تحديث الرابط النشط عند تحميل الصفحة
+                    document.addEventListener("DOMContentLoaded", function() {
+                        setActiveNavLink();
+                    });
+                </script>
+ </body>
+ </html>
+  
