@@ -1,167 +1,206 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>قسم المقالات - WorldCareers</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>قسم المقالات - WorldCareers</title>
 
-<!-- استيراد الخط من Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/png" href="WorldCareerslogo.svg">
-            <meta property="og:image" content="https://WorldCareers.net/WorldCareerslogo_converted.png">
-<style>
-  /* إعدادات عامة */
-  body {
-    font-family: 'Cairo', sans-serif;
-    background-color: #F5F7FA;
-    color: #1A1A1A;
-    margin: 0;
-    padding: 0;
-  }
-        :root {
-        --primary: #0A84FF;
-        --secondary: #3AAFA9;
+    <!-- استيراد الخط من Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* إعدادات عامة */
+      body {
+        font-family: "Cairo", sans-serif;
+        background-color: #f5f7fa;
+        color: #1a1a1a;
+        margin: 0;
+        padding: 0;
+      }
+      :root {
+        --primary: #0a84ff;
+        --secondary: #3aafa9;
         --neutral: #f5f7fa;
         --dark: #1e1e1e;
         --muted: #888;
         --accent: #0f172a;
       }
-  a {
-    color: inherit;
-    text-decoration: none;
-  }
-  a:hover {
-    color: #FF6F3C;
-  }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      a:hover {
+        color: #ff6f3c;
+      }
 
-  /* رأس الصفحة */
-  header {
-  background: linear-gradient(to left, var(--primary), var(--secondary));
+      /* رأس الصفحة */
+      header {
+        background: linear-gradient(to left, var(--primary), var(--secondary));
         color: white;
         text-align: center;
-    padding: 30px 0;
-    font-size: 28px;
-    font-weight: 700;
-    letter-spacing: 1px;
-  }
+        padding: 30px 0;
+        font-size: 28px;
+        font-weight: 700;
+        letter-spacing: 1px;
+      }
 
+      /* شبكة عرض المقالات */
+      .articles-grid {
+        max-width: 1100px;
+        margin: 0 auto 60px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 30px;
+        padding: 0 20px;
+        margin-top: 30px;
+      }
 
-  /* شبكة عرض المقالات */
-  .articles-grid {
-    max-width: 1100px;
-    margin: 0 auto 60px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(320px,1fr));
-    gap: 30px;
-    padding: 0 20px;
-    margin-top: 30px;
-  }
+      /* بطاقة المقال */
+      .article-card {
+        background-color: white;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        transition: transform 0.3s, box-shadow 0.3s;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+      }
+      .article-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      }
 
-  /* بطاقة المقال */
-  .article-card {
-    background-color: white;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    overflow: hidden;
-    transition: transform 0.3s, box-shadow 0.3s;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-  }
-  .article-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-  }
+      /* صورة المقال */
+      .article-image {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+      }
 
-  /* صورة المقال */
-  .article-image {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-  }
+      /* محتوى المقال */
+      .article-content {
+        padding: 20px 25px;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+      }
+      .article-content h3 {
+        font-size: 22px;
+        color: #002d62;
+        margin: 0 0 12px 0;
+        font-weight: 700;
+        line-height: 1.3;
+      }
+      .article-content p {
+        font-size: 15px;
+        color: #555555;
+        flex-grow: 1;
+        line-height: 1.5;
+        margin: 0 0 18px 0;
+      }
 
-  /* محتوى المقال */
-  .article-content {
-    padding: 20px 25px;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-  }
-  .article-content h3 {
-    font-size: 22px;
-    color: #002D62;
-    margin: 0 0 12px 0;
-    font-weight: 700;
-    line-height: 1.3;
-  }
-  .article-content p {
-    font-size: 15px;
-    color: #555555;
-    flex-grow: 1;
-    line-height: 1.5;
-    margin: 0 0 18px 0;
-  }
+      /* رابط قراءة المزيد */
+      .read-more {
+        margin-top: auto;
+        text-align: left;
+      }
+      .read-more span {
+        font-weight: 700;
+        color: #3aafa9;
+        font-size: 16px;
+        transition: color 0.3s;
+      }
+      .read-more span:hover {
+        color: #ff6f3c;
+      }
 
-  /* رابط قراءة المزيد */
-  .read-more {
-    margin-top: auto;
-    text-align: left;
-  }
-  .read-more span {
-    font-weight: 700;
-    color: #3AAFA9;
-    font-size: 16px;
-    transition: color 0.3s;
-  }
-  .read-more span:hover {
-    color: #FF6F3C;
-  }
+      /* متجاوب */
+      @media (max-width: 480px) {
+        header {
+          font-size: 22px;
+          padding: 15px 0;
+        }
+        .article-content h3 {
+          font-size: 18px;
+        }
+        .article-content p {
+          font-size: 14px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>قسم المقالات - WorldCareers</header>
 
-  /* متجاوب */
-  @media (max-width: 480px) {
-    header {
-      font-size: 22px;
-      padding: 15px 0;
-    }
-    .article-content h3 {
-      font-size: 18px;
-    }
-    .article-content p {
-      font-size: 14px;
-    }
-  }
+    <div class="articles-grid">
+      <a
+        href="articles/article1.html"
+        class="article-card"
+        rel="noopener noreferrer"
+        aria-label="المقال: كيف تبني مسيرتك المهنية بنجاح؟"
+      >
+        <img
+          src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=400&q=80"
+          alt="كيف تبني مسيرتك المهنية بنجاح؟"
+          class="article-image"
+        />
+        <div class="article-content">
+          <h3>كيف تبني مسيرتك المهنية بنجاح؟</h3>
+          <p>
+            اكتشف أهم الخطوات والنصائح التي تساعدك على بناء مسيرة مهنية ناجحة
+            ومميزة في عالم العمل الحديث.
+          </p>
+          <div class="read-more"><span>اقرأ المزيد &rarr;</span></div>
+        </div>
+      </a>
 
-</style>
-</head>
-<body>
+      <a
+        href="articles/article2.html"
+        class="article-card"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="المقال: أفضل المهارات المطلوبة في سوق العمل 2025"
+      >
+        <img
+          src="https://images.unsplash.com/photo-1521790797524-b2497295b8a0?auto=format&fit=crop&w=400&q=80"
+          alt="أفضل المهارات المطلوبة في سوق العمل 2025"
+          class="article-image"
+        />
+        <div class="article-content">
+          <h3>أفضل المهارات المطلوبة في سوق العمل 2025</h3>
+          <p>
+            تعرف على المهارات التي ستفتح لك أبواب النجاح والتميز في سوق العمل
+            خلال السنوات القادمة.
+          </p>
+          <div class="read-more"><span>اقرأ المزيد &rarr;</span></div>
+        </div>
+      </a>
 
-<header>قسم المقالات - WorldCareers</header>
-
-<div class="articles-grid">
-
-  <a href="articles/article1.html" class="article-card"  rel="noopener noreferrer" aria-label="المقال: كيف تبني مسيرتك المهنية بنجاح؟">
-    <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=400&q=80" alt="كيف تبني مسيرتك المهنية بنجاح؟" class="article-image" />
-    <div class="article-content">
-      <h3>كيف تبني مسيرتك المهنية بنجاح؟</h3>
-      <p>اكتشف أهم الخطوات والنصائح التي تساعدك على بناء مسيرة مهنية ناجحة ومميزة في عالم العمل الحديث.</p>
-      <div class="read-more"><span>اقرأ المزيد &rarr;</span></div>
+      <a
+        href="articles\Iphone17.html"
+        class="article-card"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="المقال: أفضل المهارات المطلوبة في سوق العمل 2025"
+      >
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT08RjNRyzlouzgD6UhGi44FGx_nMliRlZtRw&shttps://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT08RjNRyzlouzgD6UhGi44FGx_nMliRlZtRw&s" 
+          class="article-image"
+        />
+ <div class="article-content">
+          <h3>أحدث نسخ اصدارات iphone 17 </h3>
+          <p>
+            تعرف على جميع اصدارات ايفون 17 وجميع ميزاته وعيوبه     .
+          </p>
+          <div class="read-more"><span>اقرأ المزيد &rarr;</span></div>
+        </div>
+      </a>
+      <!-- أضف المزيد من المقالات بنفس النمط -->
     </div>
-  </a>
-
-  <a href="articles/article2.html" class="article-card" target="_blank" rel="noopener noreferrer" aria-label="المقال: أفضل المهارات المطلوبة في سوق العمل 2025">
-    <img src="https://images.unsplash.com/photo-1521790797524-b2497295b8a0?auto=format&fit=crop&w=400&q=80" alt="أفضل المهارات المطلوبة في سوق العمل 2025" class="article-image" />
-    <div class="article-content">
-      <h3>أفضل المهارات المطلوبة في سوق العمل 2025</h3>
-      <p>تعرف على المهارات التي ستفتح لك أبواب النجاح والتميز في سوق العمل خلال السنوات القادمة.</p>
-      <div class="read-more"><span>اقرأ المزيد &rarr;</span></div>
-    </div>
-  </a>
-
-
-  <!-- أضف المزيد من المقالات بنفس النمط -->
-
-</div>
-
-</body>
+  </body>
 </html>
