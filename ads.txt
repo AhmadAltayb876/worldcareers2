@@ -1,1 +1,1 @@
-google.com, pub-7598344882701441, DIRECT, f08c47fec0942fa0
+Redirect 301 /ads.txt https://srv.adstxtmanager.com/19390/worldcareers.net
