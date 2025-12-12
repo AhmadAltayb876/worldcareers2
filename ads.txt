@@ -1,1 +1,4 @@
-Redirect 301 /ads.txt https://srv.adstxtmanager.com/19390/worldcareers.net
+<?php
+header('Location: https://srv.adstxtmanager.com/19390/worldcareers.net');
+exit;
+?>
