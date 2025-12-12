@@ -1,4 +1,1 @@
-<?php
-header('Location: https://srv.adstxtmanager.com/19390/worldcareers.net');
-exit;
-?>
+google.com, pub-7598344882701441, DIRECT, f08c47fec0942fa0
