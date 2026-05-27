@@ -45,7 +45,6 @@
   gtag('js', new Date());
   gtag('config', 'G-WBM8BPHZRL');
 </script>
-
 <!-- Schema.org -->
 <script type="application/ld+json">
 {
@@ -105,7 +104,6 @@
         <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;700&amp;display=swap" rel="stylesheet"/>
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"/>
      <meta name="p:domain_verify" content="04153131ab858816b50b3a656a9e3729"/>
-<!-- Google tag (gtag.js) -->
 
       
 
@@ -115,6 +113,10 @@
     margin: 1rem auto;
     padding: 0 0.5rem;
     direction: rtl;
+}
+body {
+line-height: 2rem !important;
+
 }
 </style>
    </head>
@@ -160,14 +162,13 @@
         </nav>
       <!-- قسم الاختبار المستقل -->
         <section class="content-section" id="quiz" >
-      
             <div class="quiz-container">
                 <div class="quiz-header">
                     <h1 style="color: white;">اختبار المهن المناسبة</h1>
                     <p style="color: white;">اكتشف المهنة التي تناسب مهاراتك واهتماماتك من خلال هذا الاختبار البسيط</p>
                 </div>
                 <div class="quiz-step active" id="quizWelcome">
-                    <p style="text-align: center; margin-bottom: 2rem;">سيساعدك هذا الاختبار على تحديد المهن التي تتوافق مع تفضيلاتك في:</p>
+                    <p style="text-align: center; margin-bottom: 2rem; margin-top: 1rem;" >سيساعدك هذا الاختبار على تحديد المهن التي تتوافق مع تفضيلاتك في:</p>
                     <ul style="margin-bottom: 2rem; padding-right: 1.5rem;">
                         <li>نطاق الراتب المطلوب</li>
                         <li>مجال العمل المفضل</li>
@@ -183,13 +184,11 @@
                     <div class="question-text" id="currentQuestion"></div>
                     <div class="quiz-options" id="quizOptions"></div>
                     <div class="quiz-navigation">
-                        <button class="quiz-nav-btn prev-btn" id="prevQuestionBtn" style="display: block;">
+                        <button class="quiz-nav-btn prev-btn" id="prevQuestionBtn" style="display: block;" onclick="goToPreviousQuestion()">
                             <i class="fas fa-arrow-right"></i> السؤال السابق
                         </button>
-          
                     </div>
                 </div>
-                
                 <div class="quiz-step" id="quizResults">
                     <div class="quiz-results">
                         <h3 style="color: var(--primary); margin-bottom: 1.5rem;">نتائج الاختبار</h3>
@@ -241,7 +240,10 @@
 </p>
 
 </p>
-<a href="/book.html" class="quiz-btn" id="cta-buy-button"> احصل على نسختك الآن</a>
+<a href="/book.html" class="quiz-btn" id="cta-buy-button">
+  <span class="btn-text">احصل على نسختك </span>
+  <i class="fas fa-arrow-left"></i>
+</a>
 
 </div>
                         <div class="quiz-actions">
@@ -268,16 +270,7 @@
               <div id="modalContent"></div>
             </div>
           </div>
-       
-            <script src="script.js"></script>
-            <script>
-                // تحديث الرابط النشط عند تحميل الصفحة
-                document.addEventListener("DOMContentLoaded", function() {
-                    setActiveNavLink();
-                });
-            </script>
-           
-
+          
    </body>
+   <script src="script.js"></script>
    </html>
- 

@@ -1,3 +1,84 @@
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  backdrop-filter: blur(5px);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto;
+  padding: 2rem;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 600px;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}
+
+.modal-content .close {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  color: #aaa;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.modal-content .close:hover {
+  color: #000;
+}
+
+.modal-content h2 {
+  margin-bottom: 1rem;
+  color: var(--primary);
+}
+
+.modal-content .category-tag {
+  display: inline-block;
+  background: var(--primary);
+  color: white;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.modal-content p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.modal-content strong {
+  color: var(--dark);
+}
+
+.details-btn {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.3s;
+  margin-top: 0.5rem;
+}
+
+.details-btn:hover {
+  background: var(--secondary);
+}
+
 :root {
   --primary: #0a84ff;
   --secondary: #3aafa9;
@@ -282,6 +363,7 @@
   margin: 0 auto;
   position: relative;
   overflow: hidden;
+  margin-bottom: 2rem;
 }
 
 .profile-contact::before {
@@ -1515,6 +1597,42 @@ body.modal-open {
   color: white;
 }
 
+/* تحسين الألوان عند الاختيار */
+#compareJobs:checked ~ .toggle-option:first-child,
+#compareMajors:checked ~ .toggle-option:last-child {
+  color: white !important;
+}
+
+/* إعادة اللون الأصلي للخيار غير المحدد */
+#compareJobs:checked ~ .toggle-option:last-child,
+#compareMajors:checked ~ .toggle-option:first-child {
+  color: var(--dark) !important;
+}
+
+/* تحسين الألوان للـ span داخل الخيار المحدد */
+#compareJobs:checked ~ .toggle-option:first-child span,
+#compareMajors:checked ~ .toggle-option:last-child span {
+  color: white !important;
+}
+
+/* إعادة اللون الأصلي للـ span داخل الخيار غير المحدد */
+#compareJobs:checked ~ .toggle-option:last-child span,
+#compareMajors:checked ~ .toggle-option:first-child span {
+  color: var(--dark) !important;
+}
+
+/* تحسين الألوان للأيقونات */
+#compareJobs:checked ~ .toggle-option:first-child i,
+#compareMajors:checked ~ .toggle-option:last-child i {
+  color: white !important;
+}
+
+/* إعادة اللون الأصلي لأيقونات الخيار غير المحدد */
+#compareJobs:checked ~ .toggle-option:last-child i,
+#compareMajors:checked ~ .toggle-option:first-child i {
+  color: var(--dark) !important;
+}
+
 /* حاويات حقول الإدخال */
 .compare-inputs-container {
   display: flex;
@@ -1647,6 +1765,376 @@ body.modal-open {
 
 .compare-button:hover .tooltip {
   opacity: 1;
+}
+
+/* أنماط صفحات التفاصيل للمهن والتخصصات */
+.profession-detail {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  min-height: 100vh;
+  font-family: 'Tajawal', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.profession-detail .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.detail-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  position: relative;
+  padding: 2rem 0;
+}
+
+.detail-header .category-tag {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  color: white;
+  padding: 0.5rem 1.5rem;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 15px rgba(10, 132, 255, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.detail-header h1 {
+  font-size: 3rem;
+  color: var(--dark);
+  margin-bottom: 1.5rem;
+  font-weight: 800;
+  line-height: 1.2;
+  position: relative;
+}
+
+.detail-header h1::after {
+  content: "";
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+  border-radius: 2px;
+}
+
+.detail-header .summary {
+  font-size: 1.3rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  max-width: 800px;
+  margin: 2rem auto 0;
+  font-weight: 500;
+}
+
+.detail-content {
+  background: white;
+  border-radius: 20px;
+  padding: 3rem;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+  margin-bottom: 3rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.detail-content::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.info-card {
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  border: 1px solid rgba(10, 132, 255, 0.1);
+  border-radius: 15px;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+}
+
+.info-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.info-card:hover::before {
+  transform: scaleX(1);
+}
+
+.info-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.info-card h3 {
+  color: var(--primary);
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.info-card h3 i {
+  font-size: 1.2rem;
+  opacity: 0.8;
+}
+
+.info-card p {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.description-section,
+.skills-section,
+.demand-section,
+.related-jobs-section {
+  margin-bottom: 3rem;
+  padding: 2.5rem;
+  background: linear-gradient(135deg, rgba(10, 132, 255, 0.03) 0%, rgba(58, 175, 169, 0.03) 100%);
+  border-radius: 15px;
+  border: 1px solid rgba(10, 132, 255, 0.1);
+}
+
+.description-section h2,
+.skills-section h2,
+.demand-section h2,
+.related-jobs-section h2 {
+  color: var(--primary);
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  position: relative;
+  padding-right: 1rem;
+}
+
+.description-section h2::before,
+.skills-section h2::before,
+.demand-section h2::before,
+.related-jobs-section h2::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 24px;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  border-radius: 2px;
+}
+
+.description-section p {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  line-height: 1.9;
+  margin: 0;
+  text-align: justify;
+}
+
+.skills-list,
+.related-jobs-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.skills-list li,
+.related-jobs-list li {
+  background: white;
+  border: 1px solid rgba(10, 132, 255, 0.2);
+  border-radius: 10px;
+  padding: 1rem 1.5rem;
+  color: var(--text-primary);
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.skills-list li::before,
+.related-jobs-list li::before {
+  content: " ";
+  color: var(--secondary);
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-left: 0.5rem;
+}
+
+.skills-list li:hover,
+.related-jobs-list li:hover {
+  background: linear-gradient(135deg, rgba(10, 132, 255, 0.05) 0%, rgba(58, 175, 169, 0.05) 100%);
+  transform: translateX(5px);
+  border-color: var(--secondary);
+}
+
+.demand-section p {
+  color: var(--text-secondary);
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0;
+  padding: 1rem;
+  background: white;
+  border-radius: 10px;
+  border-right: 4px solid var(--secondary);
+  text-align: center;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 3rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  min-width: 200px;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  color: white;
+  box-shadow: 0 4px 15px rgba(10, 132, 255, 0.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(10, 132, 255, 0.4);
+}
+
+.btn-secondary {
+  background: white;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+}
+
+.btn-secondary:hover {
+  background: var(--primary);
+  color: white;
+  transform: translateY(-3px);
+}
+
+/* تحسينات للشاشات الصغيرة */
+@media (max-width: 768px) {
+  .profession-detail {
+    padding: 2rem 0;
+    padding-top: 0px !important;
+  }
+  
+  .profession-detail .container {
+    padding: 0 1rem;
+  }
+  
+  .detail-header h1 {
+    font-size: 2.2rem;
+  }
+  
+  .detail-header .summary {
+    font-size: 1.1rem;
+  }
+  
+  .detail-content {
+    padding: 2rem 1.5rem;
+  }
+  
+  .info-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .info-card {
+    padding: 1.5rem;
+  }
+  
+  .description-section,
+  .skills-section,
+  .demand-section,
+  .related-jobs-section {
+    padding: 2rem 1.5rem;
+  }
+  
+  .skills-list,
+  .related-jobs-list {
+    grid-template-columns: 1fr;
+  }
+  
+  .action-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 30px;
+  }
+  
+  .btn {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .detail-header h1 {
+    font-size: 1.8rem;
+  }
+  
+  .detail-header .category-tag {
+    font-size: 0.8rem;
+    padding: 0.4rem 1rem;
+  }
+  
+  .info-card {
+    padding: 1.2rem;
+  }
+  
+  .description-section h2,
+  .skills-section h2,
+  .demand-section h2,
+  .related-jobs-section h2 {
+    font-size: 1.5rem;
+  }
 }
 
 /* تعديلات للجوال */
@@ -2049,44 +2537,84 @@ body.modal-open {
 
 /* أنماط الاختبار المهني */
 .quiz-container {
-  background: white;
-  border-radius: 15px;
-  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
   margin-bottom: 2rem;
-  
+  position: relative;
+  overflow: hidden;
+}
+
+.quiz-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.1"/><circle cx="50" cy="10" r="0.5" fill="white" opacity="0.15"/><circle cx="20" cy="60" r="0.5" fill="white" opacity="0.15"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>') repeat;
+  pointer-events: none;
 }
 
 .quiz-header {
   text-align: center;
-  margin-bottom: 2rem;
+  position: relative;
+  z-index: 1;
 }
 
 .quiz-header h3 {
-  color: var(--primary);
+  color: white;
   margin-bottom: 1rem;
+  font-size: 2rem;
+  font-weight: 700;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .quiz-header p {
-  color: #666;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.1rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .start-quiz-btn {
-  background: var(--primary);
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
   color: white;
   border: none;
-  padding: 0.8rem 2rem;
-  border-radius: 30px;
+  padding: 1.2rem 3rem;
+  border-radius: 50px;
   cursor: pointer;
-  font-weight: bold;
+  font-weight: 700;
+  font-size: 1.2rem;
   display: block;
   margin: 0 auto;
-  transition: all 0.3s;
-  width: 25%;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 8px 25px rgba(10, 132, 255, 0.4);
+  position: relative;
+  overflow: hidden;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  animation: pulseGlow 2s infinite;
+}
+
+.start-quiz-btn::before {
+  content: "";
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s;
+}
+
+.start-quiz-btn:hover::before {
+  left: 100%;
 }
 
 .start-quiz-btn:hover {
-  background: #0873d7;
-  transform: translateY(-2px);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px rgba(10, 132, 255, 0.4);
 }
 
 .quiz-step {
@@ -2099,42 +2627,123 @@ body.modal-open {
 }
 
 .quiz-progress {
-  height: 8px;
-  background: #eee;
-  border-radius: 4px;
+  height: 12px;
+  background: rgba(255, 255, 255, 0.2);
   margin-bottom: 2rem;
   overflow: hidden;
+  position: relative;
+}
+
+.quiz-progress::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+ 100% { transform: translateX(100%); }
 }
 
 .quiz-progress-bar {
   height: 100%;
-  background: var(--secondary);
-  transition: width 0.3s ease;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 0px !important;
+  position: relative;
+  overflow: hidden;
 }
 
-.question-text {
-  font-size: 1.2rem;
-  color: var(--primary);
-  margin-bottom: 1.5rem;
+.quiz-progress-bar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  animation: progress-shimmer 1.5s infinite;
+}
+
+@keyframes progress-shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.quiz-question {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  position: relative;
+  z-index: 1;
+}
+
+.question-header {
   text-align: center;
+  margin-bottom: 2rem;
+}
+
+.question-number {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+  padding: 0.5rem 1.5rem;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 15px rgba(10, 132, 255, 0.4);
+}
+
+.question-header h3 {
+  color: #2d3748;
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin: 0;
+  line-height: 1.4;
 }
 
 .quiz-options {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1rem;
+  max-width: 80%;
+  margin: 0 auto;
 }
 
 .quiz-option {
-  padding: 1rem;
-  background: #f8f9fa;
-  border: 2px solid rgba(10, 132, 255, 0.1);
-  border-radius: 12px;
+  padding: 1.5rem;
+  background: white;
+  border: 2px solid #e2e8f0;
+  border-radius: 15px;
   cursor: pointer;
-  transition: all 0.3s;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.quiz-option::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(10, 132, 255, 0.1), transparent);
+  transition: left 0.5s;
+}
+
+.quiz-option:hover::before {
+  left: 100%;
 }
 .related-jobs-container {
   margin-top: 1rem;
@@ -2156,8 +2765,7 @@ body.modal-open {
 .related-jobs-list li {
   padding: 0.5rem 0;
   border-bottom: 1px dashed #eee;
-  display: flex;
-  justify-content: space-between;
+
 }
 
 .related-jobs-list li:last-child {
@@ -2170,28 +2778,146 @@ body.modal-open {
 }
 .quiz-option:hover {
   border-color: var(--primary);
-  transform: translateY(-3px);
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(10, 132, 255, 0.2);
 }
 
 .quiz-option.selected {
-  background: rgba(58, 175, 169, 0.1);
-  border-color: var(--secondary);
+  background: linear-gradient(135deg, rgba(10, 132, 255, 0.1), rgba(58, 175, 169, 0.1));
+  border-color: var(--primary);
+  box-shadow: 0 10px 30px rgba(10, 132, 255, 0.3);
+  transform: translateY(-3px);
 }
 
 .option-number {
-  width: 30px;
-  height: 30px;
+  min-width: 40px;
+  height: 40px;
   border-radius: 50%;
-  background: var(--primary);
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
   color: white;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: bold;
+  font-weight: 700;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 15px rgba(10, 132, 255, 0.3);
+  position: relative;
+  z-index: 1;
+}
+
+.option-text {
+  font-size: 1.1rem;
+  color: #2d3748;
+  font-weight: 500;
+  line-height: 1.5;
+  flex: 1;
 }
 
 .quiz-results {
   text-align: center;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 15px;
+  margin-bottom: 2rem;
+  backdrop-filter: blur(10px);
+  position: relative;
+  z-index: 1;
+}
+
+.quiz-results h3 {
+  color: #2d3748;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 2.8rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.results-section {
+  margin-bottom: 2rem;
+}
+
+.results-section h4 {
+  color: #2d3748;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.result-item {
+  background: white;
+  border: 2px solid #e2e8f0;
+  border-radius: 15px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  text-align: right;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.result-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+}
+
+.result-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(10, 132, 255, 0.2);
+  border-color: var(--primary);
+}
+
+.result-item h5 {
+  color: #2d3748;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.result-item p {
+  color: #4a5568;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.match-score {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  box-shadow: 0 2px 10px rgba(10, 132, 255, 0.3);
+}
+
+.details-btn {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 15px rgba(10, 132, 255, 0.3);
+}
+
+.details-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(10, 132, 255, 0.4);
 }
 
 .career-match {
@@ -2608,10 +3334,6 @@ body.modal-open {
   color: white;
   border-color: var(--secondary);
 }
-.quiz-step {
-  padding: 0.5rem;
-}
-
 .quiz-option {
   background: white;
   border: 2px solid rgba(10, 132, 255, 0.1);
@@ -2689,6 +3411,75 @@ body.modal-open {
     padding: 1.2rem;
   }
 
+.quiz-options{
+max-width: 95% !important;
+}
+
+#cta-buy-button {
+  background: linear-gradient(135deg, #FF6B6B 0%, #4ECDC4 100%);
+  color: white;
+  border: none;
+  padding: 1.2rem 2.5rem;
+  border-radius: 50px;
+  font-size: 1.3rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 8px 25px rgba(255, 107, 107, 0.4);
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+  animation: bookPulse 2s infinite;
+}
+
+#cta-buy-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s;
+}
+
+#cta-buy-button:hover::before {
+  left: 100%;
+}
+
+#cta-buy-button:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 12px 35px rgba(255, 107, 107, 0.5);
+}
+
+#cta-buy-button i.fa-book-open {
+  font-size: 1.8rem;
+  animation: bookFlip 3s infinite;
+}
+
+#cta-buy-button i.fa-arrow-left {
+  font-size: 1.2rem;
+  animation: arrowMove 2s infinite;
+  margin-right: 7px;
+}
+
+@keyframes bookPulse {
+  0%, 100% { box-shadow: 0 8px 25px rgba(255, 107, 107, 0.4); }
+  50% { box-shadow: 0 8px 35px rgba(255, 107, 107, 0.6); }
+}
+
+@keyframes bookFlip {
+  0%, 100% { transform: rotateY(0deg); }
+  25% { transform: rotateY(-10deg); }
+  75% { transform: rotateY(10deg); }
+}
+
+@keyframes arrowMove {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(5px); }
+}
   .career-match h4 {
     font-size: 1.2rem;
   }
@@ -2697,7 +3488,6 @@ body.modal-open {
 @media (max-width: 768px) {
   .quiz-container {
     margin: 0rem;
-    border-radius: 15px;
   }
 
   .quiz-header {
@@ -2709,9 +3499,6 @@ body.modal-open {
     line-height: 1.3;
   }
 
-  .quiz-step {
-    padding: 0.5rem;
-  }
 
   .quiz-option {
     padding: 1rem;
@@ -2720,8 +3507,7 @@ body.modal-open {
 
   .option-number {
     width: 25px;
-    height: 25px;
-    font-size: 0.9rem;
+
   }
 
   .start-quiz-btn {
@@ -2729,7 +3515,12 @@ body.modal-open {
     padding: 1rem;
   }
 }
+.question-text{
+text-align: center;
+margin-bottom: 1rem;
 
+
+}
 /* تحسينات للشاشات الصغيرة جدًا */
 @media (max-width: 480px) {
   .quiz-header p {
@@ -2759,7 +3550,9 @@ body.modal-open {
 /* تحسين تجربة التمرير */
 .quiz-step {
   scroll-margin-top: 80px; /* تعويض ارتفاع الهيدر */
+  padding-bottom: 0.7rem;
 }
+
 .start-quiz-btn {
   /* إضافة أيقونة سهم */
   position: relative;
@@ -4552,4 +5345,1051 @@ table {
     padding: 1rem 0.3rem;
     max-width: 100%;
   }
+  
+  /* منع تحريك الصفحة يمين ويسار */
+  html {
+    overflow-x: hidden;
+  }
+  
+  body {
+    overflow-x: hidden;
+    width: 100vw;
+    max-width: 100vw;
+    position: relative;
+  }
+  
+  /* منع تحريك قسم المقارنة */
+  #compare {
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+  }
+  
+  /* إصلاح موقع اللوغو للشاشات الصغيرة */
+  .logo-img {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  /* إصلاح حاوية المقارنة */
+  .content-card {
+    width: 100%;
+    max-width: 100vw;
+    box-sizing: border-box;
+    overflow-x: hidden;
+  }
+  
+  /* إصلاح جدول المقارنة */
+  .table-scroll {
+    overflow-x: auto;
+    max-width: 100%;
+  }
+  
+  table {
+    width: 100%;
+    min-width: 300px;
+  }
+}
+
+/* ===================== تحسين قسم المقارنة للموبايل ===================== */
+
+/* حاوية رئيسية للمقارنة على الموبايل */
+@media (max-width: 768px) {
+  /* إخفاء المقارنة في الموبايل حتى تظهر النتائج */
+  #compareResults {
+    display: none !important;
+    padding: 1rem 0.5rem;
+  }
+  
+  /* إظهار النتائج فقط عند وجودها */
+  #compareResults.show-results {
+    display: block !important;
+  }
+  
+  /* إظهار الجدول المحسن للموبايل */
+  #compareResults .table-scroll {
+    display: block !important;
+    overflow-x: auto !important;
+    overflow-y: auto !important;
+    max-height: 80vh !important;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* تصميم بطاقات منفصلة لكل معيار */
+  .mobile-criteria-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    margin-bottom: 2rem;
+  }
+  
+  /* بطاقة لكل معيار */
+  .criteria-card {
+    background: white;
+    border-radius: 18px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+  }
+  
+  .criteria-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+  }
+  
+  /* رأس البطاقة - اسم المعيار */
+  .criteria-card-header {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    position: relative;
+  }
+  
+  .criteria-card-header h4 {
+    font-size: 1.1rem;
+    margin: 0;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* محتوى البطاقة - قيم المهنتين */
+  .criteria-card-content {
+    padding: 1.2rem;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: space-around;
+  }
+  
+  /* قيمة كل مهنة */
+  .profession-value {
+    flex: 1;
+    text-align: center;
+    padding: 1rem;
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    border-radius: 15px;
+    border: 2px solid #e9ecef;
+    transition: all 0.3s ease;
+    position: relative;
+  }
+  
+  .profession-value:hover {
+    background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%);
+    border-color: var(--primary);
+    transform: translateY(-2px);
+  }
+  
+  /* اسم المهنة */
+  .profession-name {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #666;
+    margin-bottom: 0.5rem;
+  }
+  
+  /* القيمة */
+  .profession-score {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 0.3rem;
+  }
+  
+  /* أيقونة الفائز */
+  .winner-icon {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: linear-gradient(135deg, #2ecc71, #27ae60);
+    color: white;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    box-shadow: 0 4px 10px rgba(46, 204, 113, 0.3);
+  }
+  
+  /* قيمة عالية */
+  .profession-value.high .profession-score {
+    color: #27ae60;
+  }
+  
+  .profession-value.high {
+    border-color: #27ae60;
+    background: linear-gradient(135deg, rgba(46, 204, 113, 0.1) 0%, #ffffff 100%);
+  }
+  
+  /* قيمة متوسطة */
+  .profession-value.medium .profession-score {
+    color: #e67e22;
+  }
+  
+  .profession-value.medium {
+    border-color: #e67e22;
+    background: linear-gradient(135deg, rgba(243, 156, 18, 0.1) 0%, #ffffff 100%);
+  }
+  
+  /* قيمة منخفضة */
+  .profession-value.low .profession-score {
+    color: #e74c3c;
+  }
+  
+  .profession-value.low {
+    border-color: #e74c3c;
+    background: linear-gradient(135deg, rgba(231, 76, 60, 0.1) 0%, #ffffff 100%);
+  }
+  
+  /* تصميم العنوان الرئيسي */
+  #compareResults h3 {
+    font-size: 1.4rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: var(--primary);
+    font-weight: 700;
+    position: relative;
+  }
+  
+  #compareResults h3::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    border-radius: 2px;
+  }
+  
+  /* تحسينات للشاشات الصغيرة جداً */
+  @media (max-width: 480px) {
+    .criteria-card-content {
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+    
+    .profession-value {
+      width: 100%;
+    }
+    
+    .profession-score {
+      font-size: 1.1rem;
+    }
+    
+    .criteria-card-header h4 {
+      font-size: 1rem;
+    }
+  }
+  
+  /* روابط التفاصيل للمهن والتخصصات */
+  .detail-link {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-decoration: none;
+    margin-top: 0.5rem;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+  }
+  
+  .detail-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(10, 132, 255, 0.3);
+    background: linear-gradient(135deg, var(--secondary), var(--primary));
+  }
+  
+  .detail-link i {
+    margin-left: 0.3rem;
+    font-size: 0.7rem;
+  }
+  
+  /* رابط التفاصيل في الجدول */
+  #compareResults .detail-link {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    padding: 0.3rem 0.6rem;
+    font-size: 0.75rem;
+    margin: 0.2rem;
+  }
+  
+  #compareResults .detail-link:hover {
+    background: linear-gradient(135deg, #764ba2, #667eea);
+  }
+  
+  /* رابط التفاصيل في البطاقات */
+  .profession-value .detail-link {
+    background: linear-gradient(135deg, #2ecc71, #27ae60);
+    margin-top: 0.8rem;
+  }
+  
+  .profession-value.high .detail-link {
+    background: linear-gradient(135deg, #27ae60, #2ecc71);
+  }
+  
+  .profession-value.medium .detail-link {
+    background: linear-gradient(135deg, #f39c12, #e67e22);
+  }
+  
+  .profession-value.low .detail-link {
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+  }
+  
+  /* أيقونة التفاصيل */
+  .detail-icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-left: 0.3rem;
+    vertical-align: middle;
+  }
+  
+  /* تحسين الروابط في قسم التفاصيل */
+  #compareDetails .detail-link {
+    background: linear-gradient(135deg, var(--accent), var(--primary));
+    padding: 0.5rem 1rem;
+    margin: 0.5rem;
+  }
+  
+  #compareDetails .detail-link:hover {
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+  }
+}
+
+/* ===================== تحسين روابط التفاصيل لجميع الشاشات ===================== */
+
+/* قسم التفاصيل الرئيسي */
+.details-section {
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  border-radius: 20px;
+  padding: 2rem;
+  margin: 2rem 0;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+
+.details-section h4 {
+  color: var(--primary);
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  position: relative;
+  display: inline-block;
+}
+
+.details-section h4::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  border-radius: 2px;
+}
+
+/* حاوية الروابط */
+.details-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
+/* روابط التفاصيل المحسنة */
+.details-links .detail-link {
+  display: inline-flex;
+  align-items: center;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  color: white;
+  padding: 1rem 1.5rem;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 8px 25px rgba(10, 132, 255, 0.2);
+  border: 2px solid transparent;
+  position: relative;
+  overflow: hidden;
+  min-width: 200px;
+  justify-content: center;
+}
+
+.details-links .detail-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.details-links .detail-link:hover::before {
+  left: 100%;
+}
+
+.details-links .detail-link:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 15px 40px rgba(10, 132, 255, 0.3);
+  background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+  border-color: var(--primary);
+}
+
+.details-links .detail-link i {
+  margin-right: 0.5rem;
+  font-size: 0.9rem;
+  transition: transform 0.3s ease;
+}
+
+.details-links .detail-link:hover i {
+  transform: translateX(-3px);
+}
+
+/* تصميم للأجهزة اللوحية */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .details-section {
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+  }
+  
+  .details-section h4 {
+    font-size: 1.3rem;
+  }
+  
+  .details-links {
+    gap: 1.5rem;
+  }
+  
+  .details-links .detail-link {
+    padding: 0.9rem 1.3rem;
+    font-size: 0.95rem;
+    min-width: 180px;
+  }
+}
+
+/* تصميم للموبايل */
+@media (max-width: 768px) {
+  .details-section {
+    padding: 1.5rem;
+    margin: 1rem 0.5rem;
+    border-radius: 15px;
+  }
+  
+  .details-section h4 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .details-links {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: stretch;
+  }
+  
+  .details-links .detail-link {
+    padding: 1rem;
+    font-size: 0.95rem;
+    min-width: auto;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+  
+  .details-links .detail-link:hover {
+    transform: translateY(-3px) scale(1.02);
+  }
+}
+
+/* تصميم للشاشات الصغيرة جداً */
+@media (max-width: 480px) {
+  .details-section {
+    padding: 1rem;
+    margin: 1rem 0.3rem;
+  }
+  
+  .details-section h4 {
+    font-size: 1.1rem;
+  }
+  
+  .details-links .detail-link {
+    padding: 0.9rem 1rem;
+    font-size: 0.9rem;
+    max-width: 250px;
+  }
+  
+  .details-links .detail-link i {
+    font-size: 0.8rem;
+  }
+}
+
+/* تصميم للشاشات الكبيرة */
+@media (min-width: 1200px) {
+  .details-section {
+    padding: 2.5rem;
+    margin: 2.5rem 0;
+  }
+  
+  .details-section h4 {
+    font-size: 1.7rem;
+  }
+  
+  .details-links {
+    gap: 2.5rem;
+  }
+  
+  .details-links .detail-link {
+    padding: 1.2rem 2rem;
+    font-size: 1.1rem;
+    min-width: 250px;
+  }
+}
+
+/* تأثيرات إضافية */
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 8px 25px rgba(10, 132, 255, 0.2);
+  }
+  50% {
+    box-shadow: 0 8px 35px rgba(10, 132, 255, 0.4);
+  }
+}
+
+.details-links .detail-link:hover {
+  animation: glow 2s ease-in-out infinite;
+}
+
+/* أنماط صفحة تفاصيل المهنة - تصميم فاخر و عصري */
+.profession-detail {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0a84ff 0%, #3aafa9 25%, #cbd5e1 50%, #94a3b8 75%, #64748b 100%);
+  background-attachment: fixed;
+  position: relative;
+  overflow: hidden;
+}
+
+.profession-detail::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.03)"/><circle cx="75" cy="75" r="1" fill="rgba(255,255,255,0.03)"/><circle cx="50" cy="10" r="0.5" fill="rgba(255,255,255,0.02)"/><circle cx="10" cy="50" r="0.5" fill="rgba(255,255,255,0.02)"/><circle cx="90" cy="30" r="0.8" fill="rgba(255,255,255,0.02)"/><circle cx="30" cy="90" r="0.8" fill="rgba(255,255,255,0.02)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>') repeat;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.profession-detail .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  position: relative;
+  z-index: 2;
+}
+
+.detail-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  position: relative;
+  padding: 2rem 0;
+}
+
+.detail-header::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  z-index: -1;
+  animation: pulse 4s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.5; }
+  50% { transform: translate(-50%, -50%) scale(1.1); opacity: 0.8; }
+}
+
+.detail-header .category-tag {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  color: white;
+  padding: 0.8rem 2rem;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 8px 25px rgba(10, 132, 255, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.detail-header .category-tag::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s;
+}
+
+.detail-header .category-tag:hover::before {
+  left: 100%;
+}
+
+.detail-header h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: white;
+  margin-bottom: 1.5rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+  position: relative;
+  line-height: 1.2;
+}
+
+.detail-header h1::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--secondary) 0%, var(--primary) 100%);
+  border-radius: 2px;
+  box-shadow: 0 2px 10px rgba(58, 175, 169, 0.5);
+}
+
+.detail-header .summary {
+  font-size: 1.3rem;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+.detail-content {
+  margin-bottom: 3rem;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.info-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+}
+
+.info-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+  transition: height 0.3s ease;
+}
+
+.info-card:hover::before {
+  height: 8px;
+}
+
+.info-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+}
+
+.info-card h3 {
+  color: var(--primary);
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+}
+
+.info-card h3 i {
+  font-size: 1.1rem;
+  color: var(--secondary);
+}
+
+.info-card p {
+  color: #2d3748;
+  font-size: 1.1rem;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.info-card.study-years h3 i::before { content: "📚"; }
+.info-card.job-opportunities h3 i::before { content: "💼"; }
+.info-card.academic-department h3 i::before { content: "🎓"; }
+.info-card.employment-rate h3 i::before { content: "📊"; }
+.info-card.annual-salary h3 i::before { content: "💰"; }
+.info-card.experience-required h3 i::before { content: "⏰"; }
+.info-card.industry h3 i::before { content: "🏭"; }
+
+.description-section, .skills-section, .demand-section {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  padding: 2.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.description-section::before, .skills-section::before, .demand-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 150px;
+  height: 150px;
+  background: linear-gradient(135deg, rgba(10, 132, 255, 0.1) 0%, rgba(58, 175, 169, 0.1) 100%);
+  border-radius: 0 0 0 100%;
+  transition: all 0.3s ease;
+}
+
+.description-section:hover::before, .skills-section:hover::before, .demand-section:hover::before {
+  width: 200px;
+  height: 200px;
+}
+
+.description-section h2, .skills-section h2, .demand-section h2 {
+  color: var(--primary);
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  font-weight: 800;
+  position: relative;
+  padding-right: 1rem;
+}
+
+.description-section h2::after, .skills-section h2::after, .demand-section h2::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -1rem;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 30px;
+  background: linear-gradient(180deg, var(--primary) 0%, var(--secondary) 100%);
+  border-radius: 2px;
+}
+
+.description-section p, .demand-section p {
+  color: #2d3748;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  font-weight: 400;
+}
+
+.skills-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.skills-list li {
+  background: linear-gradient(135deg, rgba(10, 132, 255, 0.05) 0%, rgba(58, 175, 169, 0.05) 100%);
+  padding: 1rem 1.5rem;
+  border-radius: 15px;
+  color: #2d3748;
+  font-size: 1rem;
+  font-weight: 500;
+  border: 1px solid rgba(10, 132, 255, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.skills-list li::before {
+  content: " ";
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--primary);
+  font-size: 0.8rem;
+  transition: all 0.3s ease;
+}
+
+.skills-list li:hover {
+  background: linear-gradient(135deg, rgba(10, 132, 255, 0.1) 0%, rgba(58, 175, 169, 0.1) 100%);
+  transform: translateX(5px);
+  padding-right: 2.5rem;
+}
+
+.skills-list li:hover::before {
+  right: 1.5rem;
+  color: var(--secondary);
+}
+
+.action-buttons {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 3rem;
+}
+
+.btn {
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s;
+}
+
+.btn:hover::before {
+  left: 100%;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  color: white;
+  box-shadow: 0 8px 25px rgba(10, 132, 255, 0.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px rgba(10, 132, 255, 0.4);
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--primary);
+  border: 2px solid var(--primary);
+  backdrop-filter: blur(10px);
+}
+
+.btn-secondary:hover {
+  background: var(--primary);
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(10, 132, 255, 0.3);
+}
+
+/* تصميم فاخر للفوتر */
+footer {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  padding: 2rem 0;
+  text-align: center;
+  border-top: 1px solid rgba(10, 132, 255, 0.1);
+  position: relative;
+  z-index: 2;
+}
+
+footer .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+footer p {
+  color: #2d3748;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/* تحسينات إضافية للموبايل */
+@media (max-width: 768px) {
+  .profession-detail {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 25%, #cbd5e1 50%, #94a3b8 75%, #64748b 100%);
+  }
+  
+  .profession-detail .container {
+    padding: 1rem 0.5rem;
+    padding-top: 0px !important;
+  }
+  
+  .detail-header {
+    margin-bottom:  0px !important;
+    padding: 1rem 0;
+    padding-top: 0px !important;
+  }
+  
+  .detail-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .detail-header .summary {
+    font-size: 1.1rem;
+    padding: 0 1rem;
+  }
+  
+  .info-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .info-card {
+    padding: 1.5rem;
+  }
+  
+  .description-section, .skills-section, .demand-section {
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .description-section h2, .skills-section h2, .demand-section h2 {
+    font-size: 1.5rem;
+  }
+  
+  .skills-list {
+    grid-template-columns: 1fr;
+  }
+  
+  .action-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .btn {
+    width: 100%;
+    max-width: 300px;
+    padding: 1rem 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .detail-header h1 {
+    font-size: 2rem;
+  }
+  
+  .detail-header .category-tag {
+    padding: 0.6rem 1.5rem;
+    font-size: 0.9rem;
+  }
+  
+  .info-card {
+    padding: 1rem;
+  }
+  
+  .info-card h3 {
+    font-size: 1.1rem;
+  }
+  
+  .info-card p {
+    font-size: 1rem;
+  }
+  
+  .description-section, .skills-section, .demand-section {
+    padding: 1rem;
+  }
+  
+  .description-section p, .demand-section p {
+    font-size: 1rem;
+  }
+  
+  .skills-list li {
+    padding: 0.8rem 1rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* تأثيرات حركية إضافية */
+@keyframes floatIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.info-card {
+  animation: floatIn 0.6s ease-out forwards;
+}
+
+.info-card:nth-child(1) { animation-delay: 0.1s; }
+.info-card:nth-child(2) { animation-delay: 0.2s; }
+.info-card:nth-child(3) { animation-delay: 0.3s; }
+.info-card:nth-child(4) { animation-delay: 0.4s; }
+
+.description-section { animation: floatIn 0.6s ease-out 0.5s forwards; opacity: 0; }
+.skills-section { animation: floatIn 0.6s ease-out 0.6s forwards; opacity: 0; }
+.demand-section { animation: floatIn 0.6s ease-out 0.7s forwards; opacity: 0; }
+
+/* تحسينات للشاشات الكبيرة */
+@media (min-width: 1400px) {
+  .profession-detail .container {
+    max-width: 1400px;
+  }
+  
+  .detail-header h1 {
+    font-size: 4rem;
+  }
+  
+  .info-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+.profile-heading.too{
+color: var(--secondary);
+
+
 }
