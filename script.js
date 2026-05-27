@@ -2350,3 +2350,4 @@ if (window.location.pathname.includes("compare") || window.location.href.include
 window.addEventListener("resize", onFilterChange);
 document.addEventListener("DOMContentLoaded", onFilterChange)
 
+ 
