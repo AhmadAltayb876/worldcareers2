@@ -46,14 +46,16 @@
 <link rel="stylesheet" href="/style.css" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
 
-
-<!-- Google Analytics -->
+<!-- Google Analytics (مرّة واحدة فقط) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WBM8BPHZRL"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-WBM8BPHZRL');
 </script>
+
+<!-- ✅ Schema.org JSON-LD -->
 <script type="application/ld+json">
 {
   "@context":"https://schema.org",
@@ -110,6 +112,19 @@
     }
   ]
 }
+</script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WBM8BPHZRL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-WBM8BPHZRL');
+</script>
+      
+
 </script>
 
      <style>
@@ -355,7 +370,8 @@ margin: 0rem 0;
 
     
      </style>
-         </head>
+        <!-- Google tag (gtag.js) -->
+ </head>
  <body>
         <nav class="navbar">
             <div class="nav-container">
@@ -383,7 +399,7 @@ margin: 0rem 0;
                     <div class="search-results" id="searchResults"></div>
                 </div>
                  <div class="nav-links">
-                    <a class="nav-link" id="about-link" href="/about.html">من نحن</a>
+                    <a class="nav-link"  id="about-link" href="/about.html" onclick="startTyping(); return false;">من نحن</a>
                     <a class="nav-link" href="/compare.html">قارن </a>
                     <a class="nav-link" href="/best-jobs.html">المهن ذهبية</a>
                     <a class="nav-link" href="/jobs.html">المهن و التخصصات</a>
@@ -399,10 +415,10 @@ margin: 0rem 0;
             <section class="conten" id="jobs" >
 
             <div class="filter-group">
-                <button class="filter-item active" id="showProfessionsBtn">
+                <button class="filter-item active" id="showProfessionsBtn" onclick="linkSearchTypeToView('jobs')">
                     عرض المهن <i class="fas fa-briefcase"></i>
                 </button>
-                <button class="filter-item" id="showMajorsBtn">
+                <button class="filter-item" id="showMajorsBtn" onclick="linkSearchTypeToView('majors')">
                     عرض التخصصات <i class="fas fa-graduation-cap"></i>
                 </button>
             </div>
@@ -411,7 +427,7 @@ margin: 0rem 0;
                 <div class="field-filters" id="jobFieldsFilter">
                     <!-- الطب -->
                     <label class="field-filter-card">
-                        <input type="checkbox" value="الطب" data-filter="الطب">
+                        <input type="checkbox" value="الطب" onchange="onFilterChange()" data-filter="الطب">
                         <div class="field-filter-inner">
                             <div class="field-filter-front">
                                 <i class="fas fa-hospital field-filter-icon"></i>
@@ -425,7 +441,7 @@ margin: 0rem 0;
                     </label>
                     <!-- الهندسة -->
                     <label class="field-filter-card">
-                        <input type="checkbox" value="الهندسة" data-filter="الهندسة">
+                        <input type="checkbox" value="الهندسة" onchange="onFilterChange()" data-filter="الهندسة">
                         <div class="field-filter-inner">
                             <div class="field-filter-front">
                                 <i class="fas fa-cogs field-filter-icon"></i>
@@ -439,7 +455,7 @@ margin: 0rem 0;
                     </label>
                     <!-- التكنولوجيا -->
                     <label class="field-filter-card">
-                        <input type="checkbox" value="IT & AI" data-filter="IT & AI">
+                        <input type="checkbox" value="IT & AI" onchange="onFilterChange()" data-filter="IT & AI">
                         <div class="field-filter-inner">
                             <div class="field-filter-front">
                                 <i class="fas fa-robot field-filter-icon"></i>
@@ -453,7 +469,7 @@ margin: 0rem 0;
                     </label>
                     <!-- العلوم -->
                     <label class="field-filter-card">
-                        <input type="checkbox" value="العلوم" data-filter="العلوم">
+                        <input type="checkbox" value="العلوم" onchange="onFilterChange()" data-filter="العلوم">
                         <div class="field-filter-inner">
                             <div class="field-filter-front">
                                 <i class="fas fa-flask field-filter-icon"></i>
@@ -467,7 +483,7 @@ margin: 0rem 0;
                     </label>
                     <!-- الأعمال -->
                     <label class="field-filter-card">
-                        <input type="checkbox" value="الأعمال" data-filter="الأعمال">
+                        <input type="checkbox" value="الأعمال" onchange="onFilterChange()" data-filter="الأعمال">
                         <div class="field-filter-inner">
                             <div class="field-filter-front">
                                 <i class="fas fa-chart-line field-filter-icon"></i>
@@ -481,7 +497,7 @@ margin: 0rem 0;
                     </label>
                     <!-- القانون -->
                     <label class="field-filter-card">
-                        <input type="checkbox" value="القانون" data-filter="القانون">
+                        <input type="checkbox" value="القانون" onchange="onFilterChange()" data-filter="القانون">
                         <div class="field-filter-inner">
                             <div class="field-filter-front">
                                 <i class="fas fa-gavel field-filter-icon"></i>
@@ -577,7 +593,7 @@ margin: 0rem 0;
                         </div>
                     </label>
                 </div>
-                <button class="show-more-btn" id="showMoreFilters">
+                <button class="show-more-btn" id="showMoreFilters" onclick="toggleFilters()">
                     <span>عرض المزيد</span>
                     <i class="fas fa-chevron-down"></i>
                 </button>
@@ -586,7 +602,7 @@ margin: 0rem 0;
                 <h3 class="search-results-title">
                     <i class="fas fa-search"></i>
                     نتائج البحث لـ "<span id="searchQueryText"></span>"
-                    <button class="clear-search-btn" id="clearSearchBtn">
+                    <button class="clear-search-btn" onclick="clearSearch()">
                         <i class="fas fa-times"></i> مسح البحث
                     </button>
                 </h3>
@@ -602,7 +618,7 @@ margin: 0rem 0;
         <!-- نافذة التفاصيل المنبثقة -->
         <div class="modal" id="detailsModal">
             <div class="modal-content">
-                <span class="close-btn" id="closeModalBtn">×</span>
+                <span class="close-btn" onclick="closeModal()">×</span>
                 <div class="modal-header">
                     <h2 id="modalTitle"></h2>
                     <div class="category-tag" id="modalCategory"></div>
@@ -611,7 +627,12 @@ margin: 0rem 0;
             </div>
         </div>
         <script src="script.js"></script>
-       
+        <script>
+            // تحديث الرابط النشط عند تحميل الصفحة
+            document.addEventListener("DOMContentLoaded", function() {
+                setActiveNavLink();
+            });
+        </script>
 
             </section>
  </body>
