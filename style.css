@@ -2322,9 +2322,9 @@ body.modal-open {
 #compare .table-scroll {
   overflow-y: auto;
 }
-/* أضف هذه التعديلات في نهاية ملف stylee.css */
+/* أضف هذه التعديلات في نهاية ملف style.css */
 
-/* أضف هذه التعديلات في نهاية ملف stylee.css */
+/* أضف هذه التعديلات في نهاية ملف style.css */
 
 @media (max-width: 768px) {
   /* تقليل المسافات في قسم المقارنة */
@@ -3778,7 +3778,7 @@ margin-bottom: 1rem;
     transform: translateX(110px);
   }
 }
-/* أضف هذا الكود في نهاية ملف stylee.css */
+/* أضف هذا الكود في نهاية ملف style.css */
 
 @media (min-width: 360px) and (max-width: 396px) {
   /* تعديلات بطاقات الفلترة */
