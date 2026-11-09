@@ -223,7 +223,7 @@
 .feature-icon {
   width: 70px;
   height: 70px;
-  margin: 3rem auto 2rem;
+  margin: 1rem auto 2rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -608,7 +608,7 @@
   .feature-icon {
     width: 50px;
     height: 50px;
-    margin: 1rem auto;
+    margin: 0.5rem auto;
   }
 
   .feature-icon svg {
@@ -5049,7 +5049,6 @@ margin-bottom: 1rem;
     135deg,
     var(--accent) 0%,
     #0026fff9 25%,
-    var(--secondary) 75%,
     var(--primary) 100%
   );
   background-size: 200% 200%;
@@ -5073,7 +5072,7 @@ margin-bottom: 1rem;
 }
 .guide-btn:hover {
   transform: translateY(-6px) scale(1.05) rotate(-1deg);
-  box-shadow: 0 12px 30px rgba(255, 144, 104, 0.45);
+  box-shadow: 0 12px 30px rgba(11, 88, 197, 0.45);
 }
 .guide-btn:active {
   transform: scale(0.96);
@@ -6392,4 +6391,115 @@ footer p {
 color: var(--secondary);
 
 
+}
+
+/* WorldCareers - Modern Interactive CTA */
+
+#careerGuideBtn {
+    display: inline-flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    min-height: 60px;
+    padding: 16px 30px;
+
+    background: linear-gradient(
+        120deg,
+        #3478D5,
+        #4169D8
+    ) !important;
+
+    color: #FFFFFF !important;
+
+    border: 1px solid rgba(255,255,255,.12);
+    border-radius: 14px;
+
+    font-size: 1.05rem;
+    font-weight: 700;
+    letter-spacing: .1px;
+
+    text-decoration: none !important;
+
+    box-shadow:
+        0 5px 16px rgba(52,120,213,.20),
+        inset 0 1px 0 rgba(255,255,255,.16);
+
+    position: relative;
+    z-index: 10;
+
+    animation: none !important;
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease,
+        background .25s ease;
+}
+
+#careerGuideBtn i {
+    color: #FFFFFF !important;
+    font-size: 1.2rem;
+    transition: transform .25s ease;
+}
+
+#careerGuideBtn span {
+    color: #FFFFFF !important;
+}
+
+#careerGuideBtn:hover {
+    background: linear-gradient(
+        120deg,
+        #286BC7,
+        #5756D9
+    ) !important;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 24px rgba(52,120,213,.30);
+}
+
+#careerGuideBtn:hover i {
+    transform: translateX(-3px);
+}
+
+#careerGuideBtn:active {
+    transform: translateY(-1px) scale(.985);
+}
+
+#careerGuideBtn:focus-visible {
+    outline: 3px solid #A9C9F4;
+    outline-offset: 4px;
+}
+
+@media (max-width: 640px) {
+    #careerGuideBtn {
+        width: 100%;
+        min-height: 58px;
+        padding: 14px 18px;
+        font-size: 1rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #careerGuideBtn,
+    #careerGuideBtn i {
+        transition: none;
+    }
+}
+.worldcareers-name {
+    display: inline-block;
+    white-space: nowrap;
+    font-weight: 800;
+}
+
+.world-blue {
+    color: #4385f5;
+}
+
+.careers-green {
+    color: #2bb3a5;
 }
